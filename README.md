@@ -4,6 +4,9 @@
 
 Projeto feito para a disciplina de Software Básico, turma A, da Universidade de Brasília, ministrada pelo professor Marcelo Ladeira.
 
+Projetado por:
+* Eduardo de Azevedo dos Santos (gerudoking) - 14/0136967
+
 ## Como compilar
 
 ### Linux
