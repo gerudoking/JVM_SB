@@ -59,4 +59,86 @@ struct static_struct{
 };
 typedef struct static_struct static_struct;
 
+struct CONSTANT_Pool_info{
+	u1 tag;
+	u1 *info;
+} 
+typedef struct CONSTANT_Pool_info;
+
+struct CONSTANT_Class_info{
+	u1 tag;
+	u2 name_index;
+};
+typedef struct CONSTANT_Pool_info CONSTANT_Pool_info;
+
+struct CONSTANT_Fieldref_info{
+	u1 tag;
+	u2 class_index;
+	u2 name_and_type_index;
+};
+typedef struct CONSTANT_Fieldref_info CONSTANT_Fieldref_info;
+
+struct CONSTANT_NameAndType_info{
+	u1 tag;
+	u2 name_index;
+	u2 descriptor_index;
+};
+typedef struct CONSTANT_NameAndType_info CONSTANT_NameAndType_info;
+
+struct CONSTANT_Utf8_info{
+	u1 tag;
+	u2 length;
+	u1 *bytes;
+};
+typedef struct CONSTANT_Utf8_info CONSTANT_Utf8_info;
+
+struct CONSTANT_Methodref_info{
+	u1 tag;
+	u2 class_index;
+	u2 name_and_type_index;
+};
+typedef struct CONSTANT_Methodref_info CONSTANT_Methodref_info;
+
+struct CONSTANT_InterfaceMethodref_info{
+	u1 tag;
+	u2 class_index;
+	u2 name_and_type_index;
+};
+typedef struct CONSTANT_InterfaceMethodref_info CONSTANT_InterfaceMethodref_info;
+
+struct CONSTANT_String_info{
+	u1 tag;
+	u2 string_index;
+};
+typedef struct CONSTANT_String_info CONSTANT_String_info;
+
+struct CONSTANT_Integer_info{
+	u1 tag;
+	u4 bytes;
+};
+typedef struct CONSTANT_Integer_info CONSTANT_Integer_info;
+
+struct CONSTANT_Float_info{
+	u1 tag;
+	u4 bytes;
+};
+typedef struct CONSTANT_Float_info CONSTANT_Float_info;
+
+struct CONSTANT_Long_info{
+	u1 tag;
+	u4 high_bytes;
+	u4 low_bytes;
+};
+typedef struct CONSTANT_Long_info  CONSTANT_Long_info;
+
+struct CONSTANT_Double_info{
+	u1 tag;
+	u4 high_bytes;
+	u4 low_bytes;
+};
+typedef struct CONSTANT_Double_info CONSTANT_Double_info;
+
+
+
+
 #endif
