@@ -138,6 +138,102 @@ struct CONSTANT_Double_info{
 };
 typedef struct CONSTANT_Double_info CONSTANT_Double_info;
 
+struct attribute_info{
+	u2 attribute_name_index;
+	u4 attribute_length;
+	u2 tag;
+	u1 *info;
+}; 
+typedef struct attribute_info attribute_info;
+
+struct ConstantValue_attribute{
+	u2 attribute_name_index;
+	u4 attribute_length;
+	u2 tag;
+	u2 constantvalue_index;
+};
+typedef struct ConstantValue_attribute ConstantValue_attribute;
+
+struct Code_attribute{
+	u2 attribute_name_index;
+	u4 attribute_length;
+	u2 tag;
+	u2 max_stack;
+	u2 max_locals;
+	u4 code_length;
+	u1 *code;
+	u2 exception_table_length;
+	exception_tab *exception_table;
+	u2 attributes_count;
+	void **attributes;
+};
+typedef struct Code_attribute Code_attribute;
+
+struct Deprecated_attribute{
+	u2 attribute_name_index;
+	u4 attribute_length;
+	u2 tag;
+};
+typedef struct Deprecated_attribute Deprecated_attribute;
+
+struct Exceptions_attribute{
+	u2 attribute_name_index;
+	u4 attribute_length;
+	u2 tag;
+	u2 number_of_exceptions;
+	u2 *exception_index_table;
+};
+typedef struct Exceptions_attribute Exceptions_attribute;
+
+struct InnerClasses_attribute{
+	u2 attribute_name_index;
+	u4 attribute_length;
+	u2 tag;
+	u2 number_of_classes;
+	class_tab *classes;
+};
+typedef struct InnerClasses_attribute InnerClasses_attribute;
+
+struct LineNumberTable_attribute{
+	u2 attribute_name_index;
+	u4 attribute_length;
+	u2 tag;
+	u2 line_number_table_length;
+	line_number_tab   *line_number_table;
+};
+typedef struct LineNumberTable_attribute LineNumberTable_attribute;
+
+struct local_variable{
+	u2 start_pc;
+	u2 length;
+	u2 name_index;
+	u2 descriptor_index;
+	u2 index;
+};
+typedef struct local_variable local_variable_tab;
+
+struct LocalVariableTable_attribute{
+	u2 attribute_name_index;
+	u4 attribute_length;
+	u2 tag;
+	u2 local_variable_table_length;
+	local_variable_tab *local_variable_table;
+};
+typedef struct LocalVariableTable_attribute LocalVariableTable_attribute;
+
+struct SourceFile_attribute{
+	u2 attribute_name_index;
+	u4 attribute_length;
+	u2 tag;
+	u2 sourcefile_index;
+};
+typedef struct SourceFile_attribute SourceFile_attribute;
+
+struct Synthetic_attribute{
+	u2 attribute_name_index;
+	u4 attribute_length;
+};
+typedef struct Synthetic_attribute Synthetic_attribute;
 
 
 
