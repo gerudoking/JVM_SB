@@ -441,7 +441,89 @@ void Exhibitor::ShowInterface(CpInfo cp){
 }
 
 void Exhibitor::ShowInterfaceOnFile(ClassFile* jvm_class, CpInfo cp, FILE* file){
-
+	switch (cp.tag) {
+	case CONSTANTClass:
+		fprintf(file, "Tag: ");
+		fprintf(file, "%" PRIu8 "\n", cp.info.Class.tag);
+		fprintf(file, "Index Name: ");
+		fprintf(file, "%" PRIu16 "\n", cp.info.Class.name_index);
+		break;
+	case CONSTANTFieldref:
+		fprintf(file, "Tag: ");
+		fprintf(file, "%" PRIu8 "\n", cp.info.Fieldref.tag);
+		fprintf(file, "Index Class: ");
+		fprintf(file, "%" PRIu16 "\n", cp.info.Fieldref.class_index);
+		fprintf(file, "Index Name and Type: ");
+		fprintf(file, "%" PRIu16 "\n", cp.info.Fieldref.name_and_type_index);
+		break;
+	case CONSTANTMethodref:
+		fprintf(file, "Tag: ");
+		fprintf(file, "%" PRIu8 "\n", cp.info.Methodref.tag);
+		fprintf(file, "Index Class: ");
+		fprintf(file, "%" PRIu16 "\n", cp.info.Methodref.class_index);
+		fprintf(file, "Index Name and Type: ");
+		fprintf(file, "%" PRIu16 "\n", cp.info.Methodref.name_and_type_index);
+		break;
+	case CONSTANTInterfaceMethodref:
+		fprintf(file, "Tag: ");
+		fprintf(file, "%" PRIu8 "\n", cp.info.InterfaceMethodref.tag);
+		fprintf(file, "Index Class: ");
+		fprintf(file, "%" PRIu16 "\n", cp.info.InterfaceMethodref.class_index);
+		fprintf(file, "Index Name and Type: ");
+		fprintf(file, "%" PRIu16 "\n", cp.info.InterfaceMethodref.name_and_type_index);
+		break;
+	case CONSTANTString:
+		fprintf(file, "Tag: ");
+		fprintf(file, "%" PRIu8 "\n", cp.info.String.tag);
+		fprintf(file, "Index String: ");
+		fprintf(file, "%" PRIu16 "\n", cp.info.String.string_index);
+		break;
+	case CONSTANTInteger:
+		fprintf(file, "Tag: ");
+		fprintf(file, "%" PRIu8 "\n", cp.info.Integer.tag);
+		fprintf(file, "Bytes: ");
+		fprintf(file, "%" PRIu32 "\n", cp.info.Integer.bytes);
+		break;
+	case CONSTANTFloat:
+		fprintf(file, "Tag: ");
+		fprintf(file, "%" PRIu8 "\n", cp.info.Float.tag);
+		fprintf(file, "Bytes: ");
+		fprintf(file, "%" PRIu32 "\n", cp.info.Float.bytes);
+		break;
+	case CONSTANTLong:
+		fprintf(file, "Tag: ");
+		fprintf(file, "%" PRIu8 "\n", cp.info.Long.tag);
+		fprintf(file, "High Bytes: ");
+		fprintf(file, "%" PRIu32 "\n", cp.info.Long.high_bytes);
+		fprintf(file, "Low Bytes Bytes: ");
+		fprintf(file, "%" PRIu32 "\n", cp.info.Long.low_bytes);
+		break;
+	case CONSTANTDouble:
+		fprintf(file, "Tag: ");
+		fprintf(file, "%" PRIu8 "\n", cp.info.Double.tag);
+		fprintf(file, "High Bytes: ");
+		fprintf(file, "%" PRIu32 "\n", cp.info.Double.high_bytes);
+		fprintf(file, "Low Bytes Bytes: ");
+		fprintf(file, "%" PRIu32 "\n", cp.info.Double.low_bytes);
+		break;
+	case CONSTANTNameAndType:
+		fprintf(file, "Tag: ");
+		fprintf(file, "%" PRIu8 "\n", cp.info.NameAndType.tag);
+		fprintf(file, "Index Name: ");
+		fprintf(file, "%" PRIu16 "\n", cp.info.NameAndType.name_index);
+		fprintf(file, "Index Descriptor: ");
+		fprintf(file, "%" PRIu16 "\n", cp.info.NameAndType.descriptor_index);
+		break;
+	case CONSTANTUtf8:
+		fprintf(file, "Tag: ");
+		fprintf(file, "%" PRIu8 "\n", cp.info.Utf8.tag);
+		for (int i = 0; i < cp.info.Utf8.length; i++) {
+			uint8_t byte = cp.info.Utf8.bytes[i];
+			char c = byte;
+			fprintf(file, "%c", c);
+		}
+		break;
+	}
 }
 
 void Exhibitor::ShowAllInterfaces(ClassFile* jvm_class){
