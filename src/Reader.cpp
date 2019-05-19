@@ -44,6 +44,8 @@ int Reader::InsertClass(char *fullFileName, ClassFile *jvm_class)
         strcat(filePath, fileName);
     }
 
+    printf("\nfileName = %s", fileName);
+    printf("\ndicName = %s", dicName);
     printf("\nCopiou nome do arquivo!\n");
 
     if(!(fileClass = fopen(filePath, "rb")))
@@ -172,6 +174,9 @@ int Reader::CheckFileName(ClassFile *jvm_class, char *name)
     //nameThisClass = informacao_nome(index, jvm_class);
 
     nameThisClass = exhibitorReader->NameInfo(jvm_class, index);
+
+    printf("\ntemp = %s\n", temp);
+    printf("\nnameThisClass = %s\n", nameThisClass);
     
 	if(!strcmp(temp, nameThisClass))
     {

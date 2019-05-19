@@ -92,13 +92,9 @@ void Exhibitor::ShowMethodsOnFile(ClassFile* jvm_class, FILE* file){
 
 }
 
-char* Exhibitor::NameInfo(ClassFile* jvm_class, u2 index){
-	return nullptr;
-}
-
-char* Exhibitor::RefFieldInfo(ClassFile* jvm_class, u2 index)
+char* Exhibitor::NameInfo(ClassFile* jvm_class, u2 index)
 {
-    char *name;
+	char *name;
     int i;
     name = (char *) malloc((jvm_class->constant_pool[index].info.Utf8.length + 1) * sizeof(char));
     
@@ -107,6 +103,11 @@ char* Exhibitor::RefFieldInfo(ClassFile* jvm_class, u2 index)
     
     name[i] = '\0';
     return name;
+}
+
+char* Exhibitor::RefFieldInfo(ClassFile* jvm_class, u2 index)
+{
+    return nullptr;
 }
 
 char* Exhibitor::MethodInfo(ClassFile* jvm_class, u2 index){
