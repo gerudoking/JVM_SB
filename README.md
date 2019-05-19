@@ -8,7 +8,7 @@ Projetado por:
 * Eduardo de Azevedo dos Santos (gerudoking) - 14/0136967
 * Ana Luisa Salvador Alvarez (nalualvarez) - 16/0048036
 * Iago Lobo Ribeiro de Moraes (IagoLobo) - 14/0082921
-* Luan Mendes Gonçalves Freitas (IagoLobo) - 15/0015585
+* Luan Mendes Gonçalves Freitas (luanfreitas5) - 15/0015585
 
 ## Como compilar
 
