@@ -161,7 +161,8 @@ int Reader::CheckFileName(ClassFile *jvm_class, char *name)
     }
     i++;
     temp[i] = '\0';
-    nameThisClass = informacao_nome(index, jvm_class); // Função exibidor
+    //Descomentar a função abaixo quando uma correspondente for implementada
+    //nameThisClass = informacao_nome(index, jvm_class);
     
 	if(!strcmp(temp, nameThisClass))
     {
@@ -193,7 +194,7 @@ int Reader::FillHeader(FILE *file, ClassFile *jvm_class)
 void Reader::FillConstantPool(FILE *file, ClassFile *jvm_class)
 {
     jvm_class->constant_pool_count = ReadU2(file);
-    jvm_class->constant_pool = (cp_info *) malloc(sizeof(cp_info) * (jvm_class->constant_pool_count - 1));
+    jvm_class->constant_pool = (CpInfo *) malloc(sizeof(CpInfo) * (jvm_class->constant_pool_count - 1));
     for(int i = 0;i < (jvm_class->constant_pool_count - 1); i++)
 	{ 
         jvm_class->constant_pool[i].tag = ReadU1(file); 
@@ -323,10 +324,10 @@ void Reader::FillAttribute(FILE *file, ClassFile *jvm_class, attribute_info *att
     attribute->attribute_length = ReadU4(file);
     attribute_length = attribute->attribute_length;
     u2 index = attribute->attribute_name_index - 1;
-    attributeType = (char *) malloc((classe->constant_pool[index].info.Utf8.length+1) * sizeof(char));
-    for (int i = 0; i < classe->constant_pool[index].info.Utf8.length; i++)
-        attributeType[i] = classe->constant_pool[index].info.Utf8.bytes[i];
-	attributeType[classe->constant_pool[index].info.Utf8.length] = '\0';
+    attributeType = (char *) malloc((jvm_class->constant_pool[index].info.Utf8.length+1) * sizeof(char));
+    for (int i = 0; i < jvm_class->constant_pool[index].info.Utf8.length; i++)
+        attributeType[i] = jvm_class->constant_pool[index].info.Utf8.bytes[i];
+	attributeType[jvm_class->constant_pool[index].info.Utf8.length] = '\0';
 
     if (!strcmp(attributeType, "ConstantValue"))
 	{
@@ -358,7 +359,7 @@ void Reader::FillAttribute(FILE *file, ClassFile *jvm_class, attribute_info *att
         attributes_count = attribute->info.CodeAttribute.attributes_count;
         attribute->info.CodeAttribute.attributes = (attribute_info *) malloc(attributes_count * sizeof(attribute_info));
         for (int k = 0; k < attributes_count; k++)
-            FillAttribute(file, classe, attribute->info.CodeAttribute.attributes);
+            FillAttribute(file, jvm_class, attribute->info.CodeAttribute.attributes);
         attribute->tag = AT_TAG_Code;
     }else if (!strcmp(attributeType, "Exceptions")){
         u2 number_of_exceptions;
