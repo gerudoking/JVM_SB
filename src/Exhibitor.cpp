@@ -33,7 +33,29 @@ void Exhibitor::ShowInfo(ClassFile* jvm_class){
 }
 
 void Exhibitor::ShowInfoOnFile(ClassFile* jvm_class, FILE* file){
+	char *className, *superClassName;
+	int index = jvm_class->constant_pool[jvm_class->this_class - 1].info.Class.name_index - 1;
 
+	className = NameInfo(jvm_class, index);
+	index = jvm_class->constant_pool[jvm_class->super_class - 1].info.Class.name_index - 1;
+	superClassName = NameInfo(jvm_class, index);
+
+	fprintf(file, "=======Informations========");
+	fprintf(file, "|-> Minor: %d\n", jvm_class->minor_version);
+	fprintf(file, "|-> Major: %d\n", jvm_class->major_version);
+	fprintf(file, "|-> Constant Pool Count: %d\n", jvm_class->constant_pool_count);
+	fprintf(file, "|-> Access Flags: 0x%x\n", jvm_class->access_flags);
+	fprintf(file, "|-> This.class: <%s>, |CP={%d}|\n", className, jvm_class->this_class);
+	fprintf(file, "|-> Super.class: <%s>, |CP={%d}|\n", superClassName, jvm_class->super_class);
+	fprintf(file, "|-> Interface Counter: %d\n", jvm_class->interfaces_count);
+	fprintf(file, "|-> Field Counter: %d\n", jvm_class->fields_count);
+	fprintf(file, "|-> Method Counter: %d\n", jvm_class->methods_count);
+	fprintf(file, "|-> Attribute Counter: %d\n", jvm_class->attributes_count);
+	fprintf(file, "=========================\n");
+	fprintf(file, "\n");
+
+	free(className);
+	free(superClassName);
 }
 
 void Exhibitor::ShowConstantPool(ClassFile* jvm_class){
