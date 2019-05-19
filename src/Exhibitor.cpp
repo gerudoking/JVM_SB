@@ -177,7 +177,89 @@ void Exhibitor::ShowInterface(CpInfo cp){
 }
 
 void Exhibitor::ShowInterfaceOnFile(ClassFile* jvm_class, CpInfo cp, FILE* file){
-
+	switch (cp.tag) {
+	case CONSTANTClass:
+		printf("Tag: ");
+		printf("%" PRIu8 "\n", cp.info.Class.tag);
+		printf("Index Name: ");
+		printf("%" PRIu16 "\n", cp.info.Class.name_index);
+		break;
+	case CONSTANTFieldref:
+		printf("Tag: ");
+		printf("%" PRIu8 "\n", cp.info.Fieldref.tag);
+		printf("Index Class: ");
+		printf("%" PRIu16 "\n", cp.info.Fieldref.class_index);
+		printf("Index Name and Type: ");
+		printf("%" PRIu16 "\n", cp.info.Fieldref.name_and_type_index);
+		break;
+	case CONSTANTMethodref:
+		printf("Tag: ");
+		printf("%" PRIu8 "\n", cp.info.Methodref.tag);
+		printf("Index Class: ");
+		printf("%" PRIu16 "\n", cp.info.Methodref.class_index);
+		printf("Index Name and Type: ");
+		printf("%" PRIu16 "\n", cp.info.Methodref.name_and_type_index);
+		break;
+	case CONSTANTInterfaceMethodref:
+		printf("Tag: ");
+		printf("%" PRIu8 "\n", cp.info.InterfaceMethodref.tag);
+		printf("Index Class: ");
+		printf("%" PRIu16 "\n", cp.info.InterfaceMethodref.class_index);
+		printf("Index Name and Type: ");
+		printf("%" PRIu16 "\n", cp.info.InterfaceMethodref.name_and_type_index);
+		break;
+	case CONSTANTString:
+		printf("Tag: ");
+		printf("%" PRIu8 "\n", cp.info.String.tag);
+		printf("Index String: ");
+		printf("%" PRIu16 "\n", cp.info.String.string_index);
+		break;
+	case CONSTANTInteger:
+		printf("Tag: ");
+		printf("%" PRIu8 "\n", cp.info.Integer.tag);
+		printf("Bytes: ");
+		printf("%" PRIu32 "\n", cp.info.Integer.bytes);
+		break;
+	case CONSTANTFloat:
+		printf("Tag: ");
+		printf("%" PRIu8 "\n", cp.info.Float.tag);
+		printf("Bytes: ");
+		printf("%" PRIu32 "\n", cp.info.Float.bytes);
+		break;
+	case CONSTANTLong:
+		printf("Tag: ");
+		printf("%" PRIu8 "\n", cp.info.Long.tag);
+		printf("High Bytes: ");
+		printf("%" PRIu32 "\n", cp.info.Long.high_bytes);
+		printf("Low Bytes Bytes: ");
+		printf("%" PRIu32 "\n", cp.info.Long.low_bytes);
+		break;
+	case CONSTANTDouble:
+		printf("Tag: ");
+		printf("%" PRIu8 "\n", cp.info.Double.tag);
+		printf("High Bytes: ");
+		printf("%" PRIu32 "\n", cp.info.Double.high_bytes);
+		printf("Low Bytes Bytes: ");
+		printf("%" PRIu32 "\n", cp.info.Double.low_bytes);
+		break;
+	case CONSTANTNameAndType:
+		printf("Tag: ");
+		printf("%" PRIu8 "\n", cp.info.NameAndType.tag);
+		printf("Index Name: ");
+		printf("%" PRIu16 "\n", cp.info.NameAndType.name_index);
+		printf("Index Descriptor: ");
+		printf("%" PRIu16 "\n", cp.info.NameAndType.descriptor_index);
+		break;
+	case CONSTANTUtf8:
+		printf("Tag: ");
+		printf("%" PRIu8 "\n", cp.info.Utf8.tag);
+		for (int i = 0; i < cp.info.Utf8.length; i++) {
+			uint8_t byte = cp.info.Utf8.bytes[i];
+			char c = byte;
+			printf("%c", c);
+		}
+		break;
+	}
 }
 
 void Exhibitor::ShowAllInterfaces(ClassFile* jvm_class){
