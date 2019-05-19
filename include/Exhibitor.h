@@ -20,11 +20,11 @@ public:
 	void ShowConstantPool(ClassFile* jvm_class);
 	void ShowConstantPoolOnFile(ClassFile* jvm_class, FILE* file);
 	void ShowAttribute(ClassFile* jvm_class, attribute_info* attributeInfo);
-	void ShowAttributeOnFile(ClassFile* jvm_class, attribute_info* attributeInfo);
+	void ShowAttributeOnFile(ClassFile* jvm_class, attribute_info* attributeInfo, FILE* file);
 	void ShowAllAttributes(ClassFile* jvm_class);
-	void ShowAllAttributesOnFile(ClassFile* jvm_class);
+	void ShowAllAttributesOnFile(ClassFile* jvm_class, FILE* file);
 	void ShowFields(ClassFile* jvm_class);
-	void ShowFieldsOnFile(ClassFile* jvm_class);
+	void ShowFieldsOnFile(ClassFile* jvm_class, FILE* file);
 	void ShowInterface(CpInfo cp);
 	void ShowInterfaceOnFile(ClassFile* jvm_class, CpInfo cp, FILE* file);
 	void ShowAllInterfaces(ClassFile* jvm_class);

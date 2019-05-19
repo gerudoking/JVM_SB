@@ -23,8 +23,8 @@ void Exhibitor::ShowInfo(ClassFile* jvm_class){
     printf("|-> Major: %d\n", jvm_class->major_version);
     printf("|-> Constant Pool Count: %d\n", jvm_class->constant_pool_count);
     printf("|-> Access Flags: 0x%x\n", jvm_class->access_flags);
-    printf("|-> This.class: <%s>, |CP={%d}|\n", className, jvm_class->this_class);
-    printf("|-> Super.class: <%s>, |CP={%d}|\n", superClassName, jvm_class->super_class);
+    printf("|-> This.class: %s, |CP={%d}|\n", className, jvm_class->this_class);
+    printf("|-> Super.class: %s, |CP={%d}|\n", superClassName, jvm_class->super_class);
     printf("|-> Interface Count: %d\n", jvm_class->interfaces_count);
     printf("|-> Field Count: %d\n", jvm_class->fields_count);
     printf("|-> Method Count: %d\n", jvm_class->methods_count);
@@ -45,8 +45,8 @@ void Exhibitor::ShowInfoOnFile(ClassFile* jvm_class, FILE* file){
 	fprintf(file, "|-> Major: %d\n", jvm_class->major_version);
 	fprintf(file, "|-> Constant Pool Count: %d\n", jvm_class->constant_pool_count);
 	fprintf(file, "|-> Access Flags: 0x%x\n", jvm_class->access_flags);
-	fprintf(file, "|-> This.class: <%s>, |CP={%d}|\n", className, jvm_class->this_class);
-	fprintf(file, "|-> Super.class: <%s>, |CP={%d}|\n", superClassName, jvm_class->super_class);
+	fprintf(file, "|-> This.class: %s, |CP={%d}|\n", className, jvm_class->this_class);
+	fprintf(file, "|-> Super.class: %s, |CP={%d}|\n", superClassName, jvm_class->super_class);
 	fprintf(file, "|-> Interface Counter: %d\n", jvm_class->interfaces_count);
 	fprintf(file, "|-> Field Counter: %d\n", jvm_class->fields_count);
 	fprintf(file, "|-> Method Counter: %d\n", jvm_class->methods_count);
@@ -83,7 +83,7 @@ void Exhibitor::ShowConstantPool(ClassFile* jvm_class)
 				index = jvm_class->constant_pool[i].info.Class.name_index - 1;
 				reference_name = NameInfo(jvm_class, index);
 				printf("{%d} const_class:\n", (i + 1));
-				printf("jvm_class = <%s>, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Class.name_index);
+				printf("jvm_class = %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Class.name_index);
 				break;
 
 			case CONSTANTFieldref:
@@ -91,7 +91,7 @@ void Exhibitor::ShowConstantPool(ClassFile* jvm_class)
 				index = jvm_class->constant_pool[index].info.Class.name_index - 1;
 				reference_name = NameInfo(jvm_class, index);
 				printf("{%d} const_ref_field:\n", (i + 1));
-				printf("jvm_class: <%s>, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Fieldref.class_index);
+				printf("jvm_class: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Fieldref.class_index);
 				index = jvm_class->constant_pool[i].info.Fieldref.name_and_type_index - 1;
 				reference_name = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.name_index - 1);
 				reference_name2 = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.descriptor_index - 1);
@@ -103,7 +103,7 @@ void Exhibitor::ShowConstantPool(ClassFile* jvm_class)
 				index = jvm_class->constant_pool[index].info.Class.name_index - 1;
 				reference_name = NameInfo(jvm_class, index);
 				printf("{%d} cont_ref_method:\n", (i + 1));
-				printf("jvm_class: <%s>, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Methodref.class_index);
+				printf("jvm_class: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Methodref.class_index);
 				index = jvm_class->constant_pool[i].info.Fieldref.name_and_type_index - 1;
 				reference_name = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.name_index - 1);
 				reference_name2 = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.descriptor_index - 1);
@@ -119,15 +119,15 @@ void Exhibitor::ShowConstantPool(ClassFile* jvm_class)
 				reference_name3 = NameInfo(jvm_class, index);
 				reference_name2 = strcat(reference_name2, reference_name3);
 				printf("{%d} const_interface_ref_method:\n", (i + 1));
-				printf("jvm_class: <%s>, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.InterfaceMethodref.class_index);
-				printf("TypeAndName: <%s>, |CP={%d}|\n", reference_name2, jvm_class->constant_pool[i].info.InterfaceMethodref.name_and_type_index);
+				printf("jvm_class: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.InterfaceMethodref.class_index);
+				printf("TypeAndName: %s, |CP={%d}|\n", reference_name2, jvm_class->constant_pool[i].info.InterfaceMethodref.name_and_type_index);
 				break;
 
 			case CONSTANTString:
 				index = jvm_class->constant_pool[i].info.String.string_index - 1;
 				reference_name = NameInfo(jvm_class, index);
 				printf("{%d} const_string:\n", (i + 1));
-				printf("string: <%s>, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.String.string_index);
+				printf("string: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.String.string_index);
 				break;
 
 			case CONSTANTInteger:
@@ -172,8 +172,8 @@ void Exhibitor::ShowConstantPool(ClassFile* jvm_class)
 				index = jvm_class->constant_pool[i].info.NameAndType.descriptor_index - 1;
 				reference_name2 = NameInfo(jvm_class, index);
 				printf("{%d} const_typeandname:\n", (i + 1));
-				printf("Name: <%s>, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.NameAndType.name_index);
-				printf("Descriptor: <%s>, |CP={%d}|\n", reference_name2, jvm_class->constant_pool[i].info.NameAndType.descriptor_index);
+				printf("Name: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.NameAndType.name_index);
+				printf("Descriptor: %s, |CP={%d}|\n", reference_name2, jvm_class->constant_pool[i].info.NameAndType.descriptor_index);
 				break;
 
 			case CONSTANTUtf8:
@@ -219,7 +219,7 @@ void Exhibitor::ShowConstantPoolOnFile(ClassFile* jvm_class, FILE* file)
 				index = jvm_class->constant_pool[i].info.Class.name_index - 1;
 				reference_name = NameInfo(jvm_class, index);
 				fprintf(file, "{%d} const_class:\n", (i + 1));
-				fprintf(file, "jvm_class = <%s>, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Class.name_index);
+				fprintf(file, "jvm_class = %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Class.name_index);
 				break;
 
 			case CONSTANTFieldref:
@@ -227,7 +227,7 @@ void Exhibitor::ShowConstantPoolOnFile(ClassFile* jvm_class, FILE* file)
 				index = jvm_class->constant_pool[index].info.Class.name_index - 1;
 				reference_name = NameInfo(jvm_class, index);
 				fprintf(file, "{%d} const_ref_field:\n", (i + 1));
-				fprintf(file, "jvm_class: <%s>, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Fieldref.class_index);
+				fprintf(file, "jvm_class: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Fieldref.class_index);
 				index = jvm_class->constant_pool[i].info.Fieldref.name_and_type_index - 1;
 				reference_name = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.name_index - 1);
 				reference_name2 = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.descriptor_index - 1);
@@ -239,7 +239,7 @@ void Exhibitor::ShowConstantPoolOnFile(ClassFile* jvm_class, FILE* file)
 				index = jvm_class->constant_pool[index].info.Class.name_index - 1;
 				reference_name = NameInfo(jvm_class, index);
 				fprintf(file, "{%d} cont_ref_method:\n", (i + 1));
-				fprintf(file, "jvm_class: <%s>, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Methodref.class_index);
+				fprintf(file, "jvm_class: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Methodref.class_index);
 				index = jvm_class->constant_pool[i].info.Fieldref.name_and_type_index - 1;
 				reference_name = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.name_index - 1);
 				reference_name2 = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.descriptor_index - 1);
@@ -255,15 +255,15 @@ void Exhibitor::ShowConstantPoolOnFile(ClassFile* jvm_class, FILE* file)
 				reference_name3 = NameInfo(jvm_class, index);
 				reference_name2 = strcat(reference_name2, reference_name3);
 				fprintf(file, "{%d} const_interface_ref_method:\n", (i + 1));
-				fprintf(file, "jvm_class: <%s>, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.InterfaceMethodref.class_index);
-				fprintf(file, "TypeAndName: <%s>, |CP={%d}|\n", reference_name2, jvm_class->constant_pool[i].info.InterfaceMethodref.name_and_type_index);
+				fprintf(file, "jvm_class: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.InterfaceMethodref.class_index);
+				fprintf(file, "TypeAndName: %s, |CP={%d}|\n", reference_name2, jvm_class->constant_pool[i].info.InterfaceMethodref.name_and_type_index);
 				break;
 
 			case CONSTANTString:
 				index = jvm_class->constant_pool[i].info.String.string_index - 1;
 				reference_name = NameInfo(jvm_class, index);
 				fprintf(file, "{%d} const_string:\n", (i + 1));
-				fprintf(file, "string: <%s>, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.String.string_index);
+				fprintf(file, "string: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.String.string_index);
 				break;
 
 			case CONSTANTInteger:
@@ -308,8 +308,8 @@ void Exhibitor::ShowConstantPoolOnFile(ClassFile* jvm_class, FILE* file)
 				index = jvm_class->constant_pool[i].info.NameAndType.descriptor_index - 1;
 				reference_name2 = NameInfo(jvm_class, index);
 				fprintf(file, "{%d} const_typeandname:\n", (i + 1));
-				fprintf(file, "Name: <%s>, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.NameAndType.name_index);
-				fprintf(file, "Descriptor: <%s>, |CP={%d}|\n", reference_name2, jvm_class->constant_pool[i].info.NameAndType.descriptor_index);
+				fprintf(file, "Name: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.NameAndType.name_index);
+				fprintf(file, "Descriptor: %s, |CP={%d}|\n", reference_name2, jvm_class->constant_pool[i].info.NameAndType.descriptor_index);
 				break;
 
 			case CONSTANTUtf8:
@@ -330,28 +330,110 @@ void Exhibitor::ShowConstantPoolOnFile(ClassFile* jvm_class, FILE* file)
     free(reference_name3);
 }
 
-void Exhibitor::ShowAttribute(ClassFile* jvm_class, attribute_info* attributeInfo){
+void Exhibitor::ShowAttribute(ClassFile* jvm_class, attribute_info* attributeInfo)
+{
 
 }
 
-void Exhibitor::ShowAttributeOnFile(ClassFile* jvm_class, attribute_info* attributeInfo){
+void Exhibitor::ShowAttributeOnFile(ClassFile* jvm_class, attribute_info* attributeInfo, FILE *file)
+{
 
 }
 
-void Exhibitor::ShowAllAttributes(ClassFile* jvm_class){
+void Exhibitor::ShowAllAttributes(ClassFile* jvm_class)
+{
 
 }
 
-void Exhibitor::ShowAllAttributesOnFile(ClassFile* jvm_class){
+void Exhibitor::ShowAllAttributesOnFile(ClassFile* jvm_class, FILE *file)
+{
 
 }
 
-void Exhibitor::ShowFields(ClassFile* jvm_class){
+void Exhibitor::ShowFields(ClassFile* jvm_class)
+{
+    printf("\n########## FIELDS ##########\n");
+    printf("fields_count: %d\n", jvm_class->fields_count);
 
+    for(int i = 0; i < jvm_class->fields_count; i++)
+	{
+		char *reference_name = NULL;
+		char *reference_name2 = NULL;
+        int index = 0;
+
+		printf("\n===> ");
+        printf("{%d} ", i);
+        for (int j = 0; j < jvm_class->constant_pool[jvm_class->fields[i].name_index - 1].info.Utf8.length; j++)
+            printf("%c", jvm_class->constant_pool[jvm_class->fields[i].name_index - 1].info.Utf8.bytes[j]);
+        printf("\n");
+        
+		index = jvm_class->fields[i].name_index - 1;
+        reference_name = NameInfo(jvm_class, index);
+
+        index = jvm_class->fields[i].descriptor_index - 1;
+        reference_name2 = NameInfo(jvm_class, index);
+        
+        printf("Name Index = %s, |CP={%d}|\n", reference_name, jvm_class->fields[i].name_index);
+        printf("Descriptor Index = %s, |CP={%d}|\n", reference_name2, jvm_class->fields[i].descriptor_index);
+        printf("access_flags = %d\n", jvm_class->fields[i].access_flags);
+		printf("attributes_count = %d\n", jvm_class->fields[i].attributes_count);
+        
+		for(int j = 0; j < jvm_class->fields[i].attributes_count; j++)
+		{
+			printf("\n===> ");
+            printf("{%d} ", j);
+            for(int k = 0; k < jvm_class->constant_pool[jvm_class->fields[i].attributes[j].attribute_name_index - 1].info.Utf8.length; k++)
+                printf("%c", jvm_class->constant_pool[jvm_class->fields[i].attributes[j].attribute_name_index - 1].info.Utf8.bytes[k]);
+            printf("\n");
+            ShowAttribute(jvm_class, &jvm_class->fields[i].attributes[j]);
+        }
+
+		free(reference_name);
+        free(reference_name2);
+    }
 }
 
-void Exhibitor::ShowFieldsOnFile(ClassFile* jvm_class){
+void Exhibitor::ShowFieldsOnFile(ClassFile* jvm_class, FILE *file)
+{
+	fprintf(file, "\n########## FIELDS ##########\n");
+    fprintf(file, "fields_count: %d\n", jvm_class->fields_count);
 
+    for(int i = 0; i < jvm_class->fields_count; i++)
+	{
+		char *reference_name = NULL;
+		char *reference_name2 = NULL;
+        int index = 0;
+
+		fprintf(file, "\n===> ");
+        fprintf(file, "{%d} ", i);
+        for (int j = 0; j < jvm_class->constant_pool[jvm_class->fields[i].name_index - 1].info.Utf8.length; j++)
+            fprintf(file, "%c", jvm_class->constant_pool[jvm_class->fields[i].name_index - 1].info.Utf8.bytes[j]);
+        fprintf(file, "\n");
+        
+		index = jvm_class->fields[i].name_index - 1;
+        reference_name = NameInfo(jvm_class, index);
+
+        index = jvm_class->fields[i].descriptor_index - 1;
+        reference_name2 = NameInfo(jvm_class, index);
+        
+        fprintf(file, "Name Index = %s, |CP={%d}|\n", reference_name, jvm_class->fields[i].name_index);
+        fprintf(file, "Descriptor Index = %s, |CP={%d}|\n", reference_name2, jvm_class->fields[i].descriptor_index);
+        fprintf(file, "access_flags = %d\n", jvm_class->fields[i].access_flags);
+		fprintf(file, "attributes_count = %d\n", jvm_class->fields[i].attributes_count);
+        
+		for(int j = 0; j < jvm_class->fields[i].attributes_count; j++)
+		{
+			fprintf(file, "\n===> ");
+            fprintf(file, "{%d} ", j);
+            for(int k = 0; k < jvm_class->constant_pool[jvm_class->fields[i].attributes[j].attribute_name_index - 1].info.Utf8.length; k++)
+                fprintf(file, "%c", jvm_class->constant_pool[jvm_class->fields[i].attributes[j].attribute_name_index - 1].info.Utf8.bytes[k]);
+            fprintf(file, "\n");
+            ShowAttribute(jvm_class, &jvm_class->fields[i].attributes[j]);
+        }
+
+		free(reference_name);
+        free(reference_name2);
+    }
 }
 
 void Exhibitor::ShowInterface(CpInfo cp){
