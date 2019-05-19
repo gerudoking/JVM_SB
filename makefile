@@ -50,7 +50,7 @@ endif
 
 print-% : ;@echo $* = $($*)
 
-debug: DIRECTIVES += -ggdb -O0
+debug: DIRECTIVES += -g -O0
 debug: all
 
 release: DIRECTIVES += -Ofast -mtune=native

@@ -4,6 +4,7 @@
 #include <string.h>
 #include <fstream>
 #include "Structures.h"
+#include "Exhibitor.h"
 
 using namespace std;
 
@@ -14,6 +15,8 @@ public:
 	~Reader();
 
 	int InsertClass(char *filename, ClassFile *jvm_class);
+
+	Exhibitor* exhibitorReader;
 	
 private:
 

@@ -1,6 +1,10 @@
 #include "Reader.h"
+#include "Exhibitor.h"
 
-Reader::Reader() { }
+Reader::Reader()
+{
+    exhibitorReader = new Exhibitor();
+}
 
 Reader::~Reader() { }
 
@@ -24,8 +28,8 @@ int Reader::InsertClass(char *fullFileName, ClassFile *jvm_class)
     char *filePath;
     FILE *fileClass;
 
-	fileName = GetFileName(fullFileName);
     dicName = GetDirectory(fullFileName);
+	fileName = GetFileName(fullFileName);
 
     if(root)
 	{
@@ -39,6 +43,8 @@ int Reader::InsertClass(char *fullFileName, ClassFile *jvm_class)
         strcpy(filePath, dicName);
         strcat(filePath, fileName);
     }
+
+    printf("\nCopiou nome do arquivo!\n");
 
     if(!(fileClass = fopen(filePath, "rb")))
 	{
@@ -54,6 +60,8 @@ int Reader::InsertClass(char *fullFileName, ClassFile *jvm_class)
         }
         free(filePathFallback);
     }
+
+    printf("\nEntre fallback e FillHeader\n");
 
 //--- CHAMA INSERE_CABECALHO DO INSERIDOR.C PARA VERIFICAR SE A VERSÃO DO ARQUIVO.CLASS É COMPATÍVEL.
 
@@ -92,6 +100,9 @@ int Reader::InsertClass(char *fullFileName, ClassFile *jvm_class)
 
     fclose(fileClass);
     free(filePath);
+
+    printf("\nCheguei ao final do InsertClass!\n");
+
     return SUCCESS;
 }
 
@@ -159,6 +170,8 @@ int Reader::CheckFileName(ClassFile *jvm_class, char *name)
     temp[i] = '\0';
     //Descomentar a função abaixo quando uma correspondente for implementada
     //nameThisClass = informacao_nome(index, jvm_class);
+
+    nameThisClass = exhibitorReader->NameInfo(jvm_class, index);
     
 	if(!strcmp(temp, nameThisClass))
     {
@@ -169,6 +182,7 @@ int Reader::CheckFileName(ClassFile *jvm_class, char *name)
 
     free(temp);
     free(nameThisClass);
+    free(exhibitorReader);
     return SUCCESS;
 }
 
@@ -307,8 +321,14 @@ void Reader::FillAttributes(FILE *file, ClassFile *jvm_class)
 {
     jvm_class->attributes_count = ReadU2(file);
     jvm_class->attributes = (attribute_info *) malloc(jvm_class->attributes_count * sizeof(u2));
+    printf("\njvm_class->attributes_count = %d", jvm_class->attributes_count);
+    printf("\n");
     for (int i = 0; i < jvm_class->attributes_count; i++)
+    {
+        printf("\ni = %d\n", i);
         FillAttribute(file, jvm_class, &(jvm_class->attributes[i]));
+    }
+    printf("\nSaiu do for!\n");
 }
 
 void Reader::FillAttribute(FILE *file, ClassFile *jvm_class, attribute_info *attribute)

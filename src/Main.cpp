@@ -9,5 +9,6 @@ int main(int argc, char *argv[])
 	char op = initProgram->StartProgram(argc, argv, mainClass);
 	initProgram->ReadClass(mainClass);
 	
+	free(initProgram);
     return 0;
 }

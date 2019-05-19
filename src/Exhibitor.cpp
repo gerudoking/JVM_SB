@@ -96,8 +96,17 @@ char* Exhibitor::NameInfo(ClassFile* jvm_class, u2 index){
 	return nullptr;
 }
 
-char* Exhibitor::RefFieldInfo(ClassFile* jvm_class, u2 index){
-	return nullptr;
+char* Exhibitor::RefFieldInfo(ClassFile* jvm_class, u2 index)
+{
+    char *name;
+    int i;
+    name = (char *) malloc((jvm_class->constant_pool[index].info.Utf8.length + 1) * sizeof(char));
+    
+    for (i = 0; i < jvm_class->constant_pool[index].info.Utf8.length; i++)
+        name[i] = jvm_class->constant_pool[index].info.Utf8.bytes[i];
+    
+    name[i] = '\0';
+    return name;
 }
 
 char* Exhibitor::MethodInfo(ClassFile* jvm_class, u2 index){

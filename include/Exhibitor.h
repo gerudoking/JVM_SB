@@ -3,6 +3,7 @@
 
 #include "Structures.h"
 #include <cstdio>
+#include <cstdlib>
 
 using namespace std;
 
@@ -29,11 +30,12 @@ public:
 	void ShowMethods(ClassFile* jvm_class);
 	void ShowMethodsOnFile(ClassFile* jvm_class, FILE* file);
 
-private:
-	//void Mnemonics(fazer argumento aqui);
 	char* NameInfo(ClassFile* jvm_class, u2 index);
 	char* RefFieldInfo(ClassFile* jvm_class, u2 index);
 	char* MethodInfo(ClassFile* jvm_class, u2 index);
+
+private:
+	//void Mnemonics(fazer argumento aqui);
 };
 
 #endif
