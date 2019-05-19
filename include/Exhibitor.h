@@ -4,6 +4,7 @@
 #include "Structures.h"
 #include <cstdio>
 #include <cstdlib>
+#include <inttypes.h>
 
 using namespace std;
 

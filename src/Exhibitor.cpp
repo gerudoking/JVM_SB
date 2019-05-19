@@ -77,7 +77,18 @@ void Exhibitor::ShowInterfaceOnFile(ClassFile* jvm_class, CpInfo cp, FILE* file)
 }
 
 void Exhibitor::ShowAllInterfaces(ClassFile* jvm_class){
-
+	printf("\n");
+	printf("===========================");
+	printf("====Interfaces=============");
+	printf("===========================");
+	printf("Interface Counter: %d\n", jvm_class->interfaces_count);
+	for (int i = 0; i < jvm_class->interfaces_count; i++) {
+		printf("\n~~~> ");
+		printf("{%d}: CP={", i);
+		printf("%" PRIu16, jvm_class->interfaces[i]);
+		printf("}\n");
+	}
+	printf("\n");
 }
 
 void Exhibitor::ShowAllInterfacesOnFile(ClassFile* jvm_class, FILE* file){
