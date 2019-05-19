@@ -342,12 +342,24 @@ void Exhibitor::ShowAttributeOnFile(ClassFile* jvm_class, attribute_info* attrib
 
 void Exhibitor::ShowAllAttributes(ClassFile* jvm_class)
 {
-
+    printf("\n\n########## ATTRIBUTES ##########\n");
+    printf("attributes_count = %d\n", jvm_class->attributes_count);
+    for(int i = 0; i < jvm_class->attributes_count; i++)
+	{
+        printf("\n===> {%d} ", i);
+        ShowAttribute(jvm_class, &(jvm_class->attributes[i]));
+    }
 }
 
 void Exhibitor::ShowAllAttributesOnFile(ClassFile* jvm_class, FILE *file)
 {
-
+	fprintf(file, "\n\n########## ATTRIBUTES ##########\n");
+    fprintf(file, "attributes_count = %d\n", jvm_class->attributes_count);
+    for(int i = 0; i < jvm_class->attributes_count; i++)
+	{
+        fprintf(file, "\n===> {%d} ", i);
+        ShowAttributeOnFile(jvm_class, &(jvm_class->attributes[i]), file);
+    }
 }
 
 void Exhibitor::ShowFields(ClassFile* jvm_class)
@@ -361,8 +373,7 @@ void Exhibitor::ShowFields(ClassFile* jvm_class)
 		char *reference_name2 = NULL;
         int index = 0;
 
-		printf("\n===> ");
-        printf("{%d} ", i);
+        printf("\n===> {%d} ", i);
         for (int j = 0; j < jvm_class->constant_pool[jvm_class->fields[i].name_index - 1].info.Utf8.length; j++)
             printf("%c", jvm_class->constant_pool[jvm_class->fields[i].name_index - 1].info.Utf8.bytes[j]);
         printf("\n");
@@ -380,8 +391,7 @@ void Exhibitor::ShowFields(ClassFile* jvm_class)
         
 		for(int j = 0; j < jvm_class->fields[i].attributes_count; j++)
 		{
-			printf("\n===> ");
-            printf("{%d} ", j);
+            printf("\n===> {%d} ", j);
             for(int k = 0; k < jvm_class->constant_pool[jvm_class->fields[i].attributes[j].attribute_name_index - 1].info.Utf8.length; k++)
                 printf("%c", jvm_class->constant_pool[jvm_class->fields[i].attributes[j].attribute_name_index - 1].info.Utf8.bytes[k]);
             printf("\n");
@@ -404,8 +414,7 @@ void Exhibitor::ShowFieldsOnFile(ClassFile* jvm_class, FILE *file)
 		char *reference_name2 = NULL;
         int index = 0;
 
-		fprintf(file, "\n===> ");
-        fprintf(file, "{%d} ", i);
+        fprintf(file, "\n===> {%d} ", i);
         for (int j = 0; j < jvm_class->constant_pool[jvm_class->fields[i].name_index - 1].info.Utf8.length; j++)
             fprintf(file, "%c", jvm_class->constant_pool[jvm_class->fields[i].name_index - 1].info.Utf8.bytes[j]);
         fprintf(file, "\n");
@@ -423,8 +432,7 @@ void Exhibitor::ShowFieldsOnFile(ClassFile* jvm_class, FILE *file)
         
 		for(int j = 0; j < jvm_class->fields[i].attributes_count; j++)
 		{
-			fprintf(file, "\n===> ");
-            fprintf(file, "{%d} ", j);
+            fprintf(file, "\n===> {%d} ", j);
             for(int k = 0; k < jvm_class->constant_pool[jvm_class->fields[i].attributes[j].attribute_name_index - 1].info.Utf8.length; k++)
                 fprintf(file, "%c", jvm_class->constant_pool[jvm_class->fields[i].attributes[j].attribute_name_index - 1].info.Utf8.bytes[k]);
             fprintf(file, "\n");
