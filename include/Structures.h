@@ -14,8 +14,6 @@
 #define MAGIC_ERROR -20
 #define MAGIC_NUMBER 0xCAFEBABE
 
-//--- TAGS
-
 #define CONSTANTClass 7
 #define CONSTANTFieldref 9
 #define CONSTANTMethodref 10
@@ -27,8 +25,6 @@
 #define CONSTANTDouble 6
 #define CONSTANTNameAndType 12
 #define CONSTANTUtf8 1
-
-//--- TAGS DE ATRIBUTOS
 
 #define AT_TAG_Constantvalue 0
 #define AT_TAG_Code 1
@@ -85,7 +81,6 @@ struct Code_attribute{
 	u2 exception_table_length;
 	exception_tab *exception_table;
 	u2 attributes_count;
-	//void **attributes;
 	struct attribute_info *attributes;
 };
 typedef struct Code_attribute Code_attribute;
