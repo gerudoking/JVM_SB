@@ -1,11 +1,23 @@
 #ifndef STRUCTURES_H
 #define STRUCTURES_H
 
+#define SUCCESS 0
+#define FILE_ERROR -10 // File not found
+#define EXECUTION_ERROR -11 // Execution problem
+#define MAIN_ERROR -12 /// Main method not found
+#define MINOR_VERSION 45
+#define MAJOR_VERSION 52
+#define VERSION_ERROR -21
+#define MATCHING_ERROR -22
+#define MAGIC_ERROR -20
+#define MAGIC_NUMBER 0xCAFEBABE
+
 #include <stdint.h>
 
 typedef uint8_t u1;
 typedef uint16_t u2;
 typedef uint32_t u4;
+typedef uint64_t u8;
 
 struct attribute_info{
 	u2 attribute_name_index;
@@ -62,14 +74,14 @@ typedef struct static_struct static_struct;
 struct CONSTANT_Pool_info{
 	u1 tag;
 	u1 *info;
-} 
-typedef struct CONSTANT_Pool_info;
+};
+typedef struct CONSTANT_Pool_info CONSTANT_Pool_info;
 
 struct CONSTANT_Class_info{
 	u1 tag;
 	u2 name_index;
 };
-typedef struct CONSTANT_Pool_info CONSTANT_Pool_info;
+typedef struct CONSTANT_Class_info CONSTANT_Class_info;
 
 struct CONSTANT_Fieldref_info{
 	u1 tag;
@@ -154,6 +166,14 @@ struct ConstantValue_attribute{
 };
 typedef struct ConstantValue_attribute ConstantValue_attribute;
 
+struct exception_table{
+	u2 start_pc;
+	u2 end_pc;
+	u2 handler_pc;
+	u2 catch_type;
+};
+typedef struct exception_table exception_tab;
+
 struct Code_attribute{
 	u2 attribute_name_index;
 	u4 attribute_length;
@@ -185,6 +205,14 @@ struct Exceptions_attribute{
 };
 typedef struct Exceptions_attribute Exceptions_attribute;
 
+struct inner_classes{
+	u2 inner_class_info_index;
+	u2 outer_class_info_index;
+	u2 inner_name_index;
+	u2 inner_class_access_flags;
+};
+typedef struct inner_classes class_tab;
+
 struct InnerClasses_attribute{
 	u2 attribute_name_index;
 	u4 attribute_length;
@@ -193,6 +221,12 @@ struct InnerClasses_attribute{
 	class_tab *classes;
 };
 typedef struct InnerClasses_attribute InnerClasses_attribute;
+
+struct line_number_table{
+	u2 start_pc;
+	u2 line_number;
+};
+typedef struct line_number_table line_number_tab;
 
 struct LineNumberTable_attribute{
 	u2 attribute_name_index;
@@ -235,6 +269,25 @@ struct Synthetic_attribute{
 };
 typedef struct Synthetic_attribute Synthetic_attribute;
 
+struct info{
+    CONSTANT_Class_info Class;
+    CONSTANT_Double_info Double;
+    CONSTANT_Fieldref_info Fieldref;
+    CONSTANT_Float_info Float;
+    CONSTANT_Integer_info Integer;
+    CONSTANT_InterfaceMethodref_info InterfaceMethodref;
+    CONSTANT_Long_info Long;
+    CONSTANT_Methodref_info Methodref;
+    CONSTANT_NameAndType_info NameAndType;
+    CONSTANT_String_info String;
+    CONSTANT_Utf8_info Utf8;
+};
+typedef struct info info;
 
+typedef struct cpinfo{
+	u1 tag;
+	info info;
+};
+typedef struct cpinfo cp_info;
 
 #endif
