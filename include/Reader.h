@@ -12,6 +12,9 @@ class Reader
 public:
 	Reader();
 	~Reader();
+
+	int InsertClass(char *filename, ClassFile *jvm_class);
+	
 private:
 
 	u1 ReadU1(FILE *file);
@@ -22,7 +25,6 @@ private:
 	char *dicName = NULL;
 	char *fileName = NULL;
 
-	int InsertClass(char *filename, ClassFile* jvm_class);
 	char* GetDirectory(char *file);
 	char* GetFileName(char *file);
 	int CheckFileName(ClassFile *jvm_class, char *name);

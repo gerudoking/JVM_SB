@@ -1,12 +1,8 @@
 #include "Reader.h"
 
-Reader::Reader(){
-	
-}
+Reader::Reader() { }
 
-Reader::~Reader(){
-
-}
+Reader::~Reader() { }
 
 u1 Reader::ReadU1(FILE *file)
 {

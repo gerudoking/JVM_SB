@@ -1,7 +1,13 @@
-#include "Reader.h"
+#include "InitProgram.h"
 
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
+	InitProgram* initProgram = new InitProgram();
+
+	ClassFile *mainClass = (ClassFile *) malloc(sizeof(ClassFile));
+
+	char op = initProgram->StartProgram(argc, argv, mainClass);
+	initProgram->ReadClass(mainClass);
 	
-	return 0;
+    return 0;
 }
