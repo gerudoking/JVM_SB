@@ -497,9 +497,56 @@ char* Exhibitor::NameInfo(ClassFile* jvm_class, u2 index)
 
 char* Exhibitor::RefFieldInfo(ClassFile* jvm_class, u2 index)
 {
-    return nullptr;
+    char *method_name;
+	char *class_name;
+	char *name;
+
+	u2 method_index;
+	u2 name_and_type_index;
+	u2 class_index;
+
+    class_index = jvm_class->constant_pool[index].info.Fieldref.class_index - 1;
+    class_index = jvm_class->constant_pool[class_index].info.Class.name_index - 1;
+    name_and_type_index = jvm_class->constant_pool[index].info.Fieldref.name_and_type_index - 1;
+    method_index = jvm_class->constant_pool[name_and_type_index].info.NameAndType.name_index - 1;
+    
+	method_name = NameInfo(jvm_class, method_index);
+	class_name = NameInfo(jvm_class, class_index);
+    name = (char *) malloc((strlen(class_name) + strlen(method_name) + 2) * sizeof(char));
+
+    strcpy(name, class_name);
+    strcat(name, ".");
+    strcat(name, method_name);
+
+    free(class_name);
+    free(method_name);
+    return name;
 }
 
-char* Exhibitor::MethodInfo(ClassFile* jvm_class, u2 index){
-	return nullptr;
+char* Exhibitor::MethodInfo(ClassFile* jvm_class, u2 index)
+{
+	char *method_name;
+	char *class_name;
+	char *name;
+
+	u2 method_index;
+	u2 name_and_type_index;
+	u2 class_index;
+
+    class_index = jvm_class->constant_pool[index].info.Methodref.class_index - 1;
+    class_index = jvm_class->constant_pool[class_index].info.Class.name_index - 1;
+    name_and_type_index = jvm_class->constant_pool[index].info.Methodref.name_and_type_index - 1;
+    method_index = jvm_class->constant_pool[name_and_type_index].info.NameAndType.name_index - 1;
+
+    method_name = NameInfo(jvm_class, method_index);
+	class_name = NameInfo(jvm_class, class_index);
+    name = (char *) malloc((strlen(class_name) + strlen(method_name) + 2) * sizeof(char));
+
+    strcpy(name, class_name);
+    strcat(name, ".");
+    strcat(name, method_name);
+
+    free(class_name);
+    free(method_name);
+    return name;
 }
