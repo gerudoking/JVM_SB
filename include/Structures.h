@@ -85,7 +85,8 @@ struct Code_attribute{
 	u2 exception_table_length;
 	exception_tab *exception_table;
 	u2 attributes_count;
-	void **attributes;
+	//void **attributes;
+	struct attribute_info *attributes;
 };
 typedef struct Code_attribute Code_attribute;
 
@@ -158,7 +159,8 @@ struct attribute_info{
 	u2 attribute_name_index;
 	u4 attribute_length;
 	u1 tag;
-	union{
+	union
+	{
         ConstantValue_attribute ConstantValue;
         Code_attribute CodeAttribute;
         Exceptions_attribute Exception;
@@ -268,7 +270,7 @@ struct CONSTANT_Double_info{
 };
 typedef struct CONSTANT_Double_info CONSTANT_Double_info;
 
-struct info{
+struct info_struct{
     CONSTANT_Class_info Class;
     CONSTANT_Double_info Double;
     CONSTANT_Fieldref_info Fieldref;
@@ -281,11 +283,11 @@ struct info{
     CONSTANT_String_info String;
     CONSTANT_Utf8_info Utf8;
 };
-typedef struct info info;
+typedef struct info_struct info;
 
 struct CpInfo{
 	u1 tag;
-	info info;
+	info_struct info;
 };
 typedef struct CpInfo CpInfo;
 

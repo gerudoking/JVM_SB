@@ -347,13 +347,16 @@ void Reader::FillAttribute(FILE *file, ClassFile *jvm_class, attribute_info *att
         u2 exception_table_length;
         attribute->info.CodeAttribute.exception_table_length = ReadU2(file);
         exception_table_length = attribute->info.CodeAttribute.exception_table_length;
-        attribute->info.CodeAttribute.exception_table = (struct et *) malloc(exception_table_length * sizeof(struct et));
-        for (int i = 0; i < exception_table_length; i++){
+        attribute->info.CodeAttribute.exception_table = (struct exception_tab *) malloc(exception_table_length * sizeof(struct exception_tab));
+        
+        for (int i = 0; i < exception_table_length; i++)
+        {
             attribute->info.CodeAttribute.exception_table[i].start_pc = ReadU2(file);
             attribute->info.CodeAttribute.exception_table[i].end_pc = ReadU2(file);
             attribute->info.CodeAttribute.exception_table[i].handler_pc = ReadU2(file);
             attribute->info.CodeAttribute.exception_table[i].catch_type = ReadU2(file);
         }
+
         u2 attributes_count;
         attribute->info.CodeAttribute.attributes_count = ReadU2(file);
         attributes_count = attribute->info.CodeAttribute.attributes_count;
@@ -361,7 +364,9 @@ void Reader::FillAttribute(FILE *file, ClassFile *jvm_class, attribute_info *att
         for (int k = 0; k < attributes_count; k++)
             FillAttribute(file, jvm_class, attribute->info.CodeAttribute.attributes);
         attribute->tag = AT_TAG_Code;
-    }else if (!strcmp(attributeType, "Exceptions")){
+    }
+    else if (!strcmp(attributeType, "Exceptions"))
+    {
         u2 number_of_exceptions;
         attribute->info.Exception.number_of_exceptions = ReadU2(file);
         number_of_exceptions = attribute->info.Exception.number_of_exceptions;
@@ -369,37 +374,51 @@ void Reader::FillAttribute(FILE *file, ClassFile *jvm_class, attribute_info *att
         for (int i = 0; i < number_of_exceptions; i++)
             attribute->info.Exception.exception_index_table[i] = ReadU2(file);
         attribute->tag = AT_TAG_Exception;
-    }else if (!strcmp(attributeType, "InnerClasses")){
+    }
+    else if (!strcmp(attributeType, "InnerClasses"))
+    {
         u2 number_of_classes;
         attribute->info.InnerClasses.number_of_classes = ReadU2(file);
         number_of_classes = attribute->info.InnerClasses.number_of_classes;
-        attribute->info.InnerClasses.classes = (struct ic *) malloc(number_of_classes * sizeof(struct ic));
-        for (int i = 0; i < number_of_classes; i++){
+        attribute->info.InnerClasses.classes = (struct inner_classes *) malloc(number_of_classes * sizeof(struct inner_classes));
+        
+        for (int i = 0; i < number_of_classes; i++)
+        {
             attribute->info.InnerClasses.classes[i].inner_class_info_index = ReadU2(file);
             attribute->info.InnerClasses.classes[i].outer_class_info_index = ReadU2(file);
             attribute->info.InnerClasses.classes[i].inner_name_index = ReadU2(file);
             attribute->info.InnerClasses.classes[i].inner_class_access_flags = ReadU2(file);
         }
         attribute->tag = AT_TAG_Innerclasses;
-    }else if (!strcmp(attributeType, "SourceFile")){
+    }
+    else if (!strcmp(attributeType, "SourceFile"))
+    {
         attribute->info.Sourcefile.sourcefile_index = ReadU2(file);
         attribute->tag = AT_TAG_Sourcefile;
-    }else if (!strcmp(attributeType, "LineNumberTable")){
+    }
+    else if (!strcmp(attributeType, "LineNumberTable"))
+    {
         attribute->info.LineNumberTable.line_number_table_length = ReadU2(file);
         u2 attribute_tamanho = attribute->info.LineNumberTable.line_number_table_length;
-        attribute->info.LineNumberTable.line_number_table = (struct lnt *) malloc(attribute_tamanho * sizeof(struct lnt));
-        for (int i = 0; i < attribute_tamanho; i++){
+        attribute->info.LineNumberTable.line_number_table = (struct line_number_table *) malloc(attribute_tamanho * sizeof(struct line_number_table));
+        
+        for (int i = 0; i < attribute_tamanho; i++)
+        {
             attribute->info.LineNumberTable.line_number_table[i].start_pc = ReadU2(file);
             attribute->info.LineNumberTable.line_number_table[i].line_number = ReadU2(file);
         }
         attribute->tag = AT_TAG_Linenumbertable;
-    }else if (!strcmp(attributeType, "LocalVariableTable")){
+    }
+    else if (!strcmp(attributeType, "LocalVariableTable"))
+    {
         u2 local_variable_table_length;
         attribute->info.LocalVariableTable.local_variable_table_length = ReadU2(file);
         local_variable_table_length = attribute->info.LocalVariableTable.local_variable_table_length;
-        attribute->info.LocalVariableTable.local_variable_table = (struct lvt *) malloc(
-                    local_variable_table_length * sizeof(struct lvt *));
-        for (int i = 0; i < local_variable_table_length; i++){
+        attribute->info.LocalVariableTable.local_variable_table = (struct local_variable *) malloc(
+                    local_variable_table_length * sizeof(struct local_variable *));
+        
+        for (int i = 0; i < local_variable_table_length; i++)
+        {
             attribute->info.LocalVariableTable.local_variable_table[i].start_pc = ReadU2(file);
             attribute->info.LocalVariableTable.local_variable_table[i].length = ReadU2(file);
             attribute->info.LocalVariableTable.local_variable_table[i].name_index = ReadU2(file);
@@ -407,7 +426,9 @@ void Reader::FillAttribute(FILE *file, ClassFile *jvm_class, attribute_info *att
             attribute->info.LocalVariableTable.local_variable_table[i].index = ReadU2(file);
         }
         attribute->tag = AT_TAG_Localvariabletable;
-    }else{
+    }
+    else
+    {
         attribute->info.Default.data = (u1 *) malloc(attribute_length * sizeof(u1));
         for (int i = 0; i < attribute_length; i++){
             attribute->info.Default.data[i] = ReadU1(file);
