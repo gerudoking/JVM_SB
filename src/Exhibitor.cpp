@@ -9,7 +9,27 @@ Exhibitor::~Exhibitor(){
 }
 
 void Exhibitor::ShowInfo(ClassFile* jvm_class){
+	char *className, *superClassName;
+    int index = jvm_class->constant_pool[jvm_class->this_class - 1].info.Class.name_index - 1;
+    className = NameInfo(jvm_class, index);
+    index = jvm_class->constant_pool[jvm_class->super_class - 1].info.Class.name_index - 1;
+    superClassName = NameInfo(jvm_class, index);
 
+    printf("\n");
+    printf("===========================");
+    printf("========Class File=========");
+    printf("===========================");
+    printf("|-> Minor: %d\n", jvm_class->minor_version);
+    printf("|-> Major: %d\n", jvm_class->major_version);
+    printf("|-> Constant Pool Count: %d\n", jvm_class->constant_pool_count);
+    printf("|-> Access Flags: 0x%x\n", jvm_class->access_flags);
+    printf("|-> This.class: <%s>, |CP={%d}|\n", className, jvm_class->this_class);
+    printf("|-> Super.class: <%s>, |CP={%d}|\n", superClassName, jvm_class->super_class);
+    printf("|-> Interface Count: %d\n", jvm_class->interfaces_count);
+    printf("|-> Field Count: %d\n", jvm_class->fields_count);
+    printf("|-> Method Count: %d\n", jvm_class->methods_count);
+    printf("|-> Attribute Count: %d\n", jvm_class->attributes_count);
+	printf("===========================\n");
 }
 
 void Exhibitor::ShowInfoOnFile(ClassFile* jvm_class, FILE* file){
@@ -72,14 +92,14 @@ void Exhibitor::ShowMethodsOnFile(ClassFile* jvm_class, FILE* file){
 
 }
 
-void Exhibitor::NameInfo(ClassFile* jvm_class, u2 index){
-
+char* Exhibitor::NameInfo(ClassFile* jvm_class, u2 index){
+	return nullptr;
 }
 
-void Exhibitor::RefFieldInfo(ClassFile* jvm_class, u2 index){
-
+char* Exhibitor::RefFieldInfo(ClassFile* jvm_class, u2 index){
+	return nullptr;
 }
 
-void Exhibitor::MethodInfo(ClassFile* jvm_class, u2 index){
-
+char* Exhibitor::MethodInfo(ClassFile* jvm_class, u2 index){
+	return nullptr;
 }

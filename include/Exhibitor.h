@@ -28,10 +28,12 @@ public:
 	void ShowAllInterfacesOnFile(ClassFile* jvm_class, FILE* file);
 	void ShowMethods(ClassFile* jvm_class);
 	void ShowMethodsOnFile(ClassFile* jvm_class, FILE* file);
-	//void ShowMnemonics(fazer argumento aqui);
-	void NameInfo(ClassFile* jvm_class, u2 index);
-	void RefFieldInfo(ClassFile* jvm_class, u2 index);
-	void MethodInfo(ClassFile* jvm_class, u2 index);
+
+private:
+	//void Mnemonics(fazer argumento aqui);
+	char* NameInfo(ClassFile* jvm_class, u2 index);
+	char* RefFieldInfo(ClassFile* jvm_class, u2 index);
+	char* MethodInfo(ClassFile* jvm_class, u2 index);
 };
 
 #endif
