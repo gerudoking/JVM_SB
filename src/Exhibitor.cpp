@@ -1256,7 +1256,33 @@ void Exhibitor::ShowAllInterfacesOnFile(ClassFile* jvm_class, FILE* file){
 }
 
 void Exhibitor::ShowMethods(ClassFile* jvm_class){
+	 printf("\n");
+    printf("\n");
+    printf("<---------------> Metodos <--------------->\n");
+    printf("Contador de metodos: %d\n", jvm_class->methods_count);
 
+    for (int i = 0; i < jvm_class->methods_count; i++){
+        int index = 0;
+        char *name_ref = NULL;
+		printf("\n~~~> ");
+        printf("{%d} ", i);
+        for (int j = 0; j < jvm_class->constant_pool[jvm_class->methods[i].name_index - 1].info.Utf8.length; j++)
+            printf("%c", jvm_class->constant_pool[jvm_class->methods[i].name_index - 1].info.Utf8.bytes[j]);
+        printf("\n");
+        index = jvm_class->methods[i].name_index - 1;
+        name_ref = NameInfo(index,jvm_class);
+        printf("nome: <%s>, |CP={%d}|\n", name_ref, jvm_class->methods[i].name_index);
+        index = jvm_class->methods[i].descriptor_index - 1;
+        name_ref = NameInfo(index,jvm_class);
+        printf("descritor: <%s>, |CP={%d}|\n", name_ref, jvm_class->methods[i].descriptor_index);
+        printf("flags de acesso: 0x%x\n", jvm_class->methods[i].access_flags);
+        printf("contador dos atributos: %d\n", jvm_class->methods[i].attributes_count);
+        for (int j = 0; j < jvm_class->methods[i].attributes_count; j++){
+			printf("\n~~~~~> ");
+            printf("{{%d}} ", j);
+            mostra_atributo(&(jvm_class->methods[i].attributes[j]), jvm_class);
+        }
+    }
 }
 
 void Exhibitor::ShowMethodsOnFile(ClassFile* jvm_class, FILE* file){

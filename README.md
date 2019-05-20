@@ -9,6 +9,7 @@ Projetado por:
 * Ana Luisa Salvador Alvarez (nalualvarez) - 16/0048036
 * Iago Lobo Ribeiro de Moraes (IagoLobo) - 14/0082921
 * Luan Mendes Gonçalves Freitas (luanfreitas5) - 15/0015585
+* Miguel Barreto Rezende Marques de Freitas (MiguelbrmFreitas) - 12/0130424
 
 ## Como compilar
 
