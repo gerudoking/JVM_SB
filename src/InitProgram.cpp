@@ -12,8 +12,6 @@ char InitProgram::StartProgram(int args_size, char **argv, ClassFile * jvm_class
     strcpy(className, argv[1]);
 }
 
-//------------------------------------ FUNÇÃO QUE LÊ DO .CLASS E CRIA O CLASSFILE
-
 int InitProgram::ReadClass(ClassFile* jvm_class)
 {
     printf("\nReading class...\n");

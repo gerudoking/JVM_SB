@@ -40,6 +40,13 @@ typedef uint16_t u2;
 typedef uint32_t u4;
 typedef uint64_t u8;
 
+typedef struct instruction{
+    char            mnemonic[20];
+    int             operators;
+    int             req_cp;
+};
+typedef struct instruction Instruction;
+
 struct exception_tab{
 	u2 start_pc;
 	u2 end_pc;

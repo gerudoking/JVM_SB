@@ -65,8 +65,6 @@ int Reader::InsertClass(char *fullFileName, ClassFile *jvm_class)
 
     printf("\nEntre fallback e FillHeader\n");
 
-//--- CHAMA INSERE_CABECALHO DO INSERIDOR.C PARA VERIFICAR SE A VERSÃO DO ARQUIVO.CLASS É COMPATÍVEL.
-
     switch(FillHeader(fileClass, jvm_class))
 	{
     	case MAGIC_ERROR:
@@ -170,8 +168,6 @@ int Reader::CheckFileName(ClassFile *jvm_class, char *name)
     }
     i++;
     temp[i] = '\0';
-    //Descomentar a função abaixo quando uma correspondente for implementada
-    //nameThisClass = informacao_nome(index, jvm_class);
 
     nameThisClass = exhibitorReader->NameInfo(jvm_class, index);
 

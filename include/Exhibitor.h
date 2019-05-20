@@ -37,7 +37,7 @@ public:
 	char* MethodInfo(ClassFile* jvm_class, u2 index);
 
 private:
-	//void Mnemonics(fazer argumento aqui);
+	void Mnemonics(Instruction *map);
 };
 
 #endif
