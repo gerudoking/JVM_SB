@@ -35,6 +35,15 @@
 #define AT_TAG_Localvariabletable 6
 #define AT_TAG_Default 7
 
+#define REQ_METHODREF_1 61
+#define REQ_METHODREF_2 62
+#define REQ_FIELDREF 63
+#define REQ_LDCREF_1 64
+#define REQ_LDCREF_2 65
+#define REQ_JMPREF 66
+#define REQ_ARRAYREF 67
+#define REQ_IINCREF 68
+
 typedef uint8_t u1;
 typedef uint16_t u2;
 typedef uint32_t u4;

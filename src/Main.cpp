@@ -8,6 +8,8 @@ int main(int argc, char *argv[])
 
 	char op = initProgram->StartProgram(argc, argv, mainClass);
 	initProgram->ReadClass(mainClass);
+
+	initProgram->JVM_Menu(mainClass, initProgram->initProgramFile);
 	
 	free(initProgram);
     return 0;

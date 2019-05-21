@@ -413,21 +413,21 @@ void Exhibitor::ShowAttribute(ClassFile* jvm_class, attribute_info* attributeInf
 				{
                     case REQ_METHODREF_1:
                         instrIndex = attributeInfo->info.CodeAttribute.code[++i];
-                        instrRef = informacoes_metodo(instrIndex - 1, jvm_class);
+                        instrRef = MethodInfo(jvm_class, instrIndex - 1);
                         printf("%s, |CP={%d}|\t", instrRef, instrIndex);
                         break;
                     case REQ_METHODREF_2:
                         instrIndex1 = attributeInfo->info.CodeAttribute.code[++i];
                         instrIndex2 = attributeInfo->info.CodeAttribute.code[++i];
                         instrIndex = (instrIndex2 | (instrIndex1 << 8));
-                        instrRef = informacoes_metodo(instrIndex - 1, jvm_class);
+                        instrRef = MethodInfo(jvm_class, instrIndex - 1);
                         printf("%s, |CP={%d}|\t", instrRef, instrIndex);
                         break;
                     case REQ_FIELDREF:
                         instrIndex1 = attributeInfo->info.CodeAttribute.code[++i];
                         instrIndex2 = attributeInfo->info.CodeAttribute.code[++i];
                         instrIndex = (instrIndex2 | (instrIndex1 << 8));
-                        instrRef = informacoes_camporef(instrIndex - 1, jvm_class);
+                        instrRef = RefFieldInfo(jvm_class, instrIndex - 1);
                         printf("%s, |CP={%d}|\t", instrRef, instrIndex);
                         break;
                     case REQ_JMPREF:
@@ -723,21 +723,21 @@ void Exhibitor::ShowAttributeOnFile(ClassFile* jvm_class, attribute_info* attrib
 				{
                     case REQ_METHODREF_1:
                         instrIndex = attributeInfo->info.CodeAttribute.code[++i];
-                        instrRef = informacoes_metodo(instrIndex - 1, jvm_class);
+                        instrRef = MethodInfo(jvm_class, instrIndex - 1);
                         fprintf(file, "%s, |CP={%d}|\t", instrRef, instrIndex);
                         break;
                     case REQ_METHODREF_2:
                         instrIndex1 = attributeInfo->info.CodeAttribute.code[++i];
                         instrIndex2 = attributeInfo->info.CodeAttribute.code[++i];
                         instrIndex = (instrIndex2 | (instrIndex1 << 8));
-                        instrRef = informacoes_metodo(instrIndex - 1, jvm_class);
+                        instrRef = MethodInfo(jvm_class, instrIndex - 1);
                         fprintf(file, "%s, |CP={%d}|\t", instrRef, instrIndex);
                         break;
                     case REQ_FIELDREF:
                         instrIndex1 = attributeInfo->info.CodeAttribute.code[++i];
                         instrIndex2 = attributeInfo->info.CodeAttribute.code[++i];
                         instrIndex = (instrIndex2 | (instrIndex1 << 8));
-                        instrRef = informacoes_camporef(instrIndex - 1, jvm_class);
+                        instrRef = RefFieldInfo(jvm_class, instrIndex - 1);
                         fprintf(file, "%s, |CP={%d}|\t", instrRef, instrIndex);
                         break;
                     case REQ_JMPREF:
@@ -1259,28 +1259,29 @@ void Exhibitor::ShowMethods(ClassFile* jvm_class){
 	 printf("\n");
     printf("\n");
     printf("<---------------> Metodos <--------------->\n");
-    printf("Contador de metodos: %d\n", jvm_class->methods_count);
+    printf("methods_count = %d\n", jvm_class->methods_count);
 
     for (int i = 0; i < jvm_class->methods_count; i++){
         int index = 0;
         char *name_ref = NULL;
-		printf("\n~~~> ");
+		printf("\n===> ");
         printf("{%d} ", i);
         for (int j = 0; j < jvm_class->constant_pool[jvm_class->methods[i].name_index - 1].info.Utf8.length; j++)
             printf("%c", jvm_class->constant_pool[jvm_class->methods[i].name_index - 1].info.Utf8.bytes[j]);
         printf("\n");
         index = jvm_class->methods[i].name_index - 1;
-        name_ref = NameInfo(index,jvm_class);
-        printf("nome: <%s>, |CP={%d}|\n", name_ref, jvm_class->methods[i].name_index);
+        name_ref = NameInfo(jvm_class, index);
+        printf("Name = %s, |CP={%d}|\n", name_ref, jvm_class->methods[i].name_index);
         index = jvm_class->methods[i].descriptor_index - 1;
-        name_ref = NameInfo(index,jvm_class);
-        printf("descritor: <%s>, |CP={%d}|\n", name_ref, jvm_class->methods[i].descriptor_index);
-        printf("flags de acesso: 0x%x\n", jvm_class->methods[i].access_flags);
-        printf("contador dos atributos: %d\n", jvm_class->methods[i].attributes_count);
-        for (int j = 0; j < jvm_class->methods[i].attributes_count; j++){
-			printf("\n~~~~~> ");
+        name_ref = NameInfo(jvm_class, index);
+        printf("Descritor = %s, |CP={%d}|\n", name_ref, jvm_class->methods[i].descriptor_index);
+        printf("access_flags = 0x%x\n", jvm_class->methods[i].access_flags);
+        printf("attributes_count = %d\n", jvm_class->methods[i].attributes_count);
+        for (int j = 0; j < jvm_class->methods[i].attributes_count; j++)
+        {
+			printf("\n===> ");
             printf("{{%d}} ", j);
-            mostra_atributo(&(jvm_class->methods[i].attributes[j]), jvm_class);
+            ShowAttribute(jvm_class, &(jvm_class->methods[i].attributes[j]));
         }
     }
 }
