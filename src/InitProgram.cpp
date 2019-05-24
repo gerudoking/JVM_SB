@@ -18,115 +18,136 @@ int InitProgram::ReadClass(ClassFile* jvm_class) {
 	return result;
 }
 
+int InitProgram::createFileTXT(ClassFile *jvm_class, FILE* file, char *fileName) {
+	initProgramFile = fopen(fileName, "w");
+	if (!initProgramFile) {
+		printf("File Creation Error\n");
+		free(fileName);
+		return FILE_ERROR;
+	}
+	return SUCCESS;
+}
+
 void InitProgram::JVM_Menu(ClassFile *jvm_class, FILE* file) {
 	initProgramExhibitor = new Exhibitor();
 
-	printf("\n############################\n");
-	printf("###### EXHIBITOR MENU ######\n");
-	printf("############################\n\n");
+	char *fileName, *name;
+	int index = jvm_class->constant_pool[jvm_class->this_class - 1].info.Class.name_index - 1;
+
+	name = initProgramExhibitor->NameInfo(jvm_class, index);
+	fileName = (char *) malloc(sizeof(char) * (strlen(name) + 5));
+
+	strcpy(fileName, name);
+	strcat(fileName, ".txt");
 
 	char op = '-';
 	int shouldLoop = 1;
 
-	while (shouldLoop) {
-		printf("Choose your option: \n\n");
-		printf("a - ShowInfo(ClassFile* jvm_class)\n");
-		printf("b - ShowInfoOnFile(ClassFile* jvm_class, FILE* file)\n");
-		printf("c - ShowConstantPool(ClassFile* jvm_class)\n");
-		printf("d - ShowConstantPoolOnFile(ClassFile* jvm_class, FILE* file)\n");
-		printf("e - ShowAttribute(ClassFile* jvm_class, attribute_info* attributeInfo)\n");
-		printf("f - ShowAttributeOnFile(ClassFile* jvm_class, attribute_info* attributeInfo, FILE* file)\n");
-		printf("g - ShowAllAttributes(ClassFile* jvm_class)\n");
-		printf("h - ShowAllAttributesOnFile(ClassFile* jvm_class, FILE* file)\n");
-		printf("i - ShowFields(ClassFile* jvm_class)\n");
-		printf("j - ShowFieldsOnFile(ClassFile* jvm_class, FILE* file)\n");
-		printf("k - ShowInterface(CpInfo cp)\n");
-		printf("l - ShowInterfaceOnFile(ClassFile* jvm_class, CpInfo cp, FILE* file)\n");
-		printf("m - ShowAllInterfaces(ClassFile* jvm_class)\n");
-		printf("n - ShowAllInterfacesOnFile(ClassFile* jvm_class, FILE* file)\n");
-		printf("o - ShowMethods(ClassFile* jvm_class)\n");
-		printf("p - ShowMethodsOnFile(ClassFile* jvm_class, FILE* file)\n");
-		printf("q - ShowInfo(ClassFile* jvm_class)\n");
-		printf("r - ShowInfo(ClassFile* jvm_class)\n");
-		printf("s - ShowInfo(ClassFile* jvm_class)\n");
+	if (createFileTXT(jvm_class, initProgramFile, fileName) == SUCCESS) {
 
-		scanf("%c", &op);
-		while (getchar() != '\n');
+		printf("\n############################\n");
+		printf("###### EXHIBITOR MENU ######\n");
+		printf("############################\n\n");
 
-		switch (op) {
-		case 'a':
-			shouldLoop = 0;
-			initProgramExhibitor->ShowInfo(jvm_class);
-			break;
-		case 'b':
-			shouldLoop = 0;
-			initProgramExhibitor->ShowInfoOnFile(jvm_class, initProgramFile);
-			break;
-		case 'c':
-			shouldLoop = 0;
-			initProgramExhibitor->ShowConstantPool(jvm_class);
-			break;
-		case 'd':
-			shouldLoop = 0;
-			initProgramExhibitor->ShowConstantPoolOnFile(jvm_class, initProgramFile);
-			break;
-		case 'e':
-			shouldLoop = 0;
-			for (int i = 0; i < jvm_class->attributes_count; i++)
-				initProgramExhibitor->ShowAttribute(jvm_class, &(jvm_class->attributes[i]));
-			break;
-		case 'f':
-			shouldLoop = 0;
-			for (int i = 0; i < jvm_class->attributes_count; i++)
-				initProgramExhibitor->ShowAttributeOnFile(jvm_class, &(jvm_class->attributes[i]), file);
-			break;
-		case 'g':
-			shouldLoop = 0;
-			initProgramExhibitor->ShowAllAttributes(jvm_class);
-			break;
-		case 'h':
-			shouldLoop = 0;
-			initProgramExhibitor->ShowAllAttributesOnFile(jvm_class, file);
-			break;
-		case 'i':
-			shouldLoop = 0;
-			break;
-		case 'j':
-			shouldLoop = 0;
-			break;
-		case 'k':
-			shouldLoop = 0;
-			break;
-		case 'l':
-			shouldLoop = 0;
-			break;
-		case 'm':
-			shouldLoop = 0;
-			break;
-		case 'n':
-			shouldLoop = 0;
-			break;
-		case 'o':
-			shouldLoop = 0;
-			break;
-		case 'p':
-			shouldLoop = 0;
-			break;
-		case 'q':
-			shouldLoop = 0;
-			initProgramExhibitor->ShowInfo(jvm_class);
-			break;
-		case 'r':
-			shouldLoop = 0;
-			initProgramExhibitor->ShowInfo(jvm_class);
-			break;
-		case 's':
-			shouldLoop = 0;
-			initProgramExhibitor->ShowInfo(jvm_class);
-			break;
-		default:
-			shouldLoop = 0;
-			break;
+		while (shouldLoop) {
+
+			printf("Choose your option: \n\n");
+			printf("a - ShowInfo(ClassFile* jvm_class)\n");
+			printf("b - ShowInfoOnFile(ClassFile* jvm_class, FILE* file)\n");
+			printf("c - ShowConstantPool(ClassFile* jvm_class)\n");
+			printf("d - ShowConstantPoolOnFile(ClassFile* jvm_class, FILE* file)\n");
+			printf("e - ShowAttribute(ClassFile* jvm_class, attribute_info* attributeInfo)\n");
+			printf("f - ShowAttributeOnFile(ClassFile* jvm_class, attribute_info* attributeInfo, FILE* file)\n");
+			printf("g - ShowAllAttributes(ClassFile* jvm_class)\n");
+			printf("h - ShowAllAttributesOnFile(ClassFile* jvm_class, FILE* file)\n");
+			printf("i - ShowFields(ClassFile* jvm_class)\n");
+			printf("j - ShowFieldsOnFile(ClassFile* jvm_class, FILE* file)\n");
+			printf("k - ShowInterface(CpInfo cp)\n");
+			printf("l - ShowInterfaceOnFile(ClassFile* jvm_class, CpInfo cp, FILE* file)\n");
+			printf("m - ShowAllInterfaces(ClassFile* jvm_class)\n");
+			printf("n - ShowAllInterfacesOnFile(ClassFile* jvm_class, FILE* file)\n");
+			printf("o - ShowMethods(ClassFile* jvm_class)\n");
+			printf("p - ShowMethodsOnFile(ClassFile* jvm_class, FILE* file)\n");
+
+			scanf("%c", &op);
+			while (getchar() != '\n');
+
+			switch (op) {
+			case 'a':
+				shouldLoop = 0;
+				initProgramExhibitor->ShowInfo(jvm_class);
+				break;
+			case 'b':
+				shouldLoop = 0;
+				initProgramExhibitor->ShowInfoOnFile(jvm_class, initProgramFile);
+				fclose(initProgramFile);
+				printf("File %s created successfully!\n", fileName);
+				break;
+			case 'c':
+				shouldLoop = 0;
+				initProgramExhibitor->ShowConstantPool(jvm_class);
+				break;
+			case 'd':
+				shouldLoop = 0;
+				initProgramExhibitor->ShowConstantPoolOnFile(jvm_class, initProgramFile);
+				fclose(initProgramFile);
+				printf("File %s created successfully!\n", fileName);
+				break;
+			case 'e':
+				shouldLoop = 0;
+				for (int i = 0; i < jvm_class->attributes_count; i++)
+					initProgramExhibitor->ShowAttribute(jvm_class, &(jvm_class->attributes[i]));
+				break;
+			case 'f':
+				shouldLoop = 0;
+				for (int i = 0; i < jvm_class->attributes_count; i++)
+					initProgramExhibitor->ShowAttributeOnFile(jvm_class, &(jvm_class->attributes[i]), initProgramFile);
+				fclose(initProgramFile);
+				printf("File %s created successfully!\n", fileName);
+				break;
+			case 'g':
+				shouldLoop = 0;
+				initProgramExhibitor->ShowAllAttributes(jvm_class);
+				break;
+			case 'h':
+				shouldLoop = 0;
+				initProgramExhibitor->ShowAllAttributesOnFile(jvm_class, initProgramFile);
+				fclose(initProgramFile);
+				printf("File %s created successfully!\n", fileName);
+				break;
+			case 'i':
+				shouldLoop = 0;
+				initProgramExhibitor->ShowFields(jvm_class);
+				break;
+			case 'j':
+				shouldLoop = 0;
+				initProgramExhibitor->ShowFieldsOnFile(jvm_class, initProgramFile);
+				fclose(initProgramFile);
+				printf("File %s created successfully!\n", fileName);
+				break;
+			case 'k':
+				shouldLoop = 0;
+				break;
+			case 'l':
+				shouldLoop = 0;
+				break;
+			case 'm':
+				shouldLoop = 0;
+				break;
+			case 'n':
+				shouldLoop = 0;
+				break;
+			case 'o':
+				shouldLoop = 0;
+				break;
+			case 'p':
+				shouldLoop = 0;
+				break;
+			default:
+				shouldLoop = 0;
+				break;
+			}
 		}
 	}
+	free(fileName);
 }

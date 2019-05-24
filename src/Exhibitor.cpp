@@ -1231,7 +1231,7 @@ void Exhibitor::ShowMethods(ClassFile* jvm_class) {
 		printf("Name = %s, |CP={%d}|\n", name_ref, jvm_class->methods[i].name_index);
 		index = jvm_class->methods[i].descriptor_index - 1;
 		name_ref = NameInfo(jvm_class, index);
-		printf("Descritor = %s, |CP={%d}|\n", name_ref, jvm_class->methods[i].descriptor_index);
+		printf("Descriptor = %s, |CP={%d}|\n", name_ref, jvm_class->methods[i].descriptor_index);
 		printf("access_flags = 0x%x\n", jvm_class->methods[i].access_flags);
 		printf("attributes_count = %d\n", jvm_class->methods[i].attributes_count);
 		for (int j = 0; j < jvm_class->methods[i].attributes_count; j++) {
@@ -1261,7 +1261,7 @@ void Exhibitor::ShowMethodsOnFile(ClassFile* jvm_class, FILE* file) {
 		index = jvm_class->methods[i].descriptor_index - 1;
 		free(name_ref);
 		name_ref = NameInfo(jvm_class, index);
-		fprintf(file, "Descritor: <%s>, |CP={%d}|\n", name_ref, jvm_class->methods[i].descriptor_index);
+		fprintf(file, "Descriptor: <%s>, |CP={%d}|\n", name_ref, jvm_class->methods[i].descriptor_index);
 		fprintf(file, "Access Flags: 0x%x\n", jvm_class->methods[i].access_flags);
 		fprintf(file, "Attribute Counter: %d\n", jvm_class->methods[i].attributes_count);
 		for (int j = 0; j < jvm_class->methods[i].attributes_count; j++) {
