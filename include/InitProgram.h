@@ -7,20 +7,19 @@
 
 using namespace std;
 
-class InitProgram
-{
+class InitProgram {
 public:
 	InitProgram();
 	~InitProgram();
 
-    char className[21];
-    Reader* initProgramReader;
-    Exhibitor* initProgramExhibitor;
-    FILE* initProgramFile;
+	char className[21];
+	Reader* initProgramReader;
+	Exhibitor* initProgramExhibitor;
+	FILE* initProgramFile;
 
-    char StartProgram(int args_size, char **argv, ClassFile * jvm_class);
-    int ReadClass(ClassFile *jvm_class);
-    void JVM_Menu(ClassFile *jvm_class, FILE* file);
+	char StartProgram(int args_size, char **argv, ClassFile * jvm_class);
+	int ReadClass(ClassFile *jvm_class);
+	void JVM_Menu(ClassFile *jvm_class, FILE* file);
 
 private:
 

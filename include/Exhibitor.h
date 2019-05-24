@@ -9,8 +9,7 @@
 
 using namespace std;
 
-class Exhibitor
-{
+class Exhibitor {
 public:
 	Exhibitor();
 	~Exhibitor();

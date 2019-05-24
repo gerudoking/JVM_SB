@@ -1,27 +1,24 @@
 #include "InitProgram.h"
 
-InitProgram::InitProgram()
-{
+InitProgram::InitProgram() {
 	initProgramReader = new Reader();
 }
 
-InitProgram::~InitProgram() { }
-
-char InitProgram::StartProgram(int args_size, char **argv, ClassFile * jvm_class)
-{
-    strcpy(className, argv[1]);
+InitProgram::~InitProgram() {
 }
 
-int InitProgram::ReadClass(ClassFile* jvm_class)
-{
-    printf("\nReading class...\n");
+char InitProgram::StartProgram(int args_size, char **argv, ClassFile * jvm_class) {
+	strcpy(className, argv[1]);
+}
+
+int InitProgram::ReadClass(ClassFile* jvm_class) {
+	printf("\nReading class...\n");
 	int result = initProgramReader->InsertClass(className, jvm_class);
 	free(initProgramReader);
 	return result;
 }
 
-void InitProgram::JVM_Menu(ClassFile *jvm_class, FILE* file)
-{
+void InitProgram::JVM_Menu(ClassFile *jvm_class, FILE* file) {
 	initProgramExhibitor = new Exhibitor();
 
 	printf("\n############################\n");
@@ -31,8 +28,7 @@ void InitProgram::JVM_Menu(ClassFile *jvm_class, FILE* file)
 	char op = '-';
 	int shouldLoop = 1;
 
-	while(shouldLoop)
-	{
+	while (shouldLoop) {
 		printf("Choose your option: \n\n");
 		printf("a - ShowInfo(ClassFile* jvm_class)\n");
 		printf("b - ShowInfoOnFile(ClassFile* jvm_class, FILE* file)\n");
@@ -55,74 +51,82 @@ void InitProgram::JVM_Menu(ClassFile *jvm_class, FILE* file)
 		printf("s - ShowInfo(ClassFile* jvm_class)\n");
 
 		scanf("%c", &op);
-		while(getchar()!='\n');
+		while (getchar() != '\n');
 
-		switch(op)
-		{
-			case 'a':
-				shouldLoop = 0;
-				initProgramExhibitor->ShowInfo(jvm_class);
-				break;
-			case 'b':
-				shouldLoop = 0;
-				initProgramExhibitor->ShowInfoOnFile(jvm_class, initProgramFile);
-				break;
-			case 'c':
-				shouldLoop = 0;
-				initProgramExhibitor->ShowConstantPool(jvm_class);
-				break;
-			case 'd':
-				shouldLoop = 0;
-				initProgramExhibitor->ShowConstantPoolOnFile(jvm_class, initProgramFile);
-				break;
-			case 'e':
-				shouldLoop = 0;
-				break;
-			case 'f':
-				shouldLoop = 0;
-				break;
-			case 'g':
-				shouldLoop = 0;
-				break;
-			case 'h':
-				shouldLoop = 0;
-				break;
-			case 'i':
-				shouldLoop = 0;
-				break;
-			case 'j':
-				shouldLoop = 0;
-				break;
-			case 'k':
-				shouldLoop = 0;
-				break;
-			case 'l':
-				shouldLoop = 0;
-				break;
-			case 'm':
-				shouldLoop = 0;
-				break;
-			case 'n':
-				shouldLoop = 0;
-				break;
-			case 'o':
-				shouldLoop = 0;
-				break;
-			case 'p':
-				shouldLoop = 0;
-				break;
-			case 'q':
-				shouldLoop = 0;
-				break;
-			case 'r':
-				shouldLoop = 0;
-				break;
-			case 's':
-				shouldLoop = 0;
-				break;
-			default:
-				shouldLoop = 0;
-				break;
+		switch (op) {
+		case 'a':
+			shouldLoop = 0;
+			initProgramExhibitor->ShowInfo(jvm_class);
+			break;
+		case 'b':
+			shouldLoop = 0;
+			initProgramExhibitor->ShowInfoOnFile(jvm_class, initProgramFile);
+			break;
+		case 'c':
+			shouldLoop = 0;
+			initProgramExhibitor->ShowConstantPool(jvm_class);
+			break;
+		case 'd':
+			shouldLoop = 0;
+			initProgramExhibitor->ShowConstantPoolOnFile(jvm_class, initProgramFile);
+			break;
+		case 'e':
+			shouldLoop = 0;
+			for (int i = 0; i < jvm_class->attributes_count; i++)
+				initProgramExhibitor->ShowAttribute(jvm_class, &(jvm_class->attributes[i]));
+			break;
+		case 'f':
+			shouldLoop = 0;
+			for (int i = 0; i < jvm_class->attributes_count; i++)
+				initProgramExhibitor->ShowAttributeOnFile(jvm_class, &(jvm_class->attributes[i]), file);
+			break;
+		case 'g':
+			shouldLoop = 0;
+			initProgramExhibitor->ShowAllAttributes(jvm_class);
+			break;
+		case 'h':
+			shouldLoop = 0;
+			initProgramExhibitor->ShowAllAttributesOnFile(jvm_class, file);
+			break;
+		case 'i':
+			shouldLoop = 0;
+			break;
+		case 'j':
+			shouldLoop = 0;
+			break;
+		case 'k':
+			shouldLoop = 0;
+			break;
+		case 'l':
+			shouldLoop = 0;
+			break;
+		case 'm':
+			shouldLoop = 0;
+			break;
+		case 'n':
+			shouldLoop = 0;
+			break;
+		case 'o':
+			shouldLoop = 0;
+			break;
+		case 'p':
+			shouldLoop = 0;
+			break;
+		case 'q':
+			shouldLoop = 0;
+			initProgramExhibitor->ShowInfo(jvm_class);
+			break;
+		case 'r':
+			shouldLoop = 0;
+			initProgramExhibitor->ShowInfo(jvm_class);
+			break;
+		case 's':
+			shouldLoop = 0;
+			initProgramExhibitor->ShowInfo(jvm_class);
+			break;
+		default:
+			shouldLoop = 0;
+			break;
 		}
 	}
 }

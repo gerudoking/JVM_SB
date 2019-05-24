@@ -8,8 +8,7 @@
 
 using namespace std;
 
-class Reader
-{
+class Reader {
 public:
 	Reader();
 	~Reader();
@@ -17,7 +16,7 @@ public:
 	int InsertClass(char *filename, ClassFile *jvm_class);
 
 	Exhibitor* exhibitorReader;
-	
+
 private:
 
 	u1 ReadU1(FILE *file);
