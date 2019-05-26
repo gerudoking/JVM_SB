@@ -326,7 +326,7 @@ void Reader::FillAttribute(FILE *file, ClassFile *jvm_class, attribute_info *att
 		attribute->info.CodeAttribute.code_length = ReadU4(file);
 		code_length = attribute->info.CodeAttribute.code_length;
 		attribute->info.CodeAttribute.code = (u1 *) malloc(code_length * sizeof(u1));
-		for (int i = 0; i < code_length; i++)
+		for (unsigned int i = 0; i < code_length; i++)
 			attribute->info.CodeAttribute.code[i] = ReadU1(file);
 		u2 exception_table_length;
 		attribute->info.CodeAttribute.exception_table_length = ReadU2(file);
@@ -400,7 +400,7 @@ void Reader::FillAttribute(FILE *file, ClassFile *jvm_class, attribute_info *att
 		attribute->tag = AT_TAG_Localvariabletable;
 	} else {
 		attribute->info.Default.data = (u1 *) malloc(attribute_length * sizeof(u1));
-		for (int i = 0; i < attribute_length; i++) {
+		for (unsigned int i = 0; i < attribute_length; i++) {
 			attribute->info.Default.data[i] = ReadU1(file);
 		}
 		attribute->tag = AT_TAG_Default;
