@@ -11,6 +11,6 @@ int main(int argc, char *argv[]) {
 
 	initProgram->JVM_Menu(mainClass);
 
-	free(initProgram);
+	//free(initProgram);
 	return 0;
 }

@@ -428,7 +428,7 @@ void Exhibitor::ShowAttribute(ClassFile* jvm_class, attribute_info* attributeInf
 		reference_name = NameInfo(jvm_class, index);
 		printf("\n\tIndex Name = %s, |CP={%d}|\n", reference_name, attributeInfo->attribute_name_index);
 		printf("\tattribute_length = %d\n", attributeInfo->attribute_length);
-		free(reference_name);
+		////free(reference_name);
 
 		if (attributeInfo->attribute_length > 0) {
 			if (!strcmp(attributeType, "ConstantValue")) {
@@ -628,12 +628,12 @@ void Exhibitor::ShowAttribute(ClassFile* jvm_class, attribute_info* attributeInf
 					index = jvm_class->constant_pool[index].info.Class.name_index - 1;
 					reference_name = NameInfo(jvm_class, index);
 					printf("\tException Index = %s, |CP={%d}|\n", reference_name, attributeInfo->info.Exception.exception_index_table[i]);
-					free(reference_name);
+					//free(reference_name);
 				}
 			} else if (!strcmp(attributeType, "InnerClasses")) {
 				printf("\tnumber_of_classes = %d\n", attributeInfo->info.InnerClasses.number_of_classes);
 				for (int i = 0; i < attributeInfo->info.InnerClasses.number_of_classes; i++) {
-					free(reference_name);
+					//free(reference_name);
 					index = attributeInfo->info.InnerClasses.classes[i].inner_class_info_index - 1;
 					index = jvm_class->constant_pool[index].info.Class.name_index - 1;
 					reference_name = NameInfo(jvm_class, index);
@@ -641,12 +641,12 @@ void Exhibitor::ShowAttribute(ClassFile* jvm_class, attribute_info* attributeInf
 							attributeInfo->info.InnerClasses.classes[i].inner_class_info_index);
 					index = attributeInfo->info.InnerClasses.classes[i].outer_class_info_index - 1;
 					index = jvm_class->constant_pool[index].info.Class.name_index - 1;
-					free(reference_name);
+					//free(reference_name);
 					reference_name = NameInfo(jvm_class, index);
 					printf("\t\touter_class_info_index = %s, |CP={%d}|\n", reference_name,
 							attributeInfo->info.InnerClasses.classes[i].outer_class_info_index);
 					index = attributeInfo->info.InnerClasses.classes[i].inner_class_info_index - 1;
-					free(reference_name);
+					//free(reference_name);
 					reference_name = NameInfo(jvm_class, index);
 					printf("\t\tinner_name_index = %s, |CP={%d}|\n", reference_name,
 							attributeInfo->info.InnerClasses.classes[i].inner_name_index);
@@ -656,7 +656,7 @@ void Exhibitor::ShowAttribute(ClassFile* jvm_class, attribute_info* attributeInf
 				index = attributeInfo->info.Sourcefile.sourcefile_index - 1;
 				reference_name = NameInfo(jvm_class, index);
 				printf("\tsourcefile_index = %s, |CP={%d}|\n", reference_name, attributeInfo->info.Sourcefile.sourcefile_index);
-				free(reference_name);
+				//free(reference_name);
 			} else if (!strcmp(attributeType, "LineNumberTable")) {
 				printf("\tLine Numbers = %d\n", attributeInfo->info.LineNumberTable.line_number_table_length);
 				if (attributeInfo->info.LineNumberTable.line_number_table_length > 0) {
@@ -669,7 +669,7 @@ void Exhibitor::ShowAttribute(ClassFile* jvm_class, attribute_info* attributeInf
 			} else if (!strcmp(attributeType, "LocalVariableTable")) {
 				printf("\tTable Length = %d\n", attributeInfo->info.LocalVariableTable.local_variable_table_length);
 				for (int i = 0; i < attributeInfo->info.LocalVariableTable.local_variable_table_length; i++) {
-					free(reference_name);
+					//free(reference_name);
 					printf("\t\tStart PC = %d\n", attributeInfo->info.LocalVariableTable.local_variable_table[i].start_pc);
 					printf("\t\tLength = %d\n", attributeInfo->info.LocalVariableTable.local_variable_table[i].length);
 					index = attributeInfo->info.LocalVariableTable.local_variable_table[i].name_index - 1;
@@ -677,7 +677,7 @@ void Exhibitor::ShowAttribute(ClassFile* jvm_class, attribute_info* attributeInf
 					printf("\t\tName Index = %s, |CP={%d}|\n", reference_name,
 							attributeInfo->info.LocalVariableTable.local_variable_table[i].name_index);
 					index = attributeInfo->info.LocalVariableTable.local_variable_table[i].descriptor_index - 1;
-					free(reference_name);
+					//free(reference_name);
 					reference_name = NameInfo(jvm_class, index);
 					printf("\t\tDescriptor Index = %s, |CP={%d}|\n", reference_name,
 							attributeInfo->info.LocalVariableTable.local_variable_table[i].descriptor_index);
@@ -716,7 +716,7 @@ void Exhibitor::ShowAttributeOnFile(ClassFile* jvm_class, attribute_info* attrib
 	reference_name = NameInfo(jvm_class, index);
 	fprintf(file, "\n\tIndex Name = %s, |CP={%d}|\n", reference_name, attributeInfo->attribute_name_index);
 	fprintf(file, "\tattribute_length = %d\n", attributeInfo->attribute_length);
-	free(reference_name);
+	//free(reference_name);
 
 	if (attributeInfo->attribute_length > 0) {
 		if (!strcmp(attributeType, "ConstantValue")) {
@@ -918,12 +918,12 @@ void Exhibitor::ShowAttributeOnFile(ClassFile* jvm_class, attribute_info* attrib
 				reference_name = NameInfo(jvm_class, index);
 				fprintf(file, "\tException Index = %s, |CP={%d}|\n", reference_name,
 						attributeInfo->info.Exception.exception_index_table[i]);
-				free(reference_name);
+				//free(reference_name);
 			}
 		} else if (!strcmp(attributeType, "InnerClasses")) {
 			fprintf(file, "\tnumber_of_classes = %d\n", attributeInfo->info.InnerClasses.number_of_classes);
 			for (int i = 0; i < attributeInfo->info.InnerClasses.number_of_classes; i++) {
-				free(reference_name);
+				//free(reference_name);
 				index = attributeInfo->info.InnerClasses.classes[i].inner_class_info_index - 1;
 				index = jvm_class->constant_pool[index].info.Class.name_index - 1;
 				reference_name = NameInfo(jvm_class, index);
@@ -931,12 +931,12 @@ void Exhibitor::ShowAttributeOnFile(ClassFile* jvm_class, attribute_info* attrib
 						attributeInfo->info.InnerClasses.classes[i].inner_class_info_index);
 				index = attributeInfo->info.InnerClasses.classes[i].outer_class_info_index - 1;
 				index = jvm_class->constant_pool[index].info.Class.name_index - 1;
-				free(reference_name);
+				//free(reference_name);
 				reference_name = NameInfo(jvm_class, index);
 				fprintf(file, "\t\touter_class_info_index = %s, |CP={%d}|\n", reference_name,
 						attributeInfo->info.InnerClasses.classes[i].outer_class_info_index);
 				index = attributeInfo->info.InnerClasses.classes[i].inner_class_info_index - 1;
-				free(reference_name);
+				//free(reference_name);
 				reference_name = NameInfo(jvm_class, index);
 				fprintf(file, "\t\tinner_name_index = %s, |CP={%d}|\n", reference_name,
 						attributeInfo->info.InnerClasses.classes[i].inner_name_index);
@@ -946,7 +946,7 @@ void Exhibitor::ShowAttributeOnFile(ClassFile* jvm_class, attribute_info* attrib
 			index = attributeInfo->info.Sourcefile.sourcefile_index - 1;
 			reference_name = NameInfo(jvm_class, index);
 			fprintf(file, "\tsourcefile_index = %s, |CP={%d}|\n", reference_name, attributeInfo->info.Sourcefile.sourcefile_index);
-			free(reference_name);
+			//free(reference_name);
 		} else if (!strcmp(attributeType, "LineNumberTable")) {
 			fprintf(file, "\tLine Numbers = %d\n", attributeInfo->info.LineNumberTable.line_number_table_length);
 			if (attributeInfo->info.LineNumberTable.line_number_table_length > 0) {
@@ -959,7 +959,7 @@ void Exhibitor::ShowAttributeOnFile(ClassFile* jvm_class, attribute_info* attrib
 		} else if (!strcmp(attributeType, "LocalVariableTable")) {
 			fprintf(file, "\tTable Length = %d\n", attributeInfo->info.LocalVariableTable.local_variable_table_length);
 			for (int i = 0; i < attributeInfo->info.LocalVariableTable.local_variable_table_length; i++) {
-				free(reference_name);
+				//free(reference_name);
 				fprintf(file, "\t\tStart PC = %d\n", attributeInfo->info.LocalVariableTable.local_variable_table[i].start_pc);
 				fprintf(file, "\t\tLength = %d\n", attributeInfo->info.LocalVariableTable.local_variable_table[i].length);
 				index = attributeInfo->info.LocalVariableTable.local_variable_table[i].name_index - 1;
@@ -967,7 +967,7 @@ void Exhibitor::ShowAttributeOnFile(ClassFile* jvm_class, attribute_info* attrib
 				fprintf(file, "\t\tName Index = %s, |CP={%d}|\n", reference_name,
 						attributeInfo->info.LocalVariableTable.local_variable_table[i].name_index);
 				index = attributeInfo->info.LocalVariableTable.local_variable_table[i].descriptor_index - 1;
-				free(reference_name);
+				//free(reference_name);
 				reference_name = NameInfo(jvm_class, index);
 				fprintf(file, "\t\tDescriptor Index = %s, |CP={%d}|\n", reference_name,
 						attributeInfo->info.LocalVariableTable.local_variable_table[i].descriptor_index);
