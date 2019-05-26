@@ -5,7 +5,8 @@
 #include <cstdio>
 #include <cstdlib>
 #include <string.h>
-#include <inttypes.h>
+#include <iostream>
+#include <cinttypes>
 
 using namespace std;
 
