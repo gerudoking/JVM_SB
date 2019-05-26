@@ -49,7 +49,7 @@ typedef uint16_t u2;
 typedef uint32_t u4;
 typedef uint64_t u8;
 
-typedef struct instruction {
+struct instruction {
 	char mnemonic[20];
 	int operators;
 	int req_cp;
