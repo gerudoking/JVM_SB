@@ -16,9 +16,9 @@ void Exhibitor::ShowInfo(ClassFile* jvm_class) {
 	superClassName = NameInfo(jvm_class, index);
 
 	printf("\n");
-	printf("##############################");
-	printf("######### Class File #########");
-	printf("##############################");
+	printf("##############################\n");
+	printf("######### Class File #########\n");
+	printf("##############################\n");
 	printf("|-> Minor: %d\n", jvm_class->minor_version);
 	printf("|-> Major: %d\n", jvm_class->major_version);
 	printf("|-> Constant Pool Count: %d\n", jvm_class->constant_pool_count);
@@ -432,7 +432,7 @@ void Exhibitor::ShowAttribute(ClassFile* jvm_class, attribute_info* attributeInf
 				case CONSTANTLong:
 					longTemp = (u8) jvm_class->constant_pool[index].info.Long.high_bytes << 32
 							| jvm_class->constant_pool[index].info.Long.low_bytes;
-					printf("\nconstantvalue_index = %ld, |CP={%d}|", longTemp, attributeInfo->info.ConstantValue.constantvalue_index);
+					printf("\nconstantvalue_index = %llu, |CP={%d}|", longTemp, attributeInfo->info.ConstantValue.constantvalue_index);
 					break;
 
 				case CONSTANTFloat:
@@ -509,7 +509,7 @@ void Exhibitor::ShowAttribute(ClassFile* jvm_class, attribute_info* attributeInf
 						case CONSTANTLong:
 							longTemp = (u8) jvm_class->constant_pool[instrIndex].info.Long.high_bytes << 32;
 							longTemp = longTemp | jvm_class->constant_pool[instrIndex].info.Long.low_bytes;
-							printf("%ld\t", longTemp);
+							printf("%llu\t", longTemp);
 							break;
 						case CONSTANTDouble:
 							longTemp = (u8) jvm_class->constant_pool[instrIndex].info.Double.high_bytes << 32;
@@ -535,7 +535,7 @@ void Exhibitor::ShowAttribute(ClassFile* jvm_class, attribute_info* attributeInf
 						case CONSTANTLong:
 							longTemp = (u8) jvm_class->constant_pool[instrIndex].info.Long.high_bytes << 32;
 							longTemp = longTemp | jvm_class->constant_pool[instrIndex].info.Long.low_bytes;
-							printf("%ld\t", longTemp);
+							printf("%llu\t", longTemp);
 							break;
 						case CONSTANTDouble:
 							longTemp = (u8) jvm_class->constant_pool[instrIndex].info.Double.high_bytes << 32;
@@ -673,7 +673,7 @@ void Exhibitor::ShowAttribute(ClassFile* jvm_class, attribute_info* attributeInf
 				}
 			} else {
 				printf("\tDefault: \t");
-				for (int i = 0; i < attributeInfo->attribute_length; i++)
+				for (unsigned int i = 0; i < attributeInfo->attribute_length; i++)
 					printf("\t%x", attributeInfo->info.Default.data[i]);
 				printf("\n");
 			}
@@ -720,7 +720,7 @@ void Exhibitor::ShowAttributeOnFile(ClassFile* jvm_class, attribute_info* attrib
 			case CONSTANTLong:
 				longTemp = (u8) jvm_class->constant_pool[index].info.Long.high_bytes << 32
 						| jvm_class->constant_pool[index].info.Long.low_bytes;
-				fprintf(file, "\nconstantvalue_index = %ld, |CP={%d}|", longTemp, attributeInfo->info.ConstantValue.constantvalue_index);
+				fprintf(file, "\nconstantvalue_index = %llu, |CP={%d}|", longTemp, attributeInfo->info.ConstantValue.constantvalue_index);
 				break;
 
 			case CONSTANTFloat:
@@ -798,7 +798,7 @@ void Exhibitor::ShowAttributeOnFile(ClassFile* jvm_class, attribute_info* attrib
 					case CONSTANTLong:
 						longTemp = (u8) jvm_class->constant_pool[instrIndex].info.Long.high_bytes << 32;
 						longTemp = longTemp | jvm_class->constant_pool[instrIndex].info.Long.low_bytes;
-						fprintf(file, "%ld\t", longTemp);
+						fprintf(file, "%llu\t", longTemp);
 						break;
 					case CONSTANTDouble:
 						longTemp = (u8) jvm_class->constant_pool[instrIndex].info.Double.high_bytes << 32;
@@ -824,7 +824,7 @@ void Exhibitor::ShowAttributeOnFile(ClassFile* jvm_class, attribute_info* attrib
 					case CONSTANTLong:
 						longTemp = (u8) jvm_class->constant_pool[instrIndex].info.Long.high_bytes << 32;
 						longTemp = longTemp | jvm_class->constant_pool[instrIndex].info.Long.low_bytes;
-						fprintf(file, "%ld\t", longTemp);
+						fprintf(file, "%llu\t", longTemp);
 						break;
 					case CONSTANTDouble:
 						longTemp = (u8) jvm_class->constant_pool[instrIndex].info.Double.high_bytes << 32;
