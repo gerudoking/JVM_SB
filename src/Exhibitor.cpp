@@ -1072,79 +1072,79 @@ void Exhibitor::ShowInterface(CpInfo *cp) {
 	switch (cp->tag) {
 	case CONSTANTClass:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp->info.Class.tag);
+		printf("%d \n", cp->info.Class.tag);
 		printf("Index Name: ");
-		printf("%" PRIu16 "\n", cp->info.Class.name_index);
+		printf("%d \n", cp->info.Class.name_index);
 		break;
 	case CONSTANTFieldref:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp->info.Fieldref.tag);
+		printf("%d \n", cp->info.Fieldref.tag);
 		printf("Index Class: ");
-		printf("%" PRIu16 "\n", cp->info.Fieldref.class_index);
+		printf("%d \n", cp->info.Fieldref.class_index);
 		printf("Index Name and Type: ");
-		printf("%" PRIu16 "\n", cp->info.Fieldref.name_and_type_index);
+		printf("%d \n", cp->info.Fieldref.name_and_type_index);
 		break;
 	case CONSTANTMethodref:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp->info.Methodref.tag);
+		printf("%d \n", cp->info.Methodref.tag);
 		printf("Index Class: ");
-		printf("%" PRIu16 "\n", cp->info.Methodref.class_index);
+		printf("%d \n", cp->info.Methodref.class_index);
 		printf("Index Name and Type: ");
-		printf("%" PRIu16 "\n", cp->info.Methodref.name_and_type_index);
+		printf("%d \n", cp->info.Methodref.name_and_type_index);
 		break;
 	case CONSTANTInterfaceMethodref:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp->info.InterfaceMethodref.tag);
+		printf("%d \n", cp->info.InterfaceMethodref.tag);
 		printf("Index Class: ");
-		printf("%" PRIu16 "\n", cp->info.InterfaceMethodref.class_index);
+		printf("%d \n", cp->info.InterfaceMethodref.class_index);
 		printf("Index Name and Type: ");
-		printf("%" PRIu16 "\n", cp->info.InterfaceMethodref.name_and_type_index);
+		printf("%d \n", cp->info.InterfaceMethodref.name_and_type_index);
 		break;
 	case CONSTANTString:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp->info.String.tag);
+		printf("%d \n", cp->info.String.tag);
 		printf("Index String: ");
-		printf("%" PRIu16 "\n", cp->info.String.string_index);
+		printf("%d \n", cp->info.String.string_index);
 		break;
 	case CONSTANTInteger:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp->info.Integer.tag);
+		printf("%d \n", cp->info.Integer.tag);
 		printf("Bytes: ");
-		printf("%" PRIu32 "\n", cp->info.Integer.bytes);
+		printf("%d \n", cp->info.Integer.bytes);
 		break;
 	case CONSTANTFloat:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp->info.Float.tag);
+		printf("%d \n", cp->info.Float.tag);
 		printf("Bytes: ");
-		printf("%" PRIu32 "\n", cp->info.Float.bytes);
+		printf("%d \n", cp->info.Float.bytes);
 		break;
 	case CONSTANTLong:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp->info.Long.tag);
+		printf("%d \n", cp->info.Long.tag);
 		printf("High Bytes: ");
-		printf("%" PRIu32 "\n", cp->info.Long.high_bytes);
+		printf("%d \n", cp->info.Long.high_bytes);
 		printf("Low Bytes Bytes: ");
-		printf("%" PRIu32 "\n", cp->info.Long.low_bytes);
+		printf("%d \n", cp->info.Long.low_bytes);
 		break;
 	case CONSTANTDouble:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp->info.Double.tag);
+		printf("%d \n", cp->info.Double.tag);
 		printf("High Bytes: ");
-		printf("%" PRIu32 "\n", cp->info.Double.high_bytes);
+		printf("%d \n", cp->info.Double.high_bytes);
 		printf("Low Bytes Bytes: ");
-		printf("%" PRIu32 "\n", cp->info.Double.low_bytes);
+		printf("%d \n", cp->info.Double.low_bytes);
 		break;
 	case CONSTANTNameAndType:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp->info.NameAndType.tag);
+		printf("%d \n", cp->info.NameAndType.tag);
 		printf("Index Name: ");
-		printf("%" PRIu16 "\n", cp->info.NameAndType.name_index);
+		printf("%d \n", cp->info.NameAndType.name_index);
 		printf("Index Descriptor: ");
-		printf("%" PRIu16 "\n", cp->info.NameAndType.descriptor_index);
+		printf("%d \n", cp->info.NameAndType.descriptor_index);
 		break;
 	case CONSTANTUtf8:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp->info.Utf8.tag);
+		printf("%d \n", cp->info.Utf8.tag);
 		for (int i = 0; i < cp->info.Utf8.length; i++) {
 			uint8_t byte = cp->info.Utf8.bytes[i];
 			char c = byte;
@@ -1158,79 +1158,79 @@ void Exhibitor::ShowInterfaceOnFile(CpInfo *cp, FILE* file) {
 	switch (cp->tag) {
 	case CONSTANTClass:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp->info.Class.tag);
+		fprintf(file, "%d \n", cp->info.Class.tag);
 		fprintf(file, "Index Name: ");
-		fprintf(file, "%" PRIu16 "\n", cp->info.Class.name_index);
+		fprintf(file, "%d \n", cp->info.Class.name_index);
 		break;
 	case CONSTANTFieldref:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp->info.Fieldref.tag);
+		fprintf(file, "%d \n", cp->info.Fieldref.tag);
 		fprintf(file, "Index Class: ");
-		fprintf(file, "%" PRIu16 "\n", cp->info.Fieldref.class_index);
+		fprintf(file, "%d \n", cp->info.Fieldref.class_index);
 		fprintf(file, "Index Name and Type: ");
-		fprintf(file, "%" PRIu16 "\n", cp->info.Fieldref.name_and_type_index);
+		fprintf(file, "%d \n", cp->info.Fieldref.name_and_type_index);
 		break;
 	case CONSTANTMethodref:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp->info.Methodref.tag);
+		fprintf(file, "%d \n", cp->info.Methodref.tag);
 		fprintf(file, "Index Class: ");
-		fprintf(file, "%" PRIu16 "\n", cp->info.Methodref.class_index);
+		fprintf(file, "%d \n", cp->info.Methodref.class_index);
 		fprintf(file, "Index Name and Type: ");
-		fprintf(file, "%" PRIu16 "\n", cp->info.Methodref.name_and_type_index);
+		fprintf(file, "%d \n", cp->info.Methodref.name_and_type_index);
 		break;
 	case CONSTANTInterfaceMethodref:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp->info.InterfaceMethodref.tag);
+		fprintf(file, "%d \n", cp->info.InterfaceMethodref.tag);
 		fprintf(file, "Index Class: ");
-		fprintf(file, "%" PRIu16 "\n", cp->info.InterfaceMethodref.class_index);
+		fprintf(file, "%d \n", cp->info.InterfaceMethodref.class_index);
 		fprintf(file, "Index Name and Type: ");
-		fprintf(file, "%" PRIu16 "\n", cp->info.InterfaceMethodref.name_and_type_index);
+		fprintf(file, "%d \n", cp->info.InterfaceMethodref.name_and_type_index);
 		break;
 	case CONSTANTString:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp->info.String.tag);
+		fprintf(file, "%d \n", cp->info.String.tag);
 		fprintf(file, "Index String: ");
-		fprintf(file, "%" PRIu16 "\n", cp->info.String.string_index);
+		fprintf(file, "%d \n", cp->info.String.string_index);
 		break;
 	case CONSTANTInteger:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp->info.Integer.tag);
+		fprintf(file, "%d \n", cp->info.Integer.tag);
 		fprintf(file, "Bytes: ");
-		fprintf(file, "%" PRIu32 "\n", cp->info.Integer.bytes);
+		fprintf(file, "%d \n", cp->info.Integer.bytes);
 		break;
 	case CONSTANTFloat:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp->info.Float.tag);
+		fprintf(file, "%d \n", cp->info.Float.tag);
 		fprintf(file, "Bytes: ");
-		fprintf(file, "%" PRIu32 "\n", cp->info.Float.bytes);
+		fprintf(file, "%d \n", cp->info.Float.bytes);
 		break;
 	case CONSTANTLong:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp->info.Long.tag);
+		fprintf(file, "%d \n", cp->info.Long.tag);
 		fprintf(file, "High Bytes: ");
-		fprintf(file, "%" PRIu32 "\n", cp->info.Long.high_bytes);
+		fprintf(file, "%d \n", cp->info.Long.high_bytes);
 		fprintf(file, "Low Bytes Bytes: ");
-		fprintf(file, "%" PRIu32 "\n", cp->info.Long.low_bytes);
+		fprintf(file, "%d \n", cp->info.Long.low_bytes);
 		break;
 	case CONSTANTDouble:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp->info.Double.tag);
+		fprintf(file, "%d \n", cp->info.Double.tag);
 		fprintf(file, "High Bytes: ");
-		fprintf(file, "%" PRIu32 "\n", cp->info.Double.high_bytes);
+		fprintf(file, "%d \n", cp->info.Double.high_bytes);
 		fprintf(file, "Low Bytes Bytes: ");
-		fprintf(file, "%" PRIu32 "\n", cp->info.Double.low_bytes);
+		fprintf(file, "%d \n", cp->info.Double.low_bytes);
 		break;
 	case CONSTANTNameAndType:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp->info.NameAndType.tag);
+		fprintf(file, "%d \n", cp->info.NameAndType.tag);
 		fprintf(file, "Index Name: ");
-		fprintf(file, "%" PRIu16 "\n", cp->info.NameAndType.name_index);
+		fprintf(file, "%d \n", cp->info.NameAndType.name_index);
 		fprintf(file, "Index Descriptor: ");
-		fprintf(file, "%" PRIu16 "\n", cp->info.NameAndType.descriptor_index);
+		fprintf(file, "%d \n", cp->info.NameAndType.descriptor_index);
 		break;
 	case CONSTANTUtf8:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp->info.Utf8.tag);
+		fprintf(file, "%d \n", cp->info.Utf8.tag);
 		for (int i = 0; i < cp->info.Utf8.length; i++) {
 			uint8_t byte = cp->info.Utf8.bytes[i];
 			char c = byte;
@@ -1249,7 +1249,7 @@ void Exhibitor::ShowAllInterfaces(ClassFile* jvm_class) {
 	for (int i = 0; i < jvm_class->interfaces_count; i++) {
 		printf("\n~~~> ");
 		printf("{%d}: CP={", i);
-		printf("%" PRIu16, jvm_class->interfaces[i]);
+		printf("%d", jvm_class->interfaces[i]);
 		printf("}\n");
 	}
 	printf("\n");
@@ -1264,7 +1264,7 @@ void Exhibitor::ShowAllInterfacesOnFile(ClassFile* jvm_class, FILE* file) {
 	for (int i = 0; i < jvm_class->interfaces_count; i++) {
 		fprintf(file, "\n~~~> ");
 		fprintf(file, "{%d}: CP={", i);
-		fprintf(file, "%" PRIu16, jvm_class->interfaces[i]);
+		fprintf(file, "%d", jvm_class->interfaces[i]);
 		fprintf(file, "}\n");
 	}
 	fprintf(file, "\n");
