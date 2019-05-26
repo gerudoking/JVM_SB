@@ -1256,7 +1256,7 @@ void Exhibitor::ShowAllInterfaces(ClassFile* jvm_class) {
 	printf("\n");
 	printf("##############################");
 	printf("######### Interfaces #########");
-	printf("##############################");
+	printf("##############################\n");
 	printf("Interface Counter: %d\n", jvm_class->interfaces_count);
 	for (int i = 0; i < jvm_class->interfaces_count; i++) {
 		printf("\n~~~> ");
@@ -1271,7 +1271,7 @@ void Exhibitor::ShowAllInterfacesOnFile(ClassFile* jvm_class, FILE* file) {
 	printf("\n");
 	printf("##############################");
 	printf("######### Interfaces #########");
-	printf("##############################");
+	printf("##############################\n");
 	fprintf(file, "Interface Counter: %d\n", jvm_class->interfaces_count);
 	for (int i = 0; i < jvm_class->interfaces_count; i++) {
 		fprintf(file, "\n~~~> ");

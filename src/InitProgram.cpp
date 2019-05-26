@@ -187,6 +187,7 @@ void InitProgram::JVM_Menu(ClassFile *jvm_class) {
 			case 'l':
 				shouldLoop = 0;
 				initProgramExhibitor->ShowInterfaceOnFile(jvm_class->constant_pool, initProgramFile);
+				printf("File %s created successfully!\n", fileName);
 				printf("Pressione enter para continuar\n");
 				while (getchar() != '\n');;
 				break;
@@ -199,20 +200,20 @@ void InitProgram::JVM_Menu(ClassFile *jvm_class) {
 			case 'n':
 				shouldLoop = 0;
 				initProgramExhibitor->ShowAllInterfacesOnFile(jvm_class, initProgramFile);
+				printf("File %s created successfully!\n", fileName);
 				printf("Pressione enter para continuar\n");
 				while (getchar() != '\n');;
 				break;
 			case 'o':
 				shouldLoop = 0;
 				initProgramExhibitor->ShowMethods(jvm_class);
-				printf("Função com erro\n");
 				printf("Pressione enter para continuar\n");
 				while (getchar() != '\n');
 				break;
 			case 'p':
 				shouldLoop = 0;
 				initProgramExhibitor->ShowMethodsOnFile(jvm_class, initProgramFile);
-				printf("Função com erro\n");
+				printf("File %s created successfully!\n", fileName);
 				printf("Pressione enter para continuar\n");
 				while (getchar() != '\n');
 				break;
