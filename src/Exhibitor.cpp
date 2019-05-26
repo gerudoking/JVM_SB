@@ -78,7 +78,8 @@ void Exhibitor::ShowConstantPool(ClassFile* jvm_class) {
 		case CONSTANTClass:
 			index = jvm_class->constant_pool[i].info.Class.name_index - 1;
 			if (index < 0) {
-				printf("Index com valor negativo - CONSTANTClass - ShowConstantPool\n");
+				printf("");
+				//printf("Index com valor negativo - CONSTANTClass - ShowConstantPool\n");
 			} else {
 				reference_name = NameInfo(jvm_class, index);
 				printf("{%d} const_class:\n", (i + 1));
@@ -90,7 +91,8 @@ void Exhibitor::ShowConstantPool(ClassFile* jvm_class) {
 			index = jvm_class->constant_pool[i].info.Fieldref.class_index - 1;
 			index = jvm_class->constant_pool[index].info.Class.name_index - 1;
 			if (index < 0) {
-				printf("Index com valor negativo - CONSTANTFieldref - ShowConstantPool\n");
+				printf("");
+				//printf("Index com valor negativo - CONSTANTFieldref - ShowConstantPool\n");
 			} else {
 				reference_name = NameInfo(jvm_class, index);
 				printf("{%d} const_ref_field:\n", (i + 1));
@@ -108,7 +110,8 @@ void Exhibitor::ShowConstantPool(ClassFile* jvm_class) {
 			index = jvm_class->constant_pool[index].info.Class.name_index - 1;
 			//erro de indice
 			if (index < 0) {
-				printf("Index com valor negativo - CONSTANTMethodref - ShowConstantPool\n");
+				printf("");
+				//printf("Index com valor negativo - CONSTANTMethodref - ShowConstantPool\n");
 			} else {
 				reference_name = NameInfo(jvm_class, index);
 				printf("{%d} cont_ref_method:\n", (i + 1));
@@ -125,7 +128,8 @@ void Exhibitor::ShowConstantPool(ClassFile* jvm_class) {
 			index = jvm_class->constant_pool[jvm_class->constant_pool[i].info.InterfaceMethodref.class_index - 1].info.Class.name_index - 1;
 			reference_name = NameInfo(jvm_class, index);
 			if (index < 0) {
-				printf("Index com valor negativo - CONSTANTInterfaceMethodref - ShowConstantPool\n");
+				printf("");
+				//printf("Index com valor negativo - CONSTANTInterfaceMethodref - ShowConstantPool\n");
 			} else {
 				index =
 						jvm_class->constant_pool[jvm_class->constant_pool[i].info.InterfaceMethodref.name_and_type_index - 1].info.NameAndType.name_index
@@ -146,7 +150,8 @@ void Exhibitor::ShowConstantPool(ClassFile* jvm_class) {
 		case CONSTANTString:
 			index = jvm_class->constant_pool[i].info.String.string_index - 1;
 			if (index < 0) {
-				printf("Index com valor negativo - CONSTANTString - ShowConstantPool\n");
+				printf("");
+				//printf("Index com valor negativo - CONSTANTString - ShowConstantPool\n");
 			} else {
 				reference_name = NameInfo(jvm_class, index);
 				printf("{%d} const_string:\n", (i + 1));
@@ -193,7 +198,8 @@ void Exhibitor::ShowConstantPool(ClassFile* jvm_class) {
 		case CONSTANTNameAndType:
 			index = jvm_class->constant_pool[i].info.NameAndType.name_index - 1;
 			if (index < 0) {
-				printf("Index com valor negativo - CONSTANTNameAndType - ShowConstantPool\n");
+				printf("");
+				//printf("Index com valor negativo - CONSTANTNameAndType - ShowConstantPool\n");
 			} else {
 				reference_name = NameInfo(jvm_class, index);
 				index = jvm_class->constant_pool[i].info.NameAndType.descriptor_index - 1;
@@ -243,7 +249,8 @@ void Exhibitor::ShowConstantPoolOnFile(ClassFile* jvm_class, FILE* file) {
 		case CONSTANTClass:
 			index = jvm_class->constant_pool[i].info.Class.name_index - 1;
 			if (index < 0) {
-				printf("Index com valor negativo - CONSTANTClass - ShowConstantPoolOnFile\n");
+				printf("");
+				//printf("Index com valor negativo - CONSTANTClass - ShowConstantPoolOnFile\n");
 			} else {
 				reference_name = NameInfo(jvm_class, index);
 				fprintf(file, "{%d} const_class:\n", (i + 1));
@@ -255,7 +262,8 @@ void Exhibitor::ShowConstantPoolOnFile(ClassFile* jvm_class, FILE* file) {
 			index = jvm_class->constant_pool[i].info.Fieldref.class_index - 1;
 			index = jvm_class->constant_pool[index].info.Class.name_index - 1;
 			if (index < 0) {
-				printf("Index com valor negativo - CONSTANTFieldref - ShowConstantPoolOnFile\n");
+				printf("");
+				//printf("Index com valor negativo - CONSTANTFieldref - ShowConstantPoolOnFile\n");
 			} else {
 				reference_name = NameInfo(jvm_class, index);
 				fprintf(file, "{%d} const_ref_field:\n", (i + 1));
@@ -273,7 +281,8 @@ void Exhibitor::ShowConstantPoolOnFile(ClassFile* jvm_class, FILE* file) {
 			index = jvm_class->constant_pool[index].info.Class.name_index - 1;
 			//erro de indice 1
 			if (index < 0) {
-				printf("Index com valor negativo - CONSTANTMethodref - ShowConstantPoolOnFile\n");
+				printf("");
+				//printf("Index com valor negativo - CONSTANTMethodref - ShowConstantPoolOnFile\n");
 			} else {
 				reference_name = NameInfo(jvm_class, index);
 				fprintf(file, "{%d} cont_ref_method:\n", (i + 1));
@@ -291,7 +300,8 @@ void Exhibitor::ShowConstantPoolOnFile(ClassFile* jvm_class, FILE* file) {
 			index = jvm_class->constant_pool[jvm_class->constant_pool[i].info.InterfaceMethodref.class_index - 1].info.Class.name_index - 1;
 			reference_name = NameInfo(jvm_class, index);
 			if (index < 0) {
-				printf("Index com valor negativo - CONSTANTInterfaceMethodref - ShowConstantPoolOnFile\n");
+				printf("");
+				//printf("Index com valor negativo - CONSTANTInterfaceMethodref - ShowConstantPoolOnFile\n");
 			} else {
 				index =
 						jvm_class->constant_pool[jvm_class->constant_pool[i].info.InterfaceMethodref.name_and_type_index - 1].info.NameAndType.name_index
@@ -313,7 +323,8 @@ void Exhibitor::ShowConstantPoolOnFile(ClassFile* jvm_class, FILE* file) {
 		case CONSTANTString:
 			index = jvm_class->constant_pool[i].info.String.string_index - 1;
 			if (index < 0) {
-				printf("Index com valor negativo - CONSTANTString - ShowConstantPoolOnFile\n");
+				printf("");
+				//printf("Index com valor negativo - CONSTANTString - ShowConstantPoolOnFile\n");
 			} else {
 				reference_name = NameInfo(jvm_class, index);
 				fprintf(file, "{%d} const_string:\n", (i + 1));
@@ -410,7 +421,8 @@ void Exhibitor::ShowAttribute(ClassFile* jvm_class, attribute_info* attributeInf
 	index = attributeInfo->attribute_name_index - 1;
 	//erro de indice 2
 	if (index < 0) {
-		printf("Index com valor negativo - CONSTANTNameAndType - ShowAttribute\n");
+		printf("");
+		//printf("Index com valor negativo - CONSTANTNameAndType - ShowAttribute\n");
 	} else {
 
 		reference_name = NameInfo(jvm_class, index);

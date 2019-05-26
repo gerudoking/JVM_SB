@@ -143,6 +143,109 @@ String: (I)V
 ########## FIELDS ##########
 fields_count: 0
 
+########### Methods ###########
+Method Counter: 	3
+
+~~~> {0} <init>
+Name: <<init>>, |CP={9}|
+Descriptor: <()V>, |CP={10}|
+Access Flags: 0x1
+Attribute Counter: 1
+
+~~~~~> {{0}} Code
+	Index Name = Code, |CP={11}|
+	attribute_length = 29
+	### OTHER DATA ###
+	max_stack = 1
+	max_locals = 1
+	code_length = 5
+	Code: 
+			0: aload_0	
+			1: invokespecial	java/lang/Object.<init>, |CP={1}|	
+			4: return	
+
+	exception_table_length = 0
+	Code's attributes_count = 1
+	{0} LineNumberTable
+	Index Name = LineNumberTable, |CP={12}|
+	attribute_length = 6
+	Line Numbers = 1
+
+	Start PC	Line Number
+		0: 0		2
+
+~~~> {1} main
+Name: <main>, |CP={13}|
+Descriptor: <([Ljava/lang/String;)V>, |CP={14}|
+Access Flags: 0x9
+Attribute Counter: 1
+
+~~~~~> {{0}} Code
+	Index Name = Code, |CP={11}|
+	attribute_length = 53
+	### OTHER DATA ###
+	max_stack = 2
+	max_locals = 4
+	code_length = 17
+	Code: 
+			0: iconst_3	
+			1: istore_1	
+			2: iconst_2	
+			3: istore_2	
+			4: new	0	2	
+			7: dup	
+			8: invokespecial	TesteB.<init>, |CP={3}|	
+			11: astore_3	
+			12: aload_3	
+			13: invokevirtual	TesteB.teste, |CP={4}|	
+			16: return	
+
+	exception_table_length = 0
+	Code's attributes_count = 1
+	{0} LineNumberTable
+	Index Name = LineNumberTable, |CP={12}|
+	attribute_length = 18
+	Line Numbers = 4
+
+	Start PC	Line Number
+		0: 0		4
+		1: 4		7
+		2: 12		8
+		3: 16		9
+
+~~~> {2} ok
+Name: <ok>, |CP={15}|
+Descriptor: <()V>, |CP={10}|
+Access Flags: 0x2
+Attribute Counter: 1
+
+~~~~~> {{0}} Code
+	Index Name = Code, |CP={11}|
+	attribute_length = 43
+	### OTHER DATA ###
+	max_stack = 2
+	max_locals = 2
+	code_length = 11
+	Code: 
+			0: bipush	50	
+			2: istore_1	
+			3: getstatic	java/lang/System.out, |CP={5}|	
+			6: iload_1	
+			7: invokevirtual	java/io/PrintStream.print, |CP={6}|	
+			10: return	
+
+	exception_table_length = 0
+	Code's attributes_count = 1
+	{0} LineNumberTable
+	Index Name = LineNumberTable, |CP={12}|
+	attribute_length = 14
+	Line Numbers = 3
+
+	Start PC	Line Number
+		0: 0		11
+		1: 3		12
+		2: 10		13
+
 
 ########## ATTRIBUTES ##########
 attributes_count = 1
@@ -151,9 +254,9 @@ attributes_count = 1
 	Index Name = SourceFile, |CP={16}|
 	attribute_length = 2
 	sourcefile_index = Teste.java, |CP={17}|
-Tag: 10
-Index Class: 8
-Index Name and Type: 18
+Tag: 10 
+Index Class: 8 
+Index Name and Type: 18 
 ############ Informations ############|-> Minor: 0
 |-> Major: 55
 |-> Constant Pool Count: 34

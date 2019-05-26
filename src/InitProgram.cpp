@@ -88,7 +88,7 @@ void InitProgram::JVM_Menu(ClassFile *jvm_class) {
 				shouldLoop = 0;
 				initProgramExhibitor->ShowConstantPool(jvm_class);
 				initProgramExhibitor->ShowFields(jvm_class);
-				//initProgramExhibitor->ShowMethods(jvm_class); erro de indice
+				initProgramExhibitor->ShowMethods(jvm_class); 
 				initProgramExhibitor->ShowAllAttributes(jvm_class);
 				initProgramExhibitor->ShowInterface(jvm_class->constant_pool);
 				initProgramExhibitor->ShowInfo(jvm_class);
@@ -101,7 +101,7 @@ void InitProgram::JVM_Menu(ClassFile *jvm_class) {
 				shouldLoop = 0;
 				initProgramExhibitor->ShowConstantPoolOnFile(jvm_class, initProgramFile);
 				initProgramExhibitor->ShowFieldsOnFile(jvm_class, initProgramFile);
-				//initProgramExhibitor->ShowMethodsOnFile(jvm_class, initProgramFile); erro de indice
+				initProgramExhibitor->ShowMethodsOnFile(jvm_class, initProgramFile);
 				initProgramExhibitor->ShowAllAttributesOnFile(jvm_class, initProgramFile);
 				initProgramExhibitor->ShowInterfaceOnFile(jvm_class->constant_pool, initProgramFile);
 				initProgramExhibitor->ShowInfoOnFile(jvm_class, initProgramFile);
