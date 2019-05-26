@@ -1,0 +1,168 @@
+
+
+################## EXHIBITOR FILE .class ##################
+
+###### constant-pool ######
+jvm_class->constant_pool_count = 34
+
+===> 
+===> {2} const_class:
+jvm_class = TesteB, |CP={19}|
+
+===> 
+===> 
+===> {5} const_ref_field:
+jvm_class: java/lang/System, |CP={21}|
+TypeAndName: <outLjava/io/PrintStream;>, |CP={22}|
+
+===> 
+===> {7} const_class:
+jvm_class = Teste, |CP={25}|
+
+===> {8} const_class:
+jvm_class = java/lang/Object, |CP={26}|
+
+===> {9} const_utf8:
+Byte Vector Size: 6
+String Size: 6
+String: <init>
+
+===> {10} const_utf8:
+Byte Vector Size: 3
+String Size: 3
+String: ()V
+
+===> {11} const_utf8:
+Byte Vector Size: 4
+String Size: 4
+String: Code
+
+===> {12} const_utf8:
+Byte Vector Size: 15
+String Size: 15
+String: LineNumberTable
+
+===> {13} const_utf8:
+Byte Vector Size: 4
+String Size: 4
+String: main
+
+===> {14} const_utf8:
+Byte Vector Size: 22
+String Size: 22
+String: ([Ljava/lang/String;)V
+
+===> {15} const_utf8:
+Byte Vector Size: 2
+String Size: 2
+String: ok
+
+===> {16} const_utf8:
+Byte Vector Size: 10
+String Size: 10
+String: SourceFile
+
+===> {17} const_utf8:
+Byte Vector Size: 10
+String Size: 10
+String: Teste.java
+
+===> {18} const_typeandname:
+Name: <init>, |CP={9}|
+Descriptor: ()V, |CP={10}|
+
+===> {19} const_utf8:
+Byte Vector Size: 6
+String Size: 6
+String: TesteB
+
+===> {20} const_typeandname:
+Name: teste, |CP={27}|
+Descriptor: ()V, |CP={10}|
+
+===> {21} const_class:
+jvm_class = java/lang/System, |CP={28}|
+
+===> {22} const_typeandname:
+Name: out, |CP={29}|
+Descriptor: Ljava/io/PrintStream;, |CP={30}|
+
+===> {23} const_class:
+jvm_class = java/io/PrintStream, |CP={31}|
+
+===> {24} const_typeandname:
+Name: print, |CP={32}|
+Descriptor: (I)V, |CP={33}|
+
+===> {25} const_utf8:
+Byte Vector Size: 5
+String Size: 5
+String: Teste
+
+===> {26} const_utf8:
+Byte Vector Size: 16
+String Size: 16
+String: java/lang/Object
+
+===> {27} const_utf8:
+Byte Vector Size: 5
+String Size: 5
+String: teste
+
+===> {28} const_utf8:
+Byte Vector Size: 16
+String Size: 16
+String: java/lang/System
+
+===> {29} const_utf8:
+Byte Vector Size: 3
+String Size: 3
+String: out
+
+===> {30} const_utf8:
+Byte Vector Size: 21
+String Size: 21
+String: Ljava/io/PrintStream;
+
+===> {31} const_utf8:
+Byte Vector Size: 19
+String Size: 19
+String: java/io/PrintStream
+
+===> {32} const_utf8:
+Byte Vector Size: 5
+String Size: 5
+String: print
+
+===> {33} const_utf8:
+Byte Vector Size: 4
+String Size: 4
+String: (I)V
+
+
+########## FIELDS ##########
+fields_count: 0
+
+
+########## ATTRIBUTES ##########
+attributes_count = 1
+
+===> {0} SourceFile
+	Index Name = SourceFile, |CP={16}|
+	attribute_length = 2
+	sourcefile_index = Teste.java, |CP={17}|
+Tag: 10
+Index Class: 8
+Index Name and Type: 18
+############ Informations ############|-> Minor: 0
+|-> Major: 55
+|-> Constant Pool Count: 34
+|-> Access Flags: 0x21
+|-> This.class: Teste, |CP={7}|
+|-> Super.class: java/lang/Object, |CP={8}|
+|-> Interface Counter: 0
+|-> Field Counter: 0
+|-> Method Counter: 3
+|-> Attribute Counter: 1
+######################################################
+
