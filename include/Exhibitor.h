@@ -24,8 +24,8 @@ public:
 	void ShowAllAttributesOnFile(ClassFile* jvm_class, FILE* file);
 	void ShowFields(ClassFile* jvm_class);
 	void ShowFieldsOnFile(ClassFile* jvm_class, FILE* file);
-	void ShowInterface(CpInfo cp);
-	void ShowInterfaceOnFile(ClassFile* jvm_class, CpInfo cp, FILE* file);
+	void ShowInterface(CpInfo *cp);
+	void ShowInterfaceOnFile(CpInfo *cp, FILE* file);
 	void ShowAllInterfaces(ClassFile* jvm_class);
 	void ShowAllInterfacesOnFile(ClassFile* jvm_class, FILE* file);
 	void ShowMethods(ClassFile* jvm_class);

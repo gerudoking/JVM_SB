@@ -77,60 +77,81 @@ void Exhibitor::ShowConstantPool(ClassFile* jvm_class) {
 		switch (jvm_class->constant_pool[i].tag) {
 		case CONSTANTClass:
 			index = jvm_class->constant_pool[i].info.Class.name_index - 1;
-			reference_name = NameInfo(jvm_class, index);
-			printf("{%d} const_class:\n", (i + 1));
-			printf("jvm_class = %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Class.name_index);
+			if (index < 0) {
+				printf("Index com valor negativo - CONSTANTClass - ShowConstantPool\n");
+			} else {
+				reference_name = NameInfo(jvm_class, index);
+				printf("{%d} const_class:\n", (i + 1));
+				printf("jvm_class = %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Class.name_index);
+			}
 			break;
 
 		case CONSTANTFieldref:
 			index = jvm_class->constant_pool[i].info.Fieldref.class_index - 1;
 			index = jvm_class->constant_pool[index].info.Class.name_index - 1;
-			reference_name = NameInfo(jvm_class, index);
-			printf("{%d} const_ref_field:\n", (i + 1));
-			printf("jvm_class: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Fieldref.class_index);
-			index = jvm_class->constant_pool[i].info.Fieldref.name_and_type_index - 1;
-			reference_name = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.name_index - 1);
-			reference_name2 = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.descriptor_index - 1);
-			printf("TypeAndName: <%s%s>, |CP={%d}|\n", reference_name, reference_name2,
-					jvm_class->constant_pool[i].info.Fieldref.name_and_type_index);
+			if (index < 0) {
+				printf("Index com valor negativo - CONSTANTFieldref - ShowConstantPool\n");
+			} else {
+				reference_name = NameInfo(jvm_class, index);
+				printf("{%d} const_ref_field:\n", (i + 1));
+				printf("jvm_class: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Fieldref.class_index);
+				index = jvm_class->constant_pool[i].info.Fieldref.name_and_type_index - 1;
+				reference_name = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.name_index - 1);
+				reference_name2 = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.descriptor_index - 1);
+				printf("TypeAndName: <%s%s>, |CP={%d}|\n", reference_name, reference_name2,
+						jvm_class->constant_pool[i].info.Fieldref.name_and_type_index);
+			}
 			break;
 
 		case CONSTANTMethodref:
 			index = jvm_class->constant_pool[i].info.Fieldref.class_index - 1;
 			index = jvm_class->constant_pool[index].info.Class.name_index - 1;
-			reference_name = NameInfo(jvm_class, index);
-			printf("{%d} cont_ref_method:\n", (i + 1));
-			printf("jvm_class: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Methodref.class_index);
-			index = jvm_class->constant_pool[i].info.Fieldref.name_and_type_index - 1;
-			reference_name = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.name_index - 1);
-			reference_name2 = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.descriptor_index - 1);
-			printf("TypeAndName: <%s%s>, |CP={%d}|\n", reference_name, reference_name2,
-					jvm_class->constant_pool[i].info.Methodref.name_and_type_index);
+			//erro de indice
+			if (index < 0) {
+				printf("Index com valor negativo - CONSTANTMethodref - ShowConstantPool\n");
+			} else {
+				reference_name = NameInfo(jvm_class, index);
+				printf("{%d} cont_ref_method:\n", (i + 1));
+				printf("jvm_class: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Methodref.class_index);
+				index = jvm_class->constant_pool[i].info.Fieldref.name_and_type_index - 1;
+				reference_name = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.name_index - 1);
+				reference_name2 = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.descriptor_index - 1);
+				printf("TypeAndName: <%s%s>, |CP={%d}|\n", reference_name, reference_name2,
+						jvm_class->constant_pool[i].info.Methodref.name_and_type_index);
+			}
 			break;
 
 		case CONSTANTInterfaceMethodref:
 			index = jvm_class->constant_pool[jvm_class->constant_pool[i].info.InterfaceMethodref.class_index - 1].info.Class.name_index - 1;
 			reference_name = NameInfo(jvm_class, index);
-			index =
-					jvm_class->constant_pool[jvm_class->constant_pool[i].info.InterfaceMethodref.name_and_type_index - 1].info.NameAndType.name_index
-							- 1;
-			reference_name2 = NameInfo(jvm_class, index);
-			index =
-					jvm_class->constant_pool[jvm_class->constant_pool[i].info.InterfaceMethodref.name_and_type_index - 1].info.NameAndType.descriptor_index
-							- 1;
-			reference_name3 = NameInfo(jvm_class, index);
-			reference_name2 = strcat(reference_name2, reference_name3);
-			printf("{%d} const_interface_ref_method:\n", (i + 1));
-			printf("jvm_class: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.InterfaceMethodref.class_index);
-			printf("TypeAndName: %s, |CP={%d}|\n", reference_name2,
-					jvm_class->constant_pool[i].info.InterfaceMethodref.name_and_type_index);
+			if (index < 0) {
+				printf("Index com valor negativo - CONSTANTInterfaceMethodref - ShowConstantPool\n");
+			} else {
+				index =
+						jvm_class->constant_pool[jvm_class->constant_pool[i].info.InterfaceMethodref.name_and_type_index - 1].info.NameAndType.name_index
+								- 1;
+				reference_name2 = NameInfo(jvm_class, index);
+				index =
+						jvm_class->constant_pool[jvm_class->constant_pool[i].info.InterfaceMethodref.name_and_type_index - 1].info.NameAndType.descriptor_index
+								- 1;
+				reference_name3 = NameInfo(jvm_class, index);
+				reference_name2 = strcat(reference_name2, reference_name3);
+				printf("{%d} const_interface_ref_method:\n", (i + 1));
+				printf("jvm_class: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.InterfaceMethodref.class_index);
+				printf("TypeAndName: %s, |CP={%d}|\n", reference_name2,
+						jvm_class->constant_pool[i].info.InterfaceMethodref.name_and_type_index);
+			}
 			break;
 
 		case CONSTANTString:
 			index = jvm_class->constant_pool[i].info.String.string_index - 1;
-			reference_name = NameInfo(jvm_class, index);
-			printf("{%d} const_string:\n", (i + 1));
-			printf("string: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.String.string_index);
+			if (index < 0) {
+				printf("Index com valor negativo - CONSTANTString - ShowConstantPool\n");
+			} else {
+				reference_name = NameInfo(jvm_class, index);
+				printf("{%d} const_string:\n", (i + 1));
+				printf("string: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.String.string_index);
+			}
 			break;
 
 		case CONSTANTInteger:
@@ -171,12 +192,16 @@ void Exhibitor::ShowConstantPool(ClassFile* jvm_class) {
 
 		case CONSTANTNameAndType:
 			index = jvm_class->constant_pool[i].info.NameAndType.name_index - 1;
-			reference_name = NameInfo(jvm_class, index);
-			index = jvm_class->constant_pool[i].info.NameAndType.descriptor_index - 1;
-			reference_name2 = NameInfo(jvm_class, index);
-			printf("{%d} const_typeandname:\n", (i + 1));
-			printf("Name: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.NameAndType.name_index);
-			printf("Descriptor: %s, |CP={%d}|\n", reference_name2, jvm_class->constant_pool[i].info.NameAndType.descriptor_index);
+			if (index < 0) {
+				printf("Index com valor negativo - CONSTANTNameAndType - ShowConstantPool\n");
+			} else {
+				reference_name = NameInfo(jvm_class, index);
+				index = jvm_class->constant_pool[i].info.NameAndType.descriptor_index - 1;
+				reference_name2 = NameInfo(jvm_class, index);
+				printf("{%d} const_typeandname:\n", (i + 1));
+				printf("Name: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.NameAndType.name_index);
+				printf("Descriptor: %s, |CP={%d}|\n", reference_name2, jvm_class->constant_pool[i].info.NameAndType.descriptor_index);
+			}
 			break;
 
 		case CONSTANTUtf8:
@@ -217,60 +242,83 @@ void Exhibitor::ShowConstantPoolOnFile(ClassFile* jvm_class, FILE* file) {
 		switch (jvm_class->constant_pool[i].tag) {
 		case CONSTANTClass:
 			index = jvm_class->constant_pool[i].info.Class.name_index - 1;
-			reference_name = NameInfo(jvm_class, index);
-			fprintf(file, "{%d} const_class:\n", (i + 1));
-			fprintf(file, "jvm_class = %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Class.name_index);
+			if (index < 0) {
+				printf("Index com valor negativo - CONSTANTClass - ShowConstantPoolOnFile\n");
+			} else {
+				reference_name = NameInfo(jvm_class, index);
+				fprintf(file, "{%d} const_class:\n", (i + 1));
+				fprintf(file, "jvm_class = %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Class.name_index);
+			}
 			break;
 
 		case CONSTANTFieldref:
 			index = jvm_class->constant_pool[i].info.Fieldref.class_index - 1;
 			index = jvm_class->constant_pool[index].info.Class.name_index - 1;
-			reference_name = NameInfo(jvm_class, index);
-			fprintf(file, "{%d} const_ref_field:\n", (i + 1));
-			fprintf(file, "jvm_class: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Fieldref.class_index);
-			index = jvm_class->constant_pool[i].info.Fieldref.name_and_type_index - 1;
-			reference_name = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.name_index - 1);
-			reference_name2 = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.descriptor_index - 1);
-			fprintf(file, "TypeAndName: <%s%s>, |CP={%d}|\n", reference_name, reference_name2,
-					jvm_class->constant_pool[i].info.Fieldref.name_and_type_index);
+			if (index < 0) {
+				printf("Index com valor negativo - CONSTANTFieldref - ShowConstantPoolOnFile\n");
+			} else {
+				reference_name = NameInfo(jvm_class, index);
+				fprintf(file, "{%d} const_ref_field:\n", (i + 1));
+				fprintf(file, "jvm_class: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Fieldref.class_index);
+				index = jvm_class->constant_pool[i].info.Fieldref.name_and_type_index - 1;
+				reference_name = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.name_index - 1);
+				reference_name2 = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.descriptor_index - 1);
+				fprintf(file, "TypeAndName: <%s%s>, |CP={%d}|\n", reference_name, reference_name2,
+						jvm_class->constant_pool[i].info.Fieldref.name_and_type_index);
+			}
 			break;
 
 		case CONSTANTMethodref:
 			index = jvm_class->constant_pool[i].info.Fieldref.class_index - 1;
 			index = jvm_class->constant_pool[index].info.Class.name_index - 1;
-			reference_name = NameInfo(jvm_class, index);
-			fprintf(file, "{%d} cont_ref_method:\n", (i + 1));
-			fprintf(file, "jvm_class: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Methodref.class_index);
-			index = jvm_class->constant_pool[i].info.Fieldref.name_and_type_index - 1;
-			reference_name = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.name_index - 1);
-			reference_name2 = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.descriptor_index - 1);
-			fprintf(file, "TypeAndName: <%s%s>, |CP={%d}|\n", reference_name, reference_name2,
-					jvm_class->constant_pool[i].info.Methodref.name_and_type_index);
+			//erro de indice 1
+			if (index < 0) {
+				printf("Index com valor negativo - CONSTANTMethodref - ShowConstantPoolOnFile\n");
+			} else {
+				reference_name = NameInfo(jvm_class, index);
+				fprintf(file, "{%d} cont_ref_method:\n", (i + 1));
+				fprintf(file, "jvm_class: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.Methodref.class_index);
+				index = jvm_class->constant_pool[i].info.Fieldref.name_and_type_index - 1;
+				reference_name = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.name_index - 1);
+				reference_name2 = NameInfo(jvm_class, jvm_class->constant_pool[index].info.NameAndType.descriptor_index - 1);
+				fprintf(file, "TypeAndName: <%s%s>, |CP={%d}|\n", reference_name, reference_name2,
+						jvm_class->constant_pool[i].info.Methodref.name_and_type_index);
+
+			}
 			break;
 
 		case CONSTANTInterfaceMethodref:
 			index = jvm_class->constant_pool[jvm_class->constant_pool[i].info.InterfaceMethodref.class_index - 1].info.Class.name_index - 1;
 			reference_name = NameInfo(jvm_class, index);
-			index =
-					jvm_class->constant_pool[jvm_class->constant_pool[i].info.InterfaceMethodref.name_and_type_index - 1].info.NameAndType.name_index
-							- 1;
-			reference_name2 = NameInfo(jvm_class, index);
-			index =
-					jvm_class->constant_pool[jvm_class->constant_pool[i].info.InterfaceMethodref.name_and_type_index - 1].info.NameAndType.descriptor_index
-							- 1;
-			reference_name3 = NameInfo(jvm_class, index);
-			reference_name2 = strcat(reference_name2, reference_name3);
-			fprintf(file, "{%d} const_interface_ref_method:\n", (i + 1));
-			fprintf(file, "jvm_class: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.InterfaceMethodref.class_index);
-			fprintf(file, "TypeAndName: %s, |CP={%d}|\n", reference_name2,
-					jvm_class->constant_pool[i].info.InterfaceMethodref.name_and_type_index);
+			if (index < 0) {
+				printf("Index com valor negativo - CONSTANTInterfaceMethodref - ShowConstantPoolOnFile\n");
+			} else {
+				index =
+						jvm_class->constant_pool[jvm_class->constant_pool[i].info.InterfaceMethodref.name_and_type_index - 1].info.NameAndType.name_index
+								- 1;
+				reference_name2 = NameInfo(jvm_class, index);
+				index =
+						jvm_class->constant_pool[jvm_class->constant_pool[i].info.InterfaceMethodref.name_and_type_index - 1].info.NameAndType.descriptor_index
+								- 1;
+				reference_name3 = NameInfo(jvm_class, index);
+				reference_name2 = strcat(reference_name2, reference_name3);
+				fprintf(file, "{%d} const_interface_ref_method:\n", (i + 1));
+				fprintf(file, "jvm_class: %s, |CP={%d}|\n", reference_name,
+						jvm_class->constant_pool[i].info.InterfaceMethodref.class_index);
+				fprintf(file, "TypeAndName: %s, |CP={%d}|\n", reference_name2,
+						jvm_class->constant_pool[i].info.InterfaceMethodref.name_and_type_index);
+			}
 			break;
 
 		case CONSTANTString:
 			index = jvm_class->constant_pool[i].info.String.string_index - 1;
-			reference_name = NameInfo(jvm_class, index);
-			fprintf(file, "{%d} const_string:\n", (i + 1));
-			fprintf(file, "string: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.String.string_index);
+			if (index < 0) {
+				printf("Index com valor negativo - CONSTANTString - ShowConstantPoolOnFile\n");
+			} else {
+				reference_name = NameInfo(jvm_class, index);
+				fprintf(file, "{%d} const_string:\n", (i + 1));
+				fprintf(file, "string: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.String.string_index);
+			}
 			break;
 
 		case CONSTANTInteger:
@@ -311,12 +359,17 @@ void Exhibitor::ShowConstantPoolOnFile(ClassFile* jvm_class, FILE* file) {
 
 		case CONSTANTNameAndType:
 			index = jvm_class->constant_pool[i].info.NameAndType.name_index - 1;
-			reference_name = NameInfo(jvm_class, index);
-			index = jvm_class->constant_pool[i].info.NameAndType.descriptor_index - 1;
-			reference_name2 = NameInfo(jvm_class, index);
-			fprintf(file, "{%d} const_typeandname:\n", (i + 1));
-			fprintf(file, "Name: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.NameAndType.name_index);
-			fprintf(file, "Descriptor: %s, |CP={%d}|\n", reference_name2, jvm_class->constant_pool[i].info.NameAndType.descriptor_index);
+			if (index < 0) {
+				printf("Index com valor negativo - CONSTANTNameAndType - ShowConstantPoolOnFile\n");
+			} else {
+				reference_name = NameInfo(jvm_class, index);
+				index = jvm_class->constant_pool[i].info.NameAndType.descriptor_index - 1;
+				reference_name2 = NameInfo(jvm_class, index);
+				fprintf(file, "{%d} const_typeandname:\n", (i + 1));
+				fprintf(file, "Name: %s, |CP={%d}|\n", reference_name, jvm_class->constant_pool[i].info.NameAndType.name_index);
+				fprintf(file, "Descriptor: %s, |CP={%d}|\n", reference_name2,
+						jvm_class->constant_pool[i].info.NameAndType.descriptor_index);
+			}
 			break;
 
 		case CONSTANTUtf8:
@@ -355,272 +408,277 @@ void Exhibitor::ShowAttribute(ClassFile* jvm_class, attribute_info* attributeInf
 
 	attributeType[iteration] = '\0';
 	index = attributeInfo->attribute_name_index - 1;
-	reference_name = NameInfo(jvm_class, index);
-	printf("\n\tIndex Name = %s, |CP={%d}|\n", reference_name, attributeInfo->attribute_name_index);
-	printf("\tattribute_length = %d\n", attributeInfo->attribute_length);
-	free(reference_name);
+	//erro de indice 2
+	if (index < 0) {
+		printf("Index com valor negativo - CONSTANTNameAndType - ShowAttribute\n");
+	} else {
 
-	if (attributeInfo->attribute_length > 0) {
-		if (!strcmp(attributeType, "ConstantValue")) {
-			int i;
-			u2 indexTemp;
-			index = attributeInfo->info.ConstantValue.constantvalue_index - 1;
-			switch (jvm_class->constant_pool[index].tag) {
-			case CONSTANTInteger:
-				i = (int32_t) jvm_class->constant_pool[index].info.Integer.bytes;
-				printf("\nconstantvalue_index = %d, |CP={%d}|", i, attributeInfo->info.ConstantValue.constantvalue_index);
-				break;
+		reference_name = NameInfo(jvm_class, index);
+		printf("\n\tIndex Name = %s, |CP={%d}|\n", reference_name, attributeInfo->attribute_name_index);
+		printf("\tattribute_length = %d\n", attributeInfo->attribute_length);
+		free(reference_name);
 
-			case CONSTANTLong:
-				longTemp = (u8) jvm_class->constant_pool[index].info.Long.high_bytes << 32
-						| jvm_class->constant_pool[index].info.Long.low_bytes;
-				printf("\nconstantvalue_index = %ld, |CP={%d}|", longTemp, attributeInfo->info.ConstantValue.constantvalue_index);
-				break;
+		if (attributeInfo->attribute_length > 0) {
+			if (!strcmp(attributeType, "ConstantValue")) {
+				int i;
+				u2 indexTemp;
+				index = attributeInfo->info.ConstantValue.constantvalue_index - 1;
+				switch (jvm_class->constant_pool[index].tag) {
+				case CONSTANTInteger:
+					i = (int32_t) jvm_class->constant_pool[index].info.Integer.bytes;
+					printf("\nconstantvalue_index = %d, |CP={%d}|", i, attributeInfo->info.ConstantValue.constantvalue_index);
+					break;
 
-			case CONSTANTFloat:
-				memcpy(&float_value, &(jvm_class->constant_pool[index].info.Float.bytes), sizeof(u4));
-				printf("\nconstantvalue_index = %f, |CP={%d}|", float_value, attributeInfo->info.ConstantValue.constantvalue_index);
-				break;
+				case CONSTANTLong:
+					longTemp = (u8) jvm_class->constant_pool[index].info.Long.high_bytes << 32
+							| jvm_class->constant_pool[index].info.Long.low_bytes;
+					printf("\nconstantvalue_index = %ld, |CP={%d}|", longTemp, attributeInfo->info.ConstantValue.constantvalue_index);
+					break;
 
-			case CONSTANTDouble:
-				longTemp = (u8) jvm_class->constant_pool[index].info.Double.high_bytes << 32
-						| jvm_class->constant_pool[index].info.Double.low_bytes;
-				memcpy(&double_value, &(jvm_class->constant_pool[index].info.Float.bytes), sizeof(u8));
-				printf("\nconstantvalue_index = %f, |CP={%d}|", double_value, attributeInfo->info.ConstantValue.constantvalue_index);
-				break;
+				case CONSTANTFloat:
+					memcpy(&float_value, &(jvm_class->constant_pool[index].info.Float.bytes), sizeof(u4));
+					printf("\nconstantvalue_index = %f, |CP={%d}|", float_value, attributeInfo->info.ConstantValue.constantvalue_index);
+					break;
 
-			case CONSTANTString:
-				indexTemp = jvm_class->constant_pool[index].info.String.string_index - 1;
-				reference_name = NameInfo(jvm_class, indexTemp);
-				printf("\nconstantvalue_index = %s, |CP={%d}|", reference_name, attributeInfo->info.ConstantValue.constantvalue_index);
-				break;
-			}
-		} else if (!strcmp(attributeType, "Code")) {
-			printf("\t### OTHER DATA ###\n");
-			printf("\tmax_stack = %d\n", attributeInfo->info.CodeAttribute.max_stack);
-			printf("\tmax_locals = %d\n", attributeInfo->info.CodeAttribute.max_locals);
-			printf("\tcode_length = %d\n", attributeInfo->info.CodeAttribute.code_length);
-			printf("\tCode: \n");
-			for (int i = 0; i < attributeInfo->info.CodeAttribute.code_length; i++) {
-				Instruction map[0xCA];
-				Mnemonics(map);
-				u1 opcode = attributeInfo->info.CodeAttribute.code[i], instrIndex1, instrIndex2;
-				u2 instrIndex;
-				int16_t offset;
-				char *instrRef;
-				printf("\t\t\t%d: %s\t", i, map[opcode].mnemonic);
-				int j;
-				double double_value;
-				switch (map[opcode].req_cp) {
-				case REQ_METHODREF_1:
-					instrIndex = attributeInfo->info.CodeAttribute.code[++i];
-					instrRef = MethodInfo(jvm_class, instrIndex - 1);
-					printf("%s, |CP={%d}|\t", instrRef, instrIndex);
+				case CONSTANTDouble:
+					longTemp = (u8) jvm_class->constant_pool[index].info.Double.high_bytes << 32
+							| jvm_class->constant_pool[index].info.Double.low_bytes;
+					memcpy(&double_value, &(jvm_class->constant_pool[index].info.Float.bytes), sizeof(u8));
+					printf("\nconstantvalue_index = %f, |CP={%d}|", double_value, attributeInfo->info.ConstantValue.constantvalue_index);
 					break;
-				case REQ_METHODREF_2:
-					instrIndex1 = attributeInfo->info.CodeAttribute.code[++i];
-					instrIndex2 = attributeInfo->info.CodeAttribute.code[++i];
-					instrIndex = (instrIndex2 | (instrIndex1 << 8));
-					instrRef = MethodInfo(jvm_class, instrIndex - 1);
-					printf("%s, |CP={%d}|\t", instrRef, instrIndex);
+
+				case CONSTANTString:
+					indexTemp = jvm_class->constant_pool[index].info.String.string_index - 1;
+					reference_name = NameInfo(jvm_class, indexTemp);
+					printf("\nconstantvalue_index = %s, |CP={%d}|", reference_name, attributeInfo->info.ConstantValue.constantvalue_index);
 					break;
-				case REQ_FIELDREF:
-					instrIndex1 = attributeInfo->info.CodeAttribute.code[++i];
-					instrIndex2 = attributeInfo->info.CodeAttribute.code[++i];
-					instrIndex = (instrIndex2 | (instrIndex1 << 8));
-					instrRef = RefFieldInfo(jvm_class, instrIndex - 1);
-					printf("%s, |CP={%d}|\t", instrRef, instrIndex);
-					break;
-				case REQ_JMPREF:
-					instrIndex1 = attributeInfo->info.CodeAttribute.code[++i];
-					instrIndex2 = attributeInfo->info.CodeAttribute.code[++i];
-					offset = (int16_t) (instrIndex2 | (instrIndex1 << 8));
-					printf("%d\t(%d)\t", (offset - 2) + i, offset);
-					break;
-				case REQ_LDCREF_1:
-					instrIndex = attributeInfo->info.CodeAttribute.code[++i] - 1;
-					printf("%d\t", instrIndex + 1);
-					switch (jvm_class->constant_pool[instrIndex].tag) {
-					case CONSTANTInteger:
-						printf("%d\t", jvm_class->constant_pool[instrIndex].info.Integer.bytes);
+				}
+			} else if (!strcmp(attributeType, "Code")) {
+				printf("\t### OTHER DATA ###\n");
+				printf("\tmax_stack = %d\n", attributeInfo->info.CodeAttribute.max_stack);
+				printf("\tmax_locals = %d\n", attributeInfo->info.CodeAttribute.max_locals);
+				printf("\tcode_length = %d\n", attributeInfo->info.CodeAttribute.code_length);
+				printf("\tCode: \n");
+				for (int i = 0; i < attributeInfo->info.CodeAttribute.code_length; i++) {
+					Instruction map[0xCA];
+					Mnemonics(map);
+					u1 opcode = attributeInfo->info.CodeAttribute.code[i], instrIndex1, instrIndex2;
+					u2 instrIndex;
+					int16_t offset;
+					char *instrRef;
+					printf("\t\t\t%d: %s\t", i, map[opcode].mnemonic);
+					int j;
+					double double_value;
+					switch (map[opcode].req_cp) {
+					case REQ_METHODREF_1:
+						instrIndex = attributeInfo->info.CodeAttribute.code[++i];
+						instrRef = MethodInfo(jvm_class, instrIndex - 1);
+						printf("%s, |CP={%d}|\t", instrRef, instrIndex);
 						break;
-					case CONSTANTFloat:
-						memcpy(&float_value, &(jvm_class->constant_pool[instrIndex].info.Float.bytes), sizeof(u4));
-						printf("%f\t", float_value);
+					case REQ_METHODREF_2:
+						instrIndex1 = attributeInfo->info.CodeAttribute.code[++i];
+						instrIndex2 = attributeInfo->info.CodeAttribute.code[++i];
+						instrIndex = (instrIndex2 | (instrIndex1 << 8));
+						instrRef = MethodInfo(jvm_class, instrIndex - 1);
+						printf("%s, |CP={%d}|\t", instrRef, instrIndex);
 						break;
-					case CONSTANTLong:
-						longTemp = (u8) jvm_class->constant_pool[instrIndex].info.Long.high_bytes << 32;
-						longTemp = longTemp | jvm_class->constant_pool[instrIndex].info.Long.low_bytes;
-						printf("%ld\t", longTemp);
+					case REQ_FIELDREF:
+						instrIndex1 = attributeInfo->info.CodeAttribute.code[++i];
+						instrIndex2 = attributeInfo->info.CodeAttribute.code[++i];
+						instrIndex = (instrIndex2 | (instrIndex1 << 8));
+						instrRef = RefFieldInfo(jvm_class, instrIndex - 1);
+						printf("%s, |CP={%d}|\t", instrRef, instrIndex);
 						break;
-					case CONSTANTDouble:
-						longTemp = (u8) jvm_class->constant_pool[instrIndex].info.Double.high_bytes << 32;
-						longTemp = longTemp | jvm_class->constant_pool[instrIndex].info.Double.low_bytes;
-						memcpy(&double_value, &longTemp, sizeof(u8));
-						printf("%f\t", double_value);
+					case REQ_JMPREF:
+						instrIndex1 = attributeInfo->info.CodeAttribute.code[++i];
+						instrIndex2 = attributeInfo->info.CodeAttribute.code[++i];
+						offset = (int16_t) (instrIndex2 | (instrIndex1 << 8));
+						printf("%d\t(%d)\t", (offset - 2) + i, offset);
 						break;
-					}
-					break;
-				case REQ_LDCREF_2:
-					instrIndex1 = attributeInfo->info.CodeAttribute.code[++i];
-					instrIndex2 = attributeInfo->info.CodeAttribute.code[++i];
-					instrIndex = (instrIndex2 | (instrIndex1 << sizeof(u1))) - 1;
-					printf("%d\t", instrIndex + 1);
-					switch (jvm_class->constant_pool[instrIndex].tag) {
-					case CONSTANTInteger:
-						printf("%d\t", jvm_class->constant_pool[instrIndex].info.Integer.bytes);
+					case REQ_LDCREF_1:
+						instrIndex = attributeInfo->info.CodeAttribute.code[++i] - 1;
+						printf("%d\t", instrIndex + 1);
+						switch (jvm_class->constant_pool[instrIndex].tag) {
+						case CONSTANTInteger:
+							printf("%d\t", jvm_class->constant_pool[instrIndex].info.Integer.bytes);
+							break;
+						case CONSTANTFloat:
+							memcpy(&float_value, &(jvm_class->constant_pool[instrIndex].info.Float.bytes), sizeof(u4));
+							printf("%f\t", float_value);
+							break;
+						case CONSTANTLong:
+							longTemp = (u8) jvm_class->constant_pool[instrIndex].info.Long.high_bytes << 32;
+							longTemp = longTemp | jvm_class->constant_pool[instrIndex].info.Long.low_bytes;
+							printf("%ld\t", longTemp);
+							break;
+						case CONSTANTDouble:
+							longTemp = (u8) jvm_class->constant_pool[instrIndex].info.Double.high_bytes << 32;
+							longTemp = longTemp | jvm_class->constant_pool[instrIndex].info.Double.low_bytes;
+							memcpy(&double_value, &longTemp, sizeof(u8));
+							printf("%f\t", double_value);
+							break;
+						}
 						break;
-					case CONSTANTFloat:
-						memcpy(&float_value, &(jvm_class->constant_pool[instrIndex].info.Float.bytes), sizeof(u4));
-						printf("%f\t", float_value);
+					case REQ_LDCREF_2:
+						instrIndex1 = attributeInfo->info.CodeAttribute.code[++i];
+						instrIndex2 = attributeInfo->info.CodeAttribute.code[++i];
+						instrIndex = (instrIndex2 | (instrIndex1 << sizeof(u1))) - 1;
+						printf("%d\t", instrIndex + 1);
+						switch (jvm_class->constant_pool[instrIndex].tag) {
+						case CONSTANTInteger:
+							printf("%d\t", jvm_class->constant_pool[instrIndex].info.Integer.bytes);
+							break;
+						case CONSTANTFloat:
+							memcpy(&float_value, &(jvm_class->constant_pool[instrIndex].info.Float.bytes), sizeof(u4));
+							printf("%f\t", float_value);
+							break;
+						case CONSTANTLong:
+							longTemp = (u8) jvm_class->constant_pool[instrIndex].info.Long.high_bytes << 32;
+							longTemp = longTemp | jvm_class->constant_pool[instrIndex].info.Long.low_bytes;
+							printf("%ld\t", longTemp);
+							break;
+						case CONSTANTDouble:
+							longTemp = (u8) jvm_class->constant_pool[instrIndex].info.Double.high_bytes << 32;
+							longTemp = longTemp | jvm_class->constant_pool[instrIndex].info.Double.low_bytes;
+							memcpy(&double_value, &longTemp, sizeof(u8));
+							printf("%f\t", double_value);
+							break;
+						}
 						break;
-					case CONSTANTLong:
-						longTemp = (u8) jvm_class->constant_pool[instrIndex].info.Long.high_bytes << 32;
-						longTemp = longTemp | jvm_class->constant_pool[instrIndex].info.Long.low_bytes;
-						printf("%ld\t", longTemp);
+					case REQ_ARRAYREF:
+						instrIndex = attributeInfo->info.CodeAttribute.code[++i];
+						printf("%d\t", instrIndex);
+						switch (instrIndex) {
+						case 0:
+							printf("(ref)\t");
+							break;
+						case 4:
+							printf("(boolean)\t");
+							break;
+						case 5:
+							printf("(char)\t");
+							break;
+						case 6:
+							printf("(float)\t");
+							break;
+						case 7:
+							printf("(double)\t");
+							break;
+						case 8:
+							printf("(byte)\t");
+							break;
+						case 9:
+							printf("(short)\t");
+							break;
+						case 10:
+							printf("(int)\t");
+							break;
+						case 11:
+							printf("(long)\t");
+							break;
+						default:
+							break;
+						}
 						break;
-					case CONSTANTDouble:
-						longTemp = (u8) jvm_class->constant_pool[instrIndex].info.Double.high_bytes << 32;
-						longTemp = longTemp | jvm_class->constant_pool[instrIndex].info.Double.low_bytes;
-						memcpy(&double_value, &longTemp, sizeof(u8));
-						printf("%f\t", double_value);
-						break;
-					}
-					break;
-				case REQ_ARRAYREF:
-					instrIndex = attributeInfo->info.CodeAttribute.code[++i];
-					printf("%d\t", instrIndex);
-					switch (instrIndex) {
-					case 0:
-						printf("(ref)\t");
-						break;
-					case 4:
-						printf("(boolean)\t");
-						break;
-					case 5:
-						printf("(char)\t");
-						break;
-					case 6:
-						printf("(float)\t");
-						break;
-					case 7:
-						printf("(double)\t");
-						break;
-					case 8:
-						printf("(byte)\t");
-						break;
-					case 9:
-						printf("(short)\t");
-						break;
-					case 10:
-						printf("(int)\t");
-						break;
-					case 11:
-						printf("(long)\t");
+					case REQ_IINCREF:
+						instrIndex1 = attributeInfo->info.CodeAttribute.code[++i];
+						instrIndex2 = attributeInfo->info.CodeAttribute.code[++i];
+						printf("%d by %d\t", instrIndex1, instrIndex2);
 						break;
 					default:
+						for (j = 0; j < map[opcode].operators; j++)
+							printf("%d\t", attributeInfo->info.CodeAttribute.code[++i]);
 						break;
 					}
-					break;
-				case REQ_IINCREF:
-					instrIndex1 = attributeInfo->info.CodeAttribute.code[++i];
-					instrIndex2 = attributeInfo->info.CodeAttribute.code[++i];
-					printf("%d by %d\t", instrIndex1, instrIndex2);
-					break;
-				default:
-					for (j = 0; j < map[opcode].operators; j++)
-						printf("%d\t", attributeInfo->info.CodeAttribute.code[++i]);
-					break;
+					printf("\n");
 				}
+
+				printf("\n\texception_table_length = %d\n", attributeInfo->info.CodeAttribute.exception_table_length);
+				if (attributeInfo->info.CodeAttribute.exception_table_length > 0) {
+					printf("\tStart PC\tEnd PC\tHandler PC\tCatch Type\n");
+					for (int i = 0; i < attributeInfo->info.CodeAttribute.exception_table_length; i++) {
+						printf("%d: %d\t", i, attributeInfo->info.CodeAttribute.exception_table[i].start_pc);
+						printf("%d\t", attributeInfo->info.CodeAttribute.exception_table[i].end_pc);
+						printf("%d\t", attributeInfo->info.CodeAttribute.exception_table[i].handler_pc);
+						printf("%d\n", attributeInfo->info.CodeAttribute.exception_table[i].catch_type);
+					}
+				}
+
+				printf("\tCode's attributes_count = %d\n", attributeInfo->info.CodeAttribute.attributes_count);
+				for (int k = 0; k < attributeInfo->info.CodeAttribute.attributes_count; k++) {
+					printf("\t{%d} ", k);
+					ShowAttribute(jvm_class, &(attributeInfo->info.CodeAttribute.attributes[k]));
+				}
+			} else if (!strcmp(attributeType, "Exceptions")) {
+				printf("\tnumber_of_exceptions = %d\n", attributeInfo->info.Exception.number_of_exceptions);
+				for (int i = 0; i < attributeInfo->info.Exception.number_of_exceptions; i++) {
+					index = attributeInfo->info.Exception.exception_index_table[i] - 1;
+					index = jvm_class->constant_pool[index].info.Class.name_index - 1;
+					reference_name = NameInfo(jvm_class, index);
+					printf("\tException Index = %s, |CP={%d}|\n", reference_name, attributeInfo->info.Exception.exception_index_table[i]);
+					free(reference_name);
+				}
+			} else if (!strcmp(attributeType, "InnerClasses")) {
+				printf("\tnumber_of_classes = %d\n", attributeInfo->info.InnerClasses.number_of_classes);
+				for (int i = 0; i < attributeInfo->info.InnerClasses.number_of_classes; i++) {
+					free(reference_name);
+					index = attributeInfo->info.InnerClasses.classes[i].inner_class_info_index - 1;
+					index = jvm_class->constant_pool[index].info.Class.name_index - 1;
+					reference_name = NameInfo(jvm_class, index);
+					printf("\t\tinner_class_info_index = %s, |CP={%d}|\n", reference_name,
+							attributeInfo->info.InnerClasses.classes[i].inner_class_info_index);
+					index = attributeInfo->info.InnerClasses.classes[i].outer_class_info_index - 1;
+					index = jvm_class->constant_pool[index].info.Class.name_index - 1;
+					free(reference_name);
+					reference_name = NameInfo(jvm_class, index);
+					printf("\t\touter_class_info_index = %s, |CP={%d}|\n", reference_name,
+							attributeInfo->info.InnerClasses.classes[i].outer_class_info_index);
+					index = attributeInfo->info.InnerClasses.classes[i].inner_class_info_index - 1;
+					free(reference_name);
+					reference_name = NameInfo(jvm_class, index);
+					printf("\t\tinner_name_index = %s, |CP={%d}|\n", reference_name,
+							attributeInfo->info.InnerClasses.classes[i].inner_name_index);
+					printf("\t\tinner_class_access_flags = %d\n", attributeInfo->info.InnerClasses.classes[i].inner_class_access_flags);
+				}
+			} else if (!strcmp(attributeType, "SourceFile")) {
+				index = attributeInfo->info.Sourcefile.sourcefile_index - 1;
+				reference_name = NameInfo(jvm_class, index);
+				printf("\tsourcefile_index = %s, |CP={%d}|\n", reference_name, attributeInfo->info.Sourcefile.sourcefile_index);
+				free(reference_name);
+			} else if (!strcmp(attributeType, "LineNumberTable")) {
+				printf("\tLine Numbers = %d\n", attributeInfo->info.LineNumberTable.line_number_table_length);
+				if (attributeInfo->info.LineNumberTable.line_number_table_length > 0) {
+					printf("\n\tStart PC\tLine Number\n");
+					for (int i = 0; i < attributeInfo->info.LineNumberTable.line_number_table_length; i++) {
+						printf("\t\t%d: %d", i, attributeInfo->info.LineNumberTable.line_number_table[i].start_pc);
+						printf("\t\t%d\n", attributeInfo->info.LineNumberTable.line_number_table[i].line_number);
+					}
+				}
+			} else if (!strcmp(attributeType, "LocalVariableTable")) {
+				printf("\tTable Length = %d\n", attributeInfo->info.LocalVariableTable.local_variable_table_length);
+				for (int i = 0; i < attributeInfo->info.LocalVariableTable.local_variable_table_length; i++) {
+					free(reference_name);
+					printf("\t\tStart PC = %d\n", attributeInfo->info.LocalVariableTable.local_variable_table[i].start_pc);
+					printf("\t\tLength = %d\n", attributeInfo->info.LocalVariableTable.local_variable_table[i].length);
+					index = attributeInfo->info.LocalVariableTable.local_variable_table[i].name_index - 1;
+					reference_name = NameInfo(jvm_class, index);
+					printf("\t\tName Index = %s, |CP={%d}|\n", reference_name,
+							attributeInfo->info.LocalVariableTable.local_variable_table[i].name_index);
+					index = attributeInfo->info.LocalVariableTable.local_variable_table[i].descriptor_index - 1;
+					free(reference_name);
+					reference_name = NameInfo(jvm_class, index);
+					printf("\t\tDescriptor Index = %s, |CP={%d}|\n", reference_name,
+							attributeInfo->info.LocalVariableTable.local_variable_table[i].descriptor_index);
+					printf("\t\tIndex: %d\n", attributeInfo->info.LocalVariableTable.local_variable_table[i].index);
+				}
+			} else {
+				printf("\tDefault: \t");
+				for (int i = 0; i < attributeInfo->attribute_length; i++)
+					printf("\t%x", attributeInfo->info.Default.data[i]);
 				printf("\n");
 			}
-
-			printf("\n\texception_table_length = %d\n", attributeInfo->info.CodeAttribute.exception_table_length);
-			if (attributeInfo->info.CodeAttribute.exception_table_length > 0) {
-				printf("\tStart PC\tEnd PC\tHandler PC\tCatch Type\n");
-				for (int i = 0; i < attributeInfo->info.CodeAttribute.exception_table_length; i++) {
-					printf("%d: %d\t", i, attributeInfo->info.CodeAttribute.exception_table[i].start_pc);
-					printf("%d\t", attributeInfo->info.CodeAttribute.exception_table[i].end_pc);
-					printf("%d\t", attributeInfo->info.CodeAttribute.exception_table[i].handler_pc);
-					printf("%d\n", attributeInfo->info.CodeAttribute.exception_table[i].catch_type);
-				}
-			}
-
-			printf("\tCode's attributes_count = %d\n", attributeInfo->info.CodeAttribute.attributes_count);
-			for (int k = 0; k < attributeInfo->info.CodeAttribute.attributes_count; k++) {
-				printf("\t{%d} ", k);
-				ShowAttribute(jvm_class, &(attributeInfo->info.CodeAttribute.attributes[k]));
-			}
-		} else if (!strcmp(attributeType, "Exceptions")) {
-			printf("\tnumber_of_exceptions = %d\n", attributeInfo->info.Exception.number_of_exceptions);
-			for (int i = 0; i < attributeInfo->info.Exception.number_of_exceptions; i++) {
-				index = attributeInfo->info.Exception.exception_index_table[i] - 1;
-				index = jvm_class->constant_pool[index].info.Class.name_index - 1;
-				reference_name = NameInfo(jvm_class, index);
-				printf("\tException Index = %s, |CP={%d}|\n", reference_name, attributeInfo->info.Exception.exception_index_table[i]);
-				free(reference_name);
-			}
-		} else if (!strcmp(attributeType, "InnerClasses")) {
-			printf("\tnumber_of_classes = %d\n", attributeInfo->info.InnerClasses.number_of_classes);
-			for (int i = 0; i < attributeInfo->info.InnerClasses.number_of_classes; i++) {
-				free(reference_name);
-				index = attributeInfo->info.InnerClasses.classes[i].inner_class_info_index - 1;
-				index = jvm_class->constant_pool[index].info.Class.name_index - 1;
-				reference_name = NameInfo(jvm_class, index);
-				printf("\t\tinner_class_info_index = %s, |CP={%d}|\n", reference_name,
-						attributeInfo->info.InnerClasses.classes[i].inner_class_info_index);
-				index = attributeInfo->info.InnerClasses.classes[i].outer_class_info_index - 1;
-				index = jvm_class->constant_pool[index].info.Class.name_index - 1;
-				free(reference_name);
-				reference_name = NameInfo(jvm_class, index);
-				printf("\t\touter_class_info_index = %s, |CP={%d}|\n", reference_name,
-						attributeInfo->info.InnerClasses.classes[i].outer_class_info_index);
-				index = attributeInfo->info.InnerClasses.classes[i].inner_class_info_index - 1;
-				free(reference_name);
-				reference_name = NameInfo(jvm_class, index);
-				printf("\t\tinner_name_index = %s, |CP={%d}|\n", reference_name,
-						attributeInfo->info.InnerClasses.classes[i].inner_name_index);
-				printf("\t\tinner_class_access_flags = %d\n", attributeInfo->info.InnerClasses.classes[i].inner_class_access_flags);
-			}
-		} else if (!strcmp(attributeType, "SourceFile")) {
-			index = attributeInfo->info.Sourcefile.sourcefile_index - 1;
-			reference_name = NameInfo(jvm_class, index);
-			printf("\tsourcefile_index = %s, |CP={%d}|\n", reference_name, attributeInfo->info.Sourcefile.sourcefile_index);
-			free(reference_name);
-		} else if (!strcmp(attributeType, "LineNumberTable")) {
-			printf("\tLine Numbers = %d\n", attributeInfo->info.LineNumberTable.line_number_table_length);
-			if (attributeInfo->info.LineNumberTable.line_number_table_length > 0) {
-				printf("\n\tStart PC\tLine Number\n");
-				for (int i = 0; i < attributeInfo->info.LineNumberTable.line_number_table_length; i++) {
-					printf("\t\t%d: %d", i, attributeInfo->info.LineNumberTable.line_number_table[i].start_pc);
-					printf("\t\t%d\n", attributeInfo->info.LineNumberTable.line_number_table[i].line_number);
-				}
-			}
-		} else if (!strcmp(attributeType, "LocalVariableTable")) {
-			printf("\tTable Length = %d\n", attributeInfo->info.LocalVariableTable.local_variable_table_length);
-			for (int i = 0; i < attributeInfo->info.LocalVariableTable.local_variable_table_length; i++) {
-				free(reference_name);
-				printf("\t\tStart PC = %d\n", attributeInfo->info.LocalVariableTable.local_variable_table[i].start_pc);
-				printf("\t\tLength = %d\n", attributeInfo->info.LocalVariableTable.local_variable_table[i].length);
-				index = attributeInfo->info.LocalVariableTable.local_variable_table[i].name_index - 1;
-				reference_name = NameInfo(jvm_class, index);
-				printf("\t\tName Index = %s, |CP={%d}|\n", reference_name,
-						attributeInfo->info.LocalVariableTable.local_variable_table[i].name_index);
-				index = attributeInfo->info.LocalVariableTable.local_variable_table[i].descriptor_index - 1;
-				free(reference_name);
-				reference_name = NameInfo(jvm_class, index);
-				printf("\t\tDescriptor Index = %s, |CP={%d}|\n", reference_name,
-						attributeInfo->info.LocalVariableTable.local_variable_table[i].descriptor_index);
-				printf("\t\tIndex: %d\n", attributeInfo->info.LocalVariableTable.local_variable_table[i].index);
-			}
-		} else {
-			printf("\tDefault: \t");
-			for (int i = 0; i < attributeInfo->attribute_length; i++)
-				printf("\t%x", attributeInfo->info.Default.data[i]);
-			printf("\n");
 		}
 	}
-
 	free(reference_name);
 	free(attributeType);
 }
@@ -1010,85 +1068,85 @@ void Exhibitor::ShowFieldsOnFile(ClassFile* jvm_class, FILE *file) {
 	}
 }
 
-void Exhibitor::ShowInterface(CpInfo cp) {
-	switch (cp.tag) {
+void Exhibitor::ShowInterface(CpInfo *cp) {
+	switch (cp->tag) {
 	case CONSTANTClass:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp.info.Class.tag);
+		printf("%" PRIu8 "\n", cp->info.Class.tag);
 		printf("Index Name: ");
-		printf("%" PRIu16 "\n", cp.info.Class.name_index);
+		printf("%" PRIu16 "\n", cp->info.Class.name_index);
 		break;
 	case CONSTANTFieldref:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp.info.Fieldref.tag);
+		printf("%" PRIu8 "\n", cp->info.Fieldref.tag);
 		printf("Index Class: ");
-		printf("%" PRIu16 "\n", cp.info.Fieldref.class_index);
+		printf("%" PRIu16 "\n", cp->info.Fieldref.class_index);
 		printf("Index Name and Type: ");
-		printf("%" PRIu16 "\n", cp.info.Fieldref.name_and_type_index);
+		printf("%" PRIu16 "\n", cp->info.Fieldref.name_and_type_index);
 		break;
 	case CONSTANTMethodref:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp.info.Methodref.tag);
+		printf("%" PRIu8 "\n", cp->info.Methodref.tag);
 		printf("Index Class: ");
-		printf("%" PRIu16 "\n", cp.info.Methodref.class_index);
+		printf("%" PRIu16 "\n", cp->info.Methodref.class_index);
 		printf("Index Name and Type: ");
-		printf("%" PRIu16 "\n", cp.info.Methodref.name_and_type_index);
+		printf("%" PRIu16 "\n", cp->info.Methodref.name_and_type_index);
 		break;
 	case CONSTANTInterfaceMethodref:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp.info.InterfaceMethodref.tag);
+		printf("%" PRIu8 "\n", cp->info.InterfaceMethodref.tag);
 		printf("Index Class: ");
-		printf("%" PRIu16 "\n", cp.info.InterfaceMethodref.class_index);
+		printf("%" PRIu16 "\n", cp->info.InterfaceMethodref.class_index);
 		printf("Index Name and Type: ");
-		printf("%" PRIu16 "\n", cp.info.InterfaceMethodref.name_and_type_index);
+		printf("%" PRIu16 "\n", cp->info.InterfaceMethodref.name_and_type_index);
 		break;
 	case CONSTANTString:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp.info.String.tag);
+		printf("%" PRIu8 "\n", cp->info.String.tag);
 		printf("Index String: ");
-		printf("%" PRIu16 "\n", cp.info.String.string_index);
+		printf("%" PRIu16 "\n", cp->info.String.string_index);
 		break;
 	case CONSTANTInteger:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp.info.Integer.tag);
+		printf("%" PRIu8 "\n", cp->info.Integer.tag);
 		printf("Bytes: ");
-		printf("%" PRIu32 "\n", cp.info.Integer.bytes);
+		printf("%" PRIu32 "\n", cp->info.Integer.bytes);
 		break;
 	case CONSTANTFloat:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp.info.Float.tag);
+		printf("%" PRIu8 "\n", cp->info.Float.tag);
 		printf("Bytes: ");
-		printf("%" PRIu32 "\n", cp.info.Float.bytes);
+		printf("%" PRIu32 "\n", cp->info.Float.bytes);
 		break;
 	case CONSTANTLong:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp.info.Long.tag);
+		printf("%" PRIu8 "\n", cp->info.Long.tag);
 		printf("High Bytes: ");
-		printf("%" PRIu32 "\n", cp.info.Long.high_bytes);
+		printf("%" PRIu32 "\n", cp->info.Long.high_bytes);
 		printf("Low Bytes Bytes: ");
-		printf("%" PRIu32 "\n", cp.info.Long.low_bytes);
+		printf("%" PRIu32 "\n", cp->info.Long.low_bytes);
 		break;
 	case CONSTANTDouble:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp.info.Double.tag);
+		printf("%" PRIu8 "\n", cp->info.Double.tag);
 		printf("High Bytes: ");
-		printf("%" PRIu32 "\n", cp.info.Double.high_bytes);
+		printf("%" PRIu32 "\n", cp->info.Double.high_bytes);
 		printf("Low Bytes Bytes: ");
-		printf("%" PRIu32 "\n", cp.info.Double.low_bytes);
+		printf("%" PRIu32 "\n", cp->info.Double.low_bytes);
 		break;
 	case CONSTANTNameAndType:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp.info.NameAndType.tag);
+		printf("%" PRIu8 "\n", cp->info.NameAndType.tag);
 		printf("Index Name: ");
-		printf("%" PRIu16 "\n", cp.info.NameAndType.name_index);
+		printf("%" PRIu16 "\n", cp->info.NameAndType.name_index);
 		printf("Index Descriptor: ");
-		printf("%" PRIu16 "\n", cp.info.NameAndType.descriptor_index);
+		printf("%" PRIu16 "\n", cp->info.NameAndType.descriptor_index);
 		break;
 	case CONSTANTUtf8:
 		printf("Tag: ");
-		printf("%" PRIu8 "\n", cp.info.Utf8.tag);
-		for (int i = 0; i < cp.info.Utf8.length; i++) {
-			uint8_t byte = cp.info.Utf8.bytes[i];
+		printf("%" PRIu8 "\n", cp->info.Utf8.tag);
+		for (int i = 0; i < cp->info.Utf8.length; i++) {
+			uint8_t byte = cp->info.Utf8.bytes[i];
 			char c = byte;
 			printf("%c", c);
 		}
@@ -1096,85 +1154,85 @@ void Exhibitor::ShowInterface(CpInfo cp) {
 	}
 }
 
-void Exhibitor::ShowInterfaceOnFile(ClassFile* jvm_class, CpInfo cp, FILE* file) {
-	switch (cp.tag) {
+void Exhibitor::ShowInterfaceOnFile(CpInfo *cp, FILE* file) {
+	switch (cp->tag) {
 	case CONSTANTClass:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp.info.Class.tag);
+		fprintf(file, "%" PRIu8 "\n", cp->info.Class.tag);
 		fprintf(file, "Index Name: ");
-		fprintf(file, "%" PRIu16 "\n", cp.info.Class.name_index);
+		fprintf(file, "%" PRIu16 "\n", cp->info.Class.name_index);
 		break;
 	case CONSTANTFieldref:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp.info.Fieldref.tag);
+		fprintf(file, "%" PRIu8 "\n", cp->info.Fieldref.tag);
 		fprintf(file, "Index Class: ");
-		fprintf(file, "%" PRIu16 "\n", cp.info.Fieldref.class_index);
+		fprintf(file, "%" PRIu16 "\n", cp->info.Fieldref.class_index);
 		fprintf(file, "Index Name and Type: ");
-		fprintf(file, "%" PRIu16 "\n", cp.info.Fieldref.name_and_type_index);
+		fprintf(file, "%" PRIu16 "\n", cp->info.Fieldref.name_and_type_index);
 		break;
 	case CONSTANTMethodref:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp.info.Methodref.tag);
+		fprintf(file, "%" PRIu8 "\n", cp->info.Methodref.tag);
 		fprintf(file, "Index Class: ");
-		fprintf(file, "%" PRIu16 "\n", cp.info.Methodref.class_index);
+		fprintf(file, "%" PRIu16 "\n", cp->info.Methodref.class_index);
 		fprintf(file, "Index Name and Type: ");
-		fprintf(file, "%" PRIu16 "\n", cp.info.Methodref.name_and_type_index);
+		fprintf(file, "%" PRIu16 "\n", cp->info.Methodref.name_and_type_index);
 		break;
 	case CONSTANTInterfaceMethodref:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp.info.InterfaceMethodref.tag);
+		fprintf(file, "%" PRIu8 "\n", cp->info.InterfaceMethodref.tag);
 		fprintf(file, "Index Class: ");
-		fprintf(file, "%" PRIu16 "\n", cp.info.InterfaceMethodref.class_index);
+		fprintf(file, "%" PRIu16 "\n", cp->info.InterfaceMethodref.class_index);
 		fprintf(file, "Index Name and Type: ");
-		fprintf(file, "%" PRIu16 "\n", cp.info.InterfaceMethodref.name_and_type_index);
+		fprintf(file, "%" PRIu16 "\n", cp->info.InterfaceMethodref.name_and_type_index);
 		break;
 	case CONSTANTString:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp.info.String.tag);
+		fprintf(file, "%" PRIu8 "\n", cp->info.String.tag);
 		fprintf(file, "Index String: ");
-		fprintf(file, "%" PRIu16 "\n", cp.info.String.string_index);
+		fprintf(file, "%" PRIu16 "\n", cp->info.String.string_index);
 		break;
 	case CONSTANTInteger:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp.info.Integer.tag);
+		fprintf(file, "%" PRIu8 "\n", cp->info.Integer.tag);
 		fprintf(file, "Bytes: ");
-		fprintf(file, "%" PRIu32 "\n", cp.info.Integer.bytes);
+		fprintf(file, "%" PRIu32 "\n", cp->info.Integer.bytes);
 		break;
 	case CONSTANTFloat:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp.info.Float.tag);
+		fprintf(file, "%" PRIu8 "\n", cp->info.Float.tag);
 		fprintf(file, "Bytes: ");
-		fprintf(file, "%" PRIu32 "\n", cp.info.Float.bytes);
+		fprintf(file, "%" PRIu32 "\n", cp->info.Float.bytes);
 		break;
 	case CONSTANTLong:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp.info.Long.tag);
+		fprintf(file, "%" PRIu8 "\n", cp->info.Long.tag);
 		fprintf(file, "High Bytes: ");
-		fprintf(file, "%" PRIu32 "\n", cp.info.Long.high_bytes);
+		fprintf(file, "%" PRIu32 "\n", cp->info.Long.high_bytes);
 		fprintf(file, "Low Bytes Bytes: ");
-		fprintf(file, "%" PRIu32 "\n", cp.info.Long.low_bytes);
+		fprintf(file, "%" PRIu32 "\n", cp->info.Long.low_bytes);
 		break;
 	case CONSTANTDouble:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp.info.Double.tag);
+		fprintf(file, "%" PRIu8 "\n", cp->info.Double.tag);
 		fprintf(file, "High Bytes: ");
-		fprintf(file, "%" PRIu32 "\n", cp.info.Double.high_bytes);
+		fprintf(file, "%" PRIu32 "\n", cp->info.Double.high_bytes);
 		fprintf(file, "Low Bytes Bytes: ");
-		fprintf(file, "%" PRIu32 "\n", cp.info.Double.low_bytes);
+		fprintf(file, "%" PRIu32 "\n", cp->info.Double.low_bytes);
 		break;
 	case CONSTANTNameAndType:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp.info.NameAndType.tag);
+		fprintf(file, "%" PRIu8 "\n", cp->info.NameAndType.tag);
 		fprintf(file, "Index Name: ");
-		fprintf(file, "%" PRIu16 "\n", cp.info.NameAndType.name_index);
+		fprintf(file, "%" PRIu16 "\n", cp->info.NameAndType.name_index);
 		fprintf(file, "Index Descriptor: ");
-		fprintf(file, "%" PRIu16 "\n", cp.info.NameAndType.descriptor_index);
+		fprintf(file, "%" PRIu16 "\n", cp->info.NameAndType.descriptor_index);
 		break;
 	case CONSTANTUtf8:
 		fprintf(file, "Tag: ");
-		fprintf(file, "%" PRIu8 "\n", cp.info.Utf8.tag);
-		for (int i = 0; i < cp.info.Utf8.length; i++) {
-			uint8_t byte = cp.info.Utf8.bytes[i];
+		fprintf(file, "%" PRIu8 "\n", cp->info.Utf8.tag);
+		for (int i = 0; i < cp->info.Utf8.length; i++) {
+			uint8_t byte = cp->info.Utf8.bytes[i];
 			char c = byte;
 			fprintf(file, "%c", c);
 		}
@@ -1274,9 +1332,14 @@ void Exhibitor::ShowMethodsOnFile(ClassFile* jvm_class, FILE* file) {
 }
 
 char* Exhibitor::NameInfo(ClassFile* jvm_class, u2 index) {
-	char *name;
+	char *name = NULL;
 	int i;
-	name = (char *) malloc((jvm_class->constant_pool[index].info.Utf8.length + 1) * sizeof(char));
+	int quantidade = (jvm_class->constant_pool[index].info.Utf8.length + 1);
+	//erro 3
+	if (quantidade <= 0) {
+		printf("erro - NameInfo\n");
+	}
+	name = (char *) malloc(quantidade * sizeof(char));
 
 	for (i = 0; i < jvm_class->constant_pool[index].info.Utf8.length; i++)
 		name[i] = jvm_class->constant_pool[index].info.Utf8.bytes[i];
