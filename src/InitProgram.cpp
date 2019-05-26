@@ -179,6 +179,7 @@ void InitProgram::JVM_Menu(ClassFile *jvm_class) {
 				while (getchar() != '\n');;
 				break;
 			case 'k':
+				shouldLoop = 0;
 				initProgramExhibitor->ShowInterface(jvm_class->constant_pool);
 				printf("Pressione enter para continuar\n");
 				while (getchar() != '\n');;
@@ -203,16 +204,14 @@ void InitProgram::JVM_Menu(ClassFile *jvm_class) {
 				break;
 			case 'o':
 				shouldLoop = 0;
-				//Com erro de indice
-				//initProgramExhibitor->ShowMethods(jvm_class);
+				initProgramExhibitor->ShowMethods(jvm_class);
 				printf("Função com erro\n");
 				printf("Pressione enter para continuar\n");
 				while (getchar() != '\n');
 				break;
 			case 'p':
 				shouldLoop = 0;
-				//Com erro de indice
-				//initProgramExhibitor->ShowMethodsOnFile(jvm_class, initProgramFile);
+				initProgramExhibitor->ShowMethodsOnFile(jvm_class, initProgramFile);
 				printf("Função com erro\n");
 				printf("Pressione enter para continuar\n");
 				while (getchar() != '\n');
