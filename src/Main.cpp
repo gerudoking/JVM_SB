@@ -9,7 +9,9 @@ int main(int argc, char *argv[]) {
 	initProgram->StartProgram(argv);
 	initProgram->ReadClass(mainClass);
 
-	initProgram->JVM_Menu(mainClass);
+	//initProgram->JVM_Menu(mainClass);
+
+	initProgram->QuickShow(mainClass);
 
 	//free(initProgram);
 	return 0;

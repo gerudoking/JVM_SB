@@ -2,6 +2,7 @@
 
 InitProgram::InitProgram() {
 	initProgramReader = new Reader();
+	initProgramExhibitor = new Exhibitor();
 }
 
 InitProgram::~InitProgram() {
@@ -28,8 +29,45 @@ int InitProgram::createFileTXT(char *fileName) {
 	return SUCCESS;
 }
 
+void InitProgram::QuickShow(ClassFile* jvm_class){
+	char *fileName, *name;
+	int index = jvm_class->constant_pool[jvm_class->this_class - 1].info.Class.name_index - 1;
+
+	name = initProgramExhibitor->NameInfo(jvm_class, index);
+	fileName = (char *) malloc(sizeof(char) * (strlen(name)));
+
+	strcpy(fileName, name);
+	strcat(fileName, ".txt");
+
+	system("clear||cls");
+
+	if (createFileTXT(fileName) == SUCCESS) {
+
+		printf("Class information printed successfully on file. Showing information on terminal...\n\n");
+
+		initProgramExhibitor->ShowConstantPool(jvm_class);
+		initProgramExhibitor->ShowFields(jvm_class);
+		initProgramExhibitor->ShowMethods(jvm_class); 
+		initProgramExhibitor->ShowAllAttributes(jvm_class);
+		initProgramExhibitor->ShowInterface(jvm_class->constant_pool);
+		initProgramExhibitor->ShowInfo(jvm_class);
+
+		initProgramExhibitor->ShowConstantPoolOnFile(jvm_class, initProgramFile);
+		initProgramExhibitor->ShowFieldsOnFile(jvm_class, initProgramFile);
+		initProgramExhibitor->ShowMethodsOnFile(jvm_class, initProgramFile);
+		initProgramExhibitor->ShowAllAttributesOnFile(jvm_class, initProgramFile);
+		initProgramExhibitor->ShowInterfaceOnFile(jvm_class->constant_pool, initProgramFile);
+		initProgramExhibitor->ShowInfoOnFile(jvm_class, initProgramFile);
+		printf("\nFile %s created successfully!\n", fileName);
+
+		fclose(initProgramFile);
+		free(fileName);
+		printf("\nEnd of program reached with success.\n");
+	}
+}
+
 void InitProgram::JVM_Menu(ClassFile *jvm_class) {
-	initProgramExhibitor = new Exhibitor();
+	//initProgramExhibitor = new Exhibitor();
 
 	char *fileName, *name;
 	int index = jvm_class->constant_pool[jvm_class->this_class - 1].info.Class.name_index - 1;

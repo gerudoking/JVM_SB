@@ -21,6 +21,7 @@ public:
 	int ReadClass(ClassFile *jvm_class);
 	void JVM_Menu(ClassFile *jvm_class);
 	int createFileTXT(char *fileName);
+	void QuickShow(ClassFile *jvm_class);
 
 };
 
