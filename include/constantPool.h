@@ -1,4 +1,4 @@
-/** @file constantPool.h
+/** @file ConstantPool.h
  @brief Módulo Constant pool
 
  @details Este módulo contém as funções necessárias para a manipulação do pool de constantes.
@@ -9,12 +9,12 @@
 
  Define uso para evitar a inclusão múltipla de arquivos.
  */
-#ifndef CONSTANTPOOL
-#define CONSTANTPOOL
+#ifndef CONSTANTPOOL_H
+#define CONSTANTPOOL_H
 
 #include <fstream>
 
-#include "classeTiposBasicos.h"
+#include "BasicTypes.h"
 
 using namespace std;
 

@@ -1,9 +1,9 @@
 /*!
- * \file methods.cpp
+ * \file Methods.cpp
  * \brief
  */
 
-#include "methods.h"
+#include "Methods.h"
 
 method_info lerMethod(FILE* arquivoEntrada, cp_info *constantPool) {
 	method_info method;

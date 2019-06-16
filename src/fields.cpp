@@ -3,7 +3,7 @@
  * \brief Módulo responsável pela manipulação dos campos existentes no arquivo .class
  */
 
-#include "fields.h"
+#include "Fields.h"
 
 void imprimirField(field_info field, cp_info *constantPool, int indice) {
 	printf("\tField %d : \n", indice);

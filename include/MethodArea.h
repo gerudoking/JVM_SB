@@ -1,18 +1,18 @@
 /*!
- * \file classeMethodArea.h
+ * \file MethodArea.h
  * \brief Responsável por todas as operações que gerenciam os métodos
  */
-#ifndef METHOD_AREA
-#define METHOD_AREA
+#ifndef METHOD_AREA_H
+#define METHOD_AREA_H
 
 #include "classeLeitorExibidor.h"
-#include "constantPool.h"
-#include "classeEstatica.h"
+#include "ConstantPool.h"
+#include "StaticClass.h"
 #include <map>
 #include <algorithm>
 #include <string.h>
-#include "classeFrame.h"
-#include "classeTiposBasicos.h"
+#include "Frame.h"
+#include "BasicTypes.h"
 
 using namespace std;
 
@@ -21,17 +21,17 @@ using namespace std;
  */
 class MethodArea {
 private:
-	static map<string, ClasseEstatica*> mapClasses;
+	static map<string, StaticClass*> mapClasses;
 	static FrameStack *frameStack;
 
 public:
 	static string path;
 
-	/** @fn static ClasseEstatica *obterClass(string)
+	/** @fn static StaticClass *obterClass(string)
 	 * @brief Retorna referência para classe estática
 	 * @param s Nome da classe
 	 */
-	static ClasseEstatica *obterClass(string);
+	static StaticClass *obterClass(string);
 
 	/** @fn static bool adicionarClasse(string classe)
 	 * @brief Carrega a classe na memória

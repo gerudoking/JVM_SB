@@ -1,19 +1,19 @@
 /*!
- * \file attributes.h
+ * \file Attributes.h
  * \brief Atributos a serem usados na execuçao da JVM
  */
 
 /** @def ATTRIBUTE
  * @brief Define utilizado para evitar múltiplas inclusões desse arquivo.
  */
-#ifndef ATTRIBUTE
-#define ATTRIBUTE
+#ifndef ATTRIBUTE_H
+#define ATTRIBUTE_H
 
 #include <fstream>
 #include <iostream>
 #include <stdlib.h>
 #include <string>
-#include "constantPool.h"
+#include "ConstantPool.h"
 
 using namespace std;
 

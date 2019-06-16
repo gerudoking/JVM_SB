@@ -1,19 +1,19 @@
-/** \file classeOperacoes.h
+/** \file Operations.h
 *	\brief
 */
-#ifndef OPERACOES
-#define OPERACOES
+#ifndef OPERATIONS_H
+#define OPERATIONS_H
 
-#include "classeEstatica.h"
-#include "classeFrame.h"
+#include "StaticClass.h"
+#include "Frame.h"
 #include "classeLeitorExibidor.h"
-#include "classeMethodArea.h"
+#include "MethodArea.h"
 
 using namespace std;
 
 typedef void (*funcaoGenerica)(void);
 
-class Operacoes {
+class Operations {
 private:
 
 	/** @fn uint32_t obterNBytesValue(uint8_t n, unsigned char** code)
@@ -23,12 +23,12 @@ private:
 	 */
 	static uint32_t obterNBytesValue(uint8_t n, unsigned char** pc);
 
-	/** @fn ClasseEstatica* obterStaticClassThatHasField(ClasseEstatica* base, string field_name)
+	/** @fn StaticClass* obterStaticClassThatHasField(StaticClass* base, string field_name)
 	 * @brief Recursively search for a static class that contains specific field.
-	 * @param base ClasseEstatica that is the base for searching field, caso o campo nao seja encontrado nessa classe, go to SuperClasse.
+	 * @param base StaticClass that is the base for searching field, caso o campo nao seja encontrado nessa classe, go to SuperClasse.
 	 * @param field_name Name of field to will be searched.
 	 */
-	static ClasseEstatica* obterStaticClassThatHasField(ClasseEstatica* base, string field_name);
+	static StaticClass* obterStaticClassThatHasField(StaticClass* base, string field_name);
 
 	static n_array* obterNewMultiArray(stack<int> stackDimessoes);
 	static double obterValor(n_array array, stack<int> stackIndeces);
@@ -42,7 +42,7 @@ private:
 
 	const static funcaoGenerica funcaoGenericaOpcodes[];
 public:
-	Operacoes(struct frame_s *flame);
+	Operations(struct frame_s *flame);
 
 	static void atualizarFrame(struct frame_s *flame);
 	static void atualizarThreads(stack<struct frame_s*> *stackThreads);

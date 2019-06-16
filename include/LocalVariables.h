@@ -1,5 +1,5 @@
 /*!
- * \file classeVariaveisLocais.h
+ * \file LocalVariables.h
  * \brief Stores local variables to current method
  */
 
@@ -9,8 +9,8 @@
  Define used to avoid multiple inclusions of this file
  */
 
-#ifndef LOCALVARIABLES
-#define LOCALVARIABLES
+#ifndef LOCALVARIABLES_H
+#define LOCALVARIABLES_H
 
 #include <cstdint>
 #include <stack>
@@ -18,7 +18,7 @@
 #include <sstream>
 #include <cstdlib>
 
-#include "classeTiposBasicos.h"
+#include "BasicTypes.h"
 
 using namespace std;
 

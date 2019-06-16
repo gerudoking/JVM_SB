@@ -1,9 +1,9 @@
 /*!
- * \file classeTiposBasicos.cpp
+ * \file BasicTypes.cpp
  * \brief
  */
 
-#include "classeTiposBasicos.h"
+#include "BasicTypes.h"
 
 U2 lerU2(FILE *fp) {
 	unsigned short ret = 0;

@@ -3,7 +3,7 @@
  * \brief
  */
 
-#include "attributes.h"
+#include "Attributes.h"
 
 t_exception_table* lerExceptionHandler(FILE* arquivoEntrada) {
 	t_exception_table* tabelaException = (t_exception_table*) malloc(sizeof(t_exception_table));

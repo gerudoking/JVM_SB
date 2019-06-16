@@ -1,14 +1,14 @@
 /*!
- * \file pilhaOperandos.cpp
+ * \file OperandsStack.cpp
  * \brief Pilha de operandos
  */
 
-#include "classePilhaOperandos.h"
+#include "OperandsStack.h"
 
 /**
  * Construtor
  */
-PilhaOperandos::PilhaOperandos(int maxSize) :
+OperandsStack::OperandsStack(int maxSize) :
 		realMax(maxSize), max(2 * maxSize) {
 	typePushed = false;
 }
@@ -16,14 +16,14 @@ PilhaOperandos::PilhaOperandos(int maxSize) :
 /**
  * Retorna topo da pilha de tipos
  */
-uint8_t PilhaOperandos::top_type() {
+uint8_t OperandsStack::top_type() {
 	return ((!this->empty()) ? (this->stackTipos.top()) : (-1));
 }
 
 /**
  * Retorna topo da pilha de valores
  */
-element PilhaOperandos::top_value() {
+element OperandsStack::top_value() {
 	element ret;
 
 	//Se pilha estiver vazia, retorna elemento vazio
@@ -48,7 +48,7 @@ element PilhaOperandos::top_value() {
 /**
  * Retorna e remove topo da pilha de valores e da pop na pilha de tipos
  */
-element PilhaOperandos::pop() {
+element OperandsStack::pop() {
 	element ret;
 	//Se a pilha estiver vazia, retorna um elemento vazio.
 	if (this->empty()) {
@@ -76,7 +76,7 @@ element PilhaOperandos::pop() {
 /**
  * Retorna estrutura com valor e tipo associados e da pop na pilha de valores e na de tipos
  */
-TypedElement PilhaOperandos::popTyped() {
+TypedElement OperandsStack::popTyped() {
 	TypedElement ret;
 	ret.type = this->stackTipos.top();
 	ret.realType = this->stackTiposReais.top();
@@ -88,7 +88,7 @@ TypedElement PilhaOperandos::popTyped() {
 /**
  * Auxiliar do printAll, imprime a string correspondente ao tipo do elemento
  */
-std::string PilhaOperandos::getString() {
+std::string OperandsStack::getString() {
 	std::stringstream ret;
 
 	//Switch no tipo do elemento do topo da pilha de operandos
@@ -119,7 +119,7 @@ std::string PilhaOperandos::getString() {
 /**
  * Empilha um int na pilha de valores e seu tipo na pilha de tipos
  */
-void PilhaOperandos::push(int x) {
+void OperandsStack::push(int x) {
 	//Se chegou no limite da pilha, n�o empilha
 	if (this->size() == max) {
 		throw std::out_of_range("Excedeu o limite maximo da pilha!");
@@ -140,7 +140,7 @@ void PilhaOperandos::push(int x) {
 /**
  * Empilha um float na pilha de valores e seu tipo na pilha de tipos
  */
-void PilhaOperandos::push(float x) {
+void OperandsStack::push(float x) {
 	//Se chegou no limite da pilha, n�o empilha
 	if (this->size() == max) {
 		throw std::out_of_range("Excedeu o limite maximo da pilha!");
@@ -163,7 +163,7 @@ void PilhaOperandos::push(float x) {
 /**
  * Empilha um double na pilha de valores e seu tipo na pilha de tipos
  */
-void PilhaOperandos::push(double x) {
+void OperandsStack::push(double x) {
 	//Se n�o houver 2 espa�os dispon�veis na pilha, n�o empilha
 	if (this->size() + 1 >= max) {
 		throw std::out_of_range("Excedeu o limite maximo da pilha!");
@@ -191,7 +191,7 @@ void PilhaOperandos::push(double x) {
 /**
  * Empilha um long na pilha de valores e seu tipo na pilha de tipos
  */
-void PilhaOperandos::push(int64_t _x) {
+void OperandsStack::push(int64_t _x) {
 	uint64_t x = _x;
 	//Se n�o houver 2 espa�os dispon�veis na pilha, n�o empilha
 	if (this->size() + 1 >= max) {
@@ -217,7 +217,7 @@ void PilhaOperandos::push(int64_t _x) {
 /**
  * Empilha um bool na pilha de valores e seu tipo na pilha de tipos
  */
-void PilhaOperandos::push(bool x) {
+void OperandsStack::push(bool x) {
 	//Se chegou no limite da pilha, n�o empilha
 	if (this->size() == max) {
 		throw std::out_of_range("Excedeu o limite maximo da pilha!");
@@ -241,7 +241,7 @@ void PilhaOperandos::push(bool x) {
 /**
  * Empilha uma referencia na pilha de valores e seu tipo na pilha de tipos
  */
-void PilhaOperandos::push(int *x) {
+void OperandsStack::push(int *x) {
 	//Se chegou no limite da pilha, n�o empilha
 	if (this->size() + bits64 >= max) {
 		throw std::out_of_range("Passou do limite maximo da pilha!");
@@ -271,7 +271,7 @@ void PilhaOperandos::push(int *x) {
 /**
  * Empilha valor e tipo de estrutura com valor e tipo associados
  */
-void PilhaOperandos::push(TypedElement te) {
+void OperandsStack::push(TypedElement te) {
 	this->stackTiposReais.push(te.realType);
 	typePushed = true;
 	this->push(te.value, te.type);
@@ -280,13 +280,13 @@ void PilhaOperandos::push(TypedElement te) {
 /**
  * Chama a fun��o para empilhar de acordo com o tipo do elemento recebido
  */
-void PilhaOperandos::push(element x, uint8_t tipo) {
+void OperandsStack::push(element x, uint8_t tipo) {
 	switch (tipo) {
 	case TYPE_DOUBLE:
 		this->push(x.d);
 		break;
 	case TYPE_LONG:
-		this->push(long(x.l));
+		//this->push(long(x.l)); //Implementar método push para longs
 		break;
 	case TYPE_FLOAT:
 		this->push(x.f);
@@ -308,22 +308,22 @@ void PilhaOperandos::push(element x, uint8_t tipo) {
 /**
  * Retorna valor m�ximo da pilha de operandos
  */
-int PilhaOperandos::getMaxSize() {
+int OperandsStack::getMaxSize() {
 	return this->realMax;
 }
 
 /**
  * Retorna o tamanho da pilha de valores
  */
-int PilhaOperandos::size() {
+int OperandsStack::size() {
 	return this->stackElementos.size();
 }
 
 /**
  * Percorre e imprime toda a pilha de operandos
  */
-void PilhaOperandos::printALL() {
-	PilhaOperandos aux(this->max);
+void OperandsStack::printALL() {
+	OperandsStack aux(this->max);
 
 	while (!this->empty()) {
 		cout << this->getString() << endl;
@@ -338,6 +338,6 @@ void PilhaOperandos::printALL() {
 /**
  * returna 1 se a pilha de valores estiver vazia, 0 caso contr�rio
  */
-bool PilhaOperandos::empty() {
+bool OperandsStack::empty() {
 	return this->stackElementos.empty();
 }

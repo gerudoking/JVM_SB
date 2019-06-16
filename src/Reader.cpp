@@ -277,17 +277,17 @@ void Reader::FillFields(FILE *file, ClassFile *jvm_class) {
 }
 
 void Reader::FillMethods(FILE *file, ClassFile *jvm_class) {
-	jvm_class->methods_count = ReadU2(file);
-	jvm_class->methods = (method_info *) malloc(jvm_class->methods_count * sizeof(method_info));
+	jvm_class->Methods_count = ReadU2(file);
+	jvm_class->Methods = (method_info *) malloc(jvm_class->Methods_count * sizeof(method_info));
 
-	for (int i = 0; i < jvm_class->methods_count; i++) {
-		jvm_class->methods[i].access_flags = ReadU2(file);
-		jvm_class->methods[i].name_index = ReadU2(file);
-		jvm_class->methods[i].descriptor_index = ReadU2(file);
-		jvm_class->methods[i].attributes_count = ReadU2(file);
-		jvm_class->methods[i].attributes = (attribute_info *) malloc(jvm_class->methods[i].attributes_count * sizeof(attribute_info));
-		for (int j = 0; j < jvm_class->methods[i].attributes_count; j++)
-			FillAttribute(file, jvm_class, &(jvm_class->methods[i].attributes[j]));
+	for (int i = 0; i < jvm_class->Methods_count; i++) {
+		jvm_class->Methods[i].access_flags = ReadU2(file);
+		jvm_class->Methods[i].name_index = ReadU2(file);
+		jvm_class->Methods[i].descriptor_index = ReadU2(file);
+		jvm_class->Methods[i].attributes_count = ReadU2(file);
+		jvm_class->Methods[i].attributes = (attribute_info *) malloc(jvm_class->Methods[i].attributes_count * sizeof(attribute_info));
+		for (int j = 0; j < jvm_class->Methods[i].attributes_count; j++)
+			FillAttribute(file, jvm_class, &(jvm_class->Methods[i].attributes[j]));
 	}
 }
 

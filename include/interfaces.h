@@ -1,15 +1,15 @@
 /*!
- * \file interfaces.h
+ * \file Interfaces.h
  * \brief Gerencia as informações da interfaces do arquivo .class
  */
 
-#ifndef INTERFACES
-#define INTERFACES
+#ifndef INTERFACES_H
+#define INTERFACES_H
 
 #include <iostream>
 
-#include "classeTiposBasicos.h"
-#include "constantPool.h"
+#include "BasicTypes.h"
+#include "ConstantPool.h"
 
 /**
  * @fn unsigned short *lerTodasInterfaces(FILE* arquivoEntrada, int tamanho)

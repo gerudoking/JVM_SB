@@ -1,14 +1,14 @@
 /*!
- * \file methods.h
+ * \file Methods.h
  * \brief Gerencia as informações dos metodos do arquivo .class
  */
-#ifndef METHOD
-#define METHOD
+#ifndef METHOD_H
+#define METHOD_H
 
 #include <fstream>
-#include "constantPool.h"
-#include "attributes.h"
-#include "classeTiposBasicos.h"
+#include "ConstantPool.h"
+#include "Attributes.h"
+#include "BasicTypes.h"
 
 using namespace std;
 

@@ -1,9 +1,9 @@
 /*!
- * \file classeVariaveisLocais.cpp
+ * \file LocalVariables.cpp
  * \brief
  */
 
-#include "classeVariaveisLocais.h"
+#include "LocalVariables.h"
 
 VariaveisLocais::VariaveisLocais(uint16_t maxSize) :
 		max(maxSize), realMax(2 * maxSize), dois(false) {

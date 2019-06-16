@@ -1,20 +1,22 @@
 /*!
- * \file ClasseEstatica.cpp
+ * \file StaticClass.cpp
  * \brief
  */
 
-#include "classeEstatica.h"
+#include "Instance.h"
 
-ClasseEstatica::ClasseEstatica(LeitorExibidor *leitorExibidor) {
-	this->leitorExibidor = leitorExibidor; ///class file lido
-	int tamanho = leitorExibidor->obterFieldsCount(); ///get numero de fields
-	field_info *field = leitorExibidor->obterFields();
+Instance::Instance(StaticClass* staticClass) {
+	this->staticClass = staticClass;
+
+	int tamanho = staticClass->obterClasseLeitorExibidor()->obterFieldsCount();
+	field_info *field = staticClass->obterClasseLeitorExibidor()->obterFields();
 
 	for (int i = 0; i < tamanho; i++) {
-		if ((field[i].accessFlags & 0x08) && (field[i].accessFlags & 0x010) == 0) {
+		if ((field[i].accessFlags & 0x08) == 0) {
 			TypedElement *typedElement = (TypedElement *) malloc(sizeof(TypedElement));
 			typedElement->value.l = 0;
-			string type = capturarIndiceDeReferencia(leitorExibidor->obterConstantPool(), field[i].descriptor_index);
+			string type = capturarIndiceDeReferencia(staticClass->obterClasseLeitorExibidor()->obterConstantPool(),
+					field[i].descriptor_index);
 
 			switch (type[0]) {
 			case 'B':
@@ -48,34 +50,35 @@ ClasseEstatica::ClasseEstatica(LeitorExibidor *leitorExibidor) {
 				typedElement->type = TYPE_REFERENCE;
 				break;
 			}
-
-			string nomeField = capturarIndiceDeReferencia(leitorExibidor->obterConstantPool(), field[i].name_index);
-			mapStaticFields.insert(pair<string, TypedElement*>(nomeField, typedElement));
+			string nomeField = capturarIndiceDeReferencia(staticClass->obterClasseLeitorExibidor()->obterConstantPool(),
+					field[i].name_index);
+			mapLocalFields.insert(pair<string, TypedElement*>(nomeField, typedElement));
 		}
 	}
 }
 
-TypedElement ClasseEstatica::obterField(string field) {
+TypedElement Instance::obterField(string field) {
 	TypedElement typedElement;
 	typedElement.type = TYPE_NOT_SET;
-	map<string, TypedElement*>::const_iterator mapField;
-	mapField = mapStaticFields.begin();
 
-	while (mapField != mapStaticFields.end()) {
+	for (map<string, TypedElement*>::const_iterator mapField = mapLocalFields.begin(); mapField != mapLocalFields.end(); mapField++) {
 		if (mapField->first == field) {
 			return *(mapField->second);
 		}
-		mapField++;
 	}
 
 	return typedElement;
 }
 
-bool ClasseEstatica::atualizarField(string field, TypedElement typedElement) {
-	map<string, TypedElement*>::const_iterator mapField;
-	mapField = mapStaticFields.begin();
+StaticClass *Instance::obterStaticClass() {
+	return staticClass;
+}
 
-	while (mapField != mapStaticFields.end()) {
+bool Instance::atualizarField(string field, TypedElement typedElement) {
+	map<string, TypedElement*>::const_iterator mapField;
+	mapField = mapLocalFields.begin();
+
+	while (mapField != mapLocalFields.end()) {
 		if (mapField->first == field) {
 			if (mapField->second->type == typedElement.type) {
 				*(mapField->second) = typedElement;
@@ -90,11 +93,11 @@ bool ClasseEstatica::atualizarField(string field, TypedElement typedElement) {
 	return false;
 }
 
-bool ClasseEstatica::atualizarFieldFinals(string field, TypedElement typedElement) {
+bool Instance::atualizarFieldFinals(string field, TypedElement typedElement) {
 	map<string, TypedElement*>::const_iterator mapField;
-	mapField = mapStaticFields.begin();
+	mapField = mapLocalFields.begin();
 
-	while (mapField != mapStaticFields.end()) {
+	while (mapField != mapLocalFields.end()) {
 		if (mapField->first == field) {
 			if (mapField->second->type == typedElement.type) {
 				*(mapField->second) = typedElement;
@@ -109,13 +112,12 @@ bool ClasseEstatica::atualizarFieldFinals(string field, TypedElement typedElemen
 	return false;
 }
 
-LeitorExibidor *ClasseEstatica::obterClasseLeitorExibidor() {
-	return leitorExibidor;
-}
+void Instance::imprimirInstance() {
+	map<string, TypedElement*>::const_iterator mapField;
+	mapField = mapLocalFields.begin();
 
-ClasseInstancia *ClasseEstatica::obterInstanceClasseInstancia() {
-	ClasseInstancia *classeInstancia = new ClasseInstancia(this);
-	Heap::adicionarInstancia(classeInstancia);
-
-	return classeInstancia;
+	while (mapField != mapLocalFields.end()) {
+		cout << mapField->first << endl;
+		mapField++;
+	}
 }

@@ -1,10 +1,10 @@
 /*!
- * \file classePilhaOperandos.h
+ * \file OperandsStack.h
  * \brief Pilha responsável por armazenar os operandos da JVM
  */
 
-#ifndef PILHAOPERANDOS
-#define PILHAOPERANDOS
+#ifndef OPERANDSSTACK_H
+#define OPERANDSSTACK_H
 
 #include <stack>
 #include <cstdint>
@@ -12,7 +12,7 @@
 #include <sstream>
 #include <stdbool.h>
 
-#include "classeTiposBasicos.h"
+#include "BasicTypes.h"
 
 #define INVALID 99
 #define TYPE_NOT_SET 0
@@ -25,12 +25,12 @@
 
 using namespace std;
 
-/** @class PilhaOperandos
+/** @class OperandsStack
  @brief Classe da pilha de operandos
 
  Responsável por armazenar e manipular a pilha de operandos
  */
-class PilhaOperandos {
+class OperandsStack {
 private:
 	//pilha para os valores armazenados
 	stack<uint32_t> stackElementos;
@@ -49,11 +49,11 @@ private:
 	//variavel para determinar tamanho m�ximo da pilha
 	const int realMax;
 public:
-	/** @fn PilhaOperandos(int maxSize)
+	/** @fn OperandsStack(int maxSize)
 	 @brief Construtor
 	 @param maxSize Indica tamanho m�ximo da pilha de operandos
 	 */
-	PilhaOperandos(int);
+	OperandsStack(int);
 
 	/** @fn uint8_t top_type()
 	 @brief Recupera o tipo do topo da pilha de operandos

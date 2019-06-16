@@ -1,35 +1,35 @@
 /*!
- * \file classeEstatica.h
- * \brief Definição da ClasseEstatica
+ * \file StaticClass.h
+ * \brief Definição da StaticClass
  */
-#ifndef CLASSE_ESTATICA
-#define CLASSE_ESTATICA
+#ifndef STATICCLASS_H
+#define STATICCLASS_H
 
-class ClasseEstatica;
+class StaticClass;
 
 #include "classeLeitorExibidor.h"
-#include "classePilhaOperandos.h"
-#include "classeInstancia.h"
-#include "classeHeap.h"
+#include "OperandsStack.h"
+#include "Instance.h"
+#include "Heap.h"
 #include <map>
 
 using namespace std;
 
-/** @class ClasseEstatica
+/** @class StaticClass
  * @brief Fields Estáticos compartilhados por todas as instâncias.
  * @brief Define operações que manipulam classes estáticas
  */
-class ClasseEstatica {
+class StaticClass {
 private:
 	map<string, TypedElement*> mapStaticFields;
 	LeitorExibidor *leitorExibidor;
 
 public:
-	/** @fn ClasseEstatica(LeitorExibidor *leitorExibidor)
-	 * @brief Construtor da ClasseEstatica
+	/** @fn StaticClass(LeitorExibidor *leitorExibidor)
+	 * @brief Construtor da StaticClass
 	 * @param Leitor informação do class file já carregada na memória
 	 */
-	ClasseEstatica(LeitorExibidor *leitorExibidor);
+	StaticClass(LeitorExibidor *leitorExibidor);
 
 	/** @fn TypedElement obterField(string field)
 	 * @brief Retorna as informações de um field
@@ -60,10 +60,10 @@ public:
 	 */
 	LeitorExibidor *obterClasseLeitorExibidor();
 
-	/** @fn ClasseInstancia *getInstance()
+	/** @fn Instance *getInstance()
 	 @brief Retorna a instância da classe
 	 */
-	ClasseInstancia *obterInstanceClasseInstancia();
+	Instance *obterInstanceInstance();
 };
 
 #endif

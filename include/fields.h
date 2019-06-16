@@ -1,5 +1,5 @@
 /*!
- * \file fields.h
+ * \file Fields.h
  * \brief Gerencia as informações dos campos do arquivo .class
  */
 
@@ -7,13 +7,13 @@
  * @def FIELDS
  * @brief Define uso para evitar a inclusão múltipla de arquivos.
  */
-#ifndef FIELDS
-#define FIELDS
+#ifndef FIELDS_H
+#define FIELDS_H
 
 #include <fstream>
-#include "constantPool.h"
-#include "attributes.h"
-#include "classeTiposBasicos.h"
+#include "ConstantPool.h"
+#include "Attributes.h"
+#include "BasicTypes.h"
 
 using namespace std;
 

@@ -3,7 +3,7 @@
  * \brief Este módulo contém as funções necessárias para a manipulação do pool de constantes.
  */
 
-#include "constantPool.h"
+#include "ConstantPool.h"
 
 int carregarConstantPool(cp_info *constantPool, int tamanho, FILE* arquivoEntrada) {
 	int i;

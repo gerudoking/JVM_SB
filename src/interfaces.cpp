@@ -3,7 +3,7 @@
  * \brief
  */
 
-#include "interfaces.h"
+#include "Interfaces.h"
 
 unsigned short *lerTodasInterfaces(FILE* arquivoEntrada, int tamanho) {
 	unsigned short *vetorInterfaces = (unsigned short *) malloc(sizeof(int) * tamanho);

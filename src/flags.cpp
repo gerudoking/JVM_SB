@@ -3,7 +3,7 @@
  * \brief
  */
 
-#include "flags.h"
+#include "Flags.h"
 
 /**
  * Função que mostra as flags de acesso para os usuários

@@ -1,40 +1,40 @@
 /*!
- * \file classeInstancia.h
- * \brief Definição da ClasseInstancia
+ * \file Instance.h
+ * \brief Definição da Instance
  */
-#ifndef CLASSE_INSTANCIA
-#define CLASSE_INSTANCIA
+#ifndef INSTANCE_H
+#define INSTANCE_H
 
-class ClasseInstancia;
+class Instance;
 
 #include "classeLeitorExibidor.h"
-#include "classeEstatica.h"
-#include "classePilhaOperandos.h"
-#include "classeHeap.h"
+#include "StaticClass.h"
+#include "OperandsStack.h"
+#include "Heap.h"
 #include <map>
 
 using namespace std;
 
-/** @class ClasseInstancia
+/** @class Instance
  * @brief Class instantiation.
  * @brief Lida com operações que lidam com uma instância da classe
  */
-class ClasseInstancia {
+class Instance {
 private:
 	map<string, TypedElement*> mapLocalFields;
-	ClasseEstatica *classeEstatica;
+	StaticClass *staticClass;
 
 public:
-	/** @fn ClasseInstancia(ClasseEstatica* c)
+	/** @fn Instance(StaticClass* c)
 	 * @brief Lida com operações que manipulam a instância da classe
-	 * @param classeEstatica Referência para a ClasseEstatica
+	 * @param StaticClass Referência para a StaticClass
 	 */
-	ClasseInstancia(ClasseEstatica *classeEstatica);
+	Instance(StaticClass *staticClass);
 
-	/** @fn ClasseEstatica *getStatic()
+	/** @fn StaticClass *getStatic()
 	 * @brief Retorna referência para a classe estatica.
 	 */
-	ClasseEstatica *obterclasseEstatica();
+	StaticClass *obterStaticClass();
 
 	/** @fn typedElement getField(string field)
 	 * @brief Retorna field instanciado
@@ -44,7 +44,7 @@ public:
 	TypedElement obterField(string field);
 
 	/** @fn bool setField(string s, typedElement e)
-	 * @brief Defina um valor para um field da ClasseInstancia
+	 * @brief Defina um valor para um field da Instance
 	 * @param field nome do field
 	 * @param typedElement novo tipo que será atribuido ao field
 	 * @return booleano indicado se o field foi definido
@@ -59,10 +59,10 @@ public:
 	 */
 	bool atualizarFieldFinals(string field, TypedElement typedElement);
 
-	/** @fn void imprimirClasseInstancia()
+	/** @fn void imprimirInstance()
 	 * @brief Mostra todas as classes instanciadas
 	 */
-	void imprimirClasseInstancia();
+	void imprimirInstance();
 
 };
 

@@ -164,10 +164,10 @@ int LeitorExibidor::carregar() {
 	fields = lerTodosFields(arquivoClass, fieldsCount, constantPool);
 
 	//le o numero de metodos
-	methodsCount = lerU2(arquivoClass);
+	MethodsCount = lerU2(arquivoClass);
 
 	//carrega os metodos na memoria
-	methods = lerTodosMethods(arquivoClass, methodsCount, constantPool);
+	Methods = lerTodosMethods(arquivoClass, MethodsCount, constantPool);
 
 	//le o numero de atributos
 	attributesCount = lerU2(arquivoClass);
@@ -211,8 +211,8 @@ bool LeitorExibidor::exibir() {
 	//chama o metodo que se encontra na classe fields para imprimir os fields
 	imprimirTodosField(fields, constantPool, fieldsCount);
 
-	//chama o metodo que se encontra na classe methods para imprimir os metodos
-	imprimirTodosMethods(methods, constantPool, methodsCount);
+	//chama o metodo que se encontra na classe Methods para imprimir os metodos
+	imprimirTodosMethods(Methods, constantPool, MethodsCount);
 
 	//chama o metodo que se encontra na classe attributes para imprimir os atributos
 	imprimirTodosAttributes(attributes, constantPool, attributesCount);
@@ -238,7 +238,7 @@ bool LeitorExibidor::gravarArquivo() {
 
 	gravarArquivoTodosField(fields, constantPool, fieldsCount, arquivoSaida);
 
-	gravarArquivoTodosMethods(methods, constantPool, methodsCount, arquivoSaida);
+	gravarArquivoTodosMethods(Methods, constantPool, MethodsCount, arquivoSaida);
 
 	gravarArquivoTodosAttributes(attributes, constantPool, attributesCount, arquivoSaida);
 
@@ -271,7 +271,7 @@ void LeitorExibidor::imprimirInformacoesGerais() {
 
 	cout << "Número de Campos:\t " << fieldsCount << endl;
 
-	cout << "Número de Metodos:\t " << methodsCount << endl;
+	cout << "Número de Metodos:\t " << MethodsCount << endl;
 
 	cout << "Número de Atributos:\t " << attributesCount << endl;
 
@@ -306,7 +306,7 @@ void LeitorExibidor::gravarArquivoInformacoesGerais() {
 
 	arquivoSaida << "Número de Campos:\t " << fieldsCount << endl;
 
-	arquivoSaida << "Número de Metodos:\t " << methodsCount << endl;
+	arquivoSaida << "Número de Metodos:\t " << MethodsCount << endl;
 
 	arquivoSaida << "Número de Atributos:\t " << attributesCount << endl;
 
@@ -339,8 +339,8 @@ bool LeitorExibidor::validarExtensao() {
 bool LeitorExibidor::verificarMain() {
 	bool encontrou = false;
 
-	for (int i = 0; i < methodsCount; i++) {
-		int name = methods[i].name_index, desc = methods[i].descriptor_index, flags = methods[i].access_flags;
+	for (int i = 0; i < MethodsCount; i++) {
+		int name = Methods[i].name_index, desc = Methods[i].descriptor_index, flags = Methods[i].access_flags;
 
 		//verifica se o nome do metodo se encontra dentro das referencias das constantes
 		if ("main" == capturarIndiceDeReferencia(constantPool, name)) {
@@ -367,9 +367,9 @@ bool LeitorExibidor::verificarMain() {
 bool LeitorExibidor::verificarClinit() {
 	bool encontrou = false;
 
-	for (int i = 0; i < methodsCount; i++) {
+	for (int i = 0; i < MethodsCount; i++) {
 		//pega o nome do metodo
-		int name = methods[i].name_index;
+		int name = Methods[i].name_index;
 
 		//verifica se o nome do metodo se encontra nas constantes
 		if ("<clinit>" == capturarIndiceDeReferencia(constantPool, name)) {
@@ -408,7 +408,7 @@ bool LeitorExibidor::existeClinit() {
  */
 method_info LeitorExibidor::obterMain() {
 	if (encontrouMain) {
-		return methods[mainMethod];
+		return Methods[mainMethod];
 	} else {
 		throw runtime_error("Nao foi encontrado um metodo main!\n");
 	}
@@ -419,7 +419,7 @@ method_info LeitorExibidor::obterMain() {
  * @return struct method_info contendo informações sobre o método
  */
 method_info LeitorExibidor::obterClinit() {
-	return methods[clinit];
+	return Methods[clinit];
 }
 
 /**
@@ -554,15 +554,15 @@ char *LeitorExibidor::obterPath() {
  * @return array do tipo method_info
  */
 method_info *LeitorExibidor::obterMethods() {
-	return methods;
+	return Methods;
 }
 
 /**
- * Retorna o número de methods
+ * Retorna o número de Methods
  * @return uint16_t indicando o numero de metodos
  */
 U2 LeitorExibidor::obterMethodsCount() {
-	return methodsCount;
+	return MethodsCount;
 }
 
 /**
@@ -616,20 +616,20 @@ field_info* LeitorExibidor::obterField(string nome) {
 method_info* LeitorExibidor::getMethod(string name, string descriptor) {
 	method_info method;
 
-	for (int i = 0; i < this->methodsCount; i++) {
-		method = this->methods[i];
+	for (int i = 0; i < this->MethodsCount; i++) {
+		method = this->Methods[i];
 		string method_name = capturarIndiceDeReferencia(this->constantPool, method.name_index);
 		string method_desc = capturarIndiceDeReferencia(this->constantPool, method.descriptor_index);
 
 		if (descriptor == method_desc && name == method_name) {
-			return methods + i;
+			return Methods + i;
 		}
 	}
 
 	if (obterSuper_class() == 0) {
 		return NULL;
 	} else {
-		ClasseEstatica* a = MethodArea::obterClass(capturarIndiceDeReferencia(this->constantPool, obterSuper_class()));
+		StaticClass* a = MethodArea::obterClass(capturarIndiceDeReferencia(this->constantPool, obterSuper_class()));
 		LeitorExibidor* l = a->obterClasseLeitorExibidor();
 
 		return l->getMethod(name, descriptor);
@@ -645,8 +645,8 @@ method_info* LeitorExibidor::getMethod(string name, string descriptor) {
 LeitorExibidor* LeitorExibidor::getClassThatHasSerachedMethod(string name, string descriptor) {
 	method_info* method;
 
-	for (int i = 0; i < this->methodsCount; i++) {
-		method = (this->methods) + i;
+	for (int i = 0; i < this->MethodsCount; i++) {
+		method = (this->Methods) + i;
 
 		string method_name = capturarIndiceDeReferencia(this->constantPool, method->name_index);
 		string method_desc = capturarIndiceDeReferencia(this->constantPool, method->descriptor_index);

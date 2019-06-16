@@ -314,8 +314,8 @@ struct ClassFile {
 	u2 *interfaces;
 	u2 fields_count;
 	field_info *fields;
-	u2 methods_count;
-	method_info *methods;
+	u2 Methods_count;
+	method_info *Methods;
 	u2 attributes_count;
 	attribute_info* attributes;
 };

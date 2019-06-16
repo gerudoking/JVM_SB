@@ -14,16 +14,16 @@ class LeitorExibidor;
 #include <stdbool.h>
 #include <string>
 #include <fstream>
-#include "classeTiposBasicos.h"
-#include "constantPool.h"
-#include "flags.h"
-#include "fields.h"
-#include "attributes.h"
-#include "interfaces.h"
-#include "methods.h"
-#include "classeEstatica.h"
-#include "classeInstancia.h"
-#include "classeMethodArea.h"
+#include "BasicTypes.h"
+#include "ConstantPool.h"
+#include "Flags.h"
+#include "Fields.h"
+#include "Attributes.h"
+#include "Interfaces.h"
+#include "Methods.h"
+#include "StaticClass.h"
+#include "Instance.h"
+#include "MethodArea.h"
 
 using namespace std;
 
@@ -151,7 +151,7 @@ public:
 	method_info *obterMethods();
 
 	/** @fn U2 obterMethodsCount()
-	 @brief Retorna o numero de methods
+	 @brief Retorna o numero de Methods
 	 */
 	U2 obterMethodsCount();
 
@@ -182,7 +182,7 @@ public:
 	 */
 	field_info *obterField(string nome);
 
-	/** \fn U2 getMethod(ClasseInstancia* i, string name, string descriptor)
+	/** \fn U2 getMethod(Instance* i, string name, string descriptor)
 	 \brief Retorna o method info
 
 	 \param name Nome do method desejado
@@ -224,11 +224,11 @@ private:
 	char *fileName;
 	U2 minVersion, majVersion, lengthCP;
 	U2 this_class, super_class, interfacesCount, fieldsCount;
-	U2 methodsCount, accessFlags, attributesCount;
+	U2 MethodsCount, accessFlags, attributesCount;
 	U2 *interfaces;
 	cp_info *constantPool;
 	field_info *fields;
-	method_info *methods;
+	method_info *Methods;
 	attribute_info *attributes;
 	FILE *arquivoClass;
 	fstream arquivoSaida;

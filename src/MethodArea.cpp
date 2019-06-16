@@ -1,16 +1,16 @@
 /*!
- * \file classeMethodAread.cpp
+ * \file MethodAread.cpp
  * \brief
  */
 
-#include "classeMethodArea.h"
+#include "MethodArea.h"
 
-map<string, ClasseEstatica*> MethodArea::mapClasses;
+map<string, StaticClass*> MethodArea::mapClasses;
 string MethodArea::path = "";
 FrameStack *MethodArea::frameStack = nullptr;
 
-ClasseEstatica *MethodArea::obterClass(string classe) {
-	for (map<string, ClasseEstatica*>::const_iterator i = mapClasses.begin(); i != mapClasses.end(); i++) {
+StaticClass *MethodArea::obterClass(string classe) {
+	for (map<string, StaticClass*>::const_iterator i = mapClasses.begin(); i != mapClasses.end(); i++) {
 		if (i->first == classe) {
 			return i->second;
 		}
@@ -19,7 +19,7 @@ ClasseEstatica *MethodArea::obterClass(string classe) {
 }
 
 bool MethodArea::adicionarClasse(string classe) {
-	for (map<string, ClasseEstatica*>::const_iterator i = mapClasses.begin(); i != mapClasses.end(); i++) {
+	for (map<string, StaticClass*>::const_iterator i = mapClasses.begin(); i != mapClasses.end(); i++) {
 		if (i->first == classe) {
 			return false;
 		}
@@ -36,8 +36,8 @@ bool MethodArea::adicionarClasse(string classe) {
 		return false;
 	}
 
-	ClasseEstatica *classeEstatica = new ClasseEstatica(leitorExibidor);
-	mapClasses.insert(pair<string, ClasseEstatica*>(classe, classeEstatica));
+	StaticClass *staticClass = new StaticClass(leitorExibidor);
+	mapClasses.insert(pair<string, StaticClass*>(classe, staticClass));
 
 	if (leitorExibidor->existeClinit()) {
 		frameStack->adicionarFrame(leitorExibidor->obterClinit(), leitorExibidor->obterConstantPool());
@@ -58,10 +58,10 @@ bool MethodArea::adicionarClasse(LeitorExibidor *leitorExibidor) {
 		return false;
 	}
 
-	ClasseEstatica *classeEstatica = new ClasseEstatica(leitorExibidor);
+	StaticClass *staticClass = new StaticClass(leitorExibidor);
 	string indiceReferencia = capturarIndiceDeReferencia(leitorExibidor->obterConstantPool(), leitorExibidor->obterThis_class());
 
-	mapClasses.insert(pair<string, ClasseEstatica*>(indiceReferencia, classeEstatica));
+	mapClasses.insert(pair<string, StaticClass*>(indiceReferencia, staticClass));
 
 	if (leitorExibidor->existeClinit()) {
 		frameStack->adicionarFrame(leitorExibidor->obterClinit(), leitorExibidor->obterConstantPool());

@@ -1,5 +1,5 @@
 /*!
- * \file flags.h
+ * \file Flags.h
  * \brief ClassFlags (public, final, super, interface and abstract)
  */
 
@@ -7,13 +7,13 @@
  * @brief Macro
  * @brief Define usado para evitar vários includes do arquivo.
  */
-#ifndef FLAGS
-#define FLAGS
+#ifndef FLAGS_H
+#define FLAGS_H
 
 #include <iostream>
 #include <fstream>
 
-#include "classeTiposBasicos.h"
+#include "BasicTypes.h"
 
 using namespace std;
 

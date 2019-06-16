@@ -1,5 +1,5 @@
 /*!
- * \file classeFrame.h
+ * \file Frame.h
  * \brief Contém tudo necessário para a execução de um método.
 */
 
@@ -7,18 +7,18 @@
  * @brief Macro
  * @brief Define uso para evitar a inclusão múltipla de arquivos.
 */
-#ifndef FRAME
-#define FRAME
+#ifndef FRAME_H
+#define FRAME_H
 
 class FrameStack;
 
 #include "classeLeitorExibidor.h"
-#include "classePilhaOperandos.h"
-#include "classeVariaveisLocais.h"
-#include "classeTiposBasicos.h"
-#include "classeOperacoes.h"
-#include "attributes.h"
-#include "classeMethodArea.h"
+#include "OperandsStack.h"
+#include "LocalVariables.h"
+#include "BasicTypes.h"
+#include "Operations.h"
+#include "Attributes.h"
+#include "MethodArea.h"
 
 using namespace std;
 
@@ -29,7 +29,7 @@ using namespace std;
 typedef struct frame_s{
 	unsigned char *pc;
 	cp_info *constantPool;
-	PilhaOperandos *pilhaOperandos;
+	OperandsStack *pilhaOperandos;
 	VariaveisLocais *variaveisLocais;
 	method_info method;
 } Frame;

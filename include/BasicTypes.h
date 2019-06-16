@@ -1,5 +1,5 @@
 /*!
- * \file classeTiposBasicos.h
+ * \file BasicTypes.h
  * \brief Tipos básicos utilizados para implementarmos a JVM.
  */
 
@@ -7,8 +7,8 @@
  *	@brief Macro
  *	@brief Define utilizado para evitar múltiplas inclusões desse arquivo.
  */
-#ifndef BASE
-#define BASE
+#ifndef BASETYPE_H
+#define BASETYPE_H
 
 #include <stdio.h>
 #include <stdlib.h>

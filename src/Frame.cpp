@@ -3,7 +3,7 @@
  * \brief
  */
 
-#include "classeFrame.h"
+#include "Frame.h"
 
 FrameStack::FrameStack(LeitorExibidor *leitorExibidor) {
 
@@ -11,7 +11,7 @@ FrameStack::FrameStack(LeitorExibidor *leitorExibidor) {
 
 	frame->method = leitorExibidor->obterMain();
 	frame->constantPool = leitorExibidor->obterConstantPool();
-	frame->pilhaOperandos = new PilhaOperandos(frame->method.attributes->info->codigoAtributo.max_stack);
+	frame->pilhaOperandos = new OperandsStack(frame->method.attributes->info->codigoAtributo.max_stack);
 	frame->variaveisLocais = new VariaveisLocais(frame->method.attributes->info->codigoAtributo.max_locals);
 	inicializarPC(frame);
 
@@ -20,9 +20,9 @@ FrameStack::FrameStack(LeitorExibidor *leitorExibidor) {
 	//update operand stack pointers and variables array
 	//used spots in current method operations
 
-	Operacoes::atualizarFrame(stackThreads.top());
-	Operacoes::atualizarThreads(&stackThreads);
-	Operacoes::atualizarFrameStack(this);
+	Operations::atualizarFrame(stackThreads.top());
+	Operations::atualizarThreads(&stackThreads);
+	Operations::atualizarFrameStack(this);
 
 	//include reference to frame stack in method area
 	//to be possible to include <clinit> when necessary
@@ -35,7 +35,7 @@ FrameStack::FrameStack(LeitorExibidor *leitorExibidor) {
 void FrameStack::executarMetodos() {
 	while (proximaInstrucao()) {
 		cout << "Falta implementar operaçoes de opcodes" << endl;
-		Operacoes::executarOperacao(opcode);
+		Operations::executarOperacao(opcode);
 	}
 
 }
@@ -78,13 +78,13 @@ void FrameStack::popRemoverObjetos() {
 		stackThreads.pop();
 	}
 	if (stackThreads.empty()) {
-		Operacoes::atualizarFrame(nullptr);
-		Operacoes::atualizarThreads(nullptr);
+		Operations::atualizarFrame(nullptr);
+		Operations::atualizarThreads(nullptr);
 		//exit(0);
 
 	} else {
-		Operacoes::atualizarFrame(stackThreads.top());
-		Operacoes::atualizarThreads(&stackThreads);
+		Operations::atualizarFrame(stackThreads.top());
+		Operations::atualizarThreads(&stackThreads);
 	}
 }
 
@@ -100,15 +100,15 @@ void FrameStack::adicionarFrame(method_info method, cp_info *constantPool) {
 
 	frame->method = method;
 	frame->constantPool = constantPool;
-	frame->pilhaOperandos = new PilhaOperandos(frame->method.attributes->info->codigoAtributo.max_stack);
+	frame->pilhaOperandos = new OperandsStack(frame->method.attributes->info->codigoAtributo.max_stack);
 	frame->variaveisLocais = new VariaveisLocais(frame->method.attributes->info->codigoAtributo.max_locals);
 	inicializarPC(frame);
 
 	//update operand stack pointers and array variables
 	//used spots in current method operations
-	Operacoes::atualizarFrame(frame);
-	Operacoes::atualizarThreads(&stackThreads);
-	Operacoes::atualizarFrameStack(this);
+	Operations::atualizarFrame(frame);
+	Operations::atualizarThreads(&stackThreads);
+	Operations::atualizarFrameStack(this);
 
 	//include reference to frame stack in method area
 	//to be possible to include <clinit> when necessary
