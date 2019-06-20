@@ -55,104 +55,105 @@ public:
 	 */
 	OperandsStack(int);
 
-	/** @fn uint8_t top_type()
+	/** @fn uint8_t desempilhaTopoTipo()
 	 @brief Recupera o tipo do topo da pilha de operandos
 	 */
-	uint8_t top_type();
+	uint8_t desempilhaTopoTipo();
 
-	/** @fn element top_value()
+	/** @fn element desempilhaTopoValor()
 	 @brief Recupera o valor do topo da pilha de operandos
 	 */
-	element top_value();
+	Element desempilhaTopoValor();
 
-	/** @fn element pop()
+	/** @fn element desempilha()
 	 @brief Desempilha o topo da pilha de operandos e retorna em um elemento de valor
 	 */
-	element pop();
+	Element desempilha();
 
-	/** @fn element pop()
+	/** @fn element desempilhaTyped()
 	 @brief Desempilha o topo da pilha de operandos e retorna em um elemento tipado
 	 */
-	TypedElement popTyped();
+	TypedElement desempilhaTyped();
 
-	/** @fn string getString()
+	/** @fn string obterString()
 	 @brief Retorna o topo da pilha de operandos formatado em uma string
 	 */
-	string getString();
+	string obterString();
 
-	/** @fn void push(int x)
+	/** @fn void empilharInt(int x)
 	 @brief Empilha um valor de tipo inteiro
-
 	 @param x Valor a ser empilhado
 	 */
-	void push(int);
+	void empilharInt(int x);
 
-	/** @fn void push(long x)
+	/** @fn void empilharLong(int64_t x)
 	 @brief Empilha um valor de tipo long
-
 	 @param x Valor a ser empilhado
 	 */
-	void push(int64_t);
+	void empilharLong(int64_t x);
 
-	/** @fn void push(float x)
+	/** @fn void empilharFloat(float x)
 	 @brief Empilha um valor de tipo float
 
 	 @param x Valor a ser empilhado
 	 */
-	void push(float);
+	void empilharFloat(float x);
 
-	/** @fn void push(double x)
+	/** @fn void empilharDouble(double x)
 	 @brief Empilha um valor de tipo double
 
 	 @param x Valor a ser empilhado
 	 */
-	void push(double);
+	void empilharDouble(double x);
 
-	/** @fn void push(bool x)
-	 @brief Empilha um valor de tipo double
+	/** @fn void empilharBool(bool x)
+	 @brief Empilha um valor de tipo bool
 
 	 @param x Valor a ser empilhado
 	 */
-	void push(bool);
+	void empilharBool(bool x);
 
-	/** @fn void push(int *x)
+	/** @fn void empilharReferencia(int *x)
 	 @brief Empilha um valor de tipo referencia
 
 	 @param x Referencia a ser empilhada
 	 */
-	void push(int*);
+	void empilharReferencia(int *x);
 
-	/** @fn void push(typedElement te)
-	 @brief Empilha um elemento tipado, chamando a fun��o adequada ao tipo
+	/** @fn void empilharTypedElement(TypedElement typedElement)
+	 @brief Empilha um elemento tipado, chamando a função adequada ao tipo
 
-	 @param x Elemento tipado a ser empilhado
+	 @param typedElement Elemento tipado a ser empilhado
 	 */
-	void push(TypedElement);
+	void empilharTypedElement(TypedElement typedElement);
 
-	/** @fn void push(element x, uint8_t tipo)
-	 @brief Verifica o tipo do elemento que deve ser empilhado e chama a fun��o adequada
+	/** @fn void empilhar(Element, uint8_t)
+	 @brief Verifica o tipo do elemento que deve ser empilhado e chama a função adequada
 
-	 @param x Elemento a ser empilhado
+	 @param element Elemento a ser empilhado
 	 @param tipo Tipo do elemento a ser empilhado
 	 */
-	void push(element, uint8_t);
+	void empilhar(Element, uint8_t);
 
-	/** @fn int size()
-	 @brief Verifica o tamanho da pilha de operandos
+	/** @fn int obterTamanho()
+	 @brief retorna o tamanho da pilha de operandos
 	 */
-	int size();
+	int obterTamanho();
 
-	/** @fn int getMaxSize()
-	 @brief Retorna o tamanho m�ximo da pilha de operandos
+	/** @fn int obterTamanhoMaximoPilha()
+	 @brief Retorna o tamanho máximo da pilha de operandos
 	 */
-	int getMaxSize();
+	int obterTamanhoMaximoPilha();
 
-	/** @fn bool empty()
-	 @brief Retorna se a pilha est� vazia (1) ou n�o (0)
+	/** @fn bool estaVazia()
+	 @brief Retorna se a pilha está vazia (1) ou não (0)
 	 */
-	bool empty();
+	bool estaVazia();
 
-	void printALL();
+	/** @fn void imprimirTodasOperacoes()
+	 @brief imprimir Todas as Operacoes
+	 */
+	void imprimirTodasOperacoes();
 	const int max;
 };
 

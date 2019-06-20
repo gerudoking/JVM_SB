@@ -7,9 +7,9 @@
 
 class StaticClass;
 
-#include "classeLeitorExibidor.h"
+#include "ClasseLeitorExibidor.h"
 #include "OperandsStack.h"
-#include "Instance.h"
+#include "InstanceClass.h"
 #include "Heap.h"
 #include <map>
 
@@ -27,7 +27,7 @@ private:
 public:
 	/** @fn StaticClass(LeitorExibidor *leitorExibidor)
 	 * @brief Construtor da StaticClass
-	 * @param Leitor informação do class file já carregada na memória
+	 * @param leitorExibidor informação do class file já carregada na memória
 	 */
 	StaticClass(LeitorExibidor *leitorExibidor);
 
@@ -38,7 +38,7 @@ public:
 	 */
 	TypedElement obterField(string field);
 
-	/** @fn bool setField(string s, typedElement e)
+	/** @fn bool atualizarField(string field, TypedElement typedElement)
 	 * @brief Coloca um novo valor pra um field
 	 * @param field nome do field desejado
 	 * @param typedElement tipo para o field
@@ -60,10 +60,10 @@ public:
 	 */
 	LeitorExibidor *obterClasseLeitorExibidor();
 
-	/** @fn Instance *getInstance()
+	/** @fn Instance *obterInstanceClass()
 	 @brief Retorna a instância da classe
 	 */
-	Instance *obterInstanceInstance();
+	InstanceClass *obterInstanceClass();
 };
 
 #endif

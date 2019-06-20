@@ -58,17 +58,18 @@ void imprimirMethod(method_info method, cp_info *constantPool, int indice) {
 	}
 }
 
-void imprimirTodosMethods(method_info *method_info, cp_info *constantPool, int tamanho) {
+void imprimirTodosMethods(method_info *method, cp_info *constantPool, int tamanho) {
 	for (int i = 0; i < tamanho; i++) {
-		imprimirMethod(method_info[i], constantPool, i);
+		imprimirMethod(method[i], constantPool, i);
 	}
 }
 
 void gravarArquivoMethod(method_info method, cp_info *constantPool, int indice, fstream &arquivoSaida) {
 	arquivoSaida << "\tMethod " << indice << ":" << endl;
-	arquivoSaida << "\t\tNome: cp info #" << method.name_index << " " << capturarIndiceDeReferencia(constantPool, method.name_index) << endl;
-	arquivoSaida << "\t\tDescritor: cp info # " << method.descriptor_index << capturarIndiceDeReferencia(constantPool, method.descriptor_index)
+	arquivoSaida << "\t\tNome: cp info #" << method.name_index << " " << capturarIndiceDeReferencia(constantPool, method.name_index)
 			<< endl;
+	arquivoSaida << "\t\tDescritor: cp info # " << method.descriptor_index
+			<< capturarIndiceDeReferencia(constantPool, method.descriptor_index) << endl;
 	arquivoSaida << "\t" << obterFlagMethod(method.access_flags);
 	arquivoSaida << "\t\tNúmero de Atributos: " << (int) method.attributes_count << endl;
 	for (int i = 0; i < method.attributes_count; i++) {
@@ -77,9 +78,9 @@ void gravarArquivoMethod(method_info method, cp_info *constantPool, int indice, 
 	}
 }
 
-void gravarArquivoTodosMethods(method_info *method_info, cp_info *constantPool, int tamanho, fstream &arquivoSaida) {
+void gravarArquivoTodosMethods(method_info *method, cp_info *constantPool, int tamanho, fstream &arquivoSaida) {
 	for (int i = 0; i < tamanho; i++) {
-		gravarArquivoMethod(method_info[i], constantPool, i, arquivoSaida);
+		gravarArquivoMethod(method[i], constantPool, i, arquivoSaida);
 	}
 }
 

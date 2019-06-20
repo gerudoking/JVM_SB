@@ -3,15 +3,13 @@
  * \brief Gerencia a execução do heap.
  */
 
-/** @def HEAP 
- * @brief Macro
- * @brief Define uso para evitar a inclusão múltipla de arquivos.
- */
+
 #ifndef HEAP_H
 #define HEAP_H
 
-#include "Instance.h"
 #include <vector>
+
+#include "InstanceClass.h"
 
 using namespace std;
 
@@ -21,14 +19,14 @@ using namespace std;
  */
 class Heap {
 private:
-	static vector<Instance*> vectorInstancia;
+	static vector<InstanceClass*> vectorInstancia;
 
 public:
 	/** @fn static void adicionarInstancia(Instance *classeInstancia)
 	 * @brief Adiciona novo objeto no heap.
 	 * @param classeInstancia - ponteiro para o novo objeto.
 	 */
-	static void adicionarInstancia(Instance *classeInstancia);
+	static void adicionarInstancia(InstanceClass *classeInstancia);
 };
 
 #endif

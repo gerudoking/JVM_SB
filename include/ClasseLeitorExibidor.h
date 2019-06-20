@@ -1,9 +1,9 @@
-/*!
- * \file classeLeitorExibidor.h
- * \brief Definição da ClasseLeitorExibidor
+/** @file ClasseLeitorExibidor.h
+ * @brief Definição da ClasseLeitorExibidor
  */
-#ifndef CLASSE_LEITOR
-#define CLASSE_LEITOR
+
+#ifndef CLASSE_LEITOR_EXIBIDOR
+#define CLASSE_LEITOR_EXIBIDOR
 
 class LeitorExibidor;
 
@@ -22,7 +22,7 @@ class LeitorExibidor;
 #include "Interfaces.h"
 #include "Methods.h"
 #include "StaticClass.h"
-#include "Instance.h"
+#include "InstanceClass.h"
 #include "MethodArea.h"
 
 using namespace std;
@@ -42,20 +42,19 @@ using namespace std;
 
 /**
  * @section DESCRIPTION
- *
  * A classe LeitorExibidor contém o necessário para ler o bytecode, exibilo e armazena-lo em memoria
  */
 class LeitorExibidor {
 public:
 	/** @fn LeitorExibidor(char *in)
-	 * Construtor de leitura
+	 * @brief Construtor que configura um objeto da classe LeitorExibidor com o nome do arquivo passado.
 	 * @param in caminho do arquivo .class.
 	 */
 	LeitorExibidor(char *in);
 
 	/** 
 	 @fn LeitorExibidor(string in)
-	 Construtor de leitura
+	 @brief Construtor que configura um objeto da classe LeitorExibidor com o nome do arquivo passado.
 	 @param in caminho do arquivo .class.
 	 */
 	LeitorExibidor(string in);
@@ -71,132 +70,151 @@ public:
 	void fecharArquivo();
 
 	/** @fn int carregar()
-	 @brief Carrega todas as informações do class file
+	 * Carrega o class file na classe
+	 * @return variavel status que indica se houve erro no programa
 	 */
 	int carregar();
 
 	/** @fn bool imprimirInformacoesGerais()
 	 @brief Imprime informações gerais do .class
+	 @return variavel status que indica se houve erro no programa
 	 */
 	void imprimirInformacoesGerais();
 
 	/** @fn bool gravarArquivoInformacoesGerais()
 	 @brief Gravar informações gerais do .class em um arquivo
+	 @return variavel status que indica se houve erro no programa
 	 */
 	void gravarArquivoInformacoesGerais();
 
 	/** @fn bool exibir()
-	 @brief Imprime todas as informações do .class
+	 * @brief Imprime todas as informações do .class
+	 * @return true ou false dependendo se a variavel status indicar que houve erro na leitura
 	 */
 	bool exibir();
 
 	/** @fn bool gravarArquivo()
 	 @brief Gravar todas as informações do .class em um arquivo
+	 @return true ou false dependendo se a variavel status indicar que houve erro na leitura
 	 */
 	bool gravarArquivo();
 
 	/** @fn bool validarExtensao ()
 	 @brief Verifica se a extensão do arquivo é .class
+	 @return booleano que indica se existe o .class
 	 */
 	bool validarExtensao();
 
 	/** @fn bool existeMain()
 	 @brief Verifica se o .class possui função main
+	 @return booleano que indica se existe o metodo main
 	 */
 	bool existeMain();
 
 	/** @fn method_info obterMain()
 	 @brief Retorna o método main
+	 @return struct method_info contendo informações sobre o método
 	 */
 	method_info obterMain();
 
 	/** @fn bool existeClinit()
-	 @brief Verifica se o .class tem o método <clinit>
+	 @brief Verifica se o .class tem o método clinit
+	 @return booleano que indica se existe o metodo clinit
 	 */
 	bool existeClinit();
 
 	/** @fn method_info obterClinit()
-	 @brief Retorna o método <clinit>
+	 @brief Retorna o método clinit
+	 @return struct method_info contendo informações sobre o método
 	 */
 	method_info obterClinit();
 
 	/** @fn bool verificarThisClass ()
 	 @brief Verifica se a class definida é igual ao nome da classe sem extensões
+	 @return booleano indicando se a .class está correta
 	 */
 	bool verificarThisClass();
 
 	/** @fn int obterStatus()
 	 @brief Retorna o status lido, informando para o método que chamou o que aconteceu
+	 @return status
 	 */
 	int obterStatus();
 
 	/** @fn cp_info *obterConstantPool()
 	 @brief Retorna referencia a constant pool
+	 @return Retorna a array com a constant pool
 	 */
 	cp_info *obterConstantPool() const;
 
 	/** @fn U2 obterTamanhoConstantPool()
 	 @brief Retorna o valor do tamanho da constant pool
+	 @return Retorna a array com a constant pool
 	 */
 	U2 obterTamanhoConstantPool();
 
 	/** @fn char *obterPath()
 	 @brief Pega o caminho do arquivo .class
+	 @return Retorna a string com o caminho total do arquivo
 	 */
 	char *obterPath();
 
 	/** @fn method_info *obterMethods()
-	 @brief Retorna todos os métodos
+	 * @brief Retorna todos os métodos
+	 * @return array do tipo method_info
 	 */
 	method_info *obterMethods();
 
 	/** @fn U2 obterMethodsCount()
-	 @brief Retorna o numero de Methods
+	 * @brief Retorna o numero de Methods
+	 * @return uint16_t indicando o numero de metodos
 	 */
 	U2 obterMethodsCount();
 
 	/** @fn U2 obterThis_class()
-	 @brief Retorna um índice da constant pool que aponta para string com nome da class
+	 * @brief Retorna um índice da constant pool que aponta para string com nome da class
+	 * @return uint16_t this_class
 	 */
 	U2 obterThis_class();
 
 	/** @fn U2 obterSuper_class()
-	 @brief Retorna um índice da constant pool que aponta para string com nome da superclass
+	 * @brief Retorna um índice da constant pool que aponta para string com nome da superclass
+	 * @return uint16_t super_class
 	 */
 	U2 obterSuper_class();
 
 	/** @fn U2 obterFieldsCount()
-	 @brief Retorna número de fields
+	 * @brief Retorna número de fields
+	 * @return uint16_t indicando o numero de fields
 	 */
 	U2 obterFieldsCount();
 
-	/** @fn U2 obterFields()
-	 @brief Retorna todos os fields
+	/** @fn field_info obterFields()
+	 * @brief Retorna a array com as fields lidas
+	 * @return a array da struct field_info
 	 */
 	field_info *obterFields();
 
-	/** @fn U2 obterField()
-	 @brief Retorna um field
-
-	 @param nome do field desejado
+	/** @fn field_info *obterField(string nome)
+	 * @brief Retorna um field
+	 * @param nome do field desejado que deseja retornar
+	 * @return struct field_info com a informação da field passada no parâmetro
 	 */
 	field_info *obterField(string nome);
 
-	/** \fn U2 getMethod(Instance* i, string name, string descriptor)
-	 \brief Retorna o method info
-
-	 \param name Nome do method desejado
-	 \param descriptor Descritor do method desejado
+	/** @fn method_info* obterMethod(string nome, string descriptor)
+	 * @param nome Nome do method desejado
+	 * @param descriptor Descritor do method desejado
 	 */
-	method_info* getMethod(string name, string descriptor);
+	method_info* obterMethod(string nome, string descriptor);
 
-	/** \fn U2 getClassThatHasSerachedMethod(string name, string descriptor)
-	 \brief Retorna o ponteiro para o leitor do .class que contém o método encontrado em getMethod
-
-	 \param name Nome do method desejado
-	 \param descriptor Descritor do method desejado
+	/** @fn LeitorExibidor* obterClassThatHasSerachedMethod(string nome, string descriptor)
+	 * @brief Retorna o ponteiro para o leitor do .class que contém o método encontrado em getMethod
+	 * @param nome Nome do method desejado
+	 * @param descriptor Descritor do method desejado
+	 * @return classe LeitorExibidor
 	 */
-	LeitorExibidor* getClassThatHasSerachedMethod(string name, string descriptor);
+	LeitorExibidor* obterClassThatHasSerachedMethod(string nome, string descriptor);
 
 	/** @fn validacao(void)
 	 * @brief Valida estrutura obrigatoria */
@@ -205,17 +223,20 @@ public:
 private:
 	/** @fn bool verificarMain()
 	 @brief Encontro em qual method está a main
+	 @return booleano que indica se existe o metodo main
 	 */
 	bool verificarMain();
 
 	/** @fn bool verificarClinit()
-	 @brief Encontra em qual method esta a <clinit>, se existir
+	 @brief Encontra em qual method esta a clinit, se existir
+	 @return booleano que indica se existe o metodo clinit
 	 */
 	bool verificarClinit();
 
 	/** @fn string obterErro(int erro)
 	 * @brief Retorna a string que contém uma mensagem de erro correspondente ao índice que recebe como parâmetro
-	 * param erro Index that localizes the string that contains the error message
+	 * @param erro MACRO com o erro que foi encontrado
+	 * @return string contendo informação sobre o tipo de erro encontrado
 	 */
 	string obterErro(int erro);
 
@@ -224,11 +245,11 @@ private:
 	char *fileName;
 	U2 minVersion, majVersion, lengthCP;
 	U2 this_class, super_class, interfacesCount, fieldsCount;
-	U2 MethodsCount, accessFlags, attributesCount;
+	U2 methodsCount, accessFlags, attributesCount;
 	U2 *interfaces;
 	cp_info *constantPool;
 	field_info *fields;
-	method_info *Methods;
+	method_info *methods;
 	attribute_info *attributes;
 	FILE *arquivoClass;
 	fstream arquivoSaida;

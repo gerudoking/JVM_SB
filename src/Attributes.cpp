@@ -1,5 +1,5 @@
 /*!
- * \file attributes.cpp
+ * \file Attributes.cpp
  * \brief
  */
 
@@ -101,12 +101,12 @@ attribute_info* lerTodosAttributes(FILE* arquivoEntrada, cp_info *constantPool, 
 	return attributes_reading;
 }
 
-void imprimirTodosAttributes(attribute_info* attributes, cp_info* constantPool, int tamanho) {
+void imprimirTodosAttributes(attribute_info* attribute, cp_info* constantPool, int tamanho) {
 	int i;
 
 	for (i = 0; i < tamanho; i++) {
 		cout << "\tAtributo " << i << ": " << endl;
-		imprimirAttribute(attributes[i], constantPool);
+		imprimirAttribute(attribute[i], constantPool);
 	}
 }
 
@@ -164,12 +164,12 @@ void imprimirAttribute(attribute_info attribute, cp_info *constantPool) {
 	}
 }
 
-void gravarArquivoTodosAttributes(attribute_info* attributes, cp_info* constantPool, int tamanho, fstream &arquivoSaida) {
+void gravarArquivoTodosAttributes(attribute_info* attribute, cp_info* constantPool, int tamanho, fstream &arquivoSaida) {
 	int i;
 
 	for (i = 0; i < tamanho; i++) {
 		arquivoSaida << "\tAtributo " << i << ": " << endl;
-		gravarArquivoAttribute(attributes[i], constantPool, arquivoSaida);
+		gravarArquivoAttribute(attribute[i], constantPool, arquivoSaida);
 	}
 }
 

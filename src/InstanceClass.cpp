@@ -1,11 +1,11 @@
 /*!
- * \file StaticClass.cpp
+ * \file InstanceClass.cpp
  * \brief
  */
 
-#include "Instance.h"
+#include "InstanceClass.h"
 
-Instance::Instance(StaticClass* staticClass) {
+InstanceClass::InstanceClass(StaticClass* staticClass) {
 	this->staticClass = staticClass;
 
 	int tamanho = staticClass->obterClasseLeitorExibidor()->obterFieldsCount();
@@ -57,7 +57,7 @@ Instance::Instance(StaticClass* staticClass) {
 	}
 }
 
-TypedElement Instance::obterField(string field) {
+TypedElement InstanceClass::obterField(string field) {
 	TypedElement typedElement;
 	typedElement.type = TYPE_NOT_SET;
 
@@ -70,11 +70,11 @@ TypedElement Instance::obterField(string field) {
 	return typedElement;
 }
 
-StaticClass *Instance::obterStaticClass() {
+StaticClass *InstanceClass::obterStaticClass() {
 	return staticClass;
 }
 
-bool Instance::atualizarField(string field, TypedElement typedElement) {
+bool InstanceClass::atualizarField(string field, TypedElement typedElement) {
 	map<string, TypedElement*>::const_iterator mapField;
 	mapField = mapLocalFields.begin();
 
@@ -93,7 +93,7 @@ bool Instance::atualizarField(string field, TypedElement typedElement) {
 	return false;
 }
 
-bool Instance::atualizarFieldFinals(string field, TypedElement typedElement) {
+bool InstanceClass::atualizarFieldFinals(string field, TypedElement typedElement) {
 	map<string, TypedElement*>::const_iterator mapField;
 	mapField = mapLocalFields.begin();
 
@@ -112,7 +112,7 @@ bool Instance::atualizarFieldFinals(string field, TypedElement typedElement) {
 	return false;
 }
 
-void Instance::imprimirInstance() {
+void InstanceClass::imprimirInstance() {
 	map<string, TypedElement*>::const_iterator mapField;
 	mapField = mapLocalFields.begin();
 

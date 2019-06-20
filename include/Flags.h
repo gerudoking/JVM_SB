@@ -1,12 +1,7 @@
-/*!
- * \file Flags.h
- * \brief ClassFlags (public, final, super, interface and abstract)
+/** @file Flags.h
+ * @brief ClassFlags (public, final, super, interface and abstract)
  */
 
-/** @def FLAGS
- * @brief Macro
- * @brief Define usado para evitar vários includes do arquivo.
- */
 #ifndef FLAGS_H
 #define FLAGS_H
 
@@ -27,7 +22,7 @@ void imprimirFlags(U2 accessFlags);
 
 /** @fn void gravarArquivoFlags (U2 accessFlags, fstream &arquivoSaida)
  * @brief Função que gravar as flags de acesso em um arquivo
- * @param flags Valor hexadecimal das flags
+ * @param accessFlags Valor hexadecimal das flags
  * @param arquivoSaida arquivo gravado
  */
 void gravarArquivoFlags(U2 accessFlags, fstream &arquivoSaida);

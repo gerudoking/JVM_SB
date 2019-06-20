@@ -1,5 +1,5 @@
 /*!
- * \file MethodAread.cpp
+ * \file MethodArea.cpp
  * \brief
  */
 

@@ -1,18 +1,15 @@
-/*!
- * \file Attributes.h
- * \brief Atributos a serem usados na execuçao da JVM
- */
+/** @file Attributes.h
+ * @brief Atributos a serem usados na execuçao da JVM
+*/
 
-/** @def ATTRIBUTE
- * @brief Define utilizado para evitar múltiplas inclusões desse arquivo.
- */
-#ifndef ATTRIBUTE_H
-#define ATTRIBUTE_H
+#ifndef ATTRIBUTES_H
+#define ATTRIBUTES_H
 
 #include <fstream>
 #include <iostream>
 #include <stdlib.h>
 #include <string>
+
 #include "ConstantPool.h"
 
 using namespace std;
@@ -33,12 +30,12 @@ typedef struct {
  *	@brief Struct para salvar exceções identificadas. Será utilizada
  *	como componente da struct "code_attribute"
  */
-struct t_exception_table{
+struct t_exception_table {
 	unsigned short start_pc;
 	unsigned short end_pc;
 	unsigned short handler_pc;
 	unsigned short catch_type;
-} ;
+};
 
 /** @struct code_attribute
  *	@brief Estrutura de dados para salvar atributos do tipo code
@@ -83,7 +80,7 @@ struct attribute_info {
 
 /** @fn t_exception_table* lerExceptionHandler(FILE* arquivoEntrada)
  *	@brief Função de leitura de exceções
- *	@param fp Ponteiro para arquivo tipo .class
+ *	@param arquivoEntrada Ponteiro para arquivo tipo .class
  */
 t_exception_table* lerExceptionHandler(FILE* arquivoEntrada);
 
@@ -113,31 +110,31 @@ attribute_info* lerTodosAttributes(FILE* arquivoEntrada, cp_info *constantPool, 
 
 /** @fn void imprimirAttribute(attribute_info attribute, cp_info *constantPool)
  *	@brief Função que imprime na tela informações de um atributo.
- *	@param attributes do struct do attribute_info.
+ *	@param attribute do struct do attribute_info.
  *	@param constantPool Poteiro pra constant pool.
  */
 void imprimirAttribute(attribute_info attribute, cp_info *constantPool);
 
-/** @fn void imprimirTodosAttributes(attribute_info* attributes, cp_info* constantPool, int tamanho)
+/** @fn void imprimirTodosAttributes(attribute_info* attribute, cp_info* constantPool, int tamanho)
  *	@brief Função que imprime na tela informações de n atributos
- *	@param attributes Pointer to struct of types att.
+ *	@param attribute Pointer to struct of types att.
  *	@param constantPool Poteiro pra constant pool.
  *	@param tamanho Number of times of the function printAttribute gonna be called.
  */
-void imprimirTodosAttributes(attribute_info* attributes, cp_info* constantPool, int tamanho);
+void imprimirTodosAttributes(attribute_info* attribute, cp_info* constantPool, int tamanho);
 
-/** @fn void gravarArquivoTodosAttributes(attribute_info* attributes, cp_info* constantPool, int tamanho, fstream &arquivoSaida)
+/** @fn void gravarArquivoTodosAttributes(attribute_info* attribute, cp_info* constantPool, int tamanho, fstream &arquivoSaida)
  *	@brief Função que imprime na tela informações de n atributos
- *	@param attributes Pointer to struct of types att.
+ *	@param attribute Pointer to struct of types att.
  *	@param constantPool Poteiro pra constant pool.
  *	@param tamanho Number of times of the function printAttribute gonna be called.
  *	@param arquivoSaida arquivo de saída
  */
-void gravarArquivoTodosAttributes(attribute_info* attributes, cp_info* constantPool, int tamanho, fstream &arquivoSaida);
+void gravarArquivoTodosAttributes(attribute_info* attribute, cp_info* constantPool, int tamanho, fstream &arquivoSaida);
 
 /** @fn void gravarArquivoAttribute(attribute_info attribute, cp_info *constantPool, fstream &arquivoSaida)
  *	@brief Função que imprime na tela informações de um atributo.
- *	@param attributes do struct do attribute_info.
+ *	@param attribute do struct do attribute_info.
  *	@param constantPool Poteiro pra constant pool.
  *	@param arquivoSaida arquivo de saída
  */
@@ -154,17 +151,15 @@ string obterMnemonico(int opcode);
  *	@param codigo Pointer of bytes wich are code and your arg. Ponteiro para vetor de bytes do código e seus parâemtros.
  *	@param indice Posição na constantpool.
  */
-void obterParametrosOpcode(unsigned char* codigo, int* indice );
+void obterParametrosOpcode(unsigned char* codigo, int* indice);
 
-
-
-/** @fn void gravaArquivoObterParametrosOpcode(unsigned char* codigo, int* indice ,fstream &arquivoSaida)
+/** @fn void gravaArquivoObterParametrosOpcode(unsigned char* codigo, int* indice, fstream & arquivoSaida)
  *	@brief Função que mostra na tela os parâmetros dos opcodes
  *	@param codigo Pointer of bytes wich are code and your arg. Ponteiro para vetor de bytes do código e seus parâemtros.
  *	@param indice Posição na constantpool.
+ *	@param arquivoSaida arquivo de saída
  */
-void gravaArquivoObterParametrosOpcode(unsigned char* codigo, int* indice,fstream &arquivoSaida );
-
+void gravaArquivoObterParametrosOpcode(unsigned char* codigo, int* indice, fstream & arquivoSaida);
 
 /** @fn uint32_t obterValorNBytes(uint8_t numero, unsigned char* codigo, int* indice)
  *	@brief Função para retornar o conteúdo dos próximos n bytes
@@ -173,7 +168,5 @@ void gravaArquivoObterParametrosOpcode(unsigned char* codigo, int* indice,fstrea
  *	@param indice Posição do opcode no vetor.
  */
 uint32_t obterValorNBytes(uint8_t numero, unsigned char* codigo, int* indice);
-
-
 
 #endif

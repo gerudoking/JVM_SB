@@ -1,14 +1,8 @@
 /** @file ConstantPool.h
- @brief Módulo Constant pool
-
- @details Este módulo contém as funções necessárias para a manipulação do pool de constantes.
+ * @brief Módulo Constant pool
+ * @details Este módulo contém as funções necessárias para a manipulação do pool de constantes.
  */
 
-/** @def CONSTANTPOOL 
- @brief Macro
-
- Define uso para evitar a inclusão múltipla de arquivos.
- */
 #ifndef CONSTANTPOOL_H
 #define CONSTANTPOOL_H
 
@@ -19,7 +13,7 @@
 using namespace std;
 
 /** @struct cp_info
- @brief Possui um elemento pool de constante.
+ * @brief Possui um elemento pool de constante.
  */
 typedef struct {
 	U1 tag;
@@ -56,10 +50,8 @@ int carregarConstantPool(cp_info *constantPool, int tamanho, FILE* arquivoEntrad
 
 /** @fn string capturarIndiceDeReferencia (cp_info *constantPool, U2 indice)
  @brief Retorna os dados no índice.
-
  @param constantPool - um ponteiro para o pool de contantes
  @param indice - um índice para a posição no pool de constantes
- @section desc Descrição
  Função responsável por obter os dados correspondentes ao índice informado
  */
 string capturarIndiceDeReferencia(cp_info *constantPool, U2 indice);
@@ -68,17 +60,15 @@ string capturarIndiceDeReferencia(cp_info *constantPool, U2 indice);
  @brief Imprime o pool de constantes
  @param constantPool - um ponteiro para o pool de contantes
  @param tamanho - o tamanho do pool de constantes
- @section desc Descrição
  Função responsável por imprimir na tela o pool de constantes e todos os campos a ele relacionados
  */
-void imprimirConstantPool(cp_info *constantPool, int tamanho) ;
+void imprimirConstantPool(cp_info *constantPool, int tamanho);
 
 /** @fn void gravarArquivoConstantPool(cp_info *constantPool, int tamanho, fstream &arquivoSaida)
  @brief Imprime o pool de constantes
  @param constantPool - um ponteiro para o pool de contantes
  @param tamanho - o tamanho do pool de constantes
  @param arquivoSaida - arquivo saida
- @section desc Descrição
  Função responsável por gravar no arquivo o pool de constantes e todos os campos a ele relacionados
  */
 void gravarArquivoConstantPool(cp_info *constantPool, int tamanho, fstream &arquivoSaida);

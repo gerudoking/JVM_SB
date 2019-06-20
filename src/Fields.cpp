@@ -1,5 +1,5 @@
 /*!
- * \file fields.cpp
+ * \file Fields.cpp
  * \brief Módulo responsável pela manipulação dos campos existentes no arquivo .class
  */
 

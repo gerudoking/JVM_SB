@@ -113,8 +113,8 @@ LeitorExibidor *StaticClass::obterClasseLeitorExibidor() {
 	return leitorExibidor;
 }
 
-Instance *StaticClass::obterInstanceInstance() {
-	Instance *classeInstancia = new Instance(this);
+InstanceClass *StaticClass::obterInstanceClass() {
+	InstanceClass *classeInstancia = new InstanceClass(this);
 	Heap::adicionarInstancia(classeInstancia);
 
 	return classeInstancia;

@@ -1,14 +1,10 @@
 /*!
- * \file flags.cpp
+ * \file Flags.cpp
  * \brief
  */
 
 #include "Flags.h"
 
-/**
- * Função que mostra as flags de acesso para os usuários
- * @param flags Valor hexadecimal das flags
- */
 void imprimirFlags(U2 accessFlags) {
 	bool first = true;
 

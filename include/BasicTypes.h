@@ -1,12 +1,7 @@
-/*!
- * \file BasicTypes.h
- * \brief Tipos básicos utilizados para implementarmos a JVM.
+/** @file BasicTypes.h
+ * @brief Tipos básicos utilizados para implementarmos a JVM.
  */
 
-/** @def BASE
- *	@brief Macro
- *	@brief Define utilizado para evitar múltiplas inclusões desse arquivo.
- */
 #ifndef BASETYPE_H
 #define BASETYPE_H
 
@@ -70,49 +65,49 @@ typedef union element_u {
 	uint8_t b;
 	int8_t bs;
 	int* pi;
-} element;
+} Element;
 
 typedef struct {
 	int* dims;
 	int* array;
-} n_array;
+} N_array;
 
 /** @struct typedElement_s
  *	@brief Agregador de tipos e informações.
  *	Struct responsável por juntar tipos e informações de elementos.
  */
 typedef struct typedElement_s {
-	element value;
+	Element value;
 	uint8_t type;
 	uint8_t realType;
 } TypedElement;
 
 /** @fn U1 lerU1 (FILE *fp)
  *	@brief Função para ler 1 byte do arquivo .class
- *	@param fp. Ponteiro pro arquivo .class
+ *	@param fp Ponteiro pro arquivo .class
  */
 U1 lerU1(FILE *fp);
 
 /** @fn U2 lerU2 (FILE *fp)
  *	@brief Função para ler 2 bytes do arquivo .class
- *	@param fp. Ponteiro pro arquivo .class
+ *	@param fp Ponteiro pro arquivo .class
  */
 U2 lerU2(FILE *fp);
 
 /** @fn U4 lerU4 (FILE *fp)
  *	@brief Função para ler 4 bytes do arquivo .class
- *	@param fp. Ponteiro pro arquivo .class
+ *	@param fp Ponteiro pro arquivo .class
  */
 U4 lerU4(FILE *fp);
 
 /** @fn U1 * lerUTF8(FILE* fp, int size)
  *	@brief Função para ler os bytes de uma string UTF-8
- *	@param fp. Ponteiro pro arquivo .class
+ *	@param fp Ponteiro pro arquivo .class
  *	@param size Tamanho que será alocado para a string.
  */
 U1 * lerUTF8(FILE* fp, int size);
 
-/** @fn string imprimirUTF8 (unsigned char * s, int size)
+/** @fn string obterUTF8(unsigned char * s, int size)
  *	@brief Função para montar e mostrar a uma string UTF-8
  *	@param s Ponteiro para a posição inicial de uam string Unicode.
  *	@param size Tamanho da string a ser impressa.
@@ -145,21 +140,21 @@ string converter_double_to_string(double d);
 
 /** @fn float converter_u4_to_float (ClassLoaderType in)
  *  @brief Função para converter 4 bytes em float
- *  @param in quatro bytes a serem convertidos.
+ *  @param in quatro bytes a serem convertidos.
  */
 float converter_u4_to_float(ClassLoaderType in);
 
 /** @fn long converter_u4_to_long (ClassLoaderType high, ClassLoaderType low)
  *  @brief Função para converter 8 bytes em um longo
- *  @param high Quatro bytes mais significativos a serem convertidos.
- *  @param low Quatro últimos bytes significativos a serem convertidos.
+ *  @param high Quatro bytes mais significativos a serem convertidos.
+ *  @param low Quatro últimos bytes significativos a serem convertidos.
  */
 long converter_u4_to_long(ClassLoaderType high, ClassLoaderType low);
 
 /** @fn double converter_u4_to_double (ClassLoaderType high, ClassLoaderType low)
  *  @brief Função para converter 8 bytes em um duplo
- *  @param high Quatro bytes mais significativos a serem convertidos.
- *  @param low Quatro últimos bytes significativos a serem convertidos.
+ *  @param high Quatro bytes mais significativos a serem convertidos.
+ *  @param low Quatro últimos bytes significativos a serem convertidos.
  */
 double converter_u4_to_double(ClassLoaderType high, ClassLoaderType low);
 

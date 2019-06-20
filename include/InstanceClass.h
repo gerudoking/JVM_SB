@@ -1,13 +1,13 @@
 /*!
- * \file Instance.h
- * \brief Definição da Instance
+ * \file InstanceClass.h
+ * \brief Definição da Classe Instance
  */
 #ifndef INSTANCE_H
 #define INSTANCE_H
 
-class Instance;
+class InstanceClass;
 
-#include "classeLeitorExibidor.h"
+#include "ClasseLeitorExibidor.h"
 #include "StaticClass.h"
 #include "OperandsStack.h"
 #include "Heap.h"
@@ -19,31 +19,31 @@ using namespace std;
  * @brief Class instantiation.
  * @brief Lida com operações que lidam com uma instância da classe
  */
-class Instance {
+class InstanceClass {
 private:
 	map<string, TypedElement*> mapLocalFields;
 	StaticClass *staticClass;
 
 public:
-	/** @fn Instance(StaticClass* c)
+	/** @fn InstanceClass(StaticClass* staticClass)
 	 * @brief Lida com operações que manipulam a instância da classe
-	 * @param StaticClass Referência para a StaticClass
+	 * @param staticClass Referência para a StaticClass
 	 */
-	Instance(StaticClass *staticClass);
+	InstanceClass(StaticClass* staticClass);
 
-	/** @fn StaticClass *getStatic()
+	/** @fn StaticClass *obterStaticClass()
 	 * @brief Retorna referência para a classe estatica.
 	 */
 	StaticClass *obterStaticClass();
 
-	/** @fn typedElement getField(string field)
+	/** @fn typedElement obterField(string field)
 	 * @brief Retorna field instanciado
 	 * @param field do field.
 	 * @return struct typedElement que contém informações sobre nome do tipo e valor
 	 */
 	TypedElement obterField(string field);
 
-	/** @fn bool setField(string s, typedElement e)
+	/** @fn bool atualizarField(string s, typedElement e)
 	 * @brief Defina um valor para um field da Instance
 	 * @param field nome do field
 	 * @param typedElement novo tipo que será atribuido ao field

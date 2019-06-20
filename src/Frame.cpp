@@ -1,5 +1,5 @@
 /*!
- * \file classeFlame.cpp
+ * \file Frame.cpp
  * \brief
  */
 
@@ -12,7 +12,7 @@ FrameStack::FrameStack(LeitorExibidor *leitorExibidor) {
 	frame->method = leitorExibidor->obterMain();
 	frame->constantPool = leitorExibidor->obterConstantPool();
 	frame->pilhaOperandos = new OperandsStack(frame->method.attributes->info->codigoAtributo.max_stack);
-	frame->variaveisLocais = new VariaveisLocais(frame->method.attributes->info->codigoAtributo.max_locals);
+	frame->variaveisLocais = new LocalVariables(frame->method.attributes->info->codigoAtributo.max_locals);
 	inicializarPC(frame);
 
 	stackThreads.push(frame);
@@ -34,7 +34,7 @@ FrameStack::FrameStack(LeitorExibidor *leitorExibidor) {
 
 void FrameStack::executarMetodos() {
 	while (proximaInstrucao()) {
-		cout << "Falta implementar operaçoes de opcodes" << endl;
+		//cout << "opcode " << opcode << endl;
 		Operations::executarOperacao(opcode);
 	}
 
@@ -101,7 +101,7 @@ void FrameStack::adicionarFrame(method_info method, cp_info *constantPool) {
 	frame->method = method;
 	frame->constantPool = constantPool;
 	frame->pilhaOperandos = new OperandsStack(frame->method.attributes->info->codigoAtributo.max_stack);
-	frame->variaveisLocais = new VariaveisLocais(frame->method.attributes->info->codigoAtributo.max_locals);
+	frame->variaveisLocais = new LocalVariables(frame->method.attributes->info->codigoAtributo.max_locals);
 	inicializarPC(frame);
 
 	//update operand stack pointers and array variables

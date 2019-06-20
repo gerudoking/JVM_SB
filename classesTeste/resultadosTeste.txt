@@ -1,0 +1,6 @@
+HelloWorld.class - Funcionando imprimir hello, world
+double_aritmetica.class - Funcionando imprimir 233.110000 -36.630000 13249.628800 0.728405 -98.240000 36.630000
+fooCorporation.class - Funcionando imprimir 320
+vetor2-java6.class - ERRO: O nome da classe definida não bate com o do arquivo!
+cafebabe.class - ERRO: Arquivo invalido! Assinatura Magic do arquivo .class o valor "0xCAFEBASE" não encontrada.
+Main - ERRO: O arquivo não possui metodo main

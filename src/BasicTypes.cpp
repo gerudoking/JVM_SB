@@ -99,7 +99,7 @@ string converter_double_to_string(double d) {
 //return 1 for +infinity, 2 for -inifity, 3 for NaN e 0 for number inside bound
 int verificarFloat(float f) {
 	int ret = 0;
-	element aux;
+	Element aux;
 	aux.f = f;
 
 	if ((aux.i >= 0x7f800001 && aux.i <= 0x7fffffff) || (aux.i >= 0xff800001 && aux.i <= 0xffffffff)) {
@@ -116,7 +116,7 @@ int verificarFloat(float f) {
 //return 1 for +infinity, 2 for -inifity, 3 for NaN e 0 for number inside bound
 int verificarDouble(double d) {
 	int ret = 0;
-	element aux;
+	Element aux;
 	aux.d = d;
 
 	if ((aux.l >= 0x7ff0000000000001L && aux.l <= 0x7ffffffffffffL) || (aux.l >= 0xfff0000000000001L && aux.l <= 0xffffffffffffffffL)) {

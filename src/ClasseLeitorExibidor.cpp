@@ -1,15 +1,10 @@
 /*!
- * \file classeLeitorExibidor.cpp
+ * \file ClasseLeitorExibidor.cpp
  * \brief Classe que irá realizar a leitura do bytecode e salvar as informações do class file
  */
 
-#include "classeLeitorExibidor.h"
+#include "ClasseLeitorExibidor.h"
 
-/**
- * Construtor que configura um objeto da classe Leitor com o nome do arquivo passado.
- *
- * @param in argumento passado como nome do arquivo na inicializacao do programa
- */
 LeitorExibidor::LeitorExibidor(char *in) { // @suppress("Class members should be properly initialized")
 	if (in) {	//associa o nome do arquivo passado a variavel filename
 		fileName = in;
@@ -17,12 +12,7 @@ LeitorExibidor::LeitorExibidor(char *in) { // @suppress("Class members should be
 	status = -1;
 }
 
-/**
- * Construtor que configura um objeto da classe Leitor com o nome do arquivo passado.
- *
- * @param in argumento passado como nome do arquivo na inicializacao do programa
- */
-LeitorExibidor::LeitorExibidor(std::string in) { // @suppress("Class members should be properly initialized")
+LeitorExibidor::LeitorExibidor(string in) { // @suppress("Class members should be properly initialized")
 	//verifica se o arquivo passado é vazio
 	if (!in.empty()) {
 		//copia para fileName o nome do arquivo lido
@@ -52,8 +42,6 @@ void LeitorExibidor::fecharArquivo() {
 	arquivoSaida.close();
 }
 
-/** @fn validacao(void)
- * @brief Valida estrutura obrigatoria */
 int LeitorExibidor::validacao(void) {
 	//**verifica se o arquivo possui a extensao .class
 	if (!validarExtensao()) {
@@ -68,7 +56,7 @@ int LeitorExibidor::validacao(void) {
 	}
 
 	//**verifica se o metodo main esta entre os metodos lidos no bytecode
-	if(!verificarMain()){
+	if (!verificarMain()) {
 		cout << obterErro(MISSING_MAIN) << endl;
 		status = MISSING_MAIN;
 	}
@@ -77,10 +65,6 @@ int LeitorExibidor::validacao(void) {
 
 }
 
-/** @fn carregar()
- * Carrega o class file na classe
- * @return variavel status que indica se houve erro no programa
- */
 int LeitorExibidor::carregar() {
 	int verificarCP;
 
@@ -164,10 +148,10 @@ int LeitorExibidor::carregar() {
 	fields = lerTodosFields(arquivoClass, fieldsCount, constantPool);
 
 	//le o numero de metodos
-	MethodsCount = lerU2(arquivoClass);
+	methodsCount = lerU2(arquivoClass);
 
 	//carrega os metodos na memoria
-	Methods = lerTodosMethods(arquivoClass, MethodsCount, constantPool);
+	methods = lerTodosMethods(arquivoClass, methodsCount, constantPool);
 
 	//le o numero de atributos
 	attributesCount = lerU2(arquivoClass);
@@ -189,10 +173,6 @@ int LeitorExibidor::carregar() {
 	return (status = 0);
 }
 
-/**
- * Impressão do programa
- * @return true ou false dependendo se a variavel status indicar que houve erro na leitura
- */
 bool LeitorExibidor::exibir() {
 	//verifica se o arquivo foi lido
 	if (status != 0) {
@@ -212,7 +192,7 @@ bool LeitorExibidor::exibir() {
 	imprimirTodosField(fields, constantPool, fieldsCount);
 
 	//chama o metodo que se encontra na classe Methods para imprimir os metodos
-	imprimirTodosMethods(Methods, constantPool, MethodsCount);
+	imprimirTodosMethods(methods, constantPool, methodsCount);
 
 	//chama o metodo que se encontra na classe attributes para imprimir os atributos
 	imprimirTodosAttributes(attributes, constantPool, attributesCount);
@@ -220,10 +200,6 @@ bool LeitorExibidor::exibir() {
 	return true;
 }
 
-/**
- * Gravação do programa
- * @return true ou false dependendo se a variavel status indicar que houve erro na leitura
- */
 bool LeitorExibidor::gravarArquivo() {
 	//verifica se o arquivo foi lido
 	if (status != 0) {
@@ -238,17 +214,13 @@ bool LeitorExibidor::gravarArquivo() {
 
 	gravarArquivoTodosField(fields, constantPool, fieldsCount, arquivoSaida);
 
-	gravarArquivoTodosMethods(Methods, constantPool, MethodsCount, arquivoSaida);
+	gravarArquivoTodosMethods(methods, constantPool, methodsCount, arquivoSaida);
 
 	gravarArquivoTodosAttributes(attributes, constantPool, attributesCount, arquivoSaida);
 
 	return true;
 }
 
-/**
- * Exibidor do programa
- * @return variavel status que indica se houve erro no programa
- */
 void LeitorExibidor::imprimirInformacoesGerais() {
 	cout << "" << endl;
 
@@ -271,17 +243,13 @@ void LeitorExibidor::imprimirInformacoesGerais() {
 
 	cout << "Número de Campos:\t " << fieldsCount << endl;
 
-	cout << "Número de Metodos:\t " << MethodsCount << endl;
+	cout << "Número de Metodos:\t " << methodsCount << endl;
 
 	cout << "Número de Atributos:\t " << attributesCount << endl;
 
 	cout << "" << endl;
 }
 
-/**
- * Exibidor do programa
- * @return variavel status que indica se houve erro no programa
- */
 void LeitorExibidor::gravarArquivoInformacoesGerais() {
 	arquivoSaida << "" << endl;
 
@@ -306,17 +274,12 @@ void LeitorExibidor::gravarArquivoInformacoesGerais() {
 
 	arquivoSaida << "Número de Campos:\t " << fieldsCount << endl;
 
-	arquivoSaida << "Número de Metodos:\t " << MethodsCount << endl;
+	arquivoSaida << "Número de Metodos:\t " << methodsCount << endl;
 
 	arquivoSaida << "Número de Atributos:\t " << attributesCount << endl;
 
 	arquivoSaida << "" << endl;
 }
-
-/**
- * Lê os ultimos caracteres do arquivo pra ver se formam a extensao .class
- * @return booleano que indica se existe o .class
- */
 
 bool LeitorExibidor::validarExtensao() {
 	string aux = "", auxFilename(this->fileName);
@@ -331,16 +294,11 @@ bool LeitorExibidor::validarExtensao() {
 	return aux == ".class";
 }
 
-/**
- * verifia se o metodo main existe nos metodos lidos no bytecode
- * @return booleano que indica se existe o metodo main
- */
-
 bool LeitorExibidor::verificarMain() {
 	bool encontrou = false;
 
-	for (int i = 0; i < MethodsCount; i++) {
-		int name = Methods[i].name_index, desc = Methods[i].descriptor_index, flags = Methods[i].access_flags;
+	for (int i = 0; i < methodsCount; i++) {
+		int name = methods[i].name_index, desc = methods[i].descriptor_index, flags = methods[i].access_flags;
 
 		//verifica se o nome do metodo se encontra dentro das referencias das constantes
 		if ("main" == capturarIndiceDeReferencia(constantPool, name)) {
@@ -359,17 +317,12 @@ bool LeitorExibidor::verificarMain() {
 	return encontrou;
 }
 
-/**
- * verifia se o metodo clinit existe nos metodos lidos no bytecode
- * @return booleano que indica se existe o metodo clinit
- */
-
 bool LeitorExibidor::verificarClinit() {
 	bool encontrou = false;
 
-	for (int i = 0; i < MethodsCount; i++) {
+	for (int i = 0; i < methodsCount; i++) {
 		//pega o nome do metodo
-		int name = Methods[i].name_index;
+		int name = methods[i].name_index;
 
 		//verifica se o nome do metodo se encontra nas constantes
 		if ("<clinit>" == capturarIndiceDeReferencia(constantPool, name)) {
@@ -382,50 +335,30 @@ bool LeitorExibidor::verificarClinit() {
 	return encontrou;
 }
 
-/**
- * verifia se o metodo main foi encontrado
- * @return booleano que indica se existe o metodo main
- */
 bool LeitorExibidor::existeMain() {
 	//verifica se o metodo main esta entre os metodos lidos no bytecode
 	encontrouMain = verificarMain();
 	return encontrouMain;
 }
 
-/**
- * verifia se o metodo clinit foi encontrado
- * @return booleano que indica se existe o metodo clinit
- */
 bool LeitorExibidor::existeClinit() {
 	//verifica se existe o metodo <clinit>
 	encontrouClinit = verificarClinit();
 	return encontrouClinit;
 }
 
-/**
- * Retorna o metodo main no formato da struct method_info
- * @return struct method_info contendo informações sobre o método
- */
 method_info LeitorExibidor::obterMain() {
 	if (encontrouMain) {
-		return Methods[mainMethod];
+		return methods[mainMethod];
 	} else {
 		throw runtime_error("Nao foi encontrado um metodo main!\n");
 	}
 }
 
-/**
- * Retorna o metodo clinit no formato da struct method_info
- * @return struct method_info contendo informações sobre o método
- */
 method_info LeitorExibidor::obterClinit() {
-	return Methods[clinit];
+	return methods[clinit];
 }
 
-/**
- * Verifica se a .class lida no bytecode é a mesma que foi declarada no nome do arquivo
- * @return booleano indicando se a .class está correta
- */
 bool LeitorExibidor::verificarThisClass() {
 	int auxPos;
 
@@ -449,23 +382,29 @@ bool LeitorExibidor::verificarThisClass() {
 		auxFilename = auxFilename.substr(auxPos + 1);
 		auxPos = auxFilename.find("/");
 	}
+	//..
+	//remove nomes de pastas no Windows
+	auxPos = auxClass.find("\\");
+
+	while (auxPos >= 0 && (unsigned int) auxPos <= auxClass.size()) {
+		auxClass = auxClass.substr(auxPos + 1);
+		auxPos = auxClass.find("\\");
+	}
+
+	//remove nomes de pastas no Linux
+	auxPos = auxClass.find("/");
+	while (auxPos >= 0 && (unsigned int) auxPos <= auxClass.size()) {
+		auxClass = auxClass.substr(auxPos + 1);
+		auxPos = auxClass.find("/");
+	}
 
 	return (auxClass == auxFilename);
 }
 
-/**
- * Retorna a variavel status que indica se houve erro na leitura do bytecode
- * @return status
- */
 int LeitorExibidor::obterStatus() {
 	return status;
 }
 
-/**
- * Verifica qual foi o erro encontrado pelo programa
- * @param error MACRO com o erro que foi encontrado
- * @return string contendo informação sobre o tipo de erro encontrado
- */
 string LeitorExibidor::obterErro(int erro) {
 	string mensagemErro = "";
 	switch (erro) {
@@ -476,7 +415,7 @@ string LeitorExibidor::obterErro(int erro) {
 		mensagemErro = "ERRO: nao foi possivel abrir o arquivo \"" + string(fileName) + "\"!\n";
 		break;
 	case INVALID_FILE:
-		mensagemErro = "ERRO: Arquivo invalido!\nAssinatura \"cafe babe\" nao encontrada.\n";
+		mensagemErro = "ERRO: Arquivo invalido!\nAssinatura Magic do arquivo .class o valor \"0xCAFEBASE\" não encontrada.\n";
 		break;
 	case UNKNOWN_TYPE:
 		mensagemErro = "ERRO: Tipo nao reconhecido para o pool de constantes!\nNao foi possivel carregar todo o PC.";
@@ -488,36 +427,25 @@ string LeitorExibidor::obterErro(int erro) {
 		mensagemErro = "ERRO: O arquivo deve ter a extensao .class!\n";
 		break;
 	case MISSING_MAIN:
-		mensagemErro = "O arquivo não possui metodo main\n";
+		mensagemErro = "ERRO: O arquivo não possui metodo main\n";
 		break;
 	case MISSING_CLINIT:
-		mensagemErro = "O arquivo não possui metodo clint\n";
+		mensagemErro = "ERRO: O arquivo não possui metodo clint\n";
+		break;
 	default:
 		break;
 	}
 	return mensagemErro;
 }
 
-/**
- * método para pegar a constant pool lida
- * @return Retorna a array com a constant pool
- */
 cp_info* LeitorExibidor::obterConstantPool() const {
 	return constantPool;
 }
 
-/**
- * método para pegar a constant pool lida
- * @return Retorna a array com a constant pool
- */
 U2 LeitorExibidor::obterTamanhoConstantPool() {
 	return lengthCP;
 }
 
-/**
- * Verifica o caminho mais o nome do arquivo dependendo do sistema operacional
- * @return Retorna a string com o caminho total do arquivo
- */
 char *LeitorExibidor::obterPath() {
 	string path = "", auxFilename(this->fileName);
 	char *caminho_arquivo;
@@ -549,59 +477,30 @@ char *LeitorExibidor::obterPath() {
 	return caminho_arquivo;
 }
 
-/**
- * Retorna a array contendo os métodos
- * @return array do tipo method_info
- */
 method_info *LeitorExibidor::obterMethods() {
-	return Methods;
+	return methods;
 }
 
-/**
- * Retorna o número de Methods
- * @return uint16_t indicando o numero de metodos
- */
 U2 LeitorExibidor::obterMethodsCount() {
-	return MethodsCount;
+	return methodsCount;
 }
 
-/**
- * Retorna a variavel que indica o this_class
- * @return uint16_t this_class
- */
 U2 LeitorExibidor::obterThis_class() {
 	return this_class;
 }
 
-/**
- * Retorna a variável que indica o super_class
- * @return uint16_t super_class
- */
 U2 LeitorExibidor::obterSuper_class() {
 	return super_class;
 }
 
-/**
- * Retorna o número de fields
- * @return uint16_t indicando o numero de fields
- */
 U2 LeitorExibidor::obterFieldsCount() {
 	return fieldsCount;
 }
 
-/**
- * Retorna a array com as fields lidas
- * @return a array da struct field_info
- */
 field_info *LeitorExibidor::obterFields() {
 	return fields;
 }
 
-/**
- * Retorna um field
- * @param field_name nome do field que deseja retornar
- * @return struct field_info com a informação da field passada no parâmetro
- */
 field_info* LeitorExibidor::obterField(string nome) {
 	//percorre a array com as fields  ate encontrar field desejada
 	for (int i = 0; i < obterFieldsCount(); i++) {
@@ -613,45 +512,39 @@ field_info* LeitorExibidor::obterField(string nome) {
 
 }
 
-method_info* LeitorExibidor::getMethod(string name, string descriptor) {
+method_info* LeitorExibidor::obterMethod(string nome, string descriptor) {
 	method_info method;
 
-	for (int i = 0; i < this->MethodsCount; i++) {
-		method = this->Methods[i];
+	for (int i = 0; i < this->methodsCount; i++) {
+		method = this->methods[i];
 		string method_name = capturarIndiceDeReferencia(this->constantPool, method.name_index);
 		string method_desc = capturarIndiceDeReferencia(this->constantPool, method.descriptor_index);
 
-		if (descriptor == method_desc && name == method_name) {
-			return Methods + i;
+		if (descriptor == method_desc && nome == method_name) {
+			return methods + i;
 		}
 	}
 
 	if (obterSuper_class() == 0) {
 		return NULL;
 	} else {
-		StaticClass* a = MethodArea::obterClass(capturarIndiceDeReferencia(this->constantPool, obterSuper_class()));
-		LeitorExibidor* l = a->obterClasseLeitorExibidor();
+		StaticClass* staticClass = MethodArea::obterClass(capturarIndiceDeReferencia(this->constantPool, obterSuper_class()));
+		LeitorExibidor* leitorExibidor = staticClass->obterClasseLeitorExibidor();
 
-		return l->getMethod(name, descriptor);
+		return leitorExibidor->obterMethod(nome, descriptor);
 	}
 }
 
-/**
- * Retorna a classe do metodo que esta sendo procurado
- * @param name nome do method
- * @param descriptor descritor do method
- * @return classe Leitor
- */
-LeitorExibidor* LeitorExibidor::getClassThatHasSerachedMethod(string name, string descriptor) {
+LeitorExibidor* LeitorExibidor::obterClassThatHasSerachedMethod(string nome, string descriptor) {
 	method_info* method;
 
-	for (int i = 0; i < this->MethodsCount; i++) {
-		method = (this->Methods) + i;
+	for (int i = 0; i < this->methodsCount; i++) {
+		method = (this->methods) + i;
 
-		string method_name = capturarIndiceDeReferencia(this->constantPool, method->name_index);
-		string method_desc = capturarIndiceDeReferencia(this->constantPool, method->descriptor_index);
+		string methodNome = capturarIndiceDeReferencia(this->constantPool, method->name_index);
+		string methodDescriptor = capturarIndiceDeReferencia(this->constantPool, method->descriptor_index);
 
-		if (descriptor == method_desc && name == method_name) {
+		if (descriptor == methodDescriptor && nome == methodNome) {
 			return this;
 		}
 	}
@@ -659,8 +552,8 @@ LeitorExibidor* LeitorExibidor::getClassThatHasSerachedMethod(string name, strin
 	if (obterSuper_class() == 0) {
 		return NULL;
 	} else {
-		LeitorExibidor* l =
+		LeitorExibidor* leitorExibidor =
 				MethodArea::obterClass(capturarIndiceDeReferencia(this->constantPool, obterSuper_class()))->obterClasseLeitorExibidor();
-		return l->getClassThatHasSerachedMethod(name, descriptor);
+		return leitorExibidor->obterClassThatHasSerachedMethod(nome, descriptor);
 	}
 }

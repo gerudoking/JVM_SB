@@ -6,9 +6,10 @@
 #define METHOD_H
 
 #include <fstream>
-#include "ConstantPool.h"
+
 #include "Attributes.h"
 #include "BasicTypes.h"
+#include "ConstantPool.h"
 
 using namespace std;
 
@@ -58,18 +59,19 @@ void imprimirTodosMethods(method_info *method, cp_info *constantPool, int tamanh
  * @brief Mostra um método do arquivo .class
  * @param method contém as informações do método
  * @param *constantPool ponteiro para as informações do pool de constantes
+ * @param indice indice para o method
  * @param arquivoSaida arquivo de saida
  */
 void gravarArquivoMethod(method_info method, cp_info *constantPool, int indice, fstream &arquivoSaida);
 
-/** @fn gravarArquivoTodosMethods(method_info *method_info, cp_info *constantPool, int tamanho, fstream &arquivoSaida)
+/** @fn gravarArquivoTodosMethods(method_info *method, cp_info *constantPool, int tamanho, fstream &arquivoSaida)
  * @brief Mostra todos os métodos do arquivo .class
  * @param *method ponteiro para as informações do método
  * @param *constantPool ponteiro para as informações do pool de constantes
  * @param tamanho quantidade de métodos a serem mostrados
  * @param arquivoSaida arquivo de saida
  */
-void gravarArquivoTodosMethods(method_info *method_info, cp_info *constantPool, int tamanho, fstream &arquivoSaida);
+void gravarArquivoTodosMethods(method_info *method, cp_info *constantPool, int tamanho, fstream &arquivoSaida);
 
 /** @fn string obterFlagMethod(uint16_t flag)
  * Obtém as access flags dos métodos para print

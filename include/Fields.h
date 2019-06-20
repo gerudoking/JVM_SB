@@ -2,18 +2,14 @@
  * \file Fields.h
  * \brief Gerencia as informações dos campos do arquivo .class
  */
-
-/**
- * @def FIELDS
- * @brief Define uso para evitar a inclusão múltipla de arquivos.
- */
 #ifndef FIELDS_H
 #define FIELDS_H
 
 #include <fstream>
-#include "ConstantPool.h"
+
 #include "Attributes.h"
 #include "BasicTypes.h"
+#include "ConstantPool.h"
 
 using namespace std;
 
@@ -67,7 +63,7 @@ void gravarArquivoField(field_info field, cp_info *constantPool, int indice, fst
 void gravarArquivoTodosField(field_info *field, cp_info *constantPool, int tamanho, fstream &arquivoSaida);
 
 /**
- * @fn field_info readField (FILE* fp, cp_info *cp)
+ * @fn field_info lerField(FILE* arquivoEntrada, cp_info* constantPool)
  * @brief Função que lê um campo
  * @param arquivoEntrada Ponteiro para arquivo .class.
  * @param constantPool Ponteiro para pool de constantes.

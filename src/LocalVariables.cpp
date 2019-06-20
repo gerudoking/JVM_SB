@@ -5,26 +5,26 @@
 
 #include "LocalVariables.h"
 
-VariaveisLocais::VariaveisLocais(uint16_t maxSize) :
+LocalVariables::LocalVariables(uint16_t maxSize) :
 		max(maxSize), realMax(2 * maxSize), dois(false) {
 	elements = (uint32_t *) calloc(max * 2, sizeof(uint32_t));
 	types = (uint8_t *) calloc(max * 2, sizeof(uint8_t));
 }
 
-VariaveisLocais::VariaveisLocais(uint16_t maxSize, bool slots) :
+LocalVariables::LocalVariables(uint16_t maxSize, bool slots) :
 		max(maxSize), realMax(2 * maxSize), dois(slots) {
 	elements = (uint32_t *) calloc(max * 2, sizeof(uint32_t));
 	types = (uint8_t *) calloc(max * 2, sizeof(uint8_t));
 }
 
-VariaveisLocais::~VariaveisLocais() {
+LocalVariables::~LocalVariables() {
 	if (elements)
 		free(elements);
 	if (types)
 		free(types);
 }
 
-void VariaveisLocais::set(int index, TypedElement x) {
+void LocalVariables::set(int index, TypedElement x) {
 	if (index < 0)
 		throw std::runtime_error("Indice fora dos limites!");
 
@@ -46,7 +46,7 @@ void VariaveisLocais::set(int index, TypedElement x) {
 	}
 }
 
-TypedElement VariaveisLocais::get(int index) const {
+TypedElement LocalVariables::get(int index) const {
 	index *= 2;
 	if (index >= realMax || index < 0)
 		throw std::runtime_error("Indice fora dos limites!");
@@ -66,7 +66,7 @@ TypedElement VariaveisLocais::get(int index) const {
 	return ret;
 }
 
-void VariaveisLocais::imprimirAll() const {
+void LocalVariables::imprimirAll() const {
 	for (int i = 0; i < max; ++i) {
 		std::cout << i << ": ";
 
@@ -99,10 +99,10 @@ void VariaveisLocais::imprimirAll() const {
 	}
 }
 
-int VariaveisLocais::obterMax() const {
+int LocalVariables::obterMax() const {
 	return max;
 }
 
-const TypedElement VariaveisLocais::operator[](const int index) const {
+const TypedElement LocalVariables::operator[](const int index) const {
 	return this->get(index);
 }

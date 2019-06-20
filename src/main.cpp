@@ -2,13 +2,18 @@
  * \file main.cpp
  * \brief Modulo principal, dá a opção de escolha entre exibidor e interpretador
  */
-#include "classeLeitorExibidor.h"
+#include "ClasseLeitorExibidor.h"
 
 /**
+ * Software Básico 2019/1
+ * Prof. Marcelo Ladeira
+ *
+ * Projeto Java Virtual Machine (JVM)
+ *
  * @brief Funcao principal, dá a opção de escolha entre exibidor e interpretador
  * 
  * @param argc, *argv[]
- * @section Membros:
+ * @brief Membros:
  * @author Ana Luisa Salvador Alvarez - 16/0048036
  * @author Eduardo de Azevedo dos Santos - 14/0136967
  * @author Iago Lobo Ribeiro de Moraes - 14/0082921
@@ -35,14 +40,7 @@ int main(int argc, char *argv[]) {
 	} else if (argv[1][1] == 'i') { //interpretador
 		leitorExibidor.carregar();
 
-		/*if (!leitorExibidor.existeMain()) {
-			printf("O arquivo %s nao possui metodo main\n", argv[2]);
-			return -1;
-		} else if (leitorExibidor.obterStatus()) {
-			return leitorExibidor.obterStatus();
-		}*/
-
-		if (!leitorExibidor.validacao()) {
+		if (leitorExibidor.obterStatus() == 0 && !leitorExibidor.validacao()) {
 
 			MethodArea::path = string(leitorExibidor.obterPath());
 			MethodArea::adicionarClasse(&leitorExibidor);

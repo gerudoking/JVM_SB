@@ -1,12 +1,6 @@
 /*!
- * \file LocalVariables.h
- * \brief Stores local variables to current method
- */
-
-/*! \def LOCALVARIABLES
- \brief Macro
-
- Define used to avoid multiple inclusions of this file
+ * @file LocalVariables.h
+ * @brief Stores local variables to current method
  */
 
 #ifndef LOCALVARIABLES_H
@@ -34,12 +28,12 @@ using namespace std;
 #define TYPE_BOOL 5
 #define TYPE_REFERENCE 6
 
-/*! \class VariaveisLocais
- \brief classe VariaveisLocais
+/*! @class VariaveisLocais
+ @brief classe VariaveisLocais
 
  Responsible for all operations that envolves the local variables
  */
-class VariaveisLocais {
+class LocalVariables {
 private:
 	//array to values
 	uint32_t *elements;
@@ -51,52 +45,50 @@ private:
 	//says if types occupy 2 slots (used to simulate arrays)
 	const bool dois;
 public:
-	/*! \fn VariaveisLocais(uint16_t maxSize)
-	 \brief VariaveisLocais class constructor
-
-	 \param maxSize Maximum size of local variables that can be stored
+	/*! @fn LocalVariables(uint16_t maxSize)
+	 @brief VariaveisLocais class constructor
+	 @param maxSize Maximum size of local variables that can be stored
 	 */
-	VariaveisLocais(uint16_t);
+	LocalVariables(uint16_t);
 
-	/*! \fn VariaveisLocais(uint16_t maxSize)
-	 \brief VariaveisLocais class constructor
-
-	 \param maxSize Maximum site of local variables that can be stored
-	 \param slots Says if needs to be used two slots for all elements
+	/*! @fn LocalVariables(uint16_t maxSize, bool slots)
+	 @brief LocalVariables class constructor
+	 @param maxSize Maximum site of local variables that can be stored
+	 @param slots Says if needs to be used two slots for all elements
 	 */
-	VariaveisLocais(uint16_t, bool);
-	/*! \fn ~VariaveisLocais()
-	 \brief Destructor 4
+	LocalVariables(uint16_t maxSize, bool slots);
+	/*! @fn ~LocalVariables()
+	 @brief Destructor 4
 	 */
-	~VariaveisLocais();
+	~LocalVariables();
 
-	/*! \fn void imprimirAll() const
-	 \brief Function to show all values
+	/*! @fn void imprimirAll() const
+	 @brief Function to show all values
 	 */
 	void imprimirAll() const;
 
-	/*! \fn void set(int index, typedElement x)
-	 \brief Receives the typed element and inserts on past index
-	 \param index Says the index that will be inserted the past element
-	 \param x Typed element that will be inserted on indicated index
+	/*! @fn void set(int index, typedElement x)
+	 @brief Receives the typed element and inserts on past index
+	 @param index Says the index that will be inserted the past element
+	 @param x Typed element that will be inserted on indicated index
 	 */
 	void set(int, TypedElement);
 
-	/*! \fn typedElement get(int index) const
-	 \brief Gets element on past position by index
-	 \param index Indicates the index that will be obtained the element
+	/*! @fn typedElement get(int index) const
+	 @brief Gets element on past position by index
+	 @param index Indicates the index that will be obtained the element
 	 */
 	TypedElement get(int) const;
 
-	/*! \fn int obterMax() const
-	 \brief Function to know maximum size
+	/*! @fn int obterMax() const
+	 @brief Function to know maximum size
 	 */
 	int obterMax() const;
 
 	//function to allow class use like a struct's array
-	/*! \fn const typedElement operator[] (const int index) const
-	 \brief Function to allow class use like a struct's array
-	 \param index Indicates the index that must be accessed to obtain the typed element
+	/*! @fn const typedElement operator[] (const int index) const
+	 @brief Function to allow class use like a struct's array
+	 @param index Indicates the index that must be accessed to obtain the typed element
 	 */
 	const TypedElement operator[](const int) const;
 
