@@ -1,0 +1,705 @@
+\hypertarget{BasicTypes_8h}{}\section{Referência ao ficheiro include/\+Basic\+Types.h}
+\label{BasicTypes_8h}\index{include/\+Basic\+Types.\+h@{include/\+Basic\+Types.\+h}}
+
+
+Tipos básicos utilizados para implementarmos a J\+VM.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+Diagrama de dependências de inclusão para Basic\+Types.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BasicTypes_8h__incl}
+\end{center}
+\end{figure}
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BasicTypes_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{unionClassLoaderType}{Class\+Loader\+Type}
+\begin{DoxyCompactList}\small\item\em Estrutura de dados para armazenamento Union responsável por armazenar todos os tamanhos de variáveis utilzadas na J\+VM. \end{DoxyCompactList}\item 
+union \hyperlink{unionelement__u}{element\+\_\+u}
+\item 
+struct \hyperlink{structN__array}{N\+\_\+array}
+\item 
+struct \hyperlink{structtypedElement__s}{typed\+Element\+\_\+s}
+\begin{DoxyCompactList}\small\item\em Agregador de tipos e informações. Struct responsável por juntar tipos e informações de elementos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{BasicTypes_8h_a2222d817ce6bbd243023a7471e44a5d6}{Float\+\_\+\+NaN}~0x7f800001
+\item 
+\#define \hyperlink{BasicTypes_8h_af40742e3f905fd8d0968a3f0b5160649}{Float\+\_\+\+Plus\+Infinity}~0x7f800000
+\item 
+\#define \hyperlink{BasicTypes_8h_a8553cea1fd99855eeadf2f4ea7a3ac72}{Float\+\_\+\+Minus\+Infinity}~0xff800000
+\item 
+\#define \hyperlink{BasicTypes_8h_a30cf2596dc23460158fefbe6dc4c359e}{Double\+\_\+\+NaN}~0x7ff0000000000001L
+\item 
+\#define \hyperlink{BasicTypes_8h_a2323042af27da372d902198570438d6d}{Double\+\_\+\+Plus\+Infinity}~0x7ff0000000000000L
+\item 
+\#define \hyperlink{BasicTypes_8h_ad5fb6a3d0e63e11648c5f3ad7febb0ad}{Double\+\_\+\+Minus\+Infinity}~0xfff0000000000000L
+\item 
+\#define \hyperlink{BasicTypes_8h_a5a991e148e312c68d851b11b4b7be584}{R\+T\+\_\+\+B\+Y\+TE}~1
+\item 
+\#define \hyperlink{BasicTypes_8h_ae0ecf90db844a032db00e19482c633d1}{R\+T\+\_\+\+B\+O\+OL}~2
+\item 
+\#define \hyperlink{BasicTypes_8h_aefa4685f803fc7df5788405390df6aab}{R\+T\+\_\+\+C\+H\+AR}~3
+\item 
+\#define \hyperlink{BasicTypes_8h_a15a051a50ea712336d1e809ed5fe240f}{R\+T\+\_\+\+S\+H\+O\+RT}~4
+\item 
+\#define \hyperlink{BasicTypes_8h_ae8d7be4292c8262f3fe8a12a9d5012f1}{R\+T\+\_\+\+I\+NT}~5
+\item 
+\#define \hyperlink{BasicTypes_8h_a1eee60e646767c4b249177593302d237}{R\+T\+\_\+\+F\+L\+O\+AT}~6
+\item 
+\#define \hyperlink{BasicTypes_8h_a3e1ffaf0d9c3d4614139871cfea4e779}{R\+T\+\_\+\+D\+O\+U\+B\+LE}~7
+\item 
+\#define \hyperlink{BasicTypes_8h_ac2620c935a093d64e17628fbb36a5e79}{R\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE}~8
+\item 
+\#define \hyperlink{BasicTypes_8h_a321c0fe6e16c9d74517df8a769fa723d}{R\+T\+\_\+\+L\+O\+NG}~9
+\end{DoxyCompactItemize}
+\subsection*{Definições de tipos}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint8\+\_\+t \hyperlink{BasicTypes_8h_a9bffe5bb2564f91cd90fb7d06848f9a8}{U1}
+\item 
+typedef uint16\+\_\+t \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2}
+\item 
+typedef uint32\+\_\+t \hyperlink{BasicTypes_8h_ac6d2ba2e53dd424684ead2f40e74a8b6}{U4}
+\item 
+typedef union \hyperlink{unionelement__u}{element\+\_\+u} \hyperlink{BasicTypes_8h_a8132f4f0515064141e31e606660df561}{Element}
+\item 
+typedef struct \hyperlink{structtypedElement__s}{typed\+Element\+\_\+s} \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element}
+\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{BasicTypes_8h_a9bffe5bb2564f91cd90fb7d06848f9a8}{U1} \hyperlink{BasicTypes_8h_a7bcab19bcd9cb111d9f212889bc12223}{ler\+U1} (F\+I\+LE $\ast$fp)
+\begin{DoxyCompactList}\small\item\em Função para ler 1 byte do arquivo .class. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{BasicTypes_8h_a046a0864e1577109bbaaa0370a56c2fe}{ler\+U2} (F\+I\+LE $\ast$fp)
+\begin{DoxyCompactList}\small\item\em Função para ler 2 bytes do arquivo .class. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_ac6d2ba2e53dd424684ead2f40e74a8b6}{U4} \hyperlink{BasicTypes_8h_afab80ee9b8e60fd4080754f9229bbf5d}{ler\+U4} (F\+I\+LE $\ast$fp)
+\begin{DoxyCompactList}\small\item\em Função para ler 4 bytes do arquivo .class. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a9bffe5bb2564f91cd90fb7d06848f9a8}{U1} $\ast$ \hyperlink{BasicTypes_8h_a8c91891f672560f81efa0b17316c2435}{ler\+U\+T\+F8} (F\+I\+LE $\ast$fp, int size)
+\begin{DoxyCompactList}\small\item\em Função para ler os bytes de uma string U\+T\+F-\/8. \end{DoxyCompactList}\item 
+string \hyperlink{BasicTypes_8h_a67ca85defbd318c40aa28d8821733ab5}{obter\+U\+T\+F8} (unsigned char $\ast$s, int size)
+\begin{DoxyCompactList}\small\item\em Função para montar e mostrar a uma string U\+T\+F-\/8. \end{DoxyCompactList}\item 
+int \hyperlink{BasicTypes_8h_a3637e840957d6b53327825379c5635a0}{verificar\+Float} (float f)
+\begin{DoxyCompactList}\small\item\em Função para verificar NaN e infinito. \end{DoxyCompactList}\item 
+int \hyperlink{BasicTypes_8h_a5f97022fe564a4a05a3b75dfb039f13e}{verificar\+Double} (double d)
+\begin{DoxyCompactList}\small\item\em Função para verificar NaN e infinito. \end{DoxyCompactList}\item 
+string \hyperlink{BasicTypes_8h_a94660e9c3340c88b188740838a480188}{converter\+\_\+float\+\_\+to\+\_\+string} (float f)
+\begin{DoxyCompactList}\small\item\em Função para converter float para string. \end{DoxyCompactList}\item 
+string \hyperlink{BasicTypes_8h_a0863aa6ecc6e4cea0d76373c21f6b877}{converter\+\_\+double\+\_\+to\+\_\+string} (double d)
+\begin{DoxyCompactList}\small\item\em Função para converter double para string. \end{DoxyCompactList}\item 
+float \hyperlink{BasicTypes_8h_ac7a9717de257f3526a4889b62f55c814}{converter\+\_\+u4\+\_\+to\+\_\+float} (\hyperlink{unionClassLoaderType}{Class\+Loader\+Type} in)
+\begin{DoxyCompactList}\small\item\em Função para converter 4 bytes em float. \end{DoxyCompactList}\item 
+long \hyperlink{BasicTypes_8h_a68e08bb93458d2a9002645705f970e34}{converter\+\_\+u4\+\_\+to\+\_\+long} (\hyperlink{unionClassLoaderType}{Class\+Loader\+Type} high, \hyperlink{unionClassLoaderType}{Class\+Loader\+Type} low)
+\begin{DoxyCompactList}\small\item\em Função para converter 8 bytes em um longo. \end{DoxyCompactList}\item 
+double \hyperlink{BasicTypes_8h_a01de6b870a770894bf9ce59df9604f88}{converter\+\_\+u4\+\_\+to\+\_\+double} (\hyperlink{unionClassLoaderType}{Class\+Loader\+Type} high, \hyperlink{unionClassLoaderType}{Class\+Loader\+Type} low)
+\begin{DoxyCompactList}\small\item\em Função para converter 8 bytes em um duplo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Tipos básicos utilizados para implementarmos a J\+VM. 
+
+
+
+\subsection{Documentação das macros}
+\mbox{\Hypertarget{BasicTypes_8h_ad5fb6a3d0e63e11648c5f3ad7febb0ad}\label{BasicTypes_8h_ad5fb6a3d0e63e11648c5f3ad7febb0ad}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!Double\+\_\+\+Minus\+Infinity@{Double\+\_\+\+Minus\+Infinity}}
+\index{Double\+\_\+\+Minus\+Infinity@{Double\+\_\+\+Minus\+Infinity}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{Double\+\_\+\+Minus\+Infinity}{Double\_MinusInfinity}}
+{\footnotesize\ttfamily \#define Double\+\_\+\+Minus\+Infinity~0xfff0000000000000L}
+
+
+
+Definido na linha 24 do ficheiro Basic\+Types.\+h.
+
+\mbox{\Hypertarget{BasicTypes_8h_a30cf2596dc23460158fefbe6dc4c359e}\label{BasicTypes_8h_a30cf2596dc23460158fefbe6dc4c359e}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!Double\+\_\+\+NaN@{Double\+\_\+\+NaN}}
+\index{Double\+\_\+\+NaN@{Double\+\_\+\+NaN}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{Double\+\_\+\+NaN}{Double\_NaN}}
+{\footnotesize\ttfamily \#define Double\+\_\+\+NaN~0x7ff0000000000001L}
+
+
+
+Definido na linha 22 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::drem().
+
+\mbox{\Hypertarget{BasicTypes_8h_a2323042af27da372d902198570438d6d}\label{BasicTypes_8h_a2323042af27da372d902198570438d6d}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!Double\+\_\+\+Plus\+Infinity@{Double\+\_\+\+Plus\+Infinity}}
+\index{Double\+\_\+\+Plus\+Infinity@{Double\+\_\+\+Plus\+Infinity}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{Double\+\_\+\+Plus\+Infinity}{Double\_PlusInfinity}}
+{\footnotesize\ttfamily \#define Double\+\_\+\+Plus\+Infinity~0x7ff0000000000000L}
+
+
+
+Definido na linha 23 do ficheiro Basic\+Types.\+h.
+
+\mbox{\Hypertarget{BasicTypes_8h_a8553cea1fd99855eeadf2f4ea7a3ac72}\label{BasicTypes_8h_a8553cea1fd99855eeadf2f4ea7a3ac72}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!Float\+\_\+\+Minus\+Infinity@{Float\+\_\+\+Minus\+Infinity}}
+\index{Float\+\_\+\+Minus\+Infinity@{Float\+\_\+\+Minus\+Infinity}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{Float\+\_\+\+Minus\+Infinity}{Float\_MinusInfinity}}
+{\footnotesize\ttfamily \#define Float\+\_\+\+Minus\+Infinity~0xff800000}
+
+
+
+Definido na linha 21 do ficheiro Basic\+Types.\+h.
+
+\mbox{\Hypertarget{BasicTypes_8h_a2222d817ce6bbd243023a7471e44a5d6}\label{BasicTypes_8h_a2222d817ce6bbd243023a7471e44a5d6}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!Float\+\_\+\+NaN@{Float\+\_\+\+NaN}}
+\index{Float\+\_\+\+NaN@{Float\+\_\+\+NaN}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{Float\+\_\+\+NaN}{Float\_NaN}}
+{\footnotesize\ttfamily \#define Float\+\_\+\+NaN~0x7f800001}
+
+
+
+Definido na linha 19 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::frem().
+
+\mbox{\Hypertarget{BasicTypes_8h_af40742e3f905fd8d0968a3f0b5160649}\label{BasicTypes_8h_af40742e3f905fd8d0968a3f0b5160649}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!Float\+\_\+\+Plus\+Infinity@{Float\+\_\+\+Plus\+Infinity}}
+\index{Float\+\_\+\+Plus\+Infinity@{Float\+\_\+\+Plus\+Infinity}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{Float\+\_\+\+Plus\+Infinity}{Float\_PlusInfinity}}
+{\footnotesize\ttfamily \#define Float\+\_\+\+Plus\+Infinity~0x7f800000}
+
+
+
+Definido na linha 20 do ficheiro Basic\+Types.\+h.
+
+\mbox{\Hypertarget{BasicTypes_8h_ae0ecf90db844a032db00e19482c633d1}\label{BasicTypes_8h_ae0ecf90db844a032db00e19482c633d1}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!R\+T\+\_\+\+B\+O\+OL@{R\+T\+\_\+\+B\+O\+OL}}
+\index{R\+T\+\_\+\+B\+O\+OL@{R\+T\+\_\+\+B\+O\+OL}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{R\+T\+\_\+\+B\+O\+OL}{RT\_BOOL}}
+{\footnotesize\ttfamily \#define R\+T\+\_\+\+B\+O\+OL~2}
+
+
+
+Definido na linha 27 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::bastore(), Operands\+Stack\+::empilhar\+Bool(), Operations\+::invokevirtual() e Operations\+::multianewarray().
+
+\mbox{\Hypertarget{BasicTypes_8h_a5a991e148e312c68d851b11b4b7be584}\label{BasicTypes_8h_a5a991e148e312c68d851b11b4b7be584}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!R\+T\+\_\+\+B\+Y\+TE@{R\+T\+\_\+\+B\+Y\+TE}}
+\index{R\+T\+\_\+\+B\+Y\+TE@{R\+T\+\_\+\+B\+Y\+TE}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{R\+T\+\_\+\+B\+Y\+TE}{RT\_BYTE}}
+{\footnotesize\ttfamily \#define R\+T\+\_\+\+B\+Y\+TE~1}
+
+
+
+Definido na linha 26 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::invokevirtual() e Operations\+::multianewarray().
+
+\mbox{\Hypertarget{BasicTypes_8h_aefa4685f803fc7df5788405390df6aab}\label{BasicTypes_8h_aefa4685f803fc7df5788405390df6aab}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!R\+T\+\_\+\+C\+H\+AR@{R\+T\+\_\+\+C\+H\+AR}}
+\index{R\+T\+\_\+\+C\+H\+AR@{R\+T\+\_\+\+C\+H\+AR}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{R\+T\+\_\+\+C\+H\+AR}{RT\_CHAR}}
+{\footnotesize\ttfamily \#define R\+T\+\_\+\+C\+H\+AR~3}
+
+
+
+Definido na linha 28 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::i2c(), Operations\+::invokevirtual() e Operations\+::multianewarray().
+
+\mbox{\Hypertarget{BasicTypes_8h_a3e1ffaf0d9c3d4614139871cfea4e779}\label{BasicTypes_8h_a3e1ffaf0d9c3d4614139871cfea4e779}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!R\+T\+\_\+\+D\+O\+U\+B\+LE@{R\+T\+\_\+\+D\+O\+U\+B\+LE}}
+\index{R\+T\+\_\+\+D\+O\+U\+B\+LE@{R\+T\+\_\+\+D\+O\+U\+B\+LE}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{R\+T\+\_\+\+D\+O\+U\+B\+LE}{RT\_DOUBLE}}
+{\footnotesize\ttfamily \#define R\+T\+\_\+\+D\+O\+U\+B\+LE~7}
+
+
+
+Definido na linha 32 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::dadd(), Operations\+::dastore(), Operations\+::ddiv(), Operations\+::dmul(), Operations\+::dneg(), Operations\+::drem(), Operations\+::dsub(), Operands\+Stack\+::empilhar\+Double(), Operations\+::invokevirtual() e Operations\+::multianewarray().
+
+\mbox{\Hypertarget{BasicTypes_8h_a1eee60e646767c4b249177593302d237}\label{BasicTypes_8h_a1eee60e646767c4b249177593302d237}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!R\+T\+\_\+\+F\+L\+O\+AT@{R\+T\+\_\+\+F\+L\+O\+AT}}
+\index{R\+T\+\_\+\+F\+L\+O\+AT@{R\+T\+\_\+\+F\+L\+O\+AT}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{R\+T\+\_\+\+F\+L\+O\+AT}{RT\_FLOAT}}
+{\footnotesize\ttfamily \#define R\+T\+\_\+\+F\+L\+O\+AT~6}
+
+
+
+Definido na linha 31 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operands\+Stack\+::empilhar\+Float(), Operations\+::fadd(), Operations\+::fastore(), Operations\+::fdiv(), Operations\+::fmul(), Operations\+::fneg(), Operations\+::frem(), Operations\+::fsub(), Operations\+::invokevirtual() e Operations\+::multianewarray().
+
+\mbox{\Hypertarget{BasicTypes_8h_ae8d7be4292c8262f3fe8a12a9d5012f1}\label{BasicTypes_8h_ae8d7be4292c8262f3fe8a12a9d5012f1}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!R\+T\+\_\+\+I\+NT@{R\+T\+\_\+\+I\+NT}}
+\index{R\+T\+\_\+\+I\+NT@{R\+T\+\_\+\+I\+NT}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{R\+T\+\_\+\+I\+NT}{RT\_INT}}
+{\footnotesize\ttfamily \#define R\+T\+\_\+\+I\+NT~5}
+
+
+
+Definido na linha 30 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operands\+Stack\+::empilhar\+Int(), Operations\+::iadd(), Operations\+::iand(), Operations\+::idiv(), Operations\+::imul(), Operations\+::ineg(), Operations\+::invokevirtual(), Operations\+::irem(), Operations\+::ishl(), Operations\+::ishr(), Operations\+::isub(), Operations\+::iushr() e Operations\+::multianewarray().
+
+\mbox{\Hypertarget{BasicTypes_8h_a321c0fe6e16c9d74517df8a769fa723d}\label{BasicTypes_8h_a321c0fe6e16c9d74517df8a769fa723d}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!R\+T\+\_\+\+L\+O\+NG@{R\+T\+\_\+\+L\+O\+NG}}
+\index{R\+T\+\_\+\+L\+O\+NG@{R\+T\+\_\+\+L\+O\+NG}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{R\+T\+\_\+\+L\+O\+NG}{RT\_LONG}}
+{\footnotesize\ttfamily \#define R\+T\+\_\+\+L\+O\+NG~9}
+
+
+
+Definido na linha 34 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operands\+Stack\+::empilhar\+Long(), Operations\+::invokevirtual(), Operations\+::ladd(), Operations\+::land(), Operations\+::lastore(), Operations\+::ldiv(), Operations\+::lmul(), Operations\+::lneg(), Operations\+::lrem(), Operations\+::lshl(), Operations\+::lshr(), Operations\+::lsub(), Operations\+::lushr() e Operations\+::multianewarray().
+
+\mbox{\Hypertarget{BasicTypes_8h_ac2620c935a093d64e17628fbb36a5e79}\label{BasicTypes_8h_ac2620c935a093d64e17628fbb36a5e79}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!R\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE@{R\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE}}
+\index{R\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE@{R\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{R\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE}{RT\_REFERENCE}}
+{\footnotesize\ttfamily \#define R\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE~8}
+
+
+
+Definido na linha 33 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::aastore(), Operands\+Stack\+::empilhar\+Referencia(), Operations\+::invokevirtual() e Operations\+::multianewarray().
+
+\mbox{\Hypertarget{BasicTypes_8h_a15a051a50ea712336d1e809ed5fe240f}\label{BasicTypes_8h_a15a051a50ea712336d1e809ed5fe240f}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!R\+T\+\_\+\+S\+H\+O\+RT@{R\+T\+\_\+\+S\+H\+O\+RT}}
+\index{R\+T\+\_\+\+S\+H\+O\+RT@{R\+T\+\_\+\+S\+H\+O\+RT}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{R\+T\+\_\+\+S\+H\+O\+RT}{RT\_SHORT}}
+{\footnotesize\ttfamily \#define R\+T\+\_\+\+S\+H\+O\+RT~4}
+
+
+
+Definido na linha 29 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::i2s(), Operations\+::invokevirtual(), Operations\+::multianewarray() e Operations\+::sastore().
+
+
+
+\subsection{Documentação dos tipos}
+\mbox{\Hypertarget{BasicTypes_8h_a8132f4f0515064141e31e606660df561}\label{BasicTypes_8h_a8132f4f0515064141e31e606660df561}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!Element@{Element}}
+\index{Element@{Element}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{Element}{Element}}
+{\footnotesize\ttfamily typedef union \hyperlink{unionelement__u}{element\+\_\+u}  \hyperlink{BasicTypes_8h_a8132f4f0515064141e31e606660df561}{Element}}
+
+\mbox{\Hypertarget{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}\label{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!Typed\+Element@{Typed\+Element}}
+\index{Typed\+Element@{Typed\+Element}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{Typed\+Element}{TypedElement}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structtypedElement__s}{typed\+Element\+\_\+s}  \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element}}
+
+\mbox{\Hypertarget{BasicTypes_8h_a9bffe5bb2564f91cd90fb7d06848f9a8}\label{BasicTypes_8h_a9bffe5bb2564f91cd90fb7d06848f9a8}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!U1@{U1}}
+\index{U1@{U1}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{U1}{U1}}
+{\footnotesize\ttfamily typedef uint8\+\_\+t \hyperlink{BasicTypes_8h_a9bffe5bb2564f91cd90fb7d06848f9a8}{U1}}
+
+
+
+Definido na linha 36 do ficheiro Basic\+Types.\+h.
+
+\mbox{\Hypertarget{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}\label{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!U2@{U2}}
+\index{U2@{U2}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{U2}{U2}}
+{\footnotesize\ttfamily typedef uint16\+\_\+t \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2}}
+
+
+
+Definido na linha 37 do ficheiro Basic\+Types.\+h.
+
+\mbox{\Hypertarget{BasicTypes_8h_ac6d2ba2e53dd424684ead2f40e74a8b6}\label{BasicTypes_8h_ac6d2ba2e53dd424684ead2f40e74a8b6}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!U4@{U4}}
+\index{U4@{U4}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{U4}{U4}}
+{\footnotesize\ttfamily typedef uint32\+\_\+t \hyperlink{BasicTypes_8h_ac6d2ba2e53dd424684ead2f40e74a8b6}{U4}}
+
+
+
+Definido na linha 38 do ficheiro Basic\+Types.\+h.
+
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{BasicTypes_8h_a0863aa6ecc6e4cea0d76373c21f6b877}\label{BasicTypes_8h_a0863aa6ecc6e4cea0d76373c21f6b877}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!converter\+\_\+double\+\_\+to\+\_\+string@{converter\+\_\+double\+\_\+to\+\_\+string}}
+\index{converter\+\_\+double\+\_\+to\+\_\+string@{converter\+\_\+double\+\_\+to\+\_\+string}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{converter\+\_\+double\+\_\+to\+\_\+string()}{converter\_double\_to\_string()}}
+{\footnotesize\ttfamily string converter\+\_\+double\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{double}]{d }\end{DoxyParamCaption})}
+
+
+
+Função para converter double para string. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em d} & Número a ser convertido. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 79 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referências verificar\+Double().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{BasicTypes_8h_a0863aa6ecc6e4cea0d76373c21f6b877_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{BasicTypes_8h_a94660e9c3340c88b188740838a480188}\label{BasicTypes_8h_a94660e9c3340c88b188740838a480188}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!converter\+\_\+float\+\_\+to\+\_\+string@{converter\+\_\+float\+\_\+to\+\_\+string}}
+\index{converter\+\_\+float\+\_\+to\+\_\+string@{converter\+\_\+float\+\_\+to\+\_\+string}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{converter\+\_\+float\+\_\+to\+\_\+string()}{converter\_float\_to\_string()}}
+{\footnotesize\ttfamily string converter\+\_\+float\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})}
+
+
+
+Função para converter float para string. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em f} & Número a ser convertido. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 133 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referências verificar\+Float().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{BasicTypes_8h_a94660e9c3340c88b188740838a480188_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{BasicTypes_8h_a01de6b870a770894bf9ce59df9604f88}\label{BasicTypes_8h_a01de6b870a770894bf9ce59df9604f88}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!converter\+\_\+u4\+\_\+to\+\_\+double@{converter\+\_\+u4\+\_\+to\+\_\+double}}
+\index{converter\+\_\+u4\+\_\+to\+\_\+double@{converter\+\_\+u4\+\_\+to\+\_\+double}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{converter\+\_\+u4\+\_\+to\+\_\+double()}{converter\_u4\_to\_double()}}
+{\footnotesize\ttfamily double converter\+\_\+u4\+\_\+to\+\_\+double (\begin{DoxyParamCaption}\item[{\hyperlink{unionClassLoaderType}{Class\+Loader\+Type}}]{high,  }\item[{\hyperlink{unionClassLoaderType}{Class\+Loader\+Type}}]{low }\end{DoxyParamCaption})}
+
+
+
+Função para converter 8 bytes em um duplo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em high} & Quatro bytes mais significativos a serem convertidos. \\
+\hline
+{\em low} & Quatro últimos bytes significativos a serem convertidos. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 161 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referências converter\+\_\+u4\+\_\+to\+\_\+long().
+
+
+
+Referenciado por gravar\+Arquivo\+Constant\+Pool(), imprimir\+Constant\+Pool() e Operations\+::ldc2\+\_\+w().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{BasicTypes_8h_a01de6b870a770894bf9ce59df9604f88_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{BasicTypes_8h_ac7a9717de257f3526a4889b62f55c814}\label{BasicTypes_8h_ac7a9717de257f3526a4889b62f55c814}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!converter\+\_\+u4\+\_\+to\+\_\+float@{converter\+\_\+u4\+\_\+to\+\_\+float}}
+\index{converter\+\_\+u4\+\_\+to\+\_\+float@{converter\+\_\+u4\+\_\+to\+\_\+float}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{converter\+\_\+u4\+\_\+to\+\_\+float()}{converter\_u4\_to\_float()}}
+{\footnotesize\ttfamily float converter\+\_\+u4\+\_\+to\+\_\+float (\begin{DoxyParamCaption}\item[{\hyperlink{unionClassLoaderType}{Class\+Loader\+Type}}]{in }\end{DoxyParamCaption})}
+
+
+
+Função para converter 4 bytes em float. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em in} & quatro bytes a serem convertidos. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 184 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referências Class\+Loader\+Type\+::u4.
+
+
+
+Referenciado por gravar\+Arquivo\+Constant\+Pool() e imprimir\+Constant\+Pool().
+
+\mbox{\Hypertarget{BasicTypes_8h_a68e08bb93458d2a9002645705f970e34}\label{BasicTypes_8h_a68e08bb93458d2a9002645705f970e34}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!converter\+\_\+u4\+\_\+to\+\_\+long@{converter\+\_\+u4\+\_\+to\+\_\+long}}
+\index{converter\+\_\+u4\+\_\+to\+\_\+long@{converter\+\_\+u4\+\_\+to\+\_\+long}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{converter\+\_\+u4\+\_\+to\+\_\+long()}{converter\_u4\_to\_long()}}
+{\footnotesize\ttfamily long converter\+\_\+u4\+\_\+to\+\_\+long (\begin{DoxyParamCaption}\item[{\hyperlink{unionClassLoaderType}{Class\+Loader\+Type}}]{high,  }\item[{\hyperlink{unionClassLoaderType}{Class\+Loader\+Type}}]{low }\end{DoxyParamCaption})}
+
+
+
+Função para converter 8 bytes em um longo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em high} & Quatro bytes mais significativos a serem convertidos. \\
+\hline
+{\em low} & Quatro últimos bytes significativos a serem convertidos. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 153 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referências Class\+Loader\+Type\+::u4.
+
+
+
+Referenciado por converter\+\_\+u4\+\_\+to\+\_\+double(), gravar\+Arquivo\+Constant\+Pool(), imprimir\+Constant\+Pool() e Operations\+::ldc2\+\_\+w().
+
+\mbox{\Hypertarget{BasicTypes_8h_a7bcab19bcd9cb111d9f212889bc12223}\label{BasicTypes_8h_a7bcab19bcd9cb111d9f212889bc12223}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!ler\+U1@{ler\+U1}}
+\index{ler\+U1@{ler\+U1}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{ler\+U1()}{lerU1()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a9bffe5bb2564f91cd90fb7d06848f9a8}{U1} ler\+U1 (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Função para ler 1 byte do arquivo .class. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em fp} & Ponteiro pro arquivo .class \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 21 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referenciado por carregar\+Constant\+Pool(), ler\+Attribute\+Info() e ler\+U\+T\+F8().
+
+\mbox{\Hypertarget{BasicTypes_8h_a046a0864e1577109bbaaa0370a56c2fe}\label{BasicTypes_8h_a046a0864e1577109bbaaa0370a56c2fe}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!ler\+U2@{ler\+U2}}
+\index{ler\+U2@{ler\+U2}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{ler\+U2()}{lerU2()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} ler\+U2 (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Função para ler 2 bytes do arquivo .class. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em fp} & Ponteiro pro arquivo .class \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 8 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referenciado por Leitor\+Exibidor\+::carregar(), carregar\+Constant\+Pool(), ler\+Attribute(), ler\+Attribute\+Info(), ler\+Exception\+Handler(), ler\+Field(), ler\+Method() e ler\+Todas\+Interfaces().
+
+\mbox{\Hypertarget{BasicTypes_8h_afab80ee9b8e60fd4080754f9229bbf5d}\label{BasicTypes_8h_afab80ee9b8e60fd4080754f9229bbf5d}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!ler\+U4@{ler\+U4}}
+\index{ler\+U4@{ler\+U4}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{ler\+U4()}{lerU4()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_ac6d2ba2e53dd424684ead2f40e74a8b6}{U4} ler\+U4 (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Função para ler 4 bytes do arquivo .class. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em fp} & Ponteiro pro arquivo .class \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 40 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referenciado por Leitor\+Exibidor\+::carregar(), carregar\+Constant\+Pool(), ler\+Attribute() e ler\+Attribute\+Info().
+
+\mbox{\Hypertarget{BasicTypes_8h_a8c91891f672560f81efa0b17316c2435}\label{BasicTypes_8h_a8c91891f672560f81efa0b17316c2435}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!ler\+U\+T\+F8@{ler\+U\+T\+F8}}
+\index{ler\+U\+T\+F8@{ler\+U\+T\+F8}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{ler\+U\+T\+F8()}{lerUTF8()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a9bffe5bb2564f91cd90fb7d06848f9a8}{U1}$\ast$ ler\+U\+T\+F8 (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Função para ler os bytes de uma string U\+T\+F-\/8. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em fp} & Ponteiro pro arquivo .class \\
+\hline
+{\em size} & Tamanho que será alocado para a string. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 29 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referências ler\+U1().
+
+
+
+Referenciado por carregar\+Constant\+Pool().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{BasicTypes_8h_a8c91891f672560f81efa0b17316c2435_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{BasicTypes_8h_a67ca85defbd318c40aa28d8821733ab5}\label{BasicTypes_8h_a67ca85defbd318c40aa28d8821733ab5}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!obter\+U\+T\+F8@{obter\+U\+T\+F8}}
+\index{obter\+U\+T\+F8@{obter\+U\+T\+F8}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{obter\+U\+T\+F8()}{obterUTF8()}}
+{\footnotesize\ttfamily string obter\+U\+T\+F8 (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{s,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Função para montar e mostrar a uma string U\+T\+F-\/8. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em s} & Ponteiro para a posição inicial de uam string Unicode. \\
+\hline
+{\em size} & Tamanho da string a ser impressa. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 53 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referenciado por capturar\+Indice\+De\+Referencia(), gravar\+Arquivo\+Constant\+Pool(), imprimir\+Constant\+Pool() e Operations\+::invokevirtual().
+
+\mbox{\Hypertarget{BasicTypes_8h_a5f97022fe564a4a05a3b75dfb039f13e}\label{BasicTypes_8h_a5f97022fe564a4a05a3b75dfb039f13e}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!verificar\+Double@{verificar\+Double}}
+\index{verificar\+Double@{verificar\+Double}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{verificar\+Double()}{verificarDouble()}}
+{\footnotesize\ttfamily int verificar\+Double (\begin{DoxyParamCaption}\item[{double}]{d }\end{DoxyParamCaption})}
+
+
+
+Função para verificar NaN e infinito. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em d} & Number to be checked. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 117 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referências element\+\_\+u\+::d e element\+\_\+u\+::l.
+
+
+
+Referenciado por converter\+\_\+double\+\_\+to\+\_\+string(), Operations\+::dcmpg(), Operations\+::dcmpl() e Operations\+::drem().
+
+\mbox{\Hypertarget{BasicTypes_8h_a3637e840957d6b53327825379c5635a0}\label{BasicTypes_8h_a3637e840957d6b53327825379c5635a0}} 
+\index{Basic\+Types.\+h@{Basic\+Types.\+h}!verificar\+Float@{verificar\+Float}}
+\index{verificar\+Float@{verificar\+Float}!Basic\+Types.\+h@{Basic\+Types.\+h}}
+\subsubsection{\texorpdfstring{verificar\+Float()}{verificarFloat()}}
+{\footnotesize\ttfamily int verificar\+Float (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})}
+
+
+
+Função para verificar NaN e infinito. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em f} & Número a ser verificado. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 100 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referências element\+\_\+u\+::f e element\+\_\+u\+::i.
+
+
+
+Referenciado por converter\+\_\+float\+\_\+to\+\_\+string(), Operations\+::fcmpg(), Operations\+::fcmpl() e Operations\+::frem().
+

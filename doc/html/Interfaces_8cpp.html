@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Java Virtual Machine: Referência ao ficheiro src/Interfaces.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Java Virtual Machine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('Interfaces_8cpp.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro Interfaces.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="Interfaces_8h_source.html">Interfaces.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Diagrama de dependências de inclusão para Interfaces.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="Interfaces_8cpp__incl.png" border="0" usemap="#src_2Interfaces_8cpp" alt=""/></div>
+<map name="src_2Interfaces_8cpp" id="src_2Interfaces_8cpp">
+<area shape="rect" id="node2" href="Interfaces_8h.html" title="Gerencia as informações da interfaces do arquivo .class. " alt="" coords="207,80,297,107"/>
+<area shape="rect" id="node4" href="BasicTypes_8h.html" title="Tipos básicos utilizados para implementarmos a JVM. " alt="" coords="257,229,359,256"/>
+<area shape="rect" id="node12" href="ConstantPool_8h.html" title="Módulo Constant pool. " alt="" coords="289,155,401,181"/>
+</map>
+</div>
+</div>
+<p><a href="Interfaces_8cpp_source.html">Ir para o código fonte deste ficheiro.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a107c86b6178f848a1159aedf372996ba"><td class="memItemLeft" align="right" valign="top">unsigned short *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Interfaces_8cpp.html#a107c86b6178f848a1159aedf372996ba">lerTodasInterfaces</a> (FILE *arquivoEntrada, int tamanho)</td></tr>
+<tr class="memdesc:a107c86b6178f848a1159aedf372996ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carrega as interfaces na mem�ria a partir do arquivo class.  <a href="#a107c86b6178f848a1159aedf372996ba">Mais...</a><br /></td></tr>
+<tr class="separator:a107c86b6178f848a1159aedf372996ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e92bedd6f0e7e8ab4c3956181a4ee7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Interfaces_8cpp.html#a6e92bedd6f0e7e8ab4c3956181a4ee7d">imprimirTodasInterfaces</a> (unsigned short *interface, <a class="el" href="structcp__info.html">cp_info</a> *constantPool, int tamanho)</td></tr>
+<tr class="separator:a6e92bedd6f0e7e8ab4c3956181a4ee7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e9a0574c1362e56ed6c1af6f4927b77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Interfaces_8cpp.html#a1e9a0574c1362e56ed6c1af6f4927b77">imprimirInterface</a> (unsigned short interface, <a class="el" href="structcp__info.html">cp_info</a> *constantPool, int indice)</td></tr>
+<tr class="separator:a1e9a0574c1362e56ed6c1af6f4927b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad76e2a0e7237cb9f31aa1387e1c59eb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Interfaces_8cpp.html#ad76e2a0e7237cb9f31aa1387e1c59eb0">gravarArquivoTodasInterfaces</a> (unsigned short *interface, <a class="el" href="structcp__info.html">cp_info</a> *constantPool, int tamanho, fstream &amp;arquivoSaida)</td></tr>
+<tr class="memdesc:ad76e2a0e7237cb9f31aa1387e1c59eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprimir todas as interfaces do arquivo.  <a href="#ad76e2a0e7237cb9f31aa1387e1c59eb0">Mais...</a><br /></td></tr>
+<tr class="separator:ad76e2a0e7237cb9f31aa1387e1c59eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4cead615756de41a26b4786b08e15b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Interfaces_8cpp.html#ae4cead615756de41a26b4786b08e15b8">gravarArquivoInterface</a> (unsigned short interface, <a class="el" href="structcp__info.html">cp_info</a> *constantPool, int indice, fstream &amp;arquivoSaida)</td></tr>
+<tr class="memdesc:ae4cead615756de41a26b4786b08e15b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprimir informação de uma interface específica com o indice da interface.  <a href="#ae4cead615756de41a26b4786b08e15b8">Mais...</a><br /></td></tr>
+<tr class="separator:ae4cead615756de41a26b4786b08e15b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="ae4cead615756de41a26b4786b08e15b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4cead615756de41a26b4786b08e15b8">&#9670;&nbsp;</a></span>gravarArquivoInterface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gravarArquivoInterface </td>
+          <td>(</td>
+          <td class="paramtype">unsigned short&#160;</td>
+          <td class="paramname"><em>interface</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcp__info.html">cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constantPool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>indice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">fstream &amp;&#160;</td>
+          <td class="paramname"><em>arquivoSaida</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imprimir informação de uma interface específica com o indice da interface. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">interface</td><td>Indice do constantpool. </td></tr>
+    <tr><td class="paramname">constantPool</td><td>Ponteiro para o constantpool. </td></tr>
+    <tr><td class="paramname">indice</td><td>Indice da interface específica. </td></tr>
+    <tr><td class="paramname">arquivoSaida</td><td>arquivo de saida </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="Interfaces_8cpp_source.html#l00034">34</a> do ficheiro <a class="el" href="Interfaces_8cpp_source.html">Interfaces.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Interfaces_8cpp_source.html#l00028">gravarArquivoTodasInterfaces()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="Interfaces_8cpp_ae4cead615756de41a26b4786b08e15b8_cgraph.png" border="0" usemap="#Interfaces_8cpp_ae4cead615756de41a26b4786b08e15b8_cgraph" alt=""/></div>
+<map name="Interfaces_8cpp_ae4cead615756de41a26b4786b08e15b8_cgraph" id="Interfaces_8cpp_ae4cead615756de41a26b4786b08e15b8_cgraph">
+<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="207,29,391,56"/>
+<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="439,29,523,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad76e2a0e7237cb9f31aa1387e1c59eb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad76e2a0e7237cb9f31aa1387e1c59eb0">&#9670;&nbsp;</a></span>gravarArquivoTodasInterfaces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gravarArquivoTodasInterfaces </td>
+          <td>(</td>
+          <td class="paramtype">unsigned short *&#160;</td>
+          <td class="paramname"><em>interface</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcp__info.html">cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constantPool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tamanho</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">fstream &amp;&#160;</td>
+          <td class="paramname"><em>arquivoSaida</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imprimir todas as interfaces do arquivo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">interface</td><td>Array de interfaces. </td></tr>
+    <tr><td class="paramname">constantPool</td><td>Ponteiro para a constantpool. </td></tr>
+    <tr><td class="paramname">tamanho</td><td>Número de interfaces. </td></tr>
+    <tr><td class="paramname">arquivoSaida</td><td>arquivo de saida </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="Interfaces_8cpp_source.html#l00028">28</a> do ficheiro <a class="el" href="Interfaces_8cpp_source.html">Interfaces.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="Interfaces_8cpp_source.html#l00034">gravarArquivoInterface()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00203">LeitorExibidor::gravarArquivo()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="Interfaces_8cpp_ad76e2a0e7237cb9f31aa1387e1c59eb0_cgraph.png" border="0" usemap="#Interfaces_8cpp_ad76e2a0e7237cb9f31aa1387e1c59eb0_cgraph" alt=""/></div>
+<map name="Interfaces_8cpp_ad76e2a0e7237cb9f31aa1387e1c59eb0_cgraph" id="Interfaces_8cpp_ad76e2a0e7237cb9f31aa1387e1c59eb0_cgraph">
+<area shape="rect" id="node2" href="Interfaces_8cpp.html#ae4cead615756de41a26b4786b08e15b8" title="Imprimir informação de uma interface específica com o indice da interface. " alt="" coords="249,29,403,56"/>
+<area shape="rect" id="node3" href="ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="451,29,635,56"/>
+<area shape="rect" id="node4" href="BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="683,29,767,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1e9a0574c1362e56ed6c1af6f4927b77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e9a0574c1362e56ed6c1af6f4927b77">&#9670;&nbsp;</a></span>imprimirInterface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imprimirInterface </td>
+          <td>(</td>
+          <td class="paramtype">unsigned short&#160;</td>
+          <td class="paramname"><em>interface</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcp__info.html">cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constantPool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>indice</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="Interfaces_8cpp_source.html#l00024">24</a> do ficheiro <a class="el" href="Interfaces_8cpp_source.html">Interfaces.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Interfaces_8cpp_source.html#l00018">imprimirTodasInterfaces()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="Interfaces_8cpp_a1e9a0574c1362e56ed6c1af6f4927b77_cgraph.png" border="0" usemap="#Interfaces_8cpp_a1e9a0574c1362e56ed6c1af6f4927b77_cgraph" alt=""/></div>
+<map name="Interfaces_8cpp_a1e9a0574c1362e56ed6c1af6f4927b77_cgraph" id="Interfaces_8cpp_a1e9a0574c1362e56ed6c1af6f4927b77_cgraph">
+<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="172,29,356,56"/>
+<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="404,29,488,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6e92bedd6f0e7e8ab4c3956181a4ee7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e92bedd6f0e7e8ab4c3956181a4ee7d">&#9670;&nbsp;</a></span>imprimirTodasInterfaces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imprimirTodasInterfaces </td>
+          <td>(</td>
+          <td class="paramtype">unsigned short *&#160;</td>
+          <td class="paramname"><em>interface</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcp__info.html">cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constantPool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tamanho</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="Interfaces_8cpp_source.html#l00018">18</a> do ficheiro <a class="el" href="Interfaces_8cpp_source.html">Interfaces.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="Interfaces_8cpp_source.html#l00024">imprimirInterface()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00176">LeitorExibidor::exibir()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="Interfaces_8cpp_a6e92bedd6f0e7e8ab4c3956181a4ee7d_cgraph.png" border="0" usemap="#Interfaces_8cpp_a6e92bedd6f0e7e8ab4c3956181a4ee7d_cgraph" alt=""/></div>
+<map name="Interfaces_8cpp_a6e92bedd6f0e7e8ab4c3956181a4ee7d_cgraph" id="Interfaces_8cpp_a6e92bedd6f0e7e8ab4c3956181a4ee7d_cgraph">
+<area shape="rect" id="node2" href="Interfaces_8cpp.html#a1e9a0574c1362e56ed6c1af6f4927b77" title="imprimirInterface" alt="" coords="216,29,335,56"/>
+<area shape="rect" id="node3" href="ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="383,29,567,56"/>
+<area shape="rect" id="node4" href="BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="615,29,699,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a107c86b6178f848a1159aedf372996ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a107c86b6178f848a1159aedf372996ba">&#9670;&nbsp;</a></span>lerTodasInterfaces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short * lerTodasInterfaces </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>arquivoEntrada</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tamanho</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Carrega as interfaces na mem�ria a partir do arquivo class. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arquivoEntrada</td><td>Ponteiro para o arquivo class. </td></tr>
+    <tr><td class="paramname">tamanho</td><td>Número de interfaces a serem lidas. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="Interfaces_8cpp_source.html#l00008">8</a> do ficheiro <a class="el" href="Interfaces_8cpp_source.html">Interfaces.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="BasicTypes_8cpp_source.html#l00008">lerU2()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00068">LeitorExibidor::carregar()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="Interfaces_8cpp_a107c86b6178f848a1159aedf372996ba_cgraph.png" border="0" usemap="#Interfaces_8cpp_a107c86b6178f848a1159aedf372996ba_cgraph" alt=""/></div>
+<map name="Interfaces_8cpp_a107c86b6178f848a1159aedf372996ba_cgraph" id="Interfaces_8cpp_a107c86b6178f848a1159aedf372996ba_cgraph">
+<area shape="rect" id="node2" href="BasicTypes_8cpp.html#a046a0864e1577109bbaaa0370a56c2fe" title="Função para ler 2 bytes do arquivo .class. " alt="" coords="184,5,237,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="Interfaces_8cpp.html">Interfaces.cpp</a></li>
+    <li class="footer">Gerado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

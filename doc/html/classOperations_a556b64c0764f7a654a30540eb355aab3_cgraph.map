@@ -1,0 +1,6 @@
+<map id="Operations::lload_0" name="Operations::lload_0">
+<area shape="rect" id="node2" href="$classOperations.html#a4f70442aed776d9ccae4dfd379715cd4" title="Operations::lload_n" alt="" coords="188,31,323,57"/>
+<area shape="rect" id="node3" href="$classLocalVariables.html#a4abbb4a732d7dd0f11a147b79c15ae10" title="Gets element on past position by index. " alt="" coords="403,5,536,32"/>
+<area shape="rect" id="node4" href="$classOperandsStack.html#a927ca84358d7e0f45f74d122f9a500d2" title="Empilha um valor de tipo long. " alt="" coords="371,56,568,83"/>
+<area shape="rect" id="node5" href="$classOperandsStack.html#a6ea316fc2b2503af2175fada4d4a9741" title="retorna o tamanho da pilha de operandos " alt="" coords="616,56,819,83"/>
+</map>

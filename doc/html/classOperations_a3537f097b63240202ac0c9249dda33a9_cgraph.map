@@ -1,0 +1,8 @@
+<map id="Operations::newarray" name="Operations::newarray">
+<area shape="rect" id="node2" href="$classOperandsStack.html#a3213a1b633149de9332217d403ee84b6" title="Desempilha o topo da pilha de operandos e retorna em um elemento de valor. " alt="" coords="223,71,409,98"/>
+<area shape="rect" id="node5" href="$classOperandsStack.html#a47af7d965172984b9cc5c61d8c4c1ce3" title="Empilha um valor de tipo referencia. " alt="" coords="200,122,432,149"/>
+<area shape="rect" id="node7" href="$classOperations.html#a6906050cc72d774f77d8ba33607b1c62" title="Function that returns a n bytes value. " alt="" coords="217,173,415,199"/>
+<area shape="rect" id="node3" href="$classOperandsStack.html#a184a99d160e17ef874a7b83f0726fb8a" title="Recupera o valor do topo da pilha de operandos. " alt="" coords="488,5,675,47"/>
+<area shape="rect" id="node4" href="$classOperandsStack.html#aa6dbee87661011453ba2c57405bd9a4e" title="Retorna se a pilha está vazia (1) ou não (0) " alt="" coords="731,42,909,69"/>
+<area shape="rect" id="node6" href="$classOperandsStack.html#a6ea316fc2b2503af2175fada4d4a9741" title="retorna o tamanho da pilha de operandos " alt="" coords="480,122,683,149"/>
+</map>

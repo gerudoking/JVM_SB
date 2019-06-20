@@ -1,0 +1,6 @@
+<map id="Operations::if_icmpgt" name="Operations::if_icmpgt">
+<area shape="rect" id="node2" href="$classOperandsStack.html#a3213a1b633149de9332217d403ee84b6" title="Desempilha o topo da pilha de operandos e retorna em um elemento de valor. " alt="" coords="206,42,393,69"/>
+<area shape="rect" id="node5" href="$classOperations.html#a6906050cc72d774f77d8ba33607b1c62" title="Function that returns a n bytes value. " alt="" coords="200,93,399,119"/>
+<area shape="rect" id="node3" href="$classOperandsStack.html#a184a99d160e17ef874a7b83f0726fb8a" title="Recupera o valor do topo da pilha de operandos. " alt="" coords="447,5,633,47"/>
+<area shape="rect" id="node4" href="$classOperandsStack.html#aa6dbee87661011453ba2c57405bd9a4e" title="Retorna se a pilha está vazia (1) ou não (0) " alt="" coords="681,42,860,69"/>
+</map>

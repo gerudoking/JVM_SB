@@ -1,0 +1,28 @@
+var classOperandsStack =
+[
+    [ "OperandsStack", "classOperandsStack.html#a5ea2e7d609262388d0d4bc3ba08a2c32", null ],
+    [ "desempilha", "classOperandsStack.html#a3213a1b633149de9332217d403ee84b6", null ],
+    [ "desempilhaTopoTipo", "classOperandsStack.html#a8c76f12ad6984b3c5b4ec8807eb63ae3", null ],
+    [ "desempilhaTopoValor", "classOperandsStack.html#a184a99d160e17ef874a7b83f0726fb8a", null ],
+    [ "desempilhaTyped", "classOperandsStack.html#a9503313a7def4c11fb782d5881e3d6cb", null ],
+    [ "empilhar", "classOperandsStack.html#a50b642d5ff6a7a1f56b8cfc75bde1192", null ],
+    [ "empilharBool", "classOperandsStack.html#aca2be3100b76689949f029196a893712", null ],
+    [ "empilharDouble", "classOperandsStack.html#a45dde91cc54ad980d1cbb7cdb1e084cd", null ],
+    [ "empilharFloat", "classOperandsStack.html#aeed478b52748b87ac85db261332b633b", null ],
+    [ "empilharInt", "classOperandsStack.html#a5006a59c2d815e4a24b055e2e4d2e741", null ],
+    [ "empilharLong", "classOperandsStack.html#a927ca84358d7e0f45f74d122f9a500d2", null ],
+    [ "empilharReferencia", "classOperandsStack.html#a47af7d965172984b9cc5c61d8c4c1ce3", null ],
+    [ "empilharTypedElement", "classOperandsStack.html#a73960b4536c99847bf4545a45f04f089", null ],
+    [ "estaVazia", "classOperandsStack.html#aa6dbee87661011453ba2c57405bd9a4e", null ],
+    [ "imprimirTodasOperacoes", "classOperandsStack.html#a21ecd56a74034dbd8ed6925924cf30e6", null ],
+    [ "obterString", "classOperandsStack.html#a32ad6a1ea26c02cf709fed1e86412b4a", null ],
+    [ "obterTamanho", "classOperandsStack.html#a6ea316fc2b2503af2175fada4d4a9741", null ],
+    [ "obterTamanhoMaximoPilha", "classOperandsStack.html#a834d4e49d01388abf37582f95d66b40e", null ],
+    [ "bits64", "classOperandsStack.html#a52dbb05109d9b5c88bae178c6fdf00b3", null ],
+    [ "max", "classOperandsStack.html#ac17a81af6a26d029042e6c7ad598a538", null ],
+    [ "realMax", "classOperandsStack.html#aac5d565f6032231c195411ba4d75d571", null ],
+    [ "stackElementos", "classOperandsStack.html#a4d7bd7c3814e216168022849158c733d", null ],
+    [ "stackTipos", "classOperandsStack.html#ad784cabd1a3153f7a870adf07215189a", null ],
+    [ "stackTiposReais", "classOperandsStack.html#a14729c0f92cf41d1ec65660a7c82555a", null ],
+    [ "typePushed", "classOperandsStack.html#a375521777d4992bc1018eb40da015e70", null ]
+];

@@ -1,0 +1,114 @@
+\hypertarget{structmethod__info}{}\section{Referência à estrutura method\+\_\+info}
+\label{structmethod__info}\index{method\+\_\+info@{method\+\_\+info}}
+
+
+{\ttfamily \#include $<$Methods.\+h$>$}
+
+
+
+Diagrama de colaboração para method\+\_\+info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structmethod__info__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{structmethod__info_a8fc68aba419f2617deda879c467f5410}{access\+\_\+flags}
+\item 
+uint16\+\_\+t \hyperlink{structmethod__info_af0ba3d6d566432e74eed5c37cd998c14}{name\+\_\+index}
+\item 
+uint16\+\_\+t \hyperlink{structmethod__info_abccd6a5202d4c0ee1be6b89692d0352a}{descriptor\+\_\+index}
+\item 
+uint16\+\_\+t \hyperlink{structmethod__info_a9e711e4dfb8181f7dce16c6f640ba734}{attributes\+\_\+count}
+\item 
+\hyperlink{structattribute__info}{attribute\+\_\+info} $\ast$ \hyperlink{structmethod__info_a8ce4caaa03680c91f548558a38647ad8}{attributes}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+
+
+Definido na linha 16 do ficheiro Methods.\+h.
+
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{structmethod__info_a8fc68aba419f2617deda879c467f5410}\label{structmethod__info_a8fc68aba419f2617deda879c467f5410}} 
+\index{method\+\_\+info@{method\+\_\+info}!access\+\_\+flags@{access\+\_\+flags}}
+\index{access\+\_\+flags@{access\+\_\+flags}!method\+\_\+info@{method\+\_\+info}}
+\subsubsection{\texorpdfstring{access\+\_\+flags}{access\_flags}}
+{\footnotesize\ttfamily uint16\+\_\+t method\+\_\+info\+::access\+\_\+flags}
+
+
+
+Definido na linha 17 do ficheiro Methods.\+h.
+
+
+
+Referenciado por gravar\+Arquivo\+Method(), imprimir\+Method(), ler\+Method() e Leitor\+Exibidor\+::verificar\+Main().
+
+\mbox{\Hypertarget{structmethod__info_a8ce4caaa03680c91f548558a38647ad8}\label{structmethod__info_a8ce4caaa03680c91f548558a38647ad8}} 
+\index{method\+\_\+info@{method\+\_\+info}!attributes@{attributes}}
+\index{attributes@{attributes}!method\+\_\+info@{method\+\_\+info}}
+\subsubsection{\texorpdfstring{attributes}{attributes}}
+{\footnotesize\ttfamily \hyperlink{structattribute__info}{attribute\+\_\+info}$\ast$ method\+\_\+info\+::attributes}
+
+
+
+Definido na linha 21 do ficheiro Methods.\+h.
+
+
+
+Referenciado por Frame\+Stack\+::adicionar\+Frame(), Frame\+Stack\+::\+Frame\+Stack(), gravar\+Arquivo\+Method(), imprimir\+Method(), Frame\+Stack\+::inicializar\+P\+C(), ler\+Method(), Operations\+::lookupswitch() e Operations\+::tableswitch().
+
+\mbox{\Hypertarget{structmethod__info_a9e711e4dfb8181f7dce16c6f640ba734}\label{structmethod__info_a9e711e4dfb8181f7dce16c6f640ba734}} 
+\index{method\+\_\+info@{method\+\_\+info}!attributes\+\_\+count@{attributes\+\_\+count}}
+\index{attributes\+\_\+count@{attributes\+\_\+count}!method\+\_\+info@{method\+\_\+info}}
+\subsubsection{\texorpdfstring{attributes\+\_\+count}{attributes\_count}}
+{\footnotesize\ttfamily uint16\+\_\+t method\+\_\+info\+::attributes\+\_\+count}
+
+
+
+Definido na linha 20 do ficheiro Methods.\+h.
+
+
+
+Referenciado por gravar\+Arquivo\+Method(), imprimir\+Method() e ler\+Method().
+
+\mbox{\Hypertarget{structmethod__info_abccd6a5202d4c0ee1be6b89692d0352a}\label{structmethod__info_abccd6a5202d4c0ee1be6b89692d0352a}} 
+\index{method\+\_\+info@{method\+\_\+info}!descriptor\+\_\+index@{descriptor\+\_\+index}}
+\index{descriptor\+\_\+index@{descriptor\+\_\+index}!method\+\_\+info@{method\+\_\+info}}
+\subsubsection{\texorpdfstring{descriptor\+\_\+index}{descriptor\_index}}
+{\footnotesize\ttfamily uint16\+\_\+t method\+\_\+info\+::descriptor\+\_\+index}
+
+
+
+Definido na linha 19 do ficheiro Methods.\+h.
+
+
+
+Referenciado por gravar\+Arquivo\+Method(), imprimir\+Method(), ler\+Method(), Leitor\+Exibidor\+::obter\+Class\+That\+Has\+Serached\+Method(), Leitor\+Exibidor\+::obter\+Method() e Leitor\+Exibidor\+::verificar\+Main().
+
+\mbox{\Hypertarget{structmethod__info_af0ba3d6d566432e74eed5c37cd998c14}\label{structmethod__info_af0ba3d6d566432e74eed5c37cd998c14}} 
+\index{method\+\_\+info@{method\+\_\+info}!name\+\_\+index@{name\+\_\+index}}
+\index{name\+\_\+index@{name\+\_\+index}!method\+\_\+info@{method\+\_\+info}}
+\subsubsection{\texorpdfstring{name\+\_\+index}{name\_index}}
+{\footnotesize\ttfamily uint16\+\_\+t method\+\_\+info\+::name\+\_\+index}
+
+
+
+Definido na linha 18 do ficheiro Methods.\+h.
+
+
+
+Referenciado por gravar\+Arquivo\+Method(), imprimir\+Method(), ler\+Method(), Leitor\+Exibidor\+::obter\+Class\+That\+Has\+Serached\+Method(), Leitor\+Exibidor\+::obter\+Method(), Operations\+::putfield(), Leitor\+Exibidor\+::verificar\+Clinit() e Leitor\+Exibidor\+::verificar\+Main().
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Methods_8h}{Methods.\+h}\end{DoxyCompactItemize}

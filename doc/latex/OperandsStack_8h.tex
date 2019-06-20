@@ -1,0 +1,141 @@
+\hypertarget{OperandsStack_8h}{}\section{Referência ao ficheiro include/\+Operands\+Stack.h}
+\label{OperandsStack_8h}\index{include/\+Operands\+Stack.\+h@{include/\+Operands\+Stack.\+h}}
+
+
+Pilha responsável por armazenar os operandos da J\+VM.  
+
+
+{\ttfamily \#include $<$stack$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Basic\+Types.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para Operands\+Stack.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{OperandsStack_8h__incl}
+\end{center}
+\end{figure}
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{OperandsStack_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classOperandsStack}{Operands\+Stack}
+\begin{DoxyCompactList}\small\item\em Classe da pilha de operandos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{OperandsStack_8h_adf770fe2eec438e3758ffe905dbae208}{I\+N\+V\+A\+L\+ID}~99
+\item 
+\#define \hyperlink{OperandsStack_8h_a0623cf1b3dda05505734b67f550c53cb}{T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+S\+ET}~0
+\item 
+\#define \hyperlink{OperandsStack_8h_a56e5f9a95536838408fcca8f22d541b4}{T\+Y\+P\+E\+\_\+\+I\+NT}~1
+\item 
+\#define \hyperlink{OperandsStack_8h_a105c7addfad52601f4d079673eae7982}{T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT}~2
+\item 
+\#define \hyperlink{OperandsStack_8h_a64b164f200989fc609ff40c0e1aa2518}{T\+Y\+P\+E\+\_\+\+L\+O\+NG}~3
+\item 
+\#define \hyperlink{OperandsStack_8h_ac87fa650bc0dcd101b39e15ecdb57477}{T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE}~4
+\item 
+\#define \hyperlink{OperandsStack_8h_a375775d23dbf60915db33f1add80c006}{T\+Y\+P\+E\+\_\+\+B\+O\+OL}~5
+\item 
+\#define \hyperlink{OperandsStack_8h_aa1e9e57b2fa5fdc501d79de85b69c986}{T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE}~6
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Pilha responsável por armazenar os operandos da J\+VM. 
+
+
+
+\subsection{Documentação das macros}
+\mbox{\Hypertarget{OperandsStack_8h_adf770fe2eec438e3758ffe905dbae208}\label{OperandsStack_8h_adf770fe2eec438e3758ffe905dbae208}} 
+\index{Operands\+Stack.\+h@{Operands\+Stack.\+h}!I\+N\+V\+A\+L\+ID@{I\+N\+V\+A\+L\+ID}}
+\index{I\+N\+V\+A\+L\+ID@{I\+N\+V\+A\+L\+ID}!Operands\+Stack.\+h@{Operands\+Stack.\+h}}
+\subsubsection{\texorpdfstring{I\+N\+V\+A\+L\+ID}{INVALID}}
+{\footnotesize\ttfamily \#define I\+N\+V\+A\+L\+ID~99}
+
+
+
+Definido na linha 17 do ficheiro Operands\+Stack.\+h.
+
+\mbox{\Hypertarget{OperandsStack_8h_a375775d23dbf60915db33f1add80c006}\label{OperandsStack_8h_a375775d23dbf60915db33f1add80c006}} 
+\index{Operands\+Stack.\+h@{Operands\+Stack.\+h}!T\+Y\+P\+E\+\_\+\+B\+O\+OL@{T\+Y\+P\+E\+\_\+\+B\+O\+OL}}
+\index{T\+Y\+P\+E\+\_\+\+B\+O\+OL@{T\+Y\+P\+E\+\_\+\+B\+O\+OL}!Operands\+Stack.\+h@{Operands\+Stack.\+h}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+B\+O\+OL}{TYPE\_BOOL}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+B\+O\+OL~5}
+
+
+
+Definido na linha 23 do ficheiro Operands\+Stack.\+h.
+
+\mbox{\Hypertarget{OperandsStack_8h_ac87fa650bc0dcd101b39e15ecdb57477}\label{OperandsStack_8h_ac87fa650bc0dcd101b39e15ecdb57477}} 
+\index{Operands\+Stack.\+h@{Operands\+Stack.\+h}!T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE@{T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE}}
+\index{T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE@{T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE}!Operands\+Stack.\+h@{Operands\+Stack.\+h}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE}{TYPE\_DOUBLE}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE~4}
+
+
+
+Definido na linha 22 do ficheiro Operands\+Stack.\+h.
+
+\mbox{\Hypertarget{OperandsStack_8h_a105c7addfad52601f4d079673eae7982}\label{OperandsStack_8h_a105c7addfad52601f4d079673eae7982}} 
+\index{Operands\+Stack.\+h@{Operands\+Stack.\+h}!T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT@{T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT}}
+\index{T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT@{T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT}!Operands\+Stack.\+h@{Operands\+Stack.\+h}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT}{TYPE\_FLOAT}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT~2}
+
+
+
+Definido na linha 20 do ficheiro Operands\+Stack.\+h.
+
+\mbox{\Hypertarget{OperandsStack_8h_a56e5f9a95536838408fcca8f22d541b4}\label{OperandsStack_8h_a56e5f9a95536838408fcca8f22d541b4}} 
+\index{Operands\+Stack.\+h@{Operands\+Stack.\+h}!T\+Y\+P\+E\+\_\+\+I\+NT@{T\+Y\+P\+E\+\_\+\+I\+NT}}
+\index{T\+Y\+P\+E\+\_\+\+I\+NT@{T\+Y\+P\+E\+\_\+\+I\+NT}!Operands\+Stack.\+h@{Operands\+Stack.\+h}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+I\+NT}{TYPE\_INT}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+I\+NT~1}
+
+
+
+Definido na linha 19 do ficheiro Operands\+Stack.\+h.
+
+\mbox{\Hypertarget{OperandsStack_8h_a64b164f200989fc609ff40c0e1aa2518}\label{OperandsStack_8h_a64b164f200989fc609ff40c0e1aa2518}} 
+\index{Operands\+Stack.\+h@{Operands\+Stack.\+h}!T\+Y\+P\+E\+\_\+\+L\+O\+NG@{T\+Y\+P\+E\+\_\+\+L\+O\+NG}}
+\index{T\+Y\+P\+E\+\_\+\+L\+O\+NG@{T\+Y\+P\+E\+\_\+\+L\+O\+NG}!Operands\+Stack.\+h@{Operands\+Stack.\+h}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+L\+O\+NG}{TYPE\_LONG}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+L\+O\+NG~3}
+
+
+
+Definido na linha 21 do ficheiro Operands\+Stack.\+h.
+
+\mbox{\Hypertarget{OperandsStack_8h_a0623cf1b3dda05505734b67f550c53cb}\label{OperandsStack_8h_a0623cf1b3dda05505734b67f550c53cb}} 
+\index{Operands\+Stack.\+h@{Operands\+Stack.\+h}!T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+S\+ET@{T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+S\+ET}}
+\index{T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+S\+ET@{T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+S\+ET}!Operands\+Stack.\+h@{Operands\+Stack.\+h}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+S\+ET}{TYPE\_NOT\_SET}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+S\+ET~0}
+
+
+
+Definido na linha 18 do ficheiro Operands\+Stack.\+h.
+
+\mbox{\Hypertarget{OperandsStack_8h_aa1e9e57b2fa5fdc501d79de85b69c986}\label{OperandsStack_8h_aa1e9e57b2fa5fdc501d79de85b69c986}} 
+\index{Operands\+Stack.\+h@{Operands\+Stack.\+h}!T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE@{T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE}}
+\index{T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE@{T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE}!Operands\+Stack.\+h@{Operands\+Stack.\+h}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE}{TYPE\_REFERENCE}}
+{\footnotesize\ttfamily \#define T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE~6}
+
+
+
+Definido na linha 24 do ficheiro Operands\+Stack.\+h.
+

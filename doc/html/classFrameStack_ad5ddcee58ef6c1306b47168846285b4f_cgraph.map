@@ -1,0 +1,5 @@
+<map id="FrameStack::proximaInstrucao" name="FrameStack::proximaInstrucao">
+<area shape="rect" id="node2" href="$classFrameStack.html#a95dd5d1d253758f1fa7a4a2371ff1545" title="Dá um pop no método atual. " alt="" coords="255,31,475,57"/>
+<area shape="rect" id="node3" href="$classOperations.html#a4a846f964056932fdf4d63056bfbe322" title="Operations::atualizarFrame" alt="" coords="528,5,707,32"/>
+<area shape="rect" id="node4" href="$classOperations.html#a6c265501b41e227e1a15589a0bb03166" title="Operations::atualizarThreads" alt="" coords="523,56,712,83"/>
+</map>

@@ -1,0 +1,18 @@
+<map id="include/OperandsStack.h" name="include/OperandsStack.h">
+<area shape="rect" id="node2" href="$OperandsStack_8cpp.html" title="Pilha de operandos. " alt="" coords="5,80,164,107"/>
+<area shape="rect" id="node3" href="$StaticClass_8h.html" title="Definição da StaticClass. " alt="" coords="489,80,635,107"/>
+<area shape="rect" id="node8" href="$InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="205,229,367,256"/>
+<area shape="rect" id="node16" href="$Frame_8h.html" title="Contém tudo necessário para a execução de um método. " alt="" coords="911,229,1026,256"/>
+<area shape="rect" id="node4" href="$StaticClass_8cpp.html" title="src/StaticClass.cpp" alt="" coords="685,155,823,181"/>
+<area shape="rect" id="node5" href="$ClasseLeitorExibidor_8h.html" title="Definição da ClasseLeitorExibidor. " alt="" coords="463,155,661,181"/>
+<area shape="rect" id="node12" href="$MethodArea_8h.html" title="Responsável por todas as operações que gerenciam os métodos. " alt="" coords="771,304,919,331"/>
+<area shape="rect" id="node14" href="$Operations_8h.html" title="include/Operations.h" alt="" coords="898,379,1039,405"/>
+<area shape="rect" id="node6" href="$ClasseLeitorExibidor_8cpp.html" title="Classe que irá realizar a leitura do bytecode e salvar as informações do class file. " alt="" coords="391,229,581,256"/>
+<area shape="rect" id="node7" href="$main_8cpp.html" title="Modulo principal, dá a opção de escolha entre exibidor e interpretador. " alt="" coords="605,229,703,256"/>
+<area shape="rect" id="node9" href="$InstanceClass_8cpp.html" title="src/InstanceClass.cpp" alt="" coords="307,304,460,331"/>
+<area shape="rect" id="node10" href="$Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="173,304,282,331"/>
+<area shape="rect" id="node11" href="$Heap_8cpp.html" title="src/Heap.cpp" alt="" coords="177,379,277,405"/>
+<area shape="rect" id="node13" href="$MethodArea_8cpp.html" title="src/MethodArea.cpp" alt="" coords="735,379,874,405"/>
+<area shape="rect" id="node15" href="$Operations_8cpp.html" title="src/Operations.cpp" alt="" coords="903,453,1035,480"/>
+<area shape="rect" id="node17" href="$Frame_8cpp.html" title="src/Frame.cpp" alt="" coords="1018,304,1125,331"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="OperandsStack::obterString" name="OperandsStack::obterString">
+<area shape="rect" id="node2" href="$classOperandsStack.html#a8c76f12ad6984b3c5b4ec8807eb63ae3" title="Recupera o tipo do topo da pilha de operandos. " alt="" coords="236,5,423,47"/>
+<area shape="rect" id="node4" href="$classOperandsStack.html#a184a99d160e17ef874a7b83f0726fb8a" title="Recupera o valor do topo da pilha de operandos. " alt="" coords="236,71,423,112"/>
+<area shape="rect" id="node3" href="$classOperandsStack.html#aa6dbee87661011453ba2c57405bd9a4e" title="Retorna se a pilha está vazia (1) ou não (0) " alt="" coords="471,46,649,73"/>
+</map>

@@ -1,0 +1,341 @@
+\hypertarget{classFrameStack}{}\section{Referência à classe Frame\+Stack}
+\label{classFrameStack}\index{Frame\+Stack@{Frame\+Stack}}
+
+
+Classe de pilha de frames.  
+
+
+
+
+{\ttfamily \#include $<$Frame.\+h$>$}
+
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFrameStack_a15d2d0d6497cd5d398fdc1b9862a1e3a}{Frame\+Stack} (\hyperlink{classLeitorExibidor}{Leitor\+Exibidor} $\ast$leitor\+Exibidor)
+\begin{DoxyCompactList}\small\item\em Contrutor da pilha de frame. \end{DoxyCompactList}\item 
+void \hyperlink{classFrameStack_a9e7308944f41d892a5a01566d85cad8f}{atualizar\+Argumentos} (vector$<$ \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} $>$ vector\+Argumentos)
+\begin{DoxyCompactList}\small\item\em Configura os argumentos. \end{DoxyCompactList}\item 
+void \hyperlink{classFrameStack_a87fc1ba2264b6818fc135ea507154b55}{executar\+Metodos} ()
+\begin{DoxyCompactList}\small\item\em Executa o método atual e os métodos chamados. \end{DoxyCompactList}\item 
+void \hyperlink{classFrameStack_aee31df6406a899bbf581eea9fc5545e6}{adicionar\+Frame} (\hyperlink{structmethod__info}{method\+\_\+info} method, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool)
+\begin{DoxyCompactList}\small\item\em Adiciona um frame no topo da pilha. \end{DoxyCompactList}\item 
+void \hyperlink{classFrameStack_a7bb4b64eece0c146fc647636397c572c}{adicionar\+Frame} (\hyperlink{structmethod__info}{method\+\_\+info} $\ast$method, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool)
+\begin{DoxyCompactList}\small\item\em Adiciona um frame no topo da pilha. \end{DoxyCompactList}\item 
+void \hyperlink{classFrameStack_a95dd5d1d253758f1fa7a4a2371ff1545}{pop\+Remover\+Objetos} ()
+\begin{DoxyCompactList}\small\item\em Dá um pop no método atual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membros privados}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classFrameStack_ad5ddcee58ef6c1306b47168846285b4f}{proxima\+Instrucao} ()
+\begin{DoxyCompactList}\small\item\em Atualiza o PC, se não for possível atualizar, dá um pop no método atual. \end{DoxyCompactList}\item 
+void \hyperlink{classFrameStack_a9ec8c638092ec1ef9a00d09fde4b3d6f}{inicializar\+PC} (\hyperlink{Frame_8h_acc380914b41a084dcc8e4b38fb200145}{Frame} $\ast$frame)
+\begin{DoxyCompactList}\small\item\em Põe o PC na posição inicial. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+stack$<$ \hyperlink{Frame_8h_acc380914b41a084dcc8e4b38fb200145}{Frame} $\ast$ $>$ \hyperlink{classFrameStack_a99712833509e9c94197fa964fbf7965b}{stack\+Threads}
+\item 
+int \hyperlink{classFrameStack_afbf19cd37c13a8058ab600205337c889}{opcode}
+\begin{DoxyCompactList}\small\item\em Contêm o opcode que corresponde a uma instrução. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Classe de pilha de frames. 
+
+Responsável por todas as operações que usam o frame. 
+
+Definido na linha 37 do ficheiro Frame.\+h.
+
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{classFrameStack_a15d2d0d6497cd5d398fdc1b9862a1e3a}\label{classFrameStack_a15d2d0d6497cd5d398fdc1b9862a1e3a}} 
+\index{Frame\+Stack@{Frame\+Stack}!Frame\+Stack@{Frame\+Stack}}
+\index{Frame\+Stack@{Frame\+Stack}!Frame\+Stack@{Frame\+Stack}}
+\subsubsection{\texorpdfstring{Frame\+Stack()}{FrameStack()}}
+{\footnotesize\ttfamily Frame\+Stack\+::\+Frame\+Stack (\begin{DoxyParamCaption}\item[{\hyperlink{classLeitorExibidor}{Leitor\+Exibidor} $\ast$}]{leitor\+Exibidor }\end{DoxyParamCaption})}
+
+
+
+Contrutor da pilha de frame. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em leitor\+Exibidor} & O que é lido do arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 8 do ficheiro Frame.\+cpp.
+
+
+
+Referências method\+\_\+info\+::attributes, Operations\+::atualizar\+Frame(), Method\+Area\+::atualizar\+Frame\+Stack(), Operations\+::atualizar\+Frame\+Stack(), Operations\+::atualizar\+Threads(), t\+\_\+info\+::codigo\+Atributo, frame\+\_\+s\+::constant\+Pool, attribute\+\_\+info\+::info, inicializar\+P\+C(), code\+\_\+attribute\+::max\+\_\+locals, code\+\_\+attribute\+::max\+\_\+stack, frame\+\_\+s\+::method, Leitor\+Exibidor\+::obter\+Constant\+Pool(), Leitor\+Exibidor\+::obter\+Main(), opcode, frame\+\_\+s\+::pilha\+Operandos, stack\+Threads e frame\+\_\+s\+::variaveis\+Locais.
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFrameStack_a15d2d0d6497cd5d398fdc1b9862a1e3a_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classFrameStack_aee31df6406a899bbf581eea9fc5545e6}\label{classFrameStack_aee31df6406a899bbf581eea9fc5545e6}} 
+\index{Frame\+Stack@{Frame\+Stack}!adicionar\+Frame@{adicionar\+Frame}}
+\index{adicionar\+Frame@{adicionar\+Frame}!Frame\+Stack@{Frame\+Stack}}
+\subsubsection{\texorpdfstring{adicionar\+Frame()}{adicionarFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Frame\+Stack\+::adicionar\+Frame (\begin{DoxyParamCaption}\item[{\hyperlink{structmethod__info}{method\+\_\+info}}]{method,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool }\end{DoxyParamCaption})}
+
+
+
+Adiciona um frame no topo da pilha. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em method} & Método no qual o frame será criado. \\
+\hline
+{\em constant\+Pool} & Um ponteiro para o pool de constantes. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 97 do ficheiro Frame.\+cpp.
+
+
+
+Referências method\+\_\+info\+::attributes, Operations\+::atualizar\+Frame(), Method\+Area\+::atualizar\+Frame\+Stack(), Operations\+::atualizar\+Frame\+Stack(), Operations\+::atualizar\+Threads(), t\+\_\+info\+::codigo\+Atributo, frame\+\_\+s\+::constant\+Pool, attribute\+\_\+info\+::info, inicializar\+P\+C(), code\+\_\+attribute\+::max\+\_\+locals, code\+\_\+attribute\+::max\+\_\+stack, frame\+\_\+s\+::method, frame\+\_\+s\+::pilha\+Operandos, stack\+Threads e frame\+\_\+s\+::variaveis\+Locais.
+
+
+
+Referenciado por Method\+Area\+::adicionar\+Classe(), adicionar\+Frame(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic() e Operations\+::invokevirtual().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFrameStack_aee31df6406a899bbf581eea9fc5545e6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFrameStack_a7bb4b64eece0c146fc647636397c572c}\label{classFrameStack_a7bb4b64eece0c146fc647636397c572c}} 
+\index{Frame\+Stack@{Frame\+Stack}!adicionar\+Frame@{adicionar\+Frame}}
+\index{adicionar\+Frame@{adicionar\+Frame}!Frame\+Stack@{Frame\+Stack}}
+\subsubsection{\texorpdfstring{adicionar\+Frame()}{adicionarFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Frame\+Stack\+::adicionar\+Frame (\begin{DoxyParamCaption}\item[{\hyperlink{structmethod__info}{method\+\_\+info} $\ast$}]{method,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool }\end{DoxyParamCaption})}
+
+
+
+Adiciona um frame no topo da pilha. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em method} & Ponteiro para o método no qual o frame será criado. \\
+\hline
+{\em constant\+Pool} & Um ponteiro para o pool de constantes. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 119 do ficheiro Frame.\+cpp.
+
+
+
+Referências adicionar\+Frame().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFrameStack_a7bb4b64eece0c146fc647636397c572c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFrameStack_a9e7308944f41d892a5a01566d85cad8f}\label{classFrameStack_a9e7308944f41d892a5a01566d85cad8f}} 
+\index{Frame\+Stack@{Frame\+Stack}!atualizar\+Argumentos@{atualizar\+Argumentos}}
+\index{atualizar\+Argumentos@{atualizar\+Argumentos}!Frame\+Stack@{Frame\+Stack}}
+\subsubsection{\texorpdfstring{atualizar\+Argumentos()}{atualizarArgumentos()}}
+{\footnotesize\ttfamily void Frame\+Stack\+::atualizar\+Argumentos (\begin{DoxyParamCaption}\item[{vector$<$ \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} $>$}]{vector\+Argumentos }\end{DoxyParamCaption})}
+
+
+
+Configura os argumentos. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em vector\+Argumentos} & Vetor com os argumentos a serem copiados para o vetor de variáveis locais \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 124 do ficheiro Frame.\+cpp.
+
+
+
+Referências B\+I\+TS, stack\+Threads, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE, T\+Y\+P\+E\+\_\+\+L\+O\+NG e T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE.
+
+
+
+Referenciado por Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic() e Operations\+::invokevirtual().
+
+\mbox{\Hypertarget{classFrameStack_a87fc1ba2264b6818fc135ea507154b55}\label{classFrameStack_a87fc1ba2264b6818fc135ea507154b55}} 
+\index{Frame\+Stack@{Frame\+Stack}!executar\+Metodos@{executar\+Metodos}}
+\index{executar\+Metodos@{executar\+Metodos}!Frame\+Stack@{Frame\+Stack}}
+\subsubsection{\texorpdfstring{executar\+Metodos()}{executarMetodos()}}
+{\footnotesize\ttfamily void Frame\+Stack\+::executar\+Metodos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Executa o método atual e os métodos chamados. 
+
+
+
+Definido na linha 35 do ficheiro Frame.\+cpp.
+
+
+
+Referências Operations\+::executar\+Operacao(), opcode e proxima\+Instrucao().
+
+
+
+Referenciado por main().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFrameStack_a87fc1ba2264b6818fc135ea507154b55_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFrameStack_a9ec8c638092ec1ef9a00d09fde4b3d6f}\label{classFrameStack_a9ec8c638092ec1ef9a00d09fde4b3d6f}} 
+\index{Frame\+Stack@{Frame\+Stack}!inicializar\+PC@{inicializar\+PC}}
+\index{inicializar\+PC@{inicializar\+PC}!Frame\+Stack@{Frame\+Stack}}
+\subsubsection{\texorpdfstring{inicializar\+P\+C()}{inicializarPC()}}
+{\footnotesize\ttfamily void Frame\+Stack\+::inicializar\+PC (\begin{DoxyParamCaption}\item[{\hyperlink{Frame_8h_acc380914b41a084dcc8e4b38fb200145}{Frame} $\ast$}]{frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Põe o PC na posição inicial. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em frame} & Estrutura do tipo frame. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 91 do ficheiro Frame.\+cpp.
+
+
+
+Referências method\+\_\+info\+::attributes, code\+\_\+attribute\+::codigo, t\+\_\+info\+::codigo\+Atributo, attribute\+\_\+info\+::info, frame\+\_\+s\+::method e frame\+\_\+s\+::pc.
+
+
+
+Referenciado por adicionar\+Frame() e Frame\+Stack().
+
+\mbox{\Hypertarget{classFrameStack_a95dd5d1d253758f1fa7a4a2371ff1545}\label{classFrameStack_a95dd5d1d253758f1fa7a4a2371ff1545}} 
+\index{Frame\+Stack@{Frame\+Stack}!pop\+Remover\+Objetos@{pop\+Remover\+Objetos}}
+\index{pop\+Remover\+Objetos@{pop\+Remover\+Objetos}!Frame\+Stack@{Frame\+Stack}}
+\subsubsection{\texorpdfstring{pop\+Remover\+Objetos()}{popRemoverObjetos()}}
+{\footnotesize\ttfamily void Frame\+Stack\+::pop\+Remover\+Objetos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Dá um pop no método atual. 
+
+
+
+Definido na linha 72 do ficheiro Frame.\+cpp.
+
+
+
+Referências Operations\+::atualizar\+Frame(), Operations\+::atualizar\+Threads() e stack\+Threads.
+
+
+
+Referenciado por Operations\+::func\+\_\+return() e proxima\+Instrucao().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFrameStack_a95dd5d1d253758f1fa7a4a2371ff1545_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFrameStack_ad5ddcee58ef6c1306b47168846285b4f}\label{classFrameStack_ad5ddcee58ef6c1306b47168846285b4f}} 
+\index{Frame\+Stack@{Frame\+Stack}!proxima\+Instrucao@{proxima\+Instrucao}}
+\index{proxima\+Instrucao@{proxima\+Instrucao}!Frame\+Stack@{Frame\+Stack}}
+\subsubsection{\texorpdfstring{proxima\+Instrucao()}{proximaInstrucao()}}
+{\footnotesize\ttfamily bool Frame\+Stack\+::proxima\+Instrucao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Atualiza o PC, se não for possível atualizar, dá um pop no método atual. 
+
+
+
+Definido na linha 43 do ficheiro Frame.\+cpp.
+
+
+
+Referências opcode, pop\+Remover\+Objetos() e stack\+Threads.
+
+
+
+Referenciado por executar\+Metodos().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFrameStack_ad5ddcee58ef6c1306b47168846285b4f_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{classFrameStack_afbf19cd37c13a8058ab600205337c889}\label{classFrameStack_afbf19cd37c13a8058ab600205337c889}} 
+\index{Frame\+Stack@{Frame\+Stack}!opcode@{opcode}}
+\index{opcode@{opcode}!Frame\+Stack@{Frame\+Stack}}
+\subsubsection{\texorpdfstring{opcode}{opcode}}
+{\footnotesize\ttfamily int Frame\+Stack\+::opcode\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contêm o opcode que corresponde a uma instrução. 
+
+
+
+Definido na linha 48 do ficheiro Frame.\+h.
+
+
+
+Referenciado por executar\+Metodos(), Frame\+Stack() e proxima\+Instrucao().
+
+\mbox{\Hypertarget{classFrameStack_a99712833509e9c94197fa964fbf7965b}\label{classFrameStack_a99712833509e9c94197fa964fbf7965b}} 
+\index{Frame\+Stack@{Frame\+Stack}!stack\+Threads@{stack\+Threads}}
+\index{stack\+Threads@{stack\+Threads}!Frame\+Stack@{Frame\+Stack}}
+\subsubsection{\texorpdfstring{stack\+Threads}{stackThreads}}
+{\footnotesize\ttfamily stack$<$\hyperlink{Frame_8h_acc380914b41a084dcc8e4b38fb200145}{Frame}$\ast$$>$ Frame\+Stack\+::stack\+Threads\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 39 do ficheiro Frame.\+h.
+
+
+
+Referenciado por adicionar\+Frame(), atualizar\+Argumentos(), Frame\+Stack(), pop\+Remover\+Objetos() e proxima\+Instrucao().
+
+
+
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Frame_8h}{Frame.\+h}\item 
+src/\hyperlink{Frame_8cpp}{Frame.\+cpp}\end{DoxyCompactItemize}

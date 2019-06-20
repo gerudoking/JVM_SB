@@ -1,0 +1,8 @@
+<map id="Operations::func_return" name="Operations::func_return">
+<area shape="rect" id="node2" href="$classOperandsStack.html#a3213a1b633149de9332217d403ee84b6" title="Desempilha o topo da pilha de operandos e retorna em um elemento de valor. " alt="" coords="229,71,415,98"/>
+<area shape="rect" id="node4" href="$classOperandsStack.html#aa6dbee87661011453ba2c57405bd9a4e" title="Retorna se a pilha está vazia (1) ou não (0) " alt="" coords="717,71,896,98"/>
+<area shape="rect" id="node5" href="$classFrameStack.html#a95dd5d1d253758f1fa7a4a2371ff1545" title="Dá um pop no método atual. " alt="" coords="212,173,432,199"/>
+<area shape="rect" id="node3" href="$classOperandsStack.html#a184a99d160e17ef874a7b83f0726fb8a" title="Recupera o valor do topo da pilha de operandos. " alt="" coords="481,5,668,47"/>
+<area shape="rect" id="node6" href="$classOperations.html#a4a846f964056932fdf4d63056bfbe322" title="Operations::atualizarFrame" alt="" coords="485,173,664,199"/>
+<area shape="rect" id="node7" href="$classOperations.html#a6c265501b41e227e1a15589a0bb03166" title="Operations::atualizarThreads" alt="" coords="480,223,669,250"/>
+</map>

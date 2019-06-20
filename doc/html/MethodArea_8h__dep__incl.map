@@ -1,0 +1,16 @@
+<map id="include/MethodArea.h" name="include/MethodArea.h">
+<area shape="rect" id="node2" href="$MethodArea_8cpp.html" title="src/MethodArea.cpp" alt="" coords="43,80,181,107"/>
+<area shape="rect" id="node3" href="$ClasseLeitorExibidor_8h.html" title="Definição da ClasseLeitorExibidor. " alt="" coords="255,80,454,107"/>
+<area shape="rect" id="node12" href="$Operations_8h.html" title="include/Operations.h" alt="" coords="553,229,695,256"/>
+<area shape="rect" id="node14" href="$Frame_8h.html" title="Contém tudo necessário para a execução de um método. " alt="" coords="688,155,803,181"/>
+<area shape="rect" id="node4" href="$ClasseLeitorExibidor_8cpp.html" title="Classe que irá realizar a leitura do bytecode e salvar as informações do class file. " alt="" coords="424,155,613,181"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="Modulo principal, dá a opção de escolha entre exibidor e interpretador. " alt="" coords="177,155,274,181"/>
+<area shape="rect" id="node6" href="$StaticClass_8h.html" title="Definição da StaticClass. " alt="" coords="5,155,152,181"/>
+<area shape="rect" id="node8" href="$InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="208,229,371,256"/>
+<area shape="rect" id="node7" href="$StaticClass_8cpp.html" title="src/StaticClass.cpp" alt="" coords="46,229,183,256"/>
+<area shape="rect" id="node9" href="$InstanceClass_8cpp.html" title="src/InstanceClass.cpp" alt="" coords="266,304,419,331"/>
+<area shape="rect" id="node10" href="$Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="132,304,241,331"/>
+<area shape="rect" id="node11" href="$Heap_8cpp.html" title="src/Heap.cpp" alt="" coords="137,379,237,405"/>
+<area shape="rect" id="node13" href="$Operations_8cpp.html" title="src/Operations.cpp" alt="" coords="558,304,690,331"/>
+<area shape="rect" id="node15" href="$Frame_8cpp.html" title="src/Frame.cpp" alt="" coords="719,229,825,256"/>
+</map>

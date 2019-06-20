@@ -1,0 +1,7 @@
+<map id="LeitorExibidor::obterMethod" name="LeitorExibidor::obterMethod">
+<area shape="rect" id="node2" href="$ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="235,29,419,56"/>
+<area shape="rect" id="node4" href="$classMethodArea.html#a6e9d922892887daadd4624729268094f" title="Retorna referência para classe estática. " alt="" coords="245,80,408,107"/>
+<area shape="rect" id="node5" href="$classStaticClass.html#ae028bd9e2b93b69b91b22348a0b4848d" title="Retorna as informações do class file. " alt="" coords="243,131,411,173"/>
+<area shape="rect" id="node6" href="$classLeitorExibidor.html#ab46841a0392f45a35a5444dca234a1ae" title="Retorna um índice da constant pool que aponta para string com nome da superclass. ..." alt="" coords="241,197,413,238"/>
+<area shape="rect" id="node3" href="$BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="467,29,551,56"/>
+</map>

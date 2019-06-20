@@ -1,0 +1,381 @@
+\hypertarget{BasicTypes_8cpp}{}\section{Referência ao ficheiro src/\+Basic\+Types.cpp}
+\label{BasicTypes_8cpp}\index{src/\+Basic\+Types.\+cpp@{src/\+Basic\+Types.\+cpp}}
+{\ttfamily \#include \char`\"{}Basic\+Types.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para Basic\+Types.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BasicTypes_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{BasicTypes_8cpp_a046a0864e1577109bbaaa0370a56c2fe}{ler\+U2} (F\+I\+LE $\ast$fp)
+\begin{DoxyCompactList}\small\item\em Função para ler 2 bytes do arquivo .class. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a9bffe5bb2564f91cd90fb7d06848f9a8}{U1} \hyperlink{BasicTypes_8cpp_a7bcab19bcd9cb111d9f212889bc12223}{ler\+U1} (F\+I\+LE $\ast$fp)
+\begin{DoxyCompactList}\small\item\em Função para ler 1 byte do arquivo .class. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a9bffe5bb2564f91cd90fb7d06848f9a8}{U1} $\ast$ \hyperlink{BasicTypes_8cpp_a7a11d8bcf2b55c896d5a48ecb39354b8}{ler\+U\+T\+F8} (F\+I\+LE $\ast$fp, int size)
+\begin{DoxyCompactList}\small\item\em Função para ler os bytes de uma string U\+T\+F-\/8. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_ac6d2ba2e53dd424684ead2f40e74a8b6}{U4} \hyperlink{BasicTypes_8cpp_afab80ee9b8e60fd4080754f9229bbf5d}{ler\+U4} (F\+I\+LE $\ast$fp)
+\begin{DoxyCompactList}\small\item\em Função para ler 4 bytes do arquivo .class. \end{DoxyCompactList}\item 
+string \hyperlink{BasicTypes_8cpp_a67ca85defbd318c40aa28d8821733ab5}{obter\+U\+T\+F8} (unsigned char $\ast$s, int size)
+\begin{DoxyCompactList}\small\item\em Função para montar e mostrar a uma string U\+T\+F-\/8. \end{DoxyCompactList}\item 
+string \hyperlink{BasicTypes_8cpp_a0863aa6ecc6e4cea0d76373c21f6b877}{converter\+\_\+double\+\_\+to\+\_\+string} (double d)
+\begin{DoxyCompactList}\small\item\em Função para converter double para string. \end{DoxyCompactList}\item 
+int \hyperlink{BasicTypes_8cpp_a3637e840957d6b53327825379c5635a0}{verificar\+Float} (float f)
+\begin{DoxyCompactList}\small\item\em Função para verificar NaN e infinito. \end{DoxyCompactList}\item 
+int \hyperlink{BasicTypes_8cpp_a5f97022fe564a4a05a3b75dfb039f13e}{verificar\+Double} (double d)
+\begin{DoxyCompactList}\small\item\em Função para verificar NaN e infinito. \end{DoxyCompactList}\item 
+string \hyperlink{BasicTypes_8cpp_a94660e9c3340c88b188740838a480188}{converter\+\_\+float\+\_\+to\+\_\+string} (float f)
+\begin{DoxyCompactList}\small\item\em Função para converter float para string. \end{DoxyCompactList}\item 
+long \hyperlink{BasicTypes_8cpp_a68e08bb93458d2a9002645705f970e34}{converter\+\_\+u4\+\_\+to\+\_\+long} (\hyperlink{unionClassLoaderType}{Class\+Loader\+Type} high, \hyperlink{unionClassLoaderType}{Class\+Loader\+Type} low)
+\begin{DoxyCompactList}\small\item\em Função para converter 8 bytes em um longo. \end{DoxyCompactList}\item 
+double \hyperlink{BasicTypes_8cpp_a01de6b870a770894bf9ce59df9604f88}{converter\+\_\+u4\+\_\+to\+\_\+double} (\hyperlink{unionClassLoaderType}{Class\+Loader\+Type} high, \hyperlink{unionClassLoaderType}{Class\+Loader\+Type} low)
+\begin{DoxyCompactList}\small\item\em Função para converter 8 bytes em um duplo. \end{DoxyCompactList}\item 
+float \hyperlink{BasicTypes_8cpp_ac7a9717de257f3526a4889b62f55c814}{converter\+\_\+u4\+\_\+to\+\_\+float} (\hyperlink{unionClassLoaderType}{Class\+Loader\+Type} in)
+\begin{DoxyCompactList}\small\item\em Função para converter 4 bytes em float. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{BasicTypes_8cpp_a0863aa6ecc6e4cea0d76373c21f6b877}\label{BasicTypes_8cpp_a0863aa6ecc6e4cea0d76373c21f6b877}} 
+\index{Basic\+Types.\+cpp@{Basic\+Types.\+cpp}!converter\+\_\+double\+\_\+to\+\_\+string@{converter\+\_\+double\+\_\+to\+\_\+string}}
+\index{converter\+\_\+double\+\_\+to\+\_\+string@{converter\+\_\+double\+\_\+to\+\_\+string}!Basic\+Types.\+cpp@{Basic\+Types.\+cpp}}
+\subsubsection{\texorpdfstring{converter\+\_\+double\+\_\+to\+\_\+string()}{converter\_double\_to\_string()}}
+{\footnotesize\ttfamily string converter\+\_\+double\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{double}]{d }\end{DoxyParamCaption})}
+
+
+
+Função para converter double para string. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em d} & Número a ser convertido. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 79 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referências verificar\+Double().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{BasicTypes_8cpp_a0863aa6ecc6e4cea0d76373c21f6b877_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{BasicTypes_8cpp_a94660e9c3340c88b188740838a480188}\label{BasicTypes_8cpp_a94660e9c3340c88b188740838a480188}} 
+\index{Basic\+Types.\+cpp@{Basic\+Types.\+cpp}!converter\+\_\+float\+\_\+to\+\_\+string@{converter\+\_\+float\+\_\+to\+\_\+string}}
+\index{converter\+\_\+float\+\_\+to\+\_\+string@{converter\+\_\+float\+\_\+to\+\_\+string}!Basic\+Types.\+cpp@{Basic\+Types.\+cpp}}
+\subsubsection{\texorpdfstring{converter\+\_\+float\+\_\+to\+\_\+string()}{converter\_float\_to\_string()}}
+{\footnotesize\ttfamily string converter\+\_\+float\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})}
+
+
+
+Função para converter float para string. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em f} & Número a ser convertido. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 133 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referências verificar\+Float().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{BasicTypes_8cpp_a94660e9c3340c88b188740838a480188_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{BasicTypes_8cpp_a01de6b870a770894bf9ce59df9604f88}\label{BasicTypes_8cpp_a01de6b870a770894bf9ce59df9604f88}} 
+\index{Basic\+Types.\+cpp@{Basic\+Types.\+cpp}!converter\+\_\+u4\+\_\+to\+\_\+double@{converter\+\_\+u4\+\_\+to\+\_\+double}}
+\index{converter\+\_\+u4\+\_\+to\+\_\+double@{converter\+\_\+u4\+\_\+to\+\_\+double}!Basic\+Types.\+cpp@{Basic\+Types.\+cpp}}
+\subsubsection{\texorpdfstring{converter\+\_\+u4\+\_\+to\+\_\+double()}{converter\_u4\_to\_double()}}
+{\footnotesize\ttfamily double converter\+\_\+u4\+\_\+to\+\_\+double (\begin{DoxyParamCaption}\item[{\hyperlink{unionClassLoaderType}{Class\+Loader\+Type}}]{high,  }\item[{\hyperlink{unionClassLoaderType}{Class\+Loader\+Type}}]{low }\end{DoxyParamCaption})}
+
+
+
+Função para converter 8 bytes em um duplo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em high} & Quatro bytes mais significativos a serem convertidos. \\
+\hline
+{\em low} & Quatro últimos bytes significativos a serem convertidos. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 161 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referências converter\+\_\+u4\+\_\+to\+\_\+long().
+
+
+
+Referenciado por gravar\+Arquivo\+Constant\+Pool(), imprimir\+Constant\+Pool() e Operations\+::ldc2\+\_\+w().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{BasicTypes_8cpp_a01de6b870a770894bf9ce59df9604f88_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{BasicTypes_8cpp_ac7a9717de257f3526a4889b62f55c814}\label{BasicTypes_8cpp_ac7a9717de257f3526a4889b62f55c814}} 
+\index{Basic\+Types.\+cpp@{Basic\+Types.\+cpp}!converter\+\_\+u4\+\_\+to\+\_\+float@{converter\+\_\+u4\+\_\+to\+\_\+float}}
+\index{converter\+\_\+u4\+\_\+to\+\_\+float@{converter\+\_\+u4\+\_\+to\+\_\+float}!Basic\+Types.\+cpp@{Basic\+Types.\+cpp}}
+\subsubsection{\texorpdfstring{converter\+\_\+u4\+\_\+to\+\_\+float()}{converter\_u4\_to\_float()}}
+{\footnotesize\ttfamily float converter\+\_\+u4\+\_\+to\+\_\+float (\begin{DoxyParamCaption}\item[{\hyperlink{unionClassLoaderType}{Class\+Loader\+Type}}]{in }\end{DoxyParamCaption})}
+
+
+
+Função para converter 4 bytes em float. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em in} & quatro bytes a serem convertidos. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 184 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referências Class\+Loader\+Type\+::u4.
+
+
+
+Referenciado por gravar\+Arquivo\+Constant\+Pool() e imprimir\+Constant\+Pool().
+
+\mbox{\Hypertarget{BasicTypes_8cpp_a68e08bb93458d2a9002645705f970e34}\label{BasicTypes_8cpp_a68e08bb93458d2a9002645705f970e34}} 
+\index{Basic\+Types.\+cpp@{Basic\+Types.\+cpp}!converter\+\_\+u4\+\_\+to\+\_\+long@{converter\+\_\+u4\+\_\+to\+\_\+long}}
+\index{converter\+\_\+u4\+\_\+to\+\_\+long@{converter\+\_\+u4\+\_\+to\+\_\+long}!Basic\+Types.\+cpp@{Basic\+Types.\+cpp}}
+\subsubsection{\texorpdfstring{converter\+\_\+u4\+\_\+to\+\_\+long()}{converter\_u4\_to\_long()}}
+{\footnotesize\ttfamily long converter\+\_\+u4\+\_\+to\+\_\+long (\begin{DoxyParamCaption}\item[{\hyperlink{unionClassLoaderType}{Class\+Loader\+Type}}]{high,  }\item[{\hyperlink{unionClassLoaderType}{Class\+Loader\+Type}}]{low }\end{DoxyParamCaption})}
+
+
+
+Função para converter 8 bytes em um longo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em high} & Quatro bytes mais significativos a serem convertidos. \\
+\hline
+{\em low} & Quatro últimos bytes significativos a serem convertidos. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 153 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referências Class\+Loader\+Type\+::u4.
+
+
+
+Referenciado por converter\+\_\+u4\+\_\+to\+\_\+double(), gravar\+Arquivo\+Constant\+Pool(), imprimir\+Constant\+Pool() e Operations\+::ldc2\+\_\+w().
+
+\mbox{\Hypertarget{BasicTypes_8cpp_a7bcab19bcd9cb111d9f212889bc12223}\label{BasicTypes_8cpp_a7bcab19bcd9cb111d9f212889bc12223}} 
+\index{Basic\+Types.\+cpp@{Basic\+Types.\+cpp}!ler\+U1@{ler\+U1}}
+\index{ler\+U1@{ler\+U1}!Basic\+Types.\+cpp@{Basic\+Types.\+cpp}}
+\subsubsection{\texorpdfstring{ler\+U1()}{lerU1()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a9bffe5bb2564f91cd90fb7d06848f9a8}{U1} ler\+U1 (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Função para ler 1 byte do arquivo .class. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em fp} & Ponteiro pro arquivo .class \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 21 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referenciado por carregar\+Constant\+Pool(), ler\+Attribute\+Info() e ler\+U\+T\+F8().
+
+\mbox{\Hypertarget{BasicTypes_8cpp_a046a0864e1577109bbaaa0370a56c2fe}\label{BasicTypes_8cpp_a046a0864e1577109bbaaa0370a56c2fe}} 
+\index{Basic\+Types.\+cpp@{Basic\+Types.\+cpp}!ler\+U2@{ler\+U2}}
+\index{ler\+U2@{ler\+U2}!Basic\+Types.\+cpp@{Basic\+Types.\+cpp}}
+\subsubsection{\texorpdfstring{ler\+U2()}{lerU2()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} ler\+U2 (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Função para ler 2 bytes do arquivo .class. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em fp} & Ponteiro pro arquivo .class \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 8 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referenciado por Leitor\+Exibidor\+::carregar(), carregar\+Constant\+Pool(), ler\+Attribute(), ler\+Attribute\+Info(), ler\+Exception\+Handler(), ler\+Field(), ler\+Method() e ler\+Todas\+Interfaces().
+
+\mbox{\Hypertarget{BasicTypes_8cpp_afab80ee9b8e60fd4080754f9229bbf5d}\label{BasicTypes_8cpp_afab80ee9b8e60fd4080754f9229bbf5d}} 
+\index{Basic\+Types.\+cpp@{Basic\+Types.\+cpp}!ler\+U4@{ler\+U4}}
+\index{ler\+U4@{ler\+U4}!Basic\+Types.\+cpp@{Basic\+Types.\+cpp}}
+\subsubsection{\texorpdfstring{ler\+U4()}{lerU4()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_ac6d2ba2e53dd424684ead2f40e74a8b6}{U4} ler\+U4 (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Função para ler 4 bytes do arquivo .class. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em fp} & Ponteiro pro arquivo .class \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 40 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referenciado por Leitor\+Exibidor\+::carregar(), carregar\+Constant\+Pool(), ler\+Attribute() e ler\+Attribute\+Info().
+
+\mbox{\Hypertarget{BasicTypes_8cpp_a7a11d8bcf2b55c896d5a48ecb39354b8}\label{BasicTypes_8cpp_a7a11d8bcf2b55c896d5a48ecb39354b8}} 
+\index{Basic\+Types.\+cpp@{Basic\+Types.\+cpp}!ler\+U\+T\+F8@{ler\+U\+T\+F8}}
+\index{ler\+U\+T\+F8@{ler\+U\+T\+F8}!Basic\+Types.\+cpp@{Basic\+Types.\+cpp}}
+\subsubsection{\texorpdfstring{ler\+U\+T\+F8()}{lerUTF8()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a9bffe5bb2564f91cd90fb7d06848f9a8}{U1} $\ast$ ler\+U\+T\+F8 (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Função para ler os bytes de uma string U\+T\+F-\/8. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em fp} & Ponteiro pro arquivo .class \\
+\hline
+{\em size} & Tamanho que será alocado para a string. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 29 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referências ler\+U1().
+
+
+
+Referenciado por carregar\+Constant\+Pool().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{BasicTypes_8cpp_a7a11d8bcf2b55c896d5a48ecb39354b8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{BasicTypes_8cpp_a67ca85defbd318c40aa28d8821733ab5}\label{BasicTypes_8cpp_a67ca85defbd318c40aa28d8821733ab5}} 
+\index{Basic\+Types.\+cpp@{Basic\+Types.\+cpp}!obter\+U\+T\+F8@{obter\+U\+T\+F8}}
+\index{obter\+U\+T\+F8@{obter\+U\+T\+F8}!Basic\+Types.\+cpp@{Basic\+Types.\+cpp}}
+\subsubsection{\texorpdfstring{obter\+U\+T\+F8()}{obterUTF8()}}
+{\footnotesize\ttfamily string obter\+U\+T\+F8 (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{s,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Função para montar e mostrar a uma string U\+T\+F-\/8. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em s} & Ponteiro para a posição inicial de uam string Unicode. \\
+\hline
+{\em size} & Tamanho da string a ser impressa. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 53 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referenciado por capturar\+Indice\+De\+Referencia(), gravar\+Arquivo\+Constant\+Pool(), imprimir\+Constant\+Pool() e Operations\+::invokevirtual().
+
+\mbox{\Hypertarget{BasicTypes_8cpp_a5f97022fe564a4a05a3b75dfb039f13e}\label{BasicTypes_8cpp_a5f97022fe564a4a05a3b75dfb039f13e}} 
+\index{Basic\+Types.\+cpp@{Basic\+Types.\+cpp}!verificar\+Double@{verificar\+Double}}
+\index{verificar\+Double@{verificar\+Double}!Basic\+Types.\+cpp@{Basic\+Types.\+cpp}}
+\subsubsection{\texorpdfstring{verificar\+Double()}{verificarDouble()}}
+{\footnotesize\ttfamily int verificar\+Double (\begin{DoxyParamCaption}\item[{double}]{d }\end{DoxyParamCaption})}
+
+
+
+Função para verificar NaN e infinito. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em d} & Number to be checked. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 117 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referências element\+\_\+u\+::d e element\+\_\+u\+::l.
+
+
+
+Referenciado por converter\+\_\+double\+\_\+to\+\_\+string(), Operations\+::dcmpg(), Operations\+::dcmpl() e Operations\+::drem().
+
+\mbox{\Hypertarget{BasicTypes_8cpp_a3637e840957d6b53327825379c5635a0}\label{BasicTypes_8cpp_a3637e840957d6b53327825379c5635a0}} 
+\index{Basic\+Types.\+cpp@{Basic\+Types.\+cpp}!verificar\+Float@{verificar\+Float}}
+\index{verificar\+Float@{verificar\+Float}!Basic\+Types.\+cpp@{Basic\+Types.\+cpp}}
+\subsubsection{\texorpdfstring{verificar\+Float()}{verificarFloat()}}
+{\footnotesize\ttfamily int verificar\+Float (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})}
+
+
+
+Função para verificar NaN e infinito. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em f} & Número a ser verificado. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 100 do ficheiro Basic\+Types.\+cpp.
+
+
+
+Referências element\+\_\+u\+::f e element\+\_\+u\+::i.
+
+
+
+Referenciado por converter\+\_\+float\+\_\+to\+\_\+string(), Operations\+::fcmpg(), Operations\+::fcmpl() e Operations\+::frem().
+

@@ -1,0 +1,5 @@
+<map id="LeitorExibidor::imprimirInformacoesGerais" name="LeitorExibidor::imprimirInformacoesGerais">
+<area shape="rect" id="node2" href="$ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="208,29,392,56"/>
+<area shape="rect" id="node4" href="$Flags_8cpp.html#ab6541b004248f7fcdf231db8e32b9344" title="Função que mostra as flags de acesso para os usuários. " alt="" coords="250,80,350,107"/>
+<area shape="rect" id="node3" href="$BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="440,29,524,56"/>
+</map>

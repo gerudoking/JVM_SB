@@ -1,0 +1,824 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Java Virtual Machine: Referência ao ficheiro src/Attributes.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Java Virtual Machine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('Attributes_8cpp.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro Attributes.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="Attributes_8h_source.html">Attributes.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Diagrama de dependências de inclusão para Attributes.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="Attributes_8cpp__incl.png" border="0" usemap="#src_2Attributes_8cpp" alt=""/></div>
+<map name="src_2Attributes_8cpp" id="src_2Attributes_8cpp">
+<area shape="rect" id="node2" href="Attributes_8h.html" title="Atributos a serem usados na execuçao da JVM. " alt="" coords="298,80,387,107"/>
+<area shape="rect" id="node7" href="ConstantPool_8h.html" title="Módulo Constant pool. " alt="" coords="287,155,399,181"/>
+<area shape="rect" id="node8" href="BasicTypes_8h.html" title="Tipos básicos utilizados para implementarmos a JVM. " alt="" coords="307,229,410,256"/>
+</map>
+</div>
+</div>
+<p><a href="Attributes_8cpp_source.html">Ir para o código fonte deste ficheiro.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a7575ffc9147cf9ff818f11e41e5799d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structt__exception__table.html">t_exception_table</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a7575ffc9147cf9ff818f11e41e5799d2">lerExceptionHandler</a> (FILE *arquivoEntrada)</td></tr>
+<tr class="memdesc:a7575ffc9147cf9ff818f11e41e5799d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função de leitura de exceções.  <a href="#a7575ffc9147cf9ff818f11e41e5799d2">Mais...</a><br /></td></tr>
+<tr class="separator:a7575ffc9147cf9ff818f11e41e5799d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9c855202d2513bcb5d5ef847b94a363"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uniont__info.html">t_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#ab9c855202d2513bcb5d5ef847b94a363">lerAttributeInfo</a> (FILE *arquivoEntrada, <a class="el" href="structcp__info.html">cp_info</a> *constantPool, unsigned short indice, unsigned short tamanho)</td></tr>
+<tr class="memdesc:ab9c855202d2513bcb5d5ef847b94a363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Faz a leitura das informações de um atributo.  <a href="#ab9c855202d2513bcb5d5ef847b94a363">Mais...</a><br /></td></tr>
+<tr class="separator:ab9c855202d2513bcb5d5ef847b94a363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38665695db265d2377f3a5ba13f7c0b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structattribute__info.html">attribute_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a38665695db265d2377f3a5ba13f7c0b3">lerAttribute</a> (FILE *arquivoEntrada, <a class="el" href="structcp__info.html">cp_info</a> *constantPool)</td></tr>
+<tr class="memdesc:a38665695db265d2377f3a5ba13f7c0b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Faz a leitura de um atributo da constantpool.  <a href="#a38665695db265d2377f3a5ba13f7c0b3">Mais...</a><br /></td></tr>
+<tr class="separator:a38665695db265d2377f3a5ba13f7c0b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfa49b8c725742bda34b244e06e1f120"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structattribute__info.html">attribute_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#adfa49b8c725742bda34b244e06e1f120">lerTodosAttributes</a> (FILE *arquivoEntrada, <a class="el" href="structcp__info.html">cp_info</a> *constantPool, int tamanho)</td></tr>
+<tr class="memdesc:adfa49b8c725742bda34b244e06e1f120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Faz a leitura de n atributos da constantpool.  <a href="#adfa49b8c725742bda34b244e06e1f120">Mais...</a><br /></td></tr>
+<tr class="separator:adfa49b8c725742bda34b244e06e1f120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d3679a14f5d2816bae4fa713c991bba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a4d3679a14f5d2816bae4fa713c991bba">imprimirTodosAttributes</a> (<a class="el" href="structattribute__info.html">attribute_info</a> *attribute, <a class="el" href="structcp__info.html">cp_info</a> *constantPool, int tamanho)</td></tr>
+<tr class="memdesc:a4d3679a14f5d2816bae4fa713c991bba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função que imprime na tela informações de n atributos.  <a href="#a4d3679a14f5d2816bae4fa713c991bba">Mais...</a><br /></td></tr>
+<tr class="separator:a4d3679a14f5d2816bae4fa713c991bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af23b327f5fd169831b2836a3f43268dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#af23b327f5fd169831b2836a3f43268dd">imprimirAttribute</a> (<a class="el" href="structattribute__info.html">attribute_info</a> attribute, <a class="el" href="structcp__info.html">cp_info</a> *constantPool)</td></tr>
+<tr class="memdesc:af23b327f5fd169831b2836a3f43268dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função que imprime na tela informações de um atributo.  <a href="#af23b327f5fd169831b2836a3f43268dd">Mais...</a><br /></td></tr>
+<tr class="separator:af23b327f5fd169831b2836a3f43268dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a06fdbfc69e0cd431c200b53cbcb08b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a5a06fdbfc69e0cd431c200b53cbcb08b">gravarArquivoTodosAttributes</a> (<a class="el" href="structattribute__info.html">attribute_info</a> *attribute, <a class="el" href="structcp__info.html">cp_info</a> *constantPool, int tamanho, fstream &amp;arquivoSaida)</td></tr>
+<tr class="memdesc:a5a06fdbfc69e0cd431c200b53cbcb08b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função que imprime na tela informações de n atributos.  <a href="#a5a06fdbfc69e0cd431c200b53cbcb08b">Mais...</a><br /></td></tr>
+<tr class="separator:a5a06fdbfc69e0cd431c200b53cbcb08b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9a80eafe1c986c02c8dcebfccca4dd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#ad9a80eafe1c986c02c8dcebfccca4dd7">gravarArquivoAttribute</a> (<a class="el" href="structattribute__info.html">attribute_info</a> attribute, <a class="el" href="structcp__info.html">cp_info</a> *constantPool, fstream &amp;arquivoSaida)</td></tr>
+<tr class="memdesc:ad9a80eafe1c986c02c8dcebfccca4dd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função que imprime na tela informações de um atributo.  <a href="#ad9a80eafe1c986c02c8dcebfccca4dd7">Mais...</a><br /></td></tr>
+<tr class="separator:ad9a80eafe1c986c02c8dcebfccca4dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a73dec553ae8bc41785faaac9c120a1"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a0a73dec553ae8bc41785faaac9c120a1">obterMnemonico</a> (int opcode)</td></tr>
+<tr class="memdesc:a0a73dec553ae8bc41785faaac9c120a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o nome da operação.  <a href="#a0a73dec553ae8bc41785faaac9c120a1">Mais...</a><br /></td></tr>
+<tr class="separator:a0a73dec553ae8bc41785faaac9c120a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c00cc0bad9d04b8667ccbc5a166650c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a2c00cc0bad9d04b8667ccbc5a166650c">obterValorNBytes</a> (uint8_t numero, unsigned char *codigo, int *indice)</td></tr>
+<tr class="memdesc:a2c00cc0bad9d04b8667ccbc5a166650c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para retornar o conteúdo dos próximos n bytes.  <a href="#a2c00cc0bad9d04b8667ccbc5a166650c">Mais...</a><br /></td></tr>
+<tr class="separator:a2c00cc0bad9d04b8667ccbc5a166650c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b0254c9dbb34d0fddd35925597b6659"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a2b0254c9dbb34d0fddd35925597b6659">obterParametrosOpcode</a> (unsigned char *codigo, int *indice)</td></tr>
+<tr class="memdesc:a2b0254c9dbb34d0fddd35925597b6659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função que mostra na tela os parâmetros dos opcodes.  <a href="#a2b0254c9dbb34d0fddd35925597b6659">Mais...</a><br /></td></tr>
+<tr class="separator:a2b0254c9dbb34d0fddd35925597b6659"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d5cc4f3ba829f59c18c4137e188ea26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Attributes_8cpp.html#a0d5cc4f3ba829f59c18c4137e188ea26">gravaArquivoObterParametrosOpcode</a> (unsigned char *codigo, int *indice, fstream &amp;arquivoSaida)</td></tr>
+<tr class="memdesc:a0d5cc4f3ba829f59c18c4137e188ea26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função que mostra na tela os parâmetros dos opcodes.  <a href="#a0d5cc4f3ba829f59c18c4137e188ea26">Mais...</a><br /></td></tr>
+<tr class="separator:a0d5cc4f3ba829f59c18c4137e188ea26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a0d5cc4f3ba829f59c18c4137e188ea26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d5cc4f3ba829f59c18c4137e188ea26">&#9670;&nbsp;</a></span>gravaArquivoObterParametrosOpcode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gravaArquivoObterParametrosOpcode </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>codigo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>indice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">fstream &amp;&#160;</td>
+          <td class="paramname"><em>arquivoSaida</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função que mostra na tela os parâmetros dos opcodes. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codigo</td><td>Pointer of bytes wich are code and your arg. Ponteiro para vetor de bytes do código e seus parâemtros. </td></tr>
+    <tr><td class="paramname">indice</td><td>Posição na constantpool. </td></tr>
+    <tr><td class="paramname">arquivoSaida</td><td>arquivo de saída </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="Attributes_8cpp_source.html#l01005">1005</a> do ficheiro <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="Attributes_8cpp_source.html#l00852">obterValorNBytes()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Attributes_8cpp_source.html#l00176">gravarArquivoAttribute()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="Attributes_8cpp_a0d5cc4f3ba829f59c18c4137e188ea26_cgraph.png" border="0" usemap="#Attributes_8cpp_a0d5cc4f3ba829f59c18c4137e188ea26_cgraph" alt=""/></div>
+<map name="Attributes_8cpp_a0d5cc4f3ba829f59c18c4137e188ea26_cgraph" id="Attributes_8cpp_a0d5cc4f3ba829f59c18c4137e188ea26_cgraph">
+<area shape="rect" id="node2" href="Attributes_8cpp.html#a2c00cc0bad9d04b8667ccbc5a166650c" title="Função para retornar o conteúdo dos próximos n bytes. " alt="" coords="251,13,376,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad9a80eafe1c986c02c8dcebfccca4dd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9a80eafe1c986c02c8dcebfccca4dd7">&#9670;&nbsp;</a></span>gravarArquivoAttribute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gravarArquivoAttribute </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structattribute__info.html">attribute_info</a>&#160;</td>
+          <td class="paramname"><em>attribute</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcp__info.html">cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constantPool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">fstream &amp;&#160;</td>
+          <td class="paramname"><em>arquivoSaida</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função que imprime na tela informações de um atributo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">attribute</td><td>do struct do <a class="el" href="structattribute__info.html" title="Protótipo da struct &quot;attribute_info&quot;. ">attribute_info</a>. </td></tr>
+    <tr><td class="paramname">constantPool</td><td>Poteiro pra constant pool. </td></tr>
+    <tr><td class="paramname">arquivoSaida</td><td>arquivo de saída </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="Attributes_8cpp_source.html#l00176">176</a> do ficheiro <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="Attributes_8h_source.html#l00050">code_attribute::attribute_count</a>, <a class="el" href="Attributes_8h_source.html#l00051">code_attribute::attributes</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="Attributes_8h_source.html#l00037">t_exception_table::catch_type</a>, <a class="el" href="Attributes_8h_source.html#l00046">code_attribute::code_length</a>, <a class="el" href="Attributes_8h_source.html#l00047">code_attribute::codigo</a>, <a class="el" href="Attributes_8h_source.html#l00067">t_info::codigoAtributo</a>, <a class="el" href="Attributes_8h_source.html#l00066">t_info::constantvalue</a>, <a class="el" href="Attributes_8h_source.html#l00026">constantvalue_attribute::constantvalue_index</a>, <a class="el" href="Attributes_8h_source.html#l00035">t_exception_table::end_pc</a>, <a class="el" href="Attributes_8h_source.html#l00068">t_info::exception</a>, <a class="el" href="Attributes_8h_source.html#l00059">exception_attribute::exception_index_table</a>, <a class="el" href="Attributes_8h_source.html#l00049">code_attribute::exception_table</a>, <a class="el" href="Attributes_8h_source.html#l00048">code_attribute::exception_table_length</a>, <a class="el" href="Attributes_8cpp_source.html#l01005">gravaArquivoObterParametrosOpcode()</a>, <a class="el" href="Attributes_8cpp_source.html#l00176">gravarArquivoAttribute()</a>, <a class="el" href="Attributes_8h_source.html#l00036">t_exception_table::handler_pc</a>, <a class="el" href="Attributes_8h_source.html#l00078">attribute_info::info</a>, <a class="el" href="Attributes_8h_source.html#l00076">attribute_info::length</a>, <a class="el" href="Attributes_8h_source.html#l00045">code_attribute::max_locals</a>, <a class="el" href="Attributes_8h_source.html#l00044">code_attribute::max_stack</a>, <a class="el" href="Attributes_8h_source.html#l00075">attribute_info::name_index</a>, <a class="el" href="Attributes_8h_source.html#l00058">exception_attribute::number_of_exceptions</a>, <a class="el" href="Attributes_8cpp_source.html#l00230">obterMnemonico()</a> e <a class="el" href="Attributes_8h_source.html#l00034">t_exception_table::start_pc</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Attributes_8cpp_source.html#l00176">gravarArquivoAttribute()</a>, <a class="el" href="Fields_8cpp_source.html#l00027">gravarArquivoField()</a>, <a class="el" href="Methods_8cpp_source.html#l00067">gravarArquivoMethod()</a> e <a class="el" href="Attributes_8cpp_source.html#l00167">gravarArquivoTodosAttributes()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="Attributes_8cpp_ad9a80eafe1c986c02c8dcebfccca4dd7_cgraph.png" border="0" usemap="#Attributes_8cpp_ad9a80eafe1c986c02c8dcebfccca4dd7_cgraph" alt=""/></div>
+<map name="Attributes_8cpp_ad9a80eafe1c986c02c8dcebfccca4dd7_cgraph" id="Attributes_8cpp_ad9a80eafe1c986c02c8dcebfccca4dd7_cgraph">
+<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="211,29,395,56"/>
+<area shape="rect" id="node4" href="Attributes_8cpp.html#a0d5cc4f3ba829f59c18c4137e188ea26" title="Função que mostra na tela os parâmetros dos opcodes. " alt="" coords="204,81,401,122"/>
+<area shape="rect" id="node6" href="Attributes_8cpp.html#a0a73dec553ae8bc41785faaac9c120a1" title="Retorna o nome da operação. " alt="" coords="243,147,362,173"/>
+<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="470,29,554,56"/>
+<area shape="rect" id="node5" href="Attributes_8cpp.html#a2c00cc0bad9d04b8667ccbc5a166650c" title="Função para retornar o conteúdo dos próximos n bytes. " alt="" coords="449,88,575,115"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5a06fdbfc69e0cd431c200b53cbcb08b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a06fdbfc69e0cd431c200b53cbcb08b">&#9670;&nbsp;</a></span>gravarArquivoTodosAttributes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gravarArquivoTodosAttributes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structattribute__info.html">attribute_info</a> *&#160;</td>
+          <td class="paramname"><em>attribute</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcp__info.html">cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constantPool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tamanho</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">fstream &amp;&#160;</td>
+          <td class="paramname"><em>arquivoSaida</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função que imprime na tela informações de n atributos. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">attribute</td><td>Pointer to struct of types att. </td></tr>
+    <tr><td class="paramname">constantPool</td><td>Poteiro pra constant pool. </td></tr>
+    <tr><td class="paramname">tamanho</td><td>Number of times of the function printAttribute gonna be called. </td></tr>
+    <tr><td class="paramname">arquivoSaida</td><td>arquivo de saída </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="Attributes_8cpp_source.html#l00167">167</a> do ficheiro <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="Attributes_8cpp_source.html#l00176">gravarArquivoAttribute()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00203">LeitorExibidor::gravarArquivo()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="Attributes_8cpp_a5a06fdbfc69e0cd431c200b53cbcb08b_cgraph.png" border="0" usemap="#Attributes_8cpp_a5a06fdbfc69e0cd431c200b53cbcb08b_cgraph" alt=""/></div>
+<map name="Attributes_8cpp_a5a06fdbfc69e0cd431c200b53cbcb08b_cgraph" id="Attributes_8cpp_a5a06fdbfc69e0cd431c200b53cbcb08b_cgraph">
+<area shape="rect" id="node2" href="Attributes_8cpp.html#ad9a80eafe1c986c02c8dcebfccca4dd7" title="Função que imprime na tela informações de um atributo. " alt="" coords="248,88,399,115"/>
+<area shape="rect" id="node3" href="ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="453,29,637,56"/>
+<area shape="rect" id="node5" href="Attributes_8cpp.html#a0d5cc4f3ba829f59c18c4137e188ea26" title="Função que mostra na tela os parâmetros dos opcodes. " alt="" coords="447,81,644,122"/>
+<area shape="rect" id="node7" href="Attributes_8cpp.html#a0a73dec553ae8bc41785faaac9c120a1" title="Retorna o nome da operação. " alt="" coords="486,147,605,173"/>
+<area shape="rect" id="node4" href="BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="713,29,797,56"/>
+<area shape="rect" id="node6" href="Attributes_8cpp.html#a2c00cc0bad9d04b8667ccbc5a166650c" title="Função para retornar o conteúdo dos próximos n bytes. " alt="" coords="692,88,817,115"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af23b327f5fd169831b2836a3f43268dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af23b327f5fd169831b2836a3f43268dd">&#9670;&nbsp;</a></span>imprimirAttribute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imprimirAttribute </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structattribute__info.html">attribute_info</a>&#160;</td>
+          <td class="paramname"><em>attribute</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcp__info.html">cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constantPool</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função que imprime na tela informações de um atributo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">attribute</td><td>do struct do <a class="el" href="structattribute__info.html" title="Protótipo da struct &quot;attribute_info&quot;. ">attribute_info</a>. </td></tr>
+    <tr><td class="paramname">constantPool</td><td>Poteiro pra constant pool. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="Attributes_8cpp_source.html#l00113">113</a> do ficheiro <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="Attributes_8h_source.html#l00050">code_attribute::attribute_count</a>, <a class="el" href="Attributes_8h_source.html#l00051">code_attribute::attributes</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="Attributes_8h_source.html#l00037">t_exception_table::catch_type</a>, <a class="el" href="Attributes_8h_source.html#l00046">code_attribute::code_length</a>, <a class="el" href="Attributes_8h_source.html#l00047">code_attribute::codigo</a>, <a class="el" href="Attributes_8h_source.html#l00067">t_info::codigoAtributo</a>, <a class="el" href="Attributes_8h_source.html#l00066">t_info::constantvalue</a>, <a class="el" href="Attributes_8h_source.html#l00026">constantvalue_attribute::constantvalue_index</a>, <a class="el" href="Attributes_8h_source.html#l00035">t_exception_table::end_pc</a>, <a class="el" href="Attributes_8h_source.html#l00068">t_info::exception</a>, <a class="el" href="Attributes_8h_source.html#l00059">exception_attribute::exception_index_table</a>, <a class="el" href="Attributes_8h_source.html#l00049">code_attribute::exception_table</a>, <a class="el" href="Attributes_8h_source.html#l00048">code_attribute::exception_table_length</a>, <a class="el" href="Attributes_8h_source.html#l00036">t_exception_table::handler_pc</a>, <a class="el" href="Attributes_8cpp_source.html#l00113">imprimirAttribute()</a>, <a class="el" href="Attributes_8h_source.html#l00078">attribute_info::info</a>, <a class="el" href="Attributes_8h_source.html#l00076">attribute_info::length</a>, <a class="el" href="Attributes_8h_source.html#l00045">code_attribute::max_locals</a>, <a class="el" href="Attributes_8h_source.html#l00044">code_attribute::max_stack</a>, <a class="el" href="Attributes_8h_source.html#l00075">attribute_info::name_index</a>, <a class="el" href="Attributes_8h_source.html#l00058">exception_attribute::number_of_exceptions</a>, <a class="el" href="Attributes_8cpp_source.html#l00230">obterMnemonico()</a>, <a class="el" href="Attributes_8cpp_source.html#l00863">obterParametrosOpcode()</a> e <a class="el" href="Attributes_8h_source.html#l00034">t_exception_table::start_pc</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Attributes_8cpp_source.html#l00113">imprimirAttribute()</a>, <a class="el" href="Fields_8cpp_source.html#l00008">imprimirField()</a>, <a class="el" href="Methods_8cpp_source.html#l00035">imprimirMethod()</a> e <a class="el" href="Attributes_8cpp_source.html#l00104">imprimirTodosAttributes()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="Attributes_8cpp_af23b327f5fd169831b2836a3f43268dd_cgraph.png" border="0" usemap="#Attributes_8cpp_af23b327f5fd169831b2836a3f43268dd_cgraph" alt=""/></div>
+<map name="Attributes_8cpp_af23b327f5fd169831b2836a3f43268dd_cgraph" id="Attributes_8cpp_af23b327f5fd169831b2836a3f43268dd_cgraph">
+<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="171,29,355,56"/>
+<area shape="rect" id="node4" href="Attributes_8cpp.html#a0a73dec553ae8bc41785faaac9c120a1" title="Retorna o nome da operação. " alt="" coords="203,80,322,107"/>
+<area shape="rect" id="node5" href="Attributes_8cpp.html#a2b0254c9dbb34d0fddd35925597b6659" title="Função que mostra na tela os parâmetros dos opcodes. " alt="" coords="181,131,344,157"/>
+<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="423,29,507,56"/>
+<area shape="rect" id="node6" href="Attributes_8cpp.html#a2c00cc0bad9d04b8667ccbc5a166650c" title="Função para retornar o conteúdo dos próximos n bytes. " alt="" coords="403,131,528,157"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4d3679a14f5d2816bae4fa713c991bba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d3679a14f5d2816bae4fa713c991bba">&#9670;&nbsp;</a></span>imprimirTodosAttributes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imprimirTodosAttributes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structattribute__info.html">attribute_info</a> *&#160;</td>
+          <td class="paramname"><em>attribute</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcp__info.html">cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constantPool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tamanho</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função que imprime na tela informações de n atributos. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">attribute</td><td>Pointer to struct of types att. </td></tr>
+    <tr><td class="paramname">constantPool</td><td>Poteiro pra constant pool. </td></tr>
+    <tr><td class="paramname">tamanho</td><td>Number of times of the function printAttribute gonna be called. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="Attributes_8cpp_source.html#l00104">104</a> do ficheiro <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="Attributes_8cpp_source.html#l00113">imprimirAttribute()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00176">LeitorExibidor::exibir()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="Attributes_8cpp_a4d3679a14f5d2816bae4fa713c991bba_cgraph.png" border="0" usemap="#Attributes_8cpp_a4d3679a14f5d2816bae4fa713c991bba_cgraph" alt=""/></div>
+<map name="Attributes_8cpp_a4d3679a14f5d2816bae4fa713c991bba_cgraph" id="Attributes_8cpp_a4d3679a14f5d2816bae4fa713c991bba_cgraph">
+<area shape="rect" id="node2" href="Attributes_8cpp.html#af23b327f5fd169831b2836a3f43268dd" title="Função que imprime na tela informações de um atributo. " alt="" coords="213,80,331,107"/>
+<area shape="rect" id="node3" href="ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="379,29,563,56"/>
+<area shape="rect" id="node5" href="Attributes_8cpp.html#a0a73dec553ae8bc41785faaac9c120a1" title="Retorna o nome da operação. " alt="" coords="411,80,530,107"/>
+<area shape="rect" id="node6" href="Attributes_8cpp.html#a2b0254c9dbb34d0fddd35925597b6659" title="Função que mostra na tela os parâmetros dos opcodes. " alt="" coords="389,131,552,157"/>
+<area shape="rect" id="node4" href="BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="631,29,715,56"/>
+<area shape="rect" id="node7" href="Attributes_8cpp.html#a2c00cc0bad9d04b8667ccbc5a166650c" title="Função para retornar o conteúdo dos próximos n bytes. " alt="" coords="611,131,736,157"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a38665695db265d2377f3a5ba13f7c0b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38665695db265d2377f3a5ba13f7c0b3">&#9670;&nbsp;</a></span>lerAttribute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structattribute__info.html">attribute_info</a> lerAttribute </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>arquivoEntrada</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcp__info.html">cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constantPool</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Faz a leitura de um atributo da constantpool. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arquivoEntrada</td><td>Ponteiro pro arquivo .class. </td></tr>
+    <tr><td class="paramname">constantPool</td><td>Pointeiro pra constantpool. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="Attributes_8cpp_source.html#l00081">81</a> do ficheiro <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="Attributes_8h_source.html#l00078">attribute_info::info</a>, <a class="el" href="Attributes_8h_source.html#l00076">attribute_info::length</a>, <a class="el" href="Attributes_8cpp_source.html#l00019">lerAttributeInfo()</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00008">lerU2()</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00040">lerU4()</a> e <a class="el" href="Attributes_8h_source.html#l00075">attribute_info::name_index</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Attributes_8cpp_source.html#l00019">lerAttributeInfo()</a>, <a class="el" href="Fields_8cpp_source.html#l00046">lerField()</a>, <a class="el" href="Methods_8cpp_source.html#l00008">lerMethod()</a> e <a class="el" href="Attributes_8cpp_source.html#l00092">lerTodosAttributes()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="Attributes_8cpp_a38665695db265d2377f3a5ba13f7c0b3_cgraph.png" border="0" usemap="#Attributes_8cpp_a38665695db265d2377f3a5ba13f7c0b3_cgraph" alt=""/></div>
+<map name="Attributes_8cpp_a38665695db265d2377f3a5ba13f7c0b3_cgraph" id="Attributes_8cpp_a38665695db265d2377f3a5ba13f7c0b3_cgraph">
+<area shape="rect" id="node2" href="Attributes_8cpp.html#ab9c855202d2513bcb5d5ef847b94a363" title="Faz a leitura das informações de um atributo. " alt="" coords="139,181,245,208"/>
+<area shape="rect" id="node5" href="BasicTypes_8cpp.html#a046a0864e1577109bbaaa0370a56c2fe" title="Função para ler 2 bytes do arquivo .class. " alt="" coords="541,181,594,208"/>
+<area shape="rect" id="node6" href="BasicTypes_8cpp.html#afab80ee9b8e60fd4080754f9229bbf5d" title="Função para ler 4 bytes do arquivo .class. " alt="" coords="359,232,412,259"/>
+<area shape="rect" id="node3" href="ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="293,29,477,56"/>
+<area shape="rect" id="node7" href="BasicTypes_8cpp.html#a7bcab19bcd9cb111d9f212889bc12223" title="Função para ler 1 byte do arquivo .class. " alt="" coords="359,131,412,157"/>
+<area shape="rect" id="node8" href="Attributes_8cpp.html#a7575ffc9147cf9ff818f11e41e5799d2" title="Função de leitura de exceções. " alt="" coords="316,181,455,208"/>
+<area shape="rect" id="node4" href="BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="525,29,609,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab9c855202d2513bcb5d5ef847b94a363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9c855202d2513bcb5d5ef847b94a363">&#9670;&nbsp;</a></span>lerAttributeInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="uniont__info.html">t_info</a> * lerAttributeInfo </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>arquivoEntrada</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcp__info.html">cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constantPool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned short&#160;</td>
+          <td class="paramname"><em>indice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned short&#160;</td>
+          <td class="paramname"><em>tamanho</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Faz a leitura das informações de um atributo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arquivoEntrada</td><td>Ponteirp para arquivo .class. </td></tr>
+    <tr><td class="paramname">constantPool</td><td>Ponteiro pra constantpool. </td></tr>
+    <tr><td class="paramname">indice</td><td>Posição do atributo na constantpool. </td></tr>
+    <tr><td class="paramname">tamanho</td><td>em bytes do atributo a ser lido. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="Attributes_8cpp_source.html#l00019">19</a> do ficheiro <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="Attributes_8h_source.html#l00050">code_attribute::attribute_count</a>, <a class="el" href="Attributes_8h_source.html#l00051">code_attribute::attributes</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="Attributes_8h_source.html#l00046">code_attribute::code_length</a>, <a class="el" href="Attributes_8h_source.html#l00047">code_attribute::codigo</a>, <a class="el" href="Attributes_8h_source.html#l00067">t_info::codigoAtributo</a>, <a class="el" href="Attributes_8h_source.html#l00066">t_info::constantvalue</a>, <a class="el" href="Attributes_8h_source.html#l00026">constantvalue_attribute::constantvalue_index</a>, <a class="el" href="Attributes_8h_source.html#l00068">t_info::exception</a>, <a class="el" href="Attributes_8h_source.html#l00059">exception_attribute::exception_index_table</a>, <a class="el" href="Attributes_8h_source.html#l00049">code_attribute::exception_table</a>, <a class="el" href="Attributes_8h_source.html#l00048">code_attribute::exception_table_length</a>, <a class="el" href="Attributes_8cpp_source.html#l00081">lerAttribute()</a>, <a class="el" href="Attributes_8cpp_source.html#l00008">lerExceptionHandler()</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00021">lerU1()</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00008">lerU2()</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00040">lerU4()</a>, <a class="el" href="Attributes_8h_source.html#l00045">code_attribute::max_locals</a>, <a class="el" href="Attributes_8h_source.html#l00044">code_attribute::max_stack</a> e <a class="el" href="Attributes_8h_source.html#l00058">exception_attribute::number_of_exceptions</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Attributes_8cpp_source.html#l00081">lerAttribute()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="Attributes_8cpp_ab9c855202d2513bcb5d5ef847b94a363_cgraph.png" border="0" usemap="#Attributes_8cpp_ab9c855202d2513bcb5d5ef847b94a363_cgraph" alt=""/></div>
+<map name="Attributes_8cpp_ab9c855202d2513bcb5d5ef847b94a363_cgraph" id="Attributes_8cpp_ab9c855202d2513bcb5d5ef847b94a363_cgraph">
+<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="160,29,344,56"/>
+<area shape="rect" id="node4" href="Attributes_8cpp.html#a38665695db265d2377f3a5ba13f7c0b3" title="Faz a leitura de um atributo da constantpool. " alt="" coords="209,181,295,208"/>
+<area shape="rect" id="node5" href="BasicTypes_8cpp.html#a046a0864e1577109bbaaa0370a56c2fe" title="Função para ler 2 bytes do arquivo .class. " alt="" coords="407,131,461,157"/>
+<area shape="rect" id="node6" href="BasicTypes_8cpp.html#afab80ee9b8e60fd4080754f9229bbf5d" title="Função para ler 4 bytes do arquivo .class. " alt="" coords="407,207,461,233"/>
+<area shape="rect" id="node7" href="Attributes_8cpp.html#a7575ffc9147cf9ff818f11e41e5799d2" title="Função de leitura de exceções. " alt="" coords="183,131,321,157"/>
+<area shape="rect" id="node8" href="BasicTypes_8cpp.html#a7bcab19bcd9cb111d9f212889bc12223" title="Função para ler 1 byte do arquivo .class. " alt="" coords="225,283,279,309"/>
+<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="392,29,476,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7575ffc9147cf9ff818f11e41e5799d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7575ffc9147cf9ff818f11e41e5799d2">&#9670;&nbsp;</a></span>lerExceptionHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structt__exception__table.html">t_exception_table</a> * lerExceptionHandler </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>arquivoEntrada</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função de leitura de exceções. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arquivoEntrada</td><td>Ponteiro para arquivo tipo .class </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="Attributes_8cpp_source.html#l00008">8</a> do ficheiro <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="Attributes_8h_source.html#l00037">t_exception_table::catch_type</a>, <a class="el" href="Attributes_8h_source.html#l00035">t_exception_table::end_pc</a>, <a class="el" href="Attributes_8h_source.html#l00036">t_exception_table::handler_pc</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00008">lerU2()</a> e <a class="el" href="Attributes_8h_source.html#l00034">t_exception_table::start_pc</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Attributes_8cpp_source.html#l00019">lerAttributeInfo()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="Attributes_8cpp_a7575ffc9147cf9ff818f11e41e5799d2_cgraph.png" border="0" usemap="#Attributes_8cpp_a7575ffc9147cf9ff818f11e41e5799d2_cgraph" alt=""/></div>
+<map name="Attributes_8cpp_a7575ffc9147cf9ff818f11e41e5799d2_cgraph" id="Attributes_8cpp_a7575ffc9147cf9ff818f11e41e5799d2_cgraph">
+<area shape="rect" id="node2" href="BasicTypes_8cpp.html#a046a0864e1577109bbaaa0370a56c2fe" title="Função para ler 2 bytes do arquivo .class. " alt="" coords="192,5,245,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adfa49b8c725742bda34b244e06e1f120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfa49b8c725742bda34b244e06e1f120">&#9670;&nbsp;</a></span>lerTodosAttributes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structattribute__info.html">attribute_info</a> * lerTodosAttributes </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>arquivoEntrada</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcp__info.html">cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constantPool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tamanho</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Faz a leitura de n atributos da constantpool. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arquivoEntrada</td><td>Ponteiro pro arquivo .class. </td></tr>
+    <tr><td class="paramname">constantPool</td><td>Poteiro pra constant pool. </td></tr>
+    <tr><td class="paramname">tamanho</td><td>Número de atributos. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="Attributes_8cpp_source.html#l00092">92</a> do ficheiro <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="Attributes_8cpp_source.html#l00081">lerAttribute()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00068">LeitorExibidor::carregar()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="Attributes_8cpp_adfa49b8c725742bda34b244e06e1f120_cgraph.png" border="0" usemap="#Attributes_8cpp_adfa49b8c725742bda34b244e06e1f120_cgraph" alt=""/></div>
+<map name="Attributes_8cpp_adfa49b8c725742bda34b244e06e1f120_cgraph" id="Attributes_8cpp_adfa49b8c725742bda34b244e06e1f120_cgraph">
+<area shape="rect" id="node2" href="Attributes_8cpp.html#a38665695db265d2377f3a5ba13f7c0b3" title="Faz a leitura de um atributo da constantpool. " alt="" coords="181,207,267,233"/>
+<area shape="rect" id="node3" href="Attributes_8cpp.html#ab9c855202d2513bcb5d5ef847b94a363" title="Faz a leitura das informações de um atributo. " alt="" coords="315,181,421,208"/>
+<area shape="rect" id="node7" href="BasicTypes_8cpp.html#a046a0864e1577109bbaaa0370a56c2fe" title="Função para ler 2 bytes do arquivo .class. " alt="" coords="717,131,770,157"/>
+<area shape="rect" id="node9" href="BasicTypes_8cpp.html#afab80ee9b8e60fd4080754f9229bbf5d" title="Função para ler 4 bytes do arquivo .class. " alt="" coords="535,232,588,259"/>
+<area shape="rect" id="node4" href="ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="469,29,653,56"/>
+<area shape="rect" id="node6" href="Attributes_8cpp.html#a7575ffc9147cf9ff818f11e41e5799d2" title="Função de leitura de exceções. " alt="" coords="492,80,631,107"/>
+<area shape="rect" id="node8" href="BasicTypes_8cpp.html#a7bcab19bcd9cb111d9f212889bc12223" title="Função para ler 1 byte do arquivo .class. " alt="" coords="535,181,588,208"/>
+<area shape="rect" id="node5" href="BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="701,29,785,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0a73dec553ae8bc41785faaac9c120a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a73dec553ae8bc41785faaac9c120a1">&#9670;&nbsp;</a></span>obterMnemonico()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string obterMnemonico </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>opcode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retorna o nome da operação. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">opcode</td><td>Opcode de operações da JVM </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="Attributes_8cpp_source.html#l00230">230</a> do ficheiro <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Attributes_8cpp_source.html#l00176">gravarArquivoAttribute()</a> e <a class="el" href="Attributes_8cpp_source.html#l00113">imprimirAttribute()</a>.</p>
+
+</div>
+</div>
+<a id="a2b0254c9dbb34d0fddd35925597b6659"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b0254c9dbb34d0fddd35925597b6659">&#9670;&nbsp;</a></span>obterParametrosOpcode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void obterParametrosOpcode </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>codigo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>indice</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função que mostra na tela os parâmetros dos opcodes. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codigo</td><td>Pointer of bytes wich are code and your arg. Ponteiro para vetor de bytes do código e seus parâemtros. </td></tr>
+    <tr><td class="paramname">indice</td><td>Posição na constantpool. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="Attributes_8cpp_source.html#l00863">863</a> do ficheiro <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="Attributes_8cpp_source.html#l00852">obterValorNBytes()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Attributes_8cpp_source.html#l00113">imprimirAttribute()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="Attributes_8cpp_a2b0254c9dbb34d0fddd35925597b6659_cgraph.png" border="0" usemap="#Attributes_8cpp_a2b0254c9dbb34d0fddd35925597b6659_cgraph" alt=""/></div>
+<map name="Attributes_8cpp_a2b0254c9dbb34d0fddd35925597b6659_cgraph" id="Attributes_8cpp_a2b0254c9dbb34d0fddd35925597b6659_cgraph">
+<area shape="rect" id="node2" href="Attributes_8cpp.html#a2c00cc0bad9d04b8667ccbc5a166650c" title="Função para retornar o conteúdo dos próximos n bytes. " alt="" coords="216,5,341,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2c00cc0bad9d04b8667ccbc5a166650c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c00cc0bad9d04b8667ccbc5a166650c">&#9670;&nbsp;</a></span>obterValorNBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t obterValorNBytes </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>numero</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>codigo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>indice</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para retornar o conteúdo dos próximos n bytes. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numero</td><td>Número de bytes a serem lidos. </td></tr>
+    <tr><td class="paramname">codigo</td><td>Ponteiro pra um vetor de bytes. </td></tr>
+    <tr><td class="paramname">indice</td><td>Posição do opcode no vetor. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="Attributes_8cpp_source.html#l00852">852</a> do ficheiro <a class="el" href="Attributes_8cpp_source.html">Attributes.cpp</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Attributes_8cpp_source.html#l01005">gravaArquivoObterParametrosOpcode()</a> e <a class="el" href="Attributes_8cpp_source.html#l00863">obterParametrosOpcode()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="Attributes_8cpp.html">Attributes.cpp</a></li>
+    <li class="footer">Gerado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

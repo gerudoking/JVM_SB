@@ -1,0 +1,1054 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Java Virtual Machine: Referência ao ficheiro include/BasicTypes.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Java Virtual Machine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('BasicTypes_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Componentes</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Definições de tipos</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro BasicTypes.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Tipos básicos utilizados para implementarmos a JVM.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Diagrama de dependências de inclusão para BasicTypes.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="BasicTypes_8h__incl.png" border="0" usemap="#include_2BasicTypes_8h" alt=""/></div>
+<map name="include_2BasicTypes_8h" id="include_2BasicTypes_8h">
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro:</div>
+<div class="dyncontent">
+<div class="center"><img src="BasicTypes_8h__dep__incl.png" border="0" usemap="#include_2BasicTypes_8hdep" alt=""/></div>
+<map name="include_2BasicTypes_8hdep" id="include_2BasicTypes_8hdep">
+<area shape="rect" id="node2" href="BasicTypes_8cpp.html" title="src/BasicTypes.cpp" alt="" coords="5,80,144,107"/>
+<area shape="rect" id="node3" href="ConstantPool_8h.html" title="Módulo Constant pool. " alt="" coords="580,80,737,107"/>
+<area shape="rect" id="node7" href="Fields_8h.html" title="Gerencia as informações dos campos do arquivo .class. " alt="" coords="270,229,383,256"/>
+<area shape="rect" id="node9" href="ClasseLeitorExibidor_8h.html" title="Definição da ClasseLeitorExibidor. " alt="" coords="763,304,962,331"/>
+<area shape="rect" id="node18" href="MethodArea_8h.html" title="Responsável por todas as operações que gerenciam os métodos. " alt="" coords="495,603,643,629"/>
+<area shape="rect" id="node22" href="Frame_8h.html" title="Contém tudo necessário para a execução de um método. " alt="" coords="745,528,860,555"/>
+<area shape="rect" id="node24" href="Methods_8h.html" title="Gerencia as informações dos metodos do arquivo .class. " alt="" coords="659,229,787,256"/>
+<area shape="rect" id="node26" href="Interfaces_8h.html" title="Gerencia as informações da interfaces do arquivo .class. " alt="" coords="857,155,993,181"/>
+<area shape="rect" id="node28" href="Flags_8h.html" title="ClassFlags (public, final, super, interface and abstract) " alt="" coords="975,80,1086,107"/>
+<area shape="rect" id="node30" href="OperandsStack_8h.html" title="Pilha responsável por armazenar os operandos da JVM. " alt="" coords="1397,304,1565,331"/>
+<area shape="rect" id="node32" href="LocalVariables_8h.html" title="Stores local variables to current method. " alt="" coords="1295,80,1457,107"/>
+<area shape="rect" id="node4" href="ConstantPool_8cpp.html" title="Este módulo contém as funções necessárias para a manipulação do pool de constantes. " alt="" coords="322,155,470,181"/>
+<area shape="rect" id="node5" href="Attributes_8h.html" title="Atributos a serem usados na execuçao da JVM. " alt="" coords="546,155,681,181"/>
+<area shape="rect" id="node6" href="Attributes_8cpp.html" title="src/Attributes.cpp" alt="" coords="459,229,584,256"/>
+<area shape="rect" id="node8" href="Fields_8cpp.html" title="Módulo responsável pela manipulação dos campos existentes no arquivo .class. " alt="" coords="275,304,379,331"/>
+<area shape="rect" id="node10" href="ClasseLeitorExibidor_8cpp.html" title="Classe que irá realizar a leitura do bytecode e salvar as informações do class file. " alt="" coords="588,379,777,405"/>
+<area shape="rect" id="node11" href="main_8cpp.html" title="Modulo principal, dá a opção de escolha entre exibidor e interpretador. " alt="" coords="853,379,950,405"/>
+<area shape="rect" id="node12" href="StaticClass_8h.html" title="Definição da StaticClass. " alt="" coords="1025,379,1172,405"/>
+<area shape="rect" id="node14" href="InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="1160,453,1323,480"/>
+<area shape="rect" id="node20" href="Operations_8h.html" title="include/Operations.h" alt="" coords="629,453,771,480"/>
+<area shape="rect" id="node13" href="StaticClass_8cpp.html" title="src/StaticClass.cpp" alt="" coords="947,453,1085,480"/>
+<area shape="rect" id="node15" href="InstanceClass_8cpp.html" title="src/InstanceClass.cpp" alt="" coords="1261,528,1414,555"/>
+<area shape="rect" id="node16" href="Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="1127,528,1236,555"/>
+<area shape="rect" id="node17" href="Heap_8cpp.html" title="src/Heap.cpp" alt="" coords="1131,603,1231,629"/>
+<area shape="rect" id="node19" href="MethodArea_8cpp.html" title="src/MethodArea.cpp" alt="" coords="500,677,639,704"/>
+<area shape="rect" id="node21" href="Operations_8cpp.html" title="src/Operations.cpp" alt="" coords="538,528,670,555"/>
+<area shape="rect" id="node23" href="Frame_8cpp.html" title="src/Frame.cpp" alt="" coords="749,603,856,629"/>
+<area shape="rect" id="node25" href="Methods_8cpp.html" title="src/Methods.cpp" alt="" coords="621,304,739,331"/>
+<area shape="rect" id="node27" href="Interfaces_8cpp.html" title="src/Interfaces.cpp" alt="" coords="862,229,989,256"/>
+<area shape="rect" id="node29" href="Flags_8cpp.html" title="src/Flags.cpp" alt="" coords="1068,155,1169,181"/>
+<area shape="rect" id="node31" href="OperandsStack_8cpp.html" title="Pilha de operandos. " alt="" coords="1449,379,1607,405"/>
+<area shape="rect" id="node33" href="LocalVariables_8cpp.html" title="src/LocalVariables.cpp" alt="" coords="1397,155,1552,181"/>
+</map>
+</div>
+</div>
+<p><a href="BasicTypes_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Componentes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionClassLoaderType.html">ClassLoaderType</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura de dados para armazenamento Union responsável por armazenar todos os tamanhos de variáveis utilzadas na JVM.  <a href="unionClassLoaderType.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionelement__u.html">element_u</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structN__array.html">N_array</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtypedElement__s.html">typedElement_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agregador de tipos e informações. Struct responsável por juntar tipos e informações de elementos.  <a href="structtypedElement__s.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a2222d817ce6bbd243023a7471e44a5d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a2222d817ce6bbd243023a7471e44a5d6">Float_NaN</a>&#160;&#160;&#160;0x7f800001</td></tr>
+<tr class="separator:a2222d817ce6bbd243023a7471e44a5d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af40742e3f905fd8d0968a3f0b5160649"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#af40742e3f905fd8d0968a3f0b5160649">Float_PlusInfinity</a>&#160;&#160;&#160;0x7f800000</td></tr>
+<tr class="separator:af40742e3f905fd8d0968a3f0b5160649"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8553cea1fd99855eeadf2f4ea7a3ac72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a8553cea1fd99855eeadf2f4ea7a3ac72">Float_MinusInfinity</a>&#160;&#160;&#160;0xff800000</td></tr>
+<tr class="separator:a8553cea1fd99855eeadf2f4ea7a3ac72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30cf2596dc23460158fefbe6dc4c359e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a30cf2596dc23460158fefbe6dc4c359e">Double_NaN</a>&#160;&#160;&#160;0x7ff0000000000001L</td></tr>
+<tr class="separator:a30cf2596dc23460158fefbe6dc4c359e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2323042af27da372d902198570438d6d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a2323042af27da372d902198570438d6d">Double_PlusInfinity</a>&#160;&#160;&#160;0x7ff0000000000000L</td></tr>
+<tr class="separator:a2323042af27da372d902198570438d6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5fb6a3d0e63e11648c5f3ad7febb0ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#ad5fb6a3d0e63e11648c5f3ad7febb0ad">Double_MinusInfinity</a>&#160;&#160;&#160;0xfff0000000000000L</td></tr>
+<tr class="separator:ad5fb6a3d0e63e11648c5f3ad7febb0ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a991e148e312c68d851b11b4b7be584"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a5a991e148e312c68d851b11b4b7be584">RT_BYTE</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a5a991e148e312c68d851b11b4b7be584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0ecf90db844a032db00e19482c633d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#ae0ecf90db844a032db00e19482c633d1">RT_BOOL</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:ae0ecf90db844a032db00e19482c633d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefa4685f803fc7df5788405390df6aab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#aefa4685f803fc7df5788405390df6aab">RT_CHAR</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:aefa4685f803fc7df5788405390df6aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15a051a50ea712336d1e809ed5fe240f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a15a051a50ea712336d1e809ed5fe240f">RT_SHORT</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a15a051a50ea712336d1e809ed5fe240f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8d7be4292c8262f3fe8a12a9d5012f1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#ae8d7be4292c8262f3fe8a12a9d5012f1">RT_INT</a>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:ae8d7be4292c8262f3fe8a12a9d5012f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eee60e646767c4b249177593302d237"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a1eee60e646767c4b249177593302d237">RT_FLOAT</a>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:a1eee60e646767c4b249177593302d237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e1ffaf0d9c3d4614139871cfea4e779"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a3e1ffaf0d9c3d4614139871cfea4e779">RT_DOUBLE</a>&#160;&#160;&#160;7</td></tr>
+<tr class="separator:a3e1ffaf0d9c3d4614139871cfea4e779"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2620c935a093d64e17628fbb36a5e79"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#ac2620c935a093d64e17628fbb36a5e79">RT_REFERENCE</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:ac2620c935a093d64e17628fbb36a5e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a321c0fe6e16c9d74517df8a769fa723d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a321c0fe6e16c9d74517df8a769fa723d">RT_LONG</a>&#160;&#160;&#160;9</td></tr>
+<tr class="separator:a321c0fe6e16c9d74517df8a769fa723d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Definições de tipos</h2></td></tr>
+<tr class="memitem:a9bffe5bb2564f91cd90fb7d06848f9a8"><td class="memItemLeft" align="right" valign="top">typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a9bffe5bb2564f91cd90fb7d06848f9a8">U1</a></td></tr>
+<tr class="separator:a9bffe5bb2564f91cd90fb7d06848f9a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90240657108b1b457eef9d3f76e0202e"><td class="memItemLeft" align="right" valign="top">typedef uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a></td></tr>
+<tr class="separator:a90240657108b1b457eef9d3f76e0202e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6d2ba2e53dd424684ead2f40e74a8b6"><td class="memItemLeft" align="right" valign="top">typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#ac6d2ba2e53dd424684ead2f40e74a8b6">U4</a></td></tr>
+<tr class="separator:ac6d2ba2e53dd424684ead2f40e74a8b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8132f4f0515064141e31e606660df561"><td class="memItemLeft" align="right" valign="top">typedef union <a class="el" href="unionelement__u.html">element_u</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a8132f4f0515064141e31e606660df561">Element</a></td></tr>
+<tr class="separator:a8132f4f0515064141e31e606660df561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97b332303b1262282599e6ede0637b82"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structtypedElement__s.html">typedElement_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a97b332303b1262282599e6ede0637b82">TypedElement</a></td></tr>
+<tr class="separator:a97b332303b1262282599e6ede0637b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a7bcab19bcd9cb111d9f212889bc12223"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a9bffe5bb2564f91cd90fb7d06848f9a8">U1</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a7bcab19bcd9cb111d9f212889bc12223">lerU1</a> (FILE *fp)</td></tr>
+<tr class="memdesc:a7bcab19bcd9cb111d9f212889bc12223"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para ler 1 byte do arquivo .class.  <a href="#a7bcab19bcd9cb111d9f212889bc12223">Mais...</a><br /></td></tr>
+<tr class="separator:a7bcab19bcd9cb111d9f212889bc12223"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a046a0864e1577109bbaaa0370a56c2fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a046a0864e1577109bbaaa0370a56c2fe">lerU2</a> (FILE *fp)</td></tr>
+<tr class="memdesc:a046a0864e1577109bbaaa0370a56c2fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para ler 2 bytes do arquivo .class.  <a href="#a046a0864e1577109bbaaa0370a56c2fe">Mais...</a><br /></td></tr>
+<tr class="separator:a046a0864e1577109bbaaa0370a56c2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afab80ee9b8e60fd4080754f9229bbf5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#ac6d2ba2e53dd424684ead2f40e74a8b6">U4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#afab80ee9b8e60fd4080754f9229bbf5d">lerU4</a> (FILE *fp)</td></tr>
+<tr class="memdesc:afab80ee9b8e60fd4080754f9229bbf5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para ler 4 bytes do arquivo .class.  <a href="#afab80ee9b8e60fd4080754f9229bbf5d">Mais...</a><br /></td></tr>
+<tr class="separator:afab80ee9b8e60fd4080754f9229bbf5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c91891f672560f81efa0b17316c2435"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a9bffe5bb2564f91cd90fb7d06848f9a8">U1</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a8c91891f672560f81efa0b17316c2435">lerUTF8</a> (FILE *fp, int size)</td></tr>
+<tr class="memdesc:a8c91891f672560f81efa0b17316c2435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para ler os bytes de uma string UTF-8.  <a href="#a8c91891f672560f81efa0b17316c2435">Mais...</a><br /></td></tr>
+<tr class="separator:a8c91891f672560f81efa0b17316c2435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67ca85defbd318c40aa28d8821733ab5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a67ca85defbd318c40aa28d8821733ab5">obterUTF8</a> (unsigned char *s, int size)</td></tr>
+<tr class="memdesc:a67ca85defbd318c40aa28d8821733ab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para montar e mostrar a uma string UTF-8.  <a href="#a67ca85defbd318c40aa28d8821733ab5">Mais...</a><br /></td></tr>
+<tr class="separator:a67ca85defbd318c40aa28d8821733ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3637e840957d6b53327825379c5635a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a3637e840957d6b53327825379c5635a0">verificarFloat</a> (float f)</td></tr>
+<tr class="memdesc:a3637e840957d6b53327825379c5635a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para verificar NaN e infinito.  <a href="#a3637e840957d6b53327825379c5635a0">Mais...</a><br /></td></tr>
+<tr class="separator:a3637e840957d6b53327825379c5635a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f97022fe564a4a05a3b75dfb039f13e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a5f97022fe564a4a05a3b75dfb039f13e">verificarDouble</a> (double d)</td></tr>
+<tr class="memdesc:a5f97022fe564a4a05a3b75dfb039f13e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para verificar NaN e infinito.  <a href="#a5f97022fe564a4a05a3b75dfb039f13e">Mais...</a><br /></td></tr>
+<tr class="separator:a5f97022fe564a4a05a3b75dfb039f13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94660e9c3340c88b188740838a480188"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a94660e9c3340c88b188740838a480188">converter_float_to_string</a> (float f)</td></tr>
+<tr class="memdesc:a94660e9c3340c88b188740838a480188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para converter float para string.  <a href="#a94660e9c3340c88b188740838a480188">Mais...</a><br /></td></tr>
+<tr class="separator:a94660e9c3340c88b188740838a480188"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0863aa6ecc6e4cea0d76373c21f6b877"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a0863aa6ecc6e4cea0d76373c21f6b877">converter_double_to_string</a> (double d)</td></tr>
+<tr class="memdesc:a0863aa6ecc6e4cea0d76373c21f6b877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para converter double para string.  <a href="#a0863aa6ecc6e4cea0d76373c21f6b877">Mais...</a><br /></td></tr>
+<tr class="separator:a0863aa6ecc6e4cea0d76373c21f6b877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7a9717de257f3526a4889b62f55c814"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#ac7a9717de257f3526a4889b62f55c814">converter_u4_to_float</a> (<a class="el" href="unionClassLoaderType.html">ClassLoaderType</a> in)</td></tr>
+<tr class="memdesc:ac7a9717de257f3526a4889b62f55c814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para converter 4 bytes em float.  <a href="#ac7a9717de257f3526a4889b62f55c814">Mais...</a><br /></td></tr>
+<tr class="separator:ac7a9717de257f3526a4889b62f55c814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68e08bb93458d2a9002645705f970e34"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a68e08bb93458d2a9002645705f970e34">converter_u4_to_long</a> (<a class="el" href="unionClassLoaderType.html">ClassLoaderType</a> high, <a class="el" href="unionClassLoaderType.html">ClassLoaderType</a> low)</td></tr>
+<tr class="memdesc:a68e08bb93458d2a9002645705f970e34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para converter 8 bytes em um longo.  <a href="#a68e08bb93458d2a9002645705f970e34">Mais...</a><br /></td></tr>
+<tr class="separator:a68e08bb93458d2a9002645705f970e34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01de6b870a770894bf9ce59df9604f88"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BasicTypes_8h.html#a01de6b870a770894bf9ce59df9604f88">converter_u4_to_double</a> (<a class="el" href="unionClassLoaderType.html">ClassLoaderType</a> high, <a class="el" href="unionClassLoaderType.html">ClassLoaderType</a> low)</td></tr>
+<tr class="memdesc:a01de6b870a770894bf9ce59df9604f88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para converter 8 bytes em um duplo.  <a href="#a01de6b870a770894bf9ce59df9604f88">Mais...</a><br /></td></tr>
+<tr class="separator:a01de6b870a770894bf9ce59df9604f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Tipos básicos utilizados para implementarmos a JVM. </p>
+
+<p class="definition">Definido no ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+</div><h2 class="groupheader">Documentação das macros</h2>
+<a id="ad5fb6a3d0e63e11648c5f3ad7febb0ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5fb6a3d0e63e11648c5f3ad7febb0ad">&#9670;&nbsp;</a></span>Double_MinusInfinity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Double_MinusInfinity&#160;&#160;&#160;0xfff0000000000000L</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00024">24</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+</div>
+</div>
+<a id="a30cf2596dc23460158fefbe6dc4c359e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30cf2596dc23460158fefbe6dc4c359e">&#9670;&nbsp;</a></span>Double_NaN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Double_NaN&#160;&#160;&#160;0x7ff0000000000001L</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00022">22</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l01238">Operations::drem()</a>.</p>
+
+</div>
+</div>
+<a id="a2323042af27da372d902198570438d6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2323042af27da372d902198570438d6d">&#9670;&nbsp;</a></span>Double_PlusInfinity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Double_PlusInfinity&#160;&#160;&#160;0x7ff0000000000000L</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00023">23</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+</div>
+</div>
+<a id="a8553cea1fd99855eeadf2f4ea7a3ac72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8553cea1fd99855eeadf2f4ea7a3ac72">&#9670;&nbsp;</a></span>Float_MinusInfinity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Float_MinusInfinity&#160;&#160;&#160;0xff800000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00021">21</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+</div>
+</div>
+<a id="a2222d817ce6bbd243023a7471e44a5d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2222d817ce6bbd243023a7471e44a5d6">&#9670;&nbsp;</a></span>Float_NaN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Float_NaN&#160;&#160;&#160;0x7f800001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00019">19</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l01214">Operations::frem()</a>.</p>
+
+</div>
+</div>
+<a id="af40742e3f905fd8d0968a3f0b5160649"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af40742e3f905fd8d0968a3f0b5160649">&#9670;&nbsp;</a></span>Float_PlusInfinity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Float_PlusInfinity&#160;&#160;&#160;0x7f800000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00020">20</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+</div>
+</div>
+<a id="ae0ecf90db844a032db00e19482c633d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0ecf90db844a032db00e19482c633d1">&#9670;&nbsp;</a></span>RT_BOOL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_BOOL&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00027">27</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l00788">Operations::bastore()</a>, <a class="el" href="OperandsStack_8cpp_source.html#l00222">OperandsStack::empilharBool()</a>, <a class="el" href="Operations_8cpp_source.html#l02112">Operations::invokevirtual()</a> e <a class="el" href="Operations_8cpp_source.html#l02627">Operations::multianewarray()</a>.</p>
+
+</div>
+</div>
+<a id="a5a991e148e312c68d851b11b4b7be584"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a991e148e312c68d851b11b4b7be584">&#9670;&nbsp;</a></span>RT_BYTE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_BYTE&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00026">26</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l02112">Operations::invokevirtual()</a> e <a class="el" href="Operations_8cpp_source.html#l02627">Operations::multianewarray()</a>.</p>
+
+</div>
+</div>
+<a id="aefa4685f803fc7df5788405390df6aab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefa4685f803fc7df5788405390df6aab">&#9670;&nbsp;</a></span>RT_CHAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_CHAR&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00028">28</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l01539">Operations::i2c()</a>, <a class="el" href="Operations_8cpp_source.html#l02112">Operations::invokevirtual()</a> e <a class="el" href="Operations_8cpp_source.html#l02627">Operations::multianewarray()</a>.</p>
+
+</div>
+</div>
+<a id="a3e1ffaf0d9c3d4614139871cfea4e779"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e1ffaf0d9c3d4614139871cfea4e779">&#9670;&nbsp;</a></span>RT_DOUBLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_DOUBLE&#160;&#160;&#160;7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00032">32</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l00894">Operations::dadd()</a>, <a class="el" href="Operations_8cpp_source.html#l00758">Operations::dastore()</a>, <a class="el" href="Operations_8cpp_source.html#l01158">Operations::ddiv()</a>, <a class="el" href="Operations_8cpp_source.html#l01070">Operations::dmul()</a>, <a class="el" href="Operations_8cpp_source.html#l01299">Operations::dneg()</a>, <a class="el" href="Operations_8cpp_source.html#l01238">Operations::drem()</a>, <a class="el" href="Operations_8cpp_source.html#l00982">Operations::dsub()</a>, <a class="el" href="OperandsStack_8cpp_source.html#l00168">OperandsStack::empilharDouble()</a>, <a class="el" href="Operations_8cpp_source.html#l02112">Operations::invokevirtual()</a> e <a class="el" href="Operations_8cpp_source.html#l02627">Operations::multianewarray()</a>.</p>
+
+</div>
+</div>
+<a id="a1eee60e646767c4b249177593302d237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eee60e646767c4b249177593302d237">&#9670;&nbsp;</a></span>RT_FLOAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_FLOAT&#160;&#160;&#160;6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00031">31</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="OperandsStack_8cpp_source.html#l00145">OperandsStack::empilharFloat()</a>, <a class="el" href="Operations_8cpp_source.html#l00872">Operations::fadd()</a>, <a class="el" href="Operations_8cpp_source.html#l00743">Operations::fastore()</a>, <a class="el" href="Operations_8cpp_source.html#l01136">Operations::fdiv()</a>, <a class="el" href="Operations_8cpp_source.html#l01048">Operations::fmul()</a>, <a class="el" href="Operations_8cpp_source.html#l01286">Operations::fneg()</a>, <a class="el" href="Operations_8cpp_source.html#l01214">Operations::frem()</a>, <a class="el" href="Operations_8cpp_source.html#l00960">Operations::fsub()</a>, <a class="el" href="Operations_8cpp_source.html#l02112">Operations::invokevirtual()</a> e <a class="el" href="Operations_8cpp_source.html#l02627">Operations::multianewarray()</a>.</p>
+
+</div>
+</div>
+<a id="ae8d7be4292c8262f3fe8a12a9d5012f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8d7be4292c8262f3fe8a12a9d5012f1">&#9670;&nbsp;</a></span>RT_INT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_INT&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00030">30</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="OperandsStack_8cpp_source.html#l00124">OperandsStack::empilharInt()</a>, <a class="el" href="Operations_8cpp_source.html#l00828">Operations::iadd()</a>, <a class="el" href="Operations_8cpp_source.html#l01390">Operations::iand()</a>, <a class="el" href="Operations_8cpp_source.html#l01092">Operations::idiv()</a>, <a class="el" href="Operations_8cpp_source.html#l01004">Operations::imul()</a>, <a class="el" href="Operations_8cpp_source.html#l01262">Operations::ineg()</a>, <a class="el" href="Operations_8cpp_source.html#l02112">Operations::invokevirtual()</a>, <a class="el" href="Operations_8cpp_source.html#l01180">Operations::irem()</a>, <a class="el" href="Operations_8cpp_source.html#l01312">Operations::ishl()</a>, <a class="el" href="Operations_8cpp_source.html#l01338">Operations::ishr()</a>, <a class="el" href="Operations_8cpp_source.html#l00916">Operations::isub()</a>, <a class="el" href="Operations_8cpp_source.html#l01364">Operations::iushr()</a> e <a class="el" href="Operations_8cpp_source.html#l02627">Operations::multianewarray()</a>.</p>
+
+</div>
+</div>
+<a id="a321c0fe6e16c9d74517df8a769fa723d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a321c0fe6e16c9d74517df8a769fa723d">&#9670;&nbsp;</a></span>RT_LONG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_LONG&#160;&#160;&#160;9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00034">34</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="OperandsStack_8cpp_source.html#l00196">OperandsStack::empilharLong()</a>, <a class="el" href="Operations_8cpp_source.html#l02112">Operations::invokevirtual()</a>, <a class="el" href="Operations_8cpp_source.html#l00850">Operations::ladd()</a>, <a class="el" href="Operations_8cpp_source.html#l01403">Operations::land()</a>, <a class="el" href="Operations_8cpp_source.html#l00728">Operations::lastore()</a>, <a class="el" href="Operations_8cpp_source.html#l01114">Operations::ldiv()</a>, <a class="el" href="Operations_8cpp_source.html#l01026">Operations::lmul()</a>, <a class="el" href="Operations_8cpp_source.html#l01274">Operations::lneg()</a>, <a class="el" href="Operations_8cpp_source.html#l01197">Operations::lrem()</a>, <a class="el" href="Operations_8cpp_source.html#l01325">Operations::lshl()</a>, <a class="el" href="Operations_8cpp_source.html#l01351">Operations::lshr()</a>, <a class="el" href="Operations_8cpp_source.html#l00938">Operations::lsub()</a>, <a class="el" href="Operations_8cpp_source.html#l01377">Operations::lushr()</a> e <a class="el" href="Operations_8cpp_source.html#l02627">Operations::multianewarray()</a>.</p>
+
+</div>
+</div>
+<a id="ac2620c935a093d64e17628fbb36a5e79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2620c935a093d64e17628fbb36a5e79">&#9670;&nbsp;</a></span>RT_REFERENCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_REFERENCE&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00033">33</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l00773">Operations::aastore()</a>, <a class="el" href="OperandsStack_8cpp_source.html#l00246">OperandsStack::empilharReferencia()</a>, <a class="el" href="Operations_8cpp_source.html#l02112">Operations::invokevirtual()</a> e <a class="el" href="Operations_8cpp_source.html#l02627">Operations::multianewarray()</a>.</p>
+
+</div>
+</div>
+<a id="a15a051a50ea712336d1e809ed5fe240f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15a051a50ea712336d1e809ed5fe240f">&#9670;&nbsp;</a></span>RT_SHORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RT_SHORT&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00029">29</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l01548">Operations::i2s()</a>, <a class="el" href="Operations_8cpp_source.html#l02112">Operations::invokevirtual()</a>, <a class="el" href="Operations_8cpp_source.html#l02627">Operations::multianewarray()</a> e <a class="el" href="Operations_8cpp_source.html#l00814">Operations::sastore()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos tipos</h2>
+<a id="a8132f4f0515064141e31e606660df561"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8132f4f0515064141e31e606660df561">&#9670;&nbsp;</a></span>Element</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef union <a class="el" href="unionelement__u.html">element_u</a>  <a class="el" href="BasicTypes_8h.html#a8132f4f0515064141e31e606660df561">Element</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a97b332303b1262282599e6ede0637b82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97b332303b1262282599e6ede0637b82">&#9670;&nbsp;</a></span>TypedElement</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structtypedElement__s.html">typedElement_s</a>  <a class="el" href="BasicTypes_8h.html#a97b332303b1262282599e6ede0637b82">TypedElement</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9bffe5bb2564f91cd90fb7d06848f9a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bffe5bb2564f91cd90fb7d06848f9a8">&#9670;&nbsp;</a></span>U1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint8_t <a class="el" href="BasicTypes_8h.html#a9bffe5bb2564f91cd90fb7d06848f9a8">U1</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00036">36</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+</div>
+</div>
+<a id="a90240657108b1b457eef9d3f76e0202e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90240657108b1b457eef9d3f76e0202e">&#9670;&nbsp;</a></span>U2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint16_t <a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00037">37</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+</div>
+</div>
+<a id="ac6d2ba2e53dd424684ead2f40e74a8b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6d2ba2e53dd424684ead2f40e74a8b6">&#9670;&nbsp;</a></span>U4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint32_t <a class="el" href="BasicTypes_8h.html#ac6d2ba2e53dd424684ead2f40e74a8b6">U4</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00038">38</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a0863aa6ecc6e4cea0d76373c21f6b877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0863aa6ecc6e4cea0d76373c21f6b877">&#9670;&nbsp;</a></span>converter_double_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string converter_double_to_string </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para converter double para string. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td>Número a ser convertido. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8cpp_source.html#l00079">79</a> do ficheiro <a class="el" href="BasicTypes_8cpp_source.html">BasicTypes.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="BasicTypes_8cpp_source.html#l00117">verificarDouble()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="BasicTypes_8h_a0863aa6ecc6e4cea0d76373c21f6b877_cgraph.png" border="0" usemap="#BasicTypes_8h_a0863aa6ecc6e4cea0d76373c21f6b877_cgraph" alt=""/></div>
+<map name="BasicTypes_8h_a0863aa6ecc6e4cea0d76373c21f6b877_cgraph" id="BasicTypes_8h_a0863aa6ecc6e4cea0d76373c21f6b877_cgraph">
+<area shape="rect" id="node2" href="BasicTypes_8cpp.html#a5f97022fe564a4a05a3b75dfb039f13e" title="Função para verificar NaN e infinito. " alt="" coords="192,13,301,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a94660e9c3340c88b188740838a480188"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94660e9c3340c88b188740838a480188">&#9670;&nbsp;</a></span>converter_float_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string converter_float_to_string </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para converter float para string. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>Número a ser convertido. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8cpp_source.html#l00133">133</a> do ficheiro <a class="el" href="BasicTypes_8cpp_source.html">BasicTypes.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="BasicTypes_8cpp_source.html#l00100">verificarFloat()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="BasicTypes_8h_a94660e9c3340c88b188740838a480188_cgraph.png" border="0" usemap="#BasicTypes_8h_a94660e9c3340c88b188740838a480188_cgraph" alt=""/></div>
+<map name="BasicTypes_8h_a94660e9c3340c88b188740838a480188_cgraph" id="BasicTypes_8h_a94660e9c3340c88b188740838a480188_cgraph">
+<area shape="rect" id="node2" href="BasicTypes_8cpp.html#a3637e840957d6b53327825379c5635a0" title="Função para verificar NaN e infinito. " alt="" coords="180,13,277,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a01de6b870a770894bf9ce59df9604f88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01de6b870a770894bf9ce59df9604f88">&#9670;&nbsp;</a></span>converter_u4_to_double()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double converter_u4_to_double </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unionClassLoaderType.html">ClassLoaderType</a>&#160;</td>
+          <td class="paramname"><em>high</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="unionClassLoaderType.html">ClassLoaderType</a>&#160;</td>
+          <td class="paramname"><em>low</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para converter 8 bytes em um duplo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">high</td><td>Quatro bytes mais significativos a serem convertidos. </td></tr>
+    <tr><td class="paramname">low</td><td>Quatro últimos bytes significativos a serem convertidos. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8cpp_source.html#l00161">161</a> do ficheiro <a class="el" href="BasicTypes_8cpp_source.html">BasicTypes.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="BasicTypes_8cpp_source.html#l00153">converter_u4_to_long()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ConstantPool_8cpp_source.html#l00135">gravarArquivoConstantPool()</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00091">imprimirConstantPool()</a> e <a class="el" href="Operations_8cpp_source.html#l00207">Operations::ldc2_w()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="BasicTypes_8h_a01de6b870a770894bf9ce59df9604f88_cgraph.png" border="0" usemap="#BasicTypes_8h_a01de6b870a770894bf9ce59df9604f88_cgraph" alt=""/></div>
+<map name="BasicTypes_8h_a01de6b870a770894bf9ce59df9604f88_cgraph" id="BasicTypes_8h_a01de6b870a770894bf9ce59df9604f88_cgraph">
+<area shape="rect" id="node2" href="BasicTypes_8cpp.html#a68e08bb93458d2a9002645705f970e34" title="Função para converter 8 bytes em um longo. " alt="" coords="213,5,360,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac7a9717de257f3526a4889b62f55c814"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7a9717de257f3526a4889b62f55c814">&#9670;&nbsp;</a></span>converter_u4_to_float()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float converter_u4_to_float </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unionClassLoaderType.html">ClassLoaderType</a>&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para converter 4 bytes em float. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>quatro bytes a serem convertidos. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8cpp_source.html#l00184">184</a> do ficheiro <a class="el" href="BasicTypes_8cpp_source.html">BasicTypes.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="BasicTypes_8h_source.html#l00049">ClassLoaderType::u4</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ConstantPool_8cpp_source.html#l00135">gravarArquivoConstantPool()</a> e <a class="el" href="ConstantPool_8cpp_source.html#l00091">imprimirConstantPool()</a>.</p>
+
+</div>
+</div>
+<a id="a68e08bb93458d2a9002645705f970e34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68e08bb93458d2a9002645705f970e34">&#9670;&nbsp;</a></span>converter_u4_to_long()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long converter_u4_to_long </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unionClassLoaderType.html">ClassLoaderType</a>&#160;</td>
+          <td class="paramname"><em>high</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="unionClassLoaderType.html">ClassLoaderType</a>&#160;</td>
+          <td class="paramname"><em>low</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para converter 8 bytes em um longo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">high</td><td>Quatro bytes mais significativos a serem convertidos. </td></tr>
+    <tr><td class="paramname">low</td><td>Quatro últimos bytes significativos a serem convertidos. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8cpp_source.html#l00153">153</a> do ficheiro <a class="el" href="BasicTypes_8cpp_source.html">BasicTypes.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="BasicTypes_8h_source.html#l00049">ClassLoaderType::u4</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="BasicTypes_8cpp_source.html#l00161">converter_u4_to_double()</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00135">gravarArquivoConstantPool()</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00091">imprimirConstantPool()</a> e <a class="el" href="Operations_8cpp_source.html#l00207">Operations::ldc2_w()</a>.</p>
+
+</div>
+</div>
+<a id="a7bcab19bcd9cb111d9f212889bc12223"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bcab19bcd9cb111d9f212889bc12223">&#9670;&nbsp;</a></span>lerU1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#a9bffe5bb2564f91cd90fb7d06848f9a8">U1</a> lerU1 </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para ler 1 byte do arquivo .class. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fp</td><td>Ponteiro pro arquivo .class </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8cpp_source.html#l00021">21</a> do ficheiro <a class="el" href="BasicTypes_8cpp_source.html">BasicTypes.cpp</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ConstantPool_8cpp_source.html#l00008">carregarConstantPool()</a>, <a class="el" href="Attributes_8cpp_source.html#l00019">lerAttributeInfo()</a> e <a class="el" href="BasicTypes_8cpp_source.html#l00029">lerUTF8()</a>.</p>
+
+</div>
+</div>
+<a id="a046a0864e1577109bbaaa0370a56c2fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a046a0864e1577109bbaaa0370a56c2fe">&#9670;&nbsp;</a></span>lerU2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a> lerU2 </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para ler 2 bytes do arquivo .class. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fp</td><td>Ponteiro pro arquivo .class </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8cpp_source.html#l00008">8</a> do ficheiro <a class="el" href="BasicTypes_8cpp_source.html">BasicTypes.cpp</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00068">LeitorExibidor::carregar()</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00008">carregarConstantPool()</a>, <a class="el" href="Attributes_8cpp_source.html#l00081">lerAttribute()</a>, <a class="el" href="Attributes_8cpp_source.html#l00019">lerAttributeInfo()</a>, <a class="el" href="Attributes_8cpp_source.html#l00008">lerExceptionHandler()</a>, <a class="el" href="Fields_8cpp_source.html#l00046">lerField()</a>, <a class="el" href="Methods_8cpp_source.html#l00008">lerMethod()</a> e <a class="el" href="Interfaces_8cpp_source.html#l00008">lerTodasInterfaces()</a>.</p>
+
+</div>
+</div>
+<a id="afab80ee9b8e60fd4080754f9229bbf5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afab80ee9b8e60fd4080754f9229bbf5d">&#9670;&nbsp;</a></span>lerU4()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#ac6d2ba2e53dd424684ead2f40e74a8b6">U4</a> lerU4 </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para ler 4 bytes do arquivo .class. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fp</td><td>Ponteiro pro arquivo .class </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8cpp_source.html#l00040">40</a> do ficheiro <a class="el" href="BasicTypes_8cpp_source.html">BasicTypes.cpp</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00068">LeitorExibidor::carregar()</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00008">carregarConstantPool()</a>, <a class="el" href="Attributes_8cpp_source.html#l00081">lerAttribute()</a> e <a class="el" href="Attributes_8cpp_source.html#l00019">lerAttributeInfo()</a>.</p>
+
+</div>
+</div>
+<a id="a8c91891f672560f81efa0b17316c2435"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c91891f672560f81efa0b17316c2435">&#9670;&nbsp;</a></span>lerUTF8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#a9bffe5bb2564f91cd90fb7d06848f9a8">U1</a>* lerUTF8 </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para ler os bytes de uma string UTF-8. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fp</td><td>Ponteiro pro arquivo .class </td></tr>
+    <tr><td class="paramname">size</td><td>Tamanho que será alocado para a string. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8cpp_source.html#l00029">29</a> do ficheiro <a class="el" href="BasicTypes_8cpp_source.html">BasicTypes.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="BasicTypes_8cpp_source.html#l00021">lerU1()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ConstantPool_8cpp_source.html#l00008">carregarConstantPool()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="BasicTypes_8h_a8c91891f672560f81efa0b17316c2435_cgraph.png" border="0" usemap="#BasicTypes_8h_a8c91891f672560f81efa0b17316c2435_cgraph" alt=""/></div>
+<map name="BasicTypes_8h_a8c91891f672560f81efa0b17316c2435_cgraph" id="BasicTypes_8h_a8c91891f672560f81efa0b17316c2435_cgraph">
+<area shape="rect" id="node2" href="BasicTypes_8cpp.html#a7bcab19bcd9cb111d9f212889bc12223" title="Função para ler 1 byte do arquivo .class. " alt="" coords="123,5,176,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a67ca85defbd318c40aa28d8821733ab5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67ca85defbd318c40aa28d8821733ab5">&#9670;&nbsp;</a></span>obterUTF8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string obterUTF8 </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para montar e mostrar a uma string UTF-8. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Ponteiro para a posição inicial de uam string Unicode. </td></tr>
+    <tr><td class="paramname">size</td><td>Tamanho da string a ser impressa. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8cpp_source.html#l00053">53</a> do ficheiro <a class="el" href="BasicTypes_8cpp_source.html">BasicTypes.cpp</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00135">gravarArquivoConstantPool()</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00091">imprimirConstantPool()</a> e <a class="el" href="Operations_8cpp_source.html#l02112">Operations::invokevirtual()</a>.</p>
+
+</div>
+</div>
+<a id="a5f97022fe564a4a05a3b75dfb039f13e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f97022fe564a4a05a3b75dfb039f13e">&#9670;&nbsp;</a></span>verificarDouble()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int verificarDouble </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para verificar NaN e infinito. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td>Number to be checked. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8cpp_source.html#l00117">117</a> do ficheiro <a class="el" href="BasicTypes_8cpp_source.html">BasicTypes.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="BasicTypes_8h_source.html#l00057">element_u::d</a> e <a class="el" href="BasicTypes_8h_source.html#l00061">element_u::l</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="BasicTypes_8cpp_source.html#l00079">converter_double_to_string()</a>, <a class="el" href="Operations_8cpp_source.html#l01634">Operations::dcmpg()</a>, <a class="el" href="Operations_8cpp_source.html#l01613">Operations::dcmpl()</a> e <a class="el" href="Operations_8cpp_source.html#l01238">Operations::drem()</a>.</p>
+
+</div>
+</div>
+<a id="a3637e840957d6b53327825379c5635a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3637e840957d6b53327825379c5635a0">&#9670;&nbsp;</a></span>verificarFloat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int verificarFloat </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para verificar NaN e infinito. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>Número a ser verificado. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8cpp_source.html#l00100">100</a> do ficheiro <a class="el" href="BasicTypes_8cpp_source.html">BasicTypes.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="BasicTypes_8h_source.html#l00058">element_u::f</a> e <a class="el" href="BasicTypes_8h_source.html#l00059">element_u::i</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="BasicTypes_8cpp_source.html#l00133">converter_float_to_string()</a>, <a class="el" href="Operations_8cpp_source.html#l01592">Operations::fcmpg()</a>, <a class="el" href="Operations_8cpp_source.html#l01571">Operations::fcmpl()</a> e <a class="el" href="Operations_8cpp_source.html#l01214">Operations::frem()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="BasicTypes_8h.html">BasicTypes.h</a></li>
+    <li class="footer">Gerado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

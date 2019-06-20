@@ -1,0 +1,40 @@
+<map id="Operations::func_new" name="Operations::func_new">
+<area shape="rect" id="node2" href="$classMethodArea.html#a30233142aefa26c17a3a222582cb56c1" title="Carrega a classe na memória. " alt="" coords="222,464,415,491"/>
+<area shape="rect" id="node19" href="$ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="1611,93,1795,120"/>
+<area shape="rect" id="node34" href="$classOperandsStack.html#a47af7d965172984b9cc5c61d8c4c1ce3" title="Empilha um valor de tipo referencia. " alt="" coords="203,663,435,689"/>
+<area shape="rect" id="node36" href="$classMethodArea.html#a6e9d922892887daadd4624729268094f" title="Retorna referência para classe estática. " alt="" coords="237,713,400,740"/>
+<area shape="rect" id="node37" href="$classStaticClass.html#a2990aa887bcb06eaec53afe467e361ef" title="Retorna a instância da classe. " alt="" coords="230,765,407,806"/>
+<area shape="rect" id="node39" href="$classOperations.html#a6906050cc72d774f77d8ba33607b1c62" title="Function that returns a n bytes value. " alt="" coords="219,831,418,857"/>
+<area shape="rect" id="node3" href="$classFrameStack.html#aee31df6406a899bbf581eea9fc5545e6" title="Adiciona um frame no topo da pilha. " alt="" coords="496,768,687,795"/>
+<area shape="rect" id="node9" href="$classLeitorExibidor.html#a493a9aed1941a4f01c611a2deeb37f8d" title="LeitorExibidor::carregar" alt="" coords="513,464,669,491"/>
+<area shape="rect" id="node27" href="$classLeitorExibidor.html#a83ed9ca5a7b4442ae3449daffc0d3d5c" title="Verifica se a extensão do arquivo é .class. " alt="" coords="748,211,951,237"/>
+<area shape="rect" id="node31" href="$classLeitorExibidor.html#a5a3ef889b1e38506d9d0df17255cad4e" title="Verifica se o .class tem o método clinit. " alt="" coords="504,232,679,259"/>
+<area shape="rect" id="node32" href="$classLeitorExibidor.html#a58636f719aebaaa46524233b94b46537" title="Retorna o método clinit. " alt="" coords="507,819,675,845"/>
+<area shape="rect" id="node33" href="$classLeitorExibidor.html#ab286b420bb915f3444ec78a003f4c25c" title="Retorna referencia a constant pool. " alt="" coords="483,363,700,389"/>
+<area shape="rect" id="node4" href="$classOperations.html#a4a846f964056932fdf4d63056bfbe322" title="Operations::atualizarFrame" alt="" coords="760,936,939,963"/>
+<area shape="rect" id="node5" href="$classMethodArea.html#ac6423e447a5f46bf969bfb7df7500a2b" title="Atualiza a referência da pilha de frames para o próximo frame. " alt="" coords="756,987,943,1029"/>
+<area shape="rect" id="node6" href="$classOperations.html#a96812e295c8429a32e09720d89cd0176" title="Operations::atualizarFrame\lStack" alt="" coords="760,819,939,861"/>
+<area shape="rect" id="node7" href="$classOperations.html#a6c265501b41e227e1a15589a0bb03166" title="Operations::atualizarThreads" alt="" coords="755,768,944,795"/>
+<area shape="rect" id="node8" href="$classFrameStack.html#a9ec8c638092ec1ef9a00d09fde4b3d6f" title="Põe o PC na posição inicial. " alt="" coords="762,885,937,912"/>
+<area shape="rect" id="node10" href="$ConstantPool_8cpp.html#abf716c2159b12c236c8a9f0de8f76009" title="Carrega o pool de constantes. " alt="" coords="1195,363,1343,389"/>
+<area shape="rect" id="node12" href="$BasicTypes_8cpp.html#a046a0864e1577109bbaaa0370a56c2fe" title="Função para ler 2 bytes do arquivo .class. " alt="" coords="1858,591,1911,617"/>
+<area shape="rect" id="node13" href="$BasicTypes_8cpp.html#afab80ee9b8e60fd4080754f9229bbf5d" title="Função para ler 4 bytes do arquivo .class. " alt="" coords="1676,413,1729,440"/>
+<area shape="rect" id="node15" href="$Interfaces_8cpp.html#a107c86b6178f848a1159aedf372996ba" title="Carrega as interfaces na mem�ria a partir do arquivo class. " alt="" coords="999,679,1129,705"/>
+<area shape="rect" id="node16" href="$Attributes_8cpp.html#adfa49b8c725742bda34b244e06e1f120" title="Faz a leitura de n atributos da constantpool. " alt="" coords="1000,489,1128,516"/>
+<area shape="rect" id="node22" href="$Fields_8cpp.html#a6bf3bf1ccdfb538c9f215035f959949b" title="lerTodosFields" alt="" coords="796,565,903,592"/>
+<area shape="rect" id="node24" href="$Methods_8cpp.html#aa16600cd0535e01361ae50929f3592a8" title="lerTodosMethods" alt="" coords="788,616,911,643"/>
+<area shape="rect" id="node26" href="$classLeitorExibidor.html#abf046987d5b3f0ec33794a547a8f9e25" title="Retorna a string que contém uma mensagem de erro correspondente ao índice que recebe como parâmetro..." alt="" coords="768,515,931,541"/>
+<area shape="rect" id="node28" href="$classLeitorExibidor.html#a8aeff3d072e77288215e5a070e958cf0" title="Encontra em qual method esta a clinit, se existir. " alt="" coords="772,145,927,186"/>
+<area shape="rect" id="node29" href="$classLeitorExibidor.html#a2d486c9289a5d50a7fb00afffd2fa760" title="Encontro em qual method está a main. " alt="" coords="1177,177,1360,204"/>
+<area shape="rect" id="node30" href="$classLeitorExibidor.html#a89d56b461514ed8fea8987ee52fa2eb9" title="Verifica se a class definida é igual ao nome da classe sem extensões. " alt="" coords="1408,145,1563,186"/>
+<area shape="rect" id="node11" href="$BasicTypes_8cpp.html#a7bcab19bcd9cb111d9f212889bc12223" title="Função para ler 1 byte do arquivo .class. " alt="" coords="1676,261,1729,288"/>
+<area shape="rect" id="node14" href="$BasicTypes_8cpp.html#a7a11d8bcf2b55c896d5a48ecb39354b8" title="Função para ler os bytes de uma string UTF&#45;8. " alt="" coords="1451,211,1520,237"/>
+<area shape="rect" id="node17" href="$Attributes_8cpp.html#a38665695db265d2377f3a5ba13f7c0b3" title="Faz a leitura de um atributo da constantpool. " alt="" coords="1226,515,1311,541"/>
+<area shape="rect" id="node18" href="$Attributes_8cpp.html#ab9c855202d2513bcb5d5ef847b94a363" title="Faz a leitura das informações de um atributo. " alt="" coords="1432,515,1539,541"/>
+<area shape="rect" id="node21" href="$Attributes_8cpp.html#a7575ffc9147cf9ff818f11e41e5799d2" title="Função de leitura de exceções. " alt="" coords="1633,515,1772,541"/>
+<area shape="rect" id="node20" href="$BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="1843,93,1927,120"/>
+<area shape="rect" id="node23" href="$Fields_8cpp.html#a05c0ca1f2a1f0edd8012a23f0d27fd2b" title="Função que lê um campo. " alt="" coords="1032,565,1096,592"/>
+<area shape="rect" id="node25" href="$Methods_8cpp.html#afe9591554ea00006cfe58a3f52c43fbd" title="lerMethod" alt="" coords="1025,616,1103,643"/>
+<area shape="rect" id="node35" href="$classOperandsStack.html#a6ea316fc2b2503af2175fada4d4a9741" title="retorna o tamanho da pilha de operandos " alt="" coords="490,869,693,896"/>
+<area shape="rect" id="node38" href="$classHeap.html#a5bae14e30e89b613358edb7171b50abb" title="Adiciona novo objeto no heap. " alt="" coords="508,920,675,947"/>
+</map>

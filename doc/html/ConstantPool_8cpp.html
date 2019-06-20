@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Java Virtual Machine: Referência ao ficheiro src/ConstantPool.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Java Virtual Machine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ConstantPool_8cpp.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro ConstantPool.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Este módulo contém as funções necessárias para a manipulação do pool de constantes.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="ConstantPool_8h_source.html">ConstantPool.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Diagrama de dependências de inclusão para ConstantPool.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="ConstantPool_8cpp__incl.png" border="0" usemap="#src_2ConstantPool_8cpp" alt=""/></div>
+<map name="src_2ConstantPool_8cpp" id="src_2ConstantPool_8cpp">
+<area shape="rect" id="node2" href="ConstantPool_8h.html" title="Módulo Constant pool. " alt="" coords="240,80,352,107"/>
+<area shape="rect" id="node4" href="BasicTypes_8h.html" title="Tipos básicos utilizados para implementarmos a JVM. " alt="" coords="299,155,402,181"/>
+</map>
+</div>
+</div>
+<p><a href="ConstantPool_8cpp_source.html">Ir para o código fonte deste ficheiro.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:abf716c2159b12c236c8a9f0de8f76009"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantPool_8cpp.html#abf716c2159b12c236c8a9f0de8f76009">carregarConstantPool</a> (<a class="el" href="structcp__info.html">cp_info</a> *constantPool, int tamanho, FILE *arquivoEntrada)</td></tr>
+<tr class="memdesc:abf716c2159b12c236c8a9f0de8f76009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carrega o pool de constantes.  <a href="#abf716c2159b12c236c8a9f0de8f76009">Mais...</a><br /></td></tr>
+<tr class="separator:abf716c2159b12c236c8a9f0de8f76009"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00b9c6030da9035689ab932dde84a689"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689">capturarIndiceDeReferencia</a> (<a class="el" href="structcp__info.html">cp_info</a> *constantPool, <a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a> indice)</td></tr>
+<tr class="memdesc:a00b9c6030da9035689ab932dde84a689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna os dados no índice.  <a href="#a00b9c6030da9035689ab932dde84a689">Mais...</a><br /></td></tr>
+<tr class="separator:a00b9c6030da9035689ab932dde84a689"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add1a96a9137d048cb9533596e040373b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantPool_8cpp.html#add1a96a9137d048cb9533596e040373b">imprimirConstantPool</a> (<a class="el" href="structcp__info.html">cp_info</a> *constantPool, int tamanho)</td></tr>
+<tr class="memdesc:add1a96a9137d048cb9533596e040373b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime o pool de constantes.  <a href="#add1a96a9137d048cb9533596e040373b">Mais...</a><br /></td></tr>
+<tr class="separator:add1a96a9137d048cb9533596e040373b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29002da7ec720c67deef4bbac959805b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ConstantPool_8cpp.html#a29002da7ec720c67deef4bbac959805b">gravarArquivoConstantPool</a> (<a class="el" href="structcp__info.html">cp_info</a> *constantPool, int tamanho, fstream &amp;arquivoSaida)</td></tr>
+<tr class="memdesc:a29002da7ec720c67deef4bbac959805b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime o pool de constantes.  <a href="#a29002da7ec720c67deef4bbac959805b">Mais...</a><br /></td></tr>
+<tr class="separator:a29002da7ec720c67deef4bbac959805b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Este módulo contém as funções necessárias para a manipulação do pool de constantes. </p>
+
+<p class="definition">Definido no ficheiro <a class="el" href="ConstantPool_8cpp_source.html">ConstantPool.cpp</a>.</p>
+</div><h2 class="groupheader">Documentação das funções</h2>
+<a id="a00b9c6030da9035689ab932dde84a689"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00b9c6030da9035689ab932dde84a689">&#9670;&nbsp;</a></span>capturarIndiceDeReferencia()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string capturarIndiceDeReferencia </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcp__info.html">cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constantPool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a>&#160;</td>
+          <td class="paramname"><em>indice</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retorna os dados no índice. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">constantPool</td><td>- um ponteiro para o pool de contantes </td></tr>
+    <tr><td class="paramname">indice</td><td>- um índice para a posição no pool de constantes Função responsável por obter os dados correspondentes ao índice informado </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="ConstantPool_8cpp_source.html#l00065">65</a> do ficheiro <a class="el" href="ConstantPool_8cpp_source.html">ConstantPool.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ConstantPool_8h_source.html#l00033">CLASS</a>, <a class="el" href="ConstantPool_8h_source.html#l00035">FIELD_REF</a>, <a class="el" href="ConstantPool_8h_source.html#l00037">INTERFACE_REF</a>, <a class="el" href="ConstantPool_8h_source.html#l00036">METHOD_REF</a>, <a class="el" href="ConstantPool_8h_source.html#l00038">NAME_AND_TYPE</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00053">obterUTF8()</a>, <a class="el" href="ConstantPool_8h_source.html#l00034">STRING</a> e <a class="el" href="ConstantPool_8h_source.html#l00028">UTF8</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="MethodArea_8cpp_source.html#l00049">MethodArea::adicionarClasse()</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="Operations_8cpp_source.html#l02525">Operations::func_new()</a>, <a class="el" href="Operations_8cpp_source.html#l02078">Operations::getfield()</a>, <a class="el" href="Operations_8cpp_source.html#l01985">Operations::getstatic()</a>, <a class="el" href="Attributes_8cpp_source.html#l00176">gravarArquivoAttribute()</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00135">gravarArquivoConstantPool()</a>, <a class="el" href="Fields_8cpp_source.html#l00027">gravarArquivoField()</a>, <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00253">LeitorExibidor::gravarArquivoInformacoesGerais()</a>, <a class="el" href="Interfaces_8cpp_source.html#l00034">gravarArquivoInterface()</a>, <a class="el" href="Methods_8cpp_source.html#l00067">gravarArquivoMethod()</a>, <a class="el" href="Attributes_8cpp_source.html#l00113">imprimirAttribute()</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00091">imprimirConstantPool()</a>, <a class="el" href="Fields_8cpp_source.html#l00008">imprimirField()</a>, <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00224">LeitorExibidor::imprimirInformacoesGerais()</a>, <a class="el" href="Interfaces_8cpp_source.html#l00024">imprimirInterface()</a>, <a class="el" href="Methods_8cpp_source.html#l00035">imprimirMethod()</a>, <a class="el" href="InstanceClass_8cpp_source.html#l00008">InstanceClass::InstanceClass()</a>, <a class="el" href="Operations_8cpp_source.html#l02448">Operations::invokeinterface()</a>, <a class="el" href="Operations_8cpp_source.html#l02271">Operations::invokespecial()</a>, <a class="el" href="Operations_8cpp_source.html#l02368">Operations::invokestatic()</a>, <a class="el" href="Operations_8cpp_source.html#l02112">Operations::invokevirtual()</a>, <a class="el" href="Attributes_8cpp_source.html#l00019">lerAttributeInfo()</a>, <a class="el" href="Operations_8cpp_source.html#l02627">Operations::multianewarray()</a>, <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00538">LeitorExibidor::obterClassThatHasSerachedMethod()</a>, <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00504">LeitorExibidor::obterField()</a>, <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00515">LeitorExibidor::obterMethod()</a>, <a class="el" href="Operations_8cpp_source.html#l01969">Operations::obterStaticClassThatHasField()</a>, <a class="el" href="Operations_8cpp_source.html#l02093">Operations::putfield()</a>, <a class="el" href="Operations_8cpp_source.html#l02035">Operations::putstatic()</a>, <a class="el" href="StaticClass_8cpp_source.html#l00008">StaticClass::StaticClass()</a>, <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00320">LeitorExibidor::verificarClinit()</a>, <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00297">LeitorExibidor::verificarMain()</a> e <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00362">LeitorExibidor::verificarThisClass()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="ConstantPool_8cpp_a00b9c6030da9035689ab932dde84a689_cgraph.png" border="0" usemap="#ConstantPool_8cpp_a00b9c6030da9035689ab932dde84a689_cgraph" alt=""/></div>
+<map name="ConstantPool_8cpp_a00b9c6030da9035689ab932dde84a689_cgraph" id="ConstantPool_8cpp_a00b9c6030da9035689ab932dde84a689_cgraph">
+<area shape="rect" id="node2" href="BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="237,29,321,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abf716c2159b12c236c8a9f0de8f76009"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf716c2159b12c236c8a9f0de8f76009">&#9670;&nbsp;</a></span>carregarConstantPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int carregarConstantPool </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcp__info.html">cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constantPool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tamanho</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>arquivoEntrada</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Carrega o pool de constantes. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">constantPool</td><td>- um ponteiro para o pool de contantes </td></tr>
+    <tr><td class="paramname">tamanho</td><td>- o tamanho do pool de constantes </td></tr>
+    <tr><td class="paramname">arquivoEntrada</td><td>- ponteiro para o arquivo .class </td></tr>
+  </table>
+  </dd>
+</dl>
+<h1><a class="anchor" id="desc"></a>
+Descrição</h1>
+<p>Função responsável por carregar o pool de constantes e todos os campos a ele relacionados </p><dl class="section return"><dt>Retorna</dt><dd>o número de elementos do pool de constantes </dd></dl>
+
+<p class="definition">Definido na linha <a class="el" href="ConstantPool_8cpp_source.html#l00008">8</a> do ficheiro <a class="el" href="ConstantPool_8cpp_source.html">ConstantPool.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="BasicTypes_8h_source.html#l00046">ClassLoaderType::array</a>, <a class="el" href="ConstantPool_8h_source.html#l00033">CLASS</a>, <a class="el" href="ConstantPool_8h_source.html#l00032">DOUBLE</a>, <a class="el" href="ConstantPool_8h_source.html#l00035">FIELD_REF</a>, <a class="el" href="ConstantPool_8h_source.html#l00030">FLOAT</a>, <a class="el" href="ConstantPool_8h_source.html#l00020">cp_info::info</a>, <a class="el" href="ConstantPool_8h_source.html#l00029">INTEGER</a>, <a class="el" href="ConstantPool_8h_source.html#l00037">INTERFACE_REF</a>, <a class="el" href="ConstantPool_8h_source.html#l00027">INVALID</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00021">lerU1()</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00008">lerU2()</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00040">lerU4()</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00029">lerUTF8()</a>, <a class="el" href="ConstantPool_8h_source.html#l00031">LONG</a>, <a class="el" href="ConstantPool_8h_source.html#l00036">METHOD_REF</a>, <a class="el" href="ConstantPool_8h_source.html#l00038">NAME_AND_TYPE</a>, <a class="el" href="ConstantPool_8h_source.html#l00034">STRING</a>, <a class="el" href="ConstantPool_8h_source.html#l00019">cp_info::tag</a>, <a class="el" href="BasicTypes_8h_source.html#l00048">ClassLoaderType::u2</a>, <a class="el" href="BasicTypes_8h_source.html#l00049">ClassLoaderType::u4</a> e <a class="el" href="ConstantPool_8h_source.html#l00028">UTF8</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00068">LeitorExibidor::carregar()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="ConstantPool_8cpp_abf716c2159b12c236c8a9f0de8f76009_cgraph.png" border="0" usemap="#ConstantPool_8cpp_abf716c2159b12c236c8a9f0de8f76009_cgraph" alt=""/></div>
+<map name="ConstantPool_8cpp_abf716c2159b12c236c8a9f0de8f76009_cgraph" id="ConstantPool_8cpp_abf716c2159b12c236c8a9f0de8f76009_cgraph">
+<area shape="rect" id="node2" href="BasicTypes_8cpp.html#a7bcab19bcd9cb111d9f212889bc12223" title="Função para ler 1 byte do arquivo .class. " alt="" coords="319,48,372,75"/>
+<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a046a0864e1577109bbaaa0370a56c2fe" title="Função para ler 2 bytes do arquivo .class. " alt="" coords="209,23,263,50"/>
+<area shape="rect" id="node4" href="BasicTypes_8cpp.html#afab80ee9b8e60fd4080754f9229bbf5d" title="Função para ler 4 bytes do arquivo .class. " alt="" coords="209,74,263,100"/>
+<area shape="rect" id="node5" href="BasicTypes_8cpp.html#a7a11d8bcf2b55c896d5a48ecb39354b8" title="Função para ler os bytes de uma string UTF&#45;8. " alt="" coords="201,124,271,151"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a29002da7ec720c67deef4bbac959805b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29002da7ec720c67deef4bbac959805b">&#9670;&nbsp;</a></span>gravarArquivoConstantPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gravarArquivoConstantPool </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcp__info.html">cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constantPool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tamanho</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">fstream &amp;&#160;</td>
+          <td class="paramname"><em>arquivoSaida</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imprime o pool de constantes. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">constantPool</td><td>- um ponteiro para o pool de contantes </td></tr>
+    <tr><td class="paramname">tamanho</td><td>- o tamanho do pool de constantes </td></tr>
+    <tr><td class="paramname">arquivoSaida</td><td>- arquivo saida Função responsável por gravar no arquivo o pool de constantes e todos os campos a ele relacionados </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="ConstantPool_8cpp_source.html#l00135">135</a> do ficheiro <a class="el" href="ConstantPool_8cpp_source.html">ConstantPool.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ConstantPool_8h_source.html#l00033">CLASS</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00161">converter_u4_to_double()</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00184">converter_u4_to_float()</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00153">converter_u4_to_long()</a>, <a class="el" href="ConstantPool_8h_source.html#l00032">DOUBLE</a>, <a class="el" href="ConstantPool_8h_source.html#l00035">FIELD_REF</a>, <a class="el" href="ConstantPool_8h_source.html#l00030">FLOAT</a>, <a class="el" href="ConstantPool_8h_source.html#l00029">INTEGER</a>, <a class="el" href="ConstantPool_8h_source.html#l00037">INTERFACE_REF</a>, <a class="el" href="ConstantPool_8h_source.html#l00031">LONG</a>, <a class="el" href="ConstantPool_8h_source.html#l00036">METHOD_REF</a>, <a class="el" href="ConstantPool_8h_source.html#l00038">NAME_AND_TYPE</a>, <a class="el" href="ConstantPool_8h_source.html#l00024">nomeTiposDados</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00053">obterUTF8()</a>, <a class="el" href="ConstantPool_8h_source.html#l00034">STRING</a>, <a class="el" href="ConstantPool_8h_source.html#l00019">cp_info::tag</a> e <a class="el" href="ConstantPool_8h_source.html#l00028">UTF8</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00203">LeitorExibidor::gravarArquivo()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="ConstantPool_8cpp_a29002da7ec720c67deef4bbac959805b_cgraph.png" border="0" usemap="#ConstantPool_8cpp_a29002da7ec720c67deef4bbac959805b_cgraph" alt=""/></div>
+<map name="ConstantPool_8cpp_a29002da7ec720c67deef4bbac959805b_cgraph" id="ConstantPool_8cpp_a29002da7ec720c67deef4bbac959805b_cgraph">
+<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="235,29,419,56"/>
+<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="498,68,582,95"/>
+<area shape="rect" id="node4" href="BasicTypes_8cpp.html#a01de6b870a770894bf9ce59df9604f88" title="Função para converter 8 bytes em um duplo. " alt="" coords="247,131,407,157"/>
+<area shape="rect" id="node5" href="BasicTypes_8cpp.html#a68e08bb93458d2a9002645705f970e34" title="Função para converter 8 bytes em um longo. " alt="" coords="467,144,613,171"/>
+<area shape="rect" id="node6" href="BasicTypes_8cpp.html#ac7a9717de257f3526a4889b62f55c814" title="Função para converter 4 bytes em float. " alt="" coords="253,232,400,259"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="add1a96a9137d048cb9533596e040373b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add1a96a9137d048cb9533596e040373b">&#9670;&nbsp;</a></span>imprimirConstantPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imprimirConstantPool </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcp__info.html">cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constantPool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tamanho</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imprime o pool de constantes. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">constantPool</td><td>- um ponteiro para o pool de contantes </td></tr>
+    <tr><td class="paramname">tamanho</td><td>- o tamanho do pool de constantes Função responsável por imprimir na tela o pool de constantes e todos os campos a ele relacionados </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="ConstantPool_8cpp_source.html#l00091">91</a> do ficheiro <a class="el" href="ConstantPool_8cpp_source.html">ConstantPool.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ConstantPool_8h_source.html#l00033">CLASS</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00161">converter_u4_to_double()</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00184">converter_u4_to_float()</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00153">converter_u4_to_long()</a>, <a class="el" href="ConstantPool_8h_source.html#l00032">DOUBLE</a>, <a class="el" href="ConstantPool_8h_source.html#l00035">FIELD_REF</a>, <a class="el" href="ConstantPool_8h_source.html#l00030">FLOAT</a>, <a class="el" href="ConstantPool_8h_source.html#l00029">INTEGER</a>, <a class="el" href="ConstantPool_8h_source.html#l00037">INTERFACE_REF</a>, <a class="el" href="ConstantPool_8h_source.html#l00031">LONG</a>, <a class="el" href="ConstantPool_8h_source.html#l00036">METHOD_REF</a>, <a class="el" href="ConstantPool_8h_source.html#l00038">NAME_AND_TYPE</a>, <a class="el" href="ConstantPool_8h_source.html#l00024">nomeTiposDados</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00053">obterUTF8()</a>, <a class="el" href="ConstantPool_8h_source.html#l00034">STRING</a>, <a class="el" href="ConstantPool_8h_source.html#l00019">cp_info::tag</a> e <a class="el" href="ConstantPool_8h_source.html#l00028">UTF8</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00176">LeitorExibidor::exibir()</a>.</p>
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="ConstantPool_8cpp_add1a96a9137d048cb9533596e040373b_cgraph.png" border="0" usemap="#ConstantPool_8cpp_add1a96a9137d048cb9533596e040373b_cgraph" alt=""/></div>
+<map name="ConstantPool_8cpp_add1a96a9137d048cb9533596e040373b_cgraph" id="ConstantPool_8cpp_add1a96a9137d048cb9533596e040373b_cgraph">
+<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="200,29,384,56"/>
+<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="463,68,547,95"/>
+<area shape="rect" id="node4" href="BasicTypes_8cpp.html#a01de6b870a770894bf9ce59df9604f88" title="Função para converter 8 bytes em um duplo. " alt="" coords="212,131,372,157"/>
+<area shape="rect" id="node5" href="BasicTypes_8cpp.html#a68e08bb93458d2a9002645705f970e34" title="Função para converter 8 bytes em um longo. " alt="" coords="432,144,579,171"/>
+<area shape="rect" id="node6" href="BasicTypes_8cpp.html#ac7a9717de257f3526a4889b62f55c814" title="Função para converter 4 bytes em float. " alt="" coords="219,232,365,259"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="ConstantPool_8cpp.html">ConstantPool.cpp</a></li>
+    <li class="footer">Gerado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

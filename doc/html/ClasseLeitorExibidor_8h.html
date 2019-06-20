@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Java Virtual Machine: Referência ao ficheiro include/ClasseLeitorExibidor.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Java Virtual Machine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ClasseLeitorExibidor_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Componentes</a> &#124;
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro ClasseLeitorExibidor.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Definição da ClasseLeitorExibidor.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &quot;<a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ConstantPool_8h_source.html">ConstantPool.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Flags_8h_source.html">Flags.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Fields_8h_source.html">Fields.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Attributes_8h_source.html">Attributes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Interfaces_8h_source.html">Interfaces.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Methods_8h_source.html">Methods.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="StaticClass_8h_source.html">StaticClass.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstanceClass_8h_source.html">InstanceClass.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MethodArea_8h_source.html">MethodArea.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Diagrama de dependências de inclusão para ClasseLeitorExibidor.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="ClasseLeitorExibidor_8h__incl.png" border="0" usemap="#include_2ClasseLeitorExibidor_8h" alt=""/></div>
+<map name="include_2ClasseLeitorExibidor_8h" id="include_2ClasseLeitorExibidor_8h">
+<area shape="rect" id="node9" href="BasicTypes_8h.html" title="Tipos básicos utilizados para implementarmos a JVM. " alt="" coords="863,528,966,555"/>
+<area shape="rect" id="node14" href="ConstantPool_8h.html" title="Módulo Constant pool. " alt="" coords="589,453,701,480"/>
+<area shape="rect" id="node15" href="Flags_8h.html" title="ClassFlags (public, final, super, interface and abstract) " alt="" coords="398,453,463,480"/>
+<area shape="rect" id="node16" href="Fields_8h.html" title="Gerencia as informações dos campos do arquivo .class. " alt="" coords="366,304,434,331"/>
+<area shape="rect" id="node17" href="Attributes_8h.html" title="Atributos a serem usados na execuçao da JVM. " alt="" coords="193,379,282,405"/>
+<area shape="rect" id="node18" href="Interfaces_8h.html" title="Gerencia as informações da interfaces do arquivo .class. " alt="" coords="813,379,904,405"/>
+<area shape="rect" id="node19" href="Methods_8h.html" title="Gerencia as informações dos metodos do arquivo .class. " alt="" coords="509,304,592,331"/>
+<area shape="rect" id="node20" href="StaticClass_8h.html" title="Definição da StaticClass. " alt="" coords="1409,304,1511,331"/>
+<area shape="rect" id="node24" href="InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="1409,379,1527,405"/>
+<area shape="rect" id="node27" href="MethodArea_8h.html" title="Responsável por todas as operações que gerenciam os métodos. " alt="" coords="973,80,1075,107"/>
+<area shape="rect" id="node21" href="OperandsStack_8h.html" title="Pilha responsável por armazenar os operandos da JVM. " alt="" coords="1224,453,1347,480"/>
+<area shape="rect" id="node25" href="Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="1459,453,1523,480"/>
+<area shape="rect" id="node30" href="Frame_8h.html" title="Contém tudo necessário para a execução de um método. " alt="" coords="973,155,1043,181"/>
+<area shape="rect" id="node31" href="LocalVariables_8h.html" title="Stores local variables to current method. " alt="" coords="1081,453,1199,480"/>
+<area shape="rect" id="node33" href="Operations_8h.html" title="Operations.h" alt="" coords="1232,229,1328,256"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro:</div>
+<div class="dyncontent">
+<div class="center"><img src="ClasseLeitorExibidor_8h__dep__incl.png" border="0" usemap="#include_2ClasseLeitorExibidor_8hdep" alt=""/></div>
+<map name="include_2ClasseLeitorExibidor_8hdep" id="include_2ClasseLeitorExibidor_8hdep">
+<area shape="rect" id="node2" href="ClasseLeitorExibidor_8cpp.html" title="Classe que irá realizar a leitura do bytecode e salvar as informações do class file. " alt="" coords="5,80,195,107"/>
+<area shape="rect" id="node3" href="main_8cpp.html" title="Modulo principal, dá a opção de escolha entre exibidor e interpretador. " alt="" coords="219,80,317,107"/>
+<area shape="rect" id="node4" href="StaticClass_8h.html" title="Definição da StaticClass. " alt="" coords="416,80,563,107"/>
+<area shape="rect" id="node6" href="InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="159,155,321,181"/>
+<area shape="rect" id="node10" href="MethodArea_8h.html" title="Responsável por todas as operações que gerenciam os métodos. " alt="" coords="794,304,942,331"/>
+<area shape="rect" id="node12" href="Operations_8h.html" title="include/Operations.h" alt="" coords="660,155,801,181"/>
+<area shape="rect" id="node14" href="Frame_8h.html" title="Contém tudo necessário para a execução de um método. " alt="" coords="609,229,724,256"/>
+<area shape="rect" id="node5" href="StaticClass_8cpp.html" title="src/StaticClass.cpp" alt="" coords="397,155,534,181"/>
+<area shape="rect" id="node7" href="InstanceClass_8cpp.html" title="src/InstanceClass.cpp" alt="" coords="67,229,221,256"/>
+<area shape="rect" id="node8" href="Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="245,229,355,256"/>
+<area shape="rect" id="node9" href="Heap_8cpp.html" title="src/Heap.cpp" alt="" coords="250,304,350,331"/>
+<area shape="rect" id="node11" href="MethodArea_8cpp.html" title="src/MethodArea.cpp" alt="" coords="799,379,937,405"/>
+<area shape="rect" id="node13" href="Operations_8cpp.html" title="src/Operations.cpp" alt="" coords="749,229,881,256"/>
+<area shape="rect" id="node15" href="Frame_8cpp.html" title="src/Frame.cpp" alt="" coords="613,304,720,331"/>
+</map>
+</div>
+</div>
+<p><a href="ClasseLeitorExibidor_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Componentes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLeitorExibidor.html">LeitorExibidor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a3722a184bb01f895ee1bc5786cbefa8c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClasseLeitorExibidor_8h.html#a3722a184bb01f895ee1bc5786cbefa8c">MISSING_ARGUMENT</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a3722a184bb01f895ee1bc5786cbefa8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab73afd4d51f397415568f4a5fb80f6e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClasseLeitorExibidor_8h.html#aab73afd4d51f397415568f4a5fb80f6e">CANT_OPEN</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:aab73afd4d51f397415568f4a5fb80f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f22fa59d1d8caa3fa4750147f559043"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClasseLeitorExibidor_8h.html#a5f22fa59d1d8caa3fa4750147f559043">INVALID_FILE</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a5f22fa59d1d8caa3fa4750147f559043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d08587be7624f46d6e1ce0892ab3ad4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClasseLeitorExibidor_8h.html#a2d08587be7624f46d6e1ce0892ab3ad4">UNKNOWN_TYPE</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a2d08587be7624f46d6e1ce0892ab3ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0122e6d8e9f62e0e7d20a6d2ef7a4714"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClasseLeitorExibidor_8h.html#a0122e6d8e9f62e0e7d20a6d2ef7a4714">INVALID_NAME</a>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:a0122e6d8e9f62e0e7d20a6d2ef7a4714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98e3929e6949250eb69f579b5fa83f3d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClasseLeitorExibidor_8h.html#a98e3929e6949250eb69f579b5fa83f3d">INVALID_EXTENSION</a>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:a98e3929e6949250eb69f579b5fa83f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02b051cf9a5b88d508a6abe525221e37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClasseLeitorExibidor_8h.html#a02b051cf9a5b88d508a6abe525221e37">MISSING_MAIN</a>&#160;&#160;&#160;7</td></tr>
+<tr class="separator:a02b051cf9a5b88d508a6abe525221e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47c684cb36010a1d89f05a0112fa8722"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClasseLeitorExibidor_8h.html#a47c684cb36010a1d89f05a0112fa8722">MISSING_CLINIT</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:a47c684cb36010a1d89f05a0112fa8722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Definição da ClasseLeitorExibidor. </p>
+
+<p class="definition">Definido no ficheiro <a class="el" href="ClasseLeitorExibidor_8h_source.html">ClasseLeitorExibidor.h</a>.</p>
+</div><h2 class="groupheader">Documentação das macros</h2>
+<a id="aab73afd4d51f397415568f4a5fb80f6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab73afd4d51f397415568f4a5fb80f6e">&#9670;&nbsp;</a></span>CANT_OPEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CANT_OPEN&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="ClasseLeitorExibidor_8h_source.html#l00035">35</a> do ficheiro <a class="el" href="ClasseLeitorExibidor_8h_source.html">ClasseLeitorExibidor.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00068">LeitorExibidor::carregar()</a> e <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00408">LeitorExibidor::obterErro()</a>.</p>
+
+</div>
+</div>
+<a id="a98e3929e6949250eb69f579b5fa83f3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98e3929e6949250eb69f579b5fa83f3d">&#9670;&nbsp;</a></span>INVALID_EXTENSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INVALID_EXTENSION&#160;&#160;&#160;6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="ClasseLeitorExibidor_8h_source.html#l00039">39</a> do ficheiro <a class="el" href="ClasseLeitorExibidor_8h_source.html">ClasseLeitorExibidor.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00068">LeitorExibidor::carregar()</a>, <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00408">LeitorExibidor::obterErro()</a> e <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00045">LeitorExibidor::validacao()</a>.</p>
+
+</div>
+</div>
+<a id="a5f22fa59d1d8caa3fa4750147f559043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f22fa59d1d8caa3fa4750147f559043">&#9670;&nbsp;</a></span>INVALID_FILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INVALID_FILE&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="ClasseLeitorExibidor_8h_source.html#l00036">36</a> do ficheiro <a class="el" href="ClasseLeitorExibidor_8h_source.html">ClasseLeitorExibidor.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00068">LeitorExibidor::carregar()</a> e <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00408">LeitorExibidor::obterErro()</a>.</p>
+
+</div>
+</div>
+<a id="a0122e6d8e9f62e0e7d20a6d2ef7a4714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0122e6d8e9f62e0e7d20a6d2ef7a4714">&#9670;&nbsp;</a></span>INVALID_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INVALID_NAME&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="ClasseLeitorExibidor_8h_source.html#l00038">38</a> do ficheiro <a class="el" href="ClasseLeitorExibidor_8h_source.html">ClasseLeitorExibidor.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00068">LeitorExibidor::carregar()</a>, <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00408">LeitorExibidor::obterErro()</a> e <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00045">LeitorExibidor::validacao()</a>.</p>
+
+</div>
+</div>
+<a id="a3722a184bb01f895ee1bc5786cbefa8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3722a184bb01f895ee1bc5786cbefa8c">&#9670;&nbsp;</a></span>MISSING_ARGUMENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MISSING_ARGUMENT&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>MACROS para os possíves erros encontrados </p>
+
+<p class="definition">Definido na linha <a class="el" href="ClasseLeitorExibidor_8h_source.html#l00034">34</a> do ficheiro <a class="el" href="ClasseLeitorExibidor_8h_source.html">ClasseLeitorExibidor.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00068">LeitorExibidor::carregar()</a> e <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00408">LeitorExibidor::obterErro()</a>.</p>
+
+</div>
+</div>
+<a id="a47c684cb36010a1d89f05a0112fa8722"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47c684cb36010a1d89f05a0112fa8722">&#9670;&nbsp;</a></span>MISSING_CLINIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MISSING_CLINIT&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="ClasseLeitorExibidor_8h_source.html#l00041">41</a> do ficheiro <a class="el" href="ClasseLeitorExibidor_8h_source.html">ClasseLeitorExibidor.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00408">LeitorExibidor::obterErro()</a>.</p>
+
+</div>
+</div>
+<a id="a02b051cf9a5b88d508a6abe525221e37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02b051cf9a5b88d508a6abe525221e37">&#9670;&nbsp;</a></span>MISSING_MAIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MISSING_MAIN&#160;&#160;&#160;7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="ClasseLeitorExibidor_8h_source.html#l00040">40</a> do ficheiro <a class="el" href="ClasseLeitorExibidor_8h_source.html">ClasseLeitorExibidor.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00408">LeitorExibidor::obterErro()</a> e <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00045">LeitorExibidor::validacao()</a>.</p>
+
+</div>
+</div>
+<a id="a2d08587be7624f46d6e1ce0892ab3ad4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d08587be7624f46d6e1ce0892ab3ad4">&#9670;&nbsp;</a></span>UNKNOWN_TYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNKNOWN_TYPE&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="ClasseLeitorExibidor_8h_source.html#l00037">37</a> do ficheiro <a class="el" href="ClasseLeitorExibidor_8h_source.html">ClasseLeitorExibidor.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00068">LeitorExibidor::carregar()</a> e <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00408">LeitorExibidor::obterErro()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="ClasseLeitorExibidor_8h.html">ClasseLeitorExibidor.h</a></li>
+    <li class="footer">Gerado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

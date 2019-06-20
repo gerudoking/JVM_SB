@@ -1,0 +1,5 @@
+<map id="Operations::fload_n" name="Operations::fload_n">
+<area shape="rect" id="node2" href="$classOperandsStack.html#aeed478b52748b87ac85db261332b633b" title="Empilha um valor de tipo float. " alt="" coords="188,5,387,32"/>
+<area shape="rect" id="node4" href="$classLocalVariables.html#a4abbb4a732d7dd0f11a147b79c15ae10" title="Gets element on past position by index. " alt="" coords="221,56,354,83"/>
+<area shape="rect" id="node3" href="$classOperandsStack.html#a6ea316fc2b2503af2175fada4d4a9741" title="retorna o tamanho da pilha de operandos " alt="" coords="435,5,637,32"/>
+</map>

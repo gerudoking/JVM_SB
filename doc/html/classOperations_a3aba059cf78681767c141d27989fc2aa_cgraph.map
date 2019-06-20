@@ -1,0 +1,5 @@
+<map id="Operations::iload_0" name="Operations::iload_0">
+<area shape="rect" id="node2" href="$classOperandsStack.html#a5006a59c2d815e4a24b055e2e4d2e741" title="Empilha um valor de tipo inteiro. " alt="" coords="188,5,372,32"/>
+<area shape="rect" id="node4" href="$classLocalVariables.html#a4abbb4a732d7dd0f11a147b79c15ae10" title="Gets element on past position by index. " alt="" coords="213,56,347,83"/>
+<area shape="rect" id="node3" href="$classOperandsStack.html#a6ea316fc2b2503af2175fada4d4a9741" title="retorna o tamanho da pilha de operandos " alt="" coords="420,5,623,32"/>
+</map>

@@ -1,0 +1,191 @@
+\hypertarget{ConstantPool_8cpp}{}\section{Referência ao ficheiro src/\+Constant\+Pool.cpp}
+\label{ConstantPool_8cpp}\index{src/\+Constant\+Pool.\+cpp@{src/\+Constant\+Pool.\+cpp}}
+
+
+Este módulo contém as funções necessárias para a manipulação do pool de constantes.  
+
+
+{\ttfamily \#include \char`\"{}Constant\+Pool.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para Constant\+Pool.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ConstantPool_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{ConstantPool_8cpp_abf716c2159b12c236c8a9f0de8f76009}{carregar\+Constant\+Pool} (\hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, int tamanho, F\+I\+LE $\ast$arquivo\+Entrada)
+\begin{DoxyCompactList}\small\item\em Carrega o pool de constantes. \end{DoxyCompactList}\item 
+string \hyperlink{ConstantPool_8cpp_a00b9c6030da9035689ab932dde84a689}{capturar\+Indice\+De\+Referencia} (\hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} indice)
+\begin{DoxyCompactList}\small\item\em Retorna os dados no índice. \end{DoxyCompactList}\item 
+void \hyperlink{ConstantPool_8cpp_add1a96a9137d048cb9533596e040373b}{imprimir\+Constant\+Pool} (\hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, int tamanho)
+\begin{DoxyCompactList}\small\item\em Imprime o pool de constantes. \end{DoxyCompactList}\item 
+void \hyperlink{ConstantPool_8cpp_a29002da7ec720c67deef4bbac959805b}{gravar\+Arquivo\+Constant\+Pool} (\hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, int tamanho, fstream \&arquivo\+Saida)
+\begin{DoxyCompactList}\small\item\em Imprime o pool de constantes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Este módulo contém as funções necessárias para a manipulação do pool de constantes. 
+
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{ConstantPool_8cpp_a00b9c6030da9035689ab932dde84a689}\label{ConstantPool_8cpp_a00b9c6030da9035689ab932dde84a689}} 
+\index{Constant\+Pool.\+cpp@{Constant\+Pool.\+cpp}!capturar\+Indice\+De\+Referencia@{capturar\+Indice\+De\+Referencia}}
+\index{capturar\+Indice\+De\+Referencia@{capturar\+Indice\+De\+Referencia}!Constant\+Pool.\+cpp@{Constant\+Pool.\+cpp}}
+\subsubsection{\texorpdfstring{capturar\+Indice\+De\+Referencia()}{capturarIndiceDeReferencia()}}
+{\footnotesize\ttfamily string capturar\+Indice\+De\+Referencia (\begin{DoxyParamCaption}\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2}}]{indice }\end{DoxyParamCaption})}
+
+
+
+Retorna os dados no índice. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em constant\+Pool} & -\/ um ponteiro para o pool de contantes \\
+\hline
+{\em indice} & -\/ um índice para a posição no pool de constantes Função responsável por obter os dados correspondentes ao índice informado \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 65 do ficheiro Constant\+Pool.\+cpp.
+
+
+
+Referências capturar\+Indice\+De\+Referencia(), C\+L\+A\+SS, F\+I\+E\+L\+D\+\_\+\+R\+EF, I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+R\+EF, M\+E\+T\+H\+O\+D\+\_\+\+R\+EF, N\+A\+M\+E\+\_\+\+A\+N\+D\+\_\+\+T\+Y\+PE, obter\+U\+T\+F8(), S\+T\+R\+I\+NG e U\+T\+F8.
+
+
+
+Referenciado por Method\+Area\+::adicionar\+Classe(), capturar\+Indice\+De\+Referencia(), Operations\+::func\+\_\+new(), Operations\+::getfield(), Operations\+::getstatic(), gravar\+Arquivo\+Attribute(), gravar\+Arquivo\+Constant\+Pool(), gravar\+Arquivo\+Field(), Leitor\+Exibidor\+::gravar\+Arquivo\+Informacoes\+Gerais(), gravar\+Arquivo\+Interface(), gravar\+Arquivo\+Method(), imprimir\+Attribute(), imprimir\+Constant\+Pool(), imprimir\+Field(), Leitor\+Exibidor\+::imprimir\+Informacoes\+Gerais(), imprimir\+Interface(), imprimir\+Method(), Instance\+Class\+::\+Instance\+Class(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), ler\+Attribute\+Info(), Operations\+::multianewarray(), Leitor\+Exibidor\+::obter\+Class\+That\+Has\+Serached\+Method(), Leitor\+Exibidor\+::obter\+Field(), Leitor\+Exibidor\+::obter\+Method(), Operations\+::obter\+Static\+Class\+That\+Has\+Field(), Operations\+::putfield(), Operations\+::putstatic(), Static\+Class\+::\+Static\+Class(), Leitor\+Exibidor\+::verificar\+Clinit(), Leitor\+Exibidor\+::verificar\+Main() e Leitor\+Exibidor\+::verificar\+This\+Class().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{ConstantPool_8cpp_a00b9c6030da9035689ab932dde84a689_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ConstantPool_8cpp_abf716c2159b12c236c8a9f0de8f76009}\label{ConstantPool_8cpp_abf716c2159b12c236c8a9f0de8f76009}} 
+\index{Constant\+Pool.\+cpp@{Constant\+Pool.\+cpp}!carregar\+Constant\+Pool@{carregar\+Constant\+Pool}}
+\index{carregar\+Constant\+Pool@{carregar\+Constant\+Pool}!Constant\+Pool.\+cpp@{Constant\+Pool.\+cpp}}
+\subsubsection{\texorpdfstring{carregar\+Constant\+Pool()}{carregarConstantPool()}}
+{\footnotesize\ttfamily int carregar\+Constant\+Pool (\begin{DoxyParamCaption}\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho,  }\item[{F\+I\+LE $\ast$}]{arquivo\+Entrada }\end{DoxyParamCaption})}
+
+
+
+Carrega o pool de constantes. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em constant\+Pool} & -\/ um ponteiro para o pool de contantes \\
+\hline
+{\em tamanho} & -\/ o tamanho do pool de constantes \\
+\hline
+{\em arquivo\+Entrada} & -\/ ponteiro para o arquivo .class \\
+\hline
+\end{DoxyParams}
+\hypertarget{ConstantPool_8cpp_desc}{}\subsection{Descrição}\label{ConstantPool_8cpp_desc}
+Função responsável por carregar o pool de constantes e todos os campos a ele relacionados \begin{DoxyReturn}{Retorna}
+o número de elementos do pool de constantes 
+\end{DoxyReturn}
+
+
+Definido na linha 8 do ficheiro Constant\+Pool.\+cpp.
+
+
+
+Referências Class\+Loader\+Type\+::array, C\+L\+A\+SS, D\+O\+U\+B\+LE, F\+I\+E\+L\+D\+\_\+\+R\+EF, F\+L\+O\+AT, cp\+\_\+info\+::info, I\+N\+T\+E\+G\+ER, I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+R\+EF, I\+N\+V\+A\+L\+ID, ler\+U1(), ler\+U2(), ler\+U4(), ler\+U\+T\+F8(), L\+O\+NG, M\+E\+T\+H\+O\+D\+\_\+\+R\+EF, N\+A\+M\+E\+\_\+\+A\+N\+D\+\_\+\+T\+Y\+PE, S\+T\+R\+I\+NG, cp\+\_\+info\+::tag, Class\+Loader\+Type\+::u2, Class\+Loader\+Type\+::u4 e U\+T\+F8.
+
+
+
+Referenciado por Leitor\+Exibidor\+::carregar().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ConstantPool_8cpp_abf716c2159b12c236c8a9f0de8f76009_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ConstantPool_8cpp_a29002da7ec720c67deef4bbac959805b}\label{ConstantPool_8cpp_a29002da7ec720c67deef4bbac959805b}} 
+\index{Constant\+Pool.\+cpp@{Constant\+Pool.\+cpp}!gravar\+Arquivo\+Constant\+Pool@{gravar\+Arquivo\+Constant\+Pool}}
+\index{gravar\+Arquivo\+Constant\+Pool@{gravar\+Arquivo\+Constant\+Pool}!Constant\+Pool.\+cpp@{Constant\+Pool.\+cpp}}
+\subsubsection{\texorpdfstring{gravar\+Arquivo\+Constant\+Pool()}{gravarArquivoConstantPool()}}
+{\footnotesize\ttfamily void gravar\+Arquivo\+Constant\+Pool (\begin{DoxyParamCaption}\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho,  }\item[{fstream \&}]{arquivo\+Saida }\end{DoxyParamCaption})}
+
+
+
+Imprime o pool de constantes. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em constant\+Pool} & -\/ um ponteiro para o pool de contantes \\
+\hline
+{\em tamanho} & -\/ o tamanho do pool de constantes \\
+\hline
+{\em arquivo\+Saida} & -\/ arquivo saida Função responsável por gravar no arquivo o pool de constantes e todos os campos a ele relacionados \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 135 do ficheiro Constant\+Pool.\+cpp.
+
+
+
+Referências capturar\+Indice\+De\+Referencia(), C\+L\+A\+SS, converter\+\_\+u4\+\_\+to\+\_\+double(), converter\+\_\+u4\+\_\+to\+\_\+float(), converter\+\_\+u4\+\_\+to\+\_\+long(), D\+O\+U\+B\+LE, F\+I\+E\+L\+D\+\_\+\+R\+EF, F\+L\+O\+AT, I\+N\+T\+E\+G\+ER, I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+R\+EF, L\+O\+NG, M\+E\+T\+H\+O\+D\+\_\+\+R\+EF, N\+A\+M\+E\+\_\+\+A\+N\+D\+\_\+\+T\+Y\+PE, nome\+Tipos\+Dados, obter\+U\+T\+F8(), S\+T\+R\+I\+NG, cp\+\_\+info\+::tag e U\+T\+F8.
+
+
+
+Referenciado por Leitor\+Exibidor\+::gravar\+Arquivo().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ConstantPool_8cpp_a29002da7ec720c67deef4bbac959805b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ConstantPool_8cpp_add1a96a9137d048cb9533596e040373b}\label{ConstantPool_8cpp_add1a96a9137d048cb9533596e040373b}} 
+\index{Constant\+Pool.\+cpp@{Constant\+Pool.\+cpp}!imprimir\+Constant\+Pool@{imprimir\+Constant\+Pool}}
+\index{imprimir\+Constant\+Pool@{imprimir\+Constant\+Pool}!Constant\+Pool.\+cpp@{Constant\+Pool.\+cpp}}
+\subsubsection{\texorpdfstring{imprimir\+Constant\+Pool()}{imprimirConstantPool()}}
+{\footnotesize\ttfamily void imprimir\+Constant\+Pool (\begin{DoxyParamCaption}\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho }\end{DoxyParamCaption})}
+
+
+
+Imprime o pool de constantes. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em constant\+Pool} & -\/ um ponteiro para o pool de contantes \\
+\hline
+{\em tamanho} & -\/ o tamanho do pool de constantes Função responsável por imprimir na tela o pool de constantes e todos os campos a ele relacionados \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 91 do ficheiro Constant\+Pool.\+cpp.
+
+
+
+Referências capturar\+Indice\+De\+Referencia(), C\+L\+A\+SS, converter\+\_\+u4\+\_\+to\+\_\+double(), converter\+\_\+u4\+\_\+to\+\_\+float(), converter\+\_\+u4\+\_\+to\+\_\+long(), D\+O\+U\+B\+LE, F\+I\+E\+L\+D\+\_\+\+R\+EF, F\+L\+O\+AT, I\+N\+T\+E\+G\+ER, I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+R\+EF, L\+O\+NG, M\+E\+T\+H\+O\+D\+\_\+\+R\+EF, N\+A\+M\+E\+\_\+\+A\+N\+D\+\_\+\+T\+Y\+PE, nome\+Tipos\+Dados, obter\+U\+T\+F8(), S\+T\+R\+I\+NG, cp\+\_\+info\+::tag e U\+T\+F8.
+
+
+
+Referenciado por Leitor\+Exibidor\+::exibir().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ConstantPool_8cpp_add1a96a9137d048cb9533596e040373b_cgraph}
+\end{center}
+\end{figure}

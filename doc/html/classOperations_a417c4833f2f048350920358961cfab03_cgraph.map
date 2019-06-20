@@ -1,0 +1,5 @@
+<map id="Operations::castore" name="Operations::castore">
+<area shape="rect" id="node2" href="$classOperandsStack.html#a3213a1b633149de9332217d403ee84b6" title="Desempilha o topo da pilha de operandos e retorna em um elemento de valor. " alt="" coords="189,42,376,69"/>
+<area shape="rect" id="node3" href="$classOperandsStack.html#a184a99d160e17ef874a7b83f0726fb8a" title="Recupera o valor do topo da pilha de operandos. " alt="" coords="424,5,611,47"/>
+<area shape="rect" id="node4" href="$classOperandsStack.html#aa6dbee87661011453ba2c57405bd9a4e" title="Retorna se a pilha está vazia (1) ou não (0) " alt="" coords="659,42,837,69"/>
+</map>

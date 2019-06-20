@@ -1,0 +1,8 @@
+<map id="method_info" name="method_info">
+<area shape="rect" id="node2" href="$structattribute__info.html" title="Protótipo da struct &quot;attribute_info&quot;. " alt="" coords="97,5,194,32"/>
+<area shape="rect" id="node4" href="$structcode__attribute.html" title="Estrutura de dados para salvar atributos do tipo code. " alt="" coords="196,95,300,121"/>
+<area shape="rect" id="node3" href="$uniont__info.html" title="Estrutura de dados que agrega informações sobre cada atributo lido. " alt="" coords="303,184,358,211"/>
+<area shape="rect" id="node5" href="$structt__exception__table.html" title="Struct para salvar exceções identificadas. Será utilizada como componente da struct &quot;code_attribute&quot;..." alt="" coords="218,5,342,32"/>
+<area shape="rect" id="node6" href="$structexception__attribute.html" title="exception_attribute" alt="" coords="325,95,457,121"/>
+<area shape="rect" id="node7" href="$structconstantvalue__attribute.html" title="Struct para carregar o index dos atributos da &quot;constantpool&quot;. " alt="" coords="481,95,639,121"/>
+</map>

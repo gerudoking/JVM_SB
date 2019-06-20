@@ -1,0 +1,9 @@
+<map id="Operations::obterStaticClassThatHasField" name="Operations::obterStaticClassThatHasField">
+<area shape="rect" id="node2" href="$ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="261,29,445,56"/>
+<area shape="rect" id="node4" href="$classMethodArea.html#a6e9d922892887daadd4624729268094f" title="Retorna referência para classe estática. " alt="" coords="271,80,434,107"/>
+<area shape="rect" id="node5" href="$classStaticClass.html#ae028bd9e2b93b69b91b22348a0b4848d" title="Retorna as informações do class file. " alt="" coords="269,131,437,173"/>
+<area shape="rect" id="node6" href="$classLeitorExibidor.html#ab286b420bb915f3444ec78a003f4c25c" title="Retorna referencia a constant pool. " alt="" coords="244,197,461,224"/>
+<area shape="rect" id="node7" href="$classStaticClass.html#ac6d7d4b5b1c315623a8be477c66f38c3" title="Retorna as informações de um field. " alt="" coords="275,248,430,275"/>
+<area shape="rect" id="node8" href="$classLeitorExibidor.html#ab46841a0392f45a35a5444dca234a1ae" title="Retorna um índice da constant pool que aponta para string com nome da superclass. ..." alt="" coords="267,299,439,341"/>
+<area shape="rect" id="node3" href="$BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="509,29,593,56"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Operations::iconst_1" name="Operations::iconst_1">
+<area shape="rect" id="node2" href="$classOperandsStack.html#a5006a59c2d815e4a24b055e2e4d2e741" title="Empilha um valor de tipo inteiro. " alt="" coords="196,5,380,32"/>
+<area shape="rect" id="node3" href="$classOperandsStack.html#a6ea316fc2b2503af2175fada4d4a9741" title="retorna o tamanho da pilha de operandos " alt="" coords="428,5,631,32"/>
+</map>

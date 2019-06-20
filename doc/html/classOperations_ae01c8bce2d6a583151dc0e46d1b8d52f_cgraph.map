@@ -1,0 +1,8 @@
+<map id="Operations::arraylength" name="Operations::arraylength">
+<area shape="rect" id="node2" href="$classOperandsStack.html#a3213a1b633149de9332217d403ee84b6" title="Desempilha o topo da pilha de operandos e retorna em um elemento de valor. " alt="" coords="211,71,397,98"/>
+<area shape="rect" id="node5" href="$classOperandsStack.html#a5006a59c2d815e4a24b055e2e4d2e741" title="Empilha um valor de tipo inteiro. " alt="" coords="212,122,396,149"/>
+<area shape="rect" id="node7" href="$classLocalVariables.html#acf8ee1db2a3427c30eb3e489d7a4478c" title="Function to know maximum size. " alt="" coords="219,173,389,199"/>
+<area shape="rect" id="node3" href="$classOperandsStack.html#a184a99d160e17ef874a7b83f0726fb8a" title="Recupera o valor do topo da pilha de operandos. " alt="" coords="453,5,640,47"/>
+<area shape="rect" id="node4" href="$classOperandsStack.html#aa6dbee87661011453ba2c57405bd9a4e" title="Retorna se a pilha está vazia (1) ou não (0) " alt="" coords="696,42,875,69"/>
+<area shape="rect" id="node6" href="$classOperandsStack.html#a6ea316fc2b2503af2175fada4d4a9741" title="retorna o tamanho da pilha de operandos " alt="" coords="445,122,648,149"/>
+</map>

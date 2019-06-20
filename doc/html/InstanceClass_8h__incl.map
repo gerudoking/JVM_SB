@@ -1,0 +1,17 @@
+<map id="include/InstanceClass.h" name="include/InstanceClass.h">
+<area shape="rect" id="node2" href="$ClasseLeitorExibidor_8h.html" title="Definição da ClasseLeitorExibidor. " alt="" coords="891,80,1045,107"/>
+<area shape="rect" id="node21" href="$StaticClass_8h.html" title="Definição da StaticClass. " alt="" coords="1397,379,1499,405"/>
+<area shape="rect" id="node22" href="$OperandsStack_8h.html" title="Pilha responsável por armazenar os operandos da JVM. " alt="" coords="1344,453,1467,480"/>
+<area shape="rect" id="node25" href="$Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="1804,453,1868,480"/>
+<area shape="rect" id="node10" href="$BasicTypes_8h.html" title="Tipos básicos utilizados para implementarmos a JVM. " alt="" coords="937,528,1039,555"/>
+<area shape="rect" id="node15" href="$ConstantPool_8h.html" title="Módulo Constant pool. " alt="" coords="539,453,651,480"/>
+<area shape="rect" id="node16" href="$Flags_8h.html" title="ClassFlags (public, final, super, interface and abstract) " alt="" coords="43,453,109,480"/>
+<area shape="rect" id="node17" href="$Fields_8h.html" title="Gerencia as informações dos campos do arquivo .class. " alt="" coords="489,304,557,331"/>
+<area shape="rect" id="node18" href="$Attributes_8h.html" title="Atributos a serem usados na execuçao da JVM. " alt="" coords="315,379,405,405"/>
+<area shape="rect" id="node19" href="$Interfaces_8h.html" title="Gerencia as informações da interfaces do arquivo .class. " alt="" coords="733,379,824,405"/>
+<area shape="rect" id="node20" href="$Methods_8h.html" title="Gerencia as informações dos metodos do arquivo .class. " alt="" coords="381,304,464,331"/>
+<area shape="rect" id="node27" href="$MethodArea_8h.html" title="Responsável por todas as operações que gerenciam os métodos. " alt="" coords="1037,155,1139,181"/>
+<area shape="rect" id="node30" href="$Frame_8h.html" title="Contém tudo necessário para a execução de um método. " alt="" coords="1177,229,1247,256"/>
+<area shape="rect" id="node31" href="$LocalVariables_8h.html" title="Stores local variables to current method. " alt="" coords="1130,453,1249,480"/>
+<area shape="rect" id="node33" href="$Operations_8h.html" title="Operations.h" alt="" coords="1253,304,1349,331"/>
+</map>

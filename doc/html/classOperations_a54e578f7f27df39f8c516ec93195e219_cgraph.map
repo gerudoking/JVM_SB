@@ -1,0 +1,6 @@
+<map id="Operations::pop2" name="Operations::pop2">
+<area shape="rect" id="node2" href="$classOperandsStack.html#a9503313a7def4c11fb782d5881e3d6cb" title="Desempilha o topo da pilha de operandos e retorna em um elemento tipado. " alt="" coords="175,35,361,76"/>
+<area shape="rect" id="node3" href="$classOperandsStack.html#a3213a1b633149de9332217d403ee84b6" title="Desempilha o topo da pilha de operandos e retorna em um elemento de valor. " alt="" coords="409,42,596,69"/>
+<area shape="rect" id="node4" href="$classOperandsStack.html#a184a99d160e17ef874a7b83f0726fb8a" title="Recupera o valor do topo da pilha de operandos. " alt="" coords="644,5,831,47"/>
+<area shape="rect" id="node5" href="$classOperandsStack.html#aa6dbee87661011453ba2c57405bd9a4e" title="Retorna se a pilha está vazia (1) ou não (0) " alt="" coords="879,42,1057,69"/>
+</map>

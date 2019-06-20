@@ -1,0 +1,9 @@
+<map id="FrameStack::FrameStack" name="FrameStack::FrameStack">
+<area shape="rect" id="node2" href="$classOperations.html#a4a846f964056932fdf4d63056bfbe322" title="Operations::atualizarFrame" alt="" coords="245,5,423,32"/>
+<area shape="rect" id="node3" href="$classMethodArea.html#ac6423e447a5f46bf969bfb7df7500a2b" title="Atualiza a referência da pilha de frames para o próximo frame. " alt="" coords="241,57,427,98"/>
+<area shape="rect" id="node4" href="$classOperations.html#a96812e295c8429a32e09720d89cd0176" title="Operations::atualizarFrame\lStack" alt="" coords="245,122,423,163"/>
+<area shape="rect" id="node5" href="$classOperations.html#a6c265501b41e227e1a15589a0bb03166" title="Operations::atualizarThreads" alt="" coords="239,188,429,215"/>
+<area shape="rect" id="node6" href="$classFrameStack.html#a9ec8c638092ec1ef9a00d09fde4b3d6f" title="Põe o PC na posição inicial. " alt="" coords="247,239,421,265"/>
+<area shape="rect" id="node7" href="$classLeitorExibidor.html#ab286b420bb915f3444ec78a003f4c25c" title="Retorna referencia a constant pool. " alt="" coords="225,289,443,316"/>
+<area shape="rect" id="node8" href="$classLeitorExibidor.html#a161f1cc97c2c71c800cf588f8a4eab67" title="Retorna o método main. " alt="" coords="251,340,417,367"/>
+</map>

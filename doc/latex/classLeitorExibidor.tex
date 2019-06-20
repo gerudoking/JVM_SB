@@ -1,0 +1,1372 @@
+\hypertarget{classLeitorExibidor}{}\section{Referência à classe Leitor\+Exibidor}
+\label{classLeitorExibidor}\index{Leitor\+Exibidor@{Leitor\+Exibidor}}
+
+
+{\ttfamily \#include $<$Classe\+Leitor\+Exibidor.\+h$>$}
+
+
+
+Diagrama de colaboração para Leitor\+Exibidor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLeitorExibidor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLeitorExibidor_aa1ffcfe21da762169b16483e4d30f683}{Leitor\+Exibidor} (char $\ast$in)
+\begin{DoxyCompactList}\small\item\em Construtor que configura um objeto da classe \hyperlink{classLeitorExibidor}{Leitor\+Exibidor} com o nome do arquivo passado. \end{DoxyCompactList}\item 
+\hyperlink{classLeitorExibidor_a10fd8d8b58be93148ff4d527c3ab5bd3}{Leitor\+Exibidor} (string in)
+\begin{DoxyCompactList}\small\item\em Construtor que configura um objeto da classe \hyperlink{classLeitorExibidor}{Leitor\+Exibidor} com o nome do arquivo passado. \end{DoxyCompactList}\item 
+int \hyperlink{classLeitorExibidor_a185520372593c9ee066d72c67e4a38e6}{inicializar\+Arquivo} (char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em criar e inicializar arquivo \end{DoxyCompactList}\item 
+void \hyperlink{classLeitorExibidor_a16868d53a83dca37586819aadeb7f0eb}{fechar\+Arquivo} ()
+\begin{DoxyCompactList}\small\item\em Fechar arquivo. \end{DoxyCompactList}\item 
+int \hyperlink{classLeitorExibidor_a493a9aed1941a4f01c611a2deeb37f8d}{carregar} ()
+\item 
+void \hyperlink{classLeitorExibidor_a338627a08235ffe50ede3d9e023c1238}{imprimir\+Informacoes\+Gerais} ()
+\begin{DoxyCompactList}\small\item\em Imprime informações gerais do .class. \end{DoxyCompactList}\item 
+void \hyperlink{classLeitorExibidor_ab65aba73916cc733df269b3033522a3c}{gravar\+Arquivo\+Informacoes\+Gerais} ()
+\begin{DoxyCompactList}\small\item\em Gravar informações gerais do .class em um arquivo. \end{DoxyCompactList}\item 
+bool \hyperlink{classLeitorExibidor_a544bd7574553d9015b22c2507971e7f5}{exibir} ()
+\begin{DoxyCompactList}\small\item\em Imprime todas as informações do .class. \end{DoxyCompactList}\item 
+bool \hyperlink{classLeitorExibidor_a8dcf6961e13ad6830f62e7839448b235}{gravar\+Arquivo} ()
+\begin{DoxyCompactList}\small\item\em Gravar todas as informações do .class em um arquivo. \end{DoxyCompactList}\item 
+bool \hyperlink{classLeitorExibidor_a83ed9ca5a7b4442ae3449daffc0d3d5c}{validar\+Extensao} ()
+\begin{DoxyCompactList}\small\item\em Verifica se a extensão do arquivo é .class. \end{DoxyCompactList}\item 
+bool \hyperlink{classLeitorExibidor_a431c625c01124f40e7b6f6fab2bdb7f2}{existe\+Main} ()
+\begin{DoxyCompactList}\small\item\em Verifica se o .class possui função main. \end{DoxyCompactList}\item 
+\hyperlink{structmethod__info}{method\+\_\+info} \hyperlink{classLeitorExibidor_a161f1cc97c2c71c800cf588f8a4eab67}{obter\+Main} ()
+\begin{DoxyCompactList}\small\item\em Retorna o método main. \end{DoxyCompactList}\item 
+bool \hyperlink{classLeitorExibidor_a5a3ef889b1e38506d9d0df17255cad4e}{existe\+Clinit} ()
+\begin{DoxyCompactList}\small\item\em Verifica se o .class tem o método clinit. \end{DoxyCompactList}\item 
+\hyperlink{structmethod__info}{method\+\_\+info} \hyperlink{classLeitorExibidor_a58636f719aebaaa46524233b94b46537}{obter\+Clinit} ()
+\begin{DoxyCompactList}\small\item\em Retorna o método clinit. \end{DoxyCompactList}\item 
+bool \hyperlink{classLeitorExibidor_a89d56b461514ed8fea8987ee52fa2eb9}{verificar\+This\+Class} ()
+\begin{DoxyCompactList}\small\item\em Verifica se a class definida é igual ao nome da classe sem extensões. \end{DoxyCompactList}\item 
+int \hyperlink{classLeitorExibidor_a6a9e55a1b824fed37f0841cb253789b2}{obter\+Status} ()
+\begin{DoxyCompactList}\small\item\em Retorna o status lido, informando para o método que chamou o que aconteceu. \end{DoxyCompactList}\item 
+\hyperlink{structcp__info}{cp\+\_\+info} $\ast$ \hyperlink{classLeitorExibidor_ab286b420bb915f3444ec78a003f4c25c}{obter\+Constant\+Pool} () const
+\begin{DoxyCompactList}\small\item\em Retorna referencia a constant pool. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classLeitorExibidor_a7e64ad9d2b5f914f6bc4a0f84129f160}{obter\+Tamanho\+Constant\+Pool} ()
+\begin{DoxyCompactList}\small\item\em Retorna o valor do tamanho da constant pool. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{classLeitorExibidor_a74785a29369d04d5a7d14ed63a0b2102}{obter\+Path} ()
+\begin{DoxyCompactList}\small\item\em Pega o caminho do arquivo .class. \end{DoxyCompactList}\item 
+\hyperlink{structmethod__info}{method\+\_\+info} $\ast$ \hyperlink{classLeitorExibidor_a0fbc8db7d08d00ec8f12e26bbce93048}{obter\+Methods} ()
+\begin{DoxyCompactList}\small\item\em Retorna todos os métodos. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classLeitorExibidor_aa9c91f4a145f4ef753c33f8898075930}{obter\+Methods\+Count} ()
+\begin{DoxyCompactList}\small\item\em Retorna o numero de Methods. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classLeitorExibidor_aa5cc18c3fb83811379d2f221980d8b8b}{obter\+This\+\_\+class} ()
+\begin{DoxyCompactList}\small\item\em Retorna um índice da constant pool que aponta para string com nome da class. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classLeitorExibidor_ab46841a0392f45a35a5444dca234a1ae}{obter\+Super\+\_\+class} ()
+\begin{DoxyCompactList}\small\item\em Retorna um índice da constant pool que aponta para string com nome da superclass. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classLeitorExibidor_a483e90f3d60c63a2b3d1106961c7f553}{obter\+Fields\+Count} ()
+\begin{DoxyCompactList}\small\item\em Retorna número de fields. \end{DoxyCompactList}\item 
+\hyperlink{structfield__info}{field\+\_\+info} $\ast$ \hyperlink{classLeitorExibidor_a480bbed0d19b7cf5d64753c9c1210464}{obter\+Fields} ()
+\begin{DoxyCompactList}\small\item\em Retorna a array com as fields lidas. \end{DoxyCompactList}\item 
+\hyperlink{structfield__info}{field\+\_\+info} $\ast$ \hyperlink{classLeitorExibidor_af51949669ace432f66221710ef3a3b00}{obter\+Field} (string nome)
+\begin{DoxyCompactList}\small\item\em Retorna um field. \end{DoxyCompactList}\item 
+\hyperlink{structmethod__info}{method\+\_\+info} $\ast$ \hyperlink{classLeitorExibidor_a4d1a48fa9825d2cb2b520be79112408c}{obter\+Method} (string nome, string descriptor)
+\item 
+\hyperlink{classLeitorExibidor}{Leitor\+Exibidor} $\ast$ \hyperlink{classLeitorExibidor_a3893e9478688cf21b293536da48f9f14}{obter\+Class\+That\+Has\+Serached\+Method} (string nome, string descriptor)
+\begin{DoxyCompactList}\small\item\em Retorna o ponteiro para o leitor do .class que contém o método encontrado em get\+Method. \end{DoxyCompactList}\item 
+int \hyperlink{classLeitorExibidor_a422272b830079ee349b468bbe78d4b13}{validacao} (void)
+\begin{DoxyCompactList}\small\item\em Valida estrutura obrigatoria. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membros privados}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classLeitorExibidor_a2d486c9289a5d50a7fb00afffd2fa760}{verificar\+Main} ()
+\begin{DoxyCompactList}\small\item\em Encontro em qual method está a main. \end{DoxyCompactList}\item 
+bool \hyperlink{classLeitorExibidor_a8aeff3d072e77288215e5a070e958cf0}{verificar\+Clinit} ()
+\begin{DoxyCompactList}\small\item\em Encontra em qual method esta a clinit, se existir. \end{DoxyCompactList}\item 
+string \hyperlink{classLeitorExibidor_abf046987d5b3f0ec33794a547a8f9e25}{obter\+Erro} (int erro)
+\begin{DoxyCompactList}\small\item\em Retorna a string que contém uma mensagem de erro correspondente ao índice que recebe como parâmetro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classLeitorExibidor_ac54b88860544d66f5e8f620c4c017a37}{status}
+\item 
+int \hyperlink{classLeitorExibidor_a9e7a108ebca3fac0096fcb422f2393db}{main\+Method}
+\item 
+int \hyperlink{classLeitorExibidor_a0c4c896a1baf647a282881524f8a9687}{clinit}
+\item 
+bool \hyperlink{classLeitorExibidor_aca32f682d0ccd1d60a76d0833ca0617f}{encontrou\+Main}
+\item 
+bool \hyperlink{classLeitorExibidor_a93a1aa14204f0445a97304cc504a3cf0}{encontrou\+Clinit}
+\item 
+char $\ast$ \hyperlink{classLeitorExibidor_a1dfa84388856ad4d83883e4e5548b485}{file\+Name}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classLeitorExibidor_a6f6ac6ed85979359308c07c666316218}{min\+Version}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classLeitorExibidor_a5c2cd58569e9c3fdc47c0bbab116b870}{maj\+Version}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classLeitorExibidor_ae891dce6b86c2d09c1a112bd585561d6}{length\+CP}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classLeitorExibidor_ad85a876f6368ae8101343f4f35b53019}{this\+\_\+class}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classLeitorExibidor_adc9f3b119883f9bc4ba0323b8480c53e}{super\+\_\+class}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classLeitorExibidor_a596a1440982d2418e39adf5b1857ab15}{interfaces\+Count}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classLeitorExibidor_a9a54627d53b9a3c25c5ba71977e1e002}{fields\+Count}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classLeitorExibidor_a3f5d59fb172e478ab6d1a595a8b6c54a}{methods\+Count}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classLeitorExibidor_a16d6ecbc6b367cda3c0b774505285665}{access\+Flags}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classLeitorExibidor_ac42b42a9a6c94c260db0016df94cda1d}{attributes\+Count}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} $\ast$ \hyperlink{classLeitorExibidor_a7c19cc595c9d806b30477b5b008f3caa}{interfaces}
+\item 
+\hyperlink{structcp__info}{cp\+\_\+info} $\ast$ \hyperlink{classLeitorExibidor_ac92916cbf475e31ce0f2475d982ddaea}{constant\+Pool}
+\item 
+\hyperlink{structfield__info}{field\+\_\+info} $\ast$ \hyperlink{classLeitorExibidor_a6e8475e2db54d776db636c06d823eb3f}{fields}
+\item 
+\hyperlink{structmethod__info}{method\+\_\+info} $\ast$ \hyperlink{classLeitorExibidor_a0c9110ffe495c55bedaafdc47656eaed}{methods}
+\item 
+\hyperlink{structattribute__info}{attribute\+\_\+info} $\ast$ \hyperlink{classLeitorExibidor_adb26d0959bef738b08bffa009d12fac3}{attributes}
+\item 
+F\+I\+LE $\ast$ \hyperlink{classLeitorExibidor_acbb3d188113d55cc00b6e92bf2fddb98}{arquivo\+Class}
+\item 
+fstream \hyperlink{classLeitorExibidor_ae7f2edb9968df63470901712119e30d2}{arquivo\+Saida}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+\hypertarget{classLeitorExibidor_DESCRIPTION}{}\subsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{classLeitorExibidor_DESCRIPTION}
+A classe \hyperlink{classLeitorExibidor}{Leitor\+Exibidor} contém o necessário para ler o bytecode, exibilo e armazena-\/lo em memoria 
+
+Definido na linha 47 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{classLeitorExibidor_aa1ffcfe21da762169b16483e4d30f683}\label{classLeitorExibidor_aa1ffcfe21da762169b16483e4d30f683}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{Leitor\+Exibidor()}{LeitorExibidor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Leitor\+Exibidor\+::\+Leitor\+Exibidor (\begin{DoxyParamCaption}\item[{char $\ast$}]{in }\end{DoxyParamCaption})}
+
+
+
+Construtor que configura um objeto da classe \hyperlink{classLeitorExibidor}{Leitor\+Exibidor} com o nome do arquivo passado. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em in} & caminho do arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 8 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências file\+Name e status.
+
+\mbox{\Hypertarget{classLeitorExibidor_a10fd8d8b58be93148ff4d527c3ab5bd3}\label{classLeitorExibidor_a10fd8d8b58be93148ff4d527c3ab5bd3}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{Leitor\+Exibidor()}{LeitorExibidor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Leitor\+Exibidor\+::\+Leitor\+Exibidor (\begin{DoxyParamCaption}\item[{string}]{in }\end{DoxyParamCaption})}
+
+
+
+Construtor que configura um objeto da classe \hyperlink{classLeitorExibidor}{Leitor\+Exibidor} com o nome do arquivo passado. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em in} & caminho do arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 15 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências file\+Name e status.
+
+
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classLeitorExibidor_a493a9aed1941a4f01c611a2deeb37f8d}\label{classLeitorExibidor_a493a9aed1941a4f01c611a2deeb37f8d}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!carregar@{carregar}}
+\index{carregar@{carregar}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{carregar()}{carregar()}}
+{\footnotesize\ttfamily int Leitor\+Exibidor\+::carregar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Carrega o class file na classe \begin{DoxyReturn}{Retorna}
+variavel status que indica se houve erro no programa 
+\end{DoxyReturn}
+
+
+Definido na linha 68 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências access\+Flags, arquivo\+Class, attributes, attributes\+Count, C\+A\+N\+T\+\_\+\+O\+P\+EN, carregar\+Constant\+Pool(), constant\+Pool, encontrou\+Clinit, encontrou\+Main, fields, fields\+Count, file\+Name, interfaces, interfaces\+Count, I\+N\+V\+A\+L\+I\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON, I\+N\+V\+A\+L\+I\+D\+\_\+\+F\+I\+LE, I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+A\+ME, length\+CP, ler\+Todas\+Interfaces(), ler\+Todos\+Attributes(), ler\+Todos\+Fields(), ler\+Todos\+Methods(), ler\+U2(), ler\+U4(), maj\+Version, methods, methods\+Count, min\+Version, M\+I\+S\+S\+I\+N\+G\+\_\+\+A\+R\+G\+U\+M\+E\+NT, obter\+Erro(), status, super\+\_\+class, this\+\_\+class, U\+N\+K\+N\+O\+W\+N\+\_\+\+T\+Y\+PE, validar\+Extensao(), verificar\+Clinit(), verificar\+Main() e verificar\+This\+Class().
+
+
+
+Referenciado por Method\+Area\+::adicionar\+Classe() e main().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLeitorExibidor_a493a9aed1941a4f01c611a2deeb37f8d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLeitorExibidor_a544bd7574553d9015b22c2507971e7f5}\label{classLeitorExibidor_a544bd7574553d9015b22c2507971e7f5}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!exibir@{exibir}}
+\index{exibir@{exibir}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{exibir()}{exibir()}}
+{\footnotesize\ttfamily bool Leitor\+Exibidor\+::exibir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Imprime todas as informações do .class. 
+
+\begin{DoxyReturn}{Retorna}
+true ou false dependendo se a variavel status indicar que houve erro na leitura 
+\end{DoxyReturn}
+
+
+Definido na linha 176 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências attributes, attributes\+Count, constant\+Pool, fields, fields\+Count, imprimir\+Constant\+Pool(), imprimir\+Informacoes\+Gerais(), imprimir\+Todas\+Interfaces(), imprimir\+Todos\+Attributes(), imprimir\+Todos\+Field(), imprimir\+Todos\+Methods(), interfaces, interfaces\+Count, length\+CP, methods, methods\+Count e status.
+
+
+
+Referenciado por main().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLeitorExibidor_a544bd7574553d9015b22c2507971e7f5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLeitorExibidor_a5a3ef889b1e38506d9d0df17255cad4e}\label{classLeitorExibidor_a5a3ef889b1e38506d9d0df17255cad4e}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!existe\+Clinit@{existe\+Clinit}}
+\index{existe\+Clinit@{existe\+Clinit}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{existe\+Clinit()}{existeClinit()}}
+{\footnotesize\ttfamily bool Leitor\+Exibidor\+::existe\+Clinit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verifica se o .class tem o método clinit. 
+
+\begin{DoxyReturn}{Retorna}
+booleano que indica se existe o metodo clinit 
+\end{DoxyReturn}
+
+
+Definido na linha 344 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências encontrou\+Clinit e verificar\+Clinit().
+
+
+
+Referenciado por Method\+Area\+::adicionar\+Classe().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLeitorExibidor_a5a3ef889b1e38506d9d0df17255cad4e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLeitorExibidor_a431c625c01124f40e7b6f6fab2bdb7f2}\label{classLeitorExibidor_a431c625c01124f40e7b6f6fab2bdb7f2}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!existe\+Main@{existe\+Main}}
+\index{existe\+Main@{existe\+Main}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{existe\+Main()}{existeMain()}}
+{\footnotesize\ttfamily bool Leitor\+Exibidor\+::existe\+Main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verifica se o .class possui função main. 
+
+\begin{DoxyReturn}{Retorna}
+booleano que indica se existe o metodo main 
+\end{DoxyReturn}
+
+
+Definido na linha 338 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências encontrou\+Main e verificar\+Main().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLeitorExibidor_a431c625c01124f40e7b6f6fab2bdb7f2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLeitorExibidor_a16868d53a83dca37586819aadeb7f0eb}\label{classLeitorExibidor_a16868d53a83dca37586819aadeb7f0eb}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!fechar\+Arquivo@{fechar\+Arquivo}}
+\index{fechar\+Arquivo@{fechar\+Arquivo}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{fechar\+Arquivo()}{fecharArquivo()}}
+{\footnotesize\ttfamily void Leitor\+Exibidor\+::fechar\+Arquivo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fechar arquivo. 
+
+
+
+Definido na linha 41 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências arquivo\+Saida.
+
+
+
+Referenciado por main().
+
+\mbox{\Hypertarget{classLeitorExibidor_a8dcf6961e13ad6830f62e7839448b235}\label{classLeitorExibidor_a8dcf6961e13ad6830f62e7839448b235}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!gravar\+Arquivo@{gravar\+Arquivo}}
+\index{gravar\+Arquivo@{gravar\+Arquivo}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{gravar\+Arquivo()}{gravarArquivo()}}
+{\footnotesize\ttfamily bool Leitor\+Exibidor\+::gravar\+Arquivo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gravar todas as informações do .class em um arquivo. 
+
+\begin{DoxyReturn}{Retorna}
+true ou false dependendo se a variavel status indicar que houve erro na leitura 
+\end{DoxyReturn}
+
+
+Definido na linha 203 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências arquivo\+Saida, attributes, attributes\+Count, constant\+Pool, fields, fields\+Count, gravar\+Arquivo\+Constant\+Pool(), gravar\+Arquivo\+Informacoes\+Gerais(), gravar\+Arquivo\+Todas\+Interfaces(), gravar\+Arquivo\+Todos\+Attributes(), gravar\+Arquivo\+Todos\+Field(), gravar\+Arquivo\+Todos\+Methods(), interfaces, interfaces\+Count, length\+CP, methods, methods\+Count e status.
+
+
+
+Referenciado por main().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLeitorExibidor_a8dcf6961e13ad6830f62e7839448b235_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLeitorExibidor_ab65aba73916cc733df269b3033522a3c}\label{classLeitorExibidor_ab65aba73916cc733df269b3033522a3c}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!gravar\+Arquivo\+Informacoes\+Gerais@{gravar\+Arquivo\+Informacoes\+Gerais}}
+\index{gravar\+Arquivo\+Informacoes\+Gerais@{gravar\+Arquivo\+Informacoes\+Gerais}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{gravar\+Arquivo\+Informacoes\+Gerais()}{gravarArquivoInformacoesGerais()}}
+{\footnotesize\ttfamily bool Leitor\+Exibidor\+::gravar\+Arquivo\+Informacoes\+Gerais (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gravar informações gerais do .class em um arquivo. 
+
+\begin{DoxyReturn}{Retorna}
+variavel status que indica se houve erro no programa 
+\end{DoxyReturn}
+
+
+Definido na linha 253 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências access\+Flags, arquivo\+Saida, attributes\+Count, capturar\+Indice\+De\+Referencia(), constant\+Pool, fields\+Count, gravar\+Arquivo\+Flags(), interfaces\+Count, length\+CP, maj\+Version, methods\+Count, min\+Version, super\+\_\+class e this\+\_\+class.
+
+
+
+Referenciado por gravar\+Arquivo().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLeitorExibidor_ab65aba73916cc733df269b3033522a3c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLeitorExibidor_a338627a08235ffe50ede3d9e023c1238}\label{classLeitorExibidor_a338627a08235ffe50ede3d9e023c1238}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!imprimir\+Informacoes\+Gerais@{imprimir\+Informacoes\+Gerais}}
+\index{imprimir\+Informacoes\+Gerais@{imprimir\+Informacoes\+Gerais}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{imprimir\+Informacoes\+Gerais()}{imprimirInformacoesGerais()}}
+{\footnotesize\ttfamily bool Leitor\+Exibidor\+::imprimir\+Informacoes\+Gerais (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Imprime informações gerais do .class. 
+
+\begin{DoxyReturn}{Retorna}
+variavel status que indica se houve erro no programa 
+\end{DoxyReturn}
+
+
+Definido na linha 224 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências access\+Flags, attributes\+Count, capturar\+Indice\+De\+Referencia(), constant\+Pool, fields\+Count, imprimir\+Flags(), interfaces\+Count, length\+CP, maj\+Version, methods\+Count, min\+Version, super\+\_\+class e this\+\_\+class.
+
+
+
+Referenciado por exibir().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLeitorExibidor_a338627a08235ffe50ede3d9e023c1238_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLeitorExibidor_a185520372593c9ee066d72c67e4a38e6}\label{classLeitorExibidor_a185520372593c9ee066d72c67e4a38e6}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!inicializar\+Arquivo@{inicializar\+Arquivo}}
+\index{inicializar\+Arquivo@{inicializar\+Arquivo}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{inicializar\+Arquivo()}{inicializarArquivo()}}
+{\footnotesize\ttfamily int Leitor\+Exibidor\+::inicializar\+Arquivo (\begin{DoxyParamCaption}\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+criar e inicializar arquivo 
+
+
+
+Definido na linha 27 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências arquivo\+Saida e status.
+
+
+
+Referenciado por main().
+
+\mbox{\Hypertarget{classLeitorExibidor_a3893e9478688cf21b293536da48f9f14}\label{classLeitorExibidor_a3893e9478688cf21b293536da48f9f14}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!obter\+Class\+That\+Has\+Serached\+Method@{obter\+Class\+That\+Has\+Serached\+Method}}
+\index{obter\+Class\+That\+Has\+Serached\+Method@{obter\+Class\+That\+Has\+Serached\+Method}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{obter\+Class\+That\+Has\+Serached\+Method()}{obterClassThatHasSerachedMethod()}}
+{\footnotesize\ttfamily \hyperlink{classLeitorExibidor}{Leitor\+Exibidor} $\ast$ Leitor\+Exibidor\+::obter\+Class\+That\+Has\+Serached\+Method (\begin{DoxyParamCaption}\item[{string}]{nome,  }\item[{string}]{descriptor }\end{DoxyParamCaption})}
+
+
+
+Retorna o ponteiro para o leitor do .class que contém o método encontrado em get\+Method. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & Nome do method desejado \\
+\hline
+{\em descriptor} & Descritor do method desejado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+classe \hyperlink{classLeitorExibidor}{Leitor\+Exibidor} 
+\end{DoxyReturn}
+
+
+Definido na linha 538 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências capturar\+Indice\+De\+Referencia(), constant\+Pool, method\+\_\+info\+::descriptor\+\_\+index, methods, methods\+Count, method\+\_\+info\+::name\+\_\+index, Method\+Area\+::obter\+Class(), Static\+Class\+::obter\+Classe\+Leitor\+Exibidor(), obter\+Class\+That\+Has\+Serached\+Method() e obter\+Super\+\_\+class().
+
+
+
+Referenciado por Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual() e obter\+Class\+That\+Has\+Serached\+Method().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLeitorExibidor_a3893e9478688cf21b293536da48f9f14_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLeitorExibidor_a58636f719aebaaa46524233b94b46537}\label{classLeitorExibidor_a58636f719aebaaa46524233b94b46537}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!obter\+Clinit@{obter\+Clinit}}
+\index{obter\+Clinit@{obter\+Clinit}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{obter\+Clinit()}{obterClinit()}}
+{\footnotesize\ttfamily \hyperlink{structmethod__info}{method\+\_\+info} Leitor\+Exibidor\+::obter\+Clinit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o método clinit. 
+
+\begin{DoxyReturn}{Retorna}
+struct \hyperlink{structmethod__info}{method\+\_\+info} contendo informações sobre o método 
+\end{DoxyReturn}
+
+
+Definido na linha 358 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências clinit e methods.
+
+
+
+Referenciado por Method\+Area\+::adicionar\+Classe().
+
+\mbox{\Hypertarget{classLeitorExibidor_ab286b420bb915f3444ec78a003f4c25c}\label{classLeitorExibidor_ab286b420bb915f3444ec78a003f4c25c}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!obter\+Constant\+Pool@{obter\+Constant\+Pool}}
+\index{obter\+Constant\+Pool@{obter\+Constant\+Pool}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{obter\+Constant\+Pool()}{obterConstantPool()}}
+{\footnotesize\ttfamily \hyperlink{structcp__info}{cp\+\_\+info} $\ast$ Leitor\+Exibidor\+::obter\+Constant\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retorna referencia a constant pool. 
+
+\begin{DoxyReturn}{Retorna}
+Retorna a array com a constant pool 
+\end{DoxyReturn}
+
+
+Definido na linha 441 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências constant\+Pool.
+
+
+
+Referenciado por Method\+Area\+::adicionar\+Classe(), Frame\+Stack\+::\+Frame\+Stack(), Instance\+Class\+::\+Instance\+Class(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::obter\+Static\+Class\+That\+Has\+Field() e Static\+Class\+::\+Static\+Class().
+
+\mbox{\Hypertarget{classLeitorExibidor_abf046987d5b3f0ec33794a547a8f9e25}\label{classLeitorExibidor_abf046987d5b3f0ec33794a547a8f9e25}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!obter\+Erro@{obter\+Erro}}
+\index{obter\+Erro@{obter\+Erro}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{obter\+Erro()}{obterErro()}}
+{\footnotesize\ttfamily string Leitor\+Exibidor\+::obter\+Erro (\begin{DoxyParamCaption}\item[{int}]{erro }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Retorna a string que contém uma mensagem de erro correspondente ao índice que recebe como parâmetro. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em erro} & M\+A\+C\+RO com o erro que foi encontrado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+string contendo informação sobre o tipo de erro encontrado 
+\end{DoxyReturn}
+
+
+Definido na linha 408 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências C\+A\+N\+T\+\_\+\+O\+P\+EN, file\+Name, I\+N\+V\+A\+L\+I\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON, I\+N\+V\+A\+L\+I\+D\+\_\+\+F\+I\+LE, I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+A\+ME, M\+I\+S\+S\+I\+N\+G\+\_\+\+A\+R\+G\+U\+M\+E\+NT, M\+I\+S\+S\+I\+N\+G\+\_\+\+C\+L\+I\+N\+IT, M\+I\+S\+S\+I\+N\+G\+\_\+\+M\+A\+IN e U\+N\+K\+N\+O\+W\+N\+\_\+\+T\+Y\+PE.
+
+
+
+Referenciado por carregar() e validacao().
+
+\mbox{\Hypertarget{classLeitorExibidor_af51949669ace432f66221710ef3a3b00}\label{classLeitorExibidor_af51949669ace432f66221710ef3a3b00}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!obter\+Field@{obter\+Field}}
+\index{obter\+Field@{obter\+Field}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{obter\+Field()}{obterField()}}
+{\footnotesize\ttfamily \hyperlink{structfield__info}{field\+\_\+info} $\ast$ Leitor\+Exibidor\+::obter\+Field (\begin{DoxyParamCaption}\item[{string}]{nome }\end{DoxyParamCaption})}
+
+
+
+Retorna um field. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & do field desejado que deseja retornar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+struct \hyperlink{structfield__info}{field\+\_\+info} com a informação da field passada no parâmetro 
+\end{DoxyReturn}
+
+
+Definido na linha 504 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências capturar\+Indice\+De\+Referencia(), constant\+Pool, fields e obter\+Fields\+Count().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLeitorExibidor_af51949669ace432f66221710ef3a3b00_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLeitorExibidor_a480bbed0d19b7cf5d64753c9c1210464}\label{classLeitorExibidor_a480bbed0d19b7cf5d64753c9c1210464}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!obter\+Fields@{obter\+Fields}}
+\index{obter\+Fields@{obter\+Fields}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{obter\+Fields()}{obterFields()}}
+{\footnotesize\ttfamily \hyperlink{structfield__info}{field\+\_\+info} Leitor\+Exibidor\+::obter\+Fields (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna a array com as fields lidas. 
+
+\begin{DoxyReturn}{Retorna}
+a array da struct \hyperlink{structfield__info}{field\+\_\+info} 
+\end{DoxyReturn}
+
+
+Definido na linha 500 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências fields.
+
+
+
+Referenciado por Instance\+Class\+::\+Instance\+Class() e Static\+Class\+::\+Static\+Class().
+
+\mbox{\Hypertarget{classLeitorExibidor_a483e90f3d60c63a2b3d1106961c7f553}\label{classLeitorExibidor_a483e90f3d60c63a2b3d1106961c7f553}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!obter\+Fields\+Count@{obter\+Fields\+Count}}
+\index{obter\+Fields\+Count@{obter\+Fields\+Count}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{obter\+Fields\+Count()}{obterFieldsCount()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Leitor\+Exibidor\+::obter\+Fields\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna número de fields. 
+
+\begin{DoxyReturn}{Retorna}
+uint16\+\_\+t indicando o numero de fields 
+\end{DoxyReturn}
+
+
+Definido na linha 496 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências fields\+Count.
+
+
+
+Referenciado por Instance\+Class\+::\+Instance\+Class(), obter\+Field() e Static\+Class\+::\+Static\+Class().
+
+\mbox{\Hypertarget{classLeitorExibidor_a161f1cc97c2c71c800cf588f8a4eab67}\label{classLeitorExibidor_a161f1cc97c2c71c800cf588f8a4eab67}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!obter\+Main@{obter\+Main}}
+\index{obter\+Main@{obter\+Main}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{obter\+Main()}{obterMain()}}
+{\footnotesize\ttfamily \hyperlink{structmethod__info}{method\+\_\+info} Leitor\+Exibidor\+::obter\+Main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o método main. 
+
+\begin{DoxyReturn}{Retorna}
+struct \hyperlink{structmethod__info}{method\+\_\+info} contendo informações sobre o método 
+\end{DoxyReturn}
+
+
+Definido na linha 350 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências encontrou\+Main, main\+Method e methods.
+
+
+
+Referenciado por Frame\+Stack\+::\+Frame\+Stack().
+
+\mbox{\Hypertarget{classLeitorExibidor_a4d1a48fa9825d2cb2b520be79112408c}\label{classLeitorExibidor_a4d1a48fa9825d2cb2b520be79112408c}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!obter\+Method@{obter\+Method}}
+\index{obter\+Method@{obter\+Method}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{obter\+Method()}{obterMethod()}}
+{\footnotesize\ttfamily \hyperlink{structmethod__info}{method\+\_\+info} $\ast$ Leitor\+Exibidor\+::obter\+Method (\begin{DoxyParamCaption}\item[{string}]{nome,  }\item[{string}]{descriptor }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & Nome do method desejado \\
+\hline
+{\em descriptor} & Descritor do method desejado \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 515 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências capturar\+Indice\+De\+Referencia(), constant\+Pool, method\+\_\+info\+::descriptor\+\_\+index, methods, methods\+Count, method\+\_\+info\+::name\+\_\+index, Method\+Area\+::obter\+Class(), Static\+Class\+::obter\+Classe\+Leitor\+Exibidor(), obter\+Method() e obter\+Super\+\_\+class().
+
+
+
+Referenciado por Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual() e obter\+Method().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLeitorExibidor_a4d1a48fa9825d2cb2b520be79112408c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLeitorExibidor_a0fbc8db7d08d00ec8f12e26bbce93048}\label{classLeitorExibidor_a0fbc8db7d08d00ec8f12e26bbce93048}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!obter\+Methods@{obter\+Methods}}
+\index{obter\+Methods@{obter\+Methods}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{obter\+Methods()}{obterMethods()}}
+{\footnotesize\ttfamily \hyperlink{structmethod__info}{method\+\_\+info} $\ast$ Leitor\+Exibidor\+::obter\+Methods (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna todos os métodos. 
+
+\begin{DoxyReturn}{Retorna}
+array do tipo \hyperlink{structmethod__info}{method\+\_\+info} 
+\end{DoxyReturn}
+
+
+Definido na linha 480 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências methods.
+
+\mbox{\Hypertarget{classLeitorExibidor_aa9c91f4a145f4ef753c33f8898075930}\label{classLeitorExibidor_aa9c91f4a145f4ef753c33f8898075930}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!obter\+Methods\+Count@{obter\+Methods\+Count}}
+\index{obter\+Methods\+Count@{obter\+Methods\+Count}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{obter\+Methods\+Count()}{obterMethodsCount()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Leitor\+Exibidor\+::obter\+Methods\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o numero de Methods. 
+
+\begin{DoxyReturn}{Retorna}
+uint16\+\_\+t indicando o numero de metodos 
+\end{DoxyReturn}
+
+
+Definido na linha 484 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências methods\+Count.
+
+\mbox{\Hypertarget{classLeitorExibidor_a74785a29369d04d5a7d14ed63a0b2102}\label{classLeitorExibidor_a74785a29369d04d5a7d14ed63a0b2102}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!obter\+Path@{obter\+Path}}
+\index{obter\+Path@{obter\+Path}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{obter\+Path()}{obterPath()}}
+{\footnotesize\ttfamily char $\ast$ Leitor\+Exibidor\+::obter\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Pega o caminho do arquivo .class. 
+
+\begin{DoxyReturn}{Retorna}
+Retorna a string com o caminho total do arquivo 
+\end{DoxyReturn}
+
+
+Definido na linha 449 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências file\+Name.
+
+
+
+Referenciado por main().
+
+\mbox{\Hypertarget{classLeitorExibidor_a6a9e55a1b824fed37f0841cb253789b2}\label{classLeitorExibidor_a6a9e55a1b824fed37f0841cb253789b2}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!obter\+Status@{obter\+Status}}
+\index{obter\+Status@{obter\+Status}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{obter\+Status()}{obterStatus()}}
+{\footnotesize\ttfamily int Leitor\+Exibidor\+::obter\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o status lido, informando para o método que chamou o que aconteceu. 
+
+\begin{DoxyReturn}{Retorna}
+status 
+\end{DoxyReturn}
+
+
+Definido na linha 404 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências status.
+
+
+
+Referenciado por Method\+Area\+::adicionar\+Classe() e main().
+
+\mbox{\Hypertarget{classLeitorExibidor_ab46841a0392f45a35a5444dca234a1ae}\label{classLeitorExibidor_ab46841a0392f45a35a5444dca234a1ae}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!obter\+Super\+\_\+class@{obter\+Super\+\_\+class}}
+\index{obter\+Super\+\_\+class@{obter\+Super\+\_\+class}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{obter\+Super\+\_\+class()}{obterSuper\_class()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Leitor\+Exibidor\+::obter\+Super\+\_\+class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna um índice da constant pool que aponta para string com nome da superclass. 
+
+\begin{DoxyReturn}{Retorna}
+uint16\+\_\+t super\+\_\+class 
+\end{DoxyReturn}
+
+
+Definido na linha 492 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências super\+\_\+class.
+
+
+
+Referenciado por obter\+Class\+That\+Has\+Serached\+Method(), obter\+Method() e Operations\+::obter\+Static\+Class\+That\+Has\+Field().
+
+\mbox{\Hypertarget{classLeitorExibidor_a7e64ad9d2b5f914f6bc4a0f84129f160}\label{classLeitorExibidor_a7e64ad9d2b5f914f6bc4a0f84129f160}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!obter\+Tamanho\+Constant\+Pool@{obter\+Tamanho\+Constant\+Pool}}
+\index{obter\+Tamanho\+Constant\+Pool@{obter\+Tamanho\+Constant\+Pool}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{obter\+Tamanho\+Constant\+Pool()}{obterTamanhoConstantPool()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Leitor\+Exibidor\+::obter\+Tamanho\+Constant\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o valor do tamanho da constant pool. 
+
+\begin{DoxyReturn}{Retorna}
+Retorna a array com a constant pool 
+\end{DoxyReturn}
+
+
+Definido na linha 445 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências length\+CP.
+
+\mbox{\Hypertarget{classLeitorExibidor_aa5cc18c3fb83811379d2f221980d8b8b}\label{classLeitorExibidor_aa5cc18c3fb83811379d2f221980d8b8b}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!obter\+This\+\_\+class@{obter\+This\+\_\+class}}
+\index{obter\+This\+\_\+class@{obter\+This\+\_\+class}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{obter\+This\+\_\+class()}{obterThis\_class()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Leitor\+Exibidor\+::obter\+This\+\_\+class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna um índice da constant pool que aponta para string com nome da class. 
+
+\begin{DoxyReturn}{Retorna}
+uint16\+\_\+t this\+\_\+class 
+\end{DoxyReturn}
+
+
+Definido na linha 488 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências this\+\_\+class.
+
+
+
+Referenciado por Method\+Area\+::adicionar\+Classe().
+
+\mbox{\Hypertarget{classLeitorExibidor_a422272b830079ee349b468bbe78d4b13}\label{classLeitorExibidor_a422272b830079ee349b468bbe78d4b13}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!validacao@{validacao}}
+\index{validacao@{validacao}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{validacao()}{validacao()}}
+{\footnotesize\ttfamily Leitor\+Exibidor\+::validacao (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Valida estrutura obrigatoria. 
+
+
+
+Definido na linha 45 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências I\+N\+V\+A\+L\+I\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON, I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+A\+ME, M\+I\+S\+S\+I\+N\+G\+\_\+\+M\+A\+IN, obter\+Erro(), status, validar\+Extensao(), verificar\+Main() e verificar\+This\+Class().
+
+
+
+Referenciado por main().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLeitorExibidor_a422272b830079ee349b468bbe78d4b13_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLeitorExibidor_a83ed9ca5a7b4442ae3449daffc0d3d5c}\label{classLeitorExibidor_a83ed9ca5a7b4442ae3449daffc0d3d5c}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!validar\+Extensao@{validar\+Extensao}}
+\index{validar\+Extensao@{validar\+Extensao}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{validar\+Extensao()}{validarExtensao()}}
+{\footnotesize\ttfamily bool Leitor\+Exibidor\+::validar\+Extensao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verifica se a extensão do arquivo é .class. 
+
+\begin{DoxyReturn}{Retorna}
+booleano que indica se existe o .class 
+\end{DoxyReturn}
+
+
+Definido na linha 284 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências file\+Name.
+
+
+
+Referenciado por Method\+Area\+::adicionar\+Classe(), carregar() e validacao().
+
+\mbox{\Hypertarget{classLeitorExibidor_a8aeff3d072e77288215e5a070e958cf0}\label{classLeitorExibidor_a8aeff3d072e77288215e5a070e958cf0}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!verificar\+Clinit@{verificar\+Clinit}}
+\index{verificar\+Clinit@{verificar\+Clinit}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{verificar\+Clinit()}{verificarClinit()}}
+{\footnotesize\ttfamily bool Leitor\+Exibidor\+::verificar\+Clinit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Encontra em qual method esta a clinit, se existir. 
+
+\begin{DoxyReturn}{Retorna}
+booleano que indica se existe o metodo clinit 
+\end{DoxyReturn}
+
+
+Definido na linha 320 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências capturar\+Indice\+De\+Referencia(), clinit, constant\+Pool, methods, methods\+Count e method\+\_\+info\+::name\+\_\+index.
+
+
+
+Referenciado por carregar() e existe\+Clinit().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLeitorExibidor_a8aeff3d072e77288215e5a070e958cf0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLeitorExibidor_a2d486c9289a5d50a7fb00afffd2fa760}\label{classLeitorExibidor_a2d486c9289a5d50a7fb00afffd2fa760}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!verificar\+Main@{verificar\+Main}}
+\index{verificar\+Main@{verificar\+Main}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{verificar\+Main()}{verificarMain()}}
+{\footnotesize\ttfamily bool Leitor\+Exibidor\+::verificar\+Main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Encontro em qual method está a main. 
+
+\begin{DoxyReturn}{Retorna}
+booleano que indica se existe o metodo main 
+\end{DoxyReturn}
+
+
+Definido na linha 297 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências method\+\_\+info\+::access\+\_\+flags, capturar\+Indice\+De\+Referencia(), constant\+Pool, method\+\_\+info\+::descriptor\+\_\+index, main\+Method, methods, methods\+Count e method\+\_\+info\+::name\+\_\+index.
+
+
+
+Referenciado por carregar(), existe\+Main() e validacao().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLeitorExibidor_a2d486c9289a5d50a7fb00afffd2fa760_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLeitorExibidor_a89d56b461514ed8fea8987ee52fa2eb9}\label{classLeitorExibidor_a89d56b461514ed8fea8987ee52fa2eb9}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!verificar\+This\+Class@{verificar\+This\+Class}}
+\index{verificar\+This\+Class@{verificar\+This\+Class}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{verificar\+This\+Class()}{verificarThisClass()}}
+{\footnotesize\ttfamily bool Leitor\+Exibidor\+::verificar\+This\+Class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verifica se a class definida é igual ao nome da classe sem extensões. 
+
+\begin{DoxyReturn}{Retorna}
+booleano indicando se a .class está correta 
+\end{DoxyReturn}
+
+
+Definido na linha 362 do ficheiro Classe\+Leitor\+Exibidor.\+cpp.
+
+
+
+Referências capturar\+Indice\+De\+Referencia(), constant\+Pool, file\+Name e this\+\_\+class.
+
+
+
+Referenciado por carregar() e validacao().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLeitorExibidor_a89d56b461514ed8fea8987ee52fa2eb9_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{classLeitorExibidor_a16d6ecbc6b367cda3c0b774505285665}\label{classLeitorExibidor_a16d6ecbc6b367cda3c0b774505285665}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!access\+Flags@{access\+Flags}}
+\index{access\+Flags@{access\+Flags}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{access\+Flags}{accessFlags}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Leitor\+Exibidor\+::access\+Flags\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 248 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar(), gravar\+Arquivo\+Informacoes\+Gerais() e imprimir\+Informacoes\+Gerais().
+
+\mbox{\Hypertarget{classLeitorExibidor_acbb3d188113d55cc00b6e92bf2fddb98}\label{classLeitorExibidor_acbb3d188113d55cc00b6e92bf2fddb98}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!arquivo\+Class@{arquivo\+Class}}
+\index{arquivo\+Class@{arquivo\+Class}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{arquivo\+Class}{arquivoClass}}
+{\footnotesize\ttfamily F\+I\+LE$\ast$ Leitor\+Exibidor\+::arquivo\+Class\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 254 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar().
+
+\mbox{\Hypertarget{classLeitorExibidor_ae7f2edb9968df63470901712119e30d2}\label{classLeitorExibidor_ae7f2edb9968df63470901712119e30d2}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!arquivo\+Saida@{arquivo\+Saida}}
+\index{arquivo\+Saida@{arquivo\+Saida}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{arquivo\+Saida}{arquivoSaida}}
+{\footnotesize\ttfamily fstream Leitor\+Exibidor\+::arquivo\+Saida\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 255 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por fechar\+Arquivo(), gravar\+Arquivo(), gravar\+Arquivo\+Informacoes\+Gerais() e inicializar\+Arquivo().
+
+\mbox{\Hypertarget{classLeitorExibidor_adb26d0959bef738b08bffa009d12fac3}\label{classLeitorExibidor_adb26d0959bef738b08bffa009d12fac3}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!attributes@{attributes}}
+\index{attributes@{attributes}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{attributes}{attributes}}
+{\footnotesize\ttfamily \hyperlink{structattribute__info}{attribute\+\_\+info}$\ast$ Leitor\+Exibidor\+::attributes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 253 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar(), exibir() e gravar\+Arquivo().
+
+\mbox{\Hypertarget{classLeitorExibidor_ac42b42a9a6c94c260db0016df94cda1d}\label{classLeitorExibidor_ac42b42a9a6c94c260db0016df94cda1d}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!attributes\+Count@{attributes\+Count}}
+\index{attributes\+Count@{attributes\+Count}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{attributes\+Count}{attributesCount}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Leitor\+Exibidor\+::attributes\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 248 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar(), exibir(), gravar\+Arquivo(), gravar\+Arquivo\+Informacoes\+Gerais() e imprimir\+Informacoes\+Gerais().
+
+\mbox{\Hypertarget{classLeitorExibidor_a0c4c896a1baf647a282881524f8a9687}\label{classLeitorExibidor_a0c4c896a1baf647a282881524f8a9687}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!clinit@{clinit}}
+\index{clinit@{clinit}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{clinit}{clinit}}
+{\footnotesize\ttfamily int Leitor\+Exibidor\+::clinit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 243 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por obter\+Clinit() e verificar\+Clinit().
+
+\mbox{\Hypertarget{classLeitorExibidor_ac92916cbf475e31ce0f2475d982ddaea}\label{classLeitorExibidor_ac92916cbf475e31ce0f2475d982ddaea}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!constant\+Pool@{constant\+Pool}}
+\index{constant\+Pool@{constant\+Pool}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{constant\+Pool}{constantPool}}
+{\footnotesize\ttfamily \hyperlink{structcp__info}{cp\+\_\+info}$\ast$ Leitor\+Exibidor\+::constant\+Pool\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 250 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar(), exibir(), gravar\+Arquivo(), gravar\+Arquivo\+Informacoes\+Gerais(), imprimir\+Informacoes\+Gerais(), obter\+Class\+That\+Has\+Serached\+Method(), obter\+Constant\+Pool(), obter\+Field(), obter\+Method(), verificar\+Clinit(), verificar\+Main() e verificar\+This\+Class().
+
+\mbox{\Hypertarget{classLeitorExibidor_a93a1aa14204f0445a97304cc504a3cf0}\label{classLeitorExibidor_a93a1aa14204f0445a97304cc504a3cf0}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!encontrou\+Clinit@{encontrou\+Clinit}}
+\index{encontrou\+Clinit@{encontrou\+Clinit}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{encontrou\+Clinit}{encontrouClinit}}
+{\footnotesize\ttfamily bool Leitor\+Exibidor\+::encontrou\+Clinit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 244 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar() e existe\+Clinit().
+
+\mbox{\Hypertarget{classLeitorExibidor_aca32f682d0ccd1d60a76d0833ca0617f}\label{classLeitorExibidor_aca32f682d0ccd1d60a76d0833ca0617f}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!encontrou\+Main@{encontrou\+Main}}
+\index{encontrou\+Main@{encontrou\+Main}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{encontrou\+Main}{encontrouMain}}
+{\footnotesize\ttfamily bool Leitor\+Exibidor\+::encontrou\+Main\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 244 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar(), existe\+Main() e obter\+Main().
+
+\mbox{\Hypertarget{classLeitorExibidor_a6e8475e2db54d776db636c06d823eb3f}\label{classLeitorExibidor_a6e8475e2db54d776db636c06d823eb3f}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!fields@{fields}}
+\index{fields@{fields}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{fields}{fields}}
+{\footnotesize\ttfamily \hyperlink{structfield__info}{field\+\_\+info}$\ast$ Leitor\+Exibidor\+::fields\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 251 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar(), exibir(), gravar\+Arquivo(), obter\+Field() e obter\+Fields().
+
+\mbox{\Hypertarget{classLeitorExibidor_a9a54627d53b9a3c25c5ba71977e1e002}\label{classLeitorExibidor_a9a54627d53b9a3c25c5ba71977e1e002}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!fields\+Count@{fields\+Count}}
+\index{fields\+Count@{fields\+Count}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{fields\+Count}{fieldsCount}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Leitor\+Exibidor\+::fields\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 247 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar(), exibir(), gravar\+Arquivo(), gravar\+Arquivo\+Informacoes\+Gerais(), imprimir\+Informacoes\+Gerais() e obter\+Fields\+Count().
+
+\mbox{\Hypertarget{classLeitorExibidor_a1dfa84388856ad4d83883e4e5548b485}\label{classLeitorExibidor_a1dfa84388856ad4d83883e4e5548b485}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!file\+Name@{file\+Name}}
+\index{file\+Name@{file\+Name}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{file\+Name}{fileName}}
+{\footnotesize\ttfamily char$\ast$ Leitor\+Exibidor\+::file\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 245 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar(), Leitor\+Exibidor(), obter\+Erro(), obter\+Path(), validar\+Extensao() e verificar\+This\+Class().
+
+\mbox{\Hypertarget{classLeitorExibidor_a7c19cc595c9d806b30477b5b008f3caa}\label{classLeitorExibidor_a7c19cc595c9d806b30477b5b008f3caa}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!interfaces@{interfaces}}
+\index{interfaces@{interfaces}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{interfaces}{interfaces}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2}$\ast$ Leitor\+Exibidor\+::interfaces\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 249 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar(), exibir() e gravar\+Arquivo().
+
+\mbox{\Hypertarget{classLeitorExibidor_a596a1440982d2418e39adf5b1857ab15}\label{classLeitorExibidor_a596a1440982d2418e39adf5b1857ab15}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!interfaces\+Count@{interfaces\+Count}}
+\index{interfaces\+Count@{interfaces\+Count}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{interfaces\+Count}{interfacesCount}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Leitor\+Exibidor\+::interfaces\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 247 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar(), exibir(), gravar\+Arquivo(), gravar\+Arquivo\+Informacoes\+Gerais() e imprimir\+Informacoes\+Gerais().
+
+\mbox{\Hypertarget{classLeitorExibidor_ae891dce6b86c2d09c1a112bd585561d6}\label{classLeitorExibidor_ae891dce6b86c2d09c1a112bd585561d6}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!length\+CP@{length\+CP}}
+\index{length\+CP@{length\+CP}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{length\+CP}{lengthCP}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Leitor\+Exibidor\+::length\+CP\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 246 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar(), exibir(), gravar\+Arquivo(), gravar\+Arquivo\+Informacoes\+Gerais(), imprimir\+Informacoes\+Gerais() e obter\+Tamanho\+Constant\+Pool().
+
+\mbox{\Hypertarget{classLeitorExibidor_a9e7a108ebca3fac0096fcb422f2393db}\label{classLeitorExibidor_a9e7a108ebca3fac0096fcb422f2393db}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!main\+Method@{main\+Method}}
+\index{main\+Method@{main\+Method}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{main\+Method}{mainMethod}}
+{\footnotesize\ttfamily int Leitor\+Exibidor\+::main\+Method\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 243 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por obter\+Main() e verificar\+Main().
+
+\mbox{\Hypertarget{classLeitorExibidor_a5c2cd58569e9c3fdc47c0bbab116b870}\label{classLeitorExibidor_a5c2cd58569e9c3fdc47c0bbab116b870}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!maj\+Version@{maj\+Version}}
+\index{maj\+Version@{maj\+Version}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{maj\+Version}{majVersion}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Leitor\+Exibidor\+::maj\+Version\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 246 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar(), gravar\+Arquivo\+Informacoes\+Gerais() e imprimir\+Informacoes\+Gerais().
+
+\mbox{\Hypertarget{classLeitorExibidor_a0c9110ffe495c55bedaafdc47656eaed}\label{classLeitorExibidor_a0c9110ffe495c55bedaafdc47656eaed}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!methods@{methods}}
+\index{methods@{methods}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{methods}{methods}}
+{\footnotesize\ttfamily \hyperlink{structmethod__info}{method\+\_\+info}$\ast$ Leitor\+Exibidor\+::methods\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 252 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar(), exibir(), gravar\+Arquivo(), obter\+Class\+That\+Has\+Serached\+Method(), obter\+Clinit(), obter\+Main(), obter\+Method(), obter\+Methods(), verificar\+Clinit() e verificar\+Main().
+
+\mbox{\Hypertarget{classLeitorExibidor_a3f5d59fb172e478ab6d1a595a8b6c54a}\label{classLeitorExibidor_a3f5d59fb172e478ab6d1a595a8b6c54a}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!methods\+Count@{methods\+Count}}
+\index{methods\+Count@{methods\+Count}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{methods\+Count}{methodsCount}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Leitor\+Exibidor\+::methods\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 248 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar(), exibir(), gravar\+Arquivo(), gravar\+Arquivo\+Informacoes\+Gerais(), imprimir\+Informacoes\+Gerais(), obter\+Class\+That\+Has\+Serached\+Method(), obter\+Method(), obter\+Methods\+Count(), verificar\+Clinit() e verificar\+Main().
+
+\mbox{\Hypertarget{classLeitorExibidor_a6f6ac6ed85979359308c07c666316218}\label{classLeitorExibidor_a6f6ac6ed85979359308c07c666316218}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!min\+Version@{min\+Version}}
+\index{min\+Version@{min\+Version}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{min\+Version}{minVersion}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Leitor\+Exibidor\+::min\+Version\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 246 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar(), gravar\+Arquivo\+Informacoes\+Gerais() e imprimir\+Informacoes\+Gerais().
+
+\mbox{\Hypertarget{classLeitorExibidor_ac54b88860544d66f5e8f620c4c017a37}\label{classLeitorExibidor_ac54b88860544d66f5e8f620c4c017a37}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!status@{status}}
+\index{status@{status}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily int Leitor\+Exibidor\+::status\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 243 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar(), exibir(), gravar\+Arquivo(), inicializar\+Arquivo(), Leitor\+Exibidor(), obter\+Status() e validacao().
+
+\mbox{\Hypertarget{classLeitorExibidor_adc9f3b119883f9bc4ba0323b8480c53e}\label{classLeitorExibidor_adc9f3b119883f9bc4ba0323b8480c53e}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!super\+\_\+class@{super\+\_\+class}}
+\index{super\+\_\+class@{super\+\_\+class}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{super\+\_\+class}{super\_class}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Leitor\+Exibidor\+::super\+\_\+class\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 247 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar(), gravar\+Arquivo\+Informacoes\+Gerais(), imprimir\+Informacoes\+Gerais() e obter\+Super\+\_\+class().
+
+\mbox{\Hypertarget{classLeitorExibidor_ad85a876f6368ae8101343f4f35b53019}\label{classLeitorExibidor_ad85a876f6368ae8101343f4f35b53019}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!this\+\_\+class@{this\+\_\+class}}
+\index{this\+\_\+class@{this\+\_\+class}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{this\+\_\+class}{this\_class}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Leitor\+Exibidor\+::this\+\_\+class\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 247 do ficheiro Classe\+Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por carregar(), gravar\+Arquivo\+Informacoes\+Gerais(), imprimir\+Informacoes\+Gerais(), obter\+This\+\_\+class() e verificar\+This\+Class().
+
+
+
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{ClasseLeitorExibidor_8h}{Classe\+Leitor\+Exibidor.\+h}\item 
+src/\hyperlink{ClasseLeitorExibidor_8cpp}{Classe\+Leitor\+Exibidor.\+cpp}\end{DoxyCompactItemize}

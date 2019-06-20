@@ -1,0 +1,5 @@
+<map id="Operations::aload_n" name="Operations::aload_n">
+<area shape="rect" id="node2" href="$classOperandsStack.html#a47af7d965172984b9cc5c61d8c4c1ce3" title="Empilha um valor de tipo referencia. " alt="" coords="192,5,424,32"/>
+<area shape="rect" id="node4" href="$classLocalVariables.html#a4abbb4a732d7dd0f11a147b79c15ae10" title="Gets element on past position by index. " alt="" coords="241,56,375,83"/>
+<area shape="rect" id="node3" href="$classOperandsStack.html#a6ea316fc2b2503af2175fada4d4a9741" title="retorna o tamanho da pilha de operandos " alt="" coords="472,5,675,32"/>
+</map>

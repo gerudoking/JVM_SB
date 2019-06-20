@@ -1,0 +1,225 @@
+\hypertarget{classMethodArea}{}\section{Referência à classe Method\+Area}
+\label{classMethodArea}\index{Method\+Area@{Method\+Area}}
+
+
+Classe responsável por todas as operações que gerenciam os métodos.  
+
+
+
+
+{\ttfamily \#include $<$Method\+Area.\+h$>$}
+
+
+
+Diagrama de colaboração para Method\+Area\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classMethodArea__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Membros públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classStaticClass}{Static\+Class} $\ast$ \hyperlink{classMethodArea_a6e9d922892887daadd4624729268094f}{obter\+Class} (string classe)
+\begin{DoxyCompactList}\small\item\em Retorna referência para classe estática. \end{DoxyCompactList}\item 
+static bool \hyperlink{classMethodArea_a30233142aefa26c17a3a222582cb56c1}{adicionar\+Classe} (string classe)
+\begin{DoxyCompactList}\small\item\em Carrega a classe na memória. \end{DoxyCompactList}\item 
+static bool \hyperlink{classMethodArea_af8c5a64c3e17fb33809b1cea9b85a8b1}{adicionar\+Classe} (\hyperlink{classLeitorExibidor}{Leitor\+Exibidor} $\ast$leitor\+Exibidor)
+\begin{DoxyCompactList}\small\item\em Carrega classe na memória. \end{DoxyCompactList}\item 
+static void \hyperlink{classMethodArea_ac6423e447a5f46bf969bfb7df7500a2b}{atualizar\+Frame\+Stack} (\hyperlink{classFrameStack}{Frame\+Stack} $\ast$novo\+Frame\+Stack)
+\begin{DoxyCompactList}\small\item\em Atualiza a referência da pilha de frames para o próximo frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Públicos Estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static string \hyperlink{classMethodArea_a5fba57684c1552a65932306870b1130c}{path} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Atributos Privados Estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static map$<$ string, \hyperlink{classStaticClass}{Static\+Class} $\ast$ $>$ \hyperlink{classMethodArea_ab92a54586a58ca940ecedfcc90ff8b13}{map\+Classes}
+\item 
+static \hyperlink{classFrameStack}{Frame\+Stack} $\ast$ \hyperlink{classMethodArea_a2b99453f48cbcc141b027b8e6bbb9e2d}{frame\+Stack} = nullptr
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Classe responsável por todas as operações que gerenciam os métodos. 
+
+Definido na linha 23 do ficheiro Method\+Area.\+h.
+
+
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classMethodArea_a30233142aefa26c17a3a222582cb56c1}\label{classMethodArea_a30233142aefa26c17a3a222582cb56c1}} 
+\index{Method\+Area@{Method\+Area}!adicionar\+Classe@{adicionar\+Classe}}
+\index{adicionar\+Classe@{adicionar\+Classe}!Method\+Area@{Method\+Area}}
+\subsubsection{\texorpdfstring{adicionar\+Classe()}{adicionarClasse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static bool Method\+Area\+::adicionar\+Classe (\begin{DoxyParamCaption}\item[{string}]{classe }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Carrega a classe na memória. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em classe} & Nome da classe \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 21 do ficheiro Method\+Area.\+cpp.
+
+
+
+Referências Frame\+Stack\+::adicionar\+Frame(), Leitor\+Exibidor\+::carregar(), Leitor\+Exibidor\+::existe\+Clinit(), frame\+Stack, map\+Classes, Leitor\+Exibidor\+::obter\+Clinit(), Leitor\+Exibidor\+::obter\+Constant\+Pool(), path e Leitor\+Exibidor\+::validar\+Extensao().
+
+
+
+Referenciado por Operations\+::func\+\_\+new() e main().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMethodArea_a30233142aefa26c17a3a222582cb56c1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMethodArea_af8c5a64c3e17fb33809b1cea9b85a8b1}\label{classMethodArea_af8c5a64c3e17fb33809b1cea9b85a8b1}} 
+\index{Method\+Area@{Method\+Area}!adicionar\+Classe@{adicionar\+Classe}}
+\index{adicionar\+Classe@{adicionar\+Classe}!Method\+Area@{Method\+Area}}
+\subsubsection{\texorpdfstring{adicionar\+Classe()}{adicionarClasse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool Method\+Area\+::adicionar\+Classe (\begin{DoxyParamCaption}\item[{\hyperlink{classLeitorExibidor}{Leitor\+Exibidor} $\ast$}]{leitor\+Exibidor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Carrega classe na memória. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em leitor\+Exibidor} & informação do arquivo .class na memória \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 49 do ficheiro Method\+Area.\+cpp.
+
+
+
+Referências Frame\+Stack\+::adicionar\+Frame(), capturar\+Indice\+De\+Referencia(), Leitor\+Exibidor\+::carregar(), Leitor\+Exibidor\+::existe\+Clinit(), frame\+Stack, map\+Classes, Leitor\+Exibidor\+::obter\+Clinit(), Leitor\+Exibidor\+::obter\+Constant\+Pool(), Leitor\+Exibidor\+::obter\+Status() e Leitor\+Exibidor\+::obter\+This\+\_\+class().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMethodArea_af8c5a64c3e17fb33809b1cea9b85a8b1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMethodArea_ac6423e447a5f46bf969bfb7df7500a2b}\label{classMethodArea_ac6423e447a5f46bf969bfb7df7500a2b}} 
+\index{Method\+Area@{Method\+Area}!atualizar\+Frame\+Stack@{atualizar\+Frame\+Stack}}
+\index{atualizar\+Frame\+Stack@{atualizar\+Frame\+Stack}!Method\+Area@{Method\+Area}}
+\subsubsection{\texorpdfstring{atualizar\+Frame\+Stack()}{atualizarFrameStack()}}
+{\footnotesize\ttfamily static void Method\+Area\+::atualizar\+Frame\+Stack (\begin{DoxyParamCaption}\item[{\hyperlink{classFrameStack}{Frame\+Stack} $\ast$}]{novo\+Frame\+Stack }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Atualiza a referência da pilha de frames para o próximo frame. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em novo\+Frame\+Stack} & próximo frame \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 73 do ficheiro Method\+Area.\+cpp.
+
+
+
+Referências frame\+Stack.
+
+
+
+Referenciado por Frame\+Stack\+::adicionar\+Frame() e Frame\+Stack\+::\+Frame\+Stack().
+
+\mbox{\Hypertarget{classMethodArea_a6e9d922892887daadd4624729268094f}\label{classMethodArea_a6e9d922892887daadd4624729268094f}} 
+\index{Method\+Area@{Method\+Area}!obter\+Class@{obter\+Class}}
+\index{obter\+Class@{obter\+Class}!Method\+Area@{Method\+Area}}
+\subsubsection{\texorpdfstring{obter\+Class()}{obterClass()}}
+{\footnotesize\ttfamily static \hyperlink{classStaticClass}{Static\+Class} $\ast$ Method\+Area\+::obter\+Class (\begin{DoxyParamCaption}\item[{string}]{classe }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retorna referência para classe estática. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em classe} & Nome da classe \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 12 do ficheiro Method\+Area.\+cpp.
+
+
+
+Referências map\+Classes.
+
+
+
+Referenciado por Operations\+::func\+\_\+new(), Operations\+::getstatic(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::multianewarray(), Leitor\+Exibidor\+::obter\+Class\+That\+Has\+Serached\+Method(), Leitor\+Exibidor\+::obter\+Method(), Operations\+::obter\+Static\+Class\+That\+Has\+Field() e Operations\+::putstatic().
+
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{classMethodArea_a2b99453f48cbcc141b027b8e6bbb9e2d}\label{classMethodArea_a2b99453f48cbcc141b027b8e6bbb9e2d}} 
+\index{Method\+Area@{Method\+Area}!frame\+Stack@{frame\+Stack}}
+\index{frame\+Stack@{frame\+Stack}!Method\+Area@{Method\+Area}}
+\subsubsection{\texorpdfstring{frame\+Stack}{frameStack}}
+{\footnotesize\ttfamily \hyperlink{classFrameStack}{Frame\+Stack} $\ast$ Method\+Area\+::frame\+Stack = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definido na linha 26 do ficheiro Method\+Area.\+h.
+
+
+
+Referenciado por adicionar\+Classe() e atualizar\+Frame\+Stack().
+
+\mbox{\Hypertarget{classMethodArea_ab92a54586a58ca940ecedfcc90ff8b13}\label{classMethodArea_ab92a54586a58ca940ecedfcc90ff8b13}} 
+\index{Method\+Area@{Method\+Area}!map\+Classes@{map\+Classes}}
+\index{map\+Classes@{map\+Classes}!Method\+Area@{Method\+Area}}
+\subsubsection{\texorpdfstring{map\+Classes}{mapClasses}}
+{\footnotesize\ttfamily map$<$ string, \hyperlink{classStaticClass}{Static\+Class} $\ast$ $>$ Method\+Area\+::map\+Classes\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definido na linha 25 do ficheiro Method\+Area.\+h.
+
+
+
+Referenciado por adicionar\+Classe() e obter\+Class().
+
+\mbox{\Hypertarget{classMethodArea_a5fba57684c1552a65932306870b1130c}\label{classMethodArea_a5fba57684c1552a65932306870b1130c}} 
+\index{Method\+Area@{Method\+Area}!path@{path}}
+\index{path@{path}!Method\+Area@{Method\+Area}}
+\subsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily string Method\+Area\+::path = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definido na linha 29 do ficheiro Method\+Area.\+h.
+
+
+
+Referenciado por adicionar\+Classe() e main().
+
+
+
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{MethodArea_8h}{Method\+Area.\+h}\item 
+src/\hyperlink{MethodArea_8cpp}{Method\+Area.\+cpp}\end{DoxyCompactItemize}

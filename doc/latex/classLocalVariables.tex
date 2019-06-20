@@ -1,0 +1,307 @@
+\hypertarget{classLocalVariables}{}\section{Referência à classe Local\+Variables}
+\label{classLocalVariables}\index{Local\+Variables@{Local\+Variables}}
+
+
+{\ttfamily \#include $<$Local\+Variables.\+h$>$}
+
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLocalVariables_ae354d02f996f4f584fe857d9304161c1}{Local\+Variables} (uint16\+\_\+t)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classVariaveisLocais}{Variaveis\+Locais} class constructor. \end{DoxyCompactList}\item 
+\hyperlink{classLocalVariables_a2c9e8aefc8aa8ff0d0efd305ab3e424b}{Local\+Variables} (uint16\+\_\+t max\+Size, bool slots)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classLocalVariables}{Local\+Variables} class constructor. \end{DoxyCompactList}\item 
+\hyperlink{classLocalVariables_aaf00f6cc3391fdd2cc0ecd2b1d31c887}{$\sim$\+Local\+Variables} ()
+\begin{DoxyCompactList}\small\item\em Destructor 4. \end{DoxyCompactList}\item 
+void \hyperlink{classLocalVariables_a6f51e8532ae59a4eea6801872d5f8444}{imprimir\+All} () const
+\begin{DoxyCompactList}\small\item\em Function to show all values. \end{DoxyCompactList}\item 
+void \hyperlink{classLocalVariables_a6d79e0c874931e97ed68a25cf60ab119}{set} (int, \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element})
+\begin{DoxyCompactList}\small\item\em Receives the typed element and inserts on past index. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} \hyperlink{classLocalVariables_a4abbb4a732d7dd0f11a147b79c15ae10}{get} (int) const
+\begin{DoxyCompactList}\small\item\em Gets element on past position by index. \end{DoxyCompactList}\item 
+int \hyperlink{classLocalVariables_acf8ee1db2a3427c30eb3e489d7a4478c}{obter\+Max} () const
+\begin{DoxyCompactList}\small\item\em Function to know maximum size. \end{DoxyCompactList}\item 
+const \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} \hyperlink{classLocalVariables_a6e978f3c992385f2909261e995105142}{operator\mbox{[}$\,$\mbox{]}} (const int) const
+\begin{DoxyCompactList}\small\item\em Function to allow class use like a struct\textquotesingle{}s array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t $\ast$ \hyperlink{classLocalVariables_a0015e9d8a61d4643f6f3594785467ae4}{elements}
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{classLocalVariables_ac73d4583cc3f8b295c8c986cee21fe30}{types}
+\item 
+const uint16\+\_\+t \hyperlink{classLocalVariables_a55f33aaf9a0af5176d460616402c4aeb}{max}
+\item 
+const uint16\+\_\+t \hyperlink{classLocalVariables_a892e685ce3c1c5e6da9e1db542d865e9}{real\+Max}
+\item 
+const bool \hyperlink{classLocalVariables_a8357edb6ae793a8f031ae3733751e1fc}{dois}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+
+
+Definido na linha 36 do ficheiro Local\+Variables.\+h.
+
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{classLocalVariables_ae354d02f996f4f584fe857d9304161c1}\label{classLocalVariables_ae354d02f996f4f584fe857d9304161c1}} 
+\index{Local\+Variables@{Local\+Variables}!Local\+Variables@{Local\+Variables}}
+\index{Local\+Variables@{Local\+Variables}!Local\+Variables@{Local\+Variables}}
+\subsubsection{\texorpdfstring{Local\+Variables()}{LocalVariables()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Local\+Variables\+::\+Local\+Variables (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{max\+Size }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classVariaveisLocais}{Variaveis\+Locais} class constructor. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em max\+Size} & Maximum size of local variables that can be stored \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 8 do ficheiro Local\+Variables.\+cpp.
+
+
+
+Referências elements, max e types.
+
+\mbox{\Hypertarget{classLocalVariables_a2c9e8aefc8aa8ff0d0efd305ab3e424b}\label{classLocalVariables_a2c9e8aefc8aa8ff0d0efd305ab3e424b}} 
+\index{Local\+Variables@{Local\+Variables}!Local\+Variables@{Local\+Variables}}
+\index{Local\+Variables@{Local\+Variables}!Local\+Variables@{Local\+Variables}}
+\subsubsection{\texorpdfstring{Local\+Variables()}{LocalVariables()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Local\+Variables\+::\+Local\+Variables (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{max\+Size,  }\item[{bool}]{slots }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classLocalVariables}{Local\+Variables} class constructor. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em max\+Size} & Maximum site of local variables that can be stored \\
+\hline
+{\em slots} & Says if needs to be used two slots for all elements \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 14 do ficheiro Local\+Variables.\+cpp.
+
+
+
+Referências elements, max e types.
+
+\mbox{\Hypertarget{classLocalVariables_aaf00f6cc3391fdd2cc0ecd2b1d31c887}\label{classLocalVariables_aaf00f6cc3391fdd2cc0ecd2b1d31c887}} 
+\index{Local\+Variables@{Local\+Variables}!````~Local\+Variables@{$\sim$\+Local\+Variables}}
+\index{````~Local\+Variables@{$\sim$\+Local\+Variables}!Local\+Variables@{Local\+Variables}}
+\subsubsection{\texorpdfstring{$\sim$\+Local\+Variables()}{~LocalVariables()}}
+{\footnotesize\ttfamily Local\+Variables\+::$\sim$\+Local\+Variables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor 4. 
+
+
+
+Definido na linha 20 do ficheiro Local\+Variables.\+cpp.
+
+
+
+Referências elements e types.
+
+
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classLocalVariables_a4abbb4a732d7dd0f11a147b79c15ae10}\label{classLocalVariables_a4abbb4a732d7dd0f11a147b79c15ae10}} 
+\index{Local\+Variables@{Local\+Variables}!get@{get}}
+\index{get@{get}!Local\+Variables@{Local\+Variables}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily typed\+Element Local\+Variables\+::get (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Gets element on past position by index. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em index} & Indicates the index that will be obtained the element \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 49 do ficheiro Local\+Variables.\+cpp.
+
+
+
+Referências B\+I\+TS, elements, element\+\_\+u\+::i, I\+N\+V\+A\+L\+ID, element\+\_\+u\+::l, real\+Max, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE, T\+Y\+P\+E\+\_\+\+L\+O\+NG, T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE, types e typed\+Element\+\_\+s\+::value.
+
+
+
+Referenciado por Operations\+::aaload(), Operations\+::aload(), Operations\+::aload\+\_\+n(), Operations\+::baload(), Operations\+::daload(), Operations\+::dload(), Operations\+::dload\+\_\+n(), Operations\+::faload(), Operations\+::fload(), Operations\+::fload\+\_\+n(), Operations\+::funcret(), Operations\+::iinc(), Operations\+::iload(), Operations\+::iload\+\_\+0(), Operations\+::iload\+\_\+1(), Operations\+::iload\+\_\+2(), Operations\+::iload\+\_\+3(), Operations\+::laload(), Operations\+::lload(), Operations\+::lload\+\_\+n() e Operations\+::saload().
+
+\mbox{\Hypertarget{classLocalVariables_a6f51e8532ae59a4eea6801872d5f8444}\label{classLocalVariables_a6f51e8532ae59a4eea6801872d5f8444}} 
+\index{Local\+Variables@{Local\+Variables}!imprimir\+All@{imprimir\+All}}
+\index{imprimir\+All@{imprimir\+All}!Local\+Variables@{Local\+Variables}}
+\subsubsection{\texorpdfstring{imprimir\+All()}{imprimirAll()}}
+{\footnotesize\ttfamily void Local\+Variables\+::imprimir\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Function to show all values. 
+
+
+
+Definido na linha 69 do ficheiro Local\+Variables.\+cpp.
+
+
+
+Referências I\+N\+V\+A\+L\+ID, max, T\+Y\+P\+E\+\_\+\+B\+O\+OL, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT, T\+Y\+P\+E\+\_\+\+I\+NT, T\+Y\+P\+E\+\_\+\+L\+O\+NG, T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+S\+ET, T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE e types.
+
+\mbox{\Hypertarget{classLocalVariables_acf8ee1db2a3427c30eb3e489d7a4478c}\label{classLocalVariables_acf8ee1db2a3427c30eb3e489d7a4478c}} 
+\index{Local\+Variables@{Local\+Variables}!obter\+Max@{obter\+Max}}
+\index{obter\+Max@{obter\+Max}!Local\+Variables@{Local\+Variables}}
+\subsubsection{\texorpdfstring{obter\+Max()}{obterMax()}}
+{\footnotesize\ttfamily int Local\+Variables\+::obter\+Max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Function to know maximum size. 
+
+
+
+Definido na linha 102 do ficheiro Local\+Variables.\+cpp.
+
+
+
+Referências max.
+
+
+
+Referenciado por Operations\+::arraylength().
+
+\mbox{\Hypertarget{classLocalVariables_a6e978f3c992385f2909261e995105142}\label{classLocalVariables_a6e978f3c992385f2909261e995105142}} 
+\index{Local\+Variables@{Local\+Variables}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Local\+Variables@{Local\+Variables}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily const typed\+Element Local\+Variables\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const int}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Function to allow class use like a struct\textquotesingle{}s array. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em index} & Indicates the index that must be accessed to obtain the typed element \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 106 do ficheiro Local\+Variables.\+cpp.
+
+\mbox{\Hypertarget{classLocalVariables_a6d79e0c874931e97ed68a25cf60ab119}\label{classLocalVariables_a6d79e0c874931e97ed68a25cf60ab119}} 
+\index{Local\+Variables@{Local\+Variables}!set@{set}}
+\index{set@{set}!Local\+Variables@{Local\+Variables}}
+\subsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void Local\+Variables\+::set (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{\hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element}}]{x }\end{DoxyParamCaption})}
+
+
+
+Receives the typed element and inserts on past index. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em index} & Says the index that will be inserted the past element \\
+\hline
+{\em x} & Typed element that will be inserted on indicated index \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 27 do ficheiro Local\+Variables.\+cpp.
+
+
+
+Referências B\+I\+TS, elements, element\+\_\+u\+::i, I\+N\+V\+A\+L\+ID, element\+\_\+u\+::l, real\+Max, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE, T\+Y\+P\+E\+\_\+\+L\+O\+NG, T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE, types e typed\+Element\+\_\+s\+::value.
+
+
+
+Referenciado por Operations\+::aastore(), Operations\+::anewarray(), Operations\+::astore(), Operations\+::astore\+\_\+0(), Operations\+::astore\+\_\+1(), Operations\+::astore\+\_\+2(), Operations\+::astore\+\_\+3(), Operations\+::bastore(), Operations\+::dastore(), Operations\+::dstore(), Operations\+::dstore\+\_\+0(), Operations\+::dstore\+\_\+1(), Operations\+::dstore\+\_\+2(), Operations\+::dstore\+\_\+3(), Operations\+::fastore(), Operations\+::fstore(), Operations\+::fstore\+\_\+0(), Operations\+::fstore\+\_\+1(), Operations\+::fstore\+\_\+2(), Operations\+::fstore\+\_\+3(), Operations\+::iinc(), Operations\+::istore(), Operations\+::istore\+\_\+0(), Operations\+::istore\+\_\+1(), Operations\+::istore\+\_\+2(), Operations\+::istore\+\_\+3(), Operations\+::lastore(), Operations\+::lstore(), Operations\+::lstore\+\_\+0(), Operations\+::lstore\+\_\+1(), Operations\+::lstore\+\_\+2(), Operations\+::lstore\+\_\+3() e Operations\+::sastore().
+
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{classLocalVariables_a8357edb6ae793a8f031ae3733751e1fc}\label{classLocalVariables_a8357edb6ae793a8f031ae3733751e1fc}} 
+\index{Local\+Variables@{Local\+Variables}!dois@{dois}}
+\index{dois@{dois}!Local\+Variables@{Local\+Variables}}
+\subsubsection{\texorpdfstring{dois}{dois}}
+{\footnotesize\ttfamily const bool Local\+Variables\+::dois\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 46 do ficheiro Local\+Variables.\+h.
+
+\mbox{\Hypertarget{classLocalVariables_a0015e9d8a61d4643f6f3594785467ae4}\label{classLocalVariables_a0015e9d8a61d4643f6f3594785467ae4}} 
+\index{Local\+Variables@{Local\+Variables}!elements@{elements}}
+\index{elements@{elements}!Local\+Variables@{Local\+Variables}}
+\subsubsection{\texorpdfstring{elements}{elements}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ Local\+Variables\+::elements\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 39 do ficheiro Local\+Variables.\+h.
+
+
+
+Referenciado por get(), Local\+Variables(), set() e $\sim$\+Local\+Variables().
+
+\mbox{\Hypertarget{classLocalVariables_a55f33aaf9a0af5176d460616402c4aeb}\label{classLocalVariables_a55f33aaf9a0af5176d460616402c4aeb}} 
+\index{Local\+Variables@{Local\+Variables}!max@{max}}
+\index{max@{max}!Local\+Variables@{Local\+Variables}}
+\subsubsection{\texorpdfstring{max}{max}}
+{\footnotesize\ttfamily const uint16\+\_\+t Local\+Variables\+::max\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 43 do ficheiro Local\+Variables.\+h.
+
+
+
+Referenciado por imprimir\+All(), Local\+Variables() e obter\+Max().
+
+\mbox{\Hypertarget{classLocalVariables_a892e685ce3c1c5e6da9e1db542d865e9}\label{classLocalVariables_a892e685ce3c1c5e6da9e1db542d865e9}} 
+\index{Local\+Variables@{Local\+Variables}!real\+Max@{real\+Max}}
+\index{real\+Max@{real\+Max}!Local\+Variables@{Local\+Variables}}
+\subsubsection{\texorpdfstring{real\+Max}{realMax}}
+{\footnotesize\ttfamily const uint16\+\_\+t Local\+Variables\+::real\+Max\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 44 do ficheiro Local\+Variables.\+h.
+
+
+
+Referenciado por get() e set().
+
+\mbox{\Hypertarget{classLocalVariables_ac73d4583cc3f8b295c8c986cee21fe30}\label{classLocalVariables_ac73d4583cc3f8b295c8c986cee21fe30}} 
+\index{Local\+Variables@{Local\+Variables}!types@{types}}
+\index{types@{types}!Local\+Variables@{Local\+Variables}}
+\subsubsection{\texorpdfstring{types}{types}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ Local\+Variables\+::types\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 41 do ficheiro Local\+Variables.\+h.
+
+
+
+Referenciado por get(), imprimir\+All(), Local\+Variables(), set() e $\sim$\+Local\+Variables().
+
+
+
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{LocalVariables_8h}{Local\+Variables.\+h}\item 
+src/\hyperlink{LocalVariables_8cpp}{Local\+Variables.\+cpp}\end{DoxyCompactItemize}

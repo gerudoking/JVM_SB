@@ -1,0 +1,756 @@
+\hypertarget{classOperandsStack}{}\section{Referência à classe Operands\+Stack}
+\label{classOperandsStack}\index{Operands\+Stack@{Operands\+Stack}}
+
+
+Classe da pilha de operandos.  
+
+
+
+
+{\ttfamily \#include $<$Operands\+Stack.\+h$>$}
+
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOperandsStack_a5ea2e7d609262388d0d4bc3ba08a2c32}{Operands\+Stack} (int)
+\begin{DoxyCompactList}\small\item\em Construtor. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{classOperandsStack_a8c76f12ad6984b3c5b4ec8807eb63ae3}{desempilha\+Topo\+Tipo} ()
+\begin{DoxyCompactList}\small\item\em Recupera o tipo do topo da pilha de operandos. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a8132f4f0515064141e31e606660df561}{Element} \hyperlink{classOperandsStack_a184a99d160e17ef874a7b83f0726fb8a}{desempilha\+Topo\+Valor} ()
+\begin{DoxyCompactList}\small\item\em Recupera o valor do topo da pilha de operandos. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a8132f4f0515064141e31e606660df561}{Element} \hyperlink{classOperandsStack_a3213a1b633149de9332217d403ee84b6}{desempilha} ()
+\begin{DoxyCompactList}\small\item\em Desempilha o topo da pilha de operandos e retorna em um elemento de valor. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} \hyperlink{classOperandsStack_a9503313a7def4c11fb782d5881e3d6cb}{desempilha\+Typed} ()
+\begin{DoxyCompactList}\small\item\em Desempilha o topo da pilha de operandos e retorna em um elemento tipado. \end{DoxyCompactList}\item 
+string \hyperlink{classOperandsStack_a32ad6a1ea26c02cf709fed1e86412b4a}{obter\+String} ()
+\begin{DoxyCompactList}\small\item\em Retorna o topo da pilha de operandos formatado em uma string. \end{DoxyCompactList}\item 
+void \hyperlink{classOperandsStack_a5006a59c2d815e4a24b055e2e4d2e741}{empilhar\+Int} (int x)
+\begin{DoxyCompactList}\small\item\em Empilha um valor de tipo inteiro. \end{DoxyCompactList}\item 
+void \hyperlink{classOperandsStack_a927ca84358d7e0f45f74d122f9a500d2}{empilhar\+Long} (int64\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Empilha um valor de tipo long. \end{DoxyCompactList}\item 
+void \hyperlink{classOperandsStack_aeed478b52748b87ac85db261332b633b}{empilhar\+Float} (float x)
+\begin{DoxyCompactList}\small\item\em Empilha um valor de tipo float. \end{DoxyCompactList}\item 
+void \hyperlink{classOperandsStack_a45dde91cc54ad980d1cbb7cdb1e084cd}{empilhar\+Double} (double x)
+\begin{DoxyCompactList}\small\item\em Empilha um valor de tipo double. \end{DoxyCompactList}\item 
+void \hyperlink{classOperandsStack_aca2be3100b76689949f029196a893712}{empilhar\+Bool} (bool x)
+\begin{DoxyCompactList}\small\item\em Empilha um valor de tipo bool. \end{DoxyCompactList}\item 
+void \hyperlink{classOperandsStack_a47af7d965172984b9cc5c61d8c4c1ce3}{empilhar\+Referencia} (int $\ast$x)
+\begin{DoxyCompactList}\small\item\em Empilha um valor de tipo referencia. \end{DoxyCompactList}\item 
+void \hyperlink{classOperandsStack_a73960b4536c99847bf4545a45f04f089}{empilhar\+Typed\+Element} (\hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} typed\+Element)
+\begin{DoxyCompactList}\small\item\em Empilha um elemento tipado, chamando a função adequada ao tipo. \end{DoxyCompactList}\item 
+void \hyperlink{classOperandsStack_a50b642d5ff6a7a1f56b8cfc75bde1192}{empilhar} (\hyperlink{BasicTypes_8h_a8132f4f0515064141e31e606660df561}{Element}, uint8\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Verifica o tipo do elemento que deve ser empilhado e chama a função adequada. \end{DoxyCompactList}\item 
+int \hyperlink{classOperandsStack_a6ea316fc2b2503af2175fada4d4a9741}{obter\+Tamanho} ()
+\begin{DoxyCompactList}\small\item\em retorna o tamanho da pilha de operandos \end{DoxyCompactList}\item 
+int \hyperlink{classOperandsStack_a834d4e49d01388abf37582f95d66b40e}{obter\+Tamanho\+Maximo\+Pilha} ()
+\begin{DoxyCompactList}\small\item\em Retorna o tamanho máximo da pilha de operandos. \end{DoxyCompactList}\item 
+bool \hyperlink{classOperandsStack_aa6dbee87661011453ba2c57405bd9a4e}{esta\+Vazia} ()
+\begin{DoxyCompactList}\small\item\em Retorna se a pilha está vazia (1) ou não (0) \end{DoxyCompactList}\item 
+void \hyperlink{classOperandsStack_a21ecd56a74034dbd8ed6925924cf30e6}{imprimir\+Todas\+Operacoes} ()
+\begin{DoxyCompactList}\small\item\em imprimir Todas as Operacoes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{classOperandsStack_ac17a81af6a26d029042e6c7ad598a538}{max}
+\end{DoxyCompactItemize}
+\subsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+stack$<$ uint32\+\_\+t $>$ \hyperlink{classOperandsStack_a4d7bd7c3814e216168022849158c733d}{stack\+Elementos}
+\item 
+stack$<$ uint8\+\_\+t $>$ \hyperlink{classOperandsStack_ad784cabd1a3153f7a870adf07215189a}{stack\+Tipos}
+\item 
+stack$<$ uint8\+\_\+t $>$ \hyperlink{classOperandsStack_a14729c0f92cf41d1ec65660a7c82555a}{stack\+Tipos\+Reais}
+\item 
+bool \hyperlink{classOperandsStack_a375521777d4992bc1018eb40da015e70}{type\+Pushed}
+\item 
+const int \hyperlink{classOperandsStack_aac5d565f6032231c195411ba4d75d571}{real\+Max}
+\end{DoxyCompactItemize}
+\subsection*{Atributos Privados Estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static const bool \hyperlink{classOperandsStack_a52dbb05109d9b5c88bae178c6fdf00b3}{bits64} = (sizeof(int$\ast$) == 8)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Classe da pilha de operandos. 
+
+Responsável por armazenar e manipular a pilha de operandos 
+
+Definido na linha 33 do ficheiro Operands\+Stack.\+h.
+
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{classOperandsStack_a5ea2e7d609262388d0d4bc3ba08a2c32}\label{classOperandsStack_a5ea2e7d609262388d0d4bc3ba08a2c32}} 
+\index{Operands\+Stack@{Operands\+Stack}!Operands\+Stack@{Operands\+Stack}}
+\index{Operands\+Stack@{Operands\+Stack}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{Operands\+Stack()}{OperandsStack()}}
+{\footnotesize\ttfamily Operands\+Stack\+::\+Operands\+Stack (\begin{DoxyParamCaption}\item[{int}]{max\+Size }\end{DoxyParamCaption})}
+
+
+
+Construtor. 
+
+Construtor
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em max\+Size} & Indica tamanho m�ximo da pilha de operandos \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 11 do ficheiro Operands\+Stack.\+cpp.
+
+
+
+Referências type\+Pushed.
+
+
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classOperandsStack_a3213a1b633149de9332217d403ee84b6}\label{classOperandsStack_a3213a1b633149de9332217d403ee84b6}} 
+\index{Operands\+Stack@{Operands\+Stack}!desempilha@{desempilha}}
+\index{desempilha@{desempilha}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{desempilha()}{desempilha()}}
+{\footnotesize\ttfamily \hyperlink{unionelement}{element} Operands\+Stack\+::desempilha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Desempilha o topo da pilha de operandos e retorna em um elemento de valor. 
+
+Retorna e remove topo da pilha de valores e da pop na pilha de tipos 
+
+Definido na linha 52 do ficheiro Operands\+Stack.\+cpp.
+
+
+
+Referências bits64, desempilha\+Topo\+Valor(), esta\+Vazia(), stack\+Elementos, stack\+Tipos, stack\+Tipos\+Reais, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE, T\+Y\+P\+E\+\_\+\+L\+O\+NG e T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE.
+
+
+
+Referenciado por Operations\+::aaload(), Operations\+::aastore(), Operations\+::anewarray(), Operations\+::areturn(), Operations\+::arraylength(), Operations\+::athrow(), Operations\+::baload(), Operations\+::bastore(), Operations\+::caload(), Operations\+::castore(), Operations\+::d2f(), Operations\+::d2i(), Operations\+::d2l(), Operations\+::dadd(), Operations\+::daload(), Operations\+::dastore(), Operations\+::dcmpg(), Operations\+::dcmpl(), Operations\+::ddiv(), desempilha\+Typed(), Operations\+::dmul(), Operations\+::dneg(), Operations\+::drem(), Operations\+::dreturn(), Operations\+::dsub(), Operations\+::f2d(), Operations\+::f2i(), Operations\+::f2l(), Operations\+::fadd(), Operations\+::faload(), Operations\+::fastore(), Operations\+::fcmpg(), Operations\+::fcmpl(), Operations\+::fdiv(), Operations\+::fmul(), Operations\+::fneg(), Operations\+::frem(), Operations\+::freturn(), Operations\+::fsub(), Operations\+::func\+\_\+return(), Operations\+::getfield(), Operations\+::i2b(), Operations\+::i2c(), Operations\+::i2d(), Operations\+::i2f(), Operations\+::i2l(), Operations\+::i2s(), Operations\+::iadd(), Operations\+::iaload(), Operations\+::iand(), Operations\+::iastore(), Operations\+::idiv(), Operations\+::if\+\_\+acmpeq(), Operations\+::if\+\_\+acmpne(), Operations\+::if\+\_\+icmpeq(), Operations\+::if\+\_\+icmpge(), Operations\+::if\+\_\+icmpgt(), Operations\+::if\+\_\+icmple(), Operations\+::if\+\_\+icmplt(), Operations\+::if\+\_\+icmpne(), Operations\+::ifeq(), Operations\+::ifge(), Operations\+::ifgt(), Operations\+::ifle(), Operations\+::iflt(), Operations\+::ifne(), Operations\+::ifnonnull(), Operations\+::ifnull(), Operations\+::imul(), Operations\+::ineg(), Operations\+::invokespecial(), Operations\+::ior(), Operations\+::irem(), Operations\+::ireturn(), Operations\+::ishl(), Operations\+::ishr(), Operations\+::isub(), Operations\+::iushr(), Operations\+::ixor(), Operations\+::l2d(), Operations\+::l2f(), Operations\+::l2i(), Operations\+::ladd(), Operations\+::laload(), Operations\+::land(), Operations\+::lastore(), Operations\+::lcmp(), Operations\+::ldiv(), Operations\+::lmul(), Operations\+::lneg(), Operations\+::lookupswitch(), Operations\+::lor(), Operations\+::lrem(), Operations\+::lreturn(), Operations\+::lshl(), Operations\+::lshr(), Operations\+::lsub(), Operations\+::lushr(), Operations\+::lxor(), Operations\+::newarray(), Operations\+::putfield(), Operations\+::saload() e Operations\+::sastore().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperandsStack_a3213a1b633149de9332217d403ee84b6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperandsStack_a8c76f12ad6984b3c5b4ec8807eb63ae3}\label{classOperandsStack_a8c76f12ad6984b3c5b4ec8807eb63ae3}} 
+\index{Operands\+Stack@{Operands\+Stack}!desempilha\+Topo\+Tipo@{desempilha\+Topo\+Tipo}}
+\index{desempilha\+Topo\+Tipo@{desempilha\+Topo\+Tipo}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{desempilha\+Topo\+Tipo()}{desempilhaTopoTipo()}}
+{\footnotesize\ttfamily uint8\+\_\+t Operands\+Stack\+::desempilha\+Topo\+Tipo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Recupera o tipo do topo da pilha de operandos. 
+
+Retorna topo da pilha de tipos 
+
+Definido na linha 19 do ficheiro Operands\+Stack.\+cpp.
+
+
+
+Referências esta\+Vazia() e stack\+Tipos.
+
+
+
+Referenciado por Operations\+::areturn(), Operations\+::astore(), Operations\+::astore\+\_\+0(), Operations\+::astore\+\_\+1(), Operations\+::astore\+\_\+2(), Operations\+::astore\+\_\+3(), Operations\+::athrow(), Operations\+::dadd(), Operations\+::ddiv(), Operations\+::dmul(), Operations\+::dstore(), Operations\+::dstore\+\_\+0(), Operations\+::dstore\+\_\+1(), Operations\+::dstore\+\_\+2(), Operations\+::dstore\+\_\+3(), Operations\+::dsub(), Operations\+::dup2(), Operations\+::dup2\+\_\+x1(), Operations\+::dup2\+\_\+x2(), Operations\+::dup\+\_\+x1(), Operations\+::dup\+\_\+x2(), Operations\+::fadd(), Operations\+::fdiv(), Operations\+::fmul(), Operations\+::fstore(), Operations\+::fstore\+\_\+0(), Operations\+::fstore\+\_\+1(), Operations\+::fstore\+\_\+2(), Operations\+::fstore\+\_\+3(), Operations\+::fsub(), Operations\+::iadd(), Operations\+::idiv(), Operations\+::imul(), Operations\+::istore(), Operations\+::istore\+\_\+0(), Operations\+::istore\+\_\+1(), Operations\+::istore\+\_\+2(), Operations\+::istore\+\_\+3(), Operations\+::isub(), Operations\+::ladd(), Operations\+::ldiv(), Operations\+::lmul(), Operations\+::lstore(), Operations\+::lstore\+\_\+1(), Operations\+::lstore\+\_\+2(), Operations\+::lstore\+\_\+3(), Operations\+::lsub() e obter\+String().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperandsStack_a8c76f12ad6984b3c5b4ec8807eb63ae3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperandsStack_a184a99d160e17ef874a7b83f0726fb8a}\label{classOperandsStack_a184a99d160e17ef874a7b83f0726fb8a}} 
+\index{Operands\+Stack@{Operands\+Stack}!desempilha\+Topo\+Valor@{desempilha\+Topo\+Valor}}
+\index{desempilha\+Topo\+Valor@{desempilha\+Topo\+Valor}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{desempilha\+Topo\+Valor()}{desempilhaTopoValor()}}
+{\footnotesize\ttfamily \hyperlink{unionelement}{element} Operands\+Stack\+::desempilha\+Topo\+Valor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Recupera o valor do topo da pilha de operandos. 
+
+Retorna topo da pilha de valores 
+
+Definido na linha 26 do ficheiro Operands\+Stack.\+cpp.
+
+
+
+Referências bits64, esta\+Vazia(), element\+\_\+u\+::i, element\+\_\+u\+::l, stack\+Elementos, stack\+Tipos, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE, T\+Y\+P\+E\+\_\+\+L\+O\+NG e T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE.
+
+
+
+Referenciado por desempilha() e obter\+String().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperandsStack_a184a99d160e17ef874a7b83f0726fb8a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperandsStack_a9503313a7def4c11fb782d5881e3d6cb}\label{classOperandsStack_a9503313a7def4c11fb782d5881e3d6cb}} 
+\index{Operands\+Stack@{Operands\+Stack}!desempilha\+Typed@{desempilha\+Typed}}
+\index{desempilha\+Typed@{desempilha\+Typed}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{desempilha\+Typed()}{desempilhaTyped()}}
+{\footnotesize\ttfamily \hyperlink{unionelement}{element} Operands\+Stack\+::desempilha\+Typed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Desempilha o topo da pilha de operandos e retorna em um elemento tipado. 
+
+Retorna estrutura com valor e tipo associados e da pop na pilha de valores e na de tipos 
+
+Definido na linha 81 do ficheiro Operands\+Stack.\+cpp.
+
+
+
+Referências desempilha(), typed\+Element\+\_\+s\+::real\+Type, stack\+Tipos, stack\+Tipos\+Reais, typed\+Element\+\_\+s\+::type e typed\+Element\+\_\+s\+::value.
+
+
+
+Referenciado por Operations\+::astore(), Operations\+::astore\+\_\+0(), Operations\+::astore\+\_\+1(), Operations\+::astore\+\_\+2(), Operations\+::astore\+\_\+3(), Operations\+::dstore(), Operations\+::dstore\+\_\+0(), Operations\+::dstore\+\_\+1(), Operations\+::dstore\+\_\+2(), Operations\+::dstore\+\_\+3(), Operations\+::dup(), Operations\+::dup2(), Operations\+::dup2\+\_\+x1(), Operations\+::dup2\+\_\+x2(), Operations\+::dup\+\_\+x1(), Operations\+::dup\+\_\+x2(), Operations\+::fstore(), Operations\+::fstore\+\_\+0(), Operations\+::fstore\+\_\+1(), Operations\+::fstore\+\_\+2(), Operations\+::fstore\+\_\+3(), imprimir\+Todas\+Operacoes(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::istore(), Operations\+::istore\+\_\+0(), Operations\+::istore\+\_\+1(), Operations\+::istore\+\_\+2(), Operations\+::istore\+\_\+3(), Operations\+::lstore(), Operations\+::lstore\+\_\+0(), Operations\+::lstore\+\_\+1(), Operations\+::lstore\+\_\+2(), Operations\+::lstore\+\_\+3(), Operations\+::multianewarray(), Operations\+::pop(), Operations\+::pop2(), Operations\+::putfield(), Operations\+::putstatic(), Operations\+::swap() e Operations\+::tableswitch().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperandsStack_a9503313a7def4c11fb782d5881e3d6cb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperandsStack_a50b642d5ff6a7a1f56b8cfc75bde1192}\label{classOperandsStack_a50b642d5ff6a7a1f56b8cfc75bde1192}} 
+\index{Operands\+Stack@{Operands\+Stack}!empilhar@{empilhar}}
+\index{empilhar@{empilhar}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{empilhar()}{empilhar()}}
+{\footnotesize\ttfamily void Operands\+Stack\+::empilhar (\begin{DoxyParamCaption}\item[{\hyperlink{BasicTypes_8h_a8132f4f0515064141e31e606660df561}{Element}}]{element,  }\item[{uint8\+\_\+t}]{tipo }\end{DoxyParamCaption})}
+
+
+
+Verifica o tipo do elemento que deve ser empilhado e chama a função adequada. 
+
+Chama a função para empilhar de acordo com o tipo do elemento recebido
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em element} & Elemento a ser empilhado \\
+\hline
+{\em tipo} & Tipo do elemento a ser empilhado \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 285 do ficheiro Operands\+Stack.\+cpp.
+
+
+
+Referências element\+\_\+u\+::b, element\+\_\+u\+::d, empilhar\+Double(), empilhar\+Float(), empilhar\+Int(), empilhar\+Referencia(), element\+\_\+u\+::f, element\+\_\+u\+::i, element\+\_\+u\+::pi, T\+Y\+P\+E\+\_\+\+B\+O\+OL, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT, T\+Y\+P\+E\+\_\+\+I\+NT, T\+Y\+P\+E\+\_\+\+L\+O\+NG e T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE.
+
+
+
+Referenciado por Operations\+::athrow(), Operations\+::d2l(), empilhar\+Typed\+Element(), Operations\+::f2l(), Operations\+::i2l(), Operations\+::ior(), Operations\+::ixor(), Operations\+::l2f(), Operations\+::l2i(), Operations\+::ldc(), Operations\+::lor() e Operations\+::lxor().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperandsStack_a50b642d5ff6a7a1f56b8cfc75bde1192_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperandsStack_aca2be3100b76689949f029196a893712}\label{classOperandsStack_aca2be3100b76689949f029196a893712}} 
+\index{Operands\+Stack@{Operands\+Stack}!empilhar\+Bool@{empilhar\+Bool}}
+\index{empilhar\+Bool@{empilhar\+Bool}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{empilhar\+Bool()}{empilharBool()}}
+{\footnotesize\ttfamily void Operands\+Stack\+::empilhar\+Bool (\begin{DoxyParamCaption}\item[{bool}]{x }\end{DoxyParamCaption})}
+
+
+
+Empilha um valor de tipo bool. 
+
+Empilha um bool na pilha de valores e seu tipo na pilha de tipos
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em x} & Valor a ser empilhado \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 222 do ficheiro Operands\+Stack.\+cpp.
+
+
+
+Referências element\+\_\+u\+::b, element\+\_\+u\+::i, max, obter\+Tamanho(), R\+T\+\_\+\+B\+O\+OL, stack\+Elementos, stack\+Tipos, stack\+Tipos\+Reais, T\+Y\+P\+E\+\_\+\+B\+O\+OL e type\+Pushed.
+
+
+
+Referenciado por Operations\+::jsr\+\_\+w().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperandsStack_aca2be3100b76689949f029196a893712_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperandsStack_a45dde91cc54ad980d1cbb7cdb1e084cd}\label{classOperandsStack_a45dde91cc54ad980d1cbb7cdb1e084cd}} 
+\index{Operands\+Stack@{Operands\+Stack}!empilhar\+Double@{empilhar\+Double}}
+\index{empilhar\+Double@{empilhar\+Double}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{empilhar\+Double()}{empilharDouble()}}
+{\footnotesize\ttfamily void Operands\+Stack\+::empilhar\+Double (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
+
+
+
+Empilha um valor de tipo double. 
+
+Empilha um double na pilha de valores e seu tipo na pilha de tipos
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em x} & Valor a ser empilhado \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 168 do ficheiro Operands\+Stack.\+cpp.
+
+
+
+Referências element\+\_\+u\+::d, element\+\_\+u\+::i, element\+\_\+u\+::l, max, obter\+Tamanho(), R\+T\+\_\+\+D\+O\+U\+B\+LE, stack\+Elementos, stack\+Tipos, stack\+Tipos\+Reais, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e type\+Pushed.
+
+
+
+Referenciado por Operations\+::dconst\+\_\+0(), Operations\+::dconst\+\_\+1(), Operations\+::dload(), Operations\+::dload\+\_\+n(), Operations\+::dreturn(), empilhar(), Operations\+::f2d(), Operations\+::i2d(), Operations\+::l2d() e Operations\+::ldc2\+\_\+w().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperandsStack_a45dde91cc54ad980d1cbb7cdb1e084cd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperandsStack_aeed478b52748b87ac85db261332b633b}\label{classOperandsStack_aeed478b52748b87ac85db261332b633b}} 
+\index{Operands\+Stack@{Operands\+Stack}!empilhar\+Float@{empilhar\+Float}}
+\index{empilhar\+Float@{empilhar\+Float}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{empilhar\+Float()}{empilharFloat()}}
+{\footnotesize\ttfamily void Operands\+Stack\+::empilhar\+Float (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})}
+
+
+
+Empilha um valor de tipo float. 
+
+Empilha um float na pilha de valores e seu tipo na pilha de tipos
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em x} & Valor a ser empilhado \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 145 do ficheiro Operands\+Stack.\+cpp.
+
+
+
+Referências element\+\_\+u\+::f, element\+\_\+u\+::i, max, obter\+Tamanho(), R\+T\+\_\+\+F\+L\+O\+AT, stack\+Elementos, stack\+Tipos, stack\+Tipos\+Reais, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT e type\+Pushed.
+
+
+
+Referenciado por Operations\+::d2f(), empilhar(), Operations\+::fconst\+\_\+0(), Operations\+::fconst\+\_\+1(), Operations\+::fconst\+\_\+2(), Operations\+::fload(), Operations\+::fload\+\_\+n(), Operations\+::freturn() e Operations\+::i2f().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperandsStack_aeed478b52748b87ac85db261332b633b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperandsStack_a5006a59c2d815e4a24b055e2e4d2e741}\label{classOperandsStack_a5006a59c2d815e4a24b055e2e4d2e741}} 
+\index{Operands\+Stack@{Operands\+Stack}!empilhar\+Int@{empilhar\+Int}}
+\index{empilhar\+Int@{empilhar\+Int}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{empilhar\+Int()}{empilharInt()}}
+{\footnotesize\ttfamily void Operands\+Stack\+::empilhar\+Int (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Empilha um valor de tipo inteiro. 
+
+Empilha um int na pilha de valores e seu tipo na pilha de tipos
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em x} & Valor a ser empilhado \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 124 do ficheiro Operands\+Stack.\+cpp.
+
+
+
+Referências max, obter\+Tamanho(), R\+T\+\_\+\+I\+NT, stack\+Elementos, stack\+Tipos, stack\+Tipos\+Reais, T\+Y\+P\+E\+\_\+\+I\+NT e type\+Pushed.
+
+
+
+Referenciado por Operations\+::arraylength(), Operations\+::bipush(), Operations\+::caload(), Operations\+::d2i(), Operations\+::dcmpg(), Operations\+::dcmpl(), empilhar(), Operations\+::f2i(), Operations\+::fcmpg(), Operations\+::fcmpl(), Operations\+::i2b(), Operations\+::iaload(), Operations\+::iconst\+\_\+0(), Operations\+::iconst\+\_\+1(), Operations\+::iconst\+\_\+2(), Operations\+::iconst\+\_\+3(), Operations\+::iconst\+\_\+4(), Operations\+::iconst\+\_\+5(), Operations\+::iconst\+\_\+m1(), Operations\+::iload(), Operations\+::iload\+\_\+0(), Operations\+::iload\+\_\+1(), Operations\+::iload\+\_\+2(), Operations\+::iload\+\_\+3(), Operations\+::ireturn(), Operations\+::lcmp(), Operations\+::ldc\+\_\+w() e Operations\+::sipush().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperandsStack_a5006a59c2d815e4a24b055e2e4d2e741_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperandsStack_a927ca84358d7e0f45f74d122f9a500d2}\label{classOperandsStack_a927ca84358d7e0f45f74d122f9a500d2}} 
+\index{Operands\+Stack@{Operands\+Stack}!empilhar\+Long@{empilhar\+Long}}
+\index{empilhar\+Long@{empilhar\+Long}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{empilhar\+Long()}{empilharLong()}}
+{\footnotesize\ttfamily void Operands\+Stack\+::empilhar\+Long (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{x }\end{DoxyParamCaption})}
+
+
+
+Empilha um valor de tipo long. 
+
+Empilha um long na pilha de valores e seu tipo na pilha de tipos
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em x} & Valor a ser empilhado \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 196 do ficheiro Operands\+Stack.\+cpp.
+
+
+
+Referências max, obter\+Tamanho(), R\+T\+\_\+\+L\+O\+NG, stack\+Elementos, stack\+Tipos, stack\+Tipos\+Reais, T\+Y\+P\+E\+\_\+\+L\+O\+NG e type\+Pushed.
+
+
+
+Referenciado por Operations\+::lconst\+\_\+0(), Operations\+::lconst\+\_\+1(), Operations\+::ldc2\+\_\+w(), Operations\+::lload(), Operations\+::lload\+\_\+n() e Operations\+::lreturn().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperandsStack_a927ca84358d7e0f45f74d122f9a500d2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperandsStack_a47af7d965172984b9cc5c61d8c4c1ce3}\label{classOperandsStack_a47af7d965172984b9cc5c61d8c4c1ce3}} 
+\index{Operands\+Stack@{Operands\+Stack}!empilhar\+Referencia@{empilhar\+Referencia}}
+\index{empilhar\+Referencia@{empilhar\+Referencia}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{empilhar\+Referencia()}{empilharReferencia()}}
+{\footnotesize\ttfamily void Operands\+Stack\+::empilhar\+Referencia (\begin{DoxyParamCaption}\item[{int $\ast$}]{x }\end{DoxyParamCaption})}
+
+
+
+Empilha um valor de tipo referencia. 
+
+Empilha uma referencia na pilha de valores e seu tipo na pilha de tipos
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em x} & Referencia a ser empilhada \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 246 do ficheiro Operands\+Stack.\+cpp.
+
+
+
+Referências bits64, element\+\_\+u\+::i, element\+\_\+u\+::l, max, obter\+Tamanho(), element\+\_\+u\+::pi, R\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE, stack\+Elementos, stack\+Tipos, stack\+Tipos\+Reais, T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE e type\+Pushed.
+
+
+
+Referenciado por Operations\+::aconst\+\_\+null(), Operations\+::aload(), Operations\+::aload\+\_\+n(), Operations\+::anewarray(), Operations\+::areturn(), empilhar(), Operations\+::func\+\_\+new(), Operations\+::jsr(), Operations\+::ldc(), Operations\+::ldc\+\_\+w() e Operations\+::newarray().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperandsStack_a47af7d965172984b9cc5c61d8c4c1ce3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperandsStack_a73960b4536c99847bf4545a45f04f089}\label{classOperandsStack_a73960b4536c99847bf4545a45f04f089}} 
+\index{Operands\+Stack@{Operands\+Stack}!empilhar\+Typed\+Element@{empilhar\+Typed\+Element}}
+\index{empilhar\+Typed\+Element@{empilhar\+Typed\+Element}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{empilhar\+Typed\+Element()}{empilharTypedElement()}}
+{\footnotesize\ttfamily void Operands\+Stack\+::empilhar\+Typed\+Element (\begin{DoxyParamCaption}\item[{\hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element}}]{typed\+Element }\end{DoxyParamCaption})}
+
+
+
+Empilha um elemento tipado, chamando a função adequada ao tipo. 
+
+Empilha valor e tipo de estrutura com valor e tipo associados
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em typed\+Element} & Elemento tipado a ser empilhado \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 276 do ficheiro Operands\+Stack.\+cpp.
+
+
+
+Referências empilhar(), typed\+Element\+\_\+s\+::real\+Type, stack\+Tipos\+Reais, typed\+Element\+\_\+s\+::type, type\+Pushed e typed\+Element\+\_\+s\+::value.
+
+
+
+Referenciado por Operations\+::aaload(), Operations\+::baload(), Operations\+::dadd(), Operations\+::daload(), Operations\+::ddiv(), Operations\+::dmul(), Operations\+::dneg(), Operations\+::drem(), Operations\+::dsub(), Operations\+::dup(), Operations\+::dup2(), Operations\+::dup2\+\_\+x1(), Operations\+::dup2\+\_\+x2(), Operations\+::dup\+\_\+x1(), Operations\+::dup\+\_\+x2(), Operations\+::fadd(), Operations\+::faload(), Operations\+::fdiv(), Operations\+::fmul(), Operations\+::fneg(), Operations\+::frem(), Operations\+::fsub(), Operations\+::getfield(), Operations\+::getstatic(), Operations\+::i2c(), Operations\+::i2s(), Operations\+::iadd(), Operations\+::iand(), Operations\+::idiv(), imprimir\+Todas\+Operacoes(), Operations\+::imul(), Operations\+::ineg(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::irem(), Operations\+::ishl(), Operations\+::ishr(), Operations\+::isub(), Operations\+::iushr(), Operations\+::ladd(), Operations\+::laload(), Operations\+::land(), Operations\+::ldiv(), Operations\+::lmul(), Operations\+::lneg(), Operations\+::lrem(), Operations\+::lshl(), Operations\+::lshr(), Operations\+::lsub(), Operations\+::lushr(), Operations\+::multianewarray(), Operations\+::saload() e Operations\+::swap().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperandsStack_a73960b4536c99847bf4545a45f04f089_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperandsStack_aa6dbee87661011453ba2c57405bd9a4e}\label{classOperandsStack_aa6dbee87661011453ba2c57405bd9a4e}} 
+\index{Operands\+Stack@{Operands\+Stack}!esta\+Vazia@{esta\+Vazia}}
+\index{esta\+Vazia@{esta\+Vazia}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{esta\+Vazia()}{estaVazia()}}
+{\footnotesize\ttfamily bool Operands\+Stack\+::esta\+Vazia (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna se a pilha está vazia (1) ou não (0) 
+
+returna 1 se a pilha de valores estiver vazia, 0 caso contr�rio 
+
+Definido na linha 343 do ficheiro Operands\+Stack.\+cpp.
+
+
+
+Referências stack\+Elementos.
+
+
+
+Referenciado por Operations\+::areturn(), Operations\+::athrow(), desempilha(), desempilha\+Topo\+Tipo(), desempilha\+Topo\+Valor(), Operations\+::dreturn(), Operations\+::freturn(), Operations\+::func\+\_\+return(), imprimir\+Todas\+Operacoes(), Operations\+::ireturn() e Operations\+::lreturn().
+
+\mbox{\Hypertarget{classOperandsStack_a21ecd56a74034dbd8ed6925924cf30e6}\label{classOperandsStack_a21ecd56a74034dbd8ed6925924cf30e6}} 
+\index{Operands\+Stack@{Operands\+Stack}!imprimir\+Todas\+Operacoes@{imprimir\+Todas\+Operacoes}}
+\index{imprimir\+Todas\+Operacoes@{imprimir\+Todas\+Operacoes}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{imprimir\+Todas\+Operacoes()}{imprimirTodasOperacoes()}}
+{\footnotesize\ttfamily void Operands\+Stack\+::imprimir\+Todas\+Operacoes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+imprimir Todas as Operacoes 
+
+Percorre e imprime toda a pilha de operandos 
+
+Definido na linha 327 do ficheiro Operands\+Stack.\+cpp.
+
+
+
+Referências desempilha\+Typed(), empilhar\+Typed\+Element(), esta\+Vazia(), max e obter\+String().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperandsStack_a21ecd56a74034dbd8ed6925924cf30e6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperandsStack_a32ad6a1ea26c02cf709fed1e86412b4a}\label{classOperandsStack_a32ad6a1ea26c02cf709fed1e86412b4a}} 
+\index{Operands\+Stack@{Operands\+Stack}!obter\+String@{obter\+String}}
+\index{obter\+String@{obter\+String}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{obter\+String()}{obterString()}}
+{\footnotesize\ttfamily string Operands\+Stack\+::obter\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o topo da pilha de operandos formatado em uma string. 
+
+Auxiliar do print\+All, imprime a string correspondente ao tipo do elemento 
+
+Definido na linha 93 do ficheiro Operands\+Stack.\+cpp.
+
+
+
+Referências element\+\_\+u\+::b, element\+\_\+u\+::d, desempilha\+Topo\+Tipo(), desempilha\+Topo\+Valor(), element\+\_\+u\+::f, element\+\_\+u\+::pi, T\+Y\+P\+E\+\_\+\+B\+O\+OL, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT, T\+Y\+P\+E\+\_\+\+I\+NT, T\+Y\+P\+E\+\_\+\+L\+O\+NG e T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE.
+
+
+
+Referenciado por imprimir\+Todas\+Operacoes().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOperandsStack_a32ad6a1ea26c02cf709fed1e86412b4a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classOperandsStack_a6ea316fc2b2503af2175fada4d4a9741}\label{classOperandsStack_a6ea316fc2b2503af2175fada4d4a9741}} 
+\index{Operands\+Stack@{Operands\+Stack}!obter\+Tamanho@{obter\+Tamanho}}
+\index{obter\+Tamanho@{obter\+Tamanho}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{obter\+Tamanho()}{obterTamanho()}}
+{\footnotesize\ttfamily int Operands\+Stack\+::obter\+Tamanho (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+retorna o tamanho da pilha de operandos 
+
+Retorna o tamanho da pilha de valores 
+
+Definido na linha 320 do ficheiro Operands\+Stack.\+cpp.
+
+
+
+Referências stack\+Elementos.
+
+
+
+Referenciado por empilhar\+Bool(), empilhar\+Double(), empilhar\+Float(), empilhar\+Int(), empilhar\+Long() e empilhar\+Referencia().
+
+\mbox{\Hypertarget{classOperandsStack_a834d4e49d01388abf37582f95d66b40e}\label{classOperandsStack_a834d4e49d01388abf37582f95d66b40e}} 
+\index{Operands\+Stack@{Operands\+Stack}!obter\+Tamanho\+Maximo\+Pilha@{obter\+Tamanho\+Maximo\+Pilha}}
+\index{obter\+Tamanho\+Maximo\+Pilha@{obter\+Tamanho\+Maximo\+Pilha}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{obter\+Tamanho\+Maximo\+Pilha()}{obterTamanhoMaximoPilha()}}
+{\footnotesize\ttfamily int Operands\+Stack\+::obter\+Tamanho\+Maximo\+Pilha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o tamanho máximo da pilha de operandos. 
+
+Retorna valor m�ximo da pilha de operandos 
+
+Definido na linha 313 do ficheiro Operands\+Stack.\+cpp.
+
+
+
+Referências real\+Max.
+
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{classOperandsStack_a52dbb05109d9b5c88bae178c6fdf00b3}\label{classOperandsStack_a52dbb05109d9b5c88bae178c6fdf00b3}} 
+\index{Operands\+Stack@{Operands\+Stack}!bits64@{bits64}}
+\index{bits64@{bits64}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{bits64}{bits64}}
+{\footnotesize\ttfamily const bool Operands\+Stack\+::bits64 = (sizeof(int$\ast$) == 8)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definido na linha 47 do ficheiro Operands\+Stack.\+h.
+
+
+
+Referenciado por desempilha(), desempilha\+Topo\+Valor() e empilhar\+Referencia().
+
+\mbox{\Hypertarget{classOperandsStack_ac17a81af6a26d029042e6c7ad598a538}\label{classOperandsStack_ac17a81af6a26d029042e6c7ad598a538}} 
+\index{Operands\+Stack@{Operands\+Stack}!max@{max}}
+\index{max@{max}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{max}{max}}
+{\footnotesize\ttfamily const int Operands\+Stack\+::max}
+
+
+
+Definido na linha 157 do ficheiro Operands\+Stack.\+h.
+
+
+
+Referenciado por empilhar\+Bool(), empilhar\+Double(), empilhar\+Float(), empilhar\+Int(), empilhar\+Long(), empilhar\+Referencia() e imprimir\+Todas\+Operacoes().
+
+\mbox{\Hypertarget{classOperandsStack_aac5d565f6032231c195411ba4d75d571}\label{classOperandsStack_aac5d565f6032231c195411ba4d75d571}} 
+\index{Operands\+Stack@{Operands\+Stack}!real\+Max@{real\+Max}}
+\index{real\+Max@{real\+Max}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{real\+Max}{realMax}}
+{\footnotesize\ttfamily const int Operands\+Stack\+::real\+Max\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 50 do ficheiro Operands\+Stack.\+h.
+
+
+
+Referenciado por obter\+Tamanho\+Maximo\+Pilha().
+
+\mbox{\Hypertarget{classOperandsStack_a4d7bd7c3814e216168022849158c733d}\label{classOperandsStack_a4d7bd7c3814e216168022849158c733d}} 
+\index{Operands\+Stack@{Operands\+Stack}!stack\+Elementos@{stack\+Elementos}}
+\index{stack\+Elementos@{stack\+Elementos}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{stack\+Elementos}{stackElementos}}
+{\footnotesize\ttfamily stack$<$uint32\+\_\+t$>$ Operands\+Stack\+::stack\+Elementos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 36 do ficheiro Operands\+Stack.\+h.
+
+
+
+Referenciado por desempilha(), desempilha\+Topo\+Valor(), empilhar\+Bool(), empilhar\+Double(), empilhar\+Float(), empilhar\+Int(), empilhar\+Long(), empilhar\+Referencia(), esta\+Vazia() e obter\+Tamanho().
+
+\mbox{\Hypertarget{classOperandsStack_ad784cabd1a3153f7a870adf07215189a}\label{classOperandsStack_ad784cabd1a3153f7a870adf07215189a}} 
+\index{Operands\+Stack@{Operands\+Stack}!stack\+Tipos@{stack\+Tipos}}
+\index{stack\+Tipos@{stack\+Tipos}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{stack\+Tipos}{stackTipos}}
+{\footnotesize\ttfamily stack$<$uint8\+\_\+t$>$ Operands\+Stack\+::stack\+Tipos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 39 do ficheiro Operands\+Stack.\+h.
+
+
+
+Referenciado por desempilha(), desempilha\+Topo\+Tipo(), desempilha\+Topo\+Valor(), desempilha\+Typed(), empilhar\+Bool(), empilhar\+Double(), empilhar\+Float(), empilhar\+Int(), empilhar\+Long() e empilhar\+Referencia().
+
+\mbox{\Hypertarget{classOperandsStack_a14729c0f92cf41d1ec65660a7c82555a}\label{classOperandsStack_a14729c0f92cf41d1ec65660a7c82555a}} 
+\index{Operands\+Stack@{Operands\+Stack}!stack\+Tipos\+Reais@{stack\+Tipos\+Reais}}
+\index{stack\+Tipos\+Reais@{stack\+Tipos\+Reais}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{stack\+Tipos\+Reais}{stackTiposReais}}
+{\footnotesize\ttfamily stack$<$uint8\+\_\+t$>$ Operands\+Stack\+::stack\+Tipos\+Reais\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 42 do ficheiro Operands\+Stack.\+h.
+
+
+
+Referenciado por desempilha(), desempilha\+Typed(), empilhar\+Bool(), empilhar\+Double(), empilhar\+Float(), empilhar\+Int(), empilhar\+Long(), empilhar\+Referencia() e empilhar\+Typed\+Element().
+
+\mbox{\Hypertarget{classOperandsStack_a375521777d4992bc1018eb40da015e70}\label{classOperandsStack_a375521777d4992bc1018eb40da015e70}} 
+\index{Operands\+Stack@{Operands\+Stack}!type\+Pushed@{type\+Pushed}}
+\index{type\+Pushed@{type\+Pushed}!Operands\+Stack@{Operands\+Stack}}
+\subsubsection{\texorpdfstring{type\+Pushed}{typePushed}}
+{\footnotesize\ttfamily bool Operands\+Stack\+::type\+Pushed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 44 do ficheiro Operands\+Stack.\+h.
+
+
+
+Referenciado por empilhar\+Bool(), empilhar\+Double(), empilhar\+Float(), empilhar\+Int(), empilhar\+Long(), empilhar\+Referencia(), empilhar\+Typed\+Element() e Operands\+Stack().
+
+
+
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{OperandsStack_8h}{Operands\+Stack.\+h}\item 
+src/\hyperlink{OperandsStack_8cpp}{Operands\+Stack.\+cpp}\end{DoxyCompactItemize}

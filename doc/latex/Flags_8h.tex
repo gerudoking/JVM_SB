@@ -1,0 +1,119 @@
+\hypertarget{Flags_8h}{}\section{Referência ao ficheiro include/\+Flags.h}
+\label{Flags_8h}\index{include/\+Flags.\+h@{include/\+Flags.\+h}}
+
+
+Class\+Flags (public, final, super, interface and abstract)  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}Basic\+Types.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para Flags.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Flags_8h__incl}
+\end{center}
+\end{figure}
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Flags_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Flags_8h_ab6541b004248f7fcdf231db8e32b9344}{imprimir\+Flags} (\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} access\+Flags)
+\begin{DoxyCompactList}\small\item\em Função que mostra as flags de acesso para os usuários. \end{DoxyCompactList}\item 
+void \hyperlink{Flags_8h_a1808aebb7a681fc70a6e3f23a7743b94}{gravar\+Arquivo\+Flags} (\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} access\+Flags, fstream \&arquivo\+Saida)
+\begin{DoxyCompactList}\small\item\em Função que gravar as flags de acesso em um arquivo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+const string \hyperlink{Flags_8h_a3f0f33b3a86ad44099b106509ef17132}{flag\+Names} \mbox{[}$\,$\mbox{]} = \{ \char`\"{}A\+C\+C\+\_\+\+P\+U\+B\+L\+IC\char`\"{}, \char`\"{}A\+C\+C\+\_\+\+F\+I\+N\+AL\char`\"{}, \char`\"{}A\+C\+C\+\_\+\+S\+U\+P\+ER\char`\"{}, \char`\"{}A\+C\+C\+\_\+\+I\+N\+T\+E\+R\+F\+A\+CE\char`\"{}, \char`\"{}A\+C\+C\+\_\+\+A\+B\+S\+T\+R\+A\+CT\char`\"{} \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Class\+Flags (public, final, super, interface and abstract) 
+
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{Flags_8h_a1808aebb7a681fc70a6e3f23a7743b94}\label{Flags_8h_a1808aebb7a681fc70a6e3f23a7743b94}} 
+\index{Flags.\+h@{Flags.\+h}!gravar\+Arquivo\+Flags@{gravar\+Arquivo\+Flags}}
+\index{gravar\+Arquivo\+Flags@{gravar\+Arquivo\+Flags}!Flags.\+h@{Flags.\+h}}
+\subsubsection{\texorpdfstring{gravar\+Arquivo\+Flags()}{gravarArquivoFlags()}}
+{\footnotesize\ttfamily void gravar\+Arquivo\+Flags (\begin{DoxyParamCaption}\item[{\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2}}]{access\+Flags,  }\item[{fstream \&}]{arquivo\+Saida }\end{DoxyParamCaption})}
+
+
+
+Função que gravar as flags de acesso em um arquivo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em access\+Flags} & Valor hexadecimal das flags \\
+\hline
+{\em arquivo\+Saida} & arquivo gravado \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 64 do ficheiro Flags.\+cpp.
+
+
+
+Referências flag\+Names.
+
+
+
+Referenciado por Leitor\+Exibidor\+::gravar\+Arquivo\+Informacoes\+Gerais().
+
+\mbox{\Hypertarget{Flags_8h_ab6541b004248f7fcdf231db8e32b9344}\label{Flags_8h_ab6541b004248f7fcdf231db8e32b9344}} 
+\index{Flags.\+h@{Flags.\+h}!imprimir\+Flags@{imprimir\+Flags}}
+\index{imprimir\+Flags@{imprimir\+Flags}!Flags.\+h@{Flags.\+h}}
+\subsubsection{\texorpdfstring{imprimir\+Flags()}{imprimirFlags()}}
+{\footnotesize\ttfamily void imprimir\+Flags (\begin{DoxyParamCaption}\item[{\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2}}]{access\+Flags }\end{DoxyParamCaption})}
+
+
+
+Função que mostra as flags de acesso para os usuários. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em access\+Flags} & Valor hexadecimal das flags \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 8 do ficheiro Flags.\+cpp.
+
+
+
+Referências flag\+Names.
+
+
+
+Referenciado por Leitor\+Exibidor\+::imprimir\+Informacoes\+Gerais().
+
+
+
+\subsection{Documentação das variáveis}
+\mbox{\Hypertarget{Flags_8h_a3f0f33b3a86ad44099b106509ef17132}\label{Flags_8h_a3f0f33b3a86ad44099b106509ef17132}} 
+\index{Flags.\+h@{Flags.\+h}!flag\+Names@{flag\+Names}}
+\index{flag\+Names@{flag\+Names}!Flags.\+h@{Flags.\+h}}
+\subsubsection{\texorpdfstring{flag\+Names}{flagNames}}
+{\footnotesize\ttfamily const string flag\+Names\mbox{[}$\,$\mbox{]} = \{ \char`\"{}A\+C\+C\+\_\+\+P\+U\+B\+L\+IC\char`\"{}, \char`\"{}A\+C\+C\+\_\+\+F\+I\+N\+AL\char`\"{}, \char`\"{}A\+C\+C\+\_\+\+S\+U\+P\+ER\char`\"{}, \char`\"{}A\+C\+C\+\_\+\+I\+N\+T\+E\+R\+F\+A\+CE\char`\"{}, \char`\"{}A\+C\+C\+\_\+\+A\+B\+S\+T\+R\+A\+CT\char`\"{} \}}
+
+
+
+Definido na linha 15 do ficheiro Flags.\+h.
+
+
+
+Referenciado por gravar\+Arquivo\+Flags() e imprimir\+Flags().
+

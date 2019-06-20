@@ -1,0 +1,5 @@
+<map id="Operations::jsr" name="Operations::jsr">
+<area shape="rect" id="node2" href="$classOperandsStack.html#a47af7d965172984b9cc5c61d8c4c1ce3" title="Empilha um valor de tipo referencia. " alt="" coords="160,5,392,32"/>
+<area shape="rect" id="node4" href="$classOperations.html#a6906050cc72d774f77d8ba33607b1c62" title="Function that returns a n bytes value. " alt="" coords="177,56,375,83"/>
+<area shape="rect" id="node3" href="$classOperandsStack.html#a6ea316fc2b2503af2175fada4d4a9741" title="retorna o tamanho da pilha de operandos " alt="" coords="440,5,643,32"/>
+</map>

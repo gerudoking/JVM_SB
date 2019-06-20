@@ -1,0 +1,9 @@
+<map id="Operations::fstore" name="Operations::fstore">
+<area shape="rect" id="node2" href="$classOperandsStack.html#a8c76f12ad6984b3c5b4ec8807eb63ae3" title="Recupera o tipo do topo da pilha de operandos. " alt="" coords="427,5,613,47"/>
+<area shape="rect" id="node4" href="$classOperandsStack.html#a9503313a7def4c11fb782d5881e3d6cb" title="Desempilha o topo da pilha de operandos e retorna em um elemento tipado. " alt="" coords="186,64,373,105"/>
+<area shape="rect" id="node7" href="$classOperations.html#a6906050cc72d774f77d8ba33607b1c62" title="Function that returns a n bytes value. " alt="" coords="180,130,379,157"/>
+<area shape="rect" id="node8" href="$classLocalVariables.html#a6d79e0c874931e97ed68a25cf60ab119" title="Receives the typed element and inserts on past index. " alt="" coords="213,181,346,207"/>
+<area shape="rect" id="node3" href="$classOperandsStack.html#aa6dbee87661011453ba2c57405bd9a4e" title="Retorna se a pilha está vazia (1) ou não (0) " alt="" coords="896,63,1075,90"/>
+<area shape="rect" id="node5" href="$classOperandsStack.html#a3213a1b633149de9332217d403ee84b6" title="Desempilha o topo da pilha de operandos e retorna em um elemento de valor. " alt="" coords="427,71,613,98"/>
+<area shape="rect" id="node6" href="$classOperandsStack.html#a184a99d160e17ef874a7b83f0726fb8a" title="Recupera o valor do topo da pilha de operandos. " alt="" coords="661,115,848,156"/>
+</map>

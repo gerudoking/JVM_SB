@@ -1,0 +1,6 @@
+<map id="Operations::bastore" name="Operations::bastore">
+<area shape="rect" id="node2" href="$classOperandsStack.html#a3213a1b633149de9332217d403ee84b6" title="Desempilha o topo da pilha de operandos e retorna em um elemento de valor. " alt="" coords="189,42,376,69"/>
+<area shape="rect" id="node5" href="$classLocalVariables.html#a6d79e0c874931e97ed68a25cf60ab119" title="Receives the typed element and inserts on past index. " alt="" coords="216,93,349,119"/>
+<area shape="rect" id="node3" href="$classOperandsStack.html#a184a99d160e17ef874a7b83f0726fb8a" title="Recupera o valor do topo da pilha de operandos. " alt="" coords="424,5,611,47"/>
+<area shape="rect" id="node4" href="$classOperandsStack.html#aa6dbee87661011453ba2c57405bd9a4e" title="Retorna se a pilha está vazia (1) ou não (0) " alt="" coords="659,42,837,69"/>
+</map>

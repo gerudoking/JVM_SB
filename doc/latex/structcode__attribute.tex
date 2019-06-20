@@ -1,0 +1,169 @@
+\hypertarget{structcode__attribute}{}\section{Referência à estrutura code\+\_\+attribute}
+\label{structcode__attribute}\index{code\+\_\+attribute@{code\+\_\+attribute}}
+
+
+Estrutura de dados para salvar atributos do tipo code.  
+
+
+
+
+{\ttfamily \#include $<$Attributes.\+h$>$}
+
+
+
+Diagrama de colaboração para code\+\_\+attribute\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structcode__attribute__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+unsigned short \hyperlink{structcode__attribute_ad8f0d9ec65c9065df510fb7313133eb0}{max\+\_\+stack}
+\item 
+unsigned short \hyperlink{structcode__attribute_aa5c39f7692d14498f497ac2425595dda}{max\+\_\+locals}
+\item 
+unsigned int \hyperlink{structcode__attribute_a8d9bb88d00f7285dbad08ec687adfd2c}{code\+\_\+length}
+\item 
+unsigned char $\ast$ \hyperlink{structcode__attribute_a34d2f27374b7101b524e178078c15a98}{codigo}
+\item 
+unsigned short \hyperlink{structcode__attribute_a52263ac885da86196b36a51e7ee5bd6e}{exception\+\_\+table\+\_\+length}
+\item 
+\hyperlink{structt__exception__table}{t\+\_\+exception\+\_\+table} $\ast$$\ast$ \hyperlink{structcode__attribute_a7d1657d4edf179c1596f9c102a887b3e}{exception\+\_\+table}
+\item 
+unsigned short \hyperlink{structcode__attribute_af71546c75dc3185e14b8cd5eb8cd6a24}{attribute\+\_\+count}
+\item 
+\hyperlink{structattribute__info}{attribute\+\_\+info} $\ast$ \hyperlink{structcode__attribute_a9f45491da8c177e471b75c9539bb37b2}{attributes}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Estrutura de dados para salvar atributos do tipo code. 
+
+Estrutura de dados para salvar atributos de tipo \char`\"{}exception\char`\"{}. 
+
+Definido na linha 43 do ficheiro Attributes.\+h.
+
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{structcode__attribute_af71546c75dc3185e14b8cd5eb8cd6a24}\label{structcode__attribute_af71546c75dc3185e14b8cd5eb8cd6a24}} 
+\index{code\+\_\+attribute@{code\+\_\+attribute}!attribute\+\_\+count@{attribute\+\_\+count}}
+\index{attribute\+\_\+count@{attribute\+\_\+count}!code\+\_\+attribute@{code\+\_\+attribute}}
+\subsubsection{\texorpdfstring{attribute\+\_\+count}{attribute\_count}}
+{\footnotesize\ttfamily unsigned short code\+\_\+attribute\+::attribute\+\_\+count}
+
+
+
+Definido na linha 50 do ficheiro Attributes.\+h.
+
+
+
+Referenciado por gravar\+Arquivo\+Attribute(), imprimir\+Attribute() e ler\+Attribute\+Info().
+
+\mbox{\Hypertarget{structcode__attribute_a9f45491da8c177e471b75c9539bb37b2}\label{structcode__attribute_a9f45491da8c177e471b75c9539bb37b2}} 
+\index{code\+\_\+attribute@{code\+\_\+attribute}!attributes@{attributes}}
+\index{attributes@{attributes}!code\+\_\+attribute@{code\+\_\+attribute}}
+\subsubsection{\texorpdfstring{attributes}{attributes}}
+{\footnotesize\ttfamily \hyperlink{structattribute__info}{attribute\+\_\+info}$\ast$ code\+\_\+attribute\+::attributes}
+
+
+
+Definido na linha 51 do ficheiro Attributes.\+h.
+
+
+
+Referenciado por gravar\+Arquivo\+Attribute(), imprimir\+Attribute() e ler\+Attribute\+Info().
+
+\mbox{\Hypertarget{structcode__attribute_a8d9bb88d00f7285dbad08ec687adfd2c}\label{structcode__attribute_a8d9bb88d00f7285dbad08ec687adfd2c}} 
+\index{code\+\_\+attribute@{code\+\_\+attribute}!code\+\_\+length@{code\+\_\+length}}
+\index{code\+\_\+length@{code\+\_\+length}!code\+\_\+attribute@{code\+\_\+attribute}}
+\subsubsection{\texorpdfstring{code\+\_\+length}{code\_length}}
+{\footnotesize\ttfamily unsigned int code\+\_\+attribute\+::code\+\_\+length}
+
+
+
+Definido na linha 46 do ficheiro Attributes.\+h.
+
+
+
+Referenciado por gravar\+Arquivo\+Attribute(), imprimir\+Attribute() e ler\+Attribute\+Info().
+
+\mbox{\Hypertarget{structcode__attribute_a34d2f27374b7101b524e178078c15a98}\label{structcode__attribute_a34d2f27374b7101b524e178078c15a98}} 
+\index{code\+\_\+attribute@{code\+\_\+attribute}!codigo@{codigo}}
+\index{codigo@{codigo}!code\+\_\+attribute@{code\+\_\+attribute}}
+\subsubsection{\texorpdfstring{codigo}{codigo}}
+{\footnotesize\ttfamily unsigned char$\ast$ code\+\_\+attribute\+::codigo}
+
+
+
+Definido na linha 47 do ficheiro Attributes.\+h.
+
+
+
+Referenciado por gravar\+Arquivo\+Attribute(), imprimir\+Attribute(), Frame\+Stack\+::inicializar\+P\+C(), ler\+Attribute\+Info(), Operations\+::lookupswitch() e Operations\+::tableswitch().
+
+\mbox{\Hypertarget{structcode__attribute_a7d1657d4edf179c1596f9c102a887b3e}\label{structcode__attribute_a7d1657d4edf179c1596f9c102a887b3e}} 
+\index{code\+\_\+attribute@{code\+\_\+attribute}!exception\+\_\+table@{exception\+\_\+table}}
+\index{exception\+\_\+table@{exception\+\_\+table}!code\+\_\+attribute@{code\+\_\+attribute}}
+\subsubsection{\texorpdfstring{exception\+\_\+table}{exception\_table}}
+{\footnotesize\ttfamily \hyperlink{structt__exception__table}{t\+\_\+exception\+\_\+table}$\ast$$\ast$ code\+\_\+attribute\+::exception\+\_\+table}
+
+
+
+Definido na linha 49 do ficheiro Attributes.\+h.
+
+
+
+Referenciado por gravar\+Arquivo\+Attribute(), imprimir\+Attribute() e ler\+Attribute\+Info().
+
+\mbox{\Hypertarget{structcode__attribute_a52263ac885da86196b36a51e7ee5bd6e}\label{structcode__attribute_a52263ac885da86196b36a51e7ee5bd6e}} 
+\index{code\+\_\+attribute@{code\+\_\+attribute}!exception\+\_\+table\+\_\+length@{exception\+\_\+table\+\_\+length}}
+\index{exception\+\_\+table\+\_\+length@{exception\+\_\+table\+\_\+length}!code\+\_\+attribute@{code\+\_\+attribute}}
+\subsubsection{\texorpdfstring{exception\+\_\+table\+\_\+length}{exception\_table\_length}}
+{\footnotesize\ttfamily unsigned short code\+\_\+attribute\+::exception\+\_\+table\+\_\+length}
+
+
+
+Definido na linha 48 do ficheiro Attributes.\+h.
+
+
+
+Referenciado por gravar\+Arquivo\+Attribute(), imprimir\+Attribute() e ler\+Attribute\+Info().
+
+\mbox{\Hypertarget{structcode__attribute_aa5c39f7692d14498f497ac2425595dda}\label{structcode__attribute_aa5c39f7692d14498f497ac2425595dda}} 
+\index{code\+\_\+attribute@{code\+\_\+attribute}!max\+\_\+locals@{max\+\_\+locals}}
+\index{max\+\_\+locals@{max\+\_\+locals}!code\+\_\+attribute@{code\+\_\+attribute}}
+\subsubsection{\texorpdfstring{max\+\_\+locals}{max\_locals}}
+{\footnotesize\ttfamily unsigned short code\+\_\+attribute\+::max\+\_\+locals}
+
+
+
+Definido na linha 45 do ficheiro Attributes.\+h.
+
+
+
+Referenciado por Frame\+Stack\+::adicionar\+Frame(), Frame\+Stack\+::\+Frame\+Stack(), gravar\+Arquivo\+Attribute(), imprimir\+Attribute() e ler\+Attribute\+Info().
+
+\mbox{\Hypertarget{structcode__attribute_ad8f0d9ec65c9065df510fb7313133eb0}\label{structcode__attribute_ad8f0d9ec65c9065df510fb7313133eb0}} 
+\index{code\+\_\+attribute@{code\+\_\+attribute}!max\+\_\+stack@{max\+\_\+stack}}
+\index{max\+\_\+stack@{max\+\_\+stack}!code\+\_\+attribute@{code\+\_\+attribute}}
+\subsubsection{\texorpdfstring{max\+\_\+stack}{max\_stack}}
+{\footnotesize\ttfamily unsigned short code\+\_\+attribute\+::max\+\_\+stack}
+
+
+
+Definido na linha 44 do ficheiro Attributes.\+h.
+
+
+
+Referenciado por Frame\+Stack\+::adicionar\+Frame(), Frame\+Stack\+::\+Frame\+Stack(), gravar\+Arquivo\+Attribute(), imprimir\+Attribute() e ler\+Attribute\+Info().
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Attributes_8h}{Attributes.\+h}\end{DoxyCompactItemize}

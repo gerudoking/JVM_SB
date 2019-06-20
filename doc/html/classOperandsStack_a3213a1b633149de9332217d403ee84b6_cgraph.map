@@ -1,0 +1,4 @@
+<map id="OperandsStack::desempilha" name="OperandsStack::desempilha">
+<area shape="rect" id="node2" href="$classOperandsStack.html#a184a99d160e17ef874a7b83f0726fb8a" title="Recupera o valor do topo da pilha de operandos. " alt="" coords="240,5,427,47"/>
+<area shape="rect" id="node3" href="$classOperandsStack.html#aa6dbee87661011453ba2c57405bd9a4e" title="Retorna se a pilha está vazia (1) ou não (0) " alt="" coords="475,42,653,69"/>
+</map>

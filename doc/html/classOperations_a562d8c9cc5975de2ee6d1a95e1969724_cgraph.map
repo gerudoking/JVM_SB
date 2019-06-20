@@ -1,0 +1,29 @@
+<map id="Operations::invokestatic" name="Operations::invokestatic">
+<area shape="rect" id="node2" href="$classFrameStack.html#aee31df6406a899bbf581eea9fc5545e6" title="Adiciona um frame no topo da pilha. " alt="" coords="231,127,421,154"/>
+<area shape="rect" id="node8" href="$classFrameStack.html#a9e7308944f41d892a5a01566d85cad8f" title="Configura os argumentos. " alt="" coords="216,185,436,211"/>
+<area shape="rect" id="node9" href="$ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="487,365,671,391"/>
+<area shape="rect" id="node11" href="$classOperandsStack.html#a9503313a7def4c11fb782d5881e3d6cb" title="Desempilha o topo da pilha de operandos e retorna em um elemento tipado. " alt="" coords="233,553,419,595"/>
+<area shape="rect" id="node15" href="$classOperandsStack.html#a73960b4536c99847bf4545a45f04f089" title="Empilha um elemento tipado, chamando a função adequada ao tipo. " alt="" coords="223,619,429,660"/>
+<area shape="rect" id="node22" href="$classMethodArea.html#a6e9d922892887daadd4624729268094f" title="Retorna referência para classe estática. " alt="" coords="497,290,660,317"/>
+<area shape="rect" id="node23" href="$classStaticClass.html#ae028bd9e2b93b69b91b22348a0b4848d" title="Retorna as informações do class file. " alt="" coords="495,481,663,523"/>
+<area shape="rect" id="node24" href="$classLeitorExibidor.html#a3893e9478688cf21b293536da48f9f14" title="Retorna o ponteiro para o leitor do .class que contém o método encontrado em getMethod. " alt="" coords="240,436,412,477"/>
+<area shape="rect" id="node26" href="$classLeitorExibidor.html#ab286b420bb915f3444ec78a003f4c25c" title="Retorna referencia a constant pool. " alt="" coords="217,685,435,711"/>
+<area shape="rect" id="node27" href="$classLeitorExibidor.html#a4d1a48fa9825d2cb2b520be79112408c" title="LeitorExibidor::obterMethod" alt="" coords="235,361,417,387"/>
+<area shape="rect" id="node28" href="$classOperations.html#a6906050cc72d774f77d8ba33607b1c62" title="Function that returns a n bytes value. " alt="" coords="227,735,425,762"/>
+<area shape="rect" id="node3" href="$classOperations.html#a4a846f964056932fdf4d63056bfbe322" title="Operations::atualizarFrame" alt="" coords="489,173,668,199"/>
+<area shape="rect" id="node4" href="$classMethodArea.html#ac6423e447a5f46bf969bfb7df7500a2b" title="Atualiza a referência da pilha de frames para o próximo frame. " alt="" coords="485,224,672,265"/>
+<area shape="rect" id="node5" href="$classOperations.html#a96812e295c8429a32e09720d89cd0176" title="Operations::atualizarFrame\lStack" alt="" coords="489,5,668,47"/>
+<area shape="rect" id="node6" href="$classOperations.html#a6c265501b41e227e1a15589a0bb03166" title="Operations::atualizarThreads" alt="" coords="484,71,673,98"/>
+<area shape="rect" id="node7" href="$classFrameStack.html#a9ec8c638092ec1ef9a00d09fde4b3d6f" title="Põe o PC na posição inicial. " alt="" coords="491,122,666,149"/>
+<area shape="rect" id="node10" href="$BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="795,365,879,391"/>
+<area shape="rect" id="node12" href="$classOperandsStack.html#a3213a1b633149de9332217d403ee84b6" title="Desempilha o topo da pilha de operandos e retorna em um elemento de valor. " alt="" coords="485,555,672,582"/>
+<area shape="rect" id="node13" href="$classOperandsStack.html#a184a99d160e17ef874a7b83f0726fb8a" title="Recupera o valor do topo da pilha de operandos. " alt="" coords="744,548,931,589"/>
+<area shape="rect" id="node14" href="$classOperandsStack.html#aa6dbee87661011453ba2c57405bd9a4e" title="Retorna se a pilha está vazia (1) ou não (0) " alt="" coords="1013,526,1192,553"/>
+<area shape="rect" id="node16" href="$classOperandsStack.html#a50b642d5ff6a7a1f56b8cfc75bde1192" title="Verifica o tipo do elemento que deve ser empilhado e chama a função adequada. " alt="" coords="494,665,663,691"/>
+<area shape="rect" id="node17" href="$classOperandsStack.html#a45dde91cc54ad980d1cbb7cdb1e084cd" title="Empilha um valor de tipo double. " alt="" coords="732,715,943,742"/>
+<area shape="rect" id="node19" href="$classOperandsStack.html#aeed478b52748b87ac85db261332b633b" title="Empilha um valor de tipo float. " alt="" coords="738,766,937,793"/>
+<area shape="rect" id="node20" href="$classOperandsStack.html#a5006a59c2d815e4a24b055e2e4d2e741" title="Empilha um valor de tipo inteiro. " alt="" coords="745,614,929,641"/>
+<area shape="rect" id="node21" href="$classOperandsStack.html#a47af7d965172984b9cc5c61d8c4c1ce3" title="Empilha um valor de tipo referencia. " alt="" coords="721,665,953,691"/>
+<area shape="rect" id="node18" href="$classOperandsStack.html#a6ea316fc2b2503af2175fada4d4a9741" title="retorna o tamanho da pilha de operandos " alt="" coords="1001,690,1204,717"/>
+<area shape="rect" id="node25" href="$classLeitorExibidor.html#ab46841a0392f45a35a5444dca234a1ae" title="Retorna um índice da constant pool que aponta para string com nome da superclass. ..." alt="" coords="493,416,665,457"/>
+</map>

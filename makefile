@@ -56,6 +56,10 @@ debug: all
 release: DIRECTIVES += -Ofast -mtune=native
 release: all
 
+.PHONY: docs
+docs:
+	doxygen Doxyfile
+
 clean:
 	$(RMDIR) $(BIN_PATH) $(DEP_PATH)
 	$(RM) $(BUILD_PATH)/$(EXEC)
