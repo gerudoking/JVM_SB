@@ -1,0 +1,6 @@
+<map id="carregarConstantPool" name="carregarConstantPool">
+<area shape="rect" id="node2" href="$BasicTypes_8cpp.html#a4d51a7260f72d442b5fee1afad067e66" title="Função para ler 1 byte do arquivo .class. " alt="" coords="319,48,372,75"/>
+<area shape="rect" id="node3" href="$BasicTypes_8cpp.html#a7e2b72c2ee2be091607d2165abc06244" title="Função para ler 2 bytes do arquivo .class. " alt="" coords="209,23,263,50"/>
+<area shape="rect" id="node4" href="$BasicTypes_8cpp.html#a74cf9475c49284eba16e6f1d4b7d0985" title="Função para ler 4 bytes do arquivo .class. " alt="" coords="209,74,263,100"/>
+<area shape="rect" id="node5" href="$BasicTypes_8cpp.html#ab43eecd93f5d0413f80c9dc9253f7ccb" title="Função para ler os bytes de uma string UTF&#45;8. " alt="" coords="201,124,271,151"/>
+</map>

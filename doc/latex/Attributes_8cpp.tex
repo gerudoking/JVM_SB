@@ -1,8 +1,7 @@
 \hypertarget{Attributes_8cpp}{}\section{Referência ao ficheiro src/\+Attributes.cpp}
 \label{Attributes_8cpp}\index{src/\+Attributes.\+cpp@{src/\+Attributes.\+cpp}}
 {\ttfamily \#include \char`\"{}Attributes.\+h\char`\"{}}\newline
-Diagrama de dependências de inclusão para Attributes.\+cpp\+:
-\nopagebreak
+Diagrama de dependências de inclusão para Attributes.\+cpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,22 +11,22 @@ Diagrama de dependências de inclusão para Attributes.\+cpp\+:
 \subsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{structt__exception__table}{t\+\_\+exception\+\_\+table} $\ast$ \hyperlink{Attributes_8cpp_a7575ffc9147cf9ff818f11e41e5799d2}{ler\+Exception\+Handler} (F\+I\+LE $\ast$arquivo\+Entrada)
+\hyperlink{structT__exception__table}{T\+\_\+exception\+\_\+table} $\ast$ \hyperlink{Attributes_8cpp_a7575ffc9147cf9ff818f11e41e5799d2}{ler\+Exception\+Handler} (F\+I\+LE $\ast$arquivo\+Entrada)
 \begin{DoxyCompactList}\small\item\em Função de leitura de exceções. \end{DoxyCompactList}\item 
-\hyperlink{uniont__info}{t\+\_\+info} $\ast$ \hyperlink{Attributes_8cpp_ab9c855202d2513bcb5d5ef847b94a363}{ler\+Attribute\+Info} (F\+I\+LE $\ast$arquivo\+Entrada, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, unsigned short indice, unsigned short tamanho)
-\begin{DoxyCompactList}\small\item\em Faz a leitura das informações de um atributo. \end{DoxyCompactList}\item 
-\hyperlink{structattribute__info}{attribute\+\_\+info} \hyperlink{Attributes_8cpp_a38665695db265d2377f3a5ba13f7c0b3}{ler\+Attribute} (F\+I\+LE $\ast$arquivo\+Entrada, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool)
-\begin{DoxyCompactList}\small\item\em Faz a leitura de um atributo da constantpool. \end{DoxyCompactList}\item 
-\hyperlink{structattribute__info}{attribute\+\_\+info} $\ast$ \hyperlink{Attributes_8cpp_adfa49b8c725742bda34b244e06e1f120}{ler\+Todos\+Attributes} (F\+I\+LE $\ast$arquivo\+Entrada, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, int tamanho)
-\begin{DoxyCompactList}\small\item\em Faz a leitura de n atributos da constantpool. \end{DoxyCompactList}\item 
-void \hyperlink{Attributes_8cpp_a4d3679a14f5d2816bae4fa713c991bba}{imprimir\+Todos\+Attributes} (\hyperlink{structattribute__info}{attribute\+\_\+info} $\ast$attribute, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, int tamanho)
-\begin{DoxyCompactList}\small\item\em Função que imprime na tela informações de n atributos. \end{DoxyCompactList}\item 
-void \hyperlink{Attributes_8cpp_af23b327f5fd169831b2836a3f43268dd}{imprimir\+Attribute} (\hyperlink{structattribute__info}{attribute\+\_\+info} attribute, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool)
-\begin{DoxyCompactList}\small\item\em Função que imprime na tela informações de um atributo. \end{DoxyCompactList}\item 
-void \hyperlink{Attributes_8cpp_a5a06fdbfc69e0cd431c200b53cbcb08b}{gravar\+Arquivo\+Todos\+Attributes} (\hyperlink{structattribute__info}{attribute\+\_\+info} $\ast$attribute, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, int tamanho, fstream \&arquivo\+Saida)
-\begin{DoxyCompactList}\small\item\em Função que imprime na tela informações de n atributos. \end{DoxyCompactList}\item 
-void \hyperlink{Attributes_8cpp_ad9a80eafe1c986c02c8dcebfccca4dd7}{gravar\+Arquivo\+Attribute} (\hyperlink{structattribute__info}{attribute\+\_\+info} attribute, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, fstream \&arquivo\+Saida)
-\begin{DoxyCompactList}\small\item\em Função que imprime na tela informações de um atributo. \end{DoxyCompactList}\item 
+\hyperlink{unionT__info}{T\+\_\+info} $\ast$ \hyperlink{Attributes_8cpp_adde2fdfec7796550e3b7753705bee880}{ler\+Attribute\+Info} (F\+I\+LE $\ast$arquivo\+Entrada, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool, unsigned short indice, unsigned short tamanho)
+\item 
+\hyperlink{structAttribute__info}{Attribute\+\_\+info} \hyperlink{Attributes_8cpp_a37c90da63b21074fff4ffd05b7410be2}{ler\+Attribute} (F\+I\+LE $\ast$arquivo\+Entrada, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool)
+\item 
+\hyperlink{structAttribute__info}{Attribute\+\_\+info} $\ast$ \hyperlink{Attributes_8cpp_afa0c4d01d9ac9907bcb78af9e8b92c71}{ler\+Todos\+Attributes} (F\+I\+LE $\ast$arquivo\+Entrada, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool, int tamanho)
+\item 
+void \hyperlink{Attributes_8cpp_af90fff93fb73ca1959c149ab0b9fad27}{imprimir\+Todos\+Attributes} (\hyperlink{structAttribute__info}{Attribute\+\_\+info} $\ast$attribute, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool, int tamanho)
+\item 
+void \hyperlink{Attributes_8cpp_ac6086cd4e65467a39adcb35b70b30483}{imprimir\+Attribute} (\hyperlink{structAttribute__info}{Attribute\+\_\+info} attribute, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool)
+\item 
+void \hyperlink{Attributes_8cpp_a82ca1308f0dc5fb2ca83e20666c04ba8}{gravar\+Arquivo\+Todos\+Attributes} (\hyperlink{structAttribute__info}{Attribute\+\_\+info} $\ast$attribute, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool, int tamanho, fstream \&arquivo\+Saida)
+\item 
+void \hyperlink{Attributes_8cpp_a90f6cbbff4706a7ac5a0195d8c68186f}{gravar\+Arquivo\+Attribute} (\hyperlink{structAttribute__info}{Attribute\+\_\+info} attribute, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool, fstream \&arquivo\+Saida)
+\item 
 string \hyperlink{Attributes_8cpp_a0a73dec553ae8bc41785faaac9c120a1}{obter\+Mnemonico} (int opcode)
 \begin{DoxyCompactList}\small\item\em Retorna o nome da operação. \end{DoxyCompactList}\item 
 uint32\+\_\+t \hyperlink{Attributes_8cpp_a2c00cc0bad9d04b8667ccbc5a166650c}{obter\+Valor\+N\+Bytes} (uint8\+\_\+t numero, unsigned char $\ast$codigo, int $\ast$indice)
@@ -70,40 +69,26 @@ Referências obter\+Valor\+N\+Bytes().
 
 Referenciado por gravar\+Arquivo\+Attribute().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{Attributes_8cpp_a0d5cc4f3ba829f59c18c4137e188ea26_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Attributes_8cpp_ad9a80eafe1c986c02c8dcebfccca4dd7}\label{Attributes_8cpp_ad9a80eafe1c986c02c8dcebfccca4dd7}} 
+\mbox{\Hypertarget{Attributes_8cpp_a90f6cbbff4706a7ac5a0195d8c68186f}\label{Attributes_8cpp_a90f6cbbff4706a7ac5a0195d8c68186f}} 
 \index{Attributes.\+cpp@{Attributes.\+cpp}!gravar\+Arquivo\+Attribute@{gravar\+Arquivo\+Attribute}}
 \index{gravar\+Arquivo\+Attribute@{gravar\+Arquivo\+Attribute}!Attributes.\+cpp@{Attributes.\+cpp}}
 \subsubsection{\texorpdfstring{gravar\+Arquivo\+Attribute()}{gravarArquivoAttribute()}}
-{\footnotesize\ttfamily void gravar\+Arquivo\+Attribute (\begin{DoxyParamCaption}\item[{\hyperlink{structattribute__info}{attribute\+\_\+info}}]{attribute,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{fstream \&}]{arquivo\+Saida }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void gravar\+Arquivo\+Attribute (\begin{DoxyParamCaption}\item[{\hyperlink{structAttribute__info}{Attribute\+\_\+info}}]{attribute,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{fstream \&}]{arquivo\+Saida }\end{DoxyParamCaption})}
 
-
-
-Função que imprime na tela informações de um atributo. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em attribute} & do struct do \hyperlink{structattribute__info}{attribute\+\_\+info}. \\
-\hline
-{\em constant\+Pool} & Poteiro pra constant pool. \\
-\hline
-{\em arquivo\+Saida} & arquivo de saída \\
-\hline
-\end{DoxyParams}
 
 
 Definido na linha 176 do ficheiro Attributes.\+cpp.
 
 
 
-Referências code\+\_\+attribute\+::attribute\+\_\+count, code\+\_\+attribute\+::attributes, capturar\+Indice\+De\+Referencia(), t\+\_\+exception\+\_\+table\+::catch\+\_\+type, code\+\_\+attribute\+::code\+\_\+length, code\+\_\+attribute\+::codigo, t\+\_\+info\+::codigo\+Atributo, t\+\_\+info\+::constantvalue, constantvalue\+\_\+attribute\+::constantvalue\+\_\+index, t\+\_\+exception\+\_\+table\+::end\+\_\+pc, t\+\_\+info\+::exception, exception\+\_\+attribute\+::exception\+\_\+index\+\_\+table, code\+\_\+attribute\+::exception\+\_\+table, code\+\_\+attribute\+::exception\+\_\+table\+\_\+length, grava\+Arquivo\+Obter\+Parametros\+Opcode(), gravar\+Arquivo\+Attribute(), t\+\_\+exception\+\_\+table\+::handler\+\_\+pc, attribute\+\_\+info\+::info, attribute\+\_\+info\+::length, code\+\_\+attribute\+::max\+\_\+locals, code\+\_\+attribute\+::max\+\_\+stack, attribute\+\_\+info\+::name\+\_\+index, exception\+\_\+attribute\+::number\+\_\+of\+\_\+exceptions, obter\+Mnemonico() e t\+\_\+exception\+\_\+table\+::start\+\_\+pc.
+Referências Code\+\_\+attribute\+::attribute\+\_\+count, Code\+\_\+attribute\+::attributes, capturar\+Indice\+De\+Referencia(), T\+\_\+exception\+\_\+table\+::catch\+\_\+type, Code\+\_\+attribute\+::code\+\_\+length, T\+\_\+info\+::code\+Attribute, Code\+\_\+attribute\+::codigo, T\+\_\+info\+::constant\+Value, Constant\+Value\+\_\+attribute\+::constantvalue\+\_\+index, T\+\_\+exception\+\_\+table\+::end\+\_\+pc, T\+\_\+info\+::exception, Exception\+\_\+attribute\+::exception\+\_\+index\+\_\+table, Code\+\_\+attribute\+::exception\+\_\+table, Code\+\_\+attribute\+::exception\+\_\+table\+\_\+length, grava\+Arquivo\+Obter\+Parametros\+Opcode(), gravar\+Arquivo\+Attribute(), T\+\_\+exception\+\_\+table\+::handler\+\_\+pc, Attribute\+\_\+info\+::info, Attribute\+\_\+info\+::length, Code\+\_\+attribute\+::max\+\_\+locals, Code\+\_\+attribute\+::max\+\_\+stack, Attribute\+\_\+info\+::name\+\_\+index, Exception\+\_\+attribute\+::number\+\_\+of\+\_\+exceptions, obter\+Mnemonico() e T\+\_\+exception\+\_\+table\+::start\+\_\+pc.
 
 
 
@@ -114,30 +99,15 @@ Grafo de chamadas desta função\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Attributes_8cpp_ad9a80eafe1c986c02c8dcebfccca4dd7_cgraph}
+\includegraphics[width=350pt]{Attributes_8cpp_a90f6cbbff4706a7ac5a0195d8c68186f_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Attributes_8cpp_a5a06fdbfc69e0cd431c200b53cbcb08b}\label{Attributes_8cpp_a5a06fdbfc69e0cd431c200b53cbcb08b}} 
+\mbox{\Hypertarget{Attributes_8cpp_a82ca1308f0dc5fb2ca83e20666c04ba8}\label{Attributes_8cpp_a82ca1308f0dc5fb2ca83e20666c04ba8}} 
 \index{Attributes.\+cpp@{Attributes.\+cpp}!gravar\+Arquivo\+Todos\+Attributes@{gravar\+Arquivo\+Todos\+Attributes}}
 \index{gravar\+Arquivo\+Todos\+Attributes@{gravar\+Arquivo\+Todos\+Attributes}!Attributes.\+cpp@{Attributes.\+cpp}}
 \subsubsection{\texorpdfstring{gravar\+Arquivo\+Todos\+Attributes()}{gravarArquivoTodosAttributes()}}
-{\footnotesize\ttfamily void gravar\+Arquivo\+Todos\+Attributes (\begin{DoxyParamCaption}\item[{\hyperlink{structattribute__info}{attribute\+\_\+info} $\ast$}]{attribute,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho,  }\item[{fstream \&}]{arquivo\+Saida }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void gravar\+Arquivo\+Todos\+Attributes (\begin{DoxyParamCaption}\item[{\hyperlink{structAttribute__info}{Attribute\+\_\+info} $\ast$}]{attribute,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho,  }\item[{fstream \&}]{arquivo\+Saida }\end{DoxyParamCaption})}
 
-
-
-Função que imprime na tela informações de n atributos. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em attribute} & Pointer to struct of types att. \\
-\hline
-{\em constant\+Pool} & Poteiro pra constant pool. \\
-\hline
-{\em tamanho} & Number of times of the function print\+Attribute gonna be called. \\
-\hline
-{\em arquivo\+Saida} & arquivo de saída \\
-\hline
-\end{DoxyParams}
 
 
 Definido na linha 167 do ficheiro Attributes.\+cpp.
@@ -148,40 +118,29 @@ Referências gravar\+Arquivo\+Attribute().
 
 
 
-Referenciado por Leitor\+Exibidor\+::gravar\+Arquivo().
+Referenciado por Class\+File\+::gravar\+Arquivo().
 
 Grafo de chamadas desta função\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Attributes_8cpp_a5a06fdbfc69e0cd431c200b53cbcb08b_cgraph}
+\includegraphics[width=350pt]{Attributes_8cpp_a82ca1308f0dc5fb2ca83e20666c04ba8_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Attributes_8cpp_af23b327f5fd169831b2836a3f43268dd}\label{Attributes_8cpp_af23b327f5fd169831b2836a3f43268dd}} 
+\mbox{\Hypertarget{Attributes_8cpp_ac6086cd4e65467a39adcb35b70b30483}\label{Attributes_8cpp_ac6086cd4e65467a39adcb35b70b30483}} 
 \index{Attributes.\+cpp@{Attributes.\+cpp}!imprimir\+Attribute@{imprimir\+Attribute}}
 \index{imprimir\+Attribute@{imprimir\+Attribute}!Attributes.\+cpp@{Attributes.\+cpp}}
 \subsubsection{\texorpdfstring{imprimir\+Attribute()}{imprimirAttribute()}}
-{\footnotesize\ttfamily void imprimir\+Attribute (\begin{DoxyParamCaption}\item[{\hyperlink{structattribute__info}{attribute\+\_\+info}}]{attribute,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void imprimir\+Attribute (\begin{DoxyParamCaption}\item[{\hyperlink{structAttribute__info}{Attribute\+\_\+info}}]{attribute,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool }\end{DoxyParamCaption})}
 
-
-
-Função que imprime na tela informações de um atributo. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em attribute} & do struct do \hyperlink{structattribute__info}{attribute\+\_\+info}. \\
-\hline
-{\em constant\+Pool} & Poteiro pra constant pool. \\
-\hline
-\end{DoxyParams}
 
 
 Definido na linha 113 do ficheiro Attributes.\+cpp.
 
 
 
-Referências code\+\_\+attribute\+::attribute\+\_\+count, code\+\_\+attribute\+::attributes, capturar\+Indice\+De\+Referencia(), t\+\_\+exception\+\_\+table\+::catch\+\_\+type, code\+\_\+attribute\+::code\+\_\+length, code\+\_\+attribute\+::codigo, t\+\_\+info\+::codigo\+Atributo, t\+\_\+info\+::constantvalue, constantvalue\+\_\+attribute\+::constantvalue\+\_\+index, t\+\_\+exception\+\_\+table\+::end\+\_\+pc, t\+\_\+info\+::exception, exception\+\_\+attribute\+::exception\+\_\+index\+\_\+table, code\+\_\+attribute\+::exception\+\_\+table, code\+\_\+attribute\+::exception\+\_\+table\+\_\+length, t\+\_\+exception\+\_\+table\+::handler\+\_\+pc, imprimir\+Attribute(), attribute\+\_\+info\+::info, attribute\+\_\+info\+::length, code\+\_\+attribute\+::max\+\_\+locals, code\+\_\+attribute\+::max\+\_\+stack, attribute\+\_\+info\+::name\+\_\+index, exception\+\_\+attribute\+::number\+\_\+of\+\_\+exceptions, obter\+Mnemonico(), obter\+Parametros\+Opcode() e t\+\_\+exception\+\_\+table\+::start\+\_\+pc.
+Referências Code\+\_\+attribute\+::attribute\+\_\+count, Code\+\_\+attribute\+::attributes, capturar\+Indice\+De\+Referencia(), T\+\_\+exception\+\_\+table\+::catch\+\_\+type, Code\+\_\+attribute\+::code\+\_\+length, T\+\_\+info\+::code\+Attribute, Code\+\_\+attribute\+::codigo, T\+\_\+info\+::constant\+Value, Constant\+Value\+\_\+attribute\+::constantvalue\+\_\+index, T\+\_\+exception\+\_\+table\+::end\+\_\+pc, T\+\_\+info\+::exception, Exception\+\_\+attribute\+::exception\+\_\+index\+\_\+table, Code\+\_\+attribute\+::exception\+\_\+table, Code\+\_\+attribute\+::exception\+\_\+table\+\_\+length, T\+\_\+exception\+\_\+table\+::handler\+\_\+pc, imprimir\+Attribute(), Attribute\+\_\+info\+::info, Attribute\+\_\+info\+::length, Code\+\_\+attribute\+::max\+\_\+locals, Code\+\_\+attribute\+::max\+\_\+stack, Attribute\+\_\+info\+::name\+\_\+index, Exception\+\_\+attribute\+::number\+\_\+of\+\_\+exceptions, obter\+Mnemonico(), obter\+Parametros\+Opcode() e T\+\_\+exception\+\_\+table\+::start\+\_\+pc.
 
 
 
@@ -192,28 +151,15 @@ Grafo de chamadas desta função\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Attributes_8cpp_af23b327f5fd169831b2836a3f43268dd_cgraph}
+\includegraphics[width=350pt]{Attributes_8cpp_ac6086cd4e65467a39adcb35b70b30483_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Attributes_8cpp_a4d3679a14f5d2816bae4fa713c991bba}\label{Attributes_8cpp_a4d3679a14f5d2816bae4fa713c991bba}} 
+\mbox{\Hypertarget{Attributes_8cpp_af90fff93fb73ca1959c149ab0b9fad27}\label{Attributes_8cpp_af90fff93fb73ca1959c149ab0b9fad27}} 
 \index{Attributes.\+cpp@{Attributes.\+cpp}!imprimir\+Todos\+Attributes@{imprimir\+Todos\+Attributes}}
 \index{imprimir\+Todos\+Attributes@{imprimir\+Todos\+Attributes}!Attributes.\+cpp@{Attributes.\+cpp}}
 \subsubsection{\texorpdfstring{imprimir\+Todos\+Attributes()}{imprimirTodosAttributes()}}
-{\footnotesize\ttfamily void imprimir\+Todos\+Attributes (\begin{DoxyParamCaption}\item[{\hyperlink{structattribute__info}{attribute\+\_\+info} $\ast$}]{attribute,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void imprimir\+Todos\+Attributes (\begin{DoxyParamCaption}\item[{\hyperlink{structAttribute__info}{Attribute\+\_\+info} $\ast$}]{attribute,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho }\end{DoxyParamCaption})}
 
-
-
-Função que imprime na tela informações de n atributos. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em attribute} & Pointer to struct of types att. \\
-\hline
-{\em constant\+Pool} & Poteiro pra constant pool. \\
-\hline
-{\em tamanho} & Number of times of the function print\+Attribute gonna be called. \\
-\hline
-\end{DoxyParams}
 
 
 Definido na linha 104 do ficheiro Attributes.\+cpp.
@@ -224,40 +170,29 @@ Referências imprimir\+Attribute().
 
 
 
-Referenciado por Leitor\+Exibidor\+::exibir().
+Referenciado por Class\+File\+::exibir().
 
 Grafo de chamadas desta função\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Attributes_8cpp_a4d3679a14f5d2816bae4fa713c991bba_cgraph}
+\includegraphics[width=350pt]{Attributes_8cpp_af90fff93fb73ca1959c149ab0b9fad27_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Attributes_8cpp_a38665695db265d2377f3a5ba13f7c0b3}\label{Attributes_8cpp_a38665695db265d2377f3a5ba13f7c0b3}} 
+\mbox{\Hypertarget{Attributes_8cpp_a37c90da63b21074fff4ffd05b7410be2}\label{Attributes_8cpp_a37c90da63b21074fff4ffd05b7410be2}} 
 \index{Attributes.\+cpp@{Attributes.\+cpp}!ler\+Attribute@{ler\+Attribute}}
 \index{ler\+Attribute@{ler\+Attribute}!Attributes.\+cpp@{Attributes.\+cpp}}
 \subsubsection{\texorpdfstring{ler\+Attribute()}{lerAttribute()}}
-{\footnotesize\ttfamily \hyperlink{structattribute__info}{attribute\+\_\+info} ler\+Attribute (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{arquivo\+Entrada,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{structAttribute__info}{Attribute\+\_\+info} ler\+Attribute (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{arquivo\+Entrada,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool }\end{DoxyParamCaption})}
 
-
-
-Faz a leitura de um atributo da constantpool. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em arquivo\+Entrada} & Ponteiro pro arquivo .class. \\
-\hline
-{\em constant\+Pool} & Pointeiro pra constantpool. \\
-\hline
-\end{DoxyParams}
 
 
 Definido na linha 81 do ficheiro Attributes.\+cpp.
 
 
 
-Referências attribute\+\_\+info\+::info, attribute\+\_\+info\+::length, ler\+Attribute\+Info(), ler\+U2(), ler\+U4() e attribute\+\_\+info\+::name\+\_\+index.
+Referências Attribute\+\_\+info\+::info, Attribute\+\_\+info\+::length, ler\+Attribute\+Info(), ler\+U2(), ler\+U4() e Attribute\+\_\+info\+::name\+\_\+index.
 
 
 
@@ -268,37 +203,22 @@ Grafo de chamadas desta função\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Attributes_8cpp_a38665695db265d2377f3a5ba13f7c0b3_cgraph}
+\includegraphics[width=350pt]{Attributes_8cpp_a37c90da63b21074fff4ffd05b7410be2_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Attributes_8cpp_ab9c855202d2513bcb5d5ef847b94a363}\label{Attributes_8cpp_ab9c855202d2513bcb5d5ef847b94a363}} 
+\mbox{\Hypertarget{Attributes_8cpp_adde2fdfec7796550e3b7753705bee880}\label{Attributes_8cpp_adde2fdfec7796550e3b7753705bee880}} 
 \index{Attributes.\+cpp@{Attributes.\+cpp}!ler\+Attribute\+Info@{ler\+Attribute\+Info}}
 \index{ler\+Attribute\+Info@{ler\+Attribute\+Info}!Attributes.\+cpp@{Attributes.\+cpp}}
 \subsubsection{\texorpdfstring{ler\+Attribute\+Info()}{lerAttributeInfo()}}
-{\footnotesize\ttfamily \hyperlink{uniont__info}{t\+\_\+info} $\ast$ ler\+Attribute\+Info (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{arquivo\+Entrada,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{unsigned short}]{indice,  }\item[{unsigned short}]{tamanho }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{unionT__info}{T\+\_\+info}$\ast$ ler\+Attribute\+Info (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{arquivo\+Entrada,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{unsigned short}]{indice,  }\item[{unsigned short}]{tamanho }\end{DoxyParamCaption})}
 
-
-
-Faz a leitura das informações de um atributo. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em arquivo\+Entrada} & Ponteirp para arquivo .class. \\
-\hline
-{\em constant\+Pool} & Ponteiro pra constantpool. \\
-\hline
-{\em indice} & Posição do atributo na constantpool. \\
-\hline
-{\em tamanho} & em bytes do atributo a ser lido. \\
-\hline
-\end{DoxyParams}
 
 
 Definido na linha 19 do ficheiro Attributes.\+cpp.
 
 
 
-Referências code\+\_\+attribute\+::attribute\+\_\+count, code\+\_\+attribute\+::attributes, capturar\+Indice\+De\+Referencia(), code\+\_\+attribute\+::code\+\_\+length, code\+\_\+attribute\+::codigo, t\+\_\+info\+::codigo\+Atributo, t\+\_\+info\+::constantvalue, constantvalue\+\_\+attribute\+::constantvalue\+\_\+index, t\+\_\+info\+::exception, exception\+\_\+attribute\+::exception\+\_\+index\+\_\+table, code\+\_\+attribute\+::exception\+\_\+table, code\+\_\+attribute\+::exception\+\_\+table\+\_\+length, ler\+Attribute(), ler\+Exception\+Handler(), ler\+U1(), ler\+U2(), ler\+U4(), code\+\_\+attribute\+::max\+\_\+locals, code\+\_\+attribute\+::max\+\_\+stack e exception\+\_\+attribute\+::number\+\_\+of\+\_\+exceptions.
+Referências Code\+\_\+attribute\+::attribute\+\_\+count, Code\+\_\+attribute\+::attributes, capturar\+Indice\+De\+Referencia(), Code\+\_\+attribute\+::code\+\_\+length, T\+\_\+info\+::code\+Attribute, Code\+\_\+attribute\+::codigo, T\+\_\+info\+::constant\+Value, Constant\+Value\+\_\+attribute\+::constantvalue\+\_\+index, T\+\_\+info\+::exception, Exception\+\_\+attribute\+::exception\+\_\+index\+\_\+table, Code\+\_\+attribute\+::exception\+\_\+table, Code\+\_\+attribute\+::exception\+\_\+table\+\_\+length, ler\+Attribute(), ler\+Exception\+Handler(), ler\+U1(), ler\+U2(), ler\+U4(), Code\+\_\+attribute\+::max\+\_\+locals, Code\+\_\+attribute\+::max\+\_\+stack e Exception\+\_\+attribute\+::number\+\_\+of\+\_\+exceptions.
 
 
 
@@ -309,14 +229,14 @@ Grafo de chamadas desta função\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Attributes_8cpp_ab9c855202d2513bcb5d5ef847b94a363_cgraph}
+\includegraphics[width=350pt]{Attributes_8cpp_adde2fdfec7796550e3b7753705bee880_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{Attributes_8cpp_a7575ffc9147cf9ff818f11e41e5799d2}\label{Attributes_8cpp_a7575ffc9147cf9ff818f11e41e5799d2}} 
 \index{Attributes.\+cpp@{Attributes.\+cpp}!ler\+Exception\+Handler@{ler\+Exception\+Handler}}
 \index{ler\+Exception\+Handler@{ler\+Exception\+Handler}!Attributes.\+cpp@{Attributes.\+cpp}}
 \subsubsection{\texorpdfstring{ler\+Exception\+Handler()}{lerExceptionHandler()}}
-{\footnotesize\ttfamily \hyperlink{structt__exception__table}{t\+\_\+exception\+\_\+table} $\ast$ ler\+Exception\+Handler (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{arquivo\+Entrada }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily t\+\_\+exception\+\_\+table $\ast$ ler\+Exception\+Handler (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{arquivo\+Entrada }\end{DoxyParamCaption})}
 
 
 
@@ -333,7 +253,7 @@ Definido na linha 8 do ficheiro Attributes.\+cpp.
 
 
 
-Referências t\+\_\+exception\+\_\+table\+::catch\+\_\+type, t\+\_\+exception\+\_\+table\+::end\+\_\+pc, t\+\_\+exception\+\_\+table\+::handler\+\_\+pc, ler\+U2() e t\+\_\+exception\+\_\+table\+::start\+\_\+pc.
+Referências T\+\_\+exception\+\_\+table\+::catch\+\_\+type, T\+\_\+exception\+\_\+table\+::end\+\_\+pc, T\+\_\+exception\+\_\+table\+::handler\+\_\+pc, ler\+U2() e T\+\_\+exception\+\_\+table\+::start\+\_\+pc.
 
 
 
@@ -347,25 +267,12 @@ Grafo de chamadas desta função\+:
 \includegraphics[width=260pt]{Attributes_8cpp_a7575ffc9147cf9ff818f11e41e5799d2_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Attributes_8cpp_adfa49b8c725742bda34b244e06e1f120}\label{Attributes_8cpp_adfa49b8c725742bda34b244e06e1f120}} 
+\mbox{\Hypertarget{Attributes_8cpp_afa0c4d01d9ac9907bcb78af9e8b92c71}\label{Attributes_8cpp_afa0c4d01d9ac9907bcb78af9e8b92c71}} 
 \index{Attributes.\+cpp@{Attributes.\+cpp}!ler\+Todos\+Attributes@{ler\+Todos\+Attributes}}
 \index{ler\+Todos\+Attributes@{ler\+Todos\+Attributes}!Attributes.\+cpp@{Attributes.\+cpp}}
 \subsubsection{\texorpdfstring{ler\+Todos\+Attributes()}{lerTodosAttributes()}}
-{\footnotesize\ttfamily \hyperlink{structattribute__info}{attribute\+\_\+info} $\ast$ ler\+Todos\+Attributes (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{arquivo\+Entrada,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{structAttribute__info}{Attribute\+\_\+info}$\ast$ ler\+Todos\+Attributes (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{arquivo\+Entrada,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho }\end{DoxyParamCaption})}
 
-
-
-Faz a leitura de n atributos da constantpool. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em arquivo\+Entrada} & Ponteiro pro arquivo .class. \\
-\hline
-{\em constant\+Pool} & Poteiro pra constant pool. \\
-\hline
-{\em tamanho} & Número de atributos. \\
-\hline
-\end{DoxyParams}
 
 
 Definido na linha 92 do ficheiro Attributes.\+cpp.
@@ -376,14 +283,14 @@ Referências ler\+Attribute().
 
 
 
-Referenciado por Leitor\+Exibidor\+::carregar().
+Referenciado por Class\+File\+::carregar().
 
 Grafo de chamadas desta função\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Attributes_8cpp_adfa49b8c725742bda34b244e06e1f120_cgraph}
+\includegraphics[width=350pt]{Attributes_8cpp_afa0c4d01d9ac9907bcb78af9e8b92c71_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{Attributes_8cpp_a0a73dec553ae8bc41785faaac9c120a1}\label{Attributes_8cpp_a0a73dec553ae8bc41785faaac9c120a1}} 
@@ -438,8 +345,7 @@ Referências obter\+Valor\+N\+Bytes().
 
 Referenciado por imprimir\+Attribute().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

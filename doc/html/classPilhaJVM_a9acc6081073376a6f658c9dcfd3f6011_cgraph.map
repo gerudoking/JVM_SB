@@ -1,0 +1,9 @@
+<map id="PilhaJVM::PilhaJVM" name="PilhaJVM::PilhaJVM">
+<area shape="rect" id="node2" href="$classOperations.html#a705efecd2a658615f2dfe777f0bd7032" title="Atualiza a referência do frame do metodo. " alt="" coords="209,5,388,32"/>
+<area shape="rect" id="node3" href="$classMethodArea.html#a6ee32cdf91b461ff3c8a278b5d0cd126" title="Atualiza a pilha referência da pilha da jvm para o próximo instrução. " alt="" coords="196,56,401,83"/>
+<area shape="rect" id="node4" href="$classOperations.html#a5b31ab2923ed10b6ad3705f9954ed49e" title="Atualiza a pilha referência da pilha da jvm para o próximo instrução. " alt="" coords="199,107,398,133"/>
+<area shape="rect" id="node5" href="$classOperations.html#a2564df73b5b237e5bda042909c4747b1" title="Atualiza a referência da pilha de frames para o próximo frame. " alt="" coords="211,158,387,199"/>
+<area shape="rect" id="node6" href="$classPilhaJVM.html#a08adb78983b512cf3d97becfa2e9a5f0" title="Põe o PC na posição inicial. " alt="" coords="219,224,378,251"/>
+<area shape="rect" id="node7" href="$classClassFile.html#ab70fe581c4b7a1824adf490c3a53bcc7" title="Retorna referencia a constant pool. " alt="" coords="202,275,395,301"/>
+<area shape="rect" id="node8" href="$classClassFile.html#afdbe9cc2f360e04273470202c4f247dc" title="Retorna o método main. " alt="" coords="227,325,370,352"/>
+</map>

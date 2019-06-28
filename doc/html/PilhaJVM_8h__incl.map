@@ -1,0 +1,17 @@
+<map id="include/PilhaJVM.h" name="include/PilhaJVM.h">
+<area shape="rect" id="node2" href="$ClassFile_8h.html" title="Definição da ClassFile. " alt="" coords="940,155,1028,181"/>
+<area shape="rect" id="node10" href="$BasicTypes_8h.html" title="Tipos básicos utilizados para implementarmos a JVM. " alt="" coords="889,528,991,555"/>
+<area shape="rect" id="node18" href="$Attributes_8h.html" title="Atributos a serem usados na execuçao da JVM. " alt="" coords="302,379,391,405"/>
+<area shape="rect" id="node22" href="$OperandsStack_8h.html" title="Pilha responsável por armazenar os operandos da JVM. " alt="" coords="1356,453,1479,480"/>
+<area shape="rect" id="node28" href="$MethodArea_8h.html" title="Responsável por todas as operações que gerenciam os métodos. " alt="" coords="750,229,853,256"/>
+<area shape="rect" id="node31" href="$LocalVariables_8h.html" title="Stores local variables to current method. " alt="" coords="1503,453,1622,480"/>
+<area shape="rect" id="node33" href="$Operations_8h.html" title="Operations.h" alt="" coords="948,80,1044,107"/>
+<area shape="rect" id="node15" href="$ConstantPool_8h.html" title="Módulo Constant pool. " alt="" coords="557,453,669,480"/>
+<area shape="rect" id="node16" href="$Flags_8h.html" title="ClassFlags (public, final, super, interface and abstract) " alt="" coords="94,453,159,480"/>
+<area shape="rect" id="node17" href="$Fields_8h.html" title="Gerencia as informações dos campos do arquivo .class. " alt="" coords="337,304,405,331"/>
+<area shape="rect" id="node19" href="$Interfaces_8h.html" title="Gerencia as informações da interfaces do arquivo .class. " alt="" coords="720,379,811,405"/>
+<area shape="rect" id="node20" href="$Methods_8h.html" title="Gerencia as informações dos metodos do arquivo .class. " alt="" coords="429,304,512,331"/>
+<area shape="rect" id="node21" href="$StaticClass_8h.html" title="Definição da StaticClass. " alt="" coords="1256,304,1357,331"/>
+<area shape="rect" id="node25" href="$InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="1240,379,1357,405"/>
+<area shape="rect" id="node26" href="$Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="1217,453,1281,480"/>
+</map>

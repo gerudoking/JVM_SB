@@ -1,11 +1,11 @@
 var Methods_8h =
 [
-    [ "method_info", "structmethod__info.html", "structmethod__info" ],
-    [ "gravarArquivoMethod", "Methods_8h.html#a88e44efead000d997fcc338f5adf49df", null ],
-    [ "gravarArquivoTodosMethods", "Methods_8h.html#a03ad0e66805c1eba282a5915c46bb883", null ],
-    [ "imprimirMethod", "Methods_8h.html#a8a8d12f6bf654c3ce7d325b11a78b24a", null ],
-    [ "imprimirTodosMethods", "Methods_8h.html#add6ed9056b052e77e6277de58352bb5e", null ],
-    [ "lerMethod", "Methods_8h.html#afe9591554ea00006cfe58a3f52c43fbd", null ],
-    [ "lerTodosMethods", "Methods_8h.html#a56b48c0eb876ee7b6a343d3046322dea", null ],
+    [ "Method_info", "structMethod__info.html", "structMethod__info" ],
+    [ "gravarArquivoMethod", "Methods_8h.html#ae979a905d7e51fa6eace52a474a0b599", null ],
+    [ "gravarArquivoTodosMethods", "Methods_8h.html#ab82275fb422c00093dc9434927d0c32d", null ],
+    [ "imprimirMethod", "Methods_8h.html#aaed342bbd3d60e0ef79f4d3803cfb1f2", null ],
+    [ "imprimirTodosMethods", "Methods_8h.html#a6e0de4fe25fbed32a095c350ad843d70", null ],
+    [ "lerMethod", "Methods_8h.html#a1ae1d752fe2209d5b687b01d8be9ba6b", null ],
+    [ "lerTodosMethods", "Methods_8h.html#ae335dbeb4b8f1f2c4af9077318e10795", null ],
     [ "obterFlagMethod", "Methods_8h.html#aeebb57e68a3f6a889f385323cd28885e", null ]
 ];

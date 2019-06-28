@@ -1,0 +1,5 @@
+<map id="PilhaJVM::proximaInstrucao" name="PilhaJVM::proximaInstrucao">
+<area shape="rect" id="node2" href="$classPilhaJVM.html#a4f83f8d59b436cb1813a2a35e1538045" title="Dá um pop no método atual. " alt="" coords="240,35,445,61"/>
+<area shape="rect" id="node3" href="$classOperations.html#a705efecd2a658615f2dfe777f0bd7032" title="Atualiza a referência do frame do metodo. " alt="" coords="493,5,672,32"/>
+<area shape="rect" id="node4" href="$classOperations.html#a2564df73b5b237e5bda042909c4747b1" title="Atualiza a referência da pilha de frames para o próximo frame. " alt="" coords="495,57,671,98"/>
+</map>

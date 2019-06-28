@@ -1,0 +1,23 @@
+<map id="ClassFile::carregar" name="ClassFile::carregar">
+<area shape="rect" id="node2" href="$ConstantPool_8cpp.html#a56798a87affc6fb3e55cc85ef7086dc4" title="carregarConstantPool" alt="" coords="597,106,745,133"/>
+<area shape="rect" id="node4" href="$BasicTypes_8cpp.html#a7e2b72c2ee2be091607d2165abc06244" title="Função para ler 2 bytes do arquivo .class. " alt="" coords="1254,436,1307,462"/>
+<area shape="rect" id="node5" href="$BasicTypes_8cpp.html#a74cf9475c49284eba16e6f1d4b7d0985" title="Função para ler 4 bytes do arquivo .class. " alt="" coords="1072,360,1125,386"/>
+<area shape="rect" id="node7" href="$Interfaces_8cpp.html#a107c86b6178f848a1159aedf372996ba" title="Carrega as interfaces na mem�ria a partir do arquivo class. " alt="" coords="412,321,543,348"/>
+<area shape="rect" id="node8" href="$Attributes_8cpp.html#afa0c4d01d9ac9907bcb78af9e8b92c71" title="lerTodosAttributes" alt="" coords="413,410,541,437"/>
+<area shape="rect" id="node14" href="$Fields_8cpp.html#a888245ea152dedf33b1f8de23c254a37" title="lerTodosFields" alt="" coords="221,461,328,488"/>
+<area shape="rect" id="node16" href="$Methods_8cpp.html#ae335dbeb4b8f1f2c4af9077318e10795" title="lerTodosMethods" alt="" coords="213,512,336,538"/>
+<area shape="rect" id="node18" href="$classClassFile.html#a32767b8d966ef87249aa3a41ec5d67c3" title="Retorna a string que contém uma mensagem de erro correspondente ao índice que recebe como parâmetro..." alt="" coords="205,562,344,589"/>
+<area shape="rect" id="node19" href="$classClassFile.html#a8dd042ff6873b9f0d16f8ee3812261e1" title="Verifica se a extensão do arquivo é .class. " alt="" coords="185,613,364,640"/>
+<area shape="rect" id="node20" href="$classClassFile.html#ab0394185a299f35a9b5be68143385e84" title="Encontra em qual method esta a clinit, se existir. " alt="" coords="591,664,752,690"/>
+<area shape="rect" id="node21" href="$classClassFile.html#ae8e4445e763c4ee7c04995fcea0369e0" title="Encontro em qual method está a main. " alt="" coords="800,714,959,741"/>
+<area shape="rect" id="node22" href="$classClassFile.html#a6b8f23db0ee4af80a2e75d46a191dc20" title="Verifica se a class definida é igual ao nome da classe sem extensões. " alt="" coords="593,766,749,807"/>
+<area shape="rect" id="node3" href="$BasicTypes_8cpp.html#a4d51a7260f72d442b5fee1afad067e66" title="Função para ler 1 byte do arquivo .class. " alt="" coords="1072,106,1125,133"/>
+<area shape="rect" id="node6" href="$BasicTypes_8cpp.html#ab43eecd93f5d0413f80c9dc9253f7ccb" title="Função para ler os bytes de uma string UTF&#45;8. " alt="" coords="845,56,914,82"/>
+<area shape="rect" id="node9" href="$Attributes_8cpp.html#a37c90da63b21074fff4ffd05b7410be2" title="lerAttribute" alt="" coords="629,461,714,488"/>
+<area shape="rect" id="node10" href="$Attributes_8cpp.html#adde2fdfec7796550e3b7753705bee880" title="lerAttributeInfo" alt="" coords="826,461,933,488"/>
+<area shape="rect" id="node11" href="$ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="1007,701,1191,728"/>
+<area shape="rect" id="node13" href="$Attributes_8cpp.html#a7575ffc9147cf9ff818f11e41e5799d2" title="Função de leitura de exceções. " alt="" coords="1029,461,1168,488"/>
+<area shape="rect" id="node12" href="$BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="1239,701,1323,728"/>
+<area shape="rect" id="node15" href="$Fields_8cpp.html#ab22eb8eb41d1c698fc206c34ccfbef68" title="lerField" alt="" coords="445,461,509,488"/>
+<area shape="rect" id="node17" href="$Methods_8cpp.html#a1ae1d752fe2209d5b687b01d8be9ba6b" title="lerMethod" alt="" coords="438,512,517,538"/>
+</map>

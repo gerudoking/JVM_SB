@@ -1,8 +1,8 @@
 <map id="include/StaticClass.h" name="include/StaticClass.h">
-<area shape="rect" id="node2" href="$ClasseLeitorExibidor_8h.html" title="Definição da ClasseLeitorExibidor. " alt="" coords="894,80,1047,107"/>
-<area shape="rect" id="node21" href="$InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="1623,155,1740,181"/>
+<area shape="rect" id="node2" href="$ClassFile_8h.html" title="Definição da ClassFile. " alt="" coords="927,80,1015,107"/>
+<area shape="rect" id="node21" href="$InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="1641,155,1759,181"/>
 <area shape="rect" id="node22" href="$OperandsStack_8h.html" title="Pilha responsável por armazenar os operandos da JVM. " alt="" coords="1412,304,1535,331"/>
-<area shape="rect" id="node25" href="$Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="1745,229,1809,256"/>
+<area shape="rect" id="node25" href="$Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="1764,229,1828,256"/>
 <area shape="rect" id="node10" href="$BasicTypes_8h.html" title="Tipos básicos utilizados para implementarmos a JVM. " alt="" coords="879,453,982,480"/>
 <area shape="rect" id="node15" href="$ConstantPool_8h.html" title="Módulo Constant pool. " alt="" coords="615,379,727,405"/>
 <area shape="rect" id="node16" href="$Flags_8h.html" title="ClassFlags (public, final, super, interface and abstract) " alt="" coords="246,379,311,405"/>
@@ -10,8 +10,8 @@
 <area shape="rect" id="node18" href="$Attributes_8h.html" title="Atributos a serem usados na execuçao da JVM. " alt="" coords="298,304,387,331"/>
 <area shape="rect" id="node19" href="$Interfaces_8h.html" title="Gerencia as informações da interfaces do arquivo .class. " alt="" coords="767,304,857,331"/>
 <area shape="rect" id="node20" href="$Methods_8h.html" title="Gerencia as informações dos metodos do arquivo .class. " alt="" coords="559,229,641,256"/>
-<area shape="rect" id="node27" href="$MethodArea_8h.html" title="Responsável por todas as operações que gerenciam os métodos. " alt="" coords="1181,155,1283,181"/>
-<area shape="rect" id="node30" href="$Frame_8h.html" title="Contém tudo necessário para a execução de um método. " alt="" coords="1034,229,1105,256"/>
+<area shape="rect" id="node27" href="$MethodArea_8h.html" title="Responsável por todas as operações que gerenciam os métodos. " alt="" coords="1199,155,1302,181"/>
+<area shape="rect" id="node30" href="$PilhaJVM_8h.html" title="Contém tudo necessário para a execução de um método. " alt="" coords="1034,229,1123,256"/>
 <area shape="rect" id="node31" href="$LocalVariables_8h.html" title="Stores local variables to current method. " alt="" coords="1085,304,1203,331"/>
 <area shape="rect" id="node33" href="$Operations_8h.html" title="Operations.h" alt="" coords="1228,304,1324,331"/>
 </map>

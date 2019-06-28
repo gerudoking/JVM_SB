@@ -1,11 +1,11 @@
 <map id="include/Operations.h" name="include/Operations.h">
-<area shape="rect" id="node2" href="$StaticClass_8h.html" title="Definição da StaticClass. " alt="" coords="1261,80,1363,107"/>
-<area shape="rect" id="node3" href="$ClasseLeitorExibidor_8h.html" title="Definição da ClasseLeitorExibidor. " alt="" coords="855,155,1009,181"/>
+<area shape="rect" id="node2" href="$StaticClass_8h.html" title="Definição da StaticClass. " alt="" coords="1263,80,1364,107"/>
+<area shape="rect" id="node3" href="$ClassFile_8h.html" title="Definição da ClassFile. " alt="" coords="884,155,972,181"/>
 <area shape="rect" id="node28" href="$MethodArea_8h.html" title="Responsável por todas as operações que gerenciam os métodos. " alt="" coords="649,229,751,256"/>
-<area shape="rect" id="node31" href="$Frame_8h.html" title="Contém tudo necessário para a execução de um método. " alt="" coords="1030,304,1101,331"/>
-<area shape="rect" id="node22" href="$InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="1421,229,1539,256"/>
+<area shape="rect" id="node31" href="$PilhaJVM_8h.html" title="Contém tudo necessário para a execução de um método. " alt="" coords="1030,304,1119,331"/>
+<area shape="rect" id="node22" href="$InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="1423,229,1540,256"/>
 <area shape="rect" id="node23" href="$OperandsStack_8h.html" title="Pilha responsável por armazenar os operandos da JVM. " alt="" coords="1263,379,1385,405"/>
-<area shape="rect" id="node26" href="$Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="1624,304,1688,331"/>
+<area shape="rect" id="node26" href="$Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="1625,304,1689,331"/>
 <area shape="rect" id="node11" href="$BasicTypes_8h.html" title="Tipos básicos utilizados para implementarmos a JVM. " alt="" coords="826,528,929,555"/>
 <area shape="rect" id="node16" href="$ConstantPool_8h.html" title="Módulo Constant pool. " alt="" coords="336,453,448,480"/>
 <area shape="rect" id="node17" href="$Flags_8h.html" title="ClassFlags (public, final, super, interface and abstract) " alt="" coords="145,453,210,480"/>

@@ -1,8 +1,7 @@
 \hypertarget{Interfaces_8cpp}{}\section{Referência ao ficheiro src/\+Interfaces.cpp}
 \label{Interfaces_8cpp}\index{src/\+Interfaces.\+cpp@{src/\+Interfaces.\+cpp}}
 {\ttfamily \#include \char`\"{}Interfaces.\+h\char`\"{}}\newline
-Diagrama de dependências de inclusão para Interfaces.\+cpp\+:
-\nopagebreak
+Diagrama de dependências de inclusão para Interfaces.\+cpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -14,38 +13,23 @@ Diagrama de dependências de inclusão para Interfaces.\+cpp\+:
 \item 
 unsigned short $\ast$ \hyperlink{Interfaces_8cpp_a107c86b6178f848a1159aedf372996ba}{ler\+Todas\+Interfaces} (F\+I\+LE $\ast$arquivo\+Entrada, int tamanho)
 \begin{DoxyCompactList}\small\item\em Carrega as interfaces na mem�ria a partir do arquivo class. \end{DoxyCompactList}\item 
-void \hyperlink{Interfaces_8cpp_a6e92bedd6f0e7e8ab4c3956181a4ee7d}{imprimir\+Todas\+Interfaces} (unsigned short $\ast$interface, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, int tamanho)
-\item 
-void \hyperlink{Interfaces_8cpp_a1e9a0574c1362e56ed6c1af6f4927b77}{imprimir\+Interface} (unsigned short interface, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, int indice)
-\item 
-void \hyperlink{Interfaces_8cpp_ad76e2a0e7237cb9f31aa1387e1c59eb0}{gravar\+Arquivo\+Todas\+Interfaces} (unsigned short $\ast$interface, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, int tamanho, fstream \&arquivo\+Saida)
+void \hyperlink{Interfaces_8cpp_a0ddfbcb84bcd0d1146b48cb8465f5b94}{imprimir\+Todas\+Interfaces} (unsigned short $\ast$interface, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool, int tamanho)
 \begin{DoxyCompactList}\small\item\em Imprimir todas as interfaces do arquivo. \end{DoxyCompactList}\item 
-void \hyperlink{Interfaces_8cpp_ae4cead615756de41a26b4786b08e15b8}{gravar\+Arquivo\+Interface} (unsigned short interface, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, int indice, fstream \&arquivo\+Saida)
-\begin{DoxyCompactList}\small\item\em Imprimir informação de uma interface específica com o indice da interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{Interfaces_8cpp_a62aecb5fb8d3b99b8dfbb144dc99fa29}{imprimir\+Interface} (unsigned short interface, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool, int indice)
+\begin{DoxyCompactList}\small\item\em Imprimir informação de uma interface específica com o indice da interface. \end{DoxyCompactList}\item 
+void \hyperlink{Interfaces_8cpp_ad817a71d833eba20fd61c86c9a6b0a00}{gravar\+Arquivo\+Todas\+Interfaces} (unsigned short $\ast$interface, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool, int tamanho, fstream \&arquivo\+Saida)
+\item 
+void \hyperlink{Interfaces_8cpp_a208b88dc4800761f4291479a4dabf7bb}{gravar\+Arquivo\+Interface} (unsigned short interface, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool, int indice, fstream \&arquivo\+Saida)
+\end{DoxyCompactItemize}
 
 
 \subsection{Documentação das funções}
-\mbox{\Hypertarget{Interfaces_8cpp_ae4cead615756de41a26b4786b08e15b8}\label{Interfaces_8cpp_ae4cead615756de41a26b4786b08e15b8}} 
+\mbox{\Hypertarget{Interfaces_8cpp_a208b88dc4800761f4291479a4dabf7bb}\label{Interfaces_8cpp_a208b88dc4800761f4291479a4dabf7bb}} 
 \index{Interfaces.\+cpp@{Interfaces.\+cpp}!gravar\+Arquivo\+Interface@{gravar\+Arquivo\+Interface}}
 \index{gravar\+Arquivo\+Interface@{gravar\+Arquivo\+Interface}!Interfaces.\+cpp@{Interfaces.\+cpp}}
 \subsubsection{\texorpdfstring{gravar\+Arquivo\+Interface()}{gravarArquivoInterface()}}
-{\footnotesize\ttfamily void gravar\+Arquivo\+Interface (\begin{DoxyParamCaption}\item[{unsigned short}]{interface,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{indice,  }\item[{fstream \&}]{arquivo\+Saida }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void gravar\+Arquivo\+Interface (\begin{DoxyParamCaption}\item[{unsigned short}]{interface,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{indice,  }\item[{fstream \&}]{arquivo\+Saida }\end{DoxyParamCaption})}
 
-
-
-Imprimir informação de uma interface específica com o indice da interface. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em interface} & Indice do constantpool. \\
-\hline
-{\em constant\+Pool} & Ponteiro para o constantpool. \\
-\hline
-{\em indice} & Indice da interface específica. \\
-\hline
-{\em arquivo\+Saida} & arquivo de saida \\
-\hline
-\end{DoxyParams}
 
 
 Definido na linha 34 do ficheiro Interfaces.\+cpp.
@@ -63,30 +47,15 @@ Grafo de chamadas desta função\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Interfaces_8cpp_ae4cead615756de41a26b4786b08e15b8_cgraph}
+\includegraphics[width=350pt]{Interfaces_8cpp_a208b88dc4800761f4291479a4dabf7bb_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Interfaces_8cpp_ad76e2a0e7237cb9f31aa1387e1c59eb0}\label{Interfaces_8cpp_ad76e2a0e7237cb9f31aa1387e1c59eb0}} 
+\mbox{\Hypertarget{Interfaces_8cpp_ad817a71d833eba20fd61c86c9a6b0a00}\label{Interfaces_8cpp_ad817a71d833eba20fd61c86c9a6b0a00}} 
 \index{Interfaces.\+cpp@{Interfaces.\+cpp}!gravar\+Arquivo\+Todas\+Interfaces@{gravar\+Arquivo\+Todas\+Interfaces}}
 \index{gravar\+Arquivo\+Todas\+Interfaces@{gravar\+Arquivo\+Todas\+Interfaces}!Interfaces.\+cpp@{Interfaces.\+cpp}}
 \subsubsection{\texorpdfstring{gravar\+Arquivo\+Todas\+Interfaces()}{gravarArquivoTodasInterfaces()}}
-{\footnotesize\ttfamily void gravar\+Arquivo\+Todas\+Interfaces (\begin{DoxyParamCaption}\item[{unsigned short $\ast$}]{interface,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho,  }\item[{fstream \&}]{arquivo\+Saida }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void gravar\+Arquivo\+Todas\+Interfaces (\begin{DoxyParamCaption}\item[{unsigned short $\ast$}]{interface,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho,  }\item[{fstream \&}]{arquivo\+Saida }\end{DoxyParamCaption})}
 
-
-
-Imprimir todas as interfaces do arquivo. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em interface} & Array de interfaces. \\
-\hline
-{\em constant\+Pool} & Ponteiro para a constantpool. \\
-\hline
-{\em tamanho} & Número de interfaces. \\
-\hline
-{\em arquivo\+Saida} & arquivo de saida \\
-\hline
-\end{DoxyParams}
 
 
 Definido na linha 28 do ficheiro Interfaces.\+cpp.
@@ -97,22 +66,35 @@ Referências gravar\+Arquivo\+Interface().
 
 
 
-Referenciado por Leitor\+Exibidor\+::gravar\+Arquivo().
+Referenciado por Class\+File\+::gravar\+Arquivo().
 
 Grafo de chamadas desta função\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Interfaces_8cpp_ad76e2a0e7237cb9f31aa1387e1c59eb0_cgraph}
+\includegraphics[width=350pt]{Interfaces_8cpp_ad817a71d833eba20fd61c86c9a6b0a00_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Interfaces_8cpp_a1e9a0574c1362e56ed6c1af6f4927b77}\label{Interfaces_8cpp_a1e9a0574c1362e56ed6c1af6f4927b77}} 
+\mbox{\Hypertarget{Interfaces_8cpp_a62aecb5fb8d3b99b8dfbb144dc99fa29}\label{Interfaces_8cpp_a62aecb5fb8d3b99b8dfbb144dc99fa29}} 
 \index{Interfaces.\+cpp@{Interfaces.\+cpp}!imprimir\+Interface@{imprimir\+Interface}}
 \index{imprimir\+Interface@{imprimir\+Interface}!Interfaces.\+cpp@{Interfaces.\+cpp}}
 \subsubsection{\texorpdfstring{imprimir\+Interface()}{imprimirInterface()}}
-{\footnotesize\ttfamily void imprimir\+Interface (\begin{DoxyParamCaption}\item[{unsigned short}]{interface,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{indice }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily imprimir\+Interface (\begin{DoxyParamCaption}\item[{unsigned short}]{interface,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{indice }\end{DoxyParamCaption})}
 
+
+
+Imprimir informação de uma interface específica com o indice da interface. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em interface} & Indice do constantpool. \\
+\hline
+{\em constant\+Pool} & Ponteiro para o constantpool. \\
+\hline
+{\em indice} & Indice da interface específica. \\
+\hline
+\end{DoxyParams}
 
 
 Definido na linha 24 do ficheiro Interfaces.\+cpp.
@@ -130,15 +112,28 @@ Grafo de chamadas desta função\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Interfaces_8cpp_a1e9a0574c1362e56ed6c1af6f4927b77_cgraph}
+\includegraphics[width=350pt]{Interfaces_8cpp_a62aecb5fb8d3b99b8dfbb144dc99fa29_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Interfaces_8cpp_a6e92bedd6f0e7e8ab4c3956181a4ee7d}\label{Interfaces_8cpp_a6e92bedd6f0e7e8ab4c3956181a4ee7d}} 
+\mbox{\Hypertarget{Interfaces_8cpp_a0ddfbcb84bcd0d1146b48cb8465f5b94}\label{Interfaces_8cpp_a0ddfbcb84bcd0d1146b48cb8465f5b94}} 
 \index{Interfaces.\+cpp@{Interfaces.\+cpp}!imprimir\+Todas\+Interfaces@{imprimir\+Todas\+Interfaces}}
 \index{imprimir\+Todas\+Interfaces@{imprimir\+Todas\+Interfaces}!Interfaces.\+cpp@{Interfaces.\+cpp}}
 \subsubsection{\texorpdfstring{imprimir\+Todas\+Interfaces()}{imprimirTodasInterfaces()}}
-{\footnotesize\ttfamily void imprimir\+Todas\+Interfaces (\begin{DoxyParamCaption}\item[{unsigned short $\ast$}]{interface,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void imprimir\+Todas\+Interfaces (\begin{DoxyParamCaption}\item[{unsigned short $\ast$}]{interface,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho }\end{DoxyParamCaption})}
 
+
+
+Imprimir todas as interfaces do arquivo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em interface} & Array de interfaces. \\
+\hline
+{\em constant\+Pool} & Ponteiro para a constantpool. \\
+\hline
+{\em tamanho} & Número de interfaces. \\
+\hline
+\end{DoxyParams}
 
 
 Definido na linha 18 do ficheiro Interfaces.\+cpp.
@@ -149,14 +144,14 @@ Referências imprimir\+Interface().
 
 
 
-Referenciado por Leitor\+Exibidor\+::exibir().
+Referenciado por Class\+File\+::exibir().
 
 Grafo de chamadas desta função\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Interfaces_8cpp_a6e92bedd6f0e7e8ab4c3956181a4ee7d_cgraph}
+\includegraphics[width=350pt]{Interfaces_8cpp_a0ddfbcb84bcd0d1146b48cb8465f5b94_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{Interfaces_8cpp_a107c86b6178f848a1159aedf372996ba}\label{Interfaces_8cpp_a107c86b6178f848a1159aedf372996ba}} 
@@ -186,7 +181,7 @@ Referências ler\+U2().
 
 
 
-Referenciado por Leitor\+Exibidor\+::carregar().
+Referenciado por Class\+File\+::carregar().
 
 Grafo de chamadas desta função\+:
 \nopagebreak

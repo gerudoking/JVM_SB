@@ -16,7 +16,7 @@ Diagrama de colaboração para Method\+Area\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=169pt]{classMethodArea__coll__graph}
+\includegraphics[width=159pt]{classMethodArea__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Membros públicos estáticos}
@@ -26,10 +26,10 @@ static \hyperlink{classStaticClass}{Static\+Class} $\ast$ \hyperlink{classMethod
 \begin{DoxyCompactList}\small\item\em Retorna referência para classe estática. \end{DoxyCompactList}\item 
 static bool \hyperlink{classMethodArea_a30233142aefa26c17a3a222582cb56c1}{adicionar\+Classe} (string classe)
 \begin{DoxyCompactList}\small\item\em Carrega a classe na memória. \end{DoxyCompactList}\item 
-static bool \hyperlink{classMethodArea_af8c5a64c3e17fb33809b1cea9b85a8b1}{adicionar\+Classe} (\hyperlink{classLeitorExibidor}{Leitor\+Exibidor} $\ast$leitor\+Exibidor)
+static bool \hyperlink{classMethodArea_ac2a5ab0e6b36c9af7062f145218b4cf0}{adicionar\+Classe} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
 \begin{DoxyCompactList}\small\item\em Carrega classe na memória. \end{DoxyCompactList}\item 
-static void \hyperlink{classMethodArea_ac6423e447a5f46bf969bfb7df7500a2b}{atualizar\+Frame\+Stack} (\hyperlink{classFrameStack}{Frame\+Stack} $\ast$novo\+Frame\+Stack)
-\begin{DoxyCompactList}\small\item\em Atualiza a referência da pilha de frames para o próximo frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static void \hyperlink{classMethodArea_a6ee32cdf91b461ff3c8a278b5d0cd126}{atualizar\+Pilha\+J\+VM} (\hyperlink{classPilhaJVM}{Pilha\+J\+VM} $\ast$p\+Pilha\+J\+VM)
+\begin{DoxyCompactList}\small\item\em Atualiza a pilha referência da pilha da jvm para o próximo instrução. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Atributos Públicos Estáticos}
 \begin{DoxyCompactItemize}
 \item 
@@ -38,9 +38,9 @@ static string \hyperlink{classMethodArea_a5fba57684c1552a65932306870b1130c}{path
 \subsection*{Atributos Privados Estáticos}
 \begin{DoxyCompactItemize}
 \item 
-static map$<$ string, \hyperlink{classStaticClass}{Static\+Class} $\ast$ $>$ \hyperlink{classMethodArea_ab92a54586a58ca940ecedfcc90ff8b13}{map\+Classes}
+static map$<$ string, \hyperlink{classStaticClass}{Static\+Class} $\ast$ $>$ \hyperlink{classMethodArea_aacecebeabf7f239bfb2ccafe7d11cf63}{map\+Static\+Class}
 \item 
-static \hyperlink{classFrameStack}{Frame\+Stack} $\ast$ \hyperlink{classMethodArea_a2b99453f48cbcc141b027b8e6bbb9e2d}{frame\+Stack} = nullptr
+static \hyperlink{classPilhaJVM}{Pilha\+J\+VM} $\ast$ \hyperlink{classMethodArea_aed878aaa6b44b11cd9446527c447ede9}{pilha\+J\+VM} = nullptr
 \end{DoxyCompactItemize}
 
 
@@ -73,7 +73,7 @@ Definido na linha 21 do ficheiro Method\+Area.\+cpp.
 
 
 
-Referências Frame\+Stack\+::adicionar\+Frame(), Leitor\+Exibidor\+::carregar(), Leitor\+Exibidor\+::existe\+Clinit(), frame\+Stack, map\+Classes, Leitor\+Exibidor\+::obter\+Clinit(), Leitor\+Exibidor\+::obter\+Constant\+Pool(), path e Leitor\+Exibidor\+::validar\+Extensao().
+Referências Pilha\+J\+V\+M\+::adicionar\+Frame(), Class\+File\+::carregar(), Class\+File\+::existe\+Clinit(), map\+Static\+Class, Class\+File\+::obter\+Clinit(), Class\+File\+::obter\+Constant\+Pool(), path, pilha\+J\+VM e Class\+File\+::validar\+Extensao().
 
 
 
@@ -87,11 +87,11 @@ Grafo de chamadas desta função\+:
 \includegraphics[width=350pt]{classMethodArea_a30233142aefa26c17a3a222582cb56c1_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{classMethodArea_af8c5a64c3e17fb33809b1cea9b85a8b1}\label{classMethodArea_af8c5a64c3e17fb33809b1cea9b85a8b1}} 
+\mbox{\Hypertarget{classMethodArea_ac2a5ab0e6b36c9af7062f145218b4cf0}\label{classMethodArea_ac2a5ab0e6b36c9af7062f145218b4cf0}} 
 \index{Method\+Area@{Method\+Area}!adicionar\+Classe@{adicionar\+Classe}}
 \index{adicionar\+Classe@{adicionar\+Classe}!Method\+Area@{Method\+Area}}
 \subsubsection{\texorpdfstring{adicionar\+Classe()}{adicionarClasse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily static bool Method\+Area\+::adicionar\+Classe (\begin{DoxyParamCaption}\item[{\hyperlink{classLeitorExibidor}{Leitor\+Exibidor} $\ast$}]{leitor\+Exibidor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static bool Method\+Area\+::adicionar\+Classe (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -99,7 +99,7 @@ Carrega classe na memória.
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em leitor\+Exibidor} & informação do arquivo .class na memória \\
+{\em class\+File} & informação do arquivo .class na memória \\
 \hline
 \end{DoxyParams}
 
@@ -108,29 +108,29 @@ Definido na linha 49 do ficheiro Method\+Area.\+cpp.
 
 
 
-Referências Frame\+Stack\+::adicionar\+Frame(), capturar\+Indice\+De\+Referencia(), Leitor\+Exibidor\+::carregar(), Leitor\+Exibidor\+::existe\+Clinit(), frame\+Stack, map\+Classes, Leitor\+Exibidor\+::obter\+Clinit(), Leitor\+Exibidor\+::obter\+Constant\+Pool(), Leitor\+Exibidor\+::obter\+Status() e Leitor\+Exibidor\+::obter\+This\+\_\+class().
+Referências Pilha\+J\+V\+M\+::adicionar\+Frame(), capturar\+Indice\+De\+Referencia(), Class\+File\+::carregar(), Class\+File\+::existe\+Clinit(), map\+Static\+Class, Class\+File\+::obter\+Clinit(), Class\+File\+::obter\+Constant\+Pool(), Class\+File\+::obter\+Status(), Class\+File\+::obter\+This\+\_\+class() e pilha\+J\+VM.
 
 Grafo de chamadas desta função\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classMethodArea_af8c5a64c3e17fb33809b1cea9b85a8b1_cgraph}
+\includegraphics[width=350pt]{classMethodArea_ac2a5ab0e6b36c9af7062f145218b4cf0_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{classMethodArea_ac6423e447a5f46bf969bfb7df7500a2b}\label{classMethodArea_ac6423e447a5f46bf969bfb7df7500a2b}} 
-\index{Method\+Area@{Method\+Area}!atualizar\+Frame\+Stack@{atualizar\+Frame\+Stack}}
-\index{atualizar\+Frame\+Stack@{atualizar\+Frame\+Stack}!Method\+Area@{Method\+Area}}
-\subsubsection{\texorpdfstring{atualizar\+Frame\+Stack()}{atualizarFrameStack()}}
-{\footnotesize\ttfamily static void Method\+Area\+::atualizar\+Frame\+Stack (\begin{DoxyParamCaption}\item[{\hyperlink{classFrameStack}{Frame\+Stack} $\ast$}]{novo\+Frame\+Stack }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\mbox{\Hypertarget{classMethodArea_a6ee32cdf91b461ff3c8a278b5d0cd126}\label{classMethodArea_a6ee32cdf91b461ff3c8a278b5d0cd126}} 
+\index{Method\+Area@{Method\+Area}!atualizar\+Pilha\+J\+VM@{atualizar\+Pilha\+J\+VM}}
+\index{atualizar\+Pilha\+J\+VM@{atualizar\+Pilha\+J\+VM}!Method\+Area@{Method\+Area}}
+\subsubsection{\texorpdfstring{atualizar\+Pilha\+J\+V\+M()}{atualizarPilhaJVM()}}
+{\footnotesize\ttfamily static void Method\+Area\+::atualizar\+Pilha\+J\+VM (\begin{DoxyParamCaption}\item[{\hyperlink{classPilhaJVM}{Pilha\+J\+VM} $\ast$}]{p\+Pilha\+J\+VM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Atualiza a referência da pilha de frames para o próximo frame. 
+Atualiza a pilha referência da pilha da jvm para o próximo instrução. 
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em novo\+Frame\+Stack} & próximo frame \\
+{\em p\+Pilha\+J\+VM} & a pilha da jvm \\
 \hline
 \end{DoxyParams}
 
@@ -139,11 +139,11 @@ Definido na linha 73 do ficheiro Method\+Area.\+cpp.
 
 
 
-Referências frame\+Stack.
+Referências pilha\+J\+VM.
 
 
 
-Referenciado por Frame\+Stack\+::adicionar\+Frame() e Frame\+Stack\+::\+Frame\+Stack().
+Referenciado por Pilha\+J\+V\+M\+::adicionar\+Frame() e Pilha\+J\+V\+M\+::\+Pilha\+J\+V\+M().
 
 \mbox{\Hypertarget{classMethodArea_a6e9d922892887daadd4624729268094f}\label{classMethodArea_a6e9d922892887daadd4624729268094f}} 
 \index{Method\+Area@{Method\+Area}!obter\+Class@{obter\+Class}}
@@ -166,34 +166,20 @@ Definido na linha 12 do ficheiro Method\+Area.\+cpp.
 
 
 
-Referências map\+Classes.
+Referências map\+Static\+Class.
 
 
 
-Referenciado por Operations\+::func\+\_\+new(), Operations\+::getstatic(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::multianewarray(), Leitor\+Exibidor\+::obter\+Class\+That\+Has\+Serached\+Method(), Leitor\+Exibidor\+::obter\+Method(), Operations\+::obter\+Static\+Class\+That\+Has\+Field() e Operations\+::putstatic().
+Referenciado por Operations\+::func\+\_\+new(), Operations\+::getstatic(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::multianewarray(), Class\+File\+::obter\+Class\+That\+Has\+Serached\+Method(), Class\+File\+::obter\+Method(), Operations\+::obter\+Static\+Class\+That\+Has\+Field() e Operations\+::putstatic().
 
 
 
 \subsection{Documentação dos dados membro}
-\mbox{\Hypertarget{classMethodArea_a2b99453f48cbcc141b027b8e6bbb9e2d}\label{classMethodArea_a2b99453f48cbcc141b027b8e6bbb9e2d}} 
-\index{Method\+Area@{Method\+Area}!frame\+Stack@{frame\+Stack}}
-\index{frame\+Stack@{frame\+Stack}!Method\+Area@{Method\+Area}}
-\subsubsection{\texorpdfstring{frame\+Stack}{frameStack}}
-{\footnotesize\ttfamily \hyperlink{classFrameStack}{Frame\+Stack} $\ast$ Method\+Area\+::frame\+Stack = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
-
-
-
-Definido na linha 26 do ficheiro Method\+Area.\+h.
-
-
-
-Referenciado por adicionar\+Classe() e atualizar\+Frame\+Stack().
-
-\mbox{\Hypertarget{classMethodArea_ab92a54586a58ca940ecedfcc90ff8b13}\label{classMethodArea_ab92a54586a58ca940ecedfcc90ff8b13}} 
-\index{Method\+Area@{Method\+Area}!map\+Classes@{map\+Classes}}
-\index{map\+Classes@{map\+Classes}!Method\+Area@{Method\+Area}}
-\subsubsection{\texorpdfstring{map\+Classes}{mapClasses}}
-{\footnotesize\ttfamily map$<$ string, \hyperlink{classStaticClass}{Static\+Class} $\ast$ $>$ Method\+Area\+::map\+Classes\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+\mbox{\Hypertarget{classMethodArea_aacecebeabf7f239bfb2ccafe7d11cf63}\label{classMethodArea_aacecebeabf7f239bfb2ccafe7d11cf63}} 
+\index{Method\+Area@{Method\+Area}!map\+Static\+Class@{map\+Static\+Class}}
+\index{map\+Static\+Class@{map\+Static\+Class}!Method\+Area@{Method\+Area}}
+\subsubsection{\texorpdfstring{map\+Static\+Class}{mapStaticClass}}
+{\footnotesize\ttfamily map$<$ string, \hyperlink{classStaticClass}{Static\+Class} $\ast$ $>$ Method\+Area\+::map\+Static\+Class\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
 
 
@@ -216,6 +202,20 @@ Definido na linha 29 do ficheiro Method\+Area.\+h.
 
 
 Referenciado por adicionar\+Classe() e main().
+
+\mbox{\Hypertarget{classMethodArea_aed878aaa6b44b11cd9446527c447ede9}\label{classMethodArea_aed878aaa6b44b11cd9446527c447ede9}} 
+\index{Method\+Area@{Method\+Area}!pilha\+J\+VM@{pilha\+J\+VM}}
+\index{pilha\+J\+VM@{pilha\+J\+VM}!Method\+Area@{Method\+Area}}
+\subsubsection{\texorpdfstring{pilha\+J\+VM}{pilhaJVM}}
+{\footnotesize\ttfamily \hyperlink{classPilhaJVM}{Pilha\+J\+VM} $\ast$ Method\+Area\+::pilha\+J\+VM = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definido na linha 26 do ficheiro Method\+Area.\+h.
+
+
+
+Referenciado por adicionar\+Classe() e atualizar\+Pilha\+J\+V\+M().
 
 
 

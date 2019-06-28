@@ -1,6 +1,6 @@
 var classOperations =
 [
-    [ "Operations", "classOperations.html#af4742b57ed46ed1d0bc96629cdf219b2", null ],
+    [ "Operations", "classOperations.html#a302329a641fa78f54d1f1f307736b870", null ],
     [ "aaload", "classOperations.html#a522dfa2224d54268008f3bec4ff2b388", null ],
     [ "aastore", "classOperations.html#a60b30bd84b2d59334e735f0adda6febe", null ],
     [ "aconst_null", "classOperations.html#af51ec8a98d9ed3167da0d8ac6279a1cd", null ],
@@ -19,9 +19,9 @@ var classOperations =
     [ "astore_2", "classOperations.html#a01e238bbea0f9d61d80a8fcd3ed2f660", null ],
     [ "astore_3", "classOperations.html#ac3c02b3ff78b6222bd58bebb4f01c083", null ],
     [ "athrow", "classOperations.html#a2a5eea0fb18391bb3854dfe55c8ac5d3", null ],
-    [ "atualizarFrame", "classOperations.html#a4a846f964056932fdf4d63056bfbe322", null ],
-    [ "atualizarFrameStack", "classOperations.html#a96812e295c8429a32e09720d89cd0176", null ],
-    [ "atualizarThreads", "classOperations.html#a6c265501b41e227e1a15589a0bb03166", null ],
+    [ "atualizarFrame", "classOperations.html#a705efecd2a658615f2dfe777f0bd7032", null ],
+    [ "atualizarPilhaJVM", "classOperations.html#a5b31ab2923ed10b6ad3705f9954ed49e", null ],
+    [ "atualizarStackFrame", "classOperations.html#a2564df73b5b237e5bda042909c4747b1", null ],
     [ "baload", "classOperations.html#afdf1759637e332569a2b2b17067e05f0", null ],
     [ "bastore", "classOperations.html#a6f0ded6d2fc9921a1418387527bec8f4", null ],
     [ "bipush", "classOperations.html#a981b0f43cbe76b4fe7e2122c482d4a5b", null ],
@@ -210,9 +210,9 @@ var classOperations =
     [ "swap", "classOperations.html#ad800d04ce11806455dd5b84a7ecd6144", null ],
     [ "tableswitch", "classOperations.html#a72955f43cde98b73c503e1a8c1505352", null ],
     [ "wide", "classOperations.html#ab1474dfc4eb5142361b00d185f0a4a2b", null ],
-    [ "flame", "classOperations.html#a578012ad7aafe27db149c6e421bef1a6", null ],
-    [ "frameStack", "classOperations.html#a72ff498d126bb8082b3ac70ccb6e953a", null ],
+    [ "frame", "classOperations.html#a0dc7b3710786c9cbd14801ac3e5d34b2", null ],
     [ "funcaoGenericaOpcodes", "classOperations.html#a7cb32c09e40f348cabf0b7af374ad278", null ],
     [ "isWide", "classOperations.html#a672ba6cc2178cbc5b0a434b08de4c608", null ],
-    [ "stackThreads", "classOperations.html#af0867c8994e496c70f9c3157eeb8a287", null ]
+    [ "pilhaJVM", "classOperations.html#a1a7c399bf01fabfc223a3f84f7fcace0", null ],
+    [ "stackFrame", "classOperations.html#ae813b6fad395a04f6cd8e0c355dc056d", null ]
 ];

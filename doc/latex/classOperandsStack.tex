@@ -78,7 +78,7 @@ Classe da pilha de operandos.
 
 Responsável por armazenar e manipular a pilha de operandos 
 
-Definido na linha 33 do ficheiro Operands\+Stack.\+h.
+Definido na linha 32 do ficheiro Operands\+Stack.\+h.
 
 
 
@@ -115,7 +115,7 @@ Referências type\+Pushed.
 \index{Operands\+Stack@{Operands\+Stack}!desempilha@{desempilha}}
 \index{desempilha@{desempilha}!Operands\+Stack@{Operands\+Stack}}
 \subsubsection{\texorpdfstring{desempilha()}{desempilha()}}
-{\footnotesize\ttfamily \hyperlink{unionelement}{element} Operands\+Stack\+::desempilha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily element Operands\+Stack\+::desempilha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -133,8 +133,7 @@ Referências bits64, desempilha\+Topo\+Valor(), esta\+Vazia(), stack\+Elementos,
 
 Referenciado por Operations\+::aaload(), Operations\+::aastore(), Operations\+::anewarray(), Operations\+::areturn(), Operations\+::arraylength(), Operations\+::athrow(), Operations\+::baload(), Operations\+::bastore(), Operations\+::caload(), Operations\+::castore(), Operations\+::d2f(), Operations\+::d2i(), Operations\+::d2l(), Operations\+::dadd(), Operations\+::daload(), Operations\+::dastore(), Operations\+::dcmpg(), Operations\+::dcmpl(), Operations\+::ddiv(), desempilha\+Typed(), Operations\+::dmul(), Operations\+::dneg(), Operations\+::drem(), Operations\+::dreturn(), Operations\+::dsub(), Operations\+::f2d(), Operations\+::f2i(), Operations\+::f2l(), Operations\+::fadd(), Operations\+::faload(), Operations\+::fastore(), Operations\+::fcmpg(), Operations\+::fcmpl(), Operations\+::fdiv(), Operations\+::fmul(), Operations\+::fneg(), Operations\+::frem(), Operations\+::freturn(), Operations\+::fsub(), Operations\+::func\+\_\+return(), Operations\+::getfield(), Operations\+::i2b(), Operations\+::i2c(), Operations\+::i2d(), Operations\+::i2f(), Operations\+::i2l(), Operations\+::i2s(), Operations\+::iadd(), Operations\+::iaload(), Operations\+::iand(), Operations\+::iastore(), Operations\+::idiv(), Operations\+::if\+\_\+acmpeq(), Operations\+::if\+\_\+acmpne(), Operations\+::if\+\_\+icmpeq(), Operations\+::if\+\_\+icmpge(), Operations\+::if\+\_\+icmpgt(), Operations\+::if\+\_\+icmple(), Operations\+::if\+\_\+icmplt(), Operations\+::if\+\_\+icmpne(), Operations\+::ifeq(), Operations\+::ifge(), Operations\+::ifgt(), Operations\+::ifle(), Operations\+::iflt(), Operations\+::ifne(), Operations\+::ifnonnull(), Operations\+::ifnull(), Operations\+::imul(), Operations\+::ineg(), Operations\+::invokespecial(), Operations\+::ior(), Operations\+::irem(), Operations\+::ireturn(), Operations\+::ishl(), Operations\+::ishr(), Operations\+::isub(), Operations\+::iushr(), Operations\+::ixor(), Operations\+::l2d(), Operations\+::l2f(), Operations\+::l2i(), Operations\+::ladd(), Operations\+::laload(), Operations\+::land(), Operations\+::lastore(), Operations\+::lcmp(), Operations\+::ldiv(), Operations\+::lmul(), Operations\+::lneg(), Operations\+::lookupswitch(), Operations\+::lor(), Operations\+::lrem(), Operations\+::lreturn(), Operations\+::lshl(), Operations\+::lshr(), Operations\+::lsub(), Operations\+::lushr(), Operations\+::lxor(), Operations\+::newarray(), Operations\+::putfield(), Operations\+::saload() e Operations\+::sastore().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -163,8 +162,7 @@ Referências esta\+Vazia() e stack\+Tipos.
 
 Referenciado por Operations\+::areturn(), Operations\+::astore(), Operations\+::astore\+\_\+0(), Operations\+::astore\+\_\+1(), Operations\+::astore\+\_\+2(), Operations\+::astore\+\_\+3(), Operations\+::athrow(), Operations\+::dadd(), Operations\+::ddiv(), Operations\+::dmul(), Operations\+::dstore(), Operations\+::dstore\+\_\+0(), Operations\+::dstore\+\_\+1(), Operations\+::dstore\+\_\+2(), Operations\+::dstore\+\_\+3(), Operations\+::dsub(), Operations\+::dup2(), Operations\+::dup2\+\_\+x1(), Operations\+::dup2\+\_\+x2(), Operations\+::dup\+\_\+x1(), Operations\+::dup\+\_\+x2(), Operations\+::fadd(), Operations\+::fdiv(), Operations\+::fmul(), Operations\+::fstore(), Operations\+::fstore\+\_\+0(), Operations\+::fstore\+\_\+1(), Operations\+::fstore\+\_\+2(), Operations\+::fstore\+\_\+3(), Operations\+::fsub(), Operations\+::iadd(), Operations\+::idiv(), Operations\+::imul(), Operations\+::istore(), Operations\+::istore\+\_\+0(), Operations\+::istore\+\_\+1(), Operations\+::istore\+\_\+2(), Operations\+::istore\+\_\+3(), Operations\+::isub(), Operations\+::ladd(), Operations\+::ldiv(), Operations\+::lmul(), Operations\+::lstore(), Operations\+::lstore\+\_\+1(), Operations\+::lstore\+\_\+2(), Operations\+::lstore\+\_\+3(), Operations\+::lsub() e obter\+String().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -175,7 +173,7 @@ Grafo de chamadas desta função\+:
 \index{Operands\+Stack@{Operands\+Stack}!desempilha\+Topo\+Valor@{desempilha\+Topo\+Valor}}
 \index{desempilha\+Topo\+Valor@{desempilha\+Topo\+Valor}!Operands\+Stack@{Operands\+Stack}}
 \subsubsection{\texorpdfstring{desempilha\+Topo\+Valor()}{desempilhaTopoValor()}}
-{\footnotesize\ttfamily \hyperlink{unionelement}{element} Operands\+Stack\+::desempilha\+Topo\+Valor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily element Operands\+Stack\+::desempilha\+Topo\+Valor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -193,8 +191,7 @@ Referências bits64, esta\+Vazia(), element\+\_\+u\+::i, element\+\_\+u\+::l, st
 
 Referenciado por desempilha() e obter\+String().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -205,7 +202,7 @@ Grafo de chamadas desta função\+:
 \index{Operands\+Stack@{Operands\+Stack}!desempilha\+Typed@{desempilha\+Typed}}
 \index{desempilha\+Typed@{desempilha\+Typed}!Operands\+Stack@{Operands\+Stack}}
 \subsubsection{\texorpdfstring{desempilha\+Typed()}{desempilhaTyped()}}
-{\footnotesize\ttfamily \hyperlink{unionelement}{element} Operands\+Stack\+::desempilha\+Typed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily element Operands\+Stack\+::desempilha\+Typed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -223,8 +220,7 @@ Referências desempilha(), typed\+Element\+\_\+s\+::real\+Type, stack\+Tipos, st
 
 Referenciado por Operations\+::astore(), Operations\+::astore\+\_\+0(), Operations\+::astore\+\_\+1(), Operations\+::astore\+\_\+2(), Operations\+::astore\+\_\+3(), Operations\+::dstore(), Operations\+::dstore\+\_\+0(), Operations\+::dstore\+\_\+1(), Operations\+::dstore\+\_\+2(), Operations\+::dstore\+\_\+3(), Operations\+::dup(), Operations\+::dup2(), Operations\+::dup2\+\_\+x1(), Operations\+::dup2\+\_\+x2(), Operations\+::dup\+\_\+x1(), Operations\+::dup\+\_\+x2(), Operations\+::fstore(), Operations\+::fstore\+\_\+0(), Operations\+::fstore\+\_\+1(), Operations\+::fstore\+\_\+2(), Operations\+::fstore\+\_\+3(), imprimir\+Todas\+Operacoes(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::istore(), Operations\+::istore\+\_\+0(), Operations\+::istore\+\_\+1(), Operations\+::istore\+\_\+2(), Operations\+::istore\+\_\+3(), Operations\+::lstore(), Operations\+::lstore\+\_\+0(), Operations\+::lstore\+\_\+1(), Operations\+::lstore\+\_\+2(), Operations\+::lstore\+\_\+3(), Operations\+::multianewarray(), Operations\+::pop(), Operations\+::pop2(), Operations\+::putfield(), Operations\+::putstatic(), Operations\+::swap() e Operations\+::tableswitch().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -262,8 +258,7 @@ Referências element\+\_\+u\+::b, element\+\_\+u\+::d, empilhar\+Double(), empil
 
 Referenciado por Operations\+::athrow(), Operations\+::d2l(), empilhar\+Typed\+Element(), Operations\+::f2l(), Operations\+::i2l(), Operations\+::ior(), Operations\+::ixor(), Operations\+::l2f(), Operations\+::l2i(), Operations\+::ldc(), Operations\+::lor() e Operations\+::lxor().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -299,8 +294,7 @@ Referências element\+\_\+u\+::b, element\+\_\+u\+::i, max, obter\+Tamanho(), R\
 
 Referenciado por Operations\+::jsr\+\_\+w().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -336,8 +330,7 @@ Referências element\+\_\+u\+::d, element\+\_\+u\+::i, element\+\_\+u\+::l, max,
 
 Referenciado por Operations\+::dconst\+\_\+0(), Operations\+::dconst\+\_\+1(), Operations\+::dload(), Operations\+::dload\+\_\+n(), Operations\+::dreturn(), empilhar(), Operations\+::f2d(), Operations\+::i2d(), Operations\+::l2d() e Operations\+::ldc2\+\_\+w().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -373,8 +366,7 @@ Referências element\+\_\+u\+::f, element\+\_\+u\+::i, max, obter\+Tamanho(), R\
 
 Referenciado por Operations\+::d2f(), empilhar(), Operations\+::fconst\+\_\+0(), Operations\+::fconst\+\_\+1(), Operations\+::fconst\+\_\+2(), Operations\+::fload(), Operations\+::fload\+\_\+n(), Operations\+::freturn() e Operations\+::i2f().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -410,8 +402,7 @@ Referências max, obter\+Tamanho(), R\+T\+\_\+\+I\+NT, stack\+Elementos, stack\+
 
 Referenciado por Operations\+::arraylength(), Operations\+::bipush(), Operations\+::caload(), Operations\+::d2i(), Operations\+::dcmpg(), Operations\+::dcmpl(), empilhar(), Operations\+::f2i(), Operations\+::fcmpg(), Operations\+::fcmpl(), Operations\+::i2b(), Operations\+::iaload(), Operations\+::iconst\+\_\+0(), Operations\+::iconst\+\_\+1(), Operations\+::iconst\+\_\+2(), Operations\+::iconst\+\_\+3(), Operations\+::iconst\+\_\+4(), Operations\+::iconst\+\_\+5(), Operations\+::iconst\+\_\+m1(), Operations\+::iload(), Operations\+::iload\+\_\+0(), Operations\+::iload\+\_\+1(), Operations\+::iload\+\_\+2(), Operations\+::iload\+\_\+3(), Operations\+::ireturn(), Operations\+::lcmp(), Operations\+::ldc\+\_\+w() e Operations\+::sipush().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -447,8 +438,7 @@ Referências max, obter\+Tamanho(), R\+T\+\_\+\+L\+O\+NG, stack\+Elementos, stac
 
 Referenciado por Operations\+::lconst\+\_\+0(), Operations\+::lconst\+\_\+1(), Operations\+::ldc2\+\_\+w(), Operations\+::lload(), Operations\+::lload\+\_\+n() e Operations\+::lreturn().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -484,8 +474,7 @@ Referências bits64, element\+\_\+u\+::i, element\+\_\+u\+::l, max, obter\+Taman
 
 Referenciado por Operations\+::aconst\+\_\+null(), Operations\+::aload(), Operations\+::aload\+\_\+n(), Operations\+::anewarray(), Operations\+::areturn(), empilhar(), Operations\+::func\+\_\+new(), Operations\+::jsr(), Operations\+::ldc(), Operations\+::ldc\+\_\+w() e Operations\+::newarray().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -521,8 +510,7 @@ Referências empilhar(), typed\+Element\+\_\+s\+::real\+Type, stack\+Tipos\+Reai
 
 Referenciado por Operations\+::aaload(), Operations\+::baload(), Operations\+::dadd(), Operations\+::daload(), Operations\+::ddiv(), Operations\+::dmul(), Operations\+::dneg(), Operations\+::drem(), Operations\+::dsub(), Operations\+::dup(), Operations\+::dup2(), Operations\+::dup2\+\_\+x1(), Operations\+::dup2\+\_\+x2(), Operations\+::dup\+\_\+x1(), Operations\+::dup\+\_\+x2(), Operations\+::fadd(), Operations\+::faload(), Operations\+::fdiv(), Operations\+::fmul(), Operations\+::fneg(), Operations\+::frem(), Operations\+::fsub(), Operations\+::getfield(), Operations\+::getstatic(), Operations\+::i2c(), Operations\+::i2s(), Operations\+::iadd(), Operations\+::iand(), Operations\+::idiv(), imprimir\+Todas\+Operacoes(), Operations\+::imul(), Operations\+::ineg(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::irem(), Operations\+::ishl(), Operations\+::ishr(), Operations\+::isub(), Operations\+::iushr(), Operations\+::ladd(), Operations\+::laload(), Operations\+::land(), Operations\+::ldiv(), Operations\+::lmul(), Operations\+::lneg(), Operations\+::lrem(), Operations\+::lshl(), Operations\+::lshr(), Operations\+::lsub(), Operations\+::lushr(), Operations\+::multianewarray(), Operations\+::saload() e Operations\+::swap().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -569,8 +557,7 @@ Definido na linha 327 do ficheiro Operands\+Stack.\+cpp.
 
 Referências desempilha\+Typed(), empilhar\+Typed\+Element(), esta\+Vazia(), max e obter\+String().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -599,8 +586,7 @@ Referências element\+\_\+u\+::b, element\+\_\+u\+::d, desempilha\+Topo\+Tipo(),
 
 Referenciado por imprimir\+Todas\+Operacoes().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -658,7 +644,7 @@ Referências real\+Max.
 
 
 
-Definido na linha 47 do ficheiro Operands\+Stack.\+h.
+Definido na linha 46 do ficheiro Operands\+Stack.\+h.
 
 
 
@@ -672,7 +658,7 @@ Referenciado por desempilha(), desempilha\+Topo\+Valor() e empilhar\+Referencia(
 
 
 
-Definido na linha 157 do ficheiro Operands\+Stack.\+h.
+Definido na linha 156 do ficheiro Operands\+Stack.\+h.
 
 
 
@@ -686,7 +672,7 @@ Referenciado por empilhar\+Bool(), empilhar\+Double(), empilhar\+Float(), empilh
 
 
 
-Definido na linha 50 do ficheiro Operands\+Stack.\+h.
+Definido na linha 49 do ficheiro Operands\+Stack.\+h.
 
 
 
@@ -700,7 +686,7 @@ Referenciado por obter\+Tamanho\+Maximo\+Pilha().
 
 
 
-Definido na linha 36 do ficheiro Operands\+Stack.\+h.
+Definido na linha 35 do ficheiro Operands\+Stack.\+h.
 
 
 
@@ -714,7 +700,7 @@ Referenciado por desempilha(), desempilha\+Topo\+Valor(), empilhar\+Bool(), empi
 
 
 
-Definido na linha 39 do ficheiro Operands\+Stack.\+h.
+Definido na linha 38 do ficheiro Operands\+Stack.\+h.
 
 
 
@@ -728,7 +714,7 @@ Referenciado por desempilha(), desempilha\+Topo\+Tipo(), desempilha\+Topo\+Valor
 
 
 
-Definido na linha 42 do ficheiro Operands\+Stack.\+h.
+Definido na linha 41 do ficheiro Operands\+Stack.\+h.
 
 
 
@@ -742,7 +728,7 @@ Referenciado por desempilha(), desempilha\+Typed(), empilhar\+Bool(), empilhar\+
 
 
 
-Definido na linha 44 do ficheiro Operands\+Stack.\+h.
+Definido na linha 43 do ficheiro Operands\+Stack.\+h.
 
 
 

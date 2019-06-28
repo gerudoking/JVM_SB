@@ -1,0 +1,1376 @@
+\hypertarget{classClassFile}{}\section{Referência à classe Class\+File}
+\label{classClassFile}\index{Class\+File@{Class\+File}}
+
+
+{\ttfamily \#include $<$Class\+File.\+h$>$}
+
+
+
+Diagrama de colaboração para Class\+File\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassFile__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classClassFile_a7cf76bcaf785b984e9d1b31d52a5aa7f}{Class\+File} (char $\ast$in)
+\begin{DoxyCompactList}\small\item\em Construtor que configura um objeto da classe \hyperlink{classClassFile}{Class\+File} com o nome do arquivo passado. \end{DoxyCompactList}\item 
+\hyperlink{classClassFile_ab442e7b0a5f8c4eeae4f668c4e02c396}{Class\+File} (string in)
+\begin{DoxyCompactList}\small\item\em Construtor que configura um objeto da classe \hyperlink{classClassFile}{Class\+File} com o nome do arquivo passado. \end{DoxyCompactList}\item 
+int \hyperlink{classClassFile_a5fa3d7587821ed1c8e3eabb94544da29}{inicializar\+Arquivo} (char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em criar e inicializar arquivo \end{DoxyCompactList}\item 
+void \hyperlink{classClassFile_a581c453009afcb8b7a2861a2de8cfb5c}{fechar\+Arquivo} ()
+\begin{DoxyCompactList}\small\item\em Fechar arquivo. \end{DoxyCompactList}\item 
+int \hyperlink{classClassFile_a619e102ada15202ab84981d43362a3e9}{carregar} ()
+\begin{DoxyCompactList}\small\item\em Carrega o class file na classe. \end{DoxyCompactList}\item 
+void \hyperlink{classClassFile_a482ed64fcd8a1b79d3622b3f59b5767a}{imprimir\+Informacoes\+Gerais} ()
+\begin{DoxyCompactList}\small\item\em Imprime informações gerais do .class. \end{DoxyCompactList}\item 
+void \hyperlink{classClassFile_a4a685afd10dc5aaacd5a71ed535895c6}{gravar\+Arquivo\+Informacoes\+Gerais} ()
+\begin{DoxyCompactList}\small\item\em Gravar informações gerais do .class em um arquivo. \end{DoxyCompactList}\item 
+bool \hyperlink{classClassFile_a7da7cc6de8de3fc6f27faf3b76f4883a}{exibir} ()
+\begin{DoxyCompactList}\small\item\em Imprime todas as informações do .class. \end{DoxyCompactList}\item 
+bool \hyperlink{classClassFile_a452169cb59d63012f98a34a3fff2c2f7}{gravar\+Arquivo} ()
+\begin{DoxyCompactList}\small\item\em Gravar todas as informações do .class em um arquivo. \end{DoxyCompactList}\item 
+bool \hyperlink{classClassFile_a8dd042ff6873b9f0d16f8ee3812261e1}{validar\+Extensao} ()
+\begin{DoxyCompactList}\small\item\em Verifica se a extensão do arquivo é .class. \end{DoxyCompactList}\item 
+bool \hyperlink{classClassFile_a10bfe22492b473fb0197e55f451978e5}{existe\+Main} ()
+\begin{DoxyCompactList}\small\item\em Verifica se o .class possui função main. \end{DoxyCompactList}\item 
+\hyperlink{structMethod__info}{Method\+\_\+info} \hyperlink{classClassFile_afdbe9cc2f360e04273470202c4f247dc}{obter\+Main} ()
+\begin{DoxyCompactList}\small\item\em Retorna o método main. \end{DoxyCompactList}\item 
+bool \hyperlink{classClassFile_a2a886bdb4c42bfaaf5ea8ff1b2c41209}{existe\+Clinit} ()
+\begin{DoxyCompactList}\small\item\em Verifica se o .class tem o método clinit. \end{DoxyCompactList}\item 
+\hyperlink{structMethod__info}{Method\+\_\+info} \hyperlink{classClassFile_a1141f5a8c856d5f3931f0b518e219f79}{obter\+Clinit} ()
+\begin{DoxyCompactList}\small\item\em Retorna o método clinit. \end{DoxyCompactList}\item 
+bool \hyperlink{classClassFile_a6b8f23db0ee4af80a2e75d46a191dc20}{verificar\+This\+Class} ()
+\begin{DoxyCompactList}\small\item\em Verifica se a class definida é igual ao nome da classe sem extensões. \end{DoxyCompactList}\item 
+int \hyperlink{classClassFile_a170339cd16cf0afc0567865b3f372d38}{obter\+Status} ()
+\begin{DoxyCompactList}\small\item\em Retorna o status lido, informando para o método que chamou o que aconteceu. \end{DoxyCompactList}\item 
+\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$ \hyperlink{classClassFile_ab70fe581c4b7a1824adf490c3a53bcc7}{obter\+Constant\+Pool} () const
+\begin{DoxyCompactList}\small\item\em Retorna referencia a constant pool. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classClassFile_a8b60418144c498b9d9545b1784bddf21}{obter\+Tamanho\+Constant\+Pool} ()
+\begin{DoxyCompactList}\small\item\em Retorna o valor do tamanho da constant pool. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{classClassFile_a4803bd3f325fbab1bf9c0f774b3a8c97}{obter\+Path} ()
+\begin{DoxyCompactList}\small\item\em Pega o caminho do arquivo .class. \end{DoxyCompactList}\item 
+\hyperlink{structMethod__info}{Method\+\_\+info} $\ast$ \hyperlink{classClassFile_a6ecce8d87f74c84b07f102c0298de13a}{obter\+Methods} ()
+\begin{DoxyCompactList}\small\item\em Retorna todos os métodos. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classClassFile_a16409bc8b58eb4965a1e39497cc300d8}{obter\+Methods\+Count} ()
+\begin{DoxyCompactList}\small\item\em Retorna o numero de Methods. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classClassFile_aec88c5432526d16b546ed59e5cec2136}{obter\+This\+\_\+class} ()
+\begin{DoxyCompactList}\small\item\em Retorna um índice da constant pool que aponta para string com nome da class. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classClassFile_a8f248001f388181db10e76602031d560}{obter\+Super\+\_\+class} ()
+\begin{DoxyCompactList}\small\item\em Retorna um índice da constant pool que aponta para string com nome da superclass. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classClassFile_a0be559cd8b7b3168c81a2782e4facb0c}{obter\+Fields\+Count} ()
+\begin{DoxyCompactList}\small\item\em Retorna número de fields. \end{DoxyCompactList}\item 
+\hyperlink{structField__info}{Field\+\_\+info} $\ast$ \hyperlink{classClassFile_ac3aabaa918413884416692b29165b463}{obter\+Fields} ()
+\begin{DoxyCompactList}\small\item\em Retorna a array com as fields lidas. \end{DoxyCompactList}\item 
+\hyperlink{structField__info}{Field\+\_\+info} $\ast$ \hyperlink{classClassFile_a1ae90b1662ca222c9910c14997b20eaa}{obter\+Field} (string nome)
+\begin{DoxyCompactList}\small\item\em Retorna um field. \end{DoxyCompactList}\item 
+\hyperlink{structMethod__info}{Method\+\_\+info} $\ast$ \hyperlink{classClassFile_aac49e7e39f677987b53fdf15787b8106}{obter\+Method} (string nome, string descriptor)
+\item 
+\hyperlink{classClassFile}{Class\+File} $\ast$ \hyperlink{classClassFile_a4d0ac62c4d6218ddada33f715ebaf633}{obter\+Class\+That\+Has\+Serached\+Method} (string nome, string descriptor)
+\begin{DoxyCompactList}\small\item\em Retorna o ponteiro para o leitor do .class que contém o método encontrado em get\+Method. \end{DoxyCompactList}\item 
+int \hyperlink{classClassFile_acdb7018a6926b187bc6ecc18abf0fff8}{validacao} (void)
+\begin{DoxyCompactList}\small\item\em Valida estrutura obrigatoria. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membros privados}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classClassFile_ae8e4445e763c4ee7c04995fcea0369e0}{verificar\+Main} ()
+\begin{DoxyCompactList}\small\item\em Encontro em qual method está a main. \end{DoxyCompactList}\item 
+bool \hyperlink{classClassFile_ab0394185a299f35a9b5be68143385e84}{verificar\+Clinit} ()
+\begin{DoxyCompactList}\small\item\em Encontra em qual method esta a clinit, se existir. \end{DoxyCompactList}\item 
+string \hyperlink{classClassFile_a32767b8d966ef87249aa3a41ec5d67c3}{obter\+Erro} (int erro)
+\begin{DoxyCompactList}\small\item\em Retorna a string que contém uma mensagem de erro correspondente ao índice que recebe como parâmetro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classClassFile_a9afeae9ac0889ab75909e73933e29326}{status}
+\item 
+int \hyperlink{classClassFile_ac1cdef340faa0bd945b2236057433978}{main\+Method}
+\item 
+int \hyperlink{classClassFile_aa1eb77ebbd737bde7edde5fbdb2b6992}{clinit}
+\item 
+bool \hyperlink{classClassFile_ad8d08e096c470901c62d1a9e31a202bf}{encontrou\+Main}
+\item 
+bool \hyperlink{classClassFile_a5c60c8d51584f48f22bdbdd719960e05}{encontrou\+Clinit}
+\item 
+char $\ast$ \hyperlink{classClassFile_a2789cf19be5abaeadf96f83de33174a4}{file\+Name}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classClassFile_ab0d3a4474a9907dc61893d0293525b38}{min\+Version}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classClassFile_a40bd108a13debb86701cf31742572686}{maj\+Version}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classClassFile_acde5006251ffd25149efa4d6fb725cf5}{length\+CP}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classClassFile_a205bc5af050f4676fc4c3ff7992c4959}{this\+\_\+class}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classClassFile_ad92079216f8cdb366a3002e5ca2c2dfa}{super\+\_\+class}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classClassFile_a1bbca13f93ec21beffa8a56e360c9f8d}{interfaces\+Count}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classClassFile_a5eae2e906695e596b89614df0e4b060a}{fields\+Count}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classClassFile_a4c362d4adfeaad02f4517caf1ba58103}{methods\+Count}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classClassFile_a16d2ca3e9cdf9267adde08575c57bfa9}{access\+Flags}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} \hyperlink{classClassFile_a66691e77df3f8604eebebc8759953542}{attributes\+Count}
+\item 
+\hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} $\ast$ \hyperlink{classClassFile_a94d1e4e835476f47e3a8b81ecd0301c0}{interfaces}
+\item 
+\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$ \hyperlink{classClassFile_a5883215e48e253a84c105a18d34049ca}{constant\+Pool}
+\item 
+\hyperlink{structField__info}{Field\+\_\+info} $\ast$ \hyperlink{classClassFile_a6d6ec8aa668982ea722edc40b3ea5b1a}{fields}
+\item 
+\hyperlink{structMethod__info}{Method\+\_\+info} $\ast$ \hyperlink{classClassFile_a5906980e6c5121e5a864346fd3617083}{methods}
+\item 
+\hyperlink{structAttribute__info}{Attribute\+\_\+info} $\ast$ \hyperlink{classClassFile_a20d4b18030becbd8df5b7584477e94b6}{attributes}
+\item 
+F\+I\+LE $\ast$ \hyperlink{classClassFile_ae2be12dcc1a042970b4d7d7cf9709624}{arquivo\+Class}
+\item 
+fstream \hyperlink{classClassFile_a4aee6c7763d46884d5b2c0297142df99}{arquivo\+Saida}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+\hypertarget{classClassFile_DESCRIPTION}{}\subsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{classClassFile_DESCRIPTION}
+A classe \hyperlink{classClassFile}{Class\+File} contém os bytecodes armazenados em memoria 
+
+Definido na linha 48 do ficheiro Class\+File.\+h.
+
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{classClassFile_a7cf76bcaf785b984e9d1b31d52a5aa7f}\label{classClassFile_a7cf76bcaf785b984e9d1b31d52a5aa7f}} 
+\index{Class\+File@{Class\+File}!Class\+File@{Class\+File}}
+\index{Class\+File@{Class\+File}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{Class\+File()}{ClassFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Class\+File\+::\+Class\+File (\begin{DoxyParamCaption}\item[{char $\ast$}]{in }\end{DoxyParamCaption})}
+
+
+
+Construtor que configura um objeto da classe \hyperlink{classClassFile}{Class\+File} com o nome do arquivo passado. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em in} & caminho do arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 8 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências file\+Name e status.
+
+\mbox{\Hypertarget{classClassFile_ab442e7b0a5f8c4eeae4f668c4e02c396}\label{classClassFile_ab442e7b0a5f8c4eeae4f668c4e02c396}} 
+\index{Class\+File@{Class\+File}!Class\+File@{Class\+File}}
+\index{Class\+File@{Class\+File}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{Class\+File()}{ClassFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Class\+File\+::\+Class\+File (\begin{DoxyParamCaption}\item[{string}]{in }\end{DoxyParamCaption})}
+
+
+
+Construtor que configura um objeto da classe \hyperlink{classClassFile}{Class\+File} com o nome do arquivo passado. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em in} & caminho do arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 15 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências file\+Name e status.
+
+
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classClassFile_a619e102ada15202ab84981d43362a3e9}\label{classClassFile_a619e102ada15202ab84981d43362a3e9}} 
+\index{Class\+File@{Class\+File}!carregar@{carregar}}
+\index{carregar@{carregar}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{carregar()}{carregar()}}
+{\footnotesize\ttfamily int Class\+File\+::carregar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Carrega o class file na classe. 
+
+\begin{DoxyReturn}{Retorna}
+variavel status que indica se houve erro no programa 
+\end{DoxyReturn}
+
+
+Definido na linha 68 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências access\+Flags, arquivo\+Class, attributes, attributes\+Count, C\+A\+N\+T\+\_\+\+O\+P\+EN, carregar\+Constant\+Pool(), constant\+Pool, encontrou\+Clinit, encontrou\+Main, fields, fields\+Count, file\+Name, interfaces, interfaces\+Count, I\+N\+V\+A\+L\+I\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON, I\+N\+V\+A\+L\+I\+D\+\_\+\+F\+I\+LE, I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+A\+ME, length\+CP, ler\+Todas\+Interfaces(), ler\+Todos\+Attributes(), ler\+Todos\+Fields(), ler\+Todos\+Methods(), ler\+U2(), ler\+U4(), maj\+Version, methods, methods\+Count, min\+Version, M\+I\+S\+S\+I\+N\+G\+\_\+\+A\+R\+G\+U\+M\+E\+NT, obter\+Erro(), status, super\+\_\+class, this\+\_\+class, U\+N\+K\+N\+O\+W\+N\+\_\+\+T\+Y\+PE, validar\+Extensao(), verificar\+Clinit(), verificar\+Main() e verificar\+This\+Class().
+
+
+
+Referenciado por Method\+Area\+::adicionar\+Classe() e main().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassFile_a619e102ada15202ab84981d43362a3e9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassFile_a7da7cc6de8de3fc6f27faf3b76f4883a}\label{classClassFile_a7da7cc6de8de3fc6f27faf3b76f4883a}} 
+\index{Class\+File@{Class\+File}!exibir@{exibir}}
+\index{exibir@{exibir}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{exibir()}{exibir()}}
+{\footnotesize\ttfamily bool Class\+File\+::exibir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Imprime todas as informações do .class. 
+
+\begin{DoxyReturn}{Retorna}
+true ou false dependendo se a variavel status indicar que houve erro na leitura 
+\end{DoxyReturn}
+
+
+Definido na linha 176 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências attributes, attributes\+Count, constant\+Pool, fields, fields\+Count, imprimir\+Constant\+Pool(), imprimir\+Informacoes\+Gerais(), imprimir\+Todas\+Interfaces(), imprimir\+Todos\+Attributes(), imprimir\+Todos\+Field(), imprimir\+Todos\+Methods(), interfaces, interfaces\+Count, length\+CP, methods, methods\+Count e status.
+
+
+
+Referenciado por main().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassFile_a7da7cc6de8de3fc6f27faf3b76f4883a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassFile_a2a886bdb4c42bfaaf5ea8ff1b2c41209}\label{classClassFile_a2a886bdb4c42bfaaf5ea8ff1b2c41209}} 
+\index{Class\+File@{Class\+File}!existe\+Clinit@{existe\+Clinit}}
+\index{existe\+Clinit@{existe\+Clinit}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{existe\+Clinit()}{existeClinit()}}
+{\footnotesize\ttfamily bool Class\+File\+::existe\+Clinit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verifica se o .class tem o método clinit. 
+
+\begin{DoxyReturn}{Retorna}
+booleano que indica se existe o metodo clinit 
+\end{DoxyReturn}
+
+
+Definido na linha 344 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências encontrou\+Clinit e verificar\+Clinit().
+
+
+
+Referenciado por Method\+Area\+::adicionar\+Classe().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassFile_a2a886bdb4c42bfaaf5ea8ff1b2c41209_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassFile_a10bfe22492b473fb0197e55f451978e5}\label{classClassFile_a10bfe22492b473fb0197e55f451978e5}} 
+\index{Class\+File@{Class\+File}!existe\+Main@{existe\+Main}}
+\index{existe\+Main@{existe\+Main}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{existe\+Main()}{existeMain()}}
+{\footnotesize\ttfamily bool Class\+File\+::existe\+Main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verifica se o .class possui função main. 
+
+\begin{DoxyReturn}{Retorna}
+booleano que indica se existe o metodo main 
+\end{DoxyReturn}
+
+
+Definido na linha 338 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências encontrou\+Main e verificar\+Main().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassFile_a10bfe22492b473fb0197e55f451978e5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassFile_a581c453009afcb8b7a2861a2de8cfb5c}\label{classClassFile_a581c453009afcb8b7a2861a2de8cfb5c}} 
+\index{Class\+File@{Class\+File}!fechar\+Arquivo@{fechar\+Arquivo}}
+\index{fechar\+Arquivo@{fechar\+Arquivo}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{fechar\+Arquivo()}{fecharArquivo()}}
+{\footnotesize\ttfamily void Class\+File\+::fechar\+Arquivo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fechar arquivo. 
+
+
+
+Definido na linha 41 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências arquivo\+Saida.
+
+
+
+Referenciado por main().
+
+\mbox{\Hypertarget{classClassFile_a452169cb59d63012f98a34a3fff2c2f7}\label{classClassFile_a452169cb59d63012f98a34a3fff2c2f7}} 
+\index{Class\+File@{Class\+File}!gravar\+Arquivo@{gravar\+Arquivo}}
+\index{gravar\+Arquivo@{gravar\+Arquivo}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{gravar\+Arquivo()}{gravarArquivo()}}
+{\footnotesize\ttfamily bool Class\+File\+::gravar\+Arquivo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gravar todas as informações do .class em um arquivo. 
+
+\begin{DoxyReturn}{Retorna}
+true ou false dependendo se a variavel status indicar que houve erro na leitura 
+\end{DoxyReturn}
+
+
+Definido na linha 203 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências arquivo\+Saida, attributes, attributes\+Count, constant\+Pool, fields, fields\+Count, gravar\+Arquivo\+Constant\+Pool(), gravar\+Arquivo\+Informacoes\+Gerais(), gravar\+Arquivo\+Todas\+Interfaces(), gravar\+Arquivo\+Todos\+Attributes(), gravar\+Arquivo\+Todos\+Field(), gravar\+Arquivo\+Todos\+Methods(), interfaces, interfaces\+Count, length\+CP, methods, methods\+Count e status.
+
+
+
+Referenciado por main().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassFile_a452169cb59d63012f98a34a3fff2c2f7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassFile_a4a685afd10dc5aaacd5a71ed535895c6}\label{classClassFile_a4a685afd10dc5aaacd5a71ed535895c6}} 
+\index{Class\+File@{Class\+File}!gravar\+Arquivo\+Informacoes\+Gerais@{gravar\+Arquivo\+Informacoes\+Gerais}}
+\index{gravar\+Arquivo\+Informacoes\+Gerais@{gravar\+Arquivo\+Informacoes\+Gerais}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{gravar\+Arquivo\+Informacoes\+Gerais()}{gravarArquivoInformacoesGerais()}}
+{\footnotesize\ttfamily bool Class\+File\+::gravar\+Arquivo\+Informacoes\+Gerais (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gravar informações gerais do .class em um arquivo. 
+
+\begin{DoxyReturn}{Retorna}
+variavel status que indica se houve erro no programa 
+\end{DoxyReturn}
+
+
+Definido na linha 253 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências access\+Flags, arquivo\+Saida, attributes\+Count, capturar\+Indice\+De\+Referencia(), constant\+Pool, fields\+Count, gravar\+Arquivo\+Flags(), interfaces\+Count, length\+CP, maj\+Version, methods\+Count, min\+Version, super\+\_\+class e this\+\_\+class.
+
+
+
+Referenciado por gravar\+Arquivo().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassFile_a4a685afd10dc5aaacd5a71ed535895c6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassFile_a482ed64fcd8a1b79d3622b3f59b5767a}\label{classClassFile_a482ed64fcd8a1b79d3622b3f59b5767a}} 
+\index{Class\+File@{Class\+File}!imprimir\+Informacoes\+Gerais@{imprimir\+Informacoes\+Gerais}}
+\index{imprimir\+Informacoes\+Gerais@{imprimir\+Informacoes\+Gerais}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{imprimir\+Informacoes\+Gerais()}{imprimirInformacoesGerais()}}
+{\footnotesize\ttfamily bool Class\+File\+::imprimir\+Informacoes\+Gerais (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Imprime informações gerais do .class. 
+
+\begin{DoxyReturn}{Retorna}
+variavel status que indica se houve erro no programa 
+\end{DoxyReturn}
+
+
+Definido na linha 224 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências access\+Flags, attributes\+Count, capturar\+Indice\+De\+Referencia(), constant\+Pool, fields\+Count, imprimir\+Flags(), interfaces\+Count, length\+CP, maj\+Version, methods\+Count, min\+Version, super\+\_\+class e this\+\_\+class.
+
+
+
+Referenciado por exibir().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassFile_a482ed64fcd8a1b79d3622b3f59b5767a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassFile_a5fa3d7587821ed1c8e3eabb94544da29}\label{classClassFile_a5fa3d7587821ed1c8e3eabb94544da29}} 
+\index{Class\+File@{Class\+File}!inicializar\+Arquivo@{inicializar\+Arquivo}}
+\index{inicializar\+Arquivo@{inicializar\+Arquivo}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{inicializar\+Arquivo()}{inicializarArquivo()}}
+{\footnotesize\ttfamily int Class\+File\+::inicializar\+Arquivo (\begin{DoxyParamCaption}\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+criar e inicializar arquivo 
+
+
+
+Definido na linha 27 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências arquivo\+Saida e status.
+
+
+
+Referenciado por main().
+
+\mbox{\Hypertarget{classClassFile_a4d0ac62c4d6218ddada33f715ebaf633}\label{classClassFile_a4d0ac62c4d6218ddada33f715ebaf633}} 
+\index{Class\+File@{Class\+File}!obter\+Class\+That\+Has\+Serached\+Method@{obter\+Class\+That\+Has\+Serached\+Method}}
+\index{obter\+Class\+That\+Has\+Serached\+Method@{obter\+Class\+That\+Has\+Serached\+Method}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{obter\+Class\+That\+Has\+Serached\+Method()}{obterClassThatHasSerachedMethod()}}
+{\footnotesize\ttfamily \hyperlink{classClassFile}{Class\+File} $\ast$ Class\+File\+::obter\+Class\+That\+Has\+Serached\+Method (\begin{DoxyParamCaption}\item[{string}]{nome,  }\item[{string}]{descriptor }\end{DoxyParamCaption})}
+
+
+
+Retorna o ponteiro para o leitor do .class que contém o método encontrado em get\+Method. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & Nome do method desejado \\
+\hline
+{\em descriptor} & Descritor do method desejado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+classe \hyperlink{classClassFile}{Class\+File} 
+\end{DoxyReturn}
+
+
+Definido na linha 538 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências capturar\+Indice\+De\+Referencia(), constant\+Pool, Method\+\_\+info\+::descriptor\+\_\+index, methods, methods\+Count, Method\+\_\+info\+::name\+\_\+index, Method\+Area\+::obter\+Class(), Static\+Class\+::obter\+Class\+File(), obter\+Class\+That\+Has\+Serached\+Method() e obter\+Super\+\_\+class().
+
+
+
+Referenciado por Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual() e obter\+Class\+That\+Has\+Serached\+Method().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassFile_a4d0ac62c4d6218ddada33f715ebaf633_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassFile_a1141f5a8c856d5f3931f0b518e219f79}\label{classClassFile_a1141f5a8c856d5f3931f0b518e219f79}} 
+\index{Class\+File@{Class\+File}!obter\+Clinit@{obter\+Clinit}}
+\index{obter\+Clinit@{obter\+Clinit}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{obter\+Clinit()}{obterClinit()}}
+{\footnotesize\ttfamily method\+\_\+info Class\+File\+::obter\+Clinit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o método clinit. 
+
+\begin{DoxyReturn}{Retorna}
+struct method\+\_\+info contendo informações sobre o método 
+\end{DoxyReturn}
+
+
+Definido na linha 358 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências clinit e methods.
+
+
+
+Referenciado por Method\+Area\+::adicionar\+Classe().
+
+\mbox{\Hypertarget{classClassFile_ab70fe581c4b7a1824adf490c3a53bcc7}\label{classClassFile_ab70fe581c4b7a1824adf490c3a53bcc7}} 
+\index{Class\+File@{Class\+File}!obter\+Constant\+Pool@{obter\+Constant\+Pool}}
+\index{obter\+Constant\+Pool@{obter\+Constant\+Pool}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{obter\+Constant\+Pool()}{obterConstantPool()}}
+{\footnotesize\ttfamily cp\+\_\+info $\ast$ Class\+File\+::obter\+Constant\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retorna referencia a constant pool. 
+
+\begin{DoxyReturn}{Retorna}
+Retorna a array com a constant pool 
+\end{DoxyReturn}
+
+
+Definido na linha 441 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências constant\+Pool.
+
+
+
+Referenciado por Method\+Area\+::adicionar\+Classe(), Instance\+Class\+::\+Instance\+Class(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::obter\+Static\+Class\+That\+Has\+Field(), Pilha\+J\+V\+M\+::\+Pilha\+J\+V\+M() e Static\+Class\+::\+Static\+Class().
+
+\mbox{\Hypertarget{classClassFile_a32767b8d966ef87249aa3a41ec5d67c3}\label{classClassFile_a32767b8d966ef87249aa3a41ec5d67c3}} 
+\index{Class\+File@{Class\+File}!obter\+Erro@{obter\+Erro}}
+\index{obter\+Erro@{obter\+Erro}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{obter\+Erro()}{obterErro()}}
+{\footnotesize\ttfamily string Class\+File\+::obter\+Erro (\begin{DoxyParamCaption}\item[{int}]{erro }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Retorna a string que contém uma mensagem de erro correspondente ao índice que recebe como parâmetro. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em erro} & M\+A\+C\+RO com o erro que foi encontrado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+string contendo informação sobre o tipo de erro encontrado 
+\end{DoxyReturn}
+
+
+Definido na linha 408 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências C\+A\+N\+T\+\_\+\+O\+P\+EN, file\+Name, I\+N\+V\+A\+L\+I\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON, I\+N\+V\+A\+L\+I\+D\+\_\+\+F\+I\+LE, I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+A\+ME, M\+I\+S\+S\+I\+N\+G\+\_\+\+A\+R\+G\+U\+M\+E\+NT, M\+I\+S\+S\+I\+N\+G\+\_\+\+C\+L\+I\+N\+IT, M\+I\+S\+S\+I\+N\+G\+\_\+\+M\+A\+IN e U\+N\+K\+N\+O\+W\+N\+\_\+\+T\+Y\+PE.
+
+
+
+Referenciado por carregar() e validacao().
+
+\mbox{\Hypertarget{classClassFile_a1ae90b1662ca222c9910c14997b20eaa}\label{classClassFile_a1ae90b1662ca222c9910c14997b20eaa}} 
+\index{Class\+File@{Class\+File}!obter\+Field@{obter\+Field}}
+\index{obter\+Field@{obter\+Field}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{obter\+Field()}{obterField()}}
+{\footnotesize\ttfamily field\+\_\+info $\ast$ Class\+File\+::obter\+Field (\begin{DoxyParamCaption}\item[{string}]{nome }\end{DoxyParamCaption})}
+
+
+
+Retorna um field. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & do field desejado que deseja retornar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+struct field\+\_\+info com a informação da field passada no parâmetro 
+\end{DoxyReturn}
+
+
+Definido na linha 504 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências capturar\+Indice\+De\+Referencia(), constant\+Pool, fields e obter\+Fields\+Count().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassFile_a1ae90b1662ca222c9910c14997b20eaa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassFile_ac3aabaa918413884416692b29165b463}\label{classClassFile_ac3aabaa918413884416692b29165b463}} 
+\index{Class\+File@{Class\+File}!obter\+Fields@{obter\+Fields}}
+\index{obter\+Fields@{obter\+Fields}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{obter\+Fields()}{obterFields()}}
+{\footnotesize\ttfamily field\+\_\+info Class\+File\+::obter\+Fields (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna a array com as fields lidas. 
+
+\begin{DoxyReturn}{Retorna}
+a array da struct field\+\_\+info 
+\end{DoxyReturn}
+
+
+Definido na linha 500 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências fields.
+
+
+
+Referenciado por Instance\+Class\+::\+Instance\+Class() e Static\+Class\+::\+Static\+Class().
+
+\mbox{\Hypertarget{classClassFile_a0be559cd8b7b3168c81a2782e4facb0c}\label{classClassFile_a0be559cd8b7b3168c81a2782e4facb0c}} 
+\index{Class\+File@{Class\+File}!obter\+Fields\+Count@{obter\+Fields\+Count}}
+\index{obter\+Fields\+Count@{obter\+Fields\+Count}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{obter\+Fields\+Count()}{obterFieldsCount()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Class\+File\+::obter\+Fields\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna número de fields. 
+
+\begin{DoxyReturn}{Retorna}
+uint16\+\_\+t indicando o numero de fields 
+\end{DoxyReturn}
+
+
+Definido na linha 496 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências fields\+Count.
+
+
+
+Referenciado por Instance\+Class\+::\+Instance\+Class(), obter\+Field() e Static\+Class\+::\+Static\+Class().
+
+\mbox{\Hypertarget{classClassFile_afdbe9cc2f360e04273470202c4f247dc}\label{classClassFile_afdbe9cc2f360e04273470202c4f247dc}} 
+\index{Class\+File@{Class\+File}!obter\+Main@{obter\+Main}}
+\index{obter\+Main@{obter\+Main}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{obter\+Main()}{obterMain()}}
+{\footnotesize\ttfamily method\+\_\+info Class\+File\+::obter\+Main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o método main. 
+
+\begin{DoxyReturn}{Retorna}
+struct method\+\_\+info contendo informações sobre o método 
+\end{DoxyReturn}
+
+
+Definido na linha 350 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências encontrou\+Main, main\+Method e methods.
+
+
+
+Referenciado por Pilha\+J\+V\+M\+::\+Pilha\+J\+V\+M().
+
+\mbox{\Hypertarget{classClassFile_aac49e7e39f677987b53fdf15787b8106}\label{classClassFile_aac49e7e39f677987b53fdf15787b8106}} 
+\index{Class\+File@{Class\+File}!obter\+Method@{obter\+Method}}
+\index{obter\+Method@{obter\+Method}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{obter\+Method()}{obterMethod()}}
+{\footnotesize\ttfamily method\+\_\+info $\ast$ Class\+File\+::obter\+Method (\begin{DoxyParamCaption}\item[{string}]{nome,  }\item[{string}]{descriptor }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & Nome do method desejado \\
+\hline
+{\em descriptor} & Descritor do method desejado \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 515 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências capturar\+Indice\+De\+Referencia(), constant\+Pool, Method\+\_\+info\+::descriptor\+\_\+index, methods, methods\+Count, Method\+\_\+info\+::name\+\_\+index, Method\+Area\+::obter\+Class(), Static\+Class\+::obter\+Class\+File(), obter\+Method() e obter\+Super\+\_\+class().
+
+
+
+Referenciado por Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual() e obter\+Method().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassFile_aac49e7e39f677987b53fdf15787b8106_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassFile_a6ecce8d87f74c84b07f102c0298de13a}\label{classClassFile_a6ecce8d87f74c84b07f102c0298de13a}} 
+\index{Class\+File@{Class\+File}!obter\+Methods@{obter\+Methods}}
+\index{obter\+Methods@{obter\+Methods}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{obter\+Methods()}{obterMethods()}}
+{\footnotesize\ttfamily method\+\_\+info $\ast$ Class\+File\+::obter\+Methods (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna todos os métodos. 
+
+\begin{DoxyReturn}{Retorna}
+array do tipo method\+\_\+info 
+\end{DoxyReturn}
+
+
+Definido na linha 480 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências methods.
+
+\mbox{\Hypertarget{classClassFile_a16409bc8b58eb4965a1e39497cc300d8}\label{classClassFile_a16409bc8b58eb4965a1e39497cc300d8}} 
+\index{Class\+File@{Class\+File}!obter\+Methods\+Count@{obter\+Methods\+Count}}
+\index{obter\+Methods\+Count@{obter\+Methods\+Count}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{obter\+Methods\+Count()}{obterMethodsCount()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Class\+File\+::obter\+Methods\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o numero de Methods. 
+
+\begin{DoxyReturn}{Retorna}
+uint16\+\_\+t indicando o numero de metodos 
+\end{DoxyReturn}
+
+
+Definido na linha 484 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências methods\+Count.
+
+\mbox{\Hypertarget{classClassFile_a4803bd3f325fbab1bf9c0f774b3a8c97}\label{classClassFile_a4803bd3f325fbab1bf9c0f774b3a8c97}} 
+\index{Class\+File@{Class\+File}!obter\+Path@{obter\+Path}}
+\index{obter\+Path@{obter\+Path}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{obter\+Path()}{obterPath()}}
+{\footnotesize\ttfamily char $\ast$ Class\+File\+::obter\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Pega o caminho do arquivo .class. 
+
+\begin{DoxyReturn}{Retorna}
+Retorna a string com o caminho total do arquivo 
+\end{DoxyReturn}
+
+
+Definido na linha 449 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências file\+Name.
+
+
+
+Referenciado por main().
+
+\mbox{\Hypertarget{classClassFile_a170339cd16cf0afc0567865b3f372d38}\label{classClassFile_a170339cd16cf0afc0567865b3f372d38}} 
+\index{Class\+File@{Class\+File}!obter\+Status@{obter\+Status}}
+\index{obter\+Status@{obter\+Status}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{obter\+Status()}{obterStatus()}}
+{\footnotesize\ttfamily int Class\+File\+::obter\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o status lido, informando para o método que chamou o que aconteceu. 
+
+\begin{DoxyReturn}{Retorna}
+status 
+\end{DoxyReturn}
+
+
+Definido na linha 404 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências status.
+
+
+
+Referenciado por Method\+Area\+::adicionar\+Classe() e main().
+
+\mbox{\Hypertarget{classClassFile_a8f248001f388181db10e76602031d560}\label{classClassFile_a8f248001f388181db10e76602031d560}} 
+\index{Class\+File@{Class\+File}!obter\+Super\+\_\+class@{obter\+Super\+\_\+class}}
+\index{obter\+Super\+\_\+class@{obter\+Super\+\_\+class}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{obter\+Super\+\_\+class()}{obterSuper\_class()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Class\+File\+::obter\+Super\+\_\+class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna um índice da constant pool que aponta para string com nome da superclass. 
+
+\begin{DoxyReturn}{Retorna}
+uint16\+\_\+t super\+\_\+class 
+\end{DoxyReturn}
+
+
+Definido na linha 492 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências super\+\_\+class.
+
+
+
+Referenciado por obter\+Class\+That\+Has\+Serached\+Method(), obter\+Method() e Operations\+::obter\+Static\+Class\+That\+Has\+Field().
+
+\mbox{\Hypertarget{classClassFile_a8b60418144c498b9d9545b1784bddf21}\label{classClassFile_a8b60418144c498b9d9545b1784bddf21}} 
+\index{Class\+File@{Class\+File}!obter\+Tamanho\+Constant\+Pool@{obter\+Tamanho\+Constant\+Pool}}
+\index{obter\+Tamanho\+Constant\+Pool@{obter\+Tamanho\+Constant\+Pool}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{obter\+Tamanho\+Constant\+Pool()}{obterTamanhoConstantPool()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Class\+File\+::obter\+Tamanho\+Constant\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o valor do tamanho da constant pool. 
+
+\begin{DoxyReturn}{Retorna}
+Retorna a array com a constant pool 
+\end{DoxyReturn}
+
+
+Definido na linha 445 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências length\+CP.
+
+\mbox{\Hypertarget{classClassFile_aec88c5432526d16b546ed59e5cec2136}\label{classClassFile_aec88c5432526d16b546ed59e5cec2136}} 
+\index{Class\+File@{Class\+File}!obter\+This\+\_\+class@{obter\+This\+\_\+class}}
+\index{obter\+This\+\_\+class@{obter\+This\+\_\+class}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{obter\+This\+\_\+class()}{obterThis\_class()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Class\+File\+::obter\+This\+\_\+class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna um índice da constant pool que aponta para string com nome da class. 
+
+\begin{DoxyReturn}{Retorna}
+uint16\+\_\+t this\+\_\+class 
+\end{DoxyReturn}
+
+
+Definido na linha 488 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências this\+\_\+class.
+
+
+
+Referenciado por Method\+Area\+::adicionar\+Classe().
+
+\mbox{\Hypertarget{classClassFile_acdb7018a6926b187bc6ecc18abf0fff8}\label{classClassFile_acdb7018a6926b187bc6ecc18abf0fff8}} 
+\index{Class\+File@{Class\+File}!validacao@{validacao}}
+\index{validacao@{validacao}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{validacao()}{validacao()}}
+{\footnotesize\ttfamily Class\+File\+::validacao (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Valida estrutura obrigatoria. 
+
+
+
+Definido na linha 45 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências I\+N\+V\+A\+L\+I\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON, I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+A\+ME, M\+I\+S\+S\+I\+N\+G\+\_\+\+M\+A\+IN, obter\+Erro(), status, validar\+Extensao(), verificar\+Main() e verificar\+This\+Class().
+
+
+
+Referenciado por main().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassFile_acdb7018a6926b187bc6ecc18abf0fff8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassFile_a8dd042ff6873b9f0d16f8ee3812261e1}\label{classClassFile_a8dd042ff6873b9f0d16f8ee3812261e1}} 
+\index{Class\+File@{Class\+File}!validar\+Extensao@{validar\+Extensao}}
+\index{validar\+Extensao@{validar\+Extensao}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{validar\+Extensao()}{validarExtensao()}}
+{\footnotesize\ttfamily bool Class\+File\+::validar\+Extensao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verifica se a extensão do arquivo é .class. 
+
+\begin{DoxyReturn}{Retorna}
+booleano que indica se existe o .class 
+\end{DoxyReturn}
+
+
+Definido na linha 284 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências file\+Name.
+
+
+
+Referenciado por Method\+Area\+::adicionar\+Classe(), carregar() e validacao().
+
+\mbox{\Hypertarget{classClassFile_ab0394185a299f35a9b5be68143385e84}\label{classClassFile_ab0394185a299f35a9b5be68143385e84}} 
+\index{Class\+File@{Class\+File}!verificar\+Clinit@{verificar\+Clinit}}
+\index{verificar\+Clinit@{verificar\+Clinit}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{verificar\+Clinit()}{verificarClinit()}}
+{\footnotesize\ttfamily bool Class\+File\+::verificar\+Clinit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Encontra em qual method esta a clinit, se existir. 
+
+\begin{DoxyReturn}{Retorna}
+booleano que indica se existe o metodo clinit 
+\end{DoxyReturn}
+
+
+Definido na linha 320 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências capturar\+Indice\+De\+Referencia(), clinit, constant\+Pool, methods, methods\+Count e Method\+\_\+info\+::name\+\_\+index.
+
+
+
+Referenciado por carregar() e existe\+Clinit().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassFile_ab0394185a299f35a9b5be68143385e84_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassFile_ae8e4445e763c4ee7c04995fcea0369e0}\label{classClassFile_ae8e4445e763c4ee7c04995fcea0369e0}} 
+\index{Class\+File@{Class\+File}!verificar\+Main@{verificar\+Main}}
+\index{verificar\+Main@{verificar\+Main}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{verificar\+Main()}{verificarMain()}}
+{\footnotesize\ttfamily bool Class\+File\+::verificar\+Main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Encontro em qual method está a main. 
+
+\begin{DoxyReturn}{Retorna}
+booleano que indica se existe o metodo main 
+\end{DoxyReturn}
+
+
+Definido na linha 297 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências Method\+\_\+info\+::access\+\_\+flags, capturar\+Indice\+De\+Referencia(), constant\+Pool, Method\+\_\+info\+::descriptor\+\_\+index, main\+Method, methods, methods\+Count e Method\+\_\+info\+::name\+\_\+index.
+
+
+
+Referenciado por carregar(), existe\+Main() e validacao().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassFile_ae8e4445e763c4ee7c04995fcea0369e0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassFile_a6b8f23db0ee4af80a2e75d46a191dc20}\label{classClassFile_a6b8f23db0ee4af80a2e75d46a191dc20}} 
+\index{Class\+File@{Class\+File}!verificar\+This\+Class@{verificar\+This\+Class}}
+\index{verificar\+This\+Class@{verificar\+This\+Class}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{verificar\+This\+Class()}{verificarThisClass()}}
+{\footnotesize\ttfamily bool Class\+File\+::verificar\+This\+Class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verifica se a class definida é igual ao nome da classe sem extensões. 
+
+\begin{DoxyReturn}{Retorna}
+booleano indicando se a .class está correta 
+\end{DoxyReturn}
+
+
+Definido na linha 362 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências capturar\+Indice\+De\+Referencia(), constant\+Pool, file\+Name e this\+\_\+class.
+
+
+
+Referenciado por carregar() e validacao().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassFile_a6b8f23db0ee4af80a2e75d46a191dc20_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{classClassFile_a16d2ca3e9cdf9267adde08575c57bfa9}\label{classClassFile_a16d2ca3e9cdf9267adde08575c57bfa9}} 
+\index{Class\+File@{Class\+File}!access\+Flags@{access\+Flags}}
+\index{access\+Flags@{access\+Flags}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{access\+Flags}{accessFlags}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Class\+File\+::access\+Flags\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 249 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar(), gravar\+Arquivo\+Informacoes\+Gerais() e imprimir\+Informacoes\+Gerais().
+
+\mbox{\Hypertarget{classClassFile_ae2be12dcc1a042970b4d7d7cf9709624}\label{classClassFile_ae2be12dcc1a042970b4d7d7cf9709624}} 
+\index{Class\+File@{Class\+File}!arquivo\+Class@{arquivo\+Class}}
+\index{arquivo\+Class@{arquivo\+Class}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{arquivo\+Class}{arquivoClass}}
+{\footnotesize\ttfamily F\+I\+LE$\ast$ Class\+File\+::arquivo\+Class\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 255 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar().
+
+\mbox{\Hypertarget{classClassFile_a4aee6c7763d46884d5b2c0297142df99}\label{classClassFile_a4aee6c7763d46884d5b2c0297142df99}} 
+\index{Class\+File@{Class\+File}!arquivo\+Saida@{arquivo\+Saida}}
+\index{arquivo\+Saida@{arquivo\+Saida}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{arquivo\+Saida}{arquivoSaida}}
+{\footnotesize\ttfamily fstream Class\+File\+::arquivo\+Saida\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 256 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por fechar\+Arquivo(), gravar\+Arquivo(), gravar\+Arquivo\+Informacoes\+Gerais() e inicializar\+Arquivo().
+
+\mbox{\Hypertarget{classClassFile_a20d4b18030becbd8df5b7584477e94b6}\label{classClassFile_a20d4b18030becbd8df5b7584477e94b6}} 
+\index{Class\+File@{Class\+File}!attributes@{attributes}}
+\index{attributes@{attributes}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{attributes}{attributes}}
+{\footnotesize\ttfamily \hyperlink{structAttribute__info}{Attribute\+\_\+info}$\ast$ Class\+File\+::attributes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 254 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar(), exibir() e gravar\+Arquivo().
+
+\mbox{\Hypertarget{classClassFile_a66691e77df3f8604eebebc8759953542}\label{classClassFile_a66691e77df3f8604eebebc8759953542}} 
+\index{Class\+File@{Class\+File}!attributes\+Count@{attributes\+Count}}
+\index{attributes\+Count@{attributes\+Count}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{attributes\+Count}{attributesCount}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Class\+File\+::attributes\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 249 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar(), exibir(), gravar\+Arquivo(), gravar\+Arquivo\+Informacoes\+Gerais() e imprimir\+Informacoes\+Gerais().
+
+\mbox{\Hypertarget{classClassFile_aa1eb77ebbd737bde7edde5fbdb2b6992}\label{classClassFile_aa1eb77ebbd737bde7edde5fbdb2b6992}} 
+\index{Class\+File@{Class\+File}!clinit@{clinit}}
+\index{clinit@{clinit}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{clinit}{clinit}}
+{\footnotesize\ttfamily int Class\+File\+::clinit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 244 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por obter\+Clinit() e verificar\+Clinit().
+
+\mbox{\Hypertarget{classClassFile_a5883215e48e253a84c105a18d34049ca}\label{classClassFile_a5883215e48e253a84c105a18d34049ca}} 
+\index{Class\+File@{Class\+File}!constant\+Pool@{constant\+Pool}}
+\index{constant\+Pool@{constant\+Pool}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{constant\+Pool}{constantPool}}
+{\footnotesize\ttfamily \hyperlink{structCp__info}{Cp\+\_\+info}$\ast$ Class\+File\+::constant\+Pool\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 251 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar(), exibir(), gravar\+Arquivo(), gravar\+Arquivo\+Informacoes\+Gerais(), imprimir\+Informacoes\+Gerais(), obter\+Class\+That\+Has\+Serached\+Method(), obter\+Constant\+Pool(), obter\+Field(), obter\+Method(), verificar\+Clinit(), verificar\+Main() e verificar\+This\+Class().
+
+\mbox{\Hypertarget{classClassFile_a5c60c8d51584f48f22bdbdd719960e05}\label{classClassFile_a5c60c8d51584f48f22bdbdd719960e05}} 
+\index{Class\+File@{Class\+File}!encontrou\+Clinit@{encontrou\+Clinit}}
+\index{encontrou\+Clinit@{encontrou\+Clinit}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{encontrou\+Clinit}{encontrouClinit}}
+{\footnotesize\ttfamily bool Class\+File\+::encontrou\+Clinit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 245 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar() e existe\+Clinit().
+
+\mbox{\Hypertarget{classClassFile_ad8d08e096c470901c62d1a9e31a202bf}\label{classClassFile_ad8d08e096c470901c62d1a9e31a202bf}} 
+\index{Class\+File@{Class\+File}!encontrou\+Main@{encontrou\+Main}}
+\index{encontrou\+Main@{encontrou\+Main}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{encontrou\+Main}{encontrouMain}}
+{\footnotesize\ttfamily bool Class\+File\+::encontrou\+Main\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 245 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar(), existe\+Main() e obter\+Main().
+
+\mbox{\Hypertarget{classClassFile_a6d6ec8aa668982ea722edc40b3ea5b1a}\label{classClassFile_a6d6ec8aa668982ea722edc40b3ea5b1a}} 
+\index{Class\+File@{Class\+File}!fields@{fields}}
+\index{fields@{fields}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{fields}{fields}}
+{\footnotesize\ttfamily \hyperlink{structField__info}{Field\+\_\+info}$\ast$ Class\+File\+::fields\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 252 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar(), exibir(), gravar\+Arquivo(), obter\+Field() e obter\+Fields().
+
+\mbox{\Hypertarget{classClassFile_a5eae2e906695e596b89614df0e4b060a}\label{classClassFile_a5eae2e906695e596b89614df0e4b060a}} 
+\index{Class\+File@{Class\+File}!fields\+Count@{fields\+Count}}
+\index{fields\+Count@{fields\+Count}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{fields\+Count}{fieldsCount}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Class\+File\+::fields\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 248 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar(), exibir(), gravar\+Arquivo(), gravar\+Arquivo\+Informacoes\+Gerais(), imprimir\+Informacoes\+Gerais() e obter\+Fields\+Count().
+
+\mbox{\Hypertarget{classClassFile_a2789cf19be5abaeadf96f83de33174a4}\label{classClassFile_a2789cf19be5abaeadf96f83de33174a4}} 
+\index{Class\+File@{Class\+File}!file\+Name@{file\+Name}}
+\index{file\+Name@{file\+Name}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{file\+Name}{fileName}}
+{\footnotesize\ttfamily char$\ast$ Class\+File\+::file\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 246 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar(), Class\+File(), obter\+Erro(), obter\+Path(), validar\+Extensao() e verificar\+This\+Class().
+
+\mbox{\Hypertarget{classClassFile_a94d1e4e835476f47e3a8b81ecd0301c0}\label{classClassFile_a94d1e4e835476f47e3a8b81ecd0301c0}} 
+\index{Class\+File@{Class\+File}!interfaces@{interfaces}}
+\index{interfaces@{interfaces}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{interfaces}{interfaces}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2}$\ast$ Class\+File\+::interfaces\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 250 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar(), exibir() e gravar\+Arquivo().
+
+\mbox{\Hypertarget{classClassFile_a1bbca13f93ec21beffa8a56e360c9f8d}\label{classClassFile_a1bbca13f93ec21beffa8a56e360c9f8d}} 
+\index{Class\+File@{Class\+File}!interfaces\+Count@{interfaces\+Count}}
+\index{interfaces\+Count@{interfaces\+Count}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{interfaces\+Count}{interfacesCount}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Class\+File\+::interfaces\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 248 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar(), exibir(), gravar\+Arquivo(), gravar\+Arquivo\+Informacoes\+Gerais() e imprimir\+Informacoes\+Gerais().
+
+\mbox{\Hypertarget{classClassFile_acde5006251ffd25149efa4d6fb725cf5}\label{classClassFile_acde5006251ffd25149efa4d6fb725cf5}} 
+\index{Class\+File@{Class\+File}!length\+CP@{length\+CP}}
+\index{length\+CP@{length\+CP}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{length\+CP}{lengthCP}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Class\+File\+::length\+CP\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 247 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar(), exibir(), gravar\+Arquivo(), gravar\+Arquivo\+Informacoes\+Gerais(), imprimir\+Informacoes\+Gerais() e obter\+Tamanho\+Constant\+Pool().
+
+\mbox{\Hypertarget{classClassFile_ac1cdef340faa0bd945b2236057433978}\label{classClassFile_ac1cdef340faa0bd945b2236057433978}} 
+\index{Class\+File@{Class\+File}!main\+Method@{main\+Method}}
+\index{main\+Method@{main\+Method}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{main\+Method}{mainMethod}}
+{\footnotesize\ttfamily int Class\+File\+::main\+Method\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 244 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por obter\+Main() e verificar\+Main().
+
+\mbox{\Hypertarget{classClassFile_a40bd108a13debb86701cf31742572686}\label{classClassFile_a40bd108a13debb86701cf31742572686}} 
+\index{Class\+File@{Class\+File}!maj\+Version@{maj\+Version}}
+\index{maj\+Version@{maj\+Version}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{maj\+Version}{majVersion}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Class\+File\+::maj\+Version\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 247 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar(), gravar\+Arquivo\+Informacoes\+Gerais() e imprimir\+Informacoes\+Gerais().
+
+\mbox{\Hypertarget{classClassFile_a5906980e6c5121e5a864346fd3617083}\label{classClassFile_a5906980e6c5121e5a864346fd3617083}} 
+\index{Class\+File@{Class\+File}!methods@{methods}}
+\index{methods@{methods}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{methods}{methods}}
+{\footnotesize\ttfamily \hyperlink{structMethod__info}{Method\+\_\+info}$\ast$ Class\+File\+::methods\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 253 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar(), exibir(), gravar\+Arquivo(), obter\+Class\+That\+Has\+Serached\+Method(), obter\+Clinit(), obter\+Main(), obter\+Method(), obter\+Methods(), verificar\+Clinit() e verificar\+Main().
+
+\mbox{\Hypertarget{classClassFile_a4c362d4adfeaad02f4517caf1ba58103}\label{classClassFile_a4c362d4adfeaad02f4517caf1ba58103}} 
+\index{Class\+File@{Class\+File}!methods\+Count@{methods\+Count}}
+\index{methods\+Count@{methods\+Count}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{methods\+Count}{methodsCount}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Class\+File\+::methods\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 249 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar(), exibir(), gravar\+Arquivo(), gravar\+Arquivo\+Informacoes\+Gerais(), imprimir\+Informacoes\+Gerais(), obter\+Class\+That\+Has\+Serached\+Method(), obter\+Method(), obter\+Methods\+Count(), verificar\+Clinit() e verificar\+Main().
+
+\mbox{\Hypertarget{classClassFile_ab0d3a4474a9907dc61893d0293525b38}\label{classClassFile_ab0d3a4474a9907dc61893d0293525b38}} 
+\index{Class\+File@{Class\+File}!min\+Version@{min\+Version}}
+\index{min\+Version@{min\+Version}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{min\+Version}{minVersion}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Class\+File\+::min\+Version\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 247 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar(), gravar\+Arquivo\+Informacoes\+Gerais() e imprimir\+Informacoes\+Gerais().
+
+\mbox{\Hypertarget{classClassFile_a9afeae9ac0889ab75909e73933e29326}\label{classClassFile_a9afeae9ac0889ab75909e73933e29326}} 
+\index{Class\+File@{Class\+File}!status@{status}}
+\index{status@{status}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily int Class\+File\+::status\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 244 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar(), Class\+File(), exibir(), gravar\+Arquivo(), inicializar\+Arquivo(), obter\+Status() e validacao().
+
+\mbox{\Hypertarget{classClassFile_ad92079216f8cdb366a3002e5ca2c2dfa}\label{classClassFile_ad92079216f8cdb366a3002e5ca2c2dfa}} 
+\index{Class\+File@{Class\+File}!super\+\_\+class@{super\+\_\+class}}
+\index{super\+\_\+class@{super\+\_\+class}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{super\+\_\+class}{super\_class}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Class\+File\+::super\+\_\+class\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 248 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar(), gravar\+Arquivo\+Informacoes\+Gerais(), imprimir\+Informacoes\+Gerais() e obter\+Super\+\_\+class().
+
+\mbox{\Hypertarget{classClassFile_a205bc5af050f4676fc4c3ff7992c4959}\label{classClassFile_a205bc5af050f4676fc4c3ff7992c4959}} 
+\index{Class\+File@{Class\+File}!this\+\_\+class@{this\+\_\+class}}
+\index{this\+\_\+class@{this\+\_\+class}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{this\+\_\+class}{this\_class}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a90240657108b1b457eef9d3f76e0202e}{U2} Class\+File\+::this\+\_\+class\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 248 do ficheiro Class\+File.\+h.
+
+
+
+Referenciado por carregar(), gravar\+Arquivo\+Informacoes\+Gerais(), imprimir\+Informacoes\+Gerais(), obter\+This\+\_\+class() e verificar\+This\+Class().
+
+
+
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{ClassFile_8h}{Class\+File.\+h}\item 
+src/\hyperlink{ClassFile_8cpp}{Class\+File.\+cpp}\end{DoxyCompactItemize}

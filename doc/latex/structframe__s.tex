@@ -7,7 +7,7 @@ Estrutura de armazenamento.
 
 
 
-{\ttfamily \#include $<$Frame.\+h$>$}
+{\ttfamily \#include $<$Pilha\+J\+V\+M.\+h$>$}
 
 
 
@@ -24,13 +24,13 @@ Diagrama de colaboração para frame\+\_\+s\+:
 \item 
 unsigned char $\ast$ \hyperlink{structframe__s_a74703c716b34b0be42af1c698ef9f621}{pc}
 \item 
-\hyperlink{structcp__info}{cp\+\_\+info} $\ast$ \hyperlink{structframe__s_a13764e54bdd2ba069584ea6626590efe}{constant\+Pool}
+\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$ \hyperlink{structframe__s_a87635828c425af2fef349dd22400fe99}{constant\+Pool}
 \item 
-\hyperlink{classOperandsStack}{Operands\+Stack} $\ast$ \hyperlink{structframe__s_a39f21b480e26b73443d41e72d1338266}{pilha\+Operandos}
+\hyperlink{classOperandsStack}{Operands\+Stack} $\ast$ \hyperlink{structframe__s_ac26720ef0e7627d29c868eba6a15bfc1}{operands\+Stack}
 \item 
-\hyperlink{classLocalVariables}{Local\+Variables} $\ast$ \hyperlink{structframe__s_a7d14a487bba511d5768e6d1b6b6f8be0}{variaveis\+Locais}
+\hyperlink{classLocalVariables}{Local\+Variables} $\ast$ \hyperlink{structframe__s_ab8c8d556e0b3a59ce604754a0e3634bb}{local\+Variables}
 \item 
-\hyperlink{structmethod__info}{method\+\_\+info} \hyperlink{structframe__s_a2805e18c2a9320c94f2e0e57da95a042}{method}
+\hyperlink{structMethod__info}{Method\+\_\+info} \hyperlink{structframe__s_a9449132746fe7f38ff9048503b59065f}{method}
 \end{DoxyCompactItemize}
 
 
@@ -39,38 +39,66 @@ Estrutura de armazenamento.
 
 Responsável por todas as informações necessárias para a execução de um método. 
 
-Definido na linha 25 do ficheiro Frame.\+h.
+Definido na linha 25 do ficheiro Pilha\+J\+V\+M.\+h.
 
 
 
 \subsection{Documentação dos dados membro}
-\mbox{\Hypertarget{structframe__s_a13764e54bdd2ba069584ea6626590efe}\label{structframe__s_a13764e54bdd2ba069584ea6626590efe}} 
+\mbox{\Hypertarget{structframe__s_a87635828c425af2fef349dd22400fe99}\label{structframe__s_a87635828c425af2fef349dd22400fe99}} 
 \index{frame\+\_\+s@{frame\+\_\+s}!constant\+Pool@{constant\+Pool}}
 \index{constant\+Pool@{constant\+Pool}!frame\+\_\+s@{frame\+\_\+s}}
 \subsubsection{\texorpdfstring{constant\+Pool}{constantPool}}
-{\footnotesize\ttfamily \hyperlink{structcp__info}{cp\+\_\+info}$\ast$ frame\+\_\+s\+::constant\+Pool}
+{\footnotesize\ttfamily \hyperlink{structCp__info}{Cp\+\_\+info}$\ast$ frame\+\_\+s\+::constant\+Pool}
 
 
 
-Definido na linha 27 do ficheiro Frame.\+h.
+Definido na linha 27 do ficheiro Pilha\+J\+V\+M.\+h.
 
 
 
-Referenciado por Frame\+Stack\+::adicionar\+Frame(), Frame\+Stack\+::\+Frame\+Stack(), Operations\+::func\+\_\+new(), Operations\+::getfield(), Operations\+::getstatic(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::ldc(), Operations\+::ldc2\+\_\+w(), Operations\+::ldc\+\_\+w(), Operations\+::multianewarray(), Operations\+::putfield() e Operations\+::putstatic().
+Referenciado por Pilha\+J\+V\+M\+::adicionar\+Frame(), Operations\+::func\+\_\+new(), Operations\+::getfield(), Operations\+::getstatic(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::ldc(), Operations\+::ldc2\+\_\+w(), Operations\+::ldc\+\_\+w(), Operations\+::multianewarray(), Pilha\+J\+V\+M\+::\+Pilha\+J\+V\+M(), Operations\+::putfield() e Operations\+::putstatic().
 
-\mbox{\Hypertarget{structframe__s_a2805e18c2a9320c94f2e0e57da95a042}\label{structframe__s_a2805e18c2a9320c94f2e0e57da95a042}} 
+\mbox{\Hypertarget{structframe__s_ab8c8d556e0b3a59ce604754a0e3634bb}\label{structframe__s_ab8c8d556e0b3a59ce604754a0e3634bb}} 
+\index{frame\+\_\+s@{frame\+\_\+s}!local\+Variables@{local\+Variables}}
+\index{local\+Variables@{local\+Variables}!frame\+\_\+s@{frame\+\_\+s}}
+\subsubsection{\texorpdfstring{local\+Variables}{localVariables}}
+{\footnotesize\ttfamily \hyperlink{classLocalVariables}{Local\+Variables}$\ast$ frame\+\_\+s\+::local\+Variables}
+
+
+
+Definido na linha 29 do ficheiro Pilha\+J\+V\+M.\+h.
+
+
+
+Referenciado por Pilha\+J\+V\+M\+::adicionar\+Frame(), Operations\+::aload(), Operations\+::aload\+\_\+n(), Operations\+::astore(), Operations\+::astore\+\_\+0(), Operations\+::astore\+\_\+1(), Operations\+::astore\+\_\+2(), Operations\+::astore\+\_\+3(), Operations\+::dload(), Operations\+::dload\+\_\+n(), Operations\+::dstore(), Operations\+::dstore\+\_\+0(), Operations\+::dstore\+\_\+1(), Operations\+::dstore\+\_\+2(), Operations\+::dstore\+\_\+3(), Operations\+::fload(), Operations\+::fload\+\_\+n(), Operations\+::fstore(), Operations\+::fstore\+\_\+0(), Operations\+::fstore\+\_\+1(), Operations\+::fstore\+\_\+2(), Operations\+::fstore\+\_\+3(), Operations\+::funcret(), Operations\+::iinc(), Operations\+::iload(), Operations\+::iload\+\_\+0(), Operations\+::iload\+\_\+1(), Operations\+::iload\+\_\+2(), Operations\+::iload\+\_\+3(), Operations\+::istore(), Operations\+::istore\+\_\+0(), Operations\+::istore\+\_\+1(), Operations\+::istore\+\_\+2(), Operations\+::istore\+\_\+3(), Operations\+::lload(), Operations\+::lload\+\_\+n(), Operations\+::lstore(), Operations\+::lstore\+\_\+0(), Operations\+::lstore\+\_\+1(), Operations\+::lstore\+\_\+2(), Operations\+::lstore\+\_\+3() e Pilha\+J\+V\+M\+::\+Pilha\+J\+V\+M().
+
+\mbox{\Hypertarget{structframe__s_a9449132746fe7f38ff9048503b59065f}\label{structframe__s_a9449132746fe7f38ff9048503b59065f}} 
 \index{frame\+\_\+s@{frame\+\_\+s}!method@{method}}
 \index{method@{method}!frame\+\_\+s@{frame\+\_\+s}}
 \subsubsection{\texorpdfstring{method}{method}}
-{\footnotesize\ttfamily \hyperlink{structmethod__info}{method\+\_\+info} frame\+\_\+s\+::method}
+{\footnotesize\ttfamily \hyperlink{structMethod__info}{Method\+\_\+info} frame\+\_\+s\+::method}
 
 
 
-Definido na linha 30 do ficheiro Frame.\+h.
+Definido na linha 30 do ficheiro Pilha\+J\+V\+M.\+h.
 
 
 
-Referenciado por Frame\+Stack\+::adicionar\+Frame(), Frame\+Stack\+::\+Frame\+Stack(), Frame\+Stack\+::inicializar\+P\+C(), Operations\+::lookupswitch(), Operations\+::putfield() e Operations\+::tableswitch().
+Referenciado por Pilha\+J\+V\+M\+::adicionar\+Frame(), Pilha\+J\+V\+M\+::inicializar\+P\+C(), Operations\+::lookupswitch(), Pilha\+J\+V\+M\+::\+Pilha\+J\+V\+M(), Operations\+::putfield() e Operations\+::tableswitch().
+
+\mbox{\Hypertarget{structframe__s_ac26720ef0e7627d29c868eba6a15bfc1}\label{structframe__s_ac26720ef0e7627d29c868eba6a15bfc1}} 
+\index{frame\+\_\+s@{frame\+\_\+s}!operands\+Stack@{operands\+Stack}}
+\index{operands\+Stack@{operands\+Stack}!frame\+\_\+s@{frame\+\_\+s}}
+\subsubsection{\texorpdfstring{operands\+Stack}{operandsStack}}
+{\footnotesize\ttfamily \hyperlink{classOperandsStack}{Operands\+Stack}$\ast$ frame\+\_\+s\+::operands\+Stack}
+
+
+
+Definido na linha 28 do ficheiro Pilha\+J\+V\+M.\+h.
+
+
+
+Referenciado por Operations\+::aaload(), Operations\+::aastore(), Operations\+::aconst\+\_\+null(), Pilha\+J\+V\+M\+::adicionar\+Frame(), Operations\+::aload(), Operations\+::aload\+\_\+n(), Operations\+::anewarray(), Operations\+::areturn(), Operations\+::arraylength(), Operations\+::astore(), Operations\+::astore\+\_\+0(), Operations\+::astore\+\_\+1(), Operations\+::astore\+\_\+2(), Operations\+::astore\+\_\+3(), Operations\+::athrow(), Operations\+::baload(), Operations\+::bastore(), Operations\+::bipush(), Operations\+::caload(), Operations\+::castore(), Operations\+::d2f(), Operations\+::d2i(), Operations\+::d2l(), Operations\+::dadd(), Operations\+::daload(), Operations\+::dastore(), Operations\+::dcmpg(), Operations\+::dcmpl(), Operations\+::dconst\+\_\+0(), Operations\+::dconst\+\_\+1(), Operations\+::ddiv(), Operations\+::dload(), Operations\+::dload\+\_\+n(), Operations\+::dmul(), Operations\+::dneg(), Operations\+::drem(), Operations\+::dreturn(), Operations\+::dstore(), Operations\+::dstore\+\_\+0(), Operations\+::dstore\+\_\+1(), Operations\+::dstore\+\_\+2(), Operations\+::dstore\+\_\+3(), Operations\+::dsub(), Operations\+::dup(), Operations\+::dup2(), Operations\+::dup2\+\_\+x1(), Operations\+::dup2\+\_\+x2(), Operations\+::dup\+\_\+x1(), Operations\+::dup\+\_\+x2(), Operations\+::f2d(), Operations\+::f2i(), Operations\+::f2l(), Operations\+::fadd(), Operations\+::faload(), Operations\+::fastore(), Operations\+::fcmpg(), Operations\+::fcmpl(), Operations\+::fconst\+\_\+0(), Operations\+::fconst\+\_\+1(), Operations\+::fconst\+\_\+2(), Operations\+::fdiv(), Operations\+::fload(), Operations\+::fload\+\_\+n(), Operations\+::fmul(), Operations\+::fneg(), Operations\+::frem(), Operations\+::freturn(), Operations\+::fstore(), Operations\+::fstore\+\_\+0(), Operations\+::fstore\+\_\+1(), Operations\+::fstore\+\_\+2(), Operations\+::fstore\+\_\+3(), Operations\+::fsub(), Operations\+::func\+\_\+new(), Operations\+::func\+\_\+return(), Operations\+::getfield(), Operations\+::getstatic(), Operations\+::i2b(), Operations\+::i2c(), Operations\+::i2d(), Operations\+::i2f(), Operations\+::i2l(), Operations\+::i2s(), Operations\+::iadd(), Operations\+::iaload(), Operations\+::iand(), Operations\+::iastore(), Operations\+::iconst\+\_\+0(), Operations\+::iconst\+\_\+1(), Operations\+::iconst\+\_\+2(), Operations\+::iconst\+\_\+3(), Operations\+::iconst\+\_\+4(), Operations\+::iconst\+\_\+5(), Operations\+::iconst\+\_\+m1(), Operations\+::idiv(), Operations\+::if\+\_\+acmpeq(), Operations\+::if\+\_\+acmpne(), Operations\+::if\+\_\+icmpeq(), Operations\+::if\+\_\+icmpge(), Operations\+::if\+\_\+icmpgt(), Operations\+::if\+\_\+icmple(), Operations\+::if\+\_\+icmplt(), Operations\+::if\+\_\+icmpne(), Operations\+::ifeq(), Operations\+::ifge(), Operations\+::ifgt(), Operations\+::ifle(), Operations\+::iflt(), Operations\+::ifne(), Operations\+::ifnonnull(), Operations\+::ifnull(), Operations\+::iload(), Operations\+::iload\+\_\+0(), Operations\+::iload\+\_\+1(), Operations\+::iload\+\_\+2(), Operations\+::iload\+\_\+3(), Operations\+::imul(), Operations\+::ineg(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::ior(), Operations\+::irem(), Operations\+::ireturn(), Operations\+::ishl(), Operations\+::ishr(), Operations\+::istore(), Operations\+::istore\+\_\+0(), Operations\+::istore\+\_\+1(), Operations\+::istore\+\_\+2(), Operations\+::istore\+\_\+3(), Operations\+::isub(), Operations\+::iushr(), Operations\+::ixor(), Operations\+::jsr(), Operations\+::jsr\+\_\+w(), Operations\+::l2d(), Operations\+::l2f(), Operations\+::l2i(), Operations\+::ladd(), Operations\+::laload(), Operations\+::land(), Operations\+::lastore(), Operations\+::lcmp(), Operations\+::lconst\+\_\+0(), Operations\+::lconst\+\_\+1(), Operations\+::ldc(), Operations\+::ldc2\+\_\+w(), Operations\+::ldc\+\_\+w(), Operations\+::ldiv(), Operations\+::lload(), Operations\+::lload\+\_\+n(), Operations\+::lmul(), Operations\+::lneg(), Operations\+::lookupswitch(), Operations\+::lor(), Operations\+::lrem(), Operations\+::lreturn(), Operations\+::lshl(), Operations\+::lshr(), Operations\+::lstore(), Operations\+::lstore\+\_\+0(), Operations\+::lstore\+\_\+1(), Operations\+::lstore\+\_\+2(), Operations\+::lstore\+\_\+3(), Operations\+::lsub(), Operations\+::lushr(), Operations\+::lxor(), Operations\+::multianewarray(), Operations\+::newarray(), Pilha\+J\+V\+M\+::\+Pilha\+J\+V\+M(), Operations\+::pop(), Operations\+::pop2(), Operations\+::putfield(), Operations\+::putstatic(), Operations\+::saload(), Operations\+::sastore(), Operations\+::sipush(), Operations\+::swap() e Operations\+::tableswitch().
 
 \mbox{\Hypertarget{structframe__s_a74703c716b34b0be42af1c698ef9f621}\label{structframe__s_a74703c716b34b0be42af1c698ef9f621}} 
 \index{frame\+\_\+s@{frame\+\_\+s}!pc@{pc}}
@@ -80,42 +108,14 @@ Referenciado por Frame\+Stack\+::adicionar\+Frame(), Frame\+Stack\+::\+Frame\+St
 
 
 
-Definido na linha 26 do ficheiro Frame.\+h.
+Definido na linha 26 do ficheiro Pilha\+J\+V\+M.\+h.
 
 
 
-Referenciado por Operations\+::aload(), Operations\+::anewarray(), Operations\+::astore(), Operations\+::bipush(), Operations\+::dload(), Operations\+::dstore(), Operations\+::fload(), Operations\+::fstore(), Operations\+::func\+\_\+new(), Operations\+::funcgoto(), Operations\+::funcret(), Operations\+::getfield(), Operations\+::getstatic(), Operations\+::goto\+\_\+w(), Operations\+::if\+\_\+acmpeq(), Operations\+::if\+\_\+acmpne(), Operations\+::if\+\_\+icmpeq(), Operations\+::if\+\_\+icmpge(), Operations\+::if\+\_\+icmpgt(), Operations\+::if\+\_\+icmple(), Operations\+::if\+\_\+icmplt(), Operations\+::if\+\_\+icmpne(), Operations\+::ifeq(), Operations\+::ifge(), Operations\+::ifgt(), Operations\+::ifle(), Operations\+::iflt(), Operations\+::ifne(), Operations\+::ifnonnull(), Operations\+::ifnull(), Operations\+::iinc(), Operations\+::iload(), Frame\+Stack\+::inicializar\+P\+C(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::istore(), Operations\+::jsr(), Operations\+::jsr\+\_\+w(), Operations\+::ldc(), Operations\+::ldc2\+\_\+w(), Operations\+::ldc\+\_\+w(), Operations\+::lload(), Operations\+::lookupswitch(), Operations\+::lstore(), Operations\+::multianewarray(), Operations\+::newarray(), Operations\+::putfield(), Operations\+::putstatic(), Operations\+::sipush(), Operations\+::tableswitch() e Operations\+::wide().
-
-\mbox{\Hypertarget{structframe__s_a39f21b480e26b73443d41e72d1338266}\label{structframe__s_a39f21b480e26b73443d41e72d1338266}} 
-\index{frame\+\_\+s@{frame\+\_\+s}!pilha\+Operandos@{pilha\+Operandos}}
-\index{pilha\+Operandos@{pilha\+Operandos}!frame\+\_\+s@{frame\+\_\+s}}
-\subsubsection{\texorpdfstring{pilha\+Operandos}{pilhaOperandos}}
-{\footnotesize\ttfamily \hyperlink{classOperandsStack}{Operands\+Stack}$\ast$ frame\+\_\+s\+::pilha\+Operandos}
-
-
-
-Definido na linha 28 do ficheiro Frame.\+h.
-
-
-
-Referenciado por Operations\+::aaload(), Operations\+::aastore(), Operations\+::aconst\+\_\+null(), Frame\+Stack\+::adicionar\+Frame(), Operations\+::aload(), Operations\+::aload\+\_\+n(), Operations\+::anewarray(), Operations\+::areturn(), Operations\+::arraylength(), Operations\+::astore(), Operations\+::astore\+\_\+0(), Operations\+::astore\+\_\+1(), Operations\+::astore\+\_\+2(), Operations\+::astore\+\_\+3(), Operations\+::athrow(), Operations\+::baload(), Operations\+::bastore(), Operations\+::bipush(), Operations\+::caload(), Operations\+::castore(), Operations\+::d2f(), Operations\+::d2i(), Operations\+::d2l(), Operations\+::dadd(), Operations\+::daload(), Operations\+::dastore(), Operations\+::dcmpg(), Operations\+::dcmpl(), Operations\+::dconst\+\_\+0(), Operations\+::dconst\+\_\+1(), Operations\+::ddiv(), Operations\+::dload(), Operations\+::dload\+\_\+n(), Operations\+::dmul(), Operations\+::dneg(), Operations\+::drem(), Operations\+::dreturn(), Operations\+::dstore(), Operations\+::dstore\+\_\+0(), Operations\+::dstore\+\_\+1(), Operations\+::dstore\+\_\+2(), Operations\+::dstore\+\_\+3(), Operations\+::dsub(), Operations\+::dup(), Operations\+::dup2(), Operations\+::dup2\+\_\+x1(), Operations\+::dup2\+\_\+x2(), Operations\+::dup\+\_\+x1(), Operations\+::dup\+\_\+x2(), Operations\+::f2d(), Operations\+::f2i(), Operations\+::f2l(), Operations\+::fadd(), Operations\+::faload(), Operations\+::fastore(), Operations\+::fcmpg(), Operations\+::fcmpl(), Operations\+::fconst\+\_\+0(), Operations\+::fconst\+\_\+1(), Operations\+::fconst\+\_\+2(), Operations\+::fdiv(), Operations\+::fload(), Operations\+::fload\+\_\+n(), Operations\+::fmul(), Operations\+::fneg(), Frame\+Stack\+::\+Frame\+Stack(), Operations\+::frem(), Operations\+::freturn(), Operations\+::fstore(), Operations\+::fstore\+\_\+0(), Operations\+::fstore\+\_\+1(), Operations\+::fstore\+\_\+2(), Operations\+::fstore\+\_\+3(), Operations\+::fsub(), Operations\+::func\+\_\+new(), Operations\+::func\+\_\+return(), Operations\+::getfield(), Operations\+::getstatic(), Operations\+::i2b(), Operations\+::i2c(), Operations\+::i2d(), Operations\+::i2f(), Operations\+::i2l(), Operations\+::i2s(), Operations\+::iadd(), Operations\+::iaload(), Operations\+::iand(), Operations\+::iastore(), Operations\+::iconst\+\_\+0(), Operations\+::iconst\+\_\+1(), Operations\+::iconst\+\_\+2(), Operations\+::iconst\+\_\+3(), Operations\+::iconst\+\_\+4(), Operations\+::iconst\+\_\+5(), Operations\+::iconst\+\_\+m1(), Operations\+::idiv(), Operations\+::if\+\_\+acmpeq(), Operations\+::if\+\_\+acmpne(), Operations\+::if\+\_\+icmpeq(), Operations\+::if\+\_\+icmpge(), Operations\+::if\+\_\+icmpgt(), Operations\+::if\+\_\+icmple(), Operations\+::if\+\_\+icmplt(), Operations\+::if\+\_\+icmpne(), Operations\+::ifeq(), Operations\+::ifge(), Operations\+::ifgt(), Operations\+::ifle(), Operations\+::iflt(), Operations\+::ifne(), Operations\+::ifnonnull(), Operations\+::ifnull(), Operations\+::iload(), Operations\+::iload\+\_\+0(), Operations\+::iload\+\_\+1(), Operations\+::iload\+\_\+2(), Operations\+::iload\+\_\+3(), Operations\+::imul(), Operations\+::ineg(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::ior(), Operations\+::irem(), Operations\+::ireturn(), Operations\+::ishl(), Operations\+::ishr(), Operations\+::istore(), Operations\+::istore\+\_\+0(), Operations\+::istore\+\_\+1(), Operations\+::istore\+\_\+2(), Operations\+::istore\+\_\+3(), Operations\+::isub(), Operations\+::iushr(), Operations\+::ixor(), Operations\+::jsr(), Operations\+::jsr\+\_\+w(), Operations\+::l2d(), Operations\+::l2f(), Operations\+::l2i(), Operations\+::ladd(), Operations\+::laload(), Operations\+::land(), Operations\+::lastore(), Operations\+::lcmp(), Operations\+::lconst\+\_\+0(), Operations\+::lconst\+\_\+1(), Operations\+::ldc(), Operations\+::ldc2\+\_\+w(), Operations\+::ldc\+\_\+w(), Operations\+::ldiv(), Operations\+::lload(), Operations\+::lload\+\_\+n(), Operations\+::lmul(), Operations\+::lneg(), Operations\+::lookupswitch(), Operations\+::lor(), Operations\+::lrem(), Operations\+::lreturn(), Operations\+::lshl(), Operations\+::lshr(), Operations\+::lstore(), Operations\+::lstore\+\_\+0(), Operations\+::lstore\+\_\+1(), Operations\+::lstore\+\_\+2(), Operations\+::lstore\+\_\+3(), Operations\+::lsub(), Operations\+::lushr(), Operations\+::lxor(), Operations\+::multianewarray(), Operations\+::newarray(), Operations\+::pop(), Operations\+::pop2(), Operations\+::putfield(), Operations\+::putstatic(), Operations\+::saload(), Operations\+::sastore(), Operations\+::sipush(), Operations\+::swap() e Operations\+::tableswitch().
-
-\mbox{\Hypertarget{structframe__s_a7d14a487bba511d5768e6d1b6b6f8be0}\label{structframe__s_a7d14a487bba511d5768e6d1b6b6f8be0}} 
-\index{frame\+\_\+s@{frame\+\_\+s}!variaveis\+Locais@{variaveis\+Locais}}
-\index{variaveis\+Locais@{variaveis\+Locais}!frame\+\_\+s@{frame\+\_\+s}}
-\subsubsection{\texorpdfstring{variaveis\+Locais}{variaveisLocais}}
-{\footnotesize\ttfamily \hyperlink{classLocalVariables}{Local\+Variables}$\ast$ frame\+\_\+s\+::variaveis\+Locais}
-
-
-
-Definido na linha 29 do ficheiro Frame.\+h.
-
-
-
-Referenciado por Frame\+Stack\+::adicionar\+Frame(), Operations\+::aload(), Operations\+::aload\+\_\+n(), Operations\+::astore(), Operations\+::astore\+\_\+0(), Operations\+::astore\+\_\+1(), Operations\+::astore\+\_\+2(), Operations\+::astore\+\_\+3(), Operations\+::dload(), Operations\+::dload\+\_\+n(), Operations\+::dstore(), Operations\+::dstore\+\_\+0(), Operations\+::dstore\+\_\+1(), Operations\+::dstore\+\_\+2(), Operations\+::dstore\+\_\+3(), Operations\+::fload(), Operations\+::fload\+\_\+n(), Frame\+Stack\+::\+Frame\+Stack(), Operations\+::fstore(), Operations\+::fstore\+\_\+0(), Operations\+::fstore\+\_\+1(), Operations\+::fstore\+\_\+2(), Operations\+::fstore\+\_\+3(), Operations\+::funcret(), Operations\+::iinc(), Operations\+::iload(), Operations\+::iload\+\_\+0(), Operations\+::iload\+\_\+1(), Operations\+::iload\+\_\+2(), Operations\+::iload\+\_\+3(), Operations\+::istore(), Operations\+::istore\+\_\+0(), Operations\+::istore\+\_\+1(), Operations\+::istore\+\_\+2(), Operations\+::istore\+\_\+3(), Operations\+::lload(), Operations\+::lload\+\_\+n(), Operations\+::lstore(), Operations\+::lstore\+\_\+0(), Operations\+::lstore\+\_\+1(), Operations\+::lstore\+\_\+2() e Operations\+::lstore\+\_\+3().
+Referenciado por Operations\+::aload(), Operations\+::anewarray(), Operations\+::astore(), Operations\+::bipush(), Operations\+::dload(), Operations\+::dstore(), Operations\+::fload(), Operations\+::fstore(), Operations\+::func\+\_\+new(), Operations\+::funcgoto(), Operations\+::funcret(), Operations\+::getfield(), Operations\+::getstatic(), Operations\+::goto\+\_\+w(), Operations\+::if\+\_\+acmpeq(), Operations\+::if\+\_\+acmpne(), Operations\+::if\+\_\+icmpeq(), Operations\+::if\+\_\+icmpge(), Operations\+::if\+\_\+icmpgt(), Operations\+::if\+\_\+icmple(), Operations\+::if\+\_\+icmplt(), Operations\+::if\+\_\+icmpne(), Operations\+::ifeq(), Operations\+::ifge(), Operations\+::ifgt(), Operations\+::ifle(), Operations\+::iflt(), Operations\+::ifne(), Operations\+::ifnonnull(), Operations\+::ifnull(), Operations\+::iinc(), Operations\+::iload(), Pilha\+J\+V\+M\+::inicializar\+P\+C(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::istore(), Operations\+::jsr(), Operations\+::jsr\+\_\+w(), Operations\+::ldc(), Operations\+::ldc2\+\_\+w(), Operations\+::ldc\+\_\+w(), Operations\+::lload(), Operations\+::lookupswitch(), Operations\+::lstore(), Operations\+::multianewarray(), Operations\+::newarray(), Operations\+::putfield(), Operations\+::putstatic(), Operations\+::sipush(), Operations\+::tableswitch() e Operations\+::wide().
 
 
 
 A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
 \item 
-include/\hyperlink{Frame_8h}{Frame.\+h}\end{DoxyCompactItemize}
+include/\hyperlink{PilhaJVM_8h}{Pilha\+J\+V\+M.\+h}\end{DoxyCompactItemize}

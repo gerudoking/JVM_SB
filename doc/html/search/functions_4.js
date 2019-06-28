@@ -9,9 +9,9 @@ var searchData=
   ['empilharreferencia',['empilharReferencia',['../classOperandsStack.html#a47af7d965172984b9cc5c61d8c4c1ce3',1,'OperandsStack']]],
   ['empilhartypedelement',['empilharTypedElement',['../classOperandsStack.html#a73960b4536c99847bf4545a45f04f089',1,'OperandsStack']]],
   ['estavazia',['estaVazia',['../classOperandsStack.html#aa6dbee87661011453ba2c57405bd9a4e',1,'OperandsStack']]],
-  ['executarmetodos',['executarMetodos',['../classFrameStack.html#a87fc1ba2264b6818fc135ea507154b55',1,'FrameStack']]],
+  ['executarmetodos',['executarMetodos',['../classPilhaJVM.html#a8c87f8255b289be137dd09360d135e86',1,'PilhaJVM']]],
   ['executaroperacao',['executarOperacao',['../classOperations.html#ab63307824c7d6412e0afb1d037b995f1',1,'Operations']]],
-  ['exibir',['exibir',['../classLeitorExibidor.html#a544bd7574553d9015b22c2507971e7f5',1,'LeitorExibidor']]],
-  ['existeclinit',['existeClinit',['../classLeitorExibidor.html#a5a3ef889b1e38506d9d0df17255cad4e',1,'LeitorExibidor']]],
-  ['existemain',['existeMain',['../classLeitorExibidor.html#a431c625c01124f40e7b6f6fab2bdb7f2',1,'LeitorExibidor']]]
+  ['exibir',['exibir',['../classClassFile.html#a7da7cc6de8de3fc6f27faf3b76f4883a',1,'ClassFile']]],
+  ['existeclinit',['existeClinit',['../classClassFile.html#a2a886bdb4c42bfaaf5ea8ff1b2c41209',1,'ClassFile']]],
+  ['existemain',['existeMain',['../classClassFile.html#a10bfe22492b473fb0197e55f451978e5',1,'ClassFile']]]
 ];

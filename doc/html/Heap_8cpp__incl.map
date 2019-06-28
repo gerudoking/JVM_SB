@@ -1,7 +1,7 @@
 <map id="src/Heap.cpp" name="src/Heap.cpp">
-<area shape="rect" id="node2" href="$Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="1628,80,1692,107"/>
-<area shape="rect" id="node4" href="$InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="1601,155,1719,181"/>
-<area shape="rect" id="node5" href="$ClasseLeitorExibidor_8h.html" title="Definição da ClasseLeitorExibidor. " alt="" coords="979,229,1133,256"/>
+<area shape="rect" id="node2" href="$Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="1647,80,1711,107"/>
+<area shape="rect" id="node4" href="$InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="1620,155,1737,181"/>
+<area shape="rect" id="node5" href="$ClassFile_8h.html" title="Definição da ClassFile. " alt="" coords="1021,229,1109,256"/>
 <area shape="rect" id="node23" href="$StaticClass_8h.html" title="Definição da StaticClass. " alt="" coords="1323,528,1424,555"/>
 <area shape="rect" id="node24" href="$OperandsStack_8h.html" title="Pilha responsável por armazenar os operandos da JVM. " alt="" coords="1352,603,1475,629"/>
 <area shape="rect" id="node13" href="$BasicTypes_8h.html" title="Tipos básicos utilizados para implementarmos a JVM. " alt="" coords="883,677,986,704"/>
@@ -11,8 +11,8 @@
 <area shape="rect" id="node20" href="$Attributes_8h.html" title="Atributos a serem usados na execuçao da JVM. " alt="" coords="350,528,439,555"/>
 <area shape="rect" id="node21" href="$Interfaces_8h.html" title="Gerencia as informações da interfaces do arquivo .class. " alt="" coords="667,528,757,555"/>
 <area shape="rect" id="node22" href="$Methods_8h.html" title="Gerencia as informações dos metodos do arquivo .class. " alt="" coords="408,453,491,480"/>
-<area shape="rect" id="node28" href="$MethodArea_8h.html" title="Responsável por todas as operações que gerenciam os métodos. " alt="" coords="1005,304,1107,331"/>
-<area shape="rect" id="node31" href="$Frame_8h.html" title="Contém tudo necessário para a execução de um método. " alt="" coords="1110,379,1181,405"/>
+<area shape="rect" id="node28" href="$MethodArea_8h.html" title="Responsável por todas as operações que gerenciam os métodos. " alt="" coords="1014,304,1117,331"/>
+<area shape="rect" id="node31" href="$PilhaJVM_8h.html" title="Contém tudo necessário para a execução de um método. " alt="" coords="1110,379,1199,405"/>
 <area shape="rect" id="node32" href="$LocalVariables_8h.html" title="Stores local variables to current method. " alt="" coords="1086,603,1205,629"/>
-<area shape="rect" id="node34" href="$Operations_8h.html" title="Operations.h" alt="" coords="1187,453,1283,480"/>
+<area shape="rect" id="node34" href="$Operations_8h.html" title="Operations.h" alt="" coords="1205,453,1301,480"/>
 </map>

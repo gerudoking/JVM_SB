@@ -17,17 +17,17 @@ Diagrama de colaboração para Operations\+:
 \subsection*{Membros públicos}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classOperations_af4742b57ed46ed1d0bc96629cdf219b2}{Operations} (struct \hyperlink{structframe__s}{frame\+\_\+s} $\ast$\hyperlink{classOperations_a578012ad7aafe27db149c6e421bef1a6}{flame})
+\hyperlink{classOperations_a302329a641fa78f54d1f1f307736b870}{Operations} (struct \hyperlink{structframe__s}{frame\+\_\+s} $\ast$\hyperlink{classOperations_a0dc7b3710786c9cbd14801ac3e5d34b2}{frame})
 \end{DoxyCompactItemize}
 \subsection*{Membros públicos estáticos}
 \begin{DoxyCompactItemize}
 \item 
-static void \hyperlink{classOperations_a4a846f964056932fdf4d63056bfbe322}{atualizar\+Frame} (struct \hyperlink{structframe__s}{frame\+\_\+s} $\ast$\hyperlink{classOperations_a578012ad7aafe27db149c6e421bef1a6}{flame})
-\item 
-static void \hyperlink{classOperations_a6c265501b41e227e1a15589a0bb03166}{atualizar\+Threads} (stack$<$ struct \hyperlink{structframe__s}{frame\+\_\+s} $\ast$$>$ $\ast$\hyperlink{classOperations_af0867c8994e496c70f9c3157eeb8a287}{stack\+Threads})
-\item 
-static void \hyperlink{classOperations_a96812e295c8429a32e09720d89cd0176}{atualizar\+Frame\+Stack} (\hyperlink{classFrameStack}{Frame\+Stack} $\ast$\hyperlink{classOperations_a72ff498d126bb8082b3ac70ccb6e953a}{frame\+Stack})
-\item 
+static void \hyperlink{classOperations_a705efecd2a658615f2dfe777f0bd7032}{atualizar\+Frame} (struct \hyperlink{structframe__s}{frame\+\_\+s} $\ast$p\+Frame)
+\begin{DoxyCompactList}\small\item\em Atualiza a referência do frame do metodo. \end{DoxyCompactList}\item 
+static void \hyperlink{classOperations_a2564df73b5b237e5bda042909c4747b1}{atualizar\+Stack\+Frame} (stack$<$ struct \hyperlink{structframe__s}{frame\+\_\+s} $\ast$$>$ $\ast$p\+Stack\+Frame)
+\begin{DoxyCompactList}\small\item\em Atualiza a referência da pilha de frames para o próximo frame. \end{DoxyCompactList}\item 
+static void \hyperlink{classOperations_a5b31ab2923ed10b6ad3705f9954ed49e}{atualizar\+Pilha\+J\+VM} (\hyperlink{classPilhaJVM}{Pilha\+J\+VM} $\ast$p\+Pilha\+J\+VM)
+\begin{DoxyCompactList}\small\item\em Atualiza a pilha referência da pilha da jvm para o próximo instrução. \end{DoxyCompactList}\item 
 static void \hyperlink{classOperations_ab63307824c7d6412e0afb1d037b995f1}{executar\+Operacao} (int opcode)
 \end{DoxyCompactItemize}
 \subsection*{Membros privados estáticos}
@@ -450,11 +450,11 @@ static const \hyperlink{Operations_8h_a41b02f2392b85fc1d04e0d8e11c43398}{funcao\
 \item 
 static bool \hyperlink{classOperations_a672ba6cc2178cbc5b0a434b08de4c608}{is\+Wide} = false
 \item 
-static struct \hyperlink{structframe__s}{frame\+\_\+s} $\ast$ \hyperlink{classOperations_a578012ad7aafe27db149c6e421bef1a6}{flame} = nullptr
+static struct \hyperlink{structframe__s}{frame\+\_\+s} $\ast$ \hyperlink{classOperations_a0dc7b3710786c9cbd14801ac3e5d34b2}{frame} = nullptr
 \item 
-static stack$<$ struct \hyperlink{structframe__s}{frame\+\_\+s} $\ast$ $>$ $\ast$ \hyperlink{classOperations_af0867c8994e496c70f9c3157eeb8a287}{stack\+Threads} = nullptr
+static stack$<$ struct \hyperlink{structframe__s}{frame\+\_\+s} $\ast$ $>$ $\ast$ \hyperlink{classOperations_ae813b6fad395a04f6cd8e0c355dc056d}{stack\+Frame} = nullptr
 \item 
-static \hyperlink{classFrameStack}{Frame\+Stack} $\ast$ \hyperlink{classOperations_a72ff498d126bb8082b3ac70ccb6e953a}{frame\+Stack} = nullptr
+static \hyperlink{classPilhaJVM}{Pilha\+J\+VM} $\ast$ \hyperlink{classOperations_a1a7c399bf01fabfc223a3f84f7fcace0}{pilha\+J\+VM} = nullptr
 \end{DoxyCompactItemize}
 
 
@@ -466,11 +466,11 @@ Definido na linha 16 do ficheiro Operations.\+h.
 
 
 \subsection{Documentação dos Construtores \& Destrutor}
-\mbox{\Hypertarget{classOperations_af4742b57ed46ed1d0bc96629cdf219b2}\label{classOperations_af4742b57ed46ed1d0bc96629cdf219b2}} 
+\mbox{\Hypertarget{classOperations_a302329a641fa78f54d1f1f307736b870}\label{classOperations_a302329a641fa78f54d1f1f307736b870}} 
 \index{Operations@{Operations}!Operations@{Operations}}
 \index{Operations@{Operations}!Operations@{Operations}}
 \subsubsection{\texorpdfstring{Operations()}{Operations()}}
-{\footnotesize\ttfamily Operations\+::\+Operations (\begin{DoxyParamCaption}\item[{struct \hyperlink{structframe__s}{frame\+\_\+s} $\ast$}]{flame }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Operations\+::\+Operations (\begin{DoxyParamCaption}\item[{struct \hyperlink{structframe__s}{frame\+\_\+s} $\ast$}]{frame }\end{DoxyParamCaption})}
 
 
 
@@ -478,7 +478,7 @@ Definido na linha 50 do ficheiro Operations.\+cpp.
 
 
 
-Referências flame.
+Referências frame.
 
 
 
@@ -495,10 +495,9 @@ Definido na linha 567 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, Local\+Variables\+::get(), element\+\_\+u\+::i, element\+\_\+u\+::pi e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, Local\+Variables\+::get(), element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack e element\+\_\+u\+::pi.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -513,14 +512,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 773 do ficheiro Operations.\+cpp.
+Definido na linha 769 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, element\+\_\+u\+::i, element\+\_\+u\+::pi, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE, Local\+Variables\+::set(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack, element\+\_\+u\+::pi, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE, Local\+Variables\+::set(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -539,10 +537,9 @@ Definido na linha 87 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Referencia(), flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::empilhar\+Referencia(), frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -561,10 +558,9 @@ Definido na linha 277 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Referencia(), flame, Local\+Variables\+::get(), is\+Wide, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, element\+\_\+u\+::pi, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::value e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::empilhar\+Referencia(), frame, Local\+Variables\+::get(), is\+Wide, frame\+\_\+s\+::local\+Variables, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc, element\+\_\+u\+::pi e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -585,8 +581,7 @@ Definido na linha 388 do ficheiro Operations.\+cpp.
 
 Referências aload\+\_\+n().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -607,8 +602,7 @@ Definido na linha 392 do ficheiro Operations.\+cpp.
 
 Referências aload\+\_\+n().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -629,8 +623,7 @@ Definido na linha 396 do ficheiro Operations.\+cpp.
 
 Referências aload\+\_\+n().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -651,8 +644,7 @@ Definido na linha 400 do ficheiro Operations.\+cpp.
 
 Referências aload\+\_\+n().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -671,14 +663,13 @@ Definido na linha 383 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Referencia(), flame, Local\+Variables\+::get(), element\+\_\+u\+::pi, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::value e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::empilhar\+Referencia(), frame, Local\+Variables\+::get(), frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, element\+\_\+u\+::pi e typed\+Element\+\_\+s\+::value.
 
 
 
 Referenciado por aload\+\_\+0(), aload\+\_\+1(), aload\+\_\+2() e aload\+\_\+3().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -693,14 +684,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2580 do ficheiro Operations.\+cpp.
+Definido na linha 2575 do ficheiro Operations.\+cpp.
 
 
 
-Referências B\+I\+TS, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Referencia(), flame, element\+\_\+u\+::is, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, element\+\_\+u\+::pi, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE e typed\+Element\+\_\+s\+::value.
+Referências B\+I\+TS, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Referencia(), frame, element\+\_\+u\+::is, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc, element\+\_\+u\+::pi, Local\+Variables\+::set(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -715,14 +705,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1941 do ficheiro Operations.\+cpp.
+Definido na linha 1937 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Referencia(), Operands\+Stack\+::esta\+Vazia(), flame, element\+\_\+u\+::pi, frame\+\_\+s\+::pilha\+Operandos, stack\+Threads e T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Referencia(), Operands\+Stack\+::esta\+Vazia(), frame, frame\+\_\+s\+::operands\+Stack, element\+\_\+u\+::pi, stack\+Frame e T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -737,14 +726,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2599 do ficheiro Operations.\+cpp.
+Definido na linha 2594 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), flame, Local\+Variables\+::obter\+Max(), element\+\_\+u\+::pi e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), frame, Local\+Variables\+::obter\+Max(), frame\+\_\+s\+::operands\+Stack e element\+\_\+u\+::pi.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -763,10 +751,9 @@ Definido na linha 502 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, is\+Wide, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, is\+Wide, frame\+\_\+s\+::local\+Variables, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -785,10 +772,9 @@ Definido na linha 681 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -807,10 +793,9 @@ Definido na linha 689 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -829,10 +814,9 @@ Definido na linha 697 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -851,10 +835,9 @@ Definido na linha 705 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -869,73 +852,99 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2609 do ficheiro Operations.\+cpp.
+Definido na linha 2604 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar(), Operands\+Stack\+::esta\+Vazia(), flame, frame\+\_\+s\+::pilha\+Operandos e typed\+Element\+\_\+s\+::type.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar(), Operands\+Stack\+::esta\+Vazia(), frame, frame\+\_\+s\+::operands\+Stack e typed\+Element\+\_\+s\+::type.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classOperations_a2a5eea0fb18391bb3854dfe55c8ac5d3_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{classOperations_a4a846f964056932fdf4d63056bfbe322}\label{classOperations_a4a846f964056932fdf4d63056bfbe322}} 
+\mbox{\Hypertarget{classOperations_a705efecd2a658615f2dfe777f0bd7032}\label{classOperations_a705efecd2a658615f2dfe777f0bd7032}} 
 \index{Operations@{Operations}!atualizar\+Frame@{atualizar\+Frame}}
 \index{atualizar\+Frame@{atualizar\+Frame}!Operations@{Operations}}
 \subsubsection{\texorpdfstring{atualizar\+Frame()}{atualizarFrame()}}
-{\footnotesize\ttfamily void Operations\+::atualizar\+Frame (\begin{DoxyParamCaption}\item[{struct \hyperlink{structframe__s}{frame\+\_\+s} $\ast$}]{flame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static void Operations\+::atualizar\+Frame (\begin{DoxyParamCaption}\item[{struct \hyperlink{structframe__s}{frame\+\_\+s} $\ast$}]{p\+Frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Atualiza a referência do frame do metodo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em p\+Frame} & o frame do metodo \\
+\hline
+\end{DoxyParams}
 
 
 Definido na linha 66 do ficheiro Operations.\+cpp.
 
 
 
-Referências flame.
+Referências frame.
 
 
 
-Referenciado por Frame\+Stack\+::adicionar\+Frame(), Frame\+Stack\+::\+Frame\+Stack() e Frame\+Stack\+::pop\+Remover\+Objetos().
+Referenciado por Pilha\+J\+V\+M\+::adicionar\+Frame(), Pilha\+J\+V\+M\+::\+Pilha\+J\+V\+M() e Pilha\+J\+V\+M\+::pop\+Remover\+Objetos().
 
-\mbox{\Hypertarget{classOperations_a96812e295c8429a32e09720d89cd0176}\label{classOperations_a96812e295c8429a32e09720d89cd0176}} 
-\index{Operations@{Operations}!atualizar\+Frame\+Stack@{atualizar\+Frame\+Stack}}
-\index{atualizar\+Frame\+Stack@{atualizar\+Frame\+Stack}!Operations@{Operations}}
-\subsubsection{\texorpdfstring{atualizar\+Frame\+Stack()}{atualizarFrameStack()}}
-{\footnotesize\ttfamily void Operations\+::atualizar\+Frame\+Stack (\begin{DoxyParamCaption}\item[{\hyperlink{classFrameStack}{Frame\+Stack} $\ast$}]{frame\+Stack }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\mbox{\Hypertarget{classOperations_a5b31ab2923ed10b6ad3705f9954ed49e}\label{classOperations_a5b31ab2923ed10b6ad3705f9954ed49e}} 
+\index{Operations@{Operations}!atualizar\+Pilha\+J\+VM@{atualizar\+Pilha\+J\+VM}}
+\index{atualizar\+Pilha\+J\+VM@{atualizar\+Pilha\+J\+VM}!Operations@{Operations}}
+\subsubsection{\texorpdfstring{atualizar\+Pilha\+J\+V\+M()}{atualizarPilhaJVM()}}
+{\footnotesize\ttfamily static void Operations\+::atualizar\+Pilha\+J\+VM (\begin{DoxyParamCaption}\item[{\hyperlink{classPilhaJVM}{Pilha\+J\+VM} $\ast$}]{p\+Pilha\+J\+VM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Atualiza a pilha referência da pilha da jvm para o próximo instrução. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em p\+Pilha\+J\+VM} & a pilha da jvm \\
+\hline
+\end{DoxyParams}
 
 
 Definido na linha 74 do ficheiro Operations.\+cpp.
 
 
 
-Referências frame\+Stack.
+Referências pilha\+J\+VM.
 
 
 
-Referenciado por Frame\+Stack\+::adicionar\+Frame() e Frame\+Stack\+::\+Frame\+Stack().
+Referenciado por Pilha\+J\+V\+M\+::adicionar\+Frame() e Pilha\+J\+V\+M\+::\+Pilha\+J\+V\+M().
 
-\mbox{\Hypertarget{classOperations_a6c265501b41e227e1a15589a0bb03166}\label{classOperations_a6c265501b41e227e1a15589a0bb03166}} 
-\index{Operations@{Operations}!atualizar\+Threads@{atualizar\+Threads}}
-\index{atualizar\+Threads@{atualizar\+Threads}!Operations@{Operations}}
-\subsubsection{\texorpdfstring{atualizar\+Threads()}{atualizarThreads()}}
-{\footnotesize\ttfamily void Operations\+::atualizar\+Threads (\begin{DoxyParamCaption}\item[{stack$<$ struct \hyperlink{structframe__s}{frame\+\_\+s} $\ast$$>$ $\ast$}]{stack\+Threads }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\mbox{\Hypertarget{classOperations_a2564df73b5b237e5bda042909c4747b1}\label{classOperations_a2564df73b5b237e5bda042909c4747b1}} 
+\index{Operations@{Operations}!atualizar\+Stack\+Frame@{atualizar\+Stack\+Frame}}
+\index{atualizar\+Stack\+Frame@{atualizar\+Stack\+Frame}!Operations@{Operations}}
+\subsubsection{\texorpdfstring{atualizar\+Stack\+Frame()}{atualizarStackFrame()}}
+{\footnotesize\ttfamily static void Operations\+::atualizar\+Stack\+Frame (\begin{DoxyParamCaption}\item[{stack$<$ struct \hyperlink{structframe__s}{frame\+\_\+s} $\ast$$>$ $\ast$}]{p\+Stack\+Frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Atualiza a referência da pilha de frames para o próximo frame. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em p\+Stack\+Frame} & próximo frame \\
+\hline
+\end{DoxyParams}
 
 
 Definido na linha 70 do ficheiro Operations.\+cpp.
 
 
 
-Referências stack\+Threads.
+Referências stack\+Frame.
 
 
 
-Referenciado por Frame\+Stack\+::adicionar\+Frame(), Frame\+Stack\+::\+Frame\+Stack() e Frame\+Stack\+::pop\+Remover\+Objetos().
+Referenciado por Pilha\+J\+V\+M\+::adicionar\+Frame(), Pilha\+J\+V\+M\+::\+Pilha\+J\+V\+M() e Pilha\+J\+V\+M\+::pop\+Remover\+Objetos().
 
 \mbox{\Hypertarget{classOperations_afdf1759637e332569a2b2b17067e05f0}\label{classOperations_afdf1759637e332569a2b2b17067e05f0}} 
 \index{Operations@{Operations}!baload@{baload}}
@@ -949,10 +958,9 @@ Definido na linha 574 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, Local\+Variables\+::get(), element\+\_\+u\+::i, element\+\_\+u\+::pi e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, Local\+Variables\+::get(), element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack e element\+\_\+u\+::pi.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -967,14 +975,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 788 do ficheiro Operations.\+cpp.
+Definido na linha 784 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, element\+\_\+u\+::i, element\+\_\+u\+::pi, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+B\+O\+OL, Local\+Variables\+::set(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack, element\+\_\+u\+::pi, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+B\+O\+OL, Local\+Variables\+::set(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -993,10 +1000,9 @@ Definido na linha 162 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Int(), flame, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::empilhar\+Int(), frame, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack e frame\+\_\+s\+::pc.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1015,10 +1021,9 @@ Definido na linha 581 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), flame, element\+\_\+u\+::i, element\+\_\+u\+::pi e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack e element\+\_\+u\+::pi.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1033,14 +1038,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 803 do ficheiro Operations.\+cpp.
+Definido na linha 799 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::bs, Operands\+Stack\+::desempilha(), flame, element\+\_\+u\+::i, element\+\_\+u\+::pi e frame\+\_\+s\+::pilha\+Operandos.
+Referências element\+\_\+u\+::bs, Operands\+Stack\+::desempilha(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack e element\+\_\+u\+::pi.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1055,14 +1059,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1525 do ficheiro Operations.\+cpp.
+Definido na linha 1521 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Float(), element\+\_\+u\+::f, flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Float(), element\+\_\+u\+::f, frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1077,14 +1080,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1513 do ficheiro Operations.\+cpp.
+Definido na linha 1509 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), flame, element\+\_\+u\+::is e frame\+\_\+s\+::pilha\+Operandos.
+Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), frame, element\+\_\+u\+::is e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1099,14 +1101,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1519 do ficheiro Operations.\+cpp.
+Definido na linha 1515 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar(), flame, element\+\_\+u\+::l, frame\+\_\+s\+::pilha\+Operandos e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
+Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar(), frame, element\+\_\+u\+::l, frame\+\_\+s\+::operands\+Stack e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1121,14 +1122,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 894 do ficheiro Operations.\+cpp.
+Definido na linha 890 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+D\+O\+U\+B\+LE, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e typed\+Element\+\_\+s\+::value.
+Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+D\+O\+U\+B\+LE, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1147,10 +1147,9 @@ Definido na linha 560 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, Local\+Variables\+::get(), element\+\_\+u\+::i, element\+\_\+u\+::pi e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, Local\+Variables\+::get(), element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack e element\+\_\+u\+::pi.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1165,14 +1164,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 758 do ficheiro Operations.\+cpp.
+Definido na linha 754 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), flame, element\+\_\+u\+::i, element\+\_\+u\+::pi, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+D\+O\+U\+B\+LE, Local\+Variables\+::set(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e typed\+Element\+\_\+s\+::value.
+Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack, element\+\_\+u\+::pi, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+D\+O\+U\+B\+LE, Local\+Variables\+::set(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1187,14 +1185,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1634 do ficheiro Operations.\+cpp.
+Definido na linha 1630 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), flame, frame\+\_\+s\+::pilha\+Operandos e verificar\+Double().
+Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), frame, frame\+\_\+s\+::operands\+Stack e verificar\+Double().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1209,14 +1206,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1613 do ficheiro Operations.\+cpp.
+Definido na linha 1609 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), flame, frame\+\_\+s\+::pilha\+Operandos e verificar\+Double().
+Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), frame, frame\+\_\+s\+::operands\+Stack e verificar\+Double().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1235,10 +1231,9 @@ Definido na linha 152 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Double(), flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::empilhar\+Double(), frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1257,10 +1252,9 @@ Definido na linha 157 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Double(), flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::empilhar\+Double(), frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1275,14 +1269,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1158 do ficheiro Operations.\+cpp.
+Definido na linha 1154 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+D\+O\+U\+B\+LE, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e typed\+Element\+\_\+s\+::value.
+Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+D\+O\+U\+B\+LE, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1301,10 +1294,9 @@ Definido na linha 263 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::d, Operands\+Stack\+::empilhar\+Double(), flame, Local\+Variables\+::get(), is\+Wide, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::value e frame\+\_\+s\+::variaveis\+Locais.
+Referências element\+\_\+u\+::d, Operands\+Stack\+::empilhar\+Double(), frame, Local\+Variables\+::get(), is\+Wide, frame\+\_\+s\+::local\+Variables, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1325,8 +1317,7 @@ Definido na linha 366 do ficheiro Operations.\+cpp.
 
 Referências dload\+\_\+n().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1347,8 +1338,7 @@ Definido na linha 370 do ficheiro Operations.\+cpp.
 
 Referências dload\+\_\+n().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1369,8 +1359,7 @@ Definido na linha 374 do ficheiro Operations.\+cpp.
 
 Referências dload\+\_\+n().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1391,8 +1380,7 @@ Definido na linha 378 do ficheiro Operations.\+cpp.
 
 Referências dload\+\_\+n().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1411,14 +1399,13 @@ Definido na linha 361 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::d, Operands\+Stack\+::empilhar\+Double(), flame, Local\+Variables\+::get(), frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::value e frame\+\_\+s\+::variaveis\+Locais.
+Referências element\+\_\+u\+::d, Operands\+Stack\+::empilhar\+Double(), frame, Local\+Variables\+::get(), frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack e typed\+Element\+\_\+s\+::value.
 
 
 
 Referenciado por dload\+\_\+0(), dload\+\_\+1(), dload\+\_\+2() e dload\+\_\+3().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1433,14 +1420,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1070 do ficheiro Operations.\+cpp.
+Definido na linha 1066 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+D\+O\+U\+B\+LE, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e typed\+Element\+\_\+s\+::value.
+Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+D\+O\+U\+B\+LE, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1455,14 +1441,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1299 do ficheiro Operations.\+cpp.
+Definido na linha 1295 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::l, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+D\+O\+U\+B\+LE, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::l, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+D\+O\+U\+B\+LE, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1477,14 +1462,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1238 do ficheiro Operations.\+cpp.
+Definido na linha 1234 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Double\+\_\+\+NaN, Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::l, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+D\+O\+U\+B\+LE, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE, typed\+Element\+\_\+s\+::value e verificar\+Double().
+Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Double\+\_\+\+NaN, Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::l, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+D\+O\+U\+B\+LE, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE, typed\+Element\+\_\+s\+::value e verificar\+Double().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1499,14 +1483,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1929 do ficheiro Operations.\+cpp.
+Definido na linha 1925 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Double(), Operands\+Stack\+::esta\+Vazia(), flame, frame\+\_\+s\+::pilha\+Operandos, stack\+Threads e typed\+Element\+\_\+s\+::value.
+Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Double(), Operands\+Stack\+::esta\+Vazia(), frame, frame\+\_\+s\+::operands\+Stack, stack\+Frame e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1525,10 +1508,9 @@ Definido na linha 486 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, is\+Wide, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, is\+Wide, frame\+\_\+s\+::local\+Variables, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1547,10 +1529,9 @@ Definido na linha 649 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1569,10 +1550,9 @@ Definido na linha 657 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1591,10 +1571,9 @@ Definido na linha 665 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1613,10 +1592,9 @@ Definido na linha 673 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1631,14 +1609,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 982 do ficheiro Operations.\+cpp.
+Definido na linha 978 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+D\+O\+U\+B\+LE, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e typed\+Element\+\_\+s\+::value.
+Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+D\+O\+U\+B\+LE, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1653,14 +1630,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2783 do ficheiro Operations.\+cpp.
+Definido na linha 2778 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1675,14 +1651,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2828 do ficheiro Operations.\+cpp.
+Definido na linha 2823 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, frame\+\_\+s\+::pilha\+Operandos, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, frame\+\_\+s\+::operands\+Stack, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1697,14 +1672,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2843 do ficheiro Operations.\+cpp.
+Definido na linha 2838 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, frame\+\_\+s\+::pilha\+Operandos, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, frame\+\_\+s\+::operands\+Stack, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1719,14 +1693,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2862 do ficheiro Operations.\+cpp.
+Definido na linha 2857 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1741,14 +1714,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2800 do ficheiro Operations.\+cpp.
+Definido na linha 2795 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, frame\+\_\+s\+::pilha\+Operandos, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, frame\+\_\+s\+::operands\+Stack, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1763,14 +1735,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2811 do ficheiro Operations.\+cpp.
+Definido na linha 2806 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, frame\+\_\+s\+::pilha\+Operandos, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, frame\+\_\+s\+::operands\+Stack, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1793,7 +1764,7 @@ Referências funcao\+Generica\+Opcodes.
 
 
 
-Referenciado por Frame\+Stack\+::executar\+Metodos() e wide().
+Referenciado por Pilha\+J\+V\+M\+::executar\+Metodos() e wide().
 
 \mbox{\Hypertarget{classOperations_afb29ca09bc75d3342920b1509aba3635}\label{classOperations_afb29ca09bc75d3342920b1509aba3635}} 
 \index{Operations@{Operations}!f2d@{f2d}}
@@ -1803,14 +1774,13 @@ Referenciado por Frame\+Stack\+::executar\+Metodos() e wide().
 
 
 
-Definido na linha 1507 do ficheiro Operations.\+cpp.
+Definido na linha 1503 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Double(), element\+\_\+u\+::f, flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Double(), element\+\_\+u\+::f, frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1825,14 +1795,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1495 do ficheiro Operations.\+cpp.
+Definido na linha 1491 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), element\+\_\+u\+::f, flame, element\+\_\+u\+::is e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), element\+\_\+u\+::f, frame, element\+\_\+u\+::is e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1847,14 +1816,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1501 do ficheiro Operations.\+cpp.
+Definido na linha 1497 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar(), element\+\_\+u\+::f, flame, element\+\_\+u\+::l, frame\+\_\+s\+::pilha\+Operandos e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar(), element\+\_\+u\+::f, frame, element\+\_\+u\+::l, frame\+\_\+s\+::operands\+Stack e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1869,14 +1837,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 872 do ficheiro Operations.\+cpp.
+Definido na linha 868 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), element\+\_\+u\+::f, flame, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+F\+L\+O\+AT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), element\+\_\+u\+::f, frame, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+F\+L\+O\+AT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1895,10 +1862,9 @@ Definido na linha 551 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, Local\+Variables\+::get(), element\+\_\+u\+::i, element\+\_\+u\+::pi e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, Local\+Variables\+::get(), element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack e element\+\_\+u\+::pi.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1913,14 +1879,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 743 do ficheiro Operations.\+cpp.
+Definido na linha 739 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), element\+\_\+u\+::f, flame, element\+\_\+u\+::i, element\+\_\+u\+::pi, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+F\+L\+O\+AT, Local\+Variables\+::set(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), element\+\_\+u\+::f, frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack, element\+\_\+u\+::pi, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+F\+L\+O\+AT, Local\+Variables\+::set(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1935,14 +1900,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1592 do ficheiro Operations.\+cpp.
+Definido na linha 1588 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), element\+\_\+u\+::f, flame, frame\+\_\+s\+::pilha\+Operandos e verificar\+Float().
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), element\+\_\+u\+::f, frame, frame\+\_\+s\+::operands\+Stack e verificar\+Float().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1957,14 +1921,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1571 do ficheiro Operations.\+cpp.
+Definido na linha 1567 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), element\+\_\+u\+::f, flame, frame\+\_\+s\+::pilha\+Operandos e verificar\+Float().
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), element\+\_\+u\+::f, frame, frame\+\_\+s\+::operands\+Stack e verificar\+Float().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1983,10 +1946,9 @@ Definido na linha 137 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Float(), flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::empilhar\+Float(), frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2005,10 +1967,9 @@ Definido na linha 142 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Float(), flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::empilhar\+Float(), frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2027,10 +1988,9 @@ Definido na linha 147 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Float(), flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::empilhar\+Float(), frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2045,14 +2005,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1136 do ficheiro Operations.\+cpp.
+Definido na linha 1132 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), element\+\_\+u\+::f, flame, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+F\+L\+O\+AT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), element\+\_\+u\+::f, frame, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+F\+L\+O\+AT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2071,10 +2030,9 @@ Definido na linha 249 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Float(), element\+\_\+u\+::f, flame, Local\+Variables\+::get(), is\+Wide, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::value e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::empilhar\+Float(), element\+\_\+u\+::f, frame, Local\+Variables\+::get(), is\+Wide, frame\+\_\+s\+::local\+Variables, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2095,8 +2053,7 @@ Definido na linha 344 do ficheiro Operations.\+cpp.
 
 Referências fload\+\_\+n().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2117,8 +2074,7 @@ Definido na linha 348 do ficheiro Operations.\+cpp.
 
 Referências fload\+\_\+n().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2139,8 +2095,7 @@ Definido na linha 352 do ficheiro Operations.\+cpp.
 
 Referências fload\+\_\+n().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2161,8 +2116,7 @@ Definido na linha 356 do ficheiro Operations.\+cpp.
 
 Referências fload\+\_\+n().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2181,14 +2135,13 @@ Definido na linha 339 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Float(), element\+\_\+u\+::f, flame, Local\+Variables\+::get(), frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::value e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::empilhar\+Float(), element\+\_\+u\+::f, frame, Local\+Variables\+::get(), frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack e typed\+Element\+\_\+s\+::value.
 
 
 
 Referenciado por fload\+\_\+0(), fload\+\_\+1(), fload\+\_\+2() e fload\+\_\+3().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2203,14 +2156,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1048 do ficheiro Operations.\+cpp.
+Definido na linha 1044 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), element\+\_\+u\+::f, flame, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+F\+L\+O\+AT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), element\+\_\+u\+::f, frame, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+F\+L\+O\+AT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2225,14 +2177,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1286 do ficheiro Operations.\+cpp.
+Definido na linha 1282 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::i, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+F\+L\+O\+AT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+F\+L\+O\+AT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2247,14 +2198,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1214 do ficheiro Operations.\+cpp.
+Definido na linha 1210 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), element\+\_\+u\+::f, flame, Float\+\_\+\+NaN, element\+\_\+u\+::i, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+F\+L\+O\+AT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT, typed\+Element\+\_\+s\+::value e verificar\+Float().
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), element\+\_\+u\+::f, Float\+\_\+\+NaN, frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+F\+L\+O\+AT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT, typed\+Element\+\_\+s\+::value e verificar\+Float().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2269,14 +2219,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1917 do ficheiro Operations.\+cpp.
+Definido na linha 1913 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Float(), Operands\+Stack\+::esta\+Vazia(), element\+\_\+u\+::f, flame, frame\+\_\+s\+::pilha\+Operandos, stack\+Threads e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Float(), Operands\+Stack\+::esta\+Vazia(), element\+\_\+u\+::f, frame, frame\+\_\+s\+::operands\+Stack, stack\+Frame e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2295,10 +2244,9 @@ Definido na linha 470 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, is\+Wide, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, is\+Wide, frame\+\_\+s\+::local\+Variables, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2317,10 +2265,9 @@ Definido na linha 617 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2339,10 +2286,9 @@ Definido na linha 625 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2361,10 +2307,9 @@ Definido na linha 633 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2383,10 +2328,9 @@ Definido na linha 641 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2401,14 +2345,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 960 do ficheiro Operations.\+cpp.
+Definido na linha 956 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), element\+\_\+u\+::f, flame, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+F\+L\+O\+AT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), element\+\_\+u\+::f, frame, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+F\+L\+O\+AT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2423,11 +2366,11 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2525 do ficheiro Operations.\+cpp.
+Definido na linha 2520 do ficheiro Operations.\+cpp.
 
 
 
-Referências Method\+Area\+::adicionar\+Classe(), capturar\+Indice\+De\+Referencia(), frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::empilhar\+Referencia(), flame, Method\+Area\+::obter\+Class(), Static\+Class\+::obter\+Instance\+Class(), obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc e frame\+\_\+s\+::pilha\+Operandos.
+Referências Method\+Area\+::adicionar\+Classe(), capturar\+Indice\+De\+Referencia(), frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::empilhar\+Referencia(), frame, Method\+Area\+::obter\+Class(), Static\+Class\+::obter\+Instance\+Class(), obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack e frame\+\_\+s\+::pc.
 
 Grafo de chamadas desta função\+:
 \nopagebreak
@@ -2445,11 +2388,11 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1961 do ficheiro Operations.\+cpp.
+Definido na linha 1957 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::esta\+Vazia(), flame, frame\+Stack, frame\+\_\+s\+::pilha\+Operandos e Frame\+Stack\+::pop\+Remover\+Objetos().
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::esta\+Vazia(), frame, frame\+\_\+s\+::operands\+Stack, pilha\+J\+VM e Pilha\+J\+V\+M\+::pop\+Remover\+Objetos().
 
 Grafo de chamadas desta função\+:
 \nopagebreak
@@ -2467,14 +2410,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1809 do ficheiro Operations.\+cpp.
+Definido na linha 1805 do ficheiro Operations.\+cpp.
 
 
 
-Referências flame, obter\+N\+Bytes\+Value() e frame\+\_\+s\+::pc.
+Referências frame, obter\+N\+Bytes\+Value() e frame\+\_\+s\+::pc.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2489,14 +2431,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1828 do ficheiro Operations.\+cpp.
+Definido na linha 1824 do ficheiro Operations.\+cpp.
 
 
 
-Referências flame, Local\+Variables\+::get(), is\+Wide, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, element\+\_\+u\+::pi, typed\+Element\+\_\+s\+::value e frame\+\_\+s\+::variaveis\+Locais.
+Referências frame, Local\+Variables\+::get(), is\+Wide, frame\+\_\+s\+::local\+Variables, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, element\+\_\+u\+::pi e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2511,11 +2452,11 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2078 do ficheiro Operations.\+cpp.
+Definido na linha 2073 do ficheiro Operations.\+cpp.
 
 
 
-Referências capturar\+Indice\+De\+Referencia(), frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, cp\+\_\+info\+::info, Instance\+Class\+::obter\+Field(), obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, element\+\_\+u\+::pi, frame\+\_\+s\+::pilha\+Operandos e Class\+Loader\+Type\+::u2.
+Referências capturar\+Indice\+De\+Referencia(), frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, Cp\+\_\+info\+::info, Instance\+Class\+::obter\+Field(), obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc, element\+\_\+u\+::pi e Class\+Loader\+Type\+::u2.
 
 Grafo de chamadas desta função\+:
 \nopagebreak
@@ -2533,11 +2474,11 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1985 do ficheiro Operations.\+cpp.
+Definido na linha 1980 do ficheiro Operations.\+cpp.
 
 
 
-Referências capturar\+Indice\+De\+Referencia(), frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::empilhar\+Typed\+Element(), F\+I\+E\+L\+D\+\_\+\+R\+EF, flame, cp\+\_\+info\+::info, N\+A\+M\+E\+\_\+\+A\+N\+D\+\_\+\+T\+Y\+PE, Method\+Area\+::obter\+Class(), Static\+Class\+::obter\+Field(), obter\+N\+Bytes\+Value(), obter\+Static\+Class\+That\+Has\+Field(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos, stack\+Threads, cp\+\_\+info\+::tag, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+B\+O\+OL, T\+Y\+P\+E\+\_\+\+I\+NT e Class\+Loader\+Type\+::u2.
+Referências capturar\+Indice\+De\+Referencia(), frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::empilhar\+Typed\+Element(), F\+I\+E\+L\+D\+\_\+\+R\+EF, frame, Cp\+\_\+info\+::info, N\+A\+M\+E\+\_\+\+A\+N\+D\+\_\+\+T\+Y\+PE, Method\+Area\+::obter\+Class(), Static\+Class\+::obter\+Field(), obter\+N\+Bytes\+Value(), obter\+Static\+Class\+That\+Has\+Field(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc, stack\+Frame, Cp\+\_\+info\+::tag, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+B\+O\+OL, T\+Y\+P\+E\+\_\+\+I\+NT e Class\+Loader\+Type\+::u2.
 
 Grafo de chamadas desta função\+:
 \nopagebreak
@@ -2555,14 +2496,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2767 do ficheiro Operations.\+cpp.
+Definido na linha 2762 do ficheiro Operations.\+cpp.
 
 
 
-Referências flame, obter\+N\+Bytes\+Value() e frame\+\_\+s\+::pc.
+Referências frame, obter\+N\+Bytes\+Value() e frame\+\_\+s\+::pc.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2577,14 +2517,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1532 do ficheiro Operations.\+cpp.
+Definido na linha 1528 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::bs, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), flame, frame\+\_\+s\+::pilha\+Operandos e typed\+Element\+\_\+s\+::value.
+Referências element\+\_\+u\+::bs, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), frame, frame\+\_\+s\+::operands\+Stack e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2599,14 +2538,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1539 do ficheiro Operations.\+cpp.
+Definido na linha 1535 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::b, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+C\+H\+AR, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
+Referências element\+\_\+u\+::b, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+C\+H\+AR, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2621,14 +2559,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1471 do ficheiro Operations.\+cpp.
+Definido na linha 1467 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Double(), flame, element\+\_\+u\+::is e frame\+\_\+s\+::pilha\+Operandos.
+Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Double(), frame, element\+\_\+u\+::is e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2643,14 +2580,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1465 do ficheiro Operations.\+cpp.
+Definido na linha 1461 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Float(), element\+\_\+u\+::f, flame, element\+\_\+u\+::is e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Float(), element\+\_\+u\+::f, frame, element\+\_\+u\+::is e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2665,14 +2601,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1461 do ficheiro Operations.\+cpp.
+Definido na linha 1457 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar(), flame, frame\+\_\+s\+::pilha\+Operandos e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar(), frame, frame\+\_\+s\+::operands\+Stack e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2687,14 +2622,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1548 do ficheiro Operations.\+cpp.
+Definido na linha 1544 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+S\+H\+O\+RT, element\+\_\+u\+::ss, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+S\+H\+O\+RT, element\+\_\+u\+::ss, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2709,14 +2643,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 828 do ficheiro Operations.\+cpp.
+Definido na linha 824 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::i, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2735,10 +2668,9 @@ Definido na linha 404 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), flame, element\+\_\+u\+::i, element\+\_\+u\+::pi e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack e element\+\_\+u\+::pi.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2753,14 +2685,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1390 do ficheiro Operations.\+cpp.
+Definido na linha 1386 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::i, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2779,10 +2710,9 @@ Definido na linha 713 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, element\+\_\+u\+::i, element\+\_\+u\+::pi e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack e element\+\_\+u\+::pi.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2801,10 +2731,9 @@ Definido na linha 97 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Int(), flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::empilhar\+Int(), frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2823,10 +2752,9 @@ Definido na linha 102 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Int(), flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::empilhar\+Int(), frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2845,10 +2773,9 @@ Definido na linha 107 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Int(), flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::empilhar\+Int(), frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2867,10 +2794,9 @@ Definido na linha 112 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Int(), flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::empilhar\+Int(), frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2889,10 +2815,9 @@ Definido na linha 117 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Int(), flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::empilhar\+Int(), frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2911,10 +2836,9 @@ Definido na linha 122 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Int(), flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::empilhar\+Int(), frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2933,10 +2857,9 @@ Definido na linha 92 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Int(), flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::empilhar\+Int(), frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2951,14 +2874,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1092 do ficheiro Operations.\+cpp.
+Definido na linha 1088 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::i, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2973,14 +2895,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1785 do ficheiro Operations.\+cpp.
+Definido na linha 1781 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, element\+\_\+u\+::pi e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), frame, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc e element\+\_\+u\+::pi.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2995,14 +2916,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1797 do ficheiro Operations.\+cpp.
+Definido na linha 1793 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, element\+\_\+u\+::pi e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), frame, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc e element\+\_\+u\+::pi.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3017,14 +2937,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1713 do ficheiro Operations.\+cpp.
+Definido na linha 1709 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), frame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack e frame\+\_\+s\+::pc.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3039,14 +2958,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1749 do ficheiro Operations.\+cpp.
+Definido na linha 1745 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, element\+\_\+u\+::is, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), frame, element\+\_\+u\+::is, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack e frame\+\_\+s\+::pc.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3061,14 +2979,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1761 do ficheiro Operations.\+cpp.
+Definido na linha 1757 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), frame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack e frame\+\_\+s\+::pc.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3083,14 +3000,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1773 do ficheiro Operations.\+cpp.
+Definido na linha 1769 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), frame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack e frame\+\_\+s\+::pc.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3105,14 +3021,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1737 do ficheiro Operations.\+cpp.
+Definido na linha 1733 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), frame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack e frame\+\_\+s\+::pc.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3127,14 +3042,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1725 do ficheiro Operations.\+cpp.
+Definido na linha 1721 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), frame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack e frame\+\_\+s\+::pc.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3149,14 +3063,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1655 do ficheiro Operations.\+cpp.
+Definido na linha 1651 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), frame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3171,14 +3084,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1685 do ficheiro Operations.\+cpp.
+Definido na linha 1681 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), frame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3193,14 +3105,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1695 do ficheiro Operations.\+cpp.
+Definido na linha 1691 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), frame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3215,14 +3126,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1704 do ficheiro Operations.\+cpp.
+Definido na linha 1700 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), frame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3237,14 +3147,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1675 do ficheiro Operations.\+cpp.
+Definido na linha 1671 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), frame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3259,14 +3168,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1665 do ficheiro Operations.\+cpp.
+Definido na linha 1661 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), frame, element\+\_\+u\+::i, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3281,14 +3189,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2759 do ficheiro Operations.\+cpp.
+Definido na linha 2754 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, element\+\_\+u\+::pi e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), frame, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc e element\+\_\+u\+::pi.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3303,14 +3210,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2751 do ficheiro Operations.\+cpp.
+Definido na linha 2746 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, element\+\_\+u\+::pi e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), frame, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc e element\+\_\+u\+::pi.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3325,14 +3231,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1444 do ficheiro Operations.\+cpp.
+Definido na linha 1440 do ficheiro Operations.\+cpp.
 
 
 
-Referências flame, Local\+Variables\+::get(), element\+\_\+u\+::i, is\+Wide, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, Local\+Variables\+::set(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::value e frame\+\_\+s\+::variaveis\+Locais.
+Referências frame, Local\+Variables\+::get(), element\+\_\+u\+::i, is\+Wide, frame\+\_\+s\+::local\+Variables, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, Local\+Variables\+::set(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3351,10 +3256,9 @@ Definido na linha 221 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Int(), flame, Local\+Variables\+::get(), element\+\_\+u\+::i, is\+Wide, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::value e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::empilhar\+Int(), frame, Local\+Variables\+::get(), element\+\_\+u\+::i, is\+Wide, frame\+\_\+s\+::local\+Variables, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3373,10 +3277,9 @@ Definido na linha 291 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Int(), flame, Local\+Variables\+::get(), element\+\_\+u\+::i, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::value e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::empilhar\+Int(), frame, Local\+Variables\+::get(), element\+\_\+u\+::i, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3395,10 +3298,9 @@ Definido na linha 297 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Int(), flame, Local\+Variables\+::get(), element\+\_\+u\+::i, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::value e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::empilhar\+Int(), frame, Local\+Variables\+::get(), element\+\_\+u\+::i, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3417,10 +3319,9 @@ Definido na linha 303 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Int(), flame, Local\+Variables\+::get(), element\+\_\+u\+::i, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::value e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::empilhar\+Int(), frame, Local\+Variables\+::get(), element\+\_\+u\+::i, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3439,10 +3340,9 @@ Definido na linha 309 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Int(), flame, Local\+Variables\+::get(), element\+\_\+u\+::i, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::value e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::empilhar\+Int(), frame, Local\+Variables\+::get(), element\+\_\+u\+::i, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3457,14 +3357,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1004 do ficheiro Operations.\+cpp.
+Definido na linha 1000 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::i, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3479,14 +3378,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1262 do ficheiro Operations.\+cpp.
+Definido na linha 1258 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::is, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::is, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3501,11 +3399,11 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2448 do ficheiro Operations.\+cpp.
+Definido na linha 2443 do ficheiro Operations.\+cpp.
 
 
 
-Referências Frame\+Stack\+::adicionar\+Frame(), Frame\+Stack\+::atualizar\+Argumentos(), capturar\+Indice\+De\+Referencia(), frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, frame\+Stack, cp\+\_\+info\+::info, I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+R\+EF, N\+A\+M\+E\+\_\+\+A\+N\+D\+\_\+\+T\+Y\+PE, Static\+Class\+::obter\+Classe\+Leitor\+Exibidor(), Leitor\+Exibidor\+::obter\+Class\+That\+Has\+Serached\+Method(), Leitor\+Exibidor\+::obter\+Constant\+Pool(), Leitor\+Exibidor\+::obter\+Method(), obter\+N\+Bytes\+Value(), Instance\+Class\+::obter\+Static\+Class(), frame\+\_\+s\+::pc, element\+\_\+u\+::pi, frame\+\_\+s\+::pilha\+Operandos, stack\+Threads, cp\+\_\+info\+::tag, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE, Class\+Loader\+Type\+::u2 e typed\+Element\+\_\+s\+::value.
+Referências Pilha\+J\+V\+M\+::adicionar\+Frame(), Pilha\+J\+V\+M\+::atualizar\+Argumentos(), capturar\+Indice\+De\+Referencia(), frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, Cp\+\_\+info\+::info, I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+R\+EF, N\+A\+M\+E\+\_\+\+A\+N\+D\+\_\+\+T\+Y\+PE, Static\+Class\+::obter\+Class\+File(), Class\+File\+::obter\+Class\+That\+Has\+Serached\+Method(), Class\+File\+::obter\+Constant\+Pool(), Class\+File\+::obter\+Method(), obter\+N\+Bytes\+Value(), Instance\+Class\+::obter\+Static\+Class(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc, element\+\_\+u\+::pi, pilha\+J\+VM, stack\+Frame, Cp\+\_\+info\+::tag, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE, Class\+Loader\+Type\+::u2 e typed\+Element\+\_\+s\+::value.
 
 Grafo de chamadas desta função\+:
 \nopagebreak
@@ -3523,11 +3421,11 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2271 do ficheiro Operations.\+cpp.
+Definido na linha 2266 do ficheiro Operations.\+cpp.
 
 
 
-Referências Frame\+Stack\+::adicionar\+Frame(), Frame\+Stack\+::atualizar\+Argumentos(), capturar\+Indice\+De\+Referencia(), frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, frame\+Stack, cp\+\_\+info\+::info, M\+E\+T\+H\+O\+D\+\_\+\+R\+EF, N\+A\+M\+E\+\_\+\+A\+N\+D\+\_\+\+T\+Y\+PE, Method\+Area\+::obter\+Class(), Static\+Class\+::obter\+Classe\+Leitor\+Exibidor(), Leitor\+Exibidor\+::obter\+Class\+That\+Has\+Serached\+Method(), Leitor\+Exibidor\+::obter\+Constant\+Pool(), Leitor\+Exibidor\+::obter\+Method(), obter\+N\+Bytes\+Value(), Instance\+Class\+::obter\+Static\+Class(), frame\+\_\+s\+::pc, element\+\_\+u\+::pi, frame\+\_\+s\+::pilha\+Operandos, stack\+Threads, cp\+\_\+info\+::tag, Class\+Loader\+Type\+::u2 e typed\+Element\+\_\+s\+::value.
+Referências Pilha\+J\+V\+M\+::adicionar\+Frame(), Pilha\+J\+V\+M\+::atualizar\+Argumentos(), capturar\+Indice\+De\+Referencia(), frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, Cp\+\_\+info\+::info, M\+E\+T\+H\+O\+D\+\_\+\+R\+EF, N\+A\+M\+E\+\_\+\+A\+N\+D\+\_\+\+T\+Y\+PE, Method\+Area\+::obter\+Class(), Static\+Class\+::obter\+Class\+File(), Class\+File\+::obter\+Class\+That\+Has\+Serached\+Method(), Class\+File\+::obter\+Constant\+Pool(), Class\+File\+::obter\+Method(), obter\+N\+Bytes\+Value(), Instance\+Class\+::obter\+Static\+Class(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc, element\+\_\+u\+::pi, pilha\+J\+VM, stack\+Frame, Cp\+\_\+info\+::tag, Class\+Loader\+Type\+::u2 e typed\+Element\+\_\+s\+::value.
 
 Grafo de chamadas desta função\+:
 \nopagebreak
@@ -3545,11 +3443,11 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2368 do ficheiro Operations.\+cpp.
+Definido na linha 2363 do ficheiro Operations.\+cpp.
 
 
 
-Referências Frame\+Stack\+::adicionar\+Frame(), Frame\+Stack\+::atualizar\+Argumentos(), capturar\+Indice\+De\+Referencia(), frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, frame\+Stack, cp\+\_\+info\+::info, M\+E\+T\+H\+O\+D\+\_\+\+R\+EF, N\+A\+M\+E\+\_\+\+A\+N\+D\+\_\+\+T\+Y\+PE, Method\+Area\+::obter\+Class(), Static\+Class\+::obter\+Classe\+Leitor\+Exibidor(), Leitor\+Exibidor\+::obter\+Class\+That\+Has\+Serached\+Method(), Leitor\+Exibidor\+::obter\+Constant\+Pool(), Leitor\+Exibidor\+::obter\+Method(), obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos, stack\+Threads, cp\+\_\+info\+::tag e Class\+Loader\+Type\+::u2.
+Referências Pilha\+J\+V\+M\+::adicionar\+Frame(), Pilha\+J\+V\+M\+::atualizar\+Argumentos(), capturar\+Indice\+De\+Referencia(), frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, Cp\+\_\+info\+::info, M\+E\+T\+H\+O\+D\+\_\+\+R\+EF, N\+A\+M\+E\+\_\+\+A\+N\+D\+\_\+\+T\+Y\+PE, Method\+Area\+::obter\+Class(), Static\+Class\+::obter\+Class\+File(), Class\+File\+::obter\+Class\+That\+Has\+Serached\+Method(), Class\+File\+::obter\+Constant\+Pool(), Class\+File\+::obter\+Method(), obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc, pilha\+J\+VM, stack\+Frame, Cp\+\_\+info\+::tag e Class\+Loader\+Type\+::u2.
 
 Grafo de chamadas desta função\+:
 \nopagebreak
@@ -3567,11 +3465,11 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2112 do ficheiro Operations.\+cpp.
+Definido na linha 2107 do ficheiro Operations.\+cpp.
 
 
 
-Referências Frame\+Stack\+::adicionar\+Frame(), Frame\+Stack\+::atualizar\+Argumentos(), element\+\_\+u\+::b, element\+\_\+u\+::bs, capturar\+Indice\+De\+Referencia(), frame\+\_\+s\+::constant\+Pool, element\+\_\+u\+::d, Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), element\+\_\+u\+::f, flame, frame\+Stack, element\+\_\+u\+::i, cp\+\_\+info\+::info, element\+\_\+u\+::is, element\+\_\+u\+::ls, M\+E\+T\+H\+O\+D\+\_\+\+R\+EF, N\+A\+M\+E\+\_\+\+A\+N\+D\+\_\+\+T\+Y\+PE, Method\+Area\+::obter\+Class(), Static\+Class\+::obter\+Classe\+Leitor\+Exibidor(), Leitor\+Exibidor\+::obter\+Class\+That\+Has\+Serached\+Method(), Leitor\+Exibidor\+::obter\+Constant\+Pool(), Leitor\+Exibidor\+::obter\+Method(), obter\+N\+Bytes\+Value(), Instance\+Class\+::obter\+Static\+Class(), obter\+U\+T\+F8(), frame\+\_\+s\+::pc, element\+\_\+u\+::pi, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+B\+O\+OL, R\+T\+\_\+\+B\+Y\+TE, R\+T\+\_\+\+C\+H\+AR, R\+T\+\_\+\+D\+O\+U\+B\+LE, R\+T\+\_\+\+F\+L\+O\+AT, R\+T\+\_\+\+I\+NT, R\+T\+\_\+\+L\+O\+NG, R\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE, R\+T\+\_\+\+S\+H\+O\+RT, element\+\_\+u\+::ss, stack\+Threads, cp\+\_\+info\+::tag, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT, T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE, Class\+Loader\+Type\+::u2 e typed\+Element\+\_\+s\+::value.
+Referências Pilha\+J\+V\+M\+::adicionar\+Frame(), Pilha\+J\+V\+M\+::atualizar\+Argumentos(), element\+\_\+u\+::b, element\+\_\+u\+::bs, capturar\+Indice\+De\+Referencia(), frame\+\_\+s\+::constant\+Pool, element\+\_\+u\+::d, Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), element\+\_\+u\+::f, frame, element\+\_\+u\+::i, Cp\+\_\+info\+::info, element\+\_\+u\+::is, element\+\_\+u\+::ls, M\+E\+T\+H\+O\+D\+\_\+\+R\+EF, N\+A\+M\+E\+\_\+\+A\+N\+D\+\_\+\+T\+Y\+PE, Method\+Area\+::obter\+Class(), Static\+Class\+::obter\+Class\+File(), Class\+File\+::obter\+Class\+That\+Has\+Serached\+Method(), Class\+File\+::obter\+Constant\+Pool(), Class\+File\+::obter\+Method(), obter\+N\+Bytes\+Value(), Instance\+Class\+::obter\+Static\+Class(), obter\+U\+T\+F8(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc, element\+\_\+u\+::pi, pilha\+J\+VM, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+B\+O\+OL, R\+T\+\_\+\+B\+Y\+TE, R\+T\+\_\+\+C\+H\+AR, R\+T\+\_\+\+D\+O\+U\+B\+LE, R\+T\+\_\+\+F\+L\+O\+AT, R\+T\+\_\+\+I\+NT, R\+T\+\_\+\+L\+O\+NG, R\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE, R\+T\+\_\+\+S\+H\+O\+RT, element\+\_\+u\+::ss, stack\+Frame, Cp\+\_\+info\+::tag, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT, T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE, Class\+Loader\+Type\+::u2 e typed\+Element\+\_\+s\+::value.
 
 Grafo de chamadas desta função\+:
 \nopagebreak
@@ -3589,14 +3487,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1416 do ficheiro Operations.\+cpp.
+Definido na linha 1412 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar(), flame, element\+\_\+u\+::i, frame\+\_\+s\+::pilha\+Operandos e T\+Y\+P\+E\+\_\+\+I\+NT.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack e T\+Y\+P\+E\+\_\+\+I\+NT.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3611,14 +3508,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1180 do ficheiro Operations.\+cpp.
+Definido na linha 1176 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::i, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3633,14 +3529,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1893 do ficheiro Operations.\+cpp.
+Definido na linha 1889 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), Operands\+Stack\+::esta\+Vazia(), flame, element\+\_\+u\+::i, frame\+\_\+s\+::pilha\+Operandos, stack\+Threads e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), Operands\+Stack\+::esta\+Vazia(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack, stack\+Frame e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3655,14 +3550,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1312 do ficheiro Operations.\+cpp.
+Definido na linha 1308 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::i, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3677,14 +3571,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1338 do ficheiro Operations.\+cpp.
+Definido na linha 1334 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::is, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::is, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3703,10 +3596,9 @@ Definido na linha 454 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, is\+Wide, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+I\+NT e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, is\+Wide, frame\+\_\+s\+::local\+Variables, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+I\+NT.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3725,10 +3617,9 @@ Definido na linha 518 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+I\+NT e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+I\+NT.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3747,10 +3638,9 @@ Definido na linha 526 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+I\+NT e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+I\+NT.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3769,10 +3659,9 @@ Definido na linha 534 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+I\+NT e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+I\+NT.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3791,10 +3680,9 @@ Definido na linha 542 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+I\+NT e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+I\+NT.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3809,14 +3697,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 916 do ficheiro Operations.\+cpp.
+Definido na linha 912 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::i, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3831,14 +3718,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1364 do ficheiro Operations.\+cpp.
+Definido na linha 1360 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::i, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+I\+NT, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3853,14 +3739,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1430 do ficheiro Operations.\+cpp.
+Definido na linha 1426 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar(), flame, element\+\_\+u\+::i, frame\+\_\+s\+::pilha\+Operandos e T\+Y\+P\+E\+\_\+\+I\+NT.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack e T\+Y\+P\+E\+\_\+\+I\+NT.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3875,14 +3760,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1817 do ficheiro Operations.\+cpp.
+Definido na linha 1813 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Referencia(), flame, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::empilhar\+Referencia(), frame, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack e frame\+\_\+s\+::pc.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3897,14 +3781,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2773 do ficheiro Operations.\+cpp.
+Definido na linha 2768 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Bool(), flame, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::empilhar\+Bool(), frame, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack e frame\+\_\+s\+::pc.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3919,14 +3802,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1489 do ficheiro Operations.\+cpp.
+Definido na linha 1485 do ficheiro Operations.\+cpp.
 
 
 
-Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Double(), flame, element\+\_\+u\+::l e frame\+\_\+s\+::pilha\+Operandos.
+Referências element\+\_\+u\+::d, Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Double(), frame, element\+\_\+u\+::l e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3941,14 +3823,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1483 do ficheiro Operations.\+cpp.
+Definido na linha 1479 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar(), element\+\_\+u\+::f, flame, element\+\_\+u\+::l, frame\+\_\+s\+::pilha\+Operandos e T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar(), element\+\_\+u\+::f, frame, element\+\_\+u\+::l, frame\+\_\+s\+::operands\+Stack e T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3963,14 +3844,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1477 do ficheiro Operations.\+cpp.
+Definido na linha 1473 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar(), flame, element\+\_\+u\+::i, element\+\_\+u\+::l, frame\+\_\+s\+::pilha\+Operandos e T\+Y\+P\+E\+\_\+\+I\+NT.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar(), frame, element\+\_\+u\+::i, element\+\_\+u\+::l, frame\+\_\+s\+::operands\+Stack e T\+Y\+P\+E\+\_\+\+I\+NT.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3985,14 +3865,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 850 do ficheiro Operations.\+cpp.
+Definido na linha 846 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::l, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::l, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4011,10 +3890,9 @@ Definido na linha 417 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, Local\+Variables\+::get(), element\+\_\+u\+::i, element\+\_\+u\+::pi e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, Local\+Variables\+::get(), element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack e element\+\_\+u\+::pi.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4029,14 +3907,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1403 do ficheiro Operations.\+cpp.
+Definido na linha 1399 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::l, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::l, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4051,14 +3928,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 728 do ficheiro Operations.\+cpp.
+Definido na linha 724 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, element\+\_\+u\+::i, element\+\_\+u\+::l, element\+\_\+u\+::pi, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, Local\+Variables\+::set(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), frame, element\+\_\+u\+::i, element\+\_\+u\+::l, frame\+\_\+s\+::operands\+Stack, element\+\_\+u\+::pi, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, Local\+Variables\+::set(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4073,14 +3949,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1558 do ficheiro Operations.\+cpp.
+Definido na linha 1554 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), flame, element\+\_\+u\+::ls e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Int(), frame, element\+\_\+u\+::ls e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4099,10 +3974,9 @@ Definido na linha 127 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Long(), flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::empilhar\+Long(), frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4121,10 +3995,9 @@ Definido na linha 132 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Long(), flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::empilhar\+Long(), frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4143,10 +4016,9 @@ Definido na linha 179 do ficheiro Operations.\+cpp.
 
 
 
-Referências Class\+Loader\+Type\+::array, frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::empilhar(), Operands\+Stack\+::empilhar\+Referencia(), flame, element\+\_\+u\+::i, cp\+\_\+info\+::info, I\+N\+T\+E\+G\+ER, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos, S\+T\+R\+I\+NG, cp\+\_\+info\+::tag, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT, T\+Y\+P\+E\+\_\+\+I\+NT, Class\+Loader\+Type\+::u2 e Class\+Loader\+Type\+::u4.
+Referências Class\+Loader\+Type\+::array, frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::empilhar(), Operands\+Stack\+::empilhar\+Referencia(), frame, element\+\_\+u\+::i, Cp\+\_\+info\+::info, I\+N\+T\+E\+G\+ER, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc, S\+T\+R\+I\+NG, Cp\+\_\+info\+::tag, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT, T\+Y\+P\+E\+\_\+\+I\+NT, Class\+Loader\+Type\+::u2 e Class\+Loader\+Type\+::u4.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4165,7 +4037,7 @@ Definido na linha 207 do ficheiro Operations.\+cpp.
 
 
 
-Referências frame\+\_\+s\+::constant\+Pool, converter\+\_\+u4\+\_\+to\+\_\+double(), converter\+\_\+u4\+\_\+to\+\_\+long(), Operands\+Stack\+::empilhar\+Double(), Operands\+Stack\+::empilhar\+Long(), flame, cp\+\_\+info\+::info, L\+O\+NG, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos e cp\+\_\+info\+::tag.
+Referências frame\+\_\+s\+::constant\+Pool, converter\+\_\+u4\+\_\+to\+\_\+double(), converter\+\_\+u4\+\_\+to\+\_\+long(), Operands\+Stack\+::empilhar\+Double(), Operands\+Stack\+::empilhar\+Long(), frame, Cp\+\_\+info\+::info, L\+O\+NG, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc e Cp\+\_\+info\+::tag.
 
 Grafo de chamadas desta função\+:
 \nopagebreak
@@ -4187,10 +4059,9 @@ Definido na linha 196 do ficheiro Operations.\+cpp.
 
 
 
-Referências Class\+Loader\+Type\+::array, frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::empilhar\+Int(), Operands\+Stack\+::empilhar\+Referencia(), flame, cp\+\_\+info\+::info, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos, S\+T\+R\+I\+NG, cp\+\_\+info\+::tag, Class\+Loader\+Type\+::u2 e Class\+Loader\+Type\+::u4.
+Referências Class\+Loader\+Type\+::array, frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::empilhar\+Int(), Operands\+Stack\+::empilhar\+Referencia(), frame, Cp\+\_\+info\+::info, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc, S\+T\+R\+I\+NG, Cp\+\_\+info\+::tag, Class\+Loader\+Type\+::u2 e Class\+Loader\+Type\+::u4.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4205,14 +4076,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1114 do ficheiro Operations.\+cpp.
+Definido na linha 1110 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::l, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::l, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4231,10 +4101,9 @@ Definido na linha 236 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Long(), flame, Local\+Variables\+::get(), is\+Wide, element\+\_\+u\+::l, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::value e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::empilhar\+Long(), frame, Local\+Variables\+::get(), is\+Wide, element\+\_\+u\+::l, frame\+\_\+s\+::local\+Variables, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4255,8 +4124,7 @@ Definido na linha 315 do ficheiro Operations.\+cpp.
 
 Referências lload\+\_\+n().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4277,8 +4145,7 @@ Definido na linha 320 do ficheiro Operations.\+cpp.
 
 Referências lload\+\_\+n().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4299,8 +4166,7 @@ Definido na linha 330 do ficheiro Operations.\+cpp.
 
 Referências lload\+\_\+n().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4321,8 +4187,7 @@ Definido na linha 334 do ficheiro Operations.\+cpp.
 
 Referências lload\+\_\+n().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4341,14 +4206,13 @@ Definido na linha 325 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Long(), flame, Local\+Variables\+::get(), element\+\_\+u\+::l, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::value e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::empilhar\+Long(), frame, Local\+Variables\+::get(), element\+\_\+u\+::l, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack e typed\+Element\+\_\+s\+::value.
 
 
 
 Referenciado por lload\+\_\+0(), lload\+\_\+1(), lload\+\_\+2() e lload\+\_\+3().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4363,14 +4227,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1026 do ficheiro Operations.\+cpp.
+Definido na linha 1022 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::l, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::l, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4385,14 +4248,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1274 do ficheiro Operations.\+cpp.
+Definido na linha 1270 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::ls, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::ls, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4407,14 +4269,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1867 do ficheiro Operations.\+cpp.
+Definido na linha 1863 do ficheiro Operations.\+cpp.
 
 
 
-Referências method\+\_\+info\+::attributes, code\+\_\+attribute\+::codigo, t\+\_\+info\+::codigo\+Atributo, Operands\+Stack\+::desempilha(), flame, attribute\+\_\+info\+::info, element\+\_\+u\+::is, frame\+\_\+s\+::method, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc e frame\+\_\+s\+::pilha\+Operandos.
+Referências Method\+\_\+info\+::attributes, T\+\_\+info\+::code\+Attribute, Code\+\_\+attribute\+::codigo, Operands\+Stack\+::desempilha(), frame, Attribute\+\_\+info\+::info, element\+\_\+u\+::is, frame\+\_\+s\+::method, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack e frame\+\_\+s\+::pc.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4429,14 +4290,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1423 do ficheiro Operations.\+cpp.
+Definido na linha 1419 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar(), flame, element\+\_\+u\+::l, frame\+\_\+s\+::pilha\+Operandos e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar(), frame, element\+\_\+u\+::l, frame\+\_\+s\+::operands\+Stack e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4451,14 +4311,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1197 do ficheiro Operations.\+cpp.
+Definido na linha 1193 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::l, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::l, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4473,14 +4332,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1905 do ficheiro Operations.\+cpp.
+Definido na linha 1901 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Long(), Operands\+Stack\+::esta\+Vazia(), flame, element\+\_\+u\+::l, frame\+\_\+s\+::pilha\+Operandos, stack\+Threads e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Long(), Operands\+Stack\+::esta\+Vazia(), frame, element\+\_\+u\+::l, frame\+\_\+s\+::operands\+Stack, stack\+Frame e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4495,14 +4353,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1325 do ficheiro Operations.\+cpp.
+Definido na linha 1321 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::l, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::l, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4517,14 +4374,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1351 do ficheiro Operations.\+cpp.
+Definido na linha 1347 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::ls, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::ls, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4543,10 +4399,9 @@ Definido na linha 438 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, is\+Wide, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+L\+O\+NG e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, is\+Wide, frame\+\_\+s\+::local\+Variables, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4565,10 +4420,9 @@ Definido na linha 430 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set(), typed\+Element\+\_\+s\+::type e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4587,10 +4441,9 @@ Definido na linha 593 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+L\+O\+NG e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4609,10 +4462,9 @@ Definido na linha 601 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+L\+O\+NG e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4631,10 +4483,9 @@ Definido na linha 609 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, Local\+Variables\+::set(), T\+Y\+P\+E\+\_\+\+L\+O\+NG e frame\+\_\+s\+::variaveis\+Locais.
+Referências Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::local\+Variables, frame\+\_\+s\+::operands\+Stack, Local\+Variables\+::set() e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4649,14 +4500,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 938 do ficheiro Operations.\+cpp.
+Definido na linha 934 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::l, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Topo\+Tipo(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::l, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4671,14 +4521,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1377 do ficheiro Operations.\+cpp.
+Definido na linha 1373 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::l, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::l, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+L\+O\+NG, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+L\+O\+NG e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4693,14 +4542,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1437 do ficheiro Operations.\+cpp.
+Definido na linha 1433 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar(), flame, element\+\_\+u\+::l, frame\+\_\+s\+::pilha\+Operandos e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar(), frame, element\+\_\+u\+::l, frame\+\_\+s\+::operands\+Stack e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4715,11 +4563,11 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2627 do ficheiro Operations.\+cpp.
+Definido na linha 2622 do ficheiro Operations.\+cpp.
 
 
 
-Referências capturar\+Indice\+De\+Referencia(), C\+L\+A\+SS, frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, element\+\_\+u\+::i, cp\+\_\+info\+::info, Method\+Area\+::obter\+Class(), obter\+N\+Bytes\+Value(), obter\+New\+Multi\+Array(), frame\+\_\+s\+::pc, element\+\_\+u\+::pi, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+B\+O\+OL, R\+T\+\_\+\+B\+Y\+TE, R\+T\+\_\+\+C\+H\+AR, R\+T\+\_\+\+D\+O\+U\+B\+LE, R\+T\+\_\+\+F\+L\+O\+AT, R\+T\+\_\+\+I\+NT, R\+T\+\_\+\+L\+O\+NG, R\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE, R\+T\+\_\+\+S\+H\+O\+RT, cp\+\_\+info\+::tag, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT, T\+Y\+P\+E\+\_\+\+I\+NT, T\+Y\+P\+E\+\_\+\+L\+O\+NG, T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE, Class\+Loader\+Type\+::u2 e typed\+Element\+\_\+s\+::value.
+Referências capturar\+Indice\+De\+Referencia(), C\+L\+A\+SS, frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, element\+\_\+u\+::i, Cp\+\_\+info\+::info, Method\+Area\+::obter\+Class(), obter\+N\+Bytes\+Value(), obter\+New\+Multi\+Array(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc, element\+\_\+u\+::pi, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+B\+O\+OL, R\+T\+\_\+\+B\+Y\+TE, R\+T\+\_\+\+C\+H\+AR, R\+T\+\_\+\+D\+O\+U\+B\+LE, R\+T\+\_\+\+F\+L\+O\+AT, R\+T\+\_\+\+I\+NT, R\+T\+\_\+\+L\+O\+NG, R\+T\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE, R\+T\+\_\+\+S\+H\+O\+RT, Cp\+\_\+info\+::tag, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT, T\+Y\+P\+E\+\_\+\+I\+NT, T\+Y\+P\+E\+\_\+\+L\+O\+NG, T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE, Class\+Loader\+Type\+::u2 e typed\+Element\+\_\+s\+::value.
 
 Grafo de chamadas desta função\+:
 \nopagebreak
@@ -4737,14 +4585,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2538 do ficheiro Operations.\+cpp.
+Definido na linha 2533 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Referencia(), flame, element\+\_\+u\+::is, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos e typed\+Element\+\_\+s\+::type.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Referencia(), frame, element\+\_\+u\+::is, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc e typed\+Element\+\_\+s\+::type.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4794,7 +4641,7 @@ Referenciado por aload(), anewarray(), astore(), bipush(), dload(), dstore(), fl
 
 
 
-Definido na linha 2722 do ficheiro Operations.\+cpp.
+Definido na linha 2717 do ficheiro Operations.\+cpp.
 
 
 
@@ -4823,11 +4670,11 @@ Recursively search for a static class that contains specific field.
 \end{DoxyParams}
 
 
-Definido na linha 1969 do ficheiro Operations.\+cpp.
+Definido na linha 1965 do ficheiro Operations.\+cpp.
 
 
 
-Referências capturar\+Indice\+De\+Referencia(), Method\+Area\+::obter\+Class(), Static\+Class\+::obter\+Classe\+Leitor\+Exibidor(), Leitor\+Exibidor\+::obter\+Constant\+Pool(), Static\+Class\+::obter\+Field(), Leitor\+Exibidor\+::obter\+Super\+\_\+class(), typed\+Element\+\_\+s\+::type e T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+S\+ET.
+Referências capturar\+Indice\+De\+Referencia(), Method\+Area\+::obter\+Class(), Static\+Class\+::obter\+Class\+File(), Class\+File\+::obter\+Constant\+Pool(), Static\+Class\+::obter\+Field(), Class\+File\+::obter\+Super\+\_\+class(), typed\+Element\+\_\+s\+::type e T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+S\+ET.
 
 
 
@@ -4849,7 +4696,7 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2707 do ficheiro Operations.\+cpp.
+Definido na linha 2702 do ficheiro Operations.\+cpp.
 
 
 
@@ -4863,14 +4710,13 @@ Referências N\+\_\+array\+::array e N\+\_\+array\+::dims.
 
 
 
-Definido na linha 2789 do ficheiro Operations.\+cpp.
+Definido na linha 2784 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Typed(), flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha\+Typed(), frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4885,14 +4731,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2793 do ficheiro Operations.\+cpp.
+Definido na linha 2788 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Typed(), flame, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
+Referências Operands\+Stack\+::desempilha\+Typed(), frame, frame\+\_\+s\+::operands\+Stack, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE e T\+Y\+P\+E\+\_\+\+L\+O\+NG.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4907,11 +4752,11 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2093 do ficheiro Operations.\+cpp.
+Definido na linha 2088 do ficheiro Operations.\+cpp.
 
 
 
-Referências Instance\+Class\+::atualizar\+Field(), Instance\+Class\+::atualizar\+Field\+Finals(), capturar\+Indice\+De\+Referencia(), frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Typed(), flame, cp\+\_\+info\+::info, frame\+\_\+s\+::method, method\+\_\+info\+::name\+\_\+index, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, element\+\_\+u\+::pi, frame\+\_\+s\+::pilha\+Operandos e Class\+Loader\+Type\+::u2.
+Referências Instance\+Class\+::atualizar\+Field(), Instance\+Class\+::atualizar\+Field\+Finals(), capturar\+Indice\+De\+Referencia(), frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::desempilha(), Operands\+Stack\+::desempilha\+Typed(), frame, Cp\+\_\+info\+::info, frame\+\_\+s\+::method, Method\+\_\+info\+::name\+\_\+index, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc, element\+\_\+u\+::pi e Class\+Loader\+Type\+::u2.
 
 Grafo de chamadas desta função\+:
 \nopagebreak
@@ -4929,11 +4774,11 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2035 do ficheiro Operations.\+cpp.
+Definido na linha 2030 do ficheiro Operations.\+cpp.
 
 
 
-Referências Static\+Class\+::atualizar\+Field(), capturar\+Indice\+De\+Referencia(), frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::desempilha\+Typed(), F\+I\+E\+L\+D\+\_\+\+R\+EF, flame, cp\+\_\+info\+::info, N\+A\+M\+E\+\_\+\+A\+N\+D\+\_\+\+T\+Y\+PE, Method\+Area\+::obter\+Class(), obter\+N\+Bytes\+Value(), obter\+Static\+Class\+That\+Has\+Field(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos, stack\+Threads, cp\+\_\+info\+::tag, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+B\+O\+OL e Class\+Loader\+Type\+::u2.
+Referências Static\+Class\+::atualizar\+Field(), capturar\+Indice\+De\+Referencia(), frame\+\_\+s\+::constant\+Pool, Operands\+Stack\+::desempilha\+Typed(), F\+I\+E\+L\+D\+\_\+\+R\+EF, frame, Cp\+\_\+info\+::info, N\+A\+M\+E\+\_\+\+A\+N\+D\+\_\+\+T\+Y\+PE, Method\+Area\+::obter\+Class(), obter\+N\+Bytes\+Value(), obter\+Static\+Class\+That\+Has\+Field(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc, stack\+Frame, Cp\+\_\+info\+::tag, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+B\+O\+OL e Class\+Loader\+Type\+::u2.
 
 Grafo de chamadas desta função\+:
 \nopagebreak
@@ -4955,10 +4800,9 @@ Definido na linha 587 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame, Local\+Variables\+::get(), element\+\_\+u\+::i, element\+\_\+u\+::pi e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame, Local\+Variables\+::get(), element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack e element\+\_\+u\+::pi.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4973,14 +4817,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 814 do ficheiro Operations.\+cpp.
+Definido na linha 810 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha(), flame, element\+\_\+u\+::i, element\+\_\+u\+::pi, frame\+\_\+s\+::pilha\+Operandos, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+S\+H\+O\+RT, Local\+Variables\+::set(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
+Referências Operands\+Stack\+::desempilha(), frame, element\+\_\+u\+::i, frame\+\_\+s\+::operands\+Stack, element\+\_\+u\+::pi, typed\+Element\+\_\+s\+::real\+Type, R\+T\+\_\+\+S\+H\+O\+RT, Local\+Variables\+::set(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+I\+NT e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4999,10 +4842,9 @@ Definido na linha 170 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::empilhar\+Int(), flame, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::empilhar\+Int(), frame, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack e frame\+\_\+s\+::pc.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -5017,14 +4859,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2899 do ficheiro Operations.\+cpp.
+Definido na linha 2894 do ficheiro Operations.\+cpp.
 
 
 
-Referências Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), flame e frame\+\_\+s\+::pilha\+Operandos.
+Referências Operands\+Stack\+::desempilha\+Typed(), Operands\+Stack\+::empilhar\+Typed\+Element(), frame e frame\+\_\+s\+::operands\+Stack.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -5039,14 +4880,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 1836 do ficheiro Operations.\+cpp.
+Definido na linha 1832 do ficheiro Operations.\+cpp.
 
 
 
-Referências method\+\_\+info\+::attributes, code\+\_\+attribute\+::codigo, t\+\_\+info\+::codigo\+Atributo, Operands\+Stack\+::desempilha\+Typed(), flame, attribute\+\_\+info\+::info, element\+\_\+u\+::is, frame\+\_\+s\+::method, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::pc, frame\+\_\+s\+::pilha\+Operandos e typed\+Element\+\_\+s\+::value.
+Referências Method\+\_\+info\+::attributes, T\+\_\+info\+::code\+Attribute, Code\+\_\+attribute\+::codigo, Operands\+Stack\+::desempilha\+Typed(), frame, Attribute\+\_\+info\+::info, element\+\_\+u\+::is, frame\+\_\+s\+::method, obter\+N\+Bytes\+Value(), frame\+\_\+s\+::operands\+Stack, frame\+\_\+s\+::pc e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -5061,14 +4901,13 @@ Grafo de chamadas desta função\+:
 
 
 
-Definido na linha 2620 do ficheiro Operations.\+cpp.
+Definido na linha 2615 do ficheiro Operations.\+cpp.
 
 
 
-Referências executar\+Operacao(), flame, is\+Wide, obter\+N\+Bytes\+Value() e frame\+\_\+s\+::pc.
+Referências executar\+Operacao(), frame, is\+Wide, obter\+N\+Bytes\+Value() e frame\+\_\+s\+::pc.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -5078,11 +4917,11 @@ Grafo de chamadas desta função\+:
 
 
 \subsection{Documentação dos dados membro}
-\mbox{\Hypertarget{classOperations_a578012ad7aafe27db149c6e421bef1a6}\label{classOperations_a578012ad7aafe27db149c6e421bef1a6}} 
-\index{Operations@{Operations}!flame@{flame}}
-\index{flame@{flame}!Operations@{Operations}}
-\subsubsection{\texorpdfstring{flame}{flame}}
-{\footnotesize\ttfamily \hyperlink{Frame_8h_acc380914b41a084dcc8e4b38fb200145}{Frame} $\ast$ Operations\+::flame = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+\mbox{\Hypertarget{classOperations_a0dc7b3710786c9cbd14801ac3e5d34b2}\label{classOperations_a0dc7b3710786c9cbd14801ac3e5d34b2}} 
+\index{Operations@{Operations}!frame@{frame}}
+\index{frame@{frame}!Operations@{Operations}}
+\subsubsection{\texorpdfstring{frame}{frame}}
+{\footnotesize\ttfamily \hyperlink{PilhaJVM_8h_acc380914b41a084dcc8e4b38fb200145}{Frame} $\ast$ Operations\+::frame = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
 
 
@@ -5091,20 +4930,6 @@ Definido na linha 39 do ficheiro Operations.\+h.
 
 
 Referenciado por aaload(), aastore(), aconst\+\_\+null(), aload(), aload\+\_\+n(), anewarray(), areturn(), arraylength(), astore(), astore\+\_\+0(), astore\+\_\+1(), astore\+\_\+2(), astore\+\_\+3(), athrow(), atualizar\+Frame(), baload(), bastore(), bipush(), caload(), castore(), d2f(), d2i(), d2l(), dadd(), daload(), dastore(), dcmpg(), dcmpl(), dconst\+\_\+0(), dconst\+\_\+1(), ddiv(), dload(), dload\+\_\+n(), dmul(), dneg(), drem(), dreturn(), dstore(), dstore\+\_\+0(), dstore\+\_\+1(), dstore\+\_\+2(), dstore\+\_\+3(), dsub(), dup(), dup2(), dup2\+\_\+x1(), dup2\+\_\+x2(), dup\+\_\+x1(), dup\+\_\+x2(), f2d(), f2i(), f2l(), fadd(), faload(), fastore(), fcmpg(), fcmpl(), fconst\+\_\+0(), fconst\+\_\+1(), fconst\+\_\+2(), fdiv(), fload(), fload\+\_\+n(), fmul(), fneg(), frem(), freturn(), fstore(), fstore\+\_\+0(), fstore\+\_\+1(), fstore\+\_\+2(), fstore\+\_\+3(), fsub(), func\+\_\+new(), func\+\_\+return(), funcgoto(), funcret(), getfield(), getstatic(), goto\+\_\+w(), i2b(), i2c(), i2d(), i2f(), i2l(), i2s(), iadd(), iaload(), iand(), iastore(), iconst\+\_\+0(), iconst\+\_\+1(), iconst\+\_\+2(), iconst\+\_\+3(), iconst\+\_\+4(), iconst\+\_\+5(), iconst\+\_\+m1(), idiv(), if\+\_\+acmpeq(), if\+\_\+acmpne(), if\+\_\+icmpeq(), if\+\_\+icmpge(), if\+\_\+icmpgt(), if\+\_\+icmple(), if\+\_\+icmplt(), if\+\_\+icmpne(), ifeq(), ifge(), ifgt(), ifle(), iflt(), ifne(), ifnonnull(), ifnull(), iinc(), iload(), iload\+\_\+0(), iload\+\_\+1(), iload\+\_\+2(), iload\+\_\+3(), imul(), ineg(), invokeinterface(), invokespecial(), invokestatic(), invokevirtual(), ior(), irem(), ireturn(), ishl(), ishr(), istore(), istore\+\_\+0(), istore\+\_\+1(), istore\+\_\+2(), istore\+\_\+3(), isub(), iushr(), ixor(), jsr(), jsr\+\_\+w(), l2d(), l2f(), l2i(), ladd(), laload(), land(), lastore(), lcmp(), lconst\+\_\+0(), lconst\+\_\+1(), ldc(), ldc2\+\_\+w(), ldc\+\_\+w(), ldiv(), lload(), lload\+\_\+n(), lmul(), lneg(), lookupswitch(), lor(), lrem(), lreturn(), lshl(), lshr(), lstore(), lstore\+\_\+0(), lstore\+\_\+1(), lstore\+\_\+2(), lstore\+\_\+3(), lsub(), lushr(), lxor(), multianewarray(), newarray(), Operations(), pop(), pop2(), putfield(), putstatic(), saload(), sastore(), sipush(), swap(), tableswitch() e wide().
-
-\mbox{\Hypertarget{classOperations_a72ff498d126bb8082b3ac70ccb6e953a}\label{classOperations_a72ff498d126bb8082b3ac70ccb6e953a}} 
-\index{Operations@{Operations}!frame\+Stack@{frame\+Stack}}
-\index{frame\+Stack@{frame\+Stack}!Operations@{Operations}}
-\subsubsection{\texorpdfstring{frame\+Stack}{frameStack}}
-{\footnotesize\ttfamily \hyperlink{classFrameStack}{Frame\+Stack} $\ast$ Operations\+::frame\+Stack = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
-
-
-
-Definido na linha 41 do ficheiro Operations.\+h.
-
-
-
-Referenciado por atualizar\+Frame\+Stack(), func\+\_\+return(), invokeinterface(), invokespecial(), invokestatic() e invokevirtual().
 
 \mbox{\Hypertarget{classOperations_a7cb32c09e40f348cabf0b7af374ad278}\label{classOperations_a7cb32c09e40f348cabf0b7af374ad278}} 
 \index{Operations@{Operations}!funcao\+Generica\+Opcodes@{funcao\+Generica\+Opcodes}}
@@ -5134,11 +4959,25 @@ Definido na linha 38 do ficheiro Operations.\+h.
 
 Referenciado por aload(), astore(), dload(), dstore(), fload(), fstore(), funcret(), iinc(), iload(), istore(), lload(), lstore() e wide().
 
-\mbox{\Hypertarget{classOperations_af0867c8994e496c70f9c3157eeb8a287}\label{classOperations_af0867c8994e496c70f9c3157eeb8a287}} 
-\index{Operations@{Operations}!stack\+Threads@{stack\+Threads}}
-\index{stack\+Threads@{stack\+Threads}!Operations@{Operations}}
-\subsubsection{\texorpdfstring{stack\+Threads}{stackThreads}}
-{\footnotesize\ttfamily stack$<$ struct \hyperlink{structframe__s}{frame\+\_\+s} $\ast$ $>$ $\ast$ Operations\+::stack\+Threads = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+\mbox{\Hypertarget{classOperations_a1a7c399bf01fabfc223a3f84f7fcace0}\label{classOperations_a1a7c399bf01fabfc223a3f84f7fcace0}} 
+\index{Operations@{Operations}!pilha\+J\+VM@{pilha\+J\+VM}}
+\index{pilha\+J\+VM@{pilha\+J\+VM}!Operations@{Operations}}
+\subsubsection{\texorpdfstring{pilha\+J\+VM}{pilhaJVM}}
+{\footnotesize\ttfamily \hyperlink{classPilhaJVM}{Pilha\+J\+VM} $\ast$ Operations\+::pilha\+J\+VM = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definido na linha 41 do ficheiro Operations.\+h.
+
+
+
+Referenciado por atualizar\+Pilha\+J\+V\+M(), func\+\_\+return(), invokeinterface(), invokespecial(), invokestatic() e invokevirtual().
+
+\mbox{\Hypertarget{classOperations_ae813b6fad395a04f6cd8e0c355dc056d}\label{classOperations_ae813b6fad395a04f6cd8e0c355dc056d}} 
+\index{Operations@{Operations}!stack\+Frame@{stack\+Frame}}
+\index{stack\+Frame@{stack\+Frame}!Operations@{Operations}}
+\subsubsection{\texorpdfstring{stack\+Frame}{stackFrame}}
+{\footnotesize\ttfamily stack$<$ struct \hyperlink{structframe__s}{frame\+\_\+s} $\ast$ $>$ $\ast$ Operations\+::stack\+Frame = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
 
 
@@ -5146,7 +4985,7 @@ Definido na linha 40 do ficheiro Operations.\+h.
 
 
 
-Referenciado por areturn(), atualizar\+Threads(), dreturn(), freturn(), getstatic(), invokeinterface(), invokespecial(), invokestatic(), invokevirtual(), ireturn(), lreturn() e putstatic().
+Referenciado por areturn(), atualizar\+Stack\+Frame(), dreturn(), freturn(), getstatic(), invokeinterface(), invokespecial(), invokestatic(), invokevirtual(), ireturn(), lreturn() e putstatic().
 
 
 

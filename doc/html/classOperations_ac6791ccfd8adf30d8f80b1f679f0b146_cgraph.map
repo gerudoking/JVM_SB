@@ -1,16 +1,16 @@
 <map id="Operations::putstatic" name="Operations::putstatic">
 <area shape="rect" id="node2" href="$classStaticClass.html#aa0d9a3db46155bf6971476a22c4f2eaa" title="Coloca um novo valor pra um field. " alt="" coords="208,5,383,32"/>
-<area shape="rect" id="node3" href="$ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="459,56,643,83"/>
+<area shape="rect" id="node3" href="$ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="447,56,631,83"/>
 <area shape="rect" id="node5" href="$classOperandsStack.html#a9503313a7def4c11fb782d5881e3d6cb" title="Desempilha o topo da pilha de operandos e retorna em um elemento tipado. " alt="" coords="202,223,389,265"/>
-<area shape="rect" id="node9" href="$classMethodArea.html#a6e9d922892887daadd4624729268094f" title="Retorna referência para classe estática. " alt="" coords="470,107,633,133"/>
+<area shape="rect" id="node9" href="$classMethodArea.html#a6e9d922892887daadd4624729268094f" title="Retorna referência para classe estática. " alt="" coords="458,107,621,133"/>
 <area shape="rect" id="node10" href="$classOperations.html#a6906050cc72d774f77d8ba33607b1c62" title="Function that returns a n bytes value. " alt="" coords="196,289,395,316"/>
 <area shape="rect" id="node11" href="$classOperations.html#a2e9f822a1a6b9b0fb374eafb5a55f9f4" title="Recursively search for a static class that contains specific field. " alt="" coords="200,158,391,199"/>
-<area shape="rect" id="node4" href="$BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="759,56,843,83"/>
-<area shape="rect" id="node6" href="$classOperandsStack.html#a3213a1b633149de9332217d403ee84b6" title="Desempilha o topo da pilha de operandos e retorna em um elemento de valor. " alt="" coords="458,391,645,417"/>
-<area shape="rect" id="node7" href="$classOperandsStack.html#a184a99d160e17ef874a7b83f0726fb8a" title="Recupera o valor do topo da pilha de operandos. " alt="" coords="708,413,895,454"/>
-<area shape="rect" id="node8" href="$classOperandsStack.html#aa6dbee87661011453ba2c57405bd9a4e" title="Retorna se a pilha está vazia (1) ou não (0) " alt="" coords="943,391,1121,417"/>
-<area shape="rect" id="node12" href="$classStaticClass.html#ae028bd9e2b93b69b91b22348a0b4848d" title="Retorna as informações do class file. " alt="" coords="467,223,635,265"/>
-<area shape="rect" id="node13" href="$classLeitorExibidor.html#ab286b420bb915f3444ec78a003f4c25c" title="Retorna referencia a constant pool. " alt="" coords="443,289,660,316"/>
-<area shape="rect" id="node14" href="$classStaticClass.html#ac6d7d4b5b1c315623a8be477c66f38c3" title="Retorna as informações de um field. " alt="" coords="474,340,629,367"/>
-<area shape="rect" id="node15" href="$classLeitorExibidor.html#ab46841a0392f45a35a5444dca234a1ae" title="Retorna um índice da constant pool que aponta para string com nome da superclass. ..." alt="" coords="465,158,637,199"/>
+<area shape="rect" id="node4" href="$BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="735,56,819,83"/>
+<area shape="rect" id="node6" href="$classOperandsStack.html#a3213a1b633149de9332217d403ee84b6" title="Desempilha o topo da pilha de operandos e retorna em um elemento de valor. " alt="" coords="446,376,633,403"/>
+<area shape="rect" id="node7" href="$classOperandsStack.html#a184a99d160e17ef874a7b83f0726fb8a" title="Recupera o valor do topo da pilha de operandos. " alt="" coords="684,398,871,439"/>
+<area shape="rect" id="node8" href="$classOperandsStack.html#aa6dbee87661011453ba2c57405bd9a4e" title="Retorna se a pilha está vazia (1) ou não (0) " alt="" coords="919,376,1097,403"/>
+<area shape="rect" id="node12" href="$classStaticClass.html#a49b4258a26420be4c6a1a79cdbdc2d5c" title="Retorna as informações do class file. " alt="" coords="448,224,631,251"/>
+<area shape="rect" id="node13" href="$classClassFile.html#ab70fe581c4b7a1824adf490c3a53bcc7" title="Retorna referencia a constant pool. " alt="" coords="443,275,636,301"/>
+<area shape="rect" id="node14" href="$classStaticClass.html#ac6d7d4b5b1c315623a8be477c66f38c3" title="Retorna as informações de um field. " alt="" coords="462,325,617,352"/>
+<area shape="rect" id="node15" href="$classClassFile.html#a8f248001f388181db10e76602031d560" title="Retorna um índice da constant pool que aponta para string com nome da superclass. ..." alt="" coords="465,158,613,199"/>
 </map>

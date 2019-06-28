@@ -12,7 +12,7 @@ var searchData=
   ['dconst_5f0',['dconst_0',['../classOperations.html#abd7f711342c43f7fa4e93b41931e6c86',1,'Operations']]],
   ['dconst_5f1',['dconst_1',['../classOperations.html#a1a704891f81e3b532bf0eaad94429773',1,'Operations']]],
   ['ddiv',['ddiv',['../classOperations.html#a3c323c9f0d40e68bf54cd449a55618c3',1,'Operations']]],
-  ['descriptor_5findex',['descriptor_index',['../structfield__info.html#afe39e4e9e594dfce15635923ad7d1f06',1,'field_info::descriptor_index()'],['../structmethod__info.html#abccd6a5202d4c0ee1be6b89692d0352a',1,'method_info::descriptor_index()']]],
+  ['descriptor_5findex',['descriptor_index',['../structField__info.html#a317d816b6661095bde8c391905385f10',1,'Field_info::descriptor_index()'],['../structMethod__info.html#af713175c97f681296e801e0c11e0ae34',1,'Method_info::descriptor_index()']]],
   ['desempilha',['desempilha',['../classOperandsStack.html#a3213a1b633149de9332217d403ee84b6',1,'OperandsStack']]],
   ['desempilhatopotipo',['desempilhaTopoTipo',['../classOperandsStack.html#a8c76f12ad6984b3c5b4ec8807eb63ae3',1,'OperandsStack']]],
   ['desempilhatopovalor',['desempilhaTopoValor',['../classOperandsStack.html#a184a99d160e17ef874a7b83f0726fb8a',1,'OperandsStack']]],

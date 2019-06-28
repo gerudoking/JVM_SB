@@ -6,8 +6,7 @@ Módulo responsável pela manipulação dos campos existentes no arquivo .class.
 
 
 {\ttfamily \#include \char`\"{}Fields.\+h\char`\"{}}\newline
-Diagrama de dependências de inclusão para Fields.\+cpp\+:
-\nopagebreak
+Diagrama de dependências de inclusão para Fields.\+cpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,17 +16,17 @@ Diagrama de dependências de inclusão para Fields.\+cpp\+:
 \subsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{Fields_8cpp_a7b9a4ddf3bd1b0fa1bb2c2241266f828}{imprimir\+Field} (\hyperlink{structfield__info}{field\+\_\+info} field, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, int indice)
+void \hyperlink{Fields_8cpp_acd22396c69d5bfc307834caa7bf87530}{imprimir\+Field} (\hyperlink{structField__info}{Field\+\_\+info} field, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool, int indice)
 \item 
-void \hyperlink{Fields_8cpp_a11113b709b9e8ad7628c56f6842735dd}{imprimir\+Todos\+Field} (\hyperlink{structfield__info}{field\+\_\+info} $\ast$field, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, int tamanho)
+void \hyperlink{Fields_8cpp_ab3fbecb8bab9abf8a9bc9936c45d276d}{imprimir\+Todos\+Field} (\hyperlink{structField__info}{Field\+\_\+info} $\ast$field, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool, int tamanho)
 \item 
-void \hyperlink{Fields_8cpp_adf247765a3ef93a678662a1fa03b266b}{gravar\+Arquivo\+Field} (\hyperlink{structfield__info}{field\+\_\+info} field, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, int indice, fstream \&arquivo\+Saida)
+void \hyperlink{Fields_8cpp_adc292314cfc0b7efa5665b89c7ec7116}{gravar\+Arquivo\+Field} (\hyperlink{structField__info}{Field\+\_\+info} field, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool, int indice, fstream \&arquivo\+Saida)
 \item 
-void \hyperlink{Fields_8cpp_aaca729f824abc0ee8f649a843785c62c}{gravar\+Arquivo\+Todos\+Field} (\hyperlink{structfield__info}{field\+\_\+info} $\ast$field, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, int tamanho, fstream \&arquivo\+Saida)
-\begin{DoxyCompactList}\small\item\em Função que chama print\+Field o número de vezes determinado por \char`\"{}length\char`\"{}. \end{DoxyCompactList}\item 
-\hyperlink{structfield__info}{field\+\_\+info} \hyperlink{Fields_8cpp_a05c0ca1f2a1f0edd8012a23f0d27fd2b}{ler\+Field} (F\+I\+LE $\ast$arquivo\+Entrada, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool)
-\begin{DoxyCompactList}\small\item\em Função que lê um campo. \end{DoxyCompactList}\item 
-\hyperlink{structfield__info}{field\+\_\+info} $\ast$ \hyperlink{Fields_8cpp_a6bf3bf1ccdfb538c9f215035f959949b}{ler\+Todos\+Fields} (F\+I\+LE $\ast$arquivo\+Entrada, int tamanho, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool)
+void \hyperlink{Fields_8cpp_acfb92bde21d024aaa2e1316f104be828}{gravar\+Arquivo\+Todos\+Field} (\hyperlink{structField__info}{Field\+\_\+info} $\ast$field, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool, int tamanho, fstream \&arquivo\+Saida)
+\item 
+\hyperlink{structField__info}{Field\+\_\+info} \hyperlink{Fields_8cpp_ab22eb8eb41d1c698fc206c34ccfbef68}{ler\+Field} (F\+I\+LE $\ast$arquivo\+Entrada, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool)
+\item 
+\hyperlink{structField__info}{Field\+\_\+info} $\ast$ \hyperlink{Fields_8cpp_a888245ea152dedf33b1f8de23c254a37}{ler\+Todos\+Fields} (F\+I\+LE $\ast$arquivo\+Entrada, int tamanho, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool)
 \item 
 string \hyperlink{Fields_8cpp_a8ec1dcda5ee23f9d0163d506d7379db2}{obter\+Flag\+Field} (unsigned short flag)
 \begin{DoxyCompactList}\small\item\em Função para mostrar as flags dos campos. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -39,11 +38,11 @@ Módulo responsável pela manipulação dos campos existentes no arquivo .class.
 
 
 \subsection{Documentação das funções}
-\mbox{\Hypertarget{Fields_8cpp_adf247765a3ef93a678662a1fa03b266b}\label{Fields_8cpp_adf247765a3ef93a678662a1fa03b266b}} 
+\mbox{\Hypertarget{Fields_8cpp_adc292314cfc0b7efa5665b89c7ec7116}\label{Fields_8cpp_adc292314cfc0b7efa5665b89c7ec7116}} 
 \index{Fields.\+cpp@{Fields.\+cpp}!gravar\+Arquivo\+Field@{gravar\+Arquivo\+Field}}
 \index{gravar\+Arquivo\+Field@{gravar\+Arquivo\+Field}!Fields.\+cpp@{Fields.\+cpp}}
 \subsubsection{\texorpdfstring{gravar\+Arquivo\+Field()}{gravarArquivoField()}}
-{\footnotesize\ttfamily void gravar\+Arquivo\+Field (\begin{DoxyParamCaption}\item[{\hyperlink{structfield__info}{field\+\_\+info}}]{field,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{indice,  }\item[{fstream \&}]{arquivo\+Saida }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void gravar\+Arquivo\+Field (\begin{DoxyParamCaption}\item[{\hyperlink{structField__info}{Field\+\_\+info}}]{field,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{indice,  }\item[{fstream \&}]{arquivo\+Saida }\end{DoxyParamCaption})}
 
 
 
@@ -51,7 +50,7 @@ Definido na linha 27 do ficheiro Fields.\+cpp.
 
 
 
-Referências field\+\_\+info\+::access\+Flags, field\+\_\+info\+::attributes, field\+\_\+info\+::attributes\+\_\+count, capturar\+Indice\+De\+Referencia(), field\+\_\+info\+::descriptor\+\_\+index, gravar\+Arquivo\+Attribute(), field\+\_\+info\+::name\+\_\+index e obter\+Flag\+Field().
+Referências Field\+\_\+info\+::access\+Flags, Field\+\_\+info\+::attributes, Field\+\_\+info\+::attributes\+\_\+count, capturar\+Indice\+De\+Referencia(), Field\+\_\+info\+::descriptor\+\_\+index, gravar\+Arquivo\+Attribute(), Field\+\_\+info\+::name\+\_\+index e obter\+Flag\+Field().
 
 
 
@@ -62,30 +61,15 @@ Grafo de chamadas desta função\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Fields_8cpp_adf247765a3ef93a678662a1fa03b266b_cgraph}
+\includegraphics[width=350pt]{Fields_8cpp_adc292314cfc0b7efa5665b89c7ec7116_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Fields_8cpp_aaca729f824abc0ee8f649a843785c62c}\label{Fields_8cpp_aaca729f824abc0ee8f649a843785c62c}} 
+\mbox{\Hypertarget{Fields_8cpp_acfb92bde21d024aaa2e1316f104be828}\label{Fields_8cpp_acfb92bde21d024aaa2e1316f104be828}} 
 \index{Fields.\+cpp@{Fields.\+cpp}!gravar\+Arquivo\+Todos\+Field@{gravar\+Arquivo\+Todos\+Field}}
 \index{gravar\+Arquivo\+Todos\+Field@{gravar\+Arquivo\+Todos\+Field}!Fields.\+cpp@{Fields.\+cpp}}
 \subsubsection{\texorpdfstring{gravar\+Arquivo\+Todos\+Field()}{gravarArquivoTodosField()}}
-{\footnotesize\ttfamily void gravar\+Arquivo\+Todos\+Field (\begin{DoxyParamCaption}\item[{\hyperlink{structfield__info}{field\+\_\+info} $\ast$}]{field,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho,  }\item[{fstream \&}]{arquivo\+Saida }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void gravar\+Arquivo\+Todos\+Field (\begin{DoxyParamCaption}\item[{\hyperlink{structField__info}{Field\+\_\+info} $\ast$}]{field,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho,  }\item[{fstream \&}]{arquivo\+Saida }\end{DoxyParamCaption})}
 
-
-
-Função que chama print\+Field o número de vezes determinado por \char`\"{}length\char`\"{}. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em field} & Struct que contém informação dos campos. \\
-\hline
-{\em constant\+Pool} & Ponteiro para pool de constantes. \\
-\hline
-{\em tamanho} & Define o número de chamadas à print\+Field. \\
-\hline
-{\em arquivo\+Saida} & arquivo de saida \\
-\hline
-\end{DoxyParams}
 
 
 Definido na linha 40 do ficheiro Fields.\+cpp.
@@ -96,21 +80,21 @@ Referências gravar\+Arquivo\+Field().
 
 
 
-Referenciado por Leitor\+Exibidor\+::gravar\+Arquivo().
+Referenciado por Class\+File\+::gravar\+Arquivo().
 
 Grafo de chamadas desta função\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Fields_8cpp_aaca729f824abc0ee8f649a843785c62c_cgraph}
+\includegraphics[width=350pt]{Fields_8cpp_acfb92bde21d024aaa2e1316f104be828_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Fields_8cpp_a7b9a4ddf3bd1b0fa1bb2c2241266f828}\label{Fields_8cpp_a7b9a4ddf3bd1b0fa1bb2c2241266f828}} 
+\mbox{\Hypertarget{Fields_8cpp_acd22396c69d5bfc307834caa7bf87530}\label{Fields_8cpp_acd22396c69d5bfc307834caa7bf87530}} 
 \index{Fields.\+cpp@{Fields.\+cpp}!imprimir\+Field@{imprimir\+Field}}
 \index{imprimir\+Field@{imprimir\+Field}!Fields.\+cpp@{Fields.\+cpp}}
 \subsubsection{\texorpdfstring{imprimir\+Field()}{imprimirField()}}
-{\footnotesize\ttfamily void imprimir\+Field (\begin{DoxyParamCaption}\item[{\hyperlink{structfield__info}{field\+\_\+info}}]{field,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{indice }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void imprimir\+Field (\begin{DoxyParamCaption}\item[{\hyperlink{structField__info}{Field\+\_\+info}}]{field,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{indice }\end{DoxyParamCaption})}
 
 
 
@@ -118,7 +102,7 @@ Definido na linha 8 do ficheiro Fields.\+cpp.
 
 
 
-Referências field\+\_\+info\+::access\+Flags, field\+\_\+info\+::attributes, field\+\_\+info\+::attributes\+\_\+count, capturar\+Indice\+De\+Referencia(), field\+\_\+info\+::descriptor\+\_\+index, imprimir\+Attribute(), field\+\_\+info\+::name\+\_\+index e obter\+Flag\+Field().
+Referências Field\+\_\+info\+::access\+Flags, Field\+\_\+info\+::attributes, Field\+\_\+info\+::attributes\+\_\+count, capturar\+Indice\+De\+Referencia(), Field\+\_\+info\+::descriptor\+\_\+index, imprimir\+Attribute(), Field\+\_\+info\+::name\+\_\+index e obter\+Flag\+Field().
 
 
 
@@ -129,14 +113,14 @@ Grafo de chamadas desta função\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Fields_8cpp_a7b9a4ddf3bd1b0fa1bb2c2241266f828_cgraph}
+\includegraphics[width=350pt]{Fields_8cpp_acd22396c69d5bfc307834caa7bf87530_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Fields_8cpp_a11113b709b9e8ad7628c56f6842735dd}\label{Fields_8cpp_a11113b709b9e8ad7628c56f6842735dd}} 
+\mbox{\Hypertarget{Fields_8cpp_ab3fbecb8bab9abf8a9bc9936c45d276d}\label{Fields_8cpp_ab3fbecb8bab9abf8a9bc9936c45d276d}} 
 \index{Fields.\+cpp@{Fields.\+cpp}!imprimir\+Todos\+Field@{imprimir\+Todos\+Field}}
 \index{imprimir\+Todos\+Field@{imprimir\+Todos\+Field}!Fields.\+cpp@{Fields.\+cpp}}
 \subsubsection{\texorpdfstring{imprimir\+Todos\+Field()}{imprimirTodosField()}}
-{\footnotesize\ttfamily void imprimir\+Todos\+Field (\begin{DoxyParamCaption}\item[{\hyperlink{structfield__info}{field\+\_\+info} $\ast$}]{field,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void imprimir\+Todos\+Field (\begin{DoxyParamCaption}\item[{\hyperlink{structField__info}{Field\+\_\+info} $\ast$}]{field,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho }\end{DoxyParamCaption})}
 
 
 
@@ -148,40 +132,29 @@ Referências imprimir\+Field().
 
 
 
-Referenciado por Leitor\+Exibidor\+::exibir().
+Referenciado por Class\+File\+::exibir().
 
 Grafo de chamadas desta função\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Fields_8cpp_a11113b709b9e8ad7628c56f6842735dd_cgraph}
+\includegraphics[width=350pt]{Fields_8cpp_ab3fbecb8bab9abf8a9bc9936c45d276d_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Fields_8cpp_a05c0ca1f2a1f0edd8012a23f0d27fd2b}\label{Fields_8cpp_a05c0ca1f2a1f0edd8012a23f0d27fd2b}} 
+\mbox{\Hypertarget{Fields_8cpp_ab22eb8eb41d1c698fc206c34ccfbef68}\label{Fields_8cpp_ab22eb8eb41d1c698fc206c34ccfbef68}} 
 \index{Fields.\+cpp@{Fields.\+cpp}!ler\+Field@{ler\+Field}}
 \index{ler\+Field@{ler\+Field}!Fields.\+cpp@{Fields.\+cpp}}
 \subsubsection{\texorpdfstring{ler\+Field()}{lerField()}}
-{\footnotesize\ttfamily \hyperlink{structfield__info}{field\+\_\+info} ler\+Field (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{arquivo\+Entrada,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{structField__info}{Field\+\_\+info} ler\+Field (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{arquivo\+Entrada,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool }\end{DoxyParamCaption})}
 
-
-
-Função que lê um campo. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em arquivo\+Entrada} & Ponteiro para arquivo .class. \\
-\hline
-{\em constant\+Pool} & Ponteiro para pool de constantes. \\
-\hline
-\end{DoxyParams}
 
 
 Definido na linha 46 do ficheiro Fields.\+cpp.
 
 
 
-Referências field\+\_\+info\+::access\+Flags, field\+\_\+info\+::attributes, field\+\_\+info\+::attributes\+\_\+count, field\+\_\+info\+::descriptor\+\_\+index, ler\+Attribute(), ler\+U2() e field\+\_\+info\+::name\+\_\+index.
+Referências Field\+\_\+info\+::access\+Flags, Field\+\_\+info\+::attributes, Field\+\_\+info\+::attributes\+\_\+count, Field\+\_\+info\+::descriptor\+\_\+index, ler\+Attribute(), ler\+U2() e Field\+\_\+info\+::name\+\_\+index.
 
 
 
@@ -192,14 +165,14 @@ Grafo de chamadas desta função\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Fields_8cpp_a05c0ca1f2a1f0edd8012a23f0d27fd2b_cgraph}
+\includegraphics[width=350pt]{Fields_8cpp_ab22eb8eb41d1c698fc206c34ccfbef68_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Fields_8cpp_a6bf3bf1ccdfb538c9f215035f959949b}\label{Fields_8cpp_a6bf3bf1ccdfb538c9f215035f959949b}} 
+\mbox{\Hypertarget{Fields_8cpp_a888245ea152dedf33b1f8de23c254a37}\label{Fields_8cpp_a888245ea152dedf33b1f8de23c254a37}} 
 \index{Fields.\+cpp@{Fields.\+cpp}!ler\+Todos\+Fields@{ler\+Todos\+Fields}}
 \index{ler\+Todos\+Fields@{ler\+Todos\+Fields}!Fields.\+cpp@{Fields.\+cpp}}
 \subsubsection{\texorpdfstring{ler\+Todos\+Fields()}{lerTodosFields()}}
-{\footnotesize\ttfamily \hyperlink{structfield__info}{field\+\_\+info}$\ast$ ler\+Todos\+Fields (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{arquivo\+Entrada,  }\item[{int}]{tamanho,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{structField__info}{Field\+\_\+info}$\ast$ ler\+Todos\+Fields (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{arquivo\+Entrada,  }\item[{int}]{tamanho,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool }\end{DoxyParamCaption})}
 
 
 
@@ -211,14 +184,14 @@ Referências ler\+Field().
 
 
 
-Referenciado por Leitor\+Exibidor\+::carregar().
+Referenciado por Class\+File\+::carregar().
 
 Grafo de chamadas desta função\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Fields_8cpp_a6bf3bf1ccdfb538c9f215035f959949b_cgraph}
+\includegraphics[width=350pt]{Fields_8cpp_a888245ea152dedf33b1f8de23c254a37_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{Fields_8cpp_a8ec1dcda5ee23f9d0163d506d7379db2}\label{Fields_8cpp_a8ec1dcda5ee23f9d0163d506d7379db2}} 

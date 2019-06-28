@@ -1,8 +1,8 @@
 <map id="InstanceClass::InstanceClass" name="InstanceClass::InstanceClass">
-<area shape="rect" id="node2" href="$ConstantPool_8cpp.html#a00b9c6030da9035689ab932dde84a689" title="Retorna os dados no índice. " alt="" coords="269,29,453,56"/>
-<area shape="rect" id="node4" href="$classStaticClass.html#ae028bd9e2b93b69b91b22348a0b4848d" title="Retorna as informações do class file. " alt="" coords="277,81,445,122"/>
-<area shape="rect" id="node5" href="$classLeitorExibidor.html#ab286b420bb915f3444ec78a003f4c25c" title="Retorna referencia a constant pool. " alt="" coords="252,147,469,173"/>
-<area shape="rect" id="node6" href="$classLeitorExibidor.html#a480bbed0d19b7cf5d64753c9c1210464" title="Retorna a array com as fields lidas. " alt="" coords="274,197,447,224"/>
-<area shape="rect" id="node7" href="$classLeitorExibidor.html#a483e90f3d60c63a2b3d1106961c7f553" title="Retorna número de fields. " alt="" coords="274,249,447,290"/>
-<area shape="rect" id="node3" href="$BasicTypes_8cpp.html#a67ca85defbd318c40aa28d8821733ab5" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="517,29,601,56"/>
+<area shape="rect" id="node2" href="$ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="257,29,441,56"/>
+<area shape="rect" id="node4" href="$classStaticClass.html#a49b4258a26420be4c6a1a79cdbdc2d5c" title="Retorna as informações do class file. " alt="" coords="257,80,440,107"/>
+<area shape="rect" id="node5" href="$classClassFile.html#ab70fe581c4b7a1824adf490c3a53bcc7" title="Retorna referencia a constant pool. " alt="" coords="252,131,445,157"/>
+<area shape="rect" id="node6" href="$classClassFile.html#ac3aabaa918413884416692b29165b463" title="Retorna a array com as fields lidas. " alt="" coords="274,181,423,208"/>
+<area shape="rect" id="node7" href="$classClassFile.html#a0be559cd8b7b3168c81a2782e4facb0c" title="Retorna número de fields. " alt="" coords="257,232,441,259"/>
+<area shape="rect" id="node3" href="$BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="493,29,577,56"/>
 </map>

@@ -3,9 +3,9 @@ var searchData=
   ['aaload',['aaload',['../classOperations.html#a522dfa2224d54268008f3bec4ff2b388',1,'Operations']]],
   ['aastore',['aastore',['../classOperations.html#a60b30bd84b2d59334e735f0adda6febe',1,'Operations']]],
   ['aconst_5fnull',['aconst_null',['../classOperations.html#af51ec8a98d9ed3167da0d8ac6279a1cd',1,'Operations']]],
-  ['adicionarclasse',['adicionarClasse',['../classMethodArea.html#a30233142aefa26c17a3a222582cb56c1',1,'MethodArea::adicionarClasse(string classe)'],['../classMethodArea.html#af8c5a64c3e17fb33809b1cea9b85a8b1',1,'MethodArea::adicionarClasse(LeitorExibidor *leitorExibidor)']]],
-  ['adicionarframe',['adicionarFrame',['../classFrameStack.html#aee31df6406a899bbf581eea9fc5545e6',1,'FrameStack::adicionarFrame(method_info method, cp_info *constantPool)'],['../classFrameStack.html#a7bb4b64eece0c146fc647636397c572c',1,'FrameStack::adicionarFrame(method_info *method, cp_info *constantPool)']]],
-  ['adicionarinstancia',['adicionarInstancia',['../classHeap.html#a5bae14e30e89b613358edb7171b50abb',1,'Heap']]],
+  ['adicionarclasse',['adicionarClasse',['../classMethodArea.html#a30233142aefa26c17a3a222582cb56c1',1,'MethodArea::adicionarClasse(string classe)'],['../classMethodArea.html#ac2a5ab0e6b36c9af7062f145218b4cf0',1,'MethodArea::adicionarClasse(ClassFile *classFile)']]],
+  ['adicionarframe',['adicionarFrame',['../classPilhaJVM.html#a9add990f9c258d39d2fcd791398c96ac',1,'PilhaJVM::adicionarFrame(Method_info method, Cp_info *constantPool)'],['../classPilhaJVM.html#a6a47624a1e9923e59258454e6e6d1271',1,'PilhaJVM::adicionarFrame(Method_info *method, Cp_info *constantPool)']]],
+  ['adicionarinstancia',['adicionarInstancia',['../classHeap.html#a5361fe54c9cca238575e2fe2b8462366',1,'Heap']]],
   ['aload',['aload',['../classOperations.html#a2f5c13146658e71de665c3b32ebed8c9',1,'Operations']]],
   ['aload_5f0',['aload_0',['../classOperations.html#a9d821a16ef0681755717e8c4f740f6d0',1,'Operations']]],
   ['aload_5f1',['aload_1',['../classOperations.html#a8291f2b716c1be7428d9b63a5225b52d',1,'Operations']]],
@@ -21,10 +21,10 @@ var searchData=
   ['astore_5f2',['astore_2',['../classOperations.html#a01e238bbea0f9d61d80a8fcd3ed2f660',1,'Operations']]],
   ['astore_5f3',['astore_3',['../classOperations.html#ac3c02b3ff78b6222bd58bebb4f01c083',1,'Operations']]],
   ['athrow',['athrow',['../classOperations.html#a2a5eea0fb18391bb3854dfe55c8ac5d3',1,'Operations']]],
-  ['atualizarargumentos',['atualizarArgumentos',['../classFrameStack.html#a9e7308944f41d892a5a01566d85cad8f',1,'FrameStack']]],
+  ['atualizarargumentos',['atualizarArgumentos',['../classPilhaJVM.html#a43252c128cf31ac202373d6b66868a77',1,'PilhaJVM']]],
   ['atualizarfield',['atualizarField',['../classInstanceClass.html#a3af2fc7bfe8f406b5ea6efbf18161514',1,'InstanceClass::atualizarField()'],['../classStaticClass.html#aa0d9a3db46155bf6971476a22c4f2eaa',1,'StaticClass::atualizarField()']]],
   ['atualizarfieldfinals',['atualizarFieldFinals',['../classInstanceClass.html#a05a47d4bf656908ce3dacc53d9d791b2',1,'InstanceClass::atualizarFieldFinals()'],['../classStaticClass.html#a4e5d8d70d10266989b2821e10bd8dacc',1,'StaticClass::atualizarFieldFinals()']]],
-  ['atualizarframe',['atualizarFrame',['../classOperations.html#a4a846f964056932fdf4d63056bfbe322',1,'Operations']]],
-  ['atualizarframestack',['atualizarFrameStack',['../classMethodArea.html#ac6423e447a5f46bf969bfb7df7500a2b',1,'MethodArea::atualizarFrameStack()'],['../classOperations.html#a96812e295c8429a32e09720d89cd0176',1,'Operations::atualizarFrameStack()']]],
-  ['atualizarthreads',['atualizarThreads',['../classOperations.html#a6c265501b41e227e1a15589a0bb03166',1,'Operations']]]
+  ['atualizarframe',['atualizarFrame',['../classOperations.html#a705efecd2a658615f2dfe777f0bd7032',1,'Operations']]],
+  ['atualizarpilhajvm',['atualizarPilhaJVM',['../classMethodArea.html#a6ee32cdf91b461ff3c8a278b5d0cd126',1,'MethodArea::atualizarPilhaJVM()'],['../classOperations.html#a5b31ab2923ed10b6ad3705f9954ed49e',1,'Operations::atualizarPilhaJVM()']]],
+  ['atualizarstackframe',['atualizarStackFrame',['../classOperations.html#a2564df73b5b237e5bda042909c4747b1',1,'Operations']]]
 ];

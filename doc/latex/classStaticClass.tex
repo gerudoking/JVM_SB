@@ -22,7 +22,7 @@ Diagrama de colaboração para Static\+Class\+:
 \subsection*{Membros públicos}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classStaticClass_a328a35510e7d0b0811a976bc989d195a}{Static\+Class} (\hyperlink{classLeitorExibidor}{Leitor\+Exibidor} $\ast$\hyperlink{classStaticClass_a3ed320a651b791f4b9bd2c4bd4b81369}{leitor\+Exibidor})
+\hyperlink{classStaticClass_a6c0e4d8842888a97160f1e815c8e6ac3}{Static\+Class} (\hyperlink{classClassFile}{Class\+File} $\ast$\hyperlink{classStaticClass_a809f1e4dabb3db229a18423f0d0b4a95}{class\+File})
 \begin{DoxyCompactList}\small\item\em Construtor da \hyperlink{classStaticClass}{Static\+Class}. \end{DoxyCompactList}\item 
 \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} \hyperlink{classStaticClass_ac6d7d4b5b1c315623a8be477c66f38c3}{obter\+Field} (string field)
 \begin{DoxyCompactList}\small\item\em Retorna as informações de um field. \end{DoxyCompactList}\item 
@@ -30,16 +30,16 @@ bool \hyperlink{classStaticClass_aa0d9a3db46155bf6971476a22c4f2eaa}{atualizar\+F
 \begin{DoxyCompactList}\small\item\em Coloca um novo valor pra um field. \end{DoxyCompactList}\item 
 bool \hyperlink{classStaticClass_a4e5d8d70d10266989b2821e10bd8dacc}{atualizar\+Field\+Finals} (string field, \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} typed\+Element)
 \begin{DoxyCompactList}\small\item\em Marca Field como final. \end{DoxyCompactList}\item 
-\hyperlink{classLeitorExibidor}{Leitor\+Exibidor} $\ast$ \hyperlink{classStaticClass_ae028bd9e2b93b69b91b22348a0b4848d}{obter\+Classe\+Leitor\+Exibidor} ()
+\hyperlink{classClassFile}{Class\+File} $\ast$ \hyperlink{classStaticClass_a49b4258a26420be4c6a1a79cdbdc2d5c}{obter\+Class\+File} ()
 \begin{DoxyCompactList}\small\item\em Retorna as informações do class file. \end{DoxyCompactList}\item 
 \hyperlink{classInstanceClass}{Instance\+Class} $\ast$ \hyperlink{classStaticClass_a2990aa887bcb06eaec53afe467e361ef}{obter\+Instance\+Class} ()
 \begin{DoxyCompactList}\small\item\em Retorna a instância da classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Atributos Privados}
 \begin{DoxyCompactItemize}
 \item 
-map$<$ string, \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} $\ast$ $>$ \hyperlink{classStaticClass_a06b8f600ddea87eecdce9eef07af9a14}{map\+Static\+Fields}
+map$<$ string, \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} $\ast$ $>$ \hyperlink{classStaticClass_a472067db1f02a84897348f6a2ca68636}{map\+Typed\+Element}
 \item 
-\hyperlink{classLeitorExibidor}{Leitor\+Exibidor} $\ast$ \hyperlink{classStaticClass_a3ed320a651b791f4b9bd2c4bd4b81369}{leitor\+Exibidor}
+\hyperlink{classClassFile}{Class\+File} $\ast$ \hyperlink{classStaticClass_a809f1e4dabb3db229a18423f0d0b4a95}{class\+File}
 \end{DoxyCompactItemize}
 
 
@@ -53,11 +53,11 @@ Definido na linha 22 do ficheiro Static\+Class.\+h.
 
 
 \subsection{Documentação dos Construtores \& Destrutor}
-\mbox{\Hypertarget{classStaticClass_a328a35510e7d0b0811a976bc989d195a}\label{classStaticClass_a328a35510e7d0b0811a976bc989d195a}} 
+\mbox{\Hypertarget{classStaticClass_a6c0e4d8842888a97160f1e815c8e6ac3}\label{classStaticClass_a6c0e4d8842888a97160f1e815c8e6ac3}} 
 \index{Static\+Class@{Static\+Class}!Static\+Class@{Static\+Class}}
 \index{Static\+Class@{Static\+Class}!Static\+Class@{Static\+Class}}
 \subsubsection{\texorpdfstring{Static\+Class()}{StaticClass()}}
-{\footnotesize\ttfamily Static\+Class\+::\+Static\+Class (\begin{DoxyParamCaption}\item[{\hyperlink{classLeitorExibidor}{Leitor\+Exibidor} $\ast$}]{leitor\+Exibidor }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Static\+Class\+::\+Static\+Class (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
 
 
 
@@ -65,7 +65,7 @@ Construtor da \hyperlink{classStaticClass}{Static\+Class}.
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em leitor\+Exibidor} & informação do class file já carregada na memória \\
+{\em class\+File} & informação do class file já carregada na memória \\
 \hline
 \end{DoxyParams}
 class file lido
@@ -76,14 +76,14 @@ Definido na linha 8 do ficheiro Static\+Class.\+cpp.
 
 
 
-Referências capturar\+Indice\+De\+Referencia(), field\+\_\+info\+::descriptor\+\_\+index, element\+\_\+u\+::l, leitor\+Exibidor, map\+Static\+Fields, field\+\_\+info\+::name\+\_\+index, Leitor\+Exibidor\+::obter\+Constant\+Pool(), Leitor\+Exibidor\+::obter\+Fields(), Leitor\+Exibidor\+::obter\+Fields\+Count(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+B\+O\+OL, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT, T\+Y\+P\+E\+\_\+\+I\+NT, T\+Y\+P\+E\+\_\+\+L\+O\+NG, T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE e typed\+Element\+\_\+s\+::value.
+Referências capturar\+Indice\+De\+Referencia(), class\+File, Field\+\_\+info\+::descriptor\+\_\+index, element\+\_\+u\+::l, map\+Typed\+Element, Field\+\_\+info\+::name\+\_\+index, Class\+File\+::obter\+Constant\+Pool(), Class\+File\+::obter\+Fields(), Class\+File\+::obter\+Fields\+Count(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+B\+O\+OL, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT, T\+Y\+P\+E\+\_\+\+I\+NT, T\+Y\+P\+E\+\_\+\+L\+O\+NG, T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE e typed\+Element\+\_\+s\+::value.
 
 Grafo de chamadas desta função\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classStaticClass_a328a35510e7d0b0811a976bc989d195a_cgraph}
+\includegraphics[width=350pt]{classStaticClass_a6c0e4d8842888a97160f1e815c8e6ac3_cgraph}
 \end{center}
 \end{figure}
 
@@ -115,7 +115,7 @@ Definido na linha 74 do ficheiro Static\+Class.\+cpp.
 
 
 
-Referências map\+Static\+Fields e typed\+Element\+\_\+s\+::type.
+Referências map\+Typed\+Element e typed\+Element\+\_\+s\+::type.
 
 
 
@@ -147,13 +147,13 @@ Definido na linha 93 do ficheiro Static\+Class.\+cpp.
 
 
 
-Referências map\+Static\+Fields e typed\+Element\+\_\+s\+::type.
+Referências map\+Typed\+Element e typed\+Element\+\_\+s\+::type.
 
-\mbox{\Hypertarget{classStaticClass_ae028bd9e2b93b69b91b22348a0b4848d}\label{classStaticClass_ae028bd9e2b93b69b91b22348a0b4848d}} 
-\index{Static\+Class@{Static\+Class}!obter\+Classe\+Leitor\+Exibidor@{obter\+Classe\+Leitor\+Exibidor}}
-\index{obter\+Classe\+Leitor\+Exibidor@{obter\+Classe\+Leitor\+Exibidor}!Static\+Class@{Static\+Class}}
-\subsubsection{\texorpdfstring{obter\+Classe\+Leitor\+Exibidor()}{obterClasseLeitorExibidor()}}
-{\footnotesize\ttfamily Leitor $\ast$ Static\+Class\+::obter\+Classe\+Leitor\+Exibidor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classStaticClass_a49b4258a26420be4c6a1a79cdbdc2d5c}\label{classStaticClass_a49b4258a26420be4c6a1a79cdbdc2d5c}} 
+\index{Static\+Class@{Static\+Class}!obter\+Class\+File@{obter\+Class\+File}}
+\index{obter\+Class\+File@{obter\+Class\+File}!Static\+Class@{Static\+Class}}
+\subsubsection{\texorpdfstring{obter\+Class\+File()}{obterClassFile()}}
+{\footnotesize\ttfamily Leitor $\ast$ Static\+Class\+::obter\+Class\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -168,11 +168,11 @@ Definido na linha 112 do ficheiro Static\+Class.\+cpp.
 
 
 
-Referências leitor\+Exibidor.
+Referências class\+File.
 
 
 
-Referenciado por Instance\+Class\+::\+Instance\+Class(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Leitor\+Exibidor\+::obter\+Class\+That\+Has\+Serached\+Method(), Leitor\+Exibidor\+::obter\+Method() e Operations\+::obter\+Static\+Class\+That\+Has\+Field().
+Referenciado por Instance\+Class\+::\+Instance\+Class(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Class\+File\+::obter\+Class\+That\+Has\+Serached\+Method(), Class\+File\+::obter\+Method() e Operations\+::obter\+Static\+Class\+That\+Has\+Field().
 
 \mbox{\Hypertarget{classStaticClass_ac6d7d4b5b1c315623a8be477c66f38c3}\label{classStaticClass_ac6d7d4b5b1c315623a8be477c66f38c3}} 
 \index{Static\+Class@{Static\+Class}!obter\+Field@{obter\+Field}}
@@ -198,7 +198,7 @@ Definido na linha 58 do ficheiro Static\+Class.\+cpp.
 
 
 
-Referências map\+Static\+Fields, typed\+Element\+\_\+s\+::type e T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+S\+ET.
+Referências map\+Typed\+Element, typed\+Element\+\_\+s\+::type e T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+S\+ET.
 
 
 
@@ -237,11 +237,11 @@ Grafo de chamadas desta função\+:
 
 
 \subsection{Documentação dos dados membro}
-\mbox{\Hypertarget{classStaticClass_a3ed320a651b791f4b9bd2c4bd4b81369}\label{classStaticClass_a3ed320a651b791f4b9bd2c4bd4b81369}} 
-\index{Static\+Class@{Static\+Class}!leitor\+Exibidor@{leitor\+Exibidor}}
-\index{leitor\+Exibidor@{leitor\+Exibidor}!Static\+Class@{Static\+Class}}
-\subsubsection{\texorpdfstring{leitor\+Exibidor}{leitorExibidor}}
-{\footnotesize\ttfamily \hyperlink{classLeitorExibidor}{Leitor\+Exibidor}$\ast$ Static\+Class\+::leitor\+Exibidor\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{classStaticClass_a809f1e4dabb3db229a18423f0d0b4a95}\label{classStaticClass_a809f1e4dabb3db229a18423f0d0b4a95}} 
+\index{Static\+Class@{Static\+Class}!class\+File@{class\+File}}
+\index{class\+File@{class\+File}!Static\+Class@{Static\+Class}}
+\subsubsection{\texorpdfstring{class\+File}{classFile}}
+{\footnotesize\ttfamily \hyperlink{classClassFile}{Class\+File}$\ast$ Static\+Class\+::class\+File\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -249,13 +249,13 @@ Definido na linha 25 do ficheiro Static\+Class.\+h.
 
 
 
-Referenciado por obter\+Classe\+Leitor\+Exibidor() e Static\+Class().
+Referenciado por obter\+Class\+File() e Static\+Class().
 
-\mbox{\Hypertarget{classStaticClass_a06b8f600ddea87eecdce9eef07af9a14}\label{classStaticClass_a06b8f600ddea87eecdce9eef07af9a14}} 
-\index{Static\+Class@{Static\+Class}!map\+Static\+Fields@{map\+Static\+Fields}}
-\index{map\+Static\+Fields@{map\+Static\+Fields}!Static\+Class@{Static\+Class}}
-\subsubsection{\texorpdfstring{map\+Static\+Fields}{mapStaticFields}}
-{\footnotesize\ttfamily map$<$string, \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element}$\ast$$>$ Static\+Class\+::map\+Static\+Fields\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{classStaticClass_a472067db1f02a84897348f6a2ca68636}\label{classStaticClass_a472067db1f02a84897348f6a2ca68636}} 
+\index{Static\+Class@{Static\+Class}!map\+Typed\+Element@{map\+Typed\+Element}}
+\index{map\+Typed\+Element@{map\+Typed\+Element}!Static\+Class@{Static\+Class}}
+\subsubsection{\texorpdfstring{map\+Typed\+Element}{mapTypedElement}}
+{\footnotesize\ttfamily map$<$string, \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element}$\ast$$>$ Static\+Class\+::map\+Typed\+Element\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

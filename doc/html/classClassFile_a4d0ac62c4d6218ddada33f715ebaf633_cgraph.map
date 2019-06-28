@@ -1,0 +1,7 @@
+<map id="ClassFile::obterClassThatHasSerachedMethod" name="ClassFile::obterClassThatHasSerachedMethod">
+<area shape="rect" id="node2" href="$ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="228,29,412,56"/>
+<area shape="rect" id="node4" href="$classMethodArea.html#a6e9d922892887daadd4624729268094f" title="Retorna referência para classe estática. " alt="" coords="239,80,401,107"/>
+<area shape="rect" id="node5" href="$classStaticClass.html#a49b4258a26420be4c6a1a79cdbdc2d5c" title="Retorna as informações do class file. " alt="" coords="229,131,411,157"/>
+<area shape="rect" id="node6" href="$classClassFile.html#a8f248001f388181db10e76602031d560" title="Retorna um índice da constant pool que aponta para string com nome da superclass. ..." alt="" coords="246,182,394,223"/>
+<area shape="rect" id="node3" href="$BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="460,29,544,56"/>
+</map>

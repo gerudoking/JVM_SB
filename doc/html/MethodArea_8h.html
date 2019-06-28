@@ -93,19 +93,19 @@ $(document).ready(function(){initNavTree('MethodArea_8h.html','');});
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ClasseLeitorExibidor_8h_source.html">ClasseLeitorExibidor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ConstantPool_8h_source.html">ConstantPool.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Frame_8h_source.html">Frame.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PilhaJVM_8h_source.html">PilhaJVM.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Diagrama de dependências de inclusão para MethodArea.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="MethodArea_8h__incl.png" border="0" usemap="#include_2MethodArea_8h" alt=""/></div>
 <map name="include_2MethodArea_8h" id="include_2MethodArea_8h">
 <area shape="rect" id="node2" href="StaticClass_8h.html" title="Definição da StaticClass. " alt="" coords="539,229,640,256"/>
-<area shape="rect" id="node3" href="ClasseLeitorExibidor_8h.html" title="Definição da ClasseLeitorExibidor. " alt="" coords="613,304,766,331"/>
+<area shape="rect" id="node3" href="ClassFile_8h.html" title="Definição da ClassFile. " alt="" coords="645,304,733,331"/>
 <area shape="rect" id="node11" href="BasicTypes_8h.html" title="Tipos básicos utilizados para implementarmos a JVM. " alt="" coords="1059,603,1162,629"/>
 <area shape="rect" id="node16" href="ConstantPool_8h.html" title="Módulo Constant pool. " alt="" coords="733,528,845,555"/>
-<area shape="rect" id="node30" href="Frame_8h.html" title="Contém tudo necessário para a execução de um método. " alt="" coords="1063,80,1134,107"/>
+<area shape="rect" id="node30" href="PilhaJVM_8h.html" title="Contém tudo necessário para a execução de um método. " alt="" coords="1063,80,1153,107"/>
 <area shape="rect" id="node22" href="InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="144,379,261,405"/>
 <area shape="rect" id="node23" href="OperandsStack_8h.html" title="Pilha responsável por armazenar os operandos da JVM. " alt="" coords="1251,453,1373,480"/>
 <area shape="rect" id="node26" href="Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="140,453,204,480"/>
@@ -114,7 +114,7 @@ Diagrama de dependências de inclusão para MethodArea.h:</div>
 <area shape="rect" id="node19" href="Attributes_8h.html" title="Atributos a serem usados na execuçao da JVM. " alt="" coords="489,453,578,480"/>
 <area shape="rect" id="node20" href="Interfaces_8h.html" title="Gerencia as informações da interfaces do arquivo .class. " alt="" coords="907,453,997,480"/>
 <area shape="rect" id="node21" href="Methods_8h.html" title="Gerencia as informações dos metodos do arquivo .class. " alt="" coords="699,379,781,405"/>
-<area shape="rect" id="node31" href="LocalVariables_8h.html" title="Stores local variables to current method. " alt="" coords="1515,453,1634,480"/>
+<area shape="rect" id="node31" href="LocalVariables_8h.html" title="Stores local variables to current method. " alt="" coords="1518,453,1637,480"/>
 <area shape="rect" id="node33" href="Operations_8h.html" title="Operations.h" alt="" coords="739,155,835,181"/>
 </map>
 </div>
@@ -123,20 +123,22 @@ Este grafo mostra quais são os ficheiros que incluem directamente ou indirectam
 <div class="dyncontent">
 <div class="center"><img src="MethodArea_8h__dep__incl.png" border="0" usemap="#include_2MethodArea_8hdep" alt=""/></div>
 <map name="include_2MethodArea_8hdep" id="include_2MethodArea_8hdep">
-<area shape="rect" id="node2" href="MethodArea_8cpp.html" title="src/MethodArea.cpp" alt="" coords="43,80,181,107"/>
-<area shape="rect" id="node3" href="ClasseLeitorExibidor_8h.html" title="Definição da ClasseLeitorExibidor. " alt="" coords="255,80,454,107"/>
-<area shape="rect" id="node12" href="Operations_8h.html" title="include/Operations.h" alt="" coords="553,229,695,256"/>
-<area shape="rect" id="node14" href="Frame_8h.html" title="Contém tudo necessário para a execução de um método. " alt="" coords="688,155,803,181"/>
-<area shape="rect" id="node4" href="ClasseLeitorExibidor_8cpp.html" title="Classe que irá realizar a leitura do bytecode e salvar as informações do class file. " alt="" coords="424,155,613,181"/>
-<area shape="rect" id="node5" href="main_8cpp.html" title="Modulo principal, dá a opção de escolha entre exibidor e interpretador. " alt="" coords="177,155,274,181"/>
-<area shape="rect" id="node6" href="StaticClass_8h.html" title="Definição da StaticClass. " alt="" coords="5,155,152,181"/>
-<area shape="rect" id="node8" href="InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="208,229,371,256"/>
-<area shape="rect" id="node7" href="StaticClass_8cpp.html" title="src/StaticClass.cpp" alt="" coords="46,229,183,256"/>
-<area shape="rect" id="node9" href="InstanceClass_8cpp.html" title="src/InstanceClass.cpp" alt="" coords="266,304,419,331"/>
-<area shape="rect" id="node10" href="Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="132,304,241,331"/>
-<area shape="rect" id="node11" href="Heap_8cpp.html" title="src/Heap.cpp" alt="" coords="137,379,237,405"/>
-<area shape="rect" id="node13" href="Operations_8cpp.html" title="src/Operations.cpp" alt="" coords="558,304,690,331"/>
-<area shape="rect" id="node15" href="Frame_8cpp.html" title="src/Frame.cpp" alt="" coords="719,229,825,256"/>
+<area shape="rect" id="node2" href="MethodArea_8cpp.html" title="src/MethodArea.cpp" alt="" coords="305,80,443,107"/>
+<area shape="rect" id="node3" href="ClassFile_8h.html" title="Definição da ClassFile. " alt="" coords="467,80,601,107"/>
+<area shape="rect" id="node12" href="Operations_8h.html" title="include/Operations.h" alt="" coords="706,229,847,256"/>
+<area shape="rect" id="node14" href="PilhaJVM_8h.html" title="Contém tudo necessário para a execução de um método. " alt="" coords="841,304,976,331"/>
+<area shape="rect" id="node4" href="ClassFile_8cpp.html" title="Classe que irá realizar a leitura do bytecode e salvar as informações do class file. " alt="" coords="5,155,129,181"/>
+<area shape="rect" id="node5" href="Main_8cpp.html" title="Modulo principal, dá a opção de escolha entre exibidor e interpretador. " alt="" coords="184,229,281,256"/>
+<area shape="rect" id="node6" href="StaticClass_8h.html" title="Definição da StaticClass. " alt="" coords="461,155,607,181"/>
+<area shape="rect" id="node8" href="InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="306,229,469,256"/>
+<area shape="rect" id="node16" href="LeitorExibidor_8h.html" title="include/LeitorExibidor.h" alt="" coords="154,155,311,181"/>
+<area shape="rect" id="node7" href="StaticClass_8cpp.html" title="src/StaticClass.cpp" alt="" coords="544,229,681,256"/>
+<area shape="rect" id="node9" href="InstanceClass_8cpp.html" title="src/InstanceClass.cpp" alt="" coords="215,304,368,331"/>
+<area shape="rect" id="node10" href="Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="393,304,502,331"/>
+<area shape="rect" id="node11" href="Heap_8cpp.html" title="src/Heap.cpp" alt="" coords="397,379,497,405"/>
+<area shape="rect" id="node13" href="Operations_8cpp.html" title="src/Operations.cpp" alt="" coords="685,304,817,331"/>
+<area shape="rect" id="node15" href="PilhaJVM_8cpp.html" title="src/PilhaJVM.cpp" alt="" coords="846,379,971,405"/>
+<area shape="rect" id="node17" href="LeitorExibidor_8cpp.html" title="src/LeitorExibidor.cpp" alt="" coords="12,229,160,256"/>
 </map>
 </div>
 </div>

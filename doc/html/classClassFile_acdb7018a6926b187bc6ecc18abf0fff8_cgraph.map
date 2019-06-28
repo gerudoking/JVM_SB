@@ -1,0 +1,8 @@
+<map id="ClassFile::validacao" name="ClassFile::validacao">
+<area shape="rect" id="node2" href="$classClassFile.html#a32767b8d966ef87249aa3a41ec5d67c3" title="Retorna a string que contém uma mensagem de erro correspondente ao índice que recebe como parâmetro..." alt="" coords="213,5,352,32"/>
+<area shape="rect" id="node3" href="$classClassFile.html#a8dd042ff6873b9f0d16f8ee3812261e1" title="Verifica se a extensão do arquivo é .class. " alt="" coords="193,56,372,83"/>
+<area shape="rect" id="node4" href="$classClassFile.html#ae8e4445e763c4ee7c04995fcea0369e0" title="Encontro em qual method está a main. " alt="" coords="203,107,362,133"/>
+<area shape="rect" id="node7" href="$classClassFile.html#a6b8f23db0ee4af80a2e75d46a191dc20" title="Verifica se a class definida é igual ao nome da classe sem extensões. " alt="" coords="205,158,361,199"/>
+<area shape="rect" id="node5" href="$ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="420,136,604,163"/>
+<area shape="rect" id="node6" href="$BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="652,136,736,163"/>
+</map>

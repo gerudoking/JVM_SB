@@ -9,8 +9,7 @@ Gerencia as informações dos metodos do arquivo .class.
 {\ttfamily \#include \char`\"{}Attributes.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Basic\+Types.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Constant\+Pool.\+h\char`\"{}}\newline
-Diagrama de dependências de inclusão para Methods.\+h\+:
-\nopagebreak
+Diagrama de dependências de inclusão para Methods.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -28,23 +27,23 @@ Este grafo mostra quais são os ficheiros que incluem directamente ou indirectam
 \subsection*{Componentes}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structmethod__info}{method\+\_\+info}
-\end{DoxyCompactItemize}
+struct \hyperlink{structMethod__info}{Method\+\_\+info}
+\begin{DoxyCompactList}\small\item\em Struct responsável por armazenar os metodos declarados. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{structmethod__info}{method\+\_\+info} \hyperlink{Methods_8h_afe9591554ea00006cfe58a3f52c43fbd}{ler\+Method} (F\+I\+LE $\ast$arquivo\+Entrada, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool)
+\hyperlink{structMethod__info}{Method\+\_\+info} \hyperlink{Methods_8h_a1ae1d752fe2209d5b687b01d8be9ba6b}{ler\+Method} (F\+I\+LE $\ast$arquivo\+Entrada, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool)
 \item 
-\hyperlink{structmethod__info}{method\+\_\+info} $\ast$ \hyperlink{Methods_8h_a56b48c0eb876ee7b6a343d3046322dea}{ler\+Todos\+Methods} (F\+I\+LE $\ast$arquivo\+Entrada, int tamanho, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool)
+\hyperlink{structMethod__info}{Method\+\_\+info} $\ast$ \hyperlink{Methods_8h_ae335dbeb4b8f1f2c4af9077318e10795}{ler\+Todos\+Methods} (F\+I\+LE $\ast$arquivo\+Entrada, int tamanho, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool)
 \item 
-void \hyperlink{Methods_8h_a8a8d12f6bf654c3ce7d325b11a78b24a}{imprimir\+Method} (\hyperlink{structmethod__info}{method\+\_\+info} method, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool)
+void \hyperlink{Methods_8h_aaed342bbd3d60e0ef79f4d3803cfb1f2}{imprimir\+Method} (\hyperlink{structMethod__info}{Method\+\_\+info} method, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool)
 \item 
-void \hyperlink{Methods_8h_add6ed9056b052e77e6277de58352bb5e}{imprimir\+Todos\+Methods} (\hyperlink{structmethod__info}{method\+\_\+info} $\ast$method, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, int tamanho)
+void \hyperlink{Methods_8h_a6e0de4fe25fbed32a095c350ad843d70}{imprimir\+Todos\+Methods} (\hyperlink{structMethod__info}{Method\+\_\+info} $\ast$method, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool, int tamanho)
 \item 
-void \hyperlink{Methods_8h_a88e44efead000d997fcc338f5adf49df}{gravar\+Arquivo\+Method} (\hyperlink{structmethod__info}{method\+\_\+info} method, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, int indice, fstream \&arquivo\+Saida)
-\begin{DoxyCompactList}\small\item\em Mostra um método do arquivo .class. \end{DoxyCompactList}\item 
-void \hyperlink{Methods_8h_a03ad0e66805c1eba282a5915c46bb883}{gravar\+Arquivo\+Todos\+Methods} (\hyperlink{structmethod__info}{method\+\_\+info} $\ast$method, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, int tamanho, fstream \&arquivo\+Saida)
-\begin{DoxyCompactList}\small\item\em Mostra todos os métodos do arquivo .class. \end{DoxyCompactList}\item 
+void \hyperlink{Methods_8h_ae979a905d7e51fa6eace52a474a0b599}{gravar\+Arquivo\+Method} (\hyperlink{structMethod__info}{Method\+\_\+info} method, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool, int indice, fstream \&arquivo\+Saida)
+\item 
+void \hyperlink{Methods_8h_ab82275fb422c00093dc9434927d0c32d}{gravar\+Arquivo\+Todos\+Methods} (\hyperlink{structMethod__info}{Method\+\_\+info} $\ast$method, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool, int tamanho, fstream \&arquivo\+Saida)
+\item 
 string \hyperlink{Methods_8h_aeebb57e68a3f6a889f385323cd28885e}{obter\+Flag\+Method} (uint16\+\_\+t flag)
 \end{DoxyCompactItemize}
 
@@ -55,34 +54,19 @@ Gerencia as informações dos metodos do arquivo .class.
 
 
 \subsection{Documentação das funções}
-\mbox{\Hypertarget{Methods_8h_a88e44efead000d997fcc338f5adf49df}\label{Methods_8h_a88e44efead000d997fcc338f5adf49df}} 
+\mbox{\Hypertarget{Methods_8h_ae979a905d7e51fa6eace52a474a0b599}\label{Methods_8h_ae979a905d7e51fa6eace52a474a0b599}} 
 \index{Methods.\+h@{Methods.\+h}!gravar\+Arquivo\+Method@{gravar\+Arquivo\+Method}}
 \index{gravar\+Arquivo\+Method@{gravar\+Arquivo\+Method}!Methods.\+h@{Methods.\+h}}
 \subsubsection{\texorpdfstring{gravar\+Arquivo\+Method()}{gravarArquivoMethod()}}
-{\footnotesize\ttfamily void gravar\+Arquivo\+Method (\begin{DoxyParamCaption}\item[{\hyperlink{structmethod__info}{method\+\_\+info}}]{method,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{indice,  }\item[{fstream \&}]{arquivo\+Saida }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void gravar\+Arquivo\+Method (\begin{DoxyParamCaption}\item[{\hyperlink{structMethod__info}{Method\+\_\+info}}]{method,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{indice,  }\item[{fstream \&}]{arquivo\+Saida }\end{DoxyParamCaption})}
 
 
 
-Mostra um método do arquivo .class. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em method} & contém as informações do método \\
-\hline
-{\em $\ast$constant\+Pool} & ponteiro para as informações do pool de constantes \\
-\hline
-{\em indice} & indice para o method \\
-\hline
-{\em arquivo\+Saida} & arquivo de saida \\
-\hline
-\end{DoxyParams}
-
-
-Definido na linha 67 do ficheiro Methods.\+cpp.
+Definido na linha 66 do ficheiro Methods.\+cpp.
 
 
 
-Referências method\+\_\+info\+::access\+\_\+flags, method\+\_\+info\+::attributes, method\+\_\+info\+::attributes\+\_\+count, capturar\+Indice\+De\+Referencia(), method\+\_\+info\+::descriptor\+\_\+index, gravar\+Arquivo\+Attribute(), method\+\_\+info\+::name\+\_\+index e obter\+Flag\+Method().
+Referências Method\+\_\+info\+::access\+\_\+flags, Method\+\_\+info\+::attributes, Method\+\_\+info\+::attributes\+\_\+count, capturar\+Indice\+De\+Referencia(), Method\+\_\+info\+::descriptor\+\_\+index, gravar\+Arquivo\+Attribute(), Method\+\_\+info\+::name\+\_\+index e obter\+Flag\+Method().
 
 
 
@@ -93,33 +77,18 @@ Grafo de chamadas desta função\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Methods_8h_a88e44efead000d997fcc338f5adf49df_cgraph}
+\includegraphics[width=350pt]{Methods_8h_ae979a905d7e51fa6eace52a474a0b599_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Methods_8h_a03ad0e66805c1eba282a5915c46bb883}\label{Methods_8h_a03ad0e66805c1eba282a5915c46bb883}} 
+\mbox{\Hypertarget{Methods_8h_ab82275fb422c00093dc9434927d0c32d}\label{Methods_8h_ab82275fb422c00093dc9434927d0c32d}} 
 \index{Methods.\+h@{Methods.\+h}!gravar\+Arquivo\+Todos\+Methods@{gravar\+Arquivo\+Todos\+Methods}}
 \index{gravar\+Arquivo\+Todos\+Methods@{gravar\+Arquivo\+Todos\+Methods}!Methods.\+h@{Methods.\+h}}
 \subsubsection{\texorpdfstring{gravar\+Arquivo\+Todos\+Methods()}{gravarArquivoTodosMethods()}}
-{\footnotesize\ttfamily void gravar\+Arquivo\+Todos\+Methods (\begin{DoxyParamCaption}\item[{\hyperlink{structmethod__info}{method\+\_\+info} $\ast$}]{method,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho,  }\item[{fstream \&}]{arquivo\+Saida }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void gravar\+Arquivo\+Todos\+Methods (\begin{DoxyParamCaption}\item[{\hyperlink{structMethod__info}{Method\+\_\+info} $\ast$}]{method,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho,  }\item[{fstream \&}]{arquivo\+Saida }\end{DoxyParamCaption})}
 
 
 
-Mostra todos os métodos do arquivo .class. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em $\ast$method} & ponteiro para as informações do método \\
-\hline
-{\em $\ast$constant\+Pool} & ponteiro para as informações do pool de constantes \\
-\hline
-{\em tamanho} & quantidade de métodos a serem mostrados \\
-\hline
-{\em arquivo\+Saida} & arquivo de saida \\
-\hline
-\end{DoxyParams}
-
-
-Definido na linha 81 do ficheiro Methods.\+cpp.
+Definido na linha 80 do ficheiro Methods.\+cpp.
 
 
 
@@ -127,38 +96,29 @@ Referências gravar\+Arquivo\+Method().
 
 
 
-Referenciado por Leitor\+Exibidor\+::gravar\+Arquivo().
+Referenciado por Class\+File\+::gravar\+Arquivo().
 
 Grafo de chamadas desta função\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Methods_8h_a03ad0e66805c1eba282a5915c46bb883_cgraph}
+\includegraphics[width=350pt]{Methods_8h_ab82275fb422c00093dc9434927d0c32d_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Methods_8h_a8a8d12f6bf654c3ce7d325b11a78b24a}\label{Methods_8h_a8a8d12f6bf654c3ce7d325b11a78b24a}} 
+\mbox{\Hypertarget{Methods_8h_aaed342bbd3d60e0ef79f4d3803cfb1f2}\label{Methods_8h_aaed342bbd3d60e0ef79f4d3803cfb1f2}} 
 \index{Methods.\+h@{Methods.\+h}!imprimir\+Method@{imprimir\+Method}}
 \index{imprimir\+Method@{imprimir\+Method}!Methods.\+h@{Methods.\+h}}
 \subsubsection{\texorpdfstring{imprimir\+Method()}{imprimirMethod()}}
-{\footnotesize\ttfamily void imprimir\+Method (\begin{DoxyParamCaption}\item[{\hyperlink{structmethod__info}{method\+\_\+info}}]{method,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool }\end{DoxyParamCaption})}
-
-Mostra um método do arquivo .class
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em method} & contém as informações do método \\
-\hline
-{\em $\ast$constant\+Pool} & ponteiro para as informações do pool de constantes \\
-\hline
-\end{DoxyParams}
-
-
-Definido na linha 35 do ficheiro Methods.\+cpp.
+{\footnotesize\ttfamily void imprimir\+Method (\begin{DoxyParamCaption}\item[{\hyperlink{structMethod__info}{Method\+\_\+info}}]{method,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool }\end{DoxyParamCaption})}
 
 
 
-Referências method\+\_\+info\+::access\+\_\+flags, method\+\_\+info\+::attributes, method\+\_\+info\+::attributes\+\_\+count, capturar\+Indice\+De\+Referencia(), method\+\_\+info\+::descriptor\+\_\+index, imprimir\+Attribute(), method\+\_\+info\+::name\+\_\+index e obter\+Flag\+Method().
+Definido na linha 34 do ficheiro Methods.\+cpp.
+
+
+
+Referências Method\+\_\+info\+::access\+\_\+flags, Method\+\_\+info\+::attributes, Method\+\_\+info\+::attributes\+\_\+count, capturar\+Indice\+De\+Referencia(), Method\+\_\+info\+::descriptor\+\_\+index, imprimir\+Attribute(), Method\+\_\+info\+::name\+\_\+index e obter\+Flag\+Method().
 
 
 
@@ -169,29 +129,18 @@ Grafo de chamadas desta função\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Methods_8h_a8a8d12f6bf654c3ce7d325b11a78b24a_cgraph}
+\includegraphics[width=350pt]{Methods_8h_aaed342bbd3d60e0ef79f4d3803cfb1f2_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Methods_8h_add6ed9056b052e77e6277de58352bb5e}\label{Methods_8h_add6ed9056b052e77e6277de58352bb5e}} 
+\mbox{\Hypertarget{Methods_8h_a6e0de4fe25fbed32a095c350ad843d70}\label{Methods_8h_a6e0de4fe25fbed32a095c350ad843d70}} 
 \index{Methods.\+h@{Methods.\+h}!imprimir\+Todos\+Methods@{imprimir\+Todos\+Methods}}
 \index{imprimir\+Todos\+Methods@{imprimir\+Todos\+Methods}!Methods.\+h@{Methods.\+h}}
 \subsubsection{\texorpdfstring{imprimir\+Todos\+Methods()}{imprimirTodosMethods()}}
-{\footnotesize\ttfamily void imprimir\+Todos\+Methods (\begin{DoxyParamCaption}\item[{\hyperlink{structmethod__info}{method\+\_\+info} $\ast$}]{method,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho }\end{DoxyParamCaption})}
-
-Mostra todos os métodos do arquivo .class
+{\footnotesize\ttfamily void imprimir\+Todos\+Methods (\begin{DoxyParamCaption}\item[{\hyperlink{structMethod__info}{Method\+\_\+info} $\ast$}]{method,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int}]{tamanho }\end{DoxyParamCaption})}
 
 
-\begin{DoxyParams}{Parâmetros}
-{\em $\ast$method} & ponteiro para as informações do método \\
-\hline
-{\em $\ast$constant\+Pool} & ponteiro para as informações do pool de constantes \\
-\hline
-{\em tamanho} & quantidade de métodos a serem mostrados \\
-\hline
-\end{DoxyParams}
 
-
-Definido na linha 61 do ficheiro Methods.\+cpp.
+Definido na linha 60 do ficheiro Methods.\+cpp.
 
 
 
@@ -199,38 +148,29 @@ Referências imprimir\+Method().
 
 
 
-Referenciado por Leitor\+Exibidor\+::exibir().
+Referenciado por Class\+File\+::exibir().
 
 Grafo de chamadas desta função\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Methods_8h_add6ed9056b052e77e6277de58352bb5e_cgraph}
+\includegraphics[width=350pt]{Methods_8h_a6e0de4fe25fbed32a095c350ad843d70_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Methods_8h_afe9591554ea00006cfe58a3f52c43fbd}\label{Methods_8h_afe9591554ea00006cfe58a3f52c43fbd}} 
+\mbox{\Hypertarget{Methods_8h_a1ae1d752fe2209d5b687b01d8be9ba6b}\label{Methods_8h_a1ae1d752fe2209d5b687b01d8be9ba6b}} 
 \index{Methods.\+h@{Methods.\+h}!ler\+Method@{ler\+Method}}
 \index{ler\+Method@{ler\+Method}!Methods.\+h@{Methods.\+h}}
 \subsubsection{\texorpdfstring{ler\+Method()}{lerMethod()}}
-{\footnotesize\ttfamily \hyperlink{structmethod__info}{method\+\_\+info} ler\+Method (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{arquivo\+Entrada,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{structMethod__info}{Method\+\_\+info} ler\+Method (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{arquivo\+Entrada,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool }\end{DoxyParamCaption})}
 
-Lê um método do arquivo .class
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em $\ast$arquivo\+Entrada} & ponteiro para o arquivo .class \\
-\hline
-{\em $\ast$constant\+Pool} & ponteiro para as informações do pool de constantes \\
-\hline
-\end{DoxyParams}
 
 
 Definido na linha 8 do ficheiro Methods.\+cpp.
 
 
 
-Referências method\+\_\+info\+::access\+\_\+flags, method\+\_\+info\+::attributes, method\+\_\+info\+::attributes\+\_\+count, method\+\_\+info\+::descriptor\+\_\+index, ler\+Attribute(), ler\+U2() e method\+\_\+info\+::name\+\_\+index.
+Referências Method\+\_\+info\+::access\+\_\+flags, Method\+\_\+info\+::attributes, Method\+\_\+info\+::attributes\+\_\+count, Method\+\_\+info\+::descriptor\+\_\+index, ler\+Attribute(), ler\+U2() e Method\+\_\+info\+::name\+\_\+index.
 
 
 
@@ -241,26 +181,15 @@ Grafo de chamadas desta função\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Methods_8h_afe9591554ea00006cfe58a3f52c43fbd_cgraph}
+\includegraphics[width=350pt]{Methods_8h_a1ae1d752fe2209d5b687b01d8be9ba6b_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{Methods_8h_a56b48c0eb876ee7b6a343d3046322dea}\label{Methods_8h_a56b48c0eb876ee7b6a343d3046322dea}} 
+\mbox{\Hypertarget{Methods_8h_ae335dbeb4b8f1f2c4af9077318e10795}\label{Methods_8h_ae335dbeb4b8f1f2c4af9077318e10795}} 
 \index{Methods.\+h@{Methods.\+h}!ler\+Todos\+Methods@{ler\+Todos\+Methods}}
 \index{ler\+Todos\+Methods@{ler\+Todos\+Methods}!Methods.\+h@{Methods.\+h}}
 \subsubsection{\texorpdfstring{ler\+Todos\+Methods()}{lerTodosMethods()}}
-{\footnotesize\ttfamily \hyperlink{structmethod__info}{method\+\_\+info}$\ast$ ler\+Todos\+Methods (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{arquivo\+Entrada,  }\item[{int}]{tamanho,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{structMethod__info}{Method\+\_\+info}$\ast$ ler\+Todos\+Methods (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{arquivo\+Entrada,  }\item[{int}]{tamanho,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool }\end{DoxyParamCaption})}
 
-Lê os métodos do arquivo .class
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em $\ast$arquivo\+Entrada} & ponteiro para o arquivo .class \\
-\hline
-{\em tamanho} & quantidade de métodos presente \\
-\hline
-{\em $\ast$constant\+Pool} & ponteiro para as informações do pool de constantes \\
-\hline
-\end{DoxyParams}
 
 
 Definido na linha 24 do ficheiro Methods.\+cpp.
@@ -271,14 +200,14 @@ Referências ler\+Method().
 
 
 
-Referenciado por Leitor\+Exibidor\+::carregar().
+Referenciado por Class\+File\+::carregar().
 
 Grafo de chamadas desta função\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Methods_8h_a56b48c0eb876ee7b6a343d3046322dea_cgraph}
+\includegraphics[width=350pt]{Methods_8h_ae335dbeb4b8f1f2c4af9077318e10795_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{Methods_8h_aeebb57e68a3f6a889f385323cd28885e}\label{Methods_8h_aeebb57e68a3f6a889f385323cd28885e}} 
@@ -291,12 +220,12 @@ Obtém as access flags dos métodos para print
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em flag} & dos métodos dado \hyperlink{structmethod__info_a8fc68aba419f2617deda879c467f5410}{method\+\_\+info.\+access\+\_\+flags} \\
+{\em flag} & dos métodos dado method\+\_\+info.\+access\+\_\+flags \\
 \hline
 \end{DoxyParams}
 
 
-Definido na linha 87 do ficheiro Methods.\+cpp.
+Definido na linha 86 do ficheiro Methods.\+cpp.
 
 
 

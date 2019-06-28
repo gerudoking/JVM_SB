@@ -1,0 +1,8 @@
+<map id="PilhaJVM::adicionarFrame" name="PilhaJVM::adicionarFrame">
+<area shape="rect" id="node2" href="$classPilhaJVM.html#a9add990f9c258d39d2fcd791398c96ac" title="Adiciona um frame no topo da pilha. " alt="" coords="228,107,403,133"/>
+<area shape="rect" id="node3" href="$classOperations.html#a705efecd2a658615f2dfe777f0bd7032" title="Atualiza a referência do frame do metodo. " alt="" coords="464,5,643,32"/>
+<area shape="rect" id="node4" href="$classMethodArea.html#a6ee32cdf91b461ff3c8a278b5d0cd126" title="Atualiza a pilha referência da pilha da jvm para o próximo instrução. " alt="" coords="451,56,656,83"/>
+<area shape="rect" id="node5" href="$classOperations.html#a5b31ab2923ed10b6ad3705f9954ed49e" title="Atualiza a pilha referência da pilha da jvm para o próximo instrução. " alt="" coords="454,107,653,133"/>
+<area shape="rect" id="node6" href="$classOperations.html#a2564df73b5b237e5bda042909c4747b1" title="Atualiza a referência da pilha de frames para o próximo frame. " alt="" coords="465,158,641,199"/>
+<area shape="rect" id="node7" href="$classPilhaJVM.html#a08adb78983b512cf3d97becfa2e9a5f0" title="Põe o PC na posição inicial. " alt="" coords="474,224,633,251"/>
+</map>

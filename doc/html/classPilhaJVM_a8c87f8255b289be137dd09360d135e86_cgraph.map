@@ -1,0 +1,7 @@
+<map id="PilhaJVM::executarMetodos" name="PilhaJVM::executarMetodos">
+<area shape="rect" id="node2" href="$classOperations.html#ab63307824c7d6412e0afb1d037b995f1" title="Operations::executarOperacao" alt="" coords="240,5,439,32"/>
+<area shape="rect" id="node3" href="$classPilhaJVM.html#a914a4707e58e23e8913fcdc0c53f8c5c" title="Atualiza o PC, se não for possível atualizar, dá um pop no método atual. " alt="" coords="246,56,433,83"/>
+<area shape="rect" id="node4" href="$classPilhaJVM.html#a4f83f8d59b436cb1813a2a35e1538045" title="Dá um pop no método atual. " alt="" coords="487,56,692,83"/>
+<area shape="rect" id="node5" href="$classOperations.html#a705efecd2a658615f2dfe777f0bd7032" title="Atualiza a referência do frame do metodo. " alt="" coords="740,27,919,53"/>
+<area shape="rect" id="node6" href="$classOperations.html#a2564df73b5b237e5bda042909c4747b1" title="Atualiza a referência da pilha de frames para o próximo frame. " alt="" coords="741,78,917,119"/>
+</map>

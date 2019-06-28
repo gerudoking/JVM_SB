@@ -1,0 +1,12 @@
+<map id="ClassFile" name="ClassFile">
+<area shape="rect" id="node2" href="$structMethod__info.html" title="Struct responsável por armazenar os metodos declarados. " alt="" coords="229,95,322,121"/>
+<area shape="rect" id="node3" href="$structAttribute__info.html" title="Protótipo da struct &quot;attribute_info&quot;. " alt="" coords="321,5,419,32"/>
+<area shape="rect" id="node7" href="$structCode__attribute.html" title="Estrutura de dados para salvar atributos do tipo code. " alt="" coords="526,95,633,121"/>
+<area shape="rect" id="node11" href="$structField__info.html" title="Struct responsável por armazenar os campos declarados. " alt="" coords="125,95,204,121"/>
+<area shape="rect" id="node4" href="$unionT__info.html" title="Estrutura de dados que agrega informações sobre cada atributo lido. " alt="" coords="641,184,699,211"/>
+<area shape="rect" id="node5" href="$structConstantValue__attribute.html" title="Struct para carregar o index dos atributos da &quot;constantpool&quot;. " alt="" coords="657,95,819,121"/>
+<area shape="rect" id="node6" href="$structException__attribute.html" title="Estrutura de dados para salvar atributos de tipo &quot;exception&quot;. " alt="" coords="844,95,979,121"/>
+<area shape="rect" id="node8" href="$structT__exception__table.html" title="Struct para salvar exceções identificadas. Será utilizada como componente da struct &quot;code_attribute&quot;..." alt="" coords="546,5,674,32"/>
+<area shape="rect" id="node9" href="$structCp__info.html" title="Possui um elemento pool de constante. " alt="" coords="34,95,101,121"/>
+<area shape="rect" id="node10" href="$unionClassLoaderType.html" title="Estrutura de dados para armazenamento Union responsável por armazenar todos os tamanhos de variáveis ..." alt="" coords="5,5,129,32"/>
+</map>
