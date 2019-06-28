@@ -1,14 +1,14 @@
 /*!
- * \file Frame.h
+ * \file PilhaJVM.h
  * \brief Contém tudo necessário para a execução de um método.
  */
 
-#ifndef FRAME_H
-#define FRAME_H
+#ifndef PILHA_JVM_H
+#define PILHA_JVM_H
 
-class FrameStack;
+class PilhaJVM;
 
-#include "ClasseLeitorExibidor.h"
+#include "ClassFile.h"
 #include "OperandsStack.h"
 #include "LocalVariables.h"
 #include "BasicTypes.h"
@@ -24,19 +24,19 @@ using namespace std;
  */
 typedef struct frame_s {
 	unsigned char *pc;
-	cp_info *constantPool;
-	OperandsStack *pilhaOperandos;
-	LocalVariables *variaveisLocais;
-	method_info method;
+	Cp_info *constantPool;
+	OperandsStack *operandsStack;
+	LocalVariables *localVariables;
+	Method_info method;
 } Frame;
 
-/** @class FrameStack
+/** @class PilhaJVM
  * @brief Classe de pilha de frames
  * @brief Responsável por todas as operações que usam o frame.
  */
-class FrameStack {
+class PilhaJVM {
 private:
-	stack<Frame*> stackThreads;
+	stack<Frame*> stackFrame;
 	/** @fn bool proximaInstrucao()
 	 * @brief Atualiza o PC, se não for possível atualizar, dá um pop no método atual
 	 */
@@ -47,17 +47,17 @@ private:
 	 */
 	int opcode;
 
-	/** @fn void inicializarPC(frame *flame)
+	/** @fn void inicializarPC(frame *frame)
 	 * @brief Põe o PC na posição inicial
 	 * @param frame Estrutura do tipo frame.
 	 */
 	void inicializarPC(Frame *frame);
 public:
-	/** @fn FrameStack (LeitorExibidor *leitorExibidor)
+	/** @fn PilhaJVM(ClassFile *classFile)
 	 * @brief Contrutor da pilha de frame
-	 * @param leitorExibidor O que é lido do arquivo .class.
+	 * @param classFile O que é lido do arquivo .class.
 	 */
-	FrameStack(LeitorExibidor *leitorExibidor);
+	PilhaJVM(ClassFile *classFile);
 
 	/** @fn void atualizarArgumentos(vector<typedElement> vectorArgumentos)
 	 * @brief Configura os argumentos.
@@ -70,19 +70,19 @@ public:
 	 */
 	void executarMetodos();
 
-	/** @fn void adicionarFrame(method_info method, cp_info *constantPool);
+	/** @fn void adicionarFrame(Method_info method, Cp_info *constantPool);
 	 * @brief Adiciona um frame no topo da pilha.
 	 * @param method Método no qual o frame será criado.
 	 * @param constantPool Um ponteiro para o pool de constantes.
 	 */
-	void adicionarFrame(method_info method, cp_info *constantPool);
+	void adicionarFrame(Method_info method, Cp_info *constantPool);
 
-	/** @fn void adicionarFrame(method_info *method, cp_info *constantPool);
+	/** @fn void adicionarFrame(Method_info *method, Cp_info *constantPool);
 	 * @brief Adiciona um frame no topo da pilha.
 	 * @param method Ponteiro para o método no qual o frame será criado.
 	 * @param constantPool Um ponteiro para o pool de constantes.
 	 */
-	void adicionarFrame(method_info *method, cp_info *constantPool);
+	void adicionarFrame(Method_info *method, Cp_info *constantPool);
 
 	/** @fn void popRemoverObjetos()
 	 * @brief Dá um pop no método atual.

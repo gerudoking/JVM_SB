@@ -11,7 +11,6 @@
 #include <string>
 #include <sstream>
 #include <stdbool.h>
-
 #include "BasicTypes.h"
 
 #define INVALID 99

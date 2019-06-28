@@ -5,14 +5,14 @@
 
 #include "Methods.h"
 
-method_info lerMethod(FILE* arquivoEntrada, cp_info *constantPool) {
-	method_info method;
+Method_info lerMethod(FILE* arquivoEntrada, Cp_info *constantPool) {
+	Method_info method;
 
 	method.access_flags = lerU2(arquivoEntrada) & 0xFFF;
 	method.name_index = lerU2(arquivoEntrada);
 	method.descriptor_index = lerU2(arquivoEntrada);
 	method.attributes_count = lerU2(arquivoEntrada);
-	method.attributes = (attribute_info *) malloc(sizeof(attribute_info) * method.attributes_count);
+	method.attributes = (Attribute_info *) malloc(sizeof(Attribute_info) * method.attributes_count);
 
 	for (int i = 0; i < method.attributes_count; i++) {
 		method.attributes[i] = lerAttribute(arquivoEntrada, constantPool);
@@ -21,18 +21,17 @@ method_info lerMethod(FILE* arquivoEntrada, cp_info *constantPool) {
 	return method;
 }
 
-method_info *lerTodosMethods(FILE* arquivoEntrada, int tamanho, cp_info *constantPool) {
-	method_info *method = (method_info *) malloc(sizeof(method_info) * tamanho);
+Method_info *lerTodosMethods(FILE* arquivoEntrada, int tamanho, Cp_info *constantPool) {
+	Method_info *method = (Method_info *) malloc(sizeof(Method_info) * tamanho);
 
 	for (int i = 0; i < tamanho; i++) {
 		method[i] = lerMethod(arquivoEntrada, constantPool);
-
 	}
 
 	return method;
 }
 
-void imprimirMethod(method_info method, cp_info *constantPool) {
+void imprimirMethod(Method_info method, Cp_info *constantPool) {
 	cout << "" << endl;
 	cout << "\tNome: " << capturarIndiceDeReferencia(constantPool, method.name_index) << endl;
 	cout << "\tDescritor: " << capturarIndiceDeReferencia(constantPool, method.descriptor_index) << endl;
@@ -45,7 +44,7 @@ void imprimirMethod(method_info method, cp_info *constantPool) {
 	}
 }
 
-void imprimirMethod(method_info method, cp_info *constantPool, int indice) {
+void imprimirMethod(Method_info method, Cp_info *constantPool, int indice) {
 	cout << "\tMethod " << indice << ":" << endl;
 	cout << "\t\tNome: cp info #" << method.name_index << " " << capturarIndiceDeReferencia(constantPool, method.name_index) << endl;
 	cout << "\t\tDescritor: cp info # " << method.descriptor_index << capturarIndiceDeReferencia(constantPool, method.descriptor_index)
@@ -58,13 +57,13 @@ void imprimirMethod(method_info method, cp_info *constantPool, int indice) {
 	}
 }
 
-void imprimirTodosMethods(method_info *method, cp_info *constantPool, int tamanho) {
+void imprimirTodosMethods(Method_info *method, Cp_info *constantPool, int tamanho) {
 	for (int i = 0; i < tamanho; i++) {
 		imprimirMethod(method[i], constantPool, i);
 	}
 }
 
-void gravarArquivoMethod(method_info method, cp_info *constantPool, int indice, fstream &arquivoSaida) {
+void gravarArquivoMethod(Method_info method, Cp_info *constantPool, int indice, fstream &arquivoSaida) {
 	arquivoSaida << "\tMethod " << indice << ":" << endl;
 	arquivoSaida << "\t\tNome: cp info #" << method.name_index << " " << capturarIndiceDeReferencia(constantPool, method.name_index)
 			<< endl;
@@ -78,7 +77,7 @@ void gravarArquivoMethod(method_info method, cp_info *constantPool, int indice, 
 	}
 }
 
-void gravarArquivoTodosMethods(method_info *method, cp_info *constantPool, int tamanho, fstream &arquivoSaida) {
+void gravarArquivoTodosMethods(Method_info *method, Cp_info *constantPool, int tamanho, fstream &arquivoSaida) {
 	for (int i = 0; i < tamanho; i++) {
 		gravarArquivoMethod(method[i], constantPool, i, arquivoSaida);
 	}

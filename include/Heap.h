@@ -3,12 +3,10 @@
  * \brief Gerencia a execução do heap.
  */
 
-
 #ifndef HEAP_H
 #define HEAP_H
 
 #include <vector>
-
 #include "InstanceClass.h"
 
 using namespace std;
@@ -19,14 +17,14 @@ using namespace std;
  */
 class Heap {
 private:
-	static vector<InstanceClass*> vectorInstancia;
+	static vector<InstanceClass*> vectorInstanceClass;
 
 public:
-	/** @fn static void adicionarInstancia(Instance *classeInstancia)
+	/** @fn static void adicionarInstancia(Instance *instanceClass)
 	 * @brief Adiciona novo objeto no heap.
-	 * @param classeInstancia - ponteiro para o novo objeto.
+	 * @param instanceClass - ponteiro para o novo objeto.
 	 */
-	static void adicionarInstancia(InstanceClass *classeInstancia);
+	static void adicionarInstancia(InstanceClass *instanceClass);
 };
 
 #endif

@@ -11,9 +11,9 @@
 #include <string.h>
 
 #include "BasicTypes.h"
-#include "ClasseLeitorExibidor.h"
+#include "ClassFile.h"
 #include "ConstantPool.h"
-#include "Frame.h"
+#include "PilhaJVM.h"
 
 using namespace std;
 
@@ -22,8 +22,8 @@ using namespace std;
  */
 class MethodArea {
 private:
-	static map<string, StaticClass*> mapClasses;
-	static FrameStack *frameStack;
+	static map<string, StaticClass*> mapStaticClass;
+	static PilhaJVM *pilhaJVM;
 
 public:
 	static string path;
@@ -40,17 +40,17 @@ public:
 	 */
 	static bool adicionarClasse(string classe);
 
-	/** @fn static bool adicionarClasse(LeitorExibidor *leitorExibidor)
+	/** @fn static bool adicionarClasse(ClassFile *classFile)
 	 * @brief Carrega classe na memória
-	 * @param leitorExibidor informação do arquivo .class na memória
+	 * @param classFile informação do arquivo .class na memória
 	 */
-	static bool adicionarClasse(LeitorExibidor *leitorExibidor);
+	static bool adicionarClasse(ClassFile *classFile);
 
-	/** @fn static void atualizarFrameStack(FrameStack *novoFrameStack)
-	 * @brief Atualiza a referência da pilha de frames para o próximo frame
-	 * @param novoFrameStack próximo frame
+	/** @fn static void atualizarPilhaJVM(FrameStack *pStackFrame)
+	 * @brief Atualiza a pilha referência da pilha da jvm para o próximo instrução
+	 * @param pPilhaJVM a pilha da jvm
 	 */
-	static void atualizarFrameStack(FrameStack *novoFrameStack);
+	static void atualizarPilhaJVM(PilhaJVM *pPilhaJVM);
 };
 
 #endif

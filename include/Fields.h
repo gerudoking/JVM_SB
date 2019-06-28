@@ -6,14 +6,13 @@
 #define FIELDS_H
 
 #include <fstream>
-
 #include "Attributes.h"
 #include "BasicTypes.h"
 #include "ConstantPool.h"
 
 using namespace std;
 
-/** @struct field_info
+/** @struct Field_info
  * @brief Struct responsável por armazenar os campos declarados.
  */
 typedef struct {
@@ -21,8 +20,8 @@ typedef struct {
 	unsigned char name_index;
 	unsigned char descriptor_index;
 	unsigned char attributes_count;
-	attribute_info *attributes;
-} field_info;
+	Attribute_info *attributes;
+} Field_info;
 
 /**
  * @fn imprimirField(field_info field, Cp_info *constantPool, int indice);
@@ -31,7 +30,7 @@ typedef struct {
  * @param constantPool Ponteiro para pool de constantes.
  * @param indice Índice do vetor que contém um campo.
  */
-void imprimirField(field_info field, cp_info *constantPool, int indice);
+void imprimirField(Field_info field, Cp_info *constantPool, int indice);
 
 /**
  * @fn void imprimirTodosField(field_info *field, Cp_info *constantPool, int tamanho)
@@ -40,7 +39,7 @@ void imprimirField(field_info field, cp_info *constantPool, int indice);
  * @param constantPool Ponteiro para pool de constantes.
  * @param tamanho Define o número de chamadas à printField.
  */
-void imprimirTodosField(field_info *field, cp_info *constantPool, int tamanho);
+void imprimirTodosField(Field_info *field, Cp_info *constantPool, int tamanho);
 
 /**
  * @fn gravarArquivoField(field_info field, Cp_info *constantPool, int indice, fstream &arquivoSaida)
@@ -50,7 +49,7 @@ void imprimirTodosField(field_info *field, cp_info *constantPool, int tamanho);
  * @param indice Índice do vetor que contém um campo.
  * @param arquivoSaida arquivo de saida
  */
-void gravarArquivoField(field_info field, cp_info *constantPool, int indice, fstream &arquivoSaida);
+void gravarArquivoField(Field_info field, Cp_info *constantPool, int indice, fstream &arquivoSaida);
 
 /**
  * @fn void gravarArquivoTodosField(field_info *field, cp_info *constantPool, int tamanho, fstream &arquivoSaida)
@@ -60,7 +59,7 @@ void gravarArquivoField(field_info field, cp_info *constantPool, int indice, fst
  * @param tamanho Define o número de chamadas à printField.
  * @param arquivoSaida arquivo de saida
  */
-void gravarArquivoTodosField(field_info *field, cp_info *constantPool, int tamanho, fstream &arquivoSaida);
+void gravarArquivoTodosField(Field_info *field, Cp_info *constantPool, int tamanho, fstream &arquivoSaida);
 
 /**
  * @fn field_info lerField(FILE* arquivoEntrada, cp_info* constantPool)
@@ -68,16 +67,16 @@ void gravarArquivoTodosField(field_info *field, cp_info *constantPool, int taman
  * @param arquivoEntrada Ponteiro para arquivo .class.
  * @param constantPool Ponteiro para pool de constantes.
  */
-field_info lerField(FILE* arquivoEntrada, cp_info* constantPool);
+Field_info lerField(FILE* arquivoEntrada, Cp_info* constantPool);
 
 /**
- * @fn field_info lerField(FILE* arquivoEntrada, Cp_info* constantPool);
+ * @fn field_info lerField(FILE* arquivoEntrada, int tamanho, Cp_info* constantPool);
  * @brief Função que aloca field_info espaço e chama readField "lenght" vezes
  * @param arquivoEntrada Ponteiro para arquivo .class.
  * @param tamanho Define o número de chamadas à readField.
  * @param constantPool Ponteiro para pool de constantes.
  */
-field_info *lerTodosFields(FILE* arquivoEntrada, int tamanho, cp_info* constantPool);
+Field_info *lerTodosFields(FILE* arquivoEntrada, int tamanho, Cp_info* constantPool);
 
 /**
  * @fn string obterFlagField(unsigned short flag);

@@ -5,12 +5,12 @@
 
 #include "MethodArea.h"
 
-map<string, StaticClass*> MethodArea::mapClasses;
+map<string, StaticClass*> MethodArea::mapStaticClass;
 string MethodArea::path = "";
-FrameStack *MethodArea::frameStack = nullptr;
+PilhaJVM *MethodArea::pilhaJVM = nullptr;
 
 StaticClass *MethodArea::obterClass(string classe) {
-	for (map<string, StaticClass*>::const_iterator i = mapClasses.begin(); i != mapClasses.end(); i++) {
+	for (map<string, StaticClass*>::const_iterator i = mapStaticClass.begin(); i != mapStaticClass.end(); i++) {
 		if (i->first == classe) {
 			return i->second;
 		}
@@ -19,57 +19,57 @@ StaticClass *MethodArea::obterClass(string classe) {
 }
 
 bool MethodArea::adicionarClasse(string classe) {
-	for (map<string, StaticClass*>::const_iterator i = mapClasses.begin(); i != mapClasses.end(); i++) {
+	for (map<string, StaticClass*>::const_iterator i = mapStaticClass.begin(); i != mapStaticClass.end(); i++) {
 		if (i->first == classe) {
 			return false;
 		}
 	}
 
-	LeitorExibidor *leitorExibidor = new LeitorExibidor(string(path + classe));
+	ClassFile *classFile = new ClassFile(string(path + classe));
 
-	if (!leitorExibidor->validarExtensao()) {
-		delete leitorExibidor;
-		leitorExibidor = new LeitorExibidor(string(path + classe + ".class"));
+	if (!classFile->validarExtensao()) {
+		delete classFile;
+		classFile = new ClassFile(string(path + classe + ".class"));
 	}
 
-	if (leitorExibidor->carregar()) {
+	if (classFile->carregar()) {
 		return false;
 	}
 
-	StaticClass *staticClass = new StaticClass(leitorExibidor);
-	mapClasses.insert(pair<string, StaticClass*>(classe, staticClass));
+	StaticClass *staticClass = new StaticClass(classFile);
+	mapStaticClass.insert(pair<string, StaticClass*>(classe, staticClass));
 
-	if (leitorExibidor->existeClinit()) {
-		frameStack->adicionarFrame(leitorExibidor->obterClinit(), leitorExibidor->obterConstantPool());
+	if (classFile->existeClinit()) {
+		pilhaJVM->adicionarFrame(classFile->obterClinit(), classFile->obterConstantPool());
 	}
 
 	return true;
 }
 
-bool MethodArea::adicionarClasse(LeitorExibidor *leitorExibidor) {
-	if (leitorExibidor->obterStatus() == -1) {
-		leitorExibidor->carregar();
+bool MethodArea::adicionarClasse(ClassFile *classFile) {
+	if (classFile->obterStatus() == -1) {
+		classFile->carregar();
 	}
 
-	switch (leitorExibidor->obterStatus()) {
+	switch (classFile->obterStatus()) {
 	case 0:
 		break;
 	default:
 		return false;
 	}
 
-	StaticClass *staticClass = new StaticClass(leitorExibidor);
-	string indiceReferencia = capturarIndiceDeReferencia(leitorExibidor->obterConstantPool(), leitorExibidor->obterThis_class());
+	StaticClass *staticClass = new StaticClass(classFile);
+	string indiceReferencia = capturarIndiceDeReferencia(classFile->obterConstantPool(), classFile->obterThis_class());
 
-	mapClasses.insert(pair<string, StaticClass*>(indiceReferencia, staticClass));
+	mapStaticClass.insert(pair<string, StaticClass*>(indiceReferencia, staticClass));
 
-	if (leitorExibidor->existeClinit()) {
-		frameStack->adicionarFrame(leitorExibidor->obterClinit(), leitorExibidor->obterConstantPool());
+	if (classFile->existeClinit()) {
+		pilhaJVM->adicionarFrame(classFile->obterClinit(), classFile->obterConstantPool());
 	}
 
 	return true;
 }
 
-void MethodArea::atualizarFrameStack(FrameStack *novoFrameStack) {
-	frameStack = novoFrameStack;
+void MethodArea::atualizarPilhaJVM(PilhaJVM *pPilhaJVM) {
+	pilhaJVM = pPilhaJVM;
 }

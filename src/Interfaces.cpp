@@ -15,22 +15,22 @@ unsigned short *lerTodasInterfaces(FILE* arquivoEntrada, int tamanho) {
 	return vetorInterfaces;
 }
 
-void imprimirTodasInterfaces(unsigned short *interface, cp_info *constantPool, int tamanho) {
+void imprimirTodasInterfaces(unsigned short *interface, Cp_info *constantPool, int tamanho) {
 	for (int i = 0; i < tamanho; i++) {
 		imprimirInterface(interface[i], constantPool, i);
 	}
 }
 
-void imprimirInterface(unsigned short interface, cp_info *constantPool, int indice) {
+void imprimirInterface(unsigned short interface, Cp_info *constantPool, int indice) {
 	cout << "\tInterface " << indice << ": " << capturarIndiceDeReferencia(constantPool, interface) << endl;
 }
 
-void gravarArquivoTodasInterfaces(unsigned short *interface, cp_info *constantPool, int tamanho, fstream &arquivoSaida) {
+void gravarArquivoTodasInterfaces(unsigned short *interface, Cp_info *constantPool, int tamanho, fstream &arquivoSaida) {
 	for (int i = 0; i < tamanho; i++) {
 		gravarArquivoInterface(interface[i], constantPool, i, arquivoSaida);
 	}
 }
 
-void gravarArquivoInterface(unsigned short interface, cp_info *constantPool, int indice, fstream &arquivoSaida) {
+void gravarArquivoInterface(unsigned short interface, Cp_info *constantPool, int indice, fstream &arquivoSaida) {
 	arquivoSaida << "\tInterface " << indice << ": " << capturarIndiceDeReferencia(constantPool, interface) << endl;
 }

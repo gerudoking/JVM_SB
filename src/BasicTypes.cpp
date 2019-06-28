@@ -5,161 +5,162 @@
 
 #include "BasicTypes.h"
 
-U2 lerU2(FILE *fp) {
-	unsigned short ret = 0;
+U2 lerU2(FILE *arquivoClass) {
+	unsigned short u2 = 0;
 	unsigned char aux;
 
-	fread(&ret, 1, 1, fp);
-	fread(&aux, 1, 1, fp);
+	fread(&u2, 1, 1, arquivoClass);
+	fread(&aux, 1, 1, arquivoClass);
 
-	ret <<= 8;
-	ret |= aux;
+	u2 <<= 8;
+	u2 |= aux;
 
-	return ret;
+	return u2;
 }
 
-U1 lerU1(FILE *fp) {
-	unsigned char ret;
+U1 lerU1(FILE *arquivoClass) {
+	unsigned char u1;
 
-	fread(&ret, 1, 1, fp);
+	fread(&u1, 1, 1, arquivoClass);
 
-	return ret;
+	return u1;
 }
 
-U1 * lerUTF8(FILE* fp, int size) {
+U1 * lerUTF8(FILE* arquivoClass, int tamanho) {
 
-	std::vector<unsigned char> *ret = new std::vector<unsigned char>(size);
+	vector<unsigned char> *vectorUTF8 = new vector<unsigned char>(tamanho);
 
-	for (int i = 0; i < size; i++) {
-		ret->at(i) = lerU1(fp);
+	for (int i = 0; i < tamanho; i++) {
+		vectorUTF8->at(i) = lerU1(arquivoClass);
 	}
 
-	return (U1*) ret;
+	return (U1*) vectorUTF8;
 }
 
-U4 lerU4(FILE *fp) {
-	unsigned int ret = 0;
+U4 lerU4(FILE *arquivoClass) {
+	unsigned int u4 = 0;
 	unsigned char aux;
 
 	for (int i = 0; i < 4; i++) {
-		ret <<= 8;
-		fread(&aux, 1, 1, fp);
-		ret |= aux;
+		u4 <<= 8;
+		fread(&aux, 1, 1, arquivoClass);
+		u4 |= aux;
 	}
 
-	return ret;
+	return u4;
 }
 
-string obterUTF8(unsigned char * s, int size) {
-	std::vector<unsigned char> *v = (std::vector<unsigned char> *) s;
-	string ret = "";
-	size = v->size();
+string obterUTF8(unsigned char * s, int tamanho) {
+	vector<unsigned char> *vectorUtf8 = (vector<unsigned char> *) s;
+	string utf8 = "";
+	tamanho = vectorUtf8->size();
 	int i = 0;
 
-	while (i < size) {
-		if (!(v->at(i) & 0x80)) { //utf8 only with 1 bit
-			ret.push_back(v->at(i));
+	while (i < tamanho) {
+		if (!(vectorUtf8->at(i) & 0x80)) { //utf8 only with 1 bit
+			utf8.push_back(vectorUtf8->at(i));
 		} else {
 			unsigned short auxCurrent;
-			if (!(v->at(i + 1) & 0x20)) { //utf8 of 2 bytes
-				auxCurrent = ((v->at(i) & 0x1f) << 6) + (v->at(i + 1) & 0x3f);
+			if (!(vectorUtf8->at(i + 1) & 0x20)) { //utf8 of 2 bytes
+				auxCurrent = ((vectorUtf8->at(i) & 0x1f) << 6) + (vectorUtf8->at(i + 1) & 0x3f);
 			} else { //utf8 of 3 bytes
-				auxCurrent = ((v->at(i) & 0xf) << 12) + ((v->at(i + 1) & 0x3f) << 6) + (v->at(i + 2) & 0x3f);
+				auxCurrent = ((vectorUtf8->at(i) & 0xf) << 12) + ((vectorUtf8->at(i + 1) & 0x3f) << 6) + (vectorUtf8->at(i + 2) & 0x3f);
 				i++;
 			}
 			i++;
-			ret.push_back(auxCurrent);
+			utf8.push_back(auxCurrent);
 		}
 		i++;
 	}
 
-	return ret;
+	return utf8;
 }
 
 string converter_double_to_string(double d) {
-	stringstream ret;
+	stringstream valor;
 	switch (verificarDouble(d)) {
 	case 0:
-		ret << d;
+		valor << d;
 		break;
 	case 1:
-		ret << "+Inf";
+		valor << "+Inf";
 		break;
 	case 2:
-		ret << "-Inf";
+		valor << "-Inf";
 		break;
 	case 3:
-		ret << "NaN";
+		valor << "NaN";
 		break;
 	}
 
-	return ret.str();
+	return valor.str();
 }
 
 //return 1 for +infinity, 2 for -inifity, 3 for NaN e 0 for number inside bound
 int verificarFloat(float f) {
-	int ret = 0;
-	Element aux;
-	aux.f = f;
+	int valor = 0;
+	Element element;
+	element.f = f;
 
-	if ((aux.i >= 0x7f800001 && aux.i <= 0x7fffffff) || (aux.i >= 0xff800001 && aux.i <= 0xffffffff)) {
-		ret = 3;
-	} else if (aux.i == 0x7f800000) {
-		ret = 1;
-	} else if (aux.i == 0xff800000) {
-		ret = 2;
+	if ((element.i >= 0x7f800001 && element.i <= 0x7fffffff) || (element.i >= 0xff800001 && element.i <= 0xffffffff)) {
+		valor = 3;
+	} else if (element.i == 0x7f800000) {
+		valor = 1;
+	} else if (element.i == 0xff800000) {
+		valor = 2;
 	}
 
-	return ret;
+	return valor;
 }
 
 //return 1 for +infinity, 2 for -inifity, 3 for NaN e 0 for number inside bound
 int verificarDouble(double d) {
-	int ret = 0;
-	Element aux;
-	aux.d = d;
+	int valor = 0;
+	Element element;
+	element.d = d;
 
-	if ((aux.l >= 0x7ff0000000000001L && aux.l <= 0x7ffffffffffffL) || (aux.l >= 0xfff0000000000001L && aux.l <= 0xffffffffffffffffL)) {
-		ret = 3;
-	} else if (aux.l == 0x7ff0000000000000L) {
-		ret = 1;
-	} else if (aux.l == 0xfff0000000000000L) {
-		ret = 2;
+	if ((element.l >= 0x7ff0000000000001L && element.l <= 0x7ffffffffffffL)
+			|| (element.l >= 0xfff0000000000001L && element.l <= 0xffffffffffffffffL)) {
+		valor = 3;
+	} else if (element.l == 0x7ff0000000000000L) {
+		valor = 1;
+	} else if (element.l == 0xfff0000000000000L) {
+		valor = 2;
 	}
 
-	return ret;
+	return valor;
 }
 
 string converter_float_to_string(float f) {
-	stringstream ret;
+	stringstream valor;
 	switch (verificarFloat(f)) {
 	case 0:
-		ret << f;
+		valor << f;
 		break;
 	case 1:
-		ret << "+Inf";
+		valor << "+Inf";
 		break;
 	case 2:
-		ret << "-Inf";
+		valor << "-Inf";
 		break;
 	case 3:
-		ret << "NaN";
+		valor << "NaN";
 		break;
 	}
 
-	return ret.str();
+	return valor.str();
 }
 
-long converter_u4_to_long(ClassLoaderType high, ClassLoaderType low) {
-	int64_t ret;
+long converter_u4_to_long(ClassLoaderType classLoaderTypeMaior, ClassLoaderType classLoaderTypeMenor) {
+	int64_t valor;
 
-	ret = (((int64_t) high.u4) << 32) | low.u4;
+	valor = (((int64_t) classLoaderTypeMaior.u4) << 32) | classLoaderTypeMenor.u4;
 
-	return ret;
+	return valor;
 }
 
 double converter_u4_to_double(ClassLoaderType high, ClassLoaderType low) {
-	double ret;
+	double valor;
 	uint64_t checkBoundaries = converter_u4_to_long(high, low);
 
 	if (checkBoundaries == 0x7ff0000000000000L) {
@@ -175,21 +176,21 @@ double converter_u4_to_double(ClassLoaderType high, ClassLoaderType low) {
 		int64_t e = ((checkBoundaries >> 52) & 0x7ffL);
 		int64_t m = (e == 0) ? (checkBoundaries & 0xfffffffffffffL) << 1 : (checkBoundaries & 0xfffffffffffffL) | 0x10000000000000L;
 
-		ret = s * m * pow(2, (e - 1075));
+		valor = s * m * pow(2, (e - 1075));
 	}
 
-	return ret;
+	return valor;
 }
 
-float converter_u4_to_float(ClassLoaderType in) {
-	float ret;
+float converter_u4_to_float(ClassLoaderType classLoaderType) {
+	float valor;
 
-	int s = ((in.u4 >> 31) == 0) ? 1 : -1;
-	int e = ((in.u4 >> 23) & 0xff);
-	int m = (e == 0) ? (in.u4 & 0x7fffff) << 1 : (in.u4 & 0x7fffff) | 0x800000;
+	int s = ((classLoaderType.u4 >> 31) == 0) ? 1 : -1;
+	int e = ((classLoaderType.u4 >> 23) & 0xff);
+	int m = (e == 0) ? (classLoaderType.u4 & 0x7fffff) << 1 : (classLoaderType.u4 & 0x7fffff) | 0x800000;
 
-	ret = s * m * pow(2, (e - 150));
+	valor = s * m * pow(2, (e - 150));
 
-	return ret;
+	return valor;
 }
 

@@ -7,7 +7,7 @@
 
 class StaticClass;
 
-#include "ClasseLeitorExibidor.h"
+#include "ClassFile.h"
 #include "OperandsStack.h"
 #include "InstanceClass.h"
 #include "Heap.h"
@@ -21,15 +21,15 @@ using namespace std;
  */
 class StaticClass {
 private:
-	map<string, TypedElement*> mapStaticFields;
-	LeitorExibidor *leitorExibidor;
+	map<string, TypedElement*> mapTypedElement;
+	ClassFile *classFile;
 
 public:
-	/** @fn StaticClass(LeitorExibidor *leitorExibidor)
+	/** @fn StaticClass(ClassFile *classFile)
 	 * @brief Construtor da StaticClass
-	 * @param leitorExibidor informação do class file já carregada na memória
+	 * @param classFile informação do class file já carregada na memória
 	 */
-	StaticClass(LeitorExibidor *leitorExibidor);
+	StaticClass(ClassFile *classFile);
 
 	/** @fn TypedElement obterField(string field)
 	 * @brief Retorna as informações de um field
@@ -54,11 +54,11 @@ public:
 	 */
 	bool atualizarFieldFinals(string field, TypedElement typedElement);
 
-	/** @fn Leitor *obterClasseLeitorExibidor()
+	/** @fn Leitor *obterClassFile()
 	 * @brief Retorna as informações do class file.
 	 * @return ponteiro para a instancia de ClasseLeitor que contém as informações salvas na memória
 	 */
-	LeitorExibidor *obterClasseLeitorExibidor();
+	ClassFile *obterClassFile();
 
 	/** @fn Instance *obterInstanceClass()
 	 @brief Retorna a instância da classe

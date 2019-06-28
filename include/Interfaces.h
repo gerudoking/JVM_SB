@@ -7,7 +7,6 @@
 #define INTERFACES_H
 
 #include <iostream>
-
 #include "BasicTypes.h"
 #include "ConstantPool.h"
 
@@ -26,7 +25,7 @@ unsigned short *lerTodasInterfaces(FILE* arquivoEntrada, int tamanho);
  * @param constantPool Ponteiro para a constantpool.
  * @param tamanho Número de interfaces.
  */
-void imprimirTodasInterfaces(unsigned short *interface, cp_info *constantPool, int tamanho);
+void imprimirTodasInterfaces(unsigned short *interface, Cp_info *constantPool, int tamanho);
 
 /**
  * @fn imprimirInterface(unsigned short interface, Cp_info *constantPool, int indice)
@@ -35,7 +34,7 @@ void imprimirTodasInterfaces(unsigned short *interface, cp_info *constantPool, i
  * @param constantPool Ponteiro para o constantpool.
  * @param indice Indice da interface específica.
  */
-void imprimirInterface(unsigned short interface, cp_info *constantPool, int indice);
+void imprimirInterface(unsigned short interface, Cp_info *constantPool, int indice);
 
 /**
  * @fn void gravarArquivoTodasInterfaces(unsigned short *interface, cp_info *constantPool, int tamanho, fstream &arquivoSaida)
@@ -45,7 +44,7 @@ void imprimirInterface(unsigned short interface, cp_info *constantPool, int indi
  * @param tamanho Número de interfaces.
  * @param arquivoSaida arquivo de saida
  */
-void gravarArquivoTodasInterfaces(unsigned short *interface, cp_info *constantPool, int tamanho, fstream &arquivoSaida);
+void gravarArquivoTodasInterfaces(unsigned short *interface, Cp_info *constantPool, int tamanho, fstream &arquivoSaida);
 
 /**
  * @fn void gravarArquivoInterface(unsigned short interface, cp_info *constantPool, int indice, fstream &arquivoSaida)
@@ -55,6 +54,6 @@ void gravarArquivoTodasInterfaces(unsigned short *interface, cp_info *constantPo
  * @param indice Indice da interface específica.
  * @param arquivoSaida arquivo de saida
  */
-void gravarArquivoInterface(unsigned short interface, cp_info *constantPool, int indice, fstream &arquivoSaida);
+void gravarArquivoInterface(unsigned short interface, Cp_info *constantPool, int indice, fstream &arquivoSaida);
 
 #endif

@@ -1,0 +1,116 @@
+
+Minor version:		 0
+Major version:		 46
+Número de Constant pool: 31
+Flags: ACC_PUBLICACC_SUPER (0x21)
+This class:		 cp info #8 <double_aritmetica>
+Super class:		 cp info #9 <java/lang/Object>
+Número de Interfaces:	 0
+Número de Campos:	 0
+Número de Metodos:	 2
+Número de Atributos:	 1
+
+Constant Pool:
+	 [ 1 ]Method cp info #9  cp info #18		// java/lang/Object  <init>  ()V
+	 [ 2 ]Double	98.24d
+	 [ 4 ]Double	134.87d
+	 [ 6 ]Field cp info #19  cp info #20		// java/lang/System  out  Ljava/io/PrintStream;
+	 [ 7 ]Method cp info #21  cp info #22		// java/io/PrintStream  println  (D)V
+	 [ 8 ]Class 23		// double_aritmetica
+	 [ 9 ]Class 24		// java/lang/Object
+	 [ 10 ]UTF-8	<init>
+	 [ 11 ]UTF-8	()V
+	 [ 12 ]UTF-8	Code
+	 [ 13 ]UTF-8	LineNumberTable
+	 [ 14 ]UTF-8	main
+	 [ 15 ]UTF-8	([Ljava/lang/String;)V
+	 [ 16 ]UTF-8	SourceFile
+	 [ 17 ]UTF-8	double_aritmetica.java
+	 [ 18 ]Name and Type cp info #10  cp info #11		// <init>  ()V
+	 [ 19 ]Class 25		// java/lang/System
+	 [ 20 ]Name and Type cp info #26  cp info #27		// out  Ljava/io/PrintStream;
+	 [ 21 ]Class 28		// java/io/PrintStream
+	 [ 22 ]Name and Type cp info #29  cp info #30		// println  (D)V
+	 [ 23 ]UTF-8	double_aritmetica
+	 [ 24 ]UTF-8	java/lang/Object
+	 [ 25 ]UTF-8	java/lang/System
+	 [ 26 ]UTF-8	out
+	 [ 27 ]UTF-8	Ljava/io/PrintStream;
+	 [ 28 ]UTF-8	java/io/PrintStream
+	 [ 29 ]UTF-8	println
+	 [ 30 ]UTF-8	(D)V
+
+	Method 0:
+		Nome: cp info #10 <init>
+		Descritor: cp info # 11()V
+		flags: ACC_PUBLIC
+		Número de Atributos: 1
+	Attribute 0: 
+		Nome: cp info #12 Code
+		Número de Atributos: 29
+		Misc: 
+			Max Stack: 1
+			Max Locals: 1
+			Code Length: 5
+		Bytecode: 
+			0  aload_0
+			1  invokespecial #1
+			4  return
+		Exception Table Length: 0
+		Número de Atributos: 1
+		Nome: cp info #13 LineNumberTable
+		Número de Atributos: 6
+	Method 1:
+		Nome: cp info #14 main
+		Descritor: cp info # 15([Ljava/lang/String;)V
+		flags: ACC_PUBLIC, ACC_STATIC
+		Número de Atributos: 1
+	Attribute 0: 
+		Nome: cp info #12 Code
+		Número de Atributos: 118
+		Misc: 
+			Max Stack: 5
+			Max Locals: 5
+			Code Length: 62
+		Bytecode: 
+			0  ldc2_w #2
+			3  dstore_1
+			4  ldc2_w #4
+			7  dstore_3
+			8  getstatic #6
+			11  dload_1
+			12  dload_3
+			13  dadd
+			14  invokevirtual #7
+			17  getstatic #6
+			20  dload_1
+			21  dload_3
+			22  dsub
+			23  invokevirtual #7
+			26  getstatic #6
+			29  dload_1
+			30  dload_3
+			31  dmul
+			32  invokevirtual #7
+			35  getstatic #6
+			38  dload_1
+			39  dload_3
+			40  ddiv
+			41  invokevirtual #7
+			44  getstatic #6
+			47  dload_1
+			48  dneg
+			49  invokevirtual #7
+			52  getstatic #6
+			55  dload_3
+			56  dload_1
+			57  drem
+			58  invokevirtual #7
+			61  return
+		Exception Table Length: 0
+		Número de Atributos: 1
+		Nome: cp info #13 LineNumberTable
+		Número de Atributos: 38
+	Atributo 0: 
+		Nome: cp info #16 SourceFile
+		Número de Atributos: 2

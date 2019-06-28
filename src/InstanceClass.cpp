@@ -8,15 +8,14 @@
 InstanceClass::InstanceClass(StaticClass* staticClass) {
 	this->staticClass = staticClass;
 
-	int tamanho = staticClass->obterClasseLeitorExibidor()->obterFieldsCount();
-	field_info *field = staticClass->obterClasseLeitorExibidor()->obterFields();
+	int tamanho = staticClass->obterClassFile()->obterFieldsCount();
+	Field_info *field = staticClass->obterClassFile()->obterFields();
 
 	for (int i = 0; i < tamanho; i++) {
 		if ((field[i].accessFlags & 0x08) == 0) {
 			TypedElement *typedElement = (TypedElement *) malloc(sizeof(TypedElement));
 			typedElement->value.l = 0;
-			string type = capturarIndiceDeReferencia(staticClass->obterClasseLeitorExibidor()->obterConstantPool(),
-					field[i].descriptor_index);
+			string type = capturarIndiceDeReferencia(staticClass->obterClassFile()->obterConstantPool(), field[i].descriptor_index);
 
 			switch (type[0]) {
 			case 'B':
@@ -50,8 +49,7 @@ InstanceClass::InstanceClass(StaticClass* staticClass) {
 				typedElement->type = TYPE_REFERENCE;
 				break;
 			}
-			string nomeField = capturarIndiceDeReferencia(staticClass->obterClasseLeitorExibidor()->obterConstantPool(),
-					field[i].name_index);
+			string nomeField = capturarIndiceDeReferencia(staticClass->obterClassFile()->obterConstantPool(), field[i].name_index);
 			mapLocalFields.insert(pair<string, TypedElement*>(nomeField, typedElement));
 		}
 	}

@@ -1,0 +1,121 @@
+
+Minor version:		 0
+Major version:		 52
+Número de Constant pool: 33
+Flags: ACC_PUBLICACC_SUPER (0x21)
+This class:		 cp info #6 <fooCorporation/fooCorporation>
+Super class:		 cp info #7 <java/lang/Object>
+Número de Interfaces:	 0
+Número de Campos:	 0
+Número de Metodos:	 2
+Número de Atributos:	 1
+
+Constant Pool:
+	 [ 1 ]Method cp info #7  cp info #17		// java/lang/Object  <init>  ()V
+	 [ 2 ]Field cp info #18  cp info #19		// java/lang/System  out  Ljava/io/PrintStream;
+	 [ 3 ]String 20		// error
+	 [ 4 ]Method cp info #21  cp info #22		// java/io/PrintStream  println  (Ljava/lang/String;)V
+	 [ 5 ]Method cp info #21  cp info #23		// java/io/PrintStream  println  (I)V
+	 [ 6 ]Class 24		// fooCorporation/fooCorporation
+	 [ 7 ]Class 25		// java/lang/Object
+	 [ 8 ]UTF-8	<init>
+	 [ 9 ]UTF-8	()V
+	 [ 10 ]UTF-8	Code
+	 [ 11 ]UTF-8	LineNumberTable
+	 [ 12 ]UTF-8	main
+	 [ 13 ]UTF-8	([Ljava/lang/String;)V
+	 [ 14 ]UTF-8	StackMapTable
+	 [ 15 ]UTF-8	SourceFile
+	 [ 16 ]UTF-8	fooCorporation.java
+	 [ 17 ]Name and Type cp info #8  cp info #9		// <init>  ()V
+	 [ 18 ]Class 26		// java/lang/System
+	 [ 19 ]Name and Type cp info #27  cp info #28		// out  Ljava/io/PrintStream;
+	 [ 20 ]UTF-8	error
+	 [ 21 ]Class 29		// java/io/PrintStream
+	 [ 22 ]Name and Type cp info #30  cp info #31		// println  (Ljava/lang/String;)V
+	 [ 23 ]Name and Type cp info #30  cp info #32		// println  (I)V
+	 [ 24 ]UTF-8	fooCorporation/fooCorporation
+	 [ 25 ]UTF-8	java/lang/Object
+	 [ 26 ]UTF-8	java/lang/System
+	 [ 27 ]UTF-8	out
+	 [ 28 ]UTF-8	Ljava/io/PrintStream;
+	 [ 29 ]UTF-8	java/io/PrintStream
+	 [ 30 ]UTF-8	println
+	 [ 31 ]UTF-8	(Ljava/lang/String;)V
+	 [ 32 ]UTF-8	(I)V
+
+	Method 0:
+		Nome: cp info #8 <init>
+		Descritor: cp info # 9()V
+		flags: ACC_PUBLIC
+		Número de Atributos: 1
+	Attribute 0: 
+		Nome: cp info #10 Code
+		Número de Atributos: 29
+		Misc: 
+			Max Stack: 1
+			Max Locals: 1
+			Code Length: 5
+		Bytecode: 
+			0  aload_0
+			1  invokespecial #1
+			4  return
+		Exception Table Length: 0
+		Número de Atributos: 1
+		Nome: cp info #11 LineNumberTable
+		Número de Atributos: 6
+	Method 1:
+		Nome: cp info #12 main
+		Descritor: cp info # 13([Ljava/lang/String;)V
+		flags: ACC_PUBLIC, ACC_STATIC
+		Número de Atributos: 1
+	Attribute 0: 
+		Nome: cp info #10 Code
+		Número de Atributos: 145
+		Misc: 
+			Max Stack: 3
+			Max Locals: 3
+			Code Length: 65
+		Bytecode: 
+			0  bipush 40
+			2  istore_1
+			3  bipush 8
+			5  istore_2
+			6  iload_2
+			7  bipush 8
+			9  if_icmpge 11
+			12  getstatic #2
+			15  ldc #3
+			17  invokevirtual #4
+			20  iload_1
+			21  bipush 60
+			23  if_icmple 11
+			26  getstatic #2
+			29  ldc #3
+			31  invokevirtual #4
+			34  iload_1
+			35  bipush 40
+			37  if_icmple 6
+			40  bipush 12
+			42  istore_2
+			43  iload_1
+			44  bipush 60
+			46  if_icmpgt 18
+			49  iload_2
+			50  bipush 8
+			52  if_icmplt 12
+			55  getstatic #2
+			58  iload_1
+			59  iload_2
+			60  imul
+			61  invokevirtual #5
+			64  return
+		Exception Table Length: 0
+		Número de Atributos: 2
+		Nome: cp info #11 LineNumberTable
+		Número de Atributos: 46
+		Nome: cp info #14 StackMapTable
+		Número de Atributos: 10
+	Atributo 0: 
+		Nome: cp info #15 SourceFile
+		Número de Atributos: 2

@@ -5,8 +5,8 @@
 
 #include "Heap.h"
 
-vector<InstanceClass*> Heap::vectorInstancia;
+vector<InstanceClass*> Heap::vectorInstanceClass;
 
-void Heap::adicionarInstancia(InstanceClass *classeInstancia) {
-	vectorInstancia.push_back(classeInstancia);
+void Heap::adicionarInstancia(InstanceClass *instanceClass) {
+	vectorInstanceClass.push_back(instanceClass);
 }

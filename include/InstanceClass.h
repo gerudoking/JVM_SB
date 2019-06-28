@@ -7,7 +7,7 @@
 
 class InstanceClass;
 
-#include "ClasseLeitorExibidor.h"
+#include "ClassFile.h"
 #include "StaticClass.h"
 #include "OperandsStack.h"
 #include "Heap.h"

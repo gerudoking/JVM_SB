@@ -5,8 +5,8 @@
 
 #include "Attributes.h"
 
-t_exception_table* lerExceptionHandler(FILE* arquivoEntrada) {
-	t_exception_table* tabelaException = (t_exception_table*) malloc(sizeof(t_exception_table));
+T_exception_table* lerExceptionHandler(FILE* arquivoEntrada) {
+	T_exception_table* tabelaException = (T_exception_table*) malloc(sizeof(T_exception_table));
 
 	tabelaException->start_pc = lerU2(arquivoEntrada);
 	tabelaException->end_pc = lerU2(arquivoEntrada);
@@ -16,46 +16,46 @@ t_exception_table* lerExceptionHandler(FILE* arquivoEntrada) {
 	return tabelaException;
 }
 
-t_info* lerAttributeInfo(FILE* arquivoEntrada, cp_info *constantPool, unsigned short indice, unsigned short tamanho) {
-	t_info* TabelaInfo = (t_info*) malloc(sizeof(t_info));
+T_info* lerAttributeInfo(FILE* arquivoEntrada, Cp_info *constantPool, unsigned short indice, unsigned short tamanho) {
+	T_info* TabelaInfo = (T_info*) malloc(sizeof(T_info));
 
 	string nome = capturarIndiceDeReferencia(constantPool, indice);
 
 	if (nome == "ConstantValue") {
-		TabelaInfo->constantvalue.constantvalue_index = lerU2(arquivoEntrada);
+		TabelaInfo->constantValue.constantvalue_index = lerU2(arquivoEntrada);
 	}
 
 	else if (nome == "Code") {
-		TabelaInfo->codigoAtributo.max_stack = lerU2(arquivoEntrada);
-		TabelaInfo->codigoAtributo.max_locals = lerU2(arquivoEntrada);
-		TabelaInfo->codigoAtributo.code_length = lerU4(arquivoEntrada);
+		TabelaInfo->codeAttribute.max_stack = lerU2(arquivoEntrada);
+		TabelaInfo->codeAttribute.max_locals = lerU2(arquivoEntrada);
+		TabelaInfo->codeAttribute.code_length = lerU4(arquivoEntrada);
 
-		unsigned char* list_code = (unsigned char*) malloc(sizeof(t_exception_table) * TabelaInfo->codigoAtributo.code_length);
+		unsigned char* list_code = (unsigned char*) malloc(sizeof(T_exception_table) * TabelaInfo->codeAttribute.code_length);
 
-		for (int i = 0; (unsigned int) i < TabelaInfo->codigoAtributo.code_length; i++) {
+		for (int i = 0; (unsigned int) i < TabelaInfo->codeAttribute.code_length; i++) {
 			list_code[i] = lerU1(arquivoEntrada);
 		}
-		TabelaInfo->codigoAtributo.codigo = list_code;
+		TabelaInfo->codeAttribute.codigo = list_code;
 
-		TabelaInfo->codigoAtributo.exception_table_length = lerU2(arquivoEntrada);
+		TabelaInfo->codeAttribute.exception_table_length = lerU2(arquivoEntrada);
 
-		t_exception_table** table_of_exception = (t_exception_table**) malloc(
-				sizeof(t_exception_table) * TabelaInfo->codigoAtributo.exception_table_length);
+		T_exception_table** table_of_exception = (T_exception_table**) malloc(
+				sizeof(T_exception_table) * TabelaInfo->codeAttribute.exception_table_length);
 
-		for (int i = 0; i < TabelaInfo->codigoAtributo.exception_table_length; i++) {
+		for (int i = 0; i < TabelaInfo->codeAttribute.exception_table_length; i++) {
 			table_of_exception[i] = lerExceptionHandler(arquivoEntrada);
 		}
 
-		TabelaInfo->codigoAtributo.exception_table = table_of_exception;
+		TabelaInfo->codeAttribute.exception_table = table_of_exception;
 
-		TabelaInfo->codigoAtributo.attribute_count = lerU2(arquivoEntrada);
+		TabelaInfo->codeAttribute.attribute_count = lerU2(arquivoEntrada);
 
-		attribute_info* attributes_infos = (attribute_info*) malloc(sizeof(attribute_info) * TabelaInfo->codigoAtributo.attribute_count);
+		Attribute_info* attributes_infos = (Attribute_info*) malloc(sizeof(Attribute_info) * TabelaInfo->codeAttribute.attribute_count);
 
-		for (int i = 0; i < TabelaInfo->codigoAtributo.attribute_count; i++) {
+		for (int i = 0; i < TabelaInfo->codeAttribute.attribute_count; i++) {
 			attributes_infos[i] = lerAttribute(arquivoEntrada, constantPool);
 		}
-		TabelaInfo->codigoAtributo.attributes = attributes_infos;
+		TabelaInfo->codeAttribute.attributes = attributes_infos;
 	}
 
 	else if (nome == "Exceptions") {
@@ -78,8 +78,8 @@ t_info* lerAttributeInfo(FILE* arquivoEntrada, cp_info *constantPool, unsigned s
 	return TabelaInfo;
 }
 
-attribute_info lerAttribute(FILE* arquivoEntrada, cp_info *constantPool) {
-	attribute_info attribute;
+Attribute_info lerAttribute(FILE* arquivoEntrada, Cp_info *constantPool) {
+	Attribute_info attribute;
 
 	attribute.name_index = lerU2(arquivoEntrada);
 	attribute.length = lerU4(arquivoEntrada);
@@ -89,8 +89,8 @@ attribute_info lerAttribute(FILE* arquivoEntrada, cp_info *constantPool) {
 	return attribute;
 }
 
-attribute_info* lerTodosAttributes(FILE* arquivoEntrada, cp_info *constantPool, int tamanho) {
-	attribute_info* attributes_reading = (attribute_info*) malloc(sizeof(attribute_info) * tamanho);
+Attribute_info* lerTodosAttributes(FILE* arquivoEntrada, Cp_info *constantPool, int tamanho) {
+	Attribute_info* attributes_reading = (Attribute_info*) malloc(sizeof(Attribute_info) * tamanho);
 
 	int i;
 
@@ -101,7 +101,7 @@ attribute_info* lerTodosAttributes(FILE* arquivoEntrada, cp_info *constantPool, 
 	return attributes_reading;
 }
 
-void imprimirTodosAttributes(attribute_info* attribute, cp_info* constantPool, int tamanho) {
+void imprimirTodosAttributes(Attribute_info* attribute, Cp_info* constantPool, int tamanho) {
 	int i;
 
 	for (i = 0; i < tamanho; i++) {
@@ -110,7 +110,7 @@ void imprimirTodosAttributes(attribute_info* attribute, cp_info* constantPool, i
 	}
 }
 
-void imprimirAttribute(attribute_info attribute, cp_info *constantPool) {
+void imprimirAttribute(Attribute_info attribute, Cp_info *constantPool) {
 	string name_of_attribute = capturarIndiceDeReferencia(constantPool, attribute.name_index);
 
 	cout << "\t\tNome: cp info #" << attribute.name_index << " " << name_of_attribute << endl;
@@ -118,39 +118,39 @@ void imprimirAttribute(attribute_info attribute, cp_info *constantPool) {
 	cout << "\t\tNúmero de Atributos: " << attribute.length << endl;
 
 	if (name_of_attribute == "ConstantValue") {
-		cout << "\t\tValor da Constante: " << attribute.info->constantvalue.constantvalue_index << endl;
+		cout << "\t\tValor da Constante: " << attribute.info->constantValue.constantvalue_index << endl;
 	}
 
 	else if (name_of_attribute == "Code") {
 
 		cout << "\t\tMisc: " << endl;
-		cout << "\t\t\tMax Stack: " << attribute.info->codigoAtributo.max_stack << endl;
-		cout << "\t\t\tMax Locals: " << attribute.info->codigoAtributo.max_locals << endl;
-		cout << "\t\t\tCode Length: " << attribute.info->codigoAtributo.code_length << endl;
+		cout << "\t\t\tMax Stack: " << attribute.info->codeAttribute.max_stack << endl;
+		cout << "\t\t\tMax Locals: " << attribute.info->codeAttribute.max_locals << endl;
+		cout << "\t\t\tCode Length: " << attribute.info->codeAttribute.code_length << endl;
 
 		int var = 0;
 
 		cout << "\t\tBytecode: " << endl;
 
-		while ((unsigned int) var < attribute.info->codigoAtributo.code_length) {
-			cout << "\t\t\t" << var << "  " << obterMnemonico(attribute.info->codigoAtributo.codigo[var]);
-			obterParametrosOpcode(attribute.info->codigoAtributo.codigo, &var);
+		while ((unsigned int) var < attribute.info->codeAttribute.code_length) {
+			cout << "\t\t\t" << var << "  " << obterMnemonico(attribute.info->codeAttribute.codigo[var]);
+			obterParametrosOpcode(attribute.info->codeAttribute.codigo, &var);
 			cout << endl;
 		}
 
-		cout << "\t\tException Table Length: " << attribute.info->codigoAtributo.exception_table_length << endl;
+		cout << "\t\tException Table Length: " << attribute.info->codeAttribute.exception_table_length << endl;
 
-		for (int var = 0; var < attribute.info->codigoAtributo.exception_table_length; var++) {
-			cout << "\t\tStart   PC: " << attribute.info->codigoAtributo.exception_table[var]->start_pc << endl;
-			cout << "\t\tEnd     PC: " << attribute.info->codigoAtributo.exception_table[var]->end_pc << endl;
-			cout << "\t\tHandler PC: " << attribute.info->codigoAtributo.exception_table[var]->handler_pc << endl;
-			cout << "\t\tCatch Type: " << attribute.info->codigoAtributo.exception_table[var]->catch_type << endl;
+		for (int var = 0; var < attribute.info->codeAttribute.exception_table_length; var++) {
+			cout << "\t\tStart   PC: " << attribute.info->codeAttribute.exception_table[var]->start_pc << endl;
+			cout << "\t\tEnd     PC: " << attribute.info->codeAttribute.exception_table[var]->end_pc << endl;
+			cout << "\t\tHandler PC: " << attribute.info->codeAttribute.exception_table[var]->handler_pc << endl;
+			cout << "\t\tCatch Type: " << attribute.info->codeAttribute.exception_table[var]->catch_type << endl;
 		}
 
-		cout << "\t\tNúmero de Atributos: " << attribute.info->codigoAtributo.attribute_count << endl;
+		cout << "\t\tNúmero de Atributos: " << attribute.info->codeAttribute.attribute_count << endl;
 
-		for (int var = 0; var < attribute.info->codigoAtributo.attribute_count; var++) {
-			imprimirAttribute(attribute.info->codigoAtributo.attributes[var], constantPool);
+		for (int var = 0; var < attribute.info->codeAttribute.attribute_count; var++) {
+			imprimirAttribute(attribute.info->codeAttribute.attributes[var], constantPool);
 		}
 	}
 
@@ -164,7 +164,7 @@ void imprimirAttribute(attribute_info attribute, cp_info *constantPool) {
 	}
 }
 
-void gravarArquivoTodosAttributes(attribute_info* attribute, cp_info* constantPool, int tamanho, fstream &arquivoSaida) {
+void gravarArquivoTodosAttributes(Attribute_info* attribute, Cp_info* constantPool, int tamanho, fstream &arquivoSaida) {
 	int i;
 
 	for (i = 0; i < tamanho; i++) {
@@ -173,7 +173,7 @@ void gravarArquivoTodosAttributes(attribute_info* attribute, cp_info* constantPo
 	}
 }
 
-void gravarArquivoAttribute(attribute_info attribute, cp_info *constantPool, fstream &arquivoSaida) {
+void gravarArquivoAttribute(Attribute_info attribute, Cp_info *constantPool, fstream &arquivoSaida) {
 	string name_of_attribute = capturarIndiceDeReferencia(constantPool, attribute.name_index);
 
 	arquivoSaida << "\t\tNome: cp info #" << attribute.name_index << " " << name_of_attribute << endl;
@@ -181,39 +181,39 @@ void gravarArquivoAttribute(attribute_info attribute, cp_info *constantPool, fst
 	arquivoSaida << "\t\tNúmero de Atributos: " << attribute.length << endl;
 
 	if (name_of_attribute == "ConstantValue") {
-		arquivoSaida << "\t\tValor da Constante: " << attribute.info->constantvalue.constantvalue_index << endl;
+		arquivoSaida << "\t\tValor da Constante: " << attribute.info->constantValue.constantvalue_index << endl;
 	}
 
 	else if (name_of_attribute == "Code") {
 
 		arquivoSaida << "\t\tMisc: " << endl;
-		arquivoSaida << "\t\t\tMax Stack: " << attribute.info->codigoAtributo.max_stack << endl;
-		arquivoSaida << "\t\t\tMax Locals: " << attribute.info->codigoAtributo.max_locals << endl;
-		arquivoSaida << "\t\t\tCode Length: " << attribute.info->codigoAtributo.code_length << endl;
+		arquivoSaida << "\t\t\tMax Stack: " << attribute.info->codeAttribute.max_stack << endl;
+		arquivoSaida << "\t\t\tMax Locals: " << attribute.info->codeAttribute.max_locals << endl;
+		arquivoSaida << "\t\t\tCode Length: " << attribute.info->codeAttribute.code_length << endl;
 
 		int var = 0;
 
 		arquivoSaida << "\t\tBytecode: " << endl;
 
-		while ((unsigned int) var < attribute.info->codigoAtributo.code_length) {
-			arquivoSaida << "\t\t\t" << var << "  " << obterMnemonico(attribute.info->codigoAtributo.codigo[var]);
-			gravaArquivoObterParametrosOpcode(attribute.info->codigoAtributo.codigo, &var, arquivoSaida);
+		while ((unsigned int) var < attribute.info->codeAttribute.code_length) {
+			arquivoSaida << "\t\t\t" << var << "  " << obterMnemonico(attribute.info->codeAttribute.codigo[var]);
+			gravaArquivoObterParametrosOpcode(attribute.info->codeAttribute.codigo, &var, arquivoSaida);
 			arquivoSaida << endl;
 		}
 
-		arquivoSaida << "\t\tException Table Length: " << attribute.info->codigoAtributo.exception_table_length << endl;
+		arquivoSaida << "\t\tException Table Length: " << attribute.info->codeAttribute.exception_table_length << endl;
 
-		for (int var = 0; var < attribute.info->codigoAtributo.exception_table_length; var++) {
-			arquivoSaida << "\t\tStart   PC: " << attribute.info->codigoAtributo.exception_table[var]->start_pc << endl;
-			arquivoSaida << "\t\tEnd     PC: " << attribute.info->codigoAtributo.exception_table[var]->end_pc << endl;
-			arquivoSaida << "\t\tHandler PC: " << attribute.info->codigoAtributo.exception_table[var]->handler_pc << endl;
-			arquivoSaida << "\t\tCatch Type: " << attribute.info->codigoAtributo.exception_table[var]->catch_type << endl;
+		for (int var = 0; var < attribute.info->codeAttribute.exception_table_length; var++) {
+			arquivoSaida << "\t\tStart   PC: " << attribute.info->codeAttribute.exception_table[var]->start_pc << endl;
+			arquivoSaida << "\t\tEnd     PC: " << attribute.info->codeAttribute.exception_table[var]->end_pc << endl;
+			arquivoSaida << "\t\tHandler PC: " << attribute.info->codeAttribute.exception_table[var]->handler_pc << endl;
+			arquivoSaida << "\t\tCatch Type: " << attribute.info->codeAttribute.exception_table[var]->catch_type << endl;
 		}
 
-		arquivoSaida << "\t\tNúmero de Atributos: " << attribute.info->codigoAtributo.attribute_count << endl;
+		arquivoSaida << "\t\tNúmero de Atributos: " << attribute.info->codeAttribute.attribute_count << endl;
 
-		for (int var = 0; var < attribute.info->codigoAtributo.attribute_count; var++) {
-			gravarArquivoAttribute(attribute.info->codigoAtributo.attributes[var], constantPool, arquivoSaida);
+		for (int var = 0; var < attribute.info->codeAttribute.attribute_count; var++) {
+			gravarArquivoAttribute(attribute.info->codeAttribute.attributes[var], constantPool, arquivoSaida);
 		}
 	}
 

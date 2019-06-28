@@ -11,7 +11,6 @@
 #include <iostream>
 #include <sstream>
 #include <cstdlib>
-
 #include "BasicTypes.h"
 
 using namespace std;

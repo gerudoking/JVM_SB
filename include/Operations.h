@@ -1,13 +1,13 @@
 /** \file Operations.h
  *	\brief
  */
-#ifndef OPERACOES
-#define OPERACOES
+#ifndef OPERATIONS
+#define OPERATIONS
 
 #include "StaticClass.h"
-#include "Frame.h"
-#include "ClasseLeitorExibidor.h"
+#include "ClassFile.h"
 #include "MethodArea.h"
+#include "PilhaJVM.h"
 
 using namespace std;
 
@@ -36,9 +36,9 @@ private:
 	static double obterValor(N_array array, stack<int> stackIndeces);
 
 	static bool isWide;
-	static struct frame_s *flame;
-	static stack<struct frame_s*> *stackThreads;
-	static FrameStack *frameStack;
+	static struct frame_s *frame;
+	static stack<struct frame_s*> *stackFrame;
+	static PilhaJVM *pilhaJVM;
 	//tem que adicionar os operandos aqui pra todas as funcoes terem a mesma assinatura
 
 	//funcoes auxiliares
@@ -260,13 +260,26 @@ private:
 	static void jsr_w();
 	//************************************final linha 12
 
-
 public:
-	Operations(struct frame_s *flame);
+	Operations(struct frame_s *frame);
 
-	static void atualizarFrame(struct frame_s *flame);
-	static void atualizarThreads(stack<struct frame_s*> *stackThreads);
-	static void atualizarFrameStack(FrameStack *frameStack);
+	/** @fn static void atualizarFrame(FrameStack *pFrame)
+	 * @brief Atualiza a referência do frame do metodo
+	 * @param pFrame o frame do metodo
+	 */
+	static void atualizarFrame(struct frame_s *pFrame);
+
+	/** @fn static void atualizarStackFrame(FrameStack *pStackFrame)
+	 * @brief Atualiza a referência da pilha de frames para o próximo frame
+	 * @param pStackFrame próximo frame
+	 */
+	static void atualizarStackFrame(stack<struct frame_s*> *pStackFrame);
+
+	/** @fn static void atualizarPilhaJVM(FrameStack *pStackFrame)
+	 * @brief Atualiza a pilha referência da pilha da jvm para o próximo instrução
+	 * @param pPilhaJVM a pilha da jvm
+	 */
+	static void atualizarPilhaJVM(PilhaJVM *pPilhaJVM);
 
 	static void executarOperacao(int opcode);
 };

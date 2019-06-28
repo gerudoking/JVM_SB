@@ -1,30 +1,30 @@
 /*!
- * \file ClasseLeitorExibidor.cpp
+ * \file ClassFile.cpp
  * \brief Classe que irá realizar a leitura do bytecode e salvar as informações do class file
  */
 
-#include "ClasseLeitorExibidor.h"
+#include "ClassFile.h"
 
-LeitorExibidor::LeitorExibidor(char *in) { // @suppress("Class members should be properly initialized")
+ClassFile::ClassFile(char *in) { // @suppress("Class members should be properly initialized")
 	if (in) {	//associa o nome do arquivo passado a variavel filename
 		fileName = in;
 	}
 	status = -1;
 }
 
-LeitorExibidor::LeitorExibidor(string in) { // @suppress("Class members should be properly initialized")
+ClassFile::ClassFile(string in) { // @suppress("Class members should be properly initialized")
 	//verifica se o arquivo passado é vazio
 	if (!in.empty()) {
 		//copia para fileName o nome do arquivo lido
 		fileName = new char[in.size() + 1];
-		std::copy(in.begin(), in.end(), fileName);
+		copy(in.begin(), in.end(), fileName);
 		fileName[in.size()] = 0;
 	}
 	status = -1;
 }
 
 /* Função que vai abrir o arquivo dado */
-int LeitorExibidor::inicializarArquivo(char *argv[]) {
+int ClassFile::inicializarArquivo(char *argv[]) {
 	string str(argv[2]);
 	string extensao = str.substr(0, str.length() - 6);
 
@@ -38,11 +38,11 @@ int LeitorExibidor::inicializarArquivo(char *argv[]) {
 	return status = -1;
 }
 
-void LeitorExibidor::fecharArquivo() {
+void ClassFile::fecharArquivo() {
 	arquivoSaida.close();
 }
 
-int LeitorExibidor::validacao(void) {
+int ClassFile::validacao(void) {
 	//**verifica se o arquivo possui a extensao .class
 	if (!validarExtensao()) {
 		cout << obterErro(INVALID_EXTENSION) << endl;
@@ -65,7 +65,7 @@ int LeitorExibidor::validacao(void) {
 
 }
 
-int LeitorExibidor::carregar() {
+int ClassFile::carregar() {
 	int verificarCP;
 
 	//verifica se o arquivo passado existe
@@ -110,7 +110,7 @@ int LeitorExibidor::carregar() {
 	lengthCP = lerU2(arquivoClass);
 
 	//carrega a ConstantPool na memoria chamando o metodo que se encontra na classe da constantPool
-	constantPool = (cp_info *) malloc(sizeof(cp_info) * lengthCP);
+	constantPool = (Cp_info *) malloc(sizeof(Cp_info) * lengthCP);
 	verificarCP = carregarConstantPool(constantPool, lengthCP, arquivoClass);
 
 	//verifica se todos os elementos foram lidos
@@ -173,7 +173,7 @@ int LeitorExibidor::carregar() {
 	return (status = 0);
 }
 
-bool LeitorExibidor::exibir() {
+bool ClassFile::exibir() {
 	//verifica se o arquivo foi lido
 	if (status != 0) {
 		return false;
@@ -200,7 +200,7 @@ bool LeitorExibidor::exibir() {
 	return true;
 }
 
-bool LeitorExibidor::gravarArquivo() {
+bool ClassFile::gravarArquivo() {
 	//verifica se o arquivo foi lido
 	if (status != 0) {
 		return false;
@@ -221,7 +221,7 @@ bool LeitorExibidor::gravarArquivo() {
 	return true;
 }
 
-void LeitorExibidor::imprimirInformacoesGerais() {
+void ClassFile::imprimirInformacoesGerais() {
 	cout << "" << endl;
 
 	cout << "Minor version:\t\t " << minVersion << endl;
@@ -250,7 +250,7 @@ void LeitorExibidor::imprimirInformacoesGerais() {
 	cout << "" << endl;
 }
 
-void LeitorExibidor::gravarArquivoInformacoesGerais() {
+void ClassFile::gravarArquivoInformacoesGerais() {
 	arquivoSaida << "" << endl;
 
 	arquivoSaida << "Minor version:\t\t " << minVersion << endl;
@@ -281,7 +281,7 @@ void LeitorExibidor::gravarArquivoInformacoesGerais() {
 	arquivoSaida << "" << endl;
 }
 
-bool LeitorExibidor::validarExtensao() {
+bool ClassFile::validarExtensao() {
 	string aux = "", auxFilename(this->fileName);
 	int size = auxFilename.size();
 
@@ -294,7 +294,7 @@ bool LeitorExibidor::validarExtensao() {
 	return aux == ".class";
 }
 
-bool LeitorExibidor::verificarMain() {
+bool ClassFile::verificarMain() {
 	bool encontrou = false;
 
 	for (int i = 0; i < methodsCount; i++) {
@@ -317,7 +317,7 @@ bool LeitorExibidor::verificarMain() {
 	return encontrou;
 }
 
-bool LeitorExibidor::verificarClinit() {
+bool ClassFile::verificarClinit() {
 	bool encontrou = false;
 
 	for (int i = 0; i < methodsCount; i++) {
@@ -335,19 +335,19 @@ bool LeitorExibidor::verificarClinit() {
 	return encontrou;
 }
 
-bool LeitorExibidor::existeMain() {
+bool ClassFile::existeMain() {
 	//verifica se o metodo main esta entre os metodos lidos no bytecode
 	encontrouMain = verificarMain();
 	return encontrouMain;
 }
 
-bool LeitorExibidor::existeClinit() {
+bool ClassFile::existeClinit() {
 	//verifica se existe o metodo <clinit>
 	encontrouClinit = verificarClinit();
 	return encontrouClinit;
 }
 
-method_info LeitorExibidor::obterMain() {
+Method_info ClassFile::obterMain() {
 	if (encontrouMain) {
 		return methods[mainMethod];
 	} else {
@@ -355,11 +355,11 @@ method_info LeitorExibidor::obterMain() {
 	}
 }
 
-method_info LeitorExibidor::obterClinit() {
+Method_info ClassFile::obterClinit() {
 	return methods[clinit];
 }
 
-bool LeitorExibidor::verificarThisClass() {
+bool ClassFile::verificarThisClass() {
 	int auxPos;
 
 	string auxFilename(this->fileName);
@@ -401,11 +401,11 @@ bool LeitorExibidor::verificarThisClass() {
 	return (auxClass == auxFilename);
 }
 
-int LeitorExibidor::obterStatus() {
+int ClassFile::obterStatus() {
 	return status;
 }
 
-string LeitorExibidor::obterErro(int erro) {
+string ClassFile::obterErro(int erro) {
 	string mensagemErro = "";
 	switch (erro) {
 	case MISSING_ARGUMENT:
@@ -438,15 +438,15 @@ string LeitorExibidor::obterErro(int erro) {
 	return mensagemErro;
 }
 
-cp_info* LeitorExibidor::obterConstantPool() const {
+Cp_info* ClassFile::obterConstantPool() const {
 	return constantPool;
 }
 
-U2 LeitorExibidor::obterTamanhoConstantPool() {
+U2 ClassFile::obterTamanhoConstantPool() {
 	return lengthCP;
 }
 
-char *LeitorExibidor::obterPath() {
+char *ClassFile::obterPath() {
 	string path = "", auxFilename(this->fileName);
 	char *caminho_arquivo;
 	int auxPos;
@@ -477,31 +477,31 @@ char *LeitorExibidor::obterPath() {
 	return caminho_arquivo;
 }
 
-method_info *LeitorExibidor::obterMethods() {
+Method_info *ClassFile::obterMethods() {
 	return methods;
 }
 
-U2 LeitorExibidor::obterMethodsCount() {
+U2 ClassFile::obterMethodsCount() {
 	return methodsCount;
 }
 
-U2 LeitorExibidor::obterThis_class() {
+U2 ClassFile::obterThis_class() {
 	return this_class;
 }
 
-U2 LeitorExibidor::obterSuper_class() {
+U2 ClassFile::obterSuper_class() {
 	return super_class;
 }
 
-U2 LeitorExibidor::obterFieldsCount() {
+U2 ClassFile::obterFieldsCount() {
 	return fieldsCount;
 }
 
-field_info *LeitorExibidor::obterFields() {
+Field_info *ClassFile::obterFields() {
 	return fields;
 }
 
-field_info* LeitorExibidor::obterField(string nome) {
+Field_info* ClassFile::obterField(string nome) {
 	//percorre a array com as fields  ate encontrar field desejada
 	for (int i = 0; i < obterFieldsCount(); i++) {
 		if (capturarIndiceDeReferencia(constantPool, fields[i].name_index) == nome) {
@@ -512,8 +512,8 @@ field_info* LeitorExibidor::obterField(string nome) {
 
 }
 
-method_info* LeitorExibidor::obterMethod(string nome, string descriptor) {
-	method_info method;
+Method_info* ClassFile::obterMethod(string nome, string descriptor) {
+	Method_info method;
 
 	for (int i = 0; i < this->methodsCount; i++) {
 		method = this->methods[i];
@@ -529,14 +529,14 @@ method_info* LeitorExibidor::obterMethod(string nome, string descriptor) {
 		return NULL;
 	} else {
 		StaticClass* staticClass = MethodArea::obterClass(capturarIndiceDeReferencia(this->constantPool, obterSuper_class()));
-		LeitorExibidor* leitorExibidor = staticClass->obterClasseLeitorExibidor();
+		ClassFile* classFile = staticClass->obterClassFile();
 
-		return leitorExibidor->obterMethod(nome, descriptor);
+		return classFile->obterMethod(nome, descriptor);
 	}
 }
 
-LeitorExibidor* LeitorExibidor::obterClassThatHasSerachedMethod(string nome, string descriptor) {
-	method_info* method;
+ClassFile* ClassFile::obterClassThatHasSerachedMethod(string nome, string descriptor) {
+	Method_info* method;
 
 	for (int i = 0; i < this->methodsCount; i++) {
 		method = (this->methods) + i;
@@ -552,8 +552,7 @@ LeitorExibidor* LeitorExibidor::obterClassThatHasSerachedMethod(string nome, str
 	if (obterSuper_class() == 0) {
 		return NULL;
 	} else {
-		LeitorExibidor* leitorExibidor =
-				MethodArea::obterClass(capturarIndiceDeReferencia(this->constantPool, obterSuper_class()))->obterClasseLeitorExibidor();
-		return leitorExibidor->obterClassThatHasSerachedMethod(nome, descriptor);
+		ClassFile* classFile = MethodArea::obterClass(capturarIndiceDeReferencia(this->constantPool, obterSuper_class()))->obterClassFile();
+		return classFile->obterClassThatHasSerachedMethod(nome, descriptor);
 	}
 }

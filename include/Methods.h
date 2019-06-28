@@ -13,13 +13,16 @@
 
 using namespace std;
 
+/** @struct Method_info
+ * @brief Struct responsável por armazenar os metodos declarados.
+ */
 typedef struct {
 	uint16_t access_flags;
 	uint16_t name_index;
 	uint16_t descriptor_index;
 	uint16_t attributes_count;
-	attribute_info *attributes;
-} method_info;
+	Attribute_info *attributes;
+} Method_info;
 
 /** @fn method_info lerMethod(FILE* arquivoEntrada, cp_info *constantPool)
  * Lê um método do arquivo .class
@@ -27,7 +30,7 @@ typedef struct {
  * @param *arquivoEntrada ponteiro para o arquivo .class
  * @param *constantPool ponteiro para as informações do pool de constantes
  */
-method_info lerMethod(FILE* arquivoEntrada, cp_info *constantPool);
+Method_info lerMethod(FILE* arquivoEntrada, Cp_info *constantPool);
 
 /** @fn method_info *lerTodosMethods(FILE* arquivoEntrada, int tamanho, cp_info *constantPool)
  * Lê os métodos do arquivo .class
@@ -36,7 +39,7 @@ method_info lerMethod(FILE* arquivoEntrada, cp_info *constantPool);
  * @param tamanho quantidade de métodos presente
  * @param *constantPool ponteiro para as informações do pool de constantes
  */
-method_info *lerTodosMethods(FILE* arquivoEntrada, int tamanho, cp_info *constantPool);
+Method_info *lerTodosMethods(FILE* arquivoEntrada, int tamanho, Cp_info *constantPool);
 
 /** @fn void imprimirMethod(method_info method, cp_info *constantPool)
  * Mostra um método do arquivo .class
@@ -44,7 +47,7 @@ method_info *lerTodosMethods(FILE* arquivoEntrada, int tamanho, cp_info *constan
  * @param method contém as informações do método
  * @param *constantPool ponteiro para as informações do pool de constantes
  */
-void imprimirMethod(method_info method, cp_info *constantPool);
+void imprimirMethod(Method_info method, Cp_info *constantPool);
 
 /** @fn imprimirTodosMethods(method_info *method, cp_info *constantPool, int tamanho)
  * Mostra todos os métodos do arquivo .class
@@ -53,7 +56,7 @@ void imprimirMethod(method_info method, cp_info *constantPool);
  * @param *constantPool ponteiro para as informações do pool de constantes
  * @param tamanho quantidade de métodos a serem mostrados
  */
-void imprimirTodosMethods(method_info *method, cp_info *constantPool, int tamanho);
+void imprimirTodosMethods(Method_info *method, Cp_info *constantPool, int tamanho);
 
 /** @fn gravarArquivoMethod(method_info method, cp_info *constantPool, int indice, fstream &arquivoSaida)
  * @brief Mostra um método do arquivo .class
@@ -62,7 +65,7 @@ void imprimirTodosMethods(method_info *method, cp_info *constantPool, int tamanh
  * @param indice indice para o method
  * @param arquivoSaida arquivo de saida
  */
-void gravarArquivoMethod(method_info method, cp_info *constantPool, int indice, fstream &arquivoSaida);
+void gravarArquivoMethod(Method_info method, Cp_info *constantPool, int indice, fstream &arquivoSaida);
 
 /** @fn gravarArquivoTodosMethods(method_info *method, cp_info *constantPool, int tamanho, fstream &arquivoSaida)
  * @brief Mostra todos os métodos do arquivo .class
@@ -71,7 +74,7 @@ void gravarArquivoMethod(method_info method, cp_info *constantPool, int indice, 
  * @param tamanho quantidade de métodos a serem mostrados
  * @param arquivoSaida arquivo de saida
  */
-void gravarArquivoTodosMethods(method_info *method, cp_info *constantPool, int tamanho, fstream &arquivoSaida);
+void gravarArquivoTodosMethods(Method_info *method, Cp_info *constantPool, int tamanho, fstream &arquivoSaida);
 
 /** @fn string obterFlagMethod(uint16_t flag)
  * Obtém as access flags dos métodos para print

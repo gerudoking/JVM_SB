@@ -1,8 +1,9 @@
 /*!
- * \file main.cpp
+ * \file Main.cpp
  * \brief Modulo principal, dá a opção de escolha entre exibidor e interpretador
  */
-#include "ClasseLeitorExibidor.h"
+#include "ClassFile.h"
+#include "LeitorExibidor.h"
 
 /**
  * Software Básico 2019/1
@@ -26,27 +27,30 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 
-	LeitorExibidor leitorExibidor(argv[2]);
+	ClassFile classFile(argv[2]);
+	LeitorExibidor leitorExibidor(&classFile);
 
 	if (argv[1][1] == 'e') { //exibidor
-		if (leitorExibidor.carregar() == 0) {
+
+		if (leitorExibidor.classFile->carregar() == 0) {
+
 			//imprime o bytecode lido
-			leitorExibidor.exibir();
-			if (leitorExibidor.inicializarArquivo(argv) == 0) {
-				leitorExibidor.gravarArquivo();
-				leitorExibidor.fecharArquivo();
+			leitorExibidor.classFile->exibir();
+			if (leitorExibidor.classFile->inicializarArquivo(argv) == 0) {
+				leitorExibidor.classFile->gravarArquivo();
+				leitorExibidor.classFile->fecharArquivo();
 			}
 		}
 	} else if (argv[1][1] == 'i') { //interpretador
-		leitorExibidor.carregar();
+		leitorExibidor.classFile->carregar();
 
-		if (leitorExibidor.obterStatus() == 0 && !leitorExibidor.validacao()) {
+		if (leitorExibidor.classFile->obterStatus() == 0 && !leitorExibidor.classFile->validacao()) {
 
-			MethodArea::path = string(leitorExibidor.obterPath());
-			MethodArea::adicionarClasse(&leitorExibidor);
+			MethodArea::path = string(leitorExibidor.classFile->obterPath());
+			MethodArea::adicionarClasse(&classFile);
 
-			FrameStack frameStack(&leitorExibidor);
-			frameStack.executarMetodos();
+			PilhaJVM pilhaJVM(&classFile);
+			pilhaJVM.executarMetodos();
 		}
 
 	} else {
@@ -54,7 +58,7 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 
-	cout << "Fim do programa" << endl;
+	cout << "Fim do programa JVM" << endl;
 
 	return 0;
 }

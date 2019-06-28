@@ -5,7 +5,7 @@
 
 #include "Fields.h"
 
-void imprimirField(field_info field, cp_info *constantPool, int indice) {
+void imprimirField(Field_info field, Cp_info *constantPool, int indice) {
 	printf("\tField %d : \n", indice);
 	printf("\t%s", obterFlagField(field.accessFlags).c_str());
 	printf("\t\tNome: %s\n", capturarIndiceDeReferencia(constantPool, field.name_index).c_str());
@@ -18,13 +18,13 @@ void imprimirField(field_info field, cp_info *constantPool, int indice) {
 	}
 }
 
-void imprimirTodosField(field_info *field, cp_info *constantPool, int tamanho) {
+void imprimirTodosField(Field_info *field, Cp_info *constantPool, int tamanho) {
 	for (int i = 0; i < tamanho; i++) {
 		imprimirField(field[i], constantPool, i);
 	}
 }
 
-void gravarArquivoField(field_info field, cp_info *constantPool, int indice, fstream &arquivoSaida) {
+void gravarArquivoField(Field_info field, Cp_info *constantPool, int indice, fstream &arquivoSaida) {
 	printf("\tField %d : \n", indice);
 	printf("\t%s", obterFlagField(field.accessFlags).c_str());
 	printf("\t\tNome: %s\n", capturarIndiceDeReferencia(constantPool, field.name_index).c_str());
@@ -37,20 +37,20 @@ void gravarArquivoField(field_info field, cp_info *constantPool, int indice, fst
 	}
 }
 
-void gravarArquivoTodosField(field_info *field, cp_info *constantPool, int tamanho, fstream &arquivoSaida) {
+void gravarArquivoTodosField(Field_info *field, Cp_info *constantPool, int tamanho, fstream &arquivoSaida) {
 	for (int i = 0; i < tamanho; i++) {
 		gravarArquivoField(field[i], constantPool, i, arquivoSaida);
 	}
 }
 
-field_info lerField(FILE* arquivoEntrada, cp_info* constantPool) {
-	field_info field;
+Field_info lerField(FILE* arquivoEntrada, Cp_info* constantPool) {
+	Field_info field;
 
 	field.accessFlags = lerU2(arquivoEntrada) & 0X0df;
 	field.name_index = lerU2(arquivoEntrada);
 	field.descriptor_index = lerU2(arquivoEntrada);
 	field.attributes_count = lerU2(arquivoEntrada);
-	field.attributes = (attribute_info *) malloc(sizeof(attribute_info) * field.attributes_count);
+	field.attributes = (Attribute_info *) malloc(sizeof(Attribute_info) * field.attributes_count);
 	for (int i = 0; i < field.attributes_count; i++) {
 		field.attributes[i] = lerAttribute(arquivoEntrada, constantPool);
 	}
@@ -58,8 +58,8 @@ field_info lerField(FILE* arquivoEntrada, cp_info* constantPool) {
 	return field;
 }
 
-field_info *lerTodosFields(FILE* arquivoEntrada, int tamanho, cp_info* constantPool) {
-	field_info *field = (field_info *) malloc(sizeof(field_info) * tamanho);
+Field_info *lerTodosFields(FILE* arquivoEntrada, int tamanho, Cp_info* constantPool) {
+	Field_info *field = (Field_info *) malloc(sizeof(Field_info) * tamanho);
 
 	for (int i = 0; i < tamanho; i++) {
 		field[i] = lerField(arquivoEntrada, constantPool);

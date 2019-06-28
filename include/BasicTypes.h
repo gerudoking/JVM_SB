@@ -41,7 +41,6 @@ typedef uint32_t U4;
  *	@brief Estrutura de dados para armazenamento
  *	Union responsável por armazenar todos os tamanhos de variáveis utilzadas na JVM
  */
-
 typedef union {
 	U1 *array; //ponteiro para uma string
 	U1 u1; //8 bytes
@@ -49,7 +48,7 @@ typedef union {
 	U4 u4; //32 bytes
 } ClassLoaderType;
 
-/** @union element
+/** @union element_u
  *	@brief Generalização de funções de retorno/input
  *	Union responsável pela generalização de funções de retorno e uma função de input.
  */
@@ -67,6 +66,10 @@ typedef union element_u {
 	int* pi;
 } Element;
 
+/** @struct N_array
+ *	@brief Agregador de numeros de array
+ *	Struct responsável armazenar o numero de dims e array
+ */
 typedef struct {
 	int* dims;
 	int* array;
@@ -82,37 +85,37 @@ typedef struct typedElement_s {
 	uint8_t realType;
 } TypedElement;
 
-/** @fn U1 lerU1 (FILE *fp)
+/** @fn U1 lerU1 (FILE *arquivoClass)
  *	@brief Função para ler 1 byte do arquivo .class
- *	@param fp Ponteiro pro arquivo .class
+ *	@param arquivoClass Ponteiro pro arquivo .class
  */
-U1 lerU1(FILE *fp);
+U1 lerU1(FILE *arquivoClass);
 
-/** @fn U2 lerU2 (FILE *fp)
+/** @fn U2 lerU2 (FILE *arquivoClass)
  *	@brief Função para ler 2 bytes do arquivo .class
- *	@param fp Ponteiro pro arquivo .class
+ *	@param arquivoClass Ponteiro pro arquivo .class
  */
-U2 lerU2(FILE *fp);
+U2 lerU2(FILE *arquivoClass);
 
-/** @fn U4 lerU4 (FILE *fp)
+/** @fn U4 lerU4 (FILE *arquivoClass)
  *	@brief Função para ler 4 bytes do arquivo .class
- *	@param fp Ponteiro pro arquivo .class
+ *	@param arquivoClass Ponteiro pro arquivo .class
  */
-U4 lerU4(FILE *fp);
+U4 lerU4(FILE *arquivoClass);
 
-/** @fn U1 * lerUTF8(FILE* fp, int size)
+/** @fn U1 * lerUTF8(FILE* arquivoClass, int tamanho)
  *	@brief Função para ler os bytes de uma string UTF-8
- *	@param fp Ponteiro pro arquivo .class
- *	@param size Tamanho que será alocado para a string.
+ *	@param arquivoClass Ponteiro pro arquivo .class
+ *	@param tamanho Tamanho que será alocado para a string.
  */
-U1 * lerUTF8(FILE* fp, int size);
+U1 * lerUTF8(FILE* arquivoClass, int tamanho);
 
-/** @fn string obterUTF8(unsigned char * s, int size)
+/** @fn string obterUTF8(unsigned char * s, int tamanho)
  *	@brief Função para montar e mostrar a uma string UTF-8
  *	@param s Ponteiro para a posição inicial de uam string Unicode.
- *	@param size Tamanho da string a ser impressa.
+ *	@param tamanho Tamanho da string a ser impressa.
  */
-string obterUTF8(unsigned char * s, int size);
+string obterUTF8(unsigned char * s, int tamanho);
 
 /** @fn int verificarFloat(float)
  *	@brief Função para verificar NaN e infinito
@@ -138,18 +141,18 @@ string converter_float_to_string(float f);
  */
 string converter_double_to_string(double d);
 
-/** @fn float converter_u4_to_float (ClassLoaderType in)
+/** @fn float converter_u4_to_float (ClassLoaderType classLoaderType)
  *  @brief Função para converter 4 bytes em float
- *  @param in quatro bytes a serem convertidos.
+ *  @param classLoaderType quatro bytes a serem convertidos.
  */
-float converter_u4_to_float(ClassLoaderType in);
+float converter_u4_to_float(ClassLoaderType classLoaderType);
 
-/** @fn long converter_u4_to_long (ClassLoaderType high, ClassLoaderType low)
+/** @fn long converter_u4_to_long (ClassLoaderType classLoaderTypeMaior, ClassLoaderType classLoaderTypeMenor)
  *  @brief Função para converter 8 bytes em um longo
- *  @param high Quatro bytes mais significativos a serem convertidos.
- *  @param low Quatro últimos bytes significativos a serem convertidos.
+ *  @param classLoaderTypeMaior Quatro bytes mais significativos a serem convertidos.
+ *  @param classLoaderTypeMenor Quatro últimos bytes significativos a serem convertidos.
  */
-long converter_u4_to_long(ClassLoaderType high, ClassLoaderType low);
+long converter_u4_to_long(ClassLoaderType classLoaderTypeMaior, ClassLoaderType low);
 
 /** @fn double converter_u4_to_double (ClassLoaderType high, ClassLoaderType low)
  *  @brief Função para converter 8 bytes em um duplo

@@ -7,7 +7,6 @@
 
 #include <iostream>
 #include <fstream>
-
 #include "BasicTypes.h"
 
 using namespace std;

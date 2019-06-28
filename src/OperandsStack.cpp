@@ -79,12 +79,12 @@ Element OperandsStack::desempilha() {
  * Retorna estrutura com valor e tipo associados e da pop na pilha de valores e na de tipos
  */
 TypedElement OperandsStack::desempilhaTyped() {
-	TypedElement ret;
-	ret.type = this->stackTipos.top();
-	ret.realType = this->stackTiposReais.top();
-	ret.value = this->desempilha();
+	TypedElement typedElement;
+	typedElement.type = this->stackTipos.top();
+	typedElement.realType = this->stackTiposReais.top();
+	typedElement.value = this->desempilha();
 
-	return ret;
+	return typedElement;
 }
 
 /**

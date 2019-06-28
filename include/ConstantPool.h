@@ -7,18 +7,17 @@
 #define CONSTANTPOOL_H
 
 #include <fstream>
-
 #include "BasicTypes.h"
 
 using namespace std;
 
-/** @struct cp_info
+/** @struct Cp_info
  * @brief Possui um elemento pool de constante.
  */
 typedef struct {
 	U1 tag;
 	ClassLoaderType *info;
-} cp_info;
+} Cp_info;
 
 /// Formatos de dados no pool de constantes
 const string nomeTiposDados[] = { "UTF-8", "-", "Integer", "Float", "Long", "Double", "Class", "String", "Field", "Method", "Interface",
@@ -46,7 +45,7 @@ const string nomeTiposDados[] = { "UTF-8", "-", "Integer", "Float", "Long", "Dou
  Função responsável por carregar o pool de constantes e todos os campos a ele relacionados
  @return o número de elementos do pool de constantes
  */
-int carregarConstantPool(cp_info *constantPool, int tamanho, FILE* arquivoEntrada);
+int carregarConstantPool(Cp_info *constantPool, int tamanho, FILE* arquivoEntrada);
 
 /** @fn string capturarIndiceDeReferencia (cp_info *constantPool, U2 indice)
  @brief Retorna os dados no índice.
@@ -54,7 +53,7 @@ int carregarConstantPool(cp_info *constantPool, int tamanho, FILE* arquivoEntrad
  @param indice - um índice para a posição no pool de constantes
  Função responsável por obter os dados correspondentes ao índice informado
  */
-string capturarIndiceDeReferencia(cp_info *constantPool, U2 indice);
+string capturarIndiceDeReferencia(Cp_info *constantPool, U2 indice);
 
 /** @fn void imprimirConstantPool(cp_info *constantPool, int tamanho)
  @brief Imprime o pool de constantes
@@ -62,7 +61,7 @@ string capturarIndiceDeReferencia(cp_info *constantPool, U2 indice);
  @param tamanho - o tamanho do pool de constantes
  Função responsável por imprimir na tela o pool de constantes e todos os campos a ele relacionados
  */
-void imprimirConstantPool(cp_info *constantPool, int tamanho);
+void imprimirConstantPool(Cp_info *constantPool, int tamanho);
 
 /** @fn void gravarArquivoConstantPool(cp_info *constantPool, int tamanho, fstream &arquivoSaida)
  @brief Imprime o pool de constantes
@@ -71,6 +70,6 @@ void imprimirConstantPool(cp_info *constantPool, int tamanho);
  @param arquivoSaida - arquivo saida
  Função responsável por gravar no arquivo o pool de constantes e todos os campos a ele relacionados
  */
-void gravarArquivoConstantPool(cp_info *constantPool, int tamanho, fstream &arquivoSaida);
+void gravarArquivoConstantPool(Cp_info *constantPool, int tamanho, fstream &arquivoSaida);
 
 #endif

@@ -1,11 +1,11 @@
-/** @file ClasseLeitorExibidor.h
- * @brief Definição da ClasseLeitorExibidor
+/** @file ClassFile.h
+ * @brief Definição da ClassFile
  */
 
-#ifndef CLASSE_LEITOR_EXIBIDOR
-#define CLASSE_LEITOR_EXIBIDOR
+#ifndef CLASSFILE
+#define CLASSFILE
 
-class LeitorExibidor;
+class ClassFile;
 
 #include <iostream>
 #include <stdio.h>
@@ -41,23 +41,24 @@ using namespace std;
 #define MISSING_CLINIT 8
 
 /**
+ * @class ClassFile
  * @section DESCRIPTION
- * A classe LeitorExibidor contém o necessário para ler o bytecode, exibilo e armazena-lo em memoria
+ * A classe ClassFile contém os bytecodes armazenados em memoria
  */
-class LeitorExibidor {
+class ClassFile {
 public:
-	/** @fn LeitorExibidor(char *in)
-	 * @brief Construtor que configura um objeto da classe LeitorExibidor com o nome do arquivo passado.
+	/** @fn ClassFile(char *in)
+	 * @brief Construtor que configura um objeto da classe ClassFile com o nome do arquivo passado.
 	 * @param in caminho do arquivo .class.
 	 */
-	LeitorExibidor(char *in);
+	ClassFile(char *in);
 
 	/** 
-	 @fn LeitorExibidor(string in)
-	 @brief Construtor que configura um objeto da classe LeitorExibidor com o nome do arquivo passado.
+	 @fn ClassFile(string in)
+	 @brief Construtor que configura um objeto da classe ClassFile com o nome do arquivo passado.
 	 @param in caminho do arquivo .class.
 	 */
-	LeitorExibidor(string in);
+	ClassFile(string in);
 
 	/** @fn int inicializarArquivo()
 	 @brief criar e inicializar arquivo
@@ -70,7 +71,7 @@ public:
 	void fecharArquivo();
 
 	/** @fn int carregar()
-	 * Carrega o class file na classe
+	 * @brief Carrega o class file na classe
 	 * @return variavel status que indica se houve erro no programa
 	 */
 	int carregar();
@@ -115,7 +116,7 @@ public:
 	 @brief Retorna o método main
 	 @return struct method_info contendo informações sobre o método
 	 */
-	method_info obterMain();
+	Method_info obterMain();
 
 	/** @fn bool existeClinit()
 	 @brief Verifica se o .class tem o método clinit
@@ -127,7 +128,7 @@ public:
 	 @brief Retorna o método clinit
 	 @return struct method_info contendo informações sobre o método
 	 */
-	method_info obterClinit();
+	Method_info obterClinit();
 
 	/** @fn bool verificarThisClass ()
 	 @brief Verifica se a class definida é igual ao nome da classe sem extensões
@@ -145,7 +146,7 @@ public:
 	 @brief Retorna referencia a constant pool
 	 @return Retorna a array com a constant pool
 	 */
-	cp_info *obterConstantPool() const;
+	Cp_info *obterConstantPool() const;
 
 	/** @fn U2 obterTamanhoConstantPool()
 	 @brief Retorna o valor do tamanho da constant pool
@@ -163,7 +164,7 @@ public:
 	 * @brief Retorna todos os métodos
 	 * @return array do tipo method_info
 	 */
-	method_info *obterMethods();
+	Method_info *obterMethods();
 
 	/** @fn U2 obterMethodsCount()
 	 * @brief Retorna o numero de Methods
@@ -193,28 +194,28 @@ public:
 	 * @brief Retorna a array com as fields lidas
 	 * @return a array da struct field_info
 	 */
-	field_info *obterFields();
+	Field_info *obterFields();
 
 	/** @fn field_info *obterField(string nome)
 	 * @brief Retorna um field
 	 * @param nome do field desejado que deseja retornar
 	 * @return struct field_info com a informação da field passada no parâmetro
 	 */
-	field_info *obterField(string nome);
+	Field_info *obterField(string nome);
 
 	/** @fn method_info* obterMethod(string nome, string descriptor)
 	 * @param nome Nome do method desejado
 	 * @param descriptor Descritor do method desejado
 	 */
-	method_info* obterMethod(string nome, string descriptor);
+	Method_info* obterMethod(string nome, string descriptor);
 
-	/** @fn LeitorExibidor* obterClassThatHasSerachedMethod(string nome, string descriptor)
+	/** @fn ClassFile* obterClassThatHasSerachedMethod(string nome, string descriptor)
 	 * @brief Retorna o ponteiro para o leitor do .class que contém o método encontrado em getMethod
 	 * @param nome Nome do method desejado
 	 * @param descriptor Descritor do method desejado
-	 * @return classe LeitorExibidor
+	 * @return classe ClassFile
 	 */
-	LeitorExibidor* obterClassThatHasSerachedMethod(string nome, string descriptor);
+	ClassFile* obterClassThatHasSerachedMethod(string nome, string descriptor);
 
 	/** @fn validacao(void)
 	 * @brief Valida estrutura obrigatoria */
@@ -247,10 +248,10 @@ private:
 	U2 this_class, super_class, interfacesCount, fieldsCount;
 	U2 methodsCount, accessFlags, attributesCount;
 	U2 *interfaces;
-	cp_info *constantPool;
-	field_info *fields;
-	method_info *methods;
-	attribute_info *attributes;
+	Cp_info *constantPool;
+	Field_info *fields;
+	Method_info *methods;
+	Attribute_info *attributes;
 	FILE *arquivoClass;
 	fstream arquivoSaida;
 };

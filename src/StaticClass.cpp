@@ -5,16 +5,16 @@
 
 #include "StaticClass.h"
 
-StaticClass::StaticClass(LeitorExibidor *leitorExibidor) {
-	this->leitorExibidor = leitorExibidor; ///class file lido
-	int tamanho = leitorExibidor->obterFieldsCount(); ///get numero de fields
-	field_info *field = leitorExibidor->obterFields();
+StaticClass::StaticClass(ClassFile *classFile) {
+	this->classFile = classFile; ///class file lido
+	int tamanho = classFile->obterFieldsCount(); ///get numero de fields
+	Field_info *field = classFile->obterFields();
 
 	for (int i = 0; i < tamanho; i++) {
 		if ((field[i].accessFlags & 0x08) && (field[i].accessFlags & 0x010) == 0) {
 			TypedElement *typedElement = (TypedElement *) malloc(sizeof(TypedElement));
 			typedElement->value.l = 0;
-			string type = capturarIndiceDeReferencia(leitorExibidor->obterConstantPool(), field[i].descriptor_index);
+			string type = capturarIndiceDeReferencia(classFile->obterConstantPool(), field[i].descriptor_index);
 
 			switch (type[0]) {
 			case 'B':
@@ -49,8 +49,8 @@ StaticClass::StaticClass(LeitorExibidor *leitorExibidor) {
 				break;
 			}
 
-			string nomeField = capturarIndiceDeReferencia(leitorExibidor->obterConstantPool(), field[i].name_index);
-			mapStaticFields.insert(pair<string, TypedElement*>(nomeField, typedElement));
+			string nomeField = capturarIndiceDeReferencia(classFile->obterConstantPool(), field[i].name_index);
+			mapTypedElement.insert(pair<string, TypedElement*>(nomeField, typedElement));
 		}
 	}
 }
@@ -59,9 +59,9 @@ TypedElement StaticClass::obterField(string field) {
 	TypedElement typedElement;
 	typedElement.type = TYPE_NOT_SET;
 	map<string, TypedElement*>::const_iterator mapField;
-	mapField = mapStaticFields.begin();
+	mapField = mapTypedElement.begin();
 
-	while (mapField != mapStaticFields.end()) {
+	while (mapField != mapTypedElement.end()) {
 		if (mapField->first == field) {
 			return *(mapField->second);
 		}
@@ -73,9 +73,9 @@ TypedElement StaticClass::obterField(string field) {
 
 bool StaticClass::atualizarField(string field, TypedElement typedElement) {
 	map<string, TypedElement*>::const_iterator mapField;
-	mapField = mapStaticFields.begin();
+	mapField = mapTypedElement.begin();
 
-	while (mapField != mapStaticFields.end()) {
+	while (mapField != mapTypedElement.end()) {
 		if (mapField->first == field) {
 			if (mapField->second->type == typedElement.type) {
 				*(mapField->second) = typedElement;
@@ -92,9 +92,9 @@ bool StaticClass::atualizarField(string field, TypedElement typedElement) {
 
 bool StaticClass::atualizarFieldFinals(string field, TypedElement typedElement) {
 	map<string, TypedElement*>::const_iterator mapField;
-	mapField = mapStaticFields.begin();
+	mapField = mapTypedElement.begin();
 
-	while (mapField != mapStaticFields.end()) {
+	while (mapField != mapTypedElement.end()) {
 		if (mapField->first == field) {
 			if (mapField->second->type == typedElement.type) {
 				*(mapField->second) = typedElement;
@@ -109,13 +109,13 @@ bool StaticClass::atualizarFieldFinals(string field, TypedElement typedElement) 
 	return false;
 }
 
-LeitorExibidor *StaticClass::obterClasseLeitorExibidor() {
-	return leitorExibidor;
+ClassFile *StaticClass::obterClassFile() {
+	return classFile;
 }
 
 InstanceClass *StaticClass::obterInstanceClass() {
-	InstanceClass *classeInstancia = new InstanceClass(this);
-	Heap::adicionarInstancia(classeInstancia);
+	InstanceClass *instanceClass = new InstanceClass(this);
+	Heap::adicionarInstancia(instanceClass);
 
-	return classeInstancia;
+	return instanceClass;
 }

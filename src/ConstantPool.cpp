@@ -5,7 +5,7 @@
 
 #include "ConstantPool.h"
 
-int carregarConstantPool(cp_info *constantPool, int tamanho, FILE* arquivoEntrada) {
+int carregarConstantPool(Cp_info *constantPool, int tamanho, FILE* arquivoEntrada) {
 	int i;
 
 	for (i = 1; i < tamanho; i++) {
@@ -62,7 +62,7 @@ int carregarConstantPool(cp_info *constantPool, int tamanho, FILE* arquivoEntrad
 	return i;
 }
 
-string capturarIndiceDeReferencia(cp_info *constantPool, U2 indice) {
+string capturarIndiceDeReferencia(Cp_info *constantPool, U2 indice) {
 	switch (constantPool[indice].tag) {
 	case UTF8:
 		// Return the string
@@ -88,7 +88,7 @@ string capturarIndiceDeReferencia(cp_info *constantPool, U2 indice) {
 	return "";
 }
 
-void imprimirConstantPool(cp_info *constantPool, int tamanho) {
+void imprimirConstantPool(Cp_info *constantPool, int tamanho) {
 	cout << "Constant Pool:" << endl;
 
 	for (int i = 1; i < tamanho; i++) {
@@ -132,7 +132,7 @@ void imprimirConstantPool(cp_info *constantPool, int tamanho) {
 	cout << endl;
 }
 
-void gravarArquivoConstantPool(cp_info *constantPool, int tamanho, fstream &arquivoSaida) {
+void gravarArquivoConstantPool(Cp_info *constantPool, int tamanho, fstream &arquivoSaida) {
 	arquivoSaida << "Constant Pool:" << endl;
 
 	for (int i = 1; i < tamanho; i++) {
