@@ -9,6 +9,16 @@ Classe de pilha de frames.
 
 {\ttfamily \#include $<$Pilha\+J\+V\+M.\+h$>$}
 
+
+
+Diagrama de colaboração para Pilha\+J\+VM\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPilhaJVM__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Membros públicos}
 \begin{DoxyCompactItemize}
 \item 
@@ -29,12 +39,14 @@ void \hyperlink{classPilhaJVM_a4f83f8d59b436cb1813a2a35e1538045}{pop\+Remover\+O
 \item 
 bool \hyperlink{classPilhaJVM_a914a4707e58e23e8913fcdc0c53f8c5c}{proxima\+Instrucao} ()
 \begin{DoxyCompactList}\small\item\em Atualiza o PC, se não for possível atualizar, dá um pop no método atual. \end{DoxyCompactList}\item 
-void \hyperlink{classPilhaJVM_a08adb78983b512cf3d97becfa2e9a5f0}{inicializar\+PC} (\hyperlink{PilhaJVM_8h_acc380914b41a084dcc8e4b38fb200145}{Frame} $\ast$frame)
+void \hyperlink{classPilhaJVM_a08adb78983b512cf3d97becfa2e9a5f0}{inicializar\+PC} (\hyperlink{PilhaJVM_8h_acc380914b41a084dcc8e4b38fb200145}{Frame} $\ast$\hyperlink{classPilhaJVM_adebac9c22fbb328afca1d2a98e6d486c}{frame})
 \begin{DoxyCompactList}\small\item\em Põe o PC na posição inicial. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Atributos Privados}
 \begin{DoxyCompactItemize}
 \item 
 stack$<$ \hyperlink{PilhaJVM_8h_acc380914b41a084dcc8e4b38fb200145}{Frame} $\ast$ $>$ \hyperlink{classPilhaJVM_a4d70c8b3d6fbddb38e943dc8b1a00c2d}{stack\+Frame}
+\item 
+\hyperlink{PilhaJVM_8h_acc380914b41a084dcc8e4b38fb200145}{Frame} \hyperlink{classPilhaJVM_adebac9c22fbb328afca1d2a98e6d486c}{frame}
 \item 
 int \hyperlink{classPilhaJVM_a90e6f9da43b72798ea0331c57b72af09}{opcode}
 \begin{DoxyCompactList}\small\item\em Contêm o opcode que corresponde a uma instrução. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -71,10 +83,9 @@ Definido na linha 8 do ficheiro Pilha\+J\+V\+M.\+cpp.
 
 
 
-Referências Method\+\_\+info\+::attributes, Operations\+::atualizar\+Frame(), Method\+Area\+::atualizar\+Pilha\+J\+V\+M(), Operations\+::atualizar\+Pilha\+J\+V\+M(), Operations\+::atualizar\+Stack\+Frame(), T\+\_\+info\+::code\+Attribute, frame\+\_\+s\+::constant\+Pool, Attribute\+\_\+info\+::info, inicializar\+P\+C(), frame\+\_\+s\+::local\+Variables, Code\+\_\+attribute\+::max\+\_\+locals, Code\+\_\+attribute\+::max\+\_\+stack, frame\+\_\+s\+::method, Class\+File\+::obter\+Constant\+Pool(), Class\+File\+::obter\+Main(), opcode, frame\+\_\+s\+::operands\+Stack e stack\+Frame.
+Referências Method\+\_\+info\+::attributes, Operations\+::atualizar\+Frame(), Method\+Area\+::atualizar\+Pilha\+J\+V\+M(), Operations\+::atualizar\+Pilha\+J\+V\+M(), Operations\+::atualizar\+Stack\+Frame(), T\+\_\+info\+::code\+Attribute, frame\+\_\+s\+::constant\+Pool, frame, Attribute\+\_\+info\+::info, inicializar\+P\+C(), frame\+\_\+s\+::local\+Variables, Code\+\_\+attribute\+::max\+\_\+locals, Code\+\_\+attribute\+::max\+\_\+stack, frame\+\_\+s\+::method, Class\+File\+::obter\+Constant\+Pool(), Class\+File\+::obter\+Main(), opcode, frame\+\_\+s\+::operands\+Stack e stack\+Frame.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -107,14 +118,13 @@ Definido na linha 97 do ficheiro Pilha\+J\+V\+M.\+cpp.
 
 
 
-Referências Method\+\_\+info\+::attributes, Operations\+::atualizar\+Frame(), Method\+Area\+::atualizar\+Pilha\+J\+V\+M(), Operations\+::atualizar\+Pilha\+J\+V\+M(), Operations\+::atualizar\+Stack\+Frame(), T\+\_\+info\+::code\+Attribute, frame\+\_\+s\+::constant\+Pool, Attribute\+\_\+info\+::info, inicializar\+P\+C(), frame\+\_\+s\+::local\+Variables, Code\+\_\+attribute\+::max\+\_\+locals, Code\+\_\+attribute\+::max\+\_\+stack, frame\+\_\+s\+::method, frame\+\_\+s\+::operands\+Stack e stack\+Frame.
+Referências Method\+\_\+info\+::attributes, Operations\+::atualizar\+Frame(), Method\+Area\+::atualizar\+Pilha\+J\+V\+M(), Operations\+::atualizar\+Pilha\+J\+V\+M(), Operations\+::atualizar\+Stack\+Frame(), T\+\_\+info\+::code\+Attribute, frame\+\_\+s\+::constant\+Pool, frame, Attribute\+\_\+info\+::info, inicializar\+P\+C(), frame\+\_\+s\+::local\+Variables, Code\+\_\+attribute\+::max\+\_\+locals, Code\+\_\+attribute\+::max\+\_\+stack, frame\+\_\+s\+::method, frame\+\_\+s\+::operands\+Stack e stack\+Frame.
 
 
 
 Referenciado por Method\+Area\+::adicionar\+Classe(), adicionar\+Frame(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic() e Operations\+::invokevirtual().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -146,8 +156,7 @@ Definido na linha 119 do ficheiro Pilha\+J\+V\+M.\+cpp.
 
 Referências adicionar\+Frame().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -203,8 +212,7 @@ Referências Operations\+::executar\+Operacao(), opcode e proxima\+Instrucao().
 
 Referenciado por main().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -260,8 +268,7 @@ Referências Operations\+::atualizar\+Frame(), Operations\+::atualizar\+Stack\+F
 
 Referenciado por Operations\+::func\+\_\+return() e proxima\+Instrucao().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -290,8 +297,7 @@ Referências opcode, pop\+Remover\+Objetos() e stack\+Frame.
 
 Referenciado por executar\+Metodos().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -301,6 +307,20 @@ Grafo de chamadas desta função\+:
 
 
 \subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{classPilhaJVM_adebac9c22fbb328afca1d2a98e6d486c}\label{classPilhaJVM_adebac9c22fbb328afca1d2a98e6d486c}} 
+\index{Pilha\+J\+VM@{Pilha\+J\+VM}!frame@{frame}}
+\index{frame@{frame}!Pilha\+J\+VM@{Pilha\+J\+VM}}
+\subsubsection{\texorpdfstring{frame}{frame}}
+{\footnotesize\ttfamily \hyperlink{PilhaJVM_8h_acc380914b41a084dcc8e4b38fb200145}{Frame} Pilha\+J\+V\+M\+::frame\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definido na linha 40 do ficheiro Pilha\+J\+V\+M.\+h.
+
+
+
+Referenciado por adicionar\+Frame() e Pilha\+J\+V\+M().
+
 \mbox{\Hypertarget{classPilhaJVM_a90e6f9da43b72798ea0331c57b72af09}\label{classPilhaJVM_a90e6f9da43b72798ea0331c57b72af09}} 
 \index{Pilha\+J\+VM@{Pilha\+J\+VM}!opcode@{opcode}}
 \index{opcode@{opcode}!Pilha\+J\+VM@{Pilha\+J\+VM}}
@@ -313,7 +333,7 @@ Contêm o opcode que corresponde a uma instrução.
 
 
 
-Definido na linha 48 do ficheiro Pilha\+J\+V\+M.\+h.
+Definido na linha 50 do ficheiro Pilha\+J\+V\+M.\+h.
 
 
 

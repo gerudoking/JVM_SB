@@ -93,6 +93,25 @@ $(document).ready(function(){initNavTree('classPilhaJVM.html','');});
  <a href="classPilhaJVM.html#details">Mais...</a></p>
 
 <p><code>#include &lt;<a class="el" href="PilhaJVM_8h_source.html">PilhaJVM.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de colaboração para PilhaJVM:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPilhaJVM__coll__graph.png" border="0" usemap="#PilhaJVM_coll__map" alt="Collaboration graph"/></div>
+<map name="PilhaJVM_coll__map" id="PilhaJVM_coll__map">
+<area shape="rect" id="node2" href="structframe__s.html" title="Estrutura de armazenamento. " alt="" coords="225,184,294,211"/>
+<area shape="rect" id="node3" href="classLocalVariables.html" title="classe das Variaveis Locais " alt="" coords="378,95,485,121"/>
+<area shape="rect" id="node4" href="structMethod__info.html" title="Struct responsável por armazenar os metodos declarados. " alt="" coords="125,95,218,121"/>
+<area shape="rect" id="node5" href="structAttribute__info.html" title="Protótipo da struct &quot;attribute_info&quot;. " alt="" coords="485,5,583,32"/>
+<area shape="rect" id="node9" href="structCode__attribute.html" title="Estrutura de dados para salvar atributos do tipo code. " alt="" coords="930,95,1037,121"/>
+<area shape="rect" id="node6" href="unionT__info.html" title="Estrutura de dados que agrega informações sobre cada atributo lido. " alt="" coords="722,184,781,211"/>
+<area shape="rect" id="node7" href="structConstantValue__attribute.html" title="Struct para carregar o index dos atributos da &quot;constantpool&quot;. " alt="" coords="583,95,746,121"/>
+<area shape="rect" id="node8" href="structException__attribute.html" title="Estrutura de dados para salvar atributos de tipo &quot;exception&quot;. " alt="" coords="771,95,905,121"/>
+<area shape="rect" id="node10" href="structT__exception__table.html" title="Struct para salvar exceções identificadas. Será utilizada como componente da struct &quot;code_attribute&quot;..." alt="" coords="919,5,1047,32"/>
+<area shape="rect" id="node11" href="classOperandsStack.html" title="Classe da pilha de operandos. " alt="" coords="242,95,354,121"/>
+<area shape="rect" id="node12" href="structCp__info.html" title="Possui um elemento pool de constante. " alt="" coords="34,95,101,121"/>
+<area shape="rect" id="node13" href="unionClassLoaderType.html" title="Estrutura de dados para armazenamento Union responsável por armazenar todos os tamanhos de variáveis ..." alt="" coords="5,5,129,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legenda</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Membros públicos</h2></td></tr>
@@ -120,7 +139,7 @@ Membros privados</h2></td></tr>
 <tr class="memitem:a914a4707e58e23e8913fcdc0c53f8c5c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPilhaJVM.html#a914a4707e58e23e8913fcdc0c53f8c5c">proximaInstrucao</a> ()</td></tr>
 <tr class="memdesc:a914a4707e58e23e8913fcdc0c53f8c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atualiza o PC, se não for possível atualizar, dá um pop no método atual.  <a href="#a914a4707e58e23e8913fcdc0c53f8c5c">Mais...</a><br /></td></tr>
 <tr class="separator:a914a4707e58e23e8913fcdc0c53f8c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08adb78983b512cf3d97becfa2e9a5f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPilhaJVM.html#a08adb78983b512cf3d97becfa2e9a5f0">inicializarPC</a> (<a class="el" href="PilhaJVM_8h.html#acc380914b41a084dcc8e4b38fb200145">Frame</a> *frame)</td></tr>
+<tr class="memitem:a08adb78983b512cf3d97becfa2e9a5f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPilhaJVM.html#a08adb78983b512cf3d97becfa2e9a5f0">inicializarPC</a> (<a class="el" href="PilhaJVM_8h.html#acc380914b41a084dcc8e4b38fb200145">Frame</a> *<a class="el" href="classPilhaJVM.html#adebac9c22fbb328afca1d2a98e6d486c">frame</a>)</td></tr>
 <tr class="memdesc:a08adb78983b512cf3d97becfa2e9a5f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Põe o PC na posição inicial.  <a href="#a08adb78983b512cf3d97becfa2e9a5f0">Mais...</a><br /></td></tr>
 <tr class="separator:a08adb78983b512cf3d97becfa2e9a5f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -128,6 +147,8 @@ Membros privados</h2></td></tr>
 Atributos Privados</h2></td></tr>
 <tr class="memitem:a4d70c8b3d6fbddb38e943dc8b1a00c2d"><td class="memItemLeft" align="right" valign="top">stack&lt; <a class="el" href="PilhaJVM_8h.html#acc380914b41a084dcc8e4b38fb200145">Frame</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPilhaJVM.html#a4d70c8b3d6fbddb38e943dc8b1a00c2d">stackFrame</a></td></tr>
 <tr class="separator:a4d70c8b3d6fbddb38e943dc8b1a00c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adebac9c22fbb328afca1d2a98e6d486c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="PilhaJVM_8h.html#acc380914b41a084dcc8e4b38fb200145">Frame</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPilhaJVM.html#adebac9c22fbb328afca1d2a98e6d486c">frame</a></td></tr>
+<tr class="separator:adebac9c22fbb328afca1d2a98e6d486c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90e6f9da43b72798ea0331c57b72af09"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPilhaJVM.html#a90e6f9da43b72798ea0331c57b72af09">opcode</a></td></tr>
 <tr class="memdesc:a90e6f9da43b72798ea0331c57b72af09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contêm o opcode que corresponde a uma instrução.  <a href="#a90e6f9da43b72798ea0331c57b72af09">Mais...</a><br /></td></tr>
 <tr class="separator:a90e6f9da43b72798ea0331c57b72af09"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,7 +185,7 @@ Atributos Privados</h2></td></tr>
 
 <p class="definition">Definido na linha <a class="el" href="PilhaJVM_8cpp_source.html#l00008">8</a> do ficheiro <a class="el" href="PilhaJVM_8cpp_source.html">PilhaJVM.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="Methods_8h_source.html#l00024">Method_info::attributes</a>, <a class="el" href="Operations_8cpp_source.html#l00066">Operations::atualizarFrame()</a>, <a class="el" href="MethodArea_8cpp_source.html#l00073">MethodArea::atualizarPilhaJVM()</a>, <a class="el" href="Operations_8cpp_source.html#l00074">Operations::atualizarPilhaJVM()</a>, <a class="el" href="Operations_8cpp_source.html#l00070">Operations::atualizarStackFrame()</a>, <a class="el" href="Attributes_8h_source.html#l00067">T_info::codeAttribute</a>, <a class="el" href="PilhaJVM_8h_source.html#l00027">frame_s::constantPool</a>, <a class="el" href="Attributes_8h_source.html#l00078">Attribute_info::info</a>, <a class="el" href="PilhaJVM_8cpp_source.html#l00091">inicializarPC()</a>, <a class="el" href="PilhaJVM_8h_source.html#l00029">frame_s::localVariables</a>, <a class="el" href="Attributes_8h_source.html#l00045">Code_attribute::max_locals</a>, <a class="el" href="Attributes_8h_source.html#l00044">Code_attribute::max_stack</a>, <a class="el" href="PilhaJVM_8h_source.html#l00030">frame_s::method</a>, <a class="el" href="ClassFile_8cpp_source.html#l00441">ClassFile::obterConstantPool()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00350">ClassFile::obterMain()</a>, <a class="el" href="PilhaJVM_8h_source.html#l00048">opcode</a>, <a class="el" href="PilhaJVM_8h_source.html#l00028">frame_s::operandsStack</a> e <a class="el" href="PilhaJVM_8h_source.html#l00039">stackFrame</a>.</p>
+<p class="reference">Referências <a class="el" href="Methods_8h_source.html#l00024">Method_info::attributes</a>, <a class="el" href="Operations_8cpp_source.html#l00066">Operations::atualizarFrame()</a>, <a class="el" href="MethodArea_8cpp_source.html#l00073">MethodArea::atualizarPilhaJVM()</a>, <a class="el" href="Operations_8cpp_source.html#l00074">Operations::atualizarPilhaJVM()</a>, <a class="el" href="Operations_8cpp_source.html#l00070">Operations::atualizarStackFrame()</a>, <a class="el" href="Attributes_8h_source.html#l00067">T_info::codeAttribute</a>, <a class="el" href="PilhaJVM_8h_source.html#l00027">frame_s::constantPool</a>, <a class="el" href="PilhaJVM_8h_source.html#l00040">frame</a>, <a class="el" href="Attributes_8h_source.html#l00078">Attribute_info::info</a>, <a class="el" href="PilhaJVM_8cpp_source.html#l00091">inicializarPC()</a>, <a class="el" href="PilhaJVM_8h_source.html#l00029">frame_s::localVariables</a>, <a class="el" href="Attributes_8h_source.html#l00045">Code_attribute::max_locals</a>, <a class="el" href="Attributes_8h_source.html#l00044">Code_attribute::max_stack</a>, <a class="el" href="PilhaJVM_8h_source.html#l00030">frame_s::method</a>, <a class="el" href="ClassFile_8cpp_source.html#l00441">ClassFile::obterConstantPool()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00350">ClassFile::obterMain()</a>, <a class="el" href="PilhaJVM_8h_source.html#l00050">opcode</a>, <a class="el" href="PilhaJVM_8h_source.html#l00028">frame_s::operandsStack</a> e <a class="el" href="PilhaJVM_8h_source.html#l00039">stackFrame</a>.</p>
 <div class="dynheader">
 Grafo de chamadas desta função:</div>
 <div class="dyncontent">
@@ -220,7 +241,7 @@ Grafo de chamadas desta função:</div>
 
 <p class="definition">Definido na linha <a class="el" href="PilhaJVM_8cpp_source.html#l00097">97</a> do ficheiro <a class="el" href="PilhaJVM_8cpp_source.html">PilhaJVM.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="Methods_8h_source.html#l00024">Method_info::attributes</a>, <a class="el" href="Operations_8cpp_source.html#l00066">Operations::atualizarFrame()</a>, <a class="el" href="MethodArea_8cpp_source.html#l00073">MethodArea::atualizarPilhaJVM()</a>, <a class="el" href="Operations_8cpp_source.html#l00074">Operations::atualizarPilhaJVM()</a>, <a class="el" href="Operations_8cpp_source.html#l00070">Operations::atualizarStackFrame()</a>, <a class="el" href="Attributes_8h_source.html#l00067">T_info::codeAttribute</a>, <a class="el" href="PilhaJVM_8h_source.html#l00027">frame_s::constantPool</a>, <a class="el" href="Attributes_8h_source.html#l00078">Attribute_info::info</a>, <a class="el" href="PilhaJVM_8cpp_source.html#l00091">inicializarPC()</a>, <a class="el" href="PilhaJVM_8h_source.html#l00029">frame_s::localVariables</a>, <a class="el" href="Attributes_8h_source.html#l00045">Code_attribute::max_locals</a>, <a class="el" href="Attributes_8h_source.html#l00044">Code_attribute::max_stack</a>, <a class="el" href="PilhaJVM_8h_source.html#l00030">frame_s::method</a>, <a class="el" href="PilhaJVM_8h_source.html#l00028">frame_s::operandsStack</a> e <a class="el" href="PilhaJVM_8h_source.html#l00039">stackFrame</a>.</p>
+<p class="reference">Referências <a class="el" href="Methods_8h_source.html#l00024">Method_info::attributes</a>, <a class="el" href="Operations_8cpp_source.html#l00066">Operations::atualizarFrame()</a>, <a class="el" href="MethodArea_8cpp_source.html#l00073">MethodArea::atualizarPilhaJVM()</a>, <a class="el" href="Operations_8cpp_source.html#l00074">Operations::atualizarPilhaJVM()</a>, <a class="el" href="Operations_8cpp_source.html#l00070">Operations::atualizarStackFrame()</a>, <a class="el" href="Attributes_8h_source.html#l00067">T_info::codeAttribute</a>, <a class="el" href="PilhaJVM_8h_source.html#l00027">frame_s::constantPool</a>, <a class="el" href="PilhaJVM_8h_source.html#l00040">frame</a>, <a class="el" href="Attributes_8h_source.html#l00078">Attribute_info::info</a>, <a class="el" href="PilhaJVM_8cpp_source.html#l00091">inicializarPC()</a>, <a class="el" href="PilhaJVM_8h_source.html#l00029">frame_s::localVariables</a>, <a class="el" href="Attributes_8h_source.html#l00045">Code_attribute::max_locals</a>, <a class="el" href="Attributes_8h_source.html#l00044">Code_attribute::max_stack</a>, <a class="el" href="PilhaJVM_8h_source.html#l00030">frame_s::method</a>, <a class="el" href="PilhaJVM_8h_source.html#l00028">frame_s::operandsStack</a> e <a class="el" href="PilhaJVM_8h_source.html#l00039">stackFrame</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="MethodArea_8cpp_source.html#l00021">MethodArea::adicionarClasse()</a>, <a class="el" href="PilhaJVM_8cpp_source.html#l00119">adicionarFrame()</a>, <a class="el" href="Operations_8cpp_source.html#l02443">Operations::invokeinterface()</a>, <a class="el" href="Operations_8cpp_source.html#l02266">Operations::invokespecial()</a>, <a class="el" href="Operations_8cpp_source.html#l02363">Operations::invokestatic()</a> e <a class="el" href="Operations_8cpp_source.html#l02107">Operations::invokevirtual()</a>.</p>
 <div class="dynheader">
@@ -343,9 +364,9 @@ Grafo de chamadas desta função:</div>
 
 <p class="definition">Definido na linha <a class="el" href="PilhaJVM_8cpp_source.html#l00035">35</a> do ficheiro <a class="el" href="PilhaJVM_8cpp_source.html">PilhaJVM.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="Operations_8cpp_source.html#l00078">Operations::executarOperacao()</a>, <a class="el" href="PilhaJVM_8h_source.html#l00048">opcode</a> e <a class="el" href="PilhaJVM_8cpp_source.html#l00043">proximaInstrucao()</a>.</p>
+<p class="reference">Referências <a class="el" href="Operations_8cpp_source.html#l00078">Operations::executarOperacao()</a>, <a class="el" href="PilhaJVM_8h_source.html#l00050">opcode</a> e <a class="el" href="PilhaJVM_8cpp_source.html#l00043">proximaInstrucao()</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="Main_8cpp_source.html#l00024">main()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="Main_8cpp_source.html#l00025">main()</a>.</p>
 <div class="dynheader">
 Grafo de chamadas desta função:</div>
 <div class="dyncontent">
@@ -462,7 +483,7 @@ Grafo de chamadas desta função:</div>
 
 <p class="definition">Definido na linha <a class="el" href="PilhaJVM_8cpp_source.html#l00043">43</a> do ficheiro <a class="el" href="PilhaJVM_8cpp_source.html">PilhaJVM.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="PilhaJVM_8h_source.html#l00048">opcode</a>, <a class="el" href="PilhaJVM_8cpp_source.html#l00072">popRemoverObjetos()</a> e <a class="el" href="PilhaJVM_8h_source.html#l00039">stackFrame</a>.</p>
+<p class="reference">Referências <a class="el" href="PilhaJVM_8h_source.html#l00050">opcode</a>, <a class="el" href="PilhaJVM_8cpp_source.html#l00072">popRemoverObjetos()</a> e <a class="el" href="PilhaJVM_8h_source.html#l00039">stackFrame</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="PilhaJVM_8cpp_source.html#l00035">executarMetodos()</a>.</p>
 <div class="dynheader">
@@ -479,6 +500,32 @@ Grafo de chamadas desta função:</div>
 </div>
 </div>
 <h2 class="groupheader">Documentação dos dados membro</h2>
+<a id="adebac9c22fbb328afca1d2a98e6d486c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adebac9c22fbb328afca1d2a98e6d486c">&#9670;&nbsp;</a></span>frame</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="PilhaJVM_8h.html#acc380914b41a084dcc8e4b38fb200145">Frame</a> PilhaJVM::frame</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="PilhaJVM_8h_source.html#l00040">40</a> do ficheiro <a class="el" href="PilhaJVM_8h_source.html">PilhaJVM.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="PilhaJVM_8cpp_source.html#l00097">adicionarFrame()</a> e <a class="el" href="PilhaJVM_8cpp_source.html#l00008">PilhaJVM()</a>.</p>
+
+</div>
+</div>
 <a id="a90e6f9da43b72798ea0331c57b72af09"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a90e6f9da43b72798ea0331c57b72af09">&#9670;&nbsp;</a></span>opcode</h2>
 
@@ -501,7 +548,7 @@ Grafo de chamadas desta função:</div>
 
 <p>Contêm o opcode que corresponde a uma instrução. </p>
 
-<p class="definition">Definido na linha <a class="el" href="PilhaJVM_8h_source.html#l00048">48</a> do ficheiro <a class="el" href="PilhaJVM_8h_source.html">PilhaJVM.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="PilhaJVM_8h_source.html#l00050">50</a> do ficheiro <a class="el" href="PilhaJVM_8h_source.html">PilhaJVM.h</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="PilhaJVM_8cpp_source.html#l00035">executarMetodos()</a>, <a class="el" href="PilhaJVM_8cpp_source.html#l00008">PilhaJVM()</a> e <a class="el" href="PilhaJVM_8cpp_source.html#l00043">proximaInstrucao()</a>.</p>
 

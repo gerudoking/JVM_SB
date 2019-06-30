@@ -1,3 +1,15 @@
 <map id="MethodArea" name="MethodArea">
-<area shape="rect" id="node2" href="$classPilhaJVM.html" title="Classe de pilha de frames. " alt="" coords="12,5,91,32"/>
+<area shape="rect" id="node2" href="$classPilhaJVM.html" title="Classe de pilha de frames. " alt="" coords="220,273,299,300"/>
+<area shape="rect" id="node3" href="$structframe__s.html" title="Estrutura de armazenamento. " alt="" coords="225,184,294,211"/>
+<area shape="rect" id="node4" href="$classLocalVariables.html" title="classe das Variaveis Locais " alt="" coords="378,95,485,121"/>
+<area shape="rect" id="node5" href="$structMethod__info.html" title="Struct responsável por armazenar os metodos declarados. " alt="" coords="125,95,218,121"/>
+<area shape="rect" id="node6" href="$structAttribute__info.html" title="Protótipo da struct &quot;attribute_info&quot;. " alt="" coords="485,5,583,32"/>
+<area shape="rect" id="node10" href="$structCode__attribute.html" title="Estrutura de dados para salvar atributos do tipo code. " alt="" coords="930,95,1037,121"/>
+<area shape="rect" id="node7" href="$unionT__info.html" title="Estrutura de dados que agrega informações sobre cada atributo lido. " alt="" coords="722,184,781,211"/>
+<area shape="rect" id="node8" href="$structConstantValue__attribute.html" title="Struct para carregar o index dos atributos da &quot;constantpool&quot;. " alt="" coords="583,95,746,121"/>
+<area shape="rect" id="node9" href="$structException__attribute.html" title="Estrutura de dados para salvar atributos de tipo &quot;exception&quot;. " alt="" coords="771,95,905,121"/>
+<area shape="rect" id="node11" href="$structT__exception__table.html" title="Struct para salvar exceções identificadas. Será utilizada como componente da struct &quot;code_attribute&quot;..." alt="" coords="919,5,1047,32"/>
+<area shape="rect" id="node12" href="$classOperandsStack.html" title="Classe da pilha de operandos. " alt="" coords="242,95,354,121"/>
+<area shape="rect" id="node13" href="$structCp__info.html" title="Possui um elemento pool de constante. " alt="" coords="34,95,101,121"/>
+<area shape="rect" id="node14" href="$unionClassLoaderType.html" title="Estrutura de dados para armazenamento Union responsável por armazenar todos os tamanhos de variáveis ..." alt="" coords="5,5,129,32"/>
 </map>

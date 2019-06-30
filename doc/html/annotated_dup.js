@@ -11,7 +11,6 @@ var annotated_dup =
     [ "Field_info", "structField__info.html", "structField__info" ],
     [ "frame_s", "structframe__s.html", "structframe__s" ],
     [ "Heap", "classHeap.html", "classHeap" ],
-    [ "Instance", "classInstance.html", null ],
     [ "InstanceClass", "classInstanceClass.html", "classInstanceClass" ],
     [ "LeitorExibidor", "classLeitorExibidor.html", "classLeitorExibidor" ],
     [ "LocalVariables", "classLocalVariables.html", "classLocalVariables" ],
@@ -24,6 +23,5 @@ var annotated_dup =
     [ "StaticClass", "classStaticClass.html", "classStaticClass" ],
     [ "T_exception_table", "structT__exception__table.html", "structT__exception__table" ],
     [ "T_info", "unionT__info.html", "unionT__info" ],
-    [ "typedElement_s", "structtypedElement__s.html", "structtypedElement__s" ],
-    [ "VariaveisLocais", "classVariaveisLocais.html", null ]
+    [ "typedElement_s", "structtypedElement__s.html", "structtypedElement__s" ]
 ];

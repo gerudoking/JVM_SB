@@ -15,7 +15,7 @@ class InstanceClass;
 
 using namespace std;
 
-/** @class Instance
+/** @class InstanceClass
  * @brief Class instantiation.
  * @brief Lida com operações que lidam com uma instância da classe
  */

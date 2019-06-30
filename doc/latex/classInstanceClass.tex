@@ -2,12 +2,16 @@
 \label{classInstanceClass}\index{Instance\+Class@{Instance\+Class}}
 
 
+Class instantiation.  
+
+
+
+
 {\ttfamily \#include $<$Instance\+Class.\+h$>$}
 
 
 
-Diagrama de colaboração para Instance\+Class\+:
-\nopagebreak
+Diagrama de colaboração para Instance\+Class\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -24,7 +28,7 @@ Diagrama de colaboração para Instance\+Class\+:
 \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} \hyperlink{classInstanceClass_a98084eb37c43d680169298bc50f09c98}{obter\+Field} (string field)
 \begin{DoxyCompactList}\small\item\em Retorna field instanciado. \end{DoxyCompactList}\item 
 bool \hyperlink{classInstanceClass_a3af2fc7bfe8f406b5ea6efbf18161514}{atualizar\+Field} (string field, \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} typed\+Element)
-\begin{DoxyCompactList}\small\item\em Defina um valor para um field da \hyperlink{classInstance}{Instance}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Defina um valor para um field da Instance. \end{DoxyCompactList}\item 
 bool \hyperlink{classInstanceClass_a05a47d4bf656908ce3dacc53d9d791b2}{atualizar\+Field\+Finals} (string field, \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} typed\+Element)
 \begin{DoxyCompactList}\small\item\em Define Field como final. \end{DoxyCompactList}\item 
 void \hyperlink{classInstanceClass_a9790b6bb982d58a0bbddcb8c9ba358d4}{imprimir\+Instance} ()
@@ -39,7 +43,9 @@ map$<$ string, \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed
 
 
 \subsection{Descrição detalhada}
+Class instantiation. 
 
+Lida com operações que lidam com uma instância da classe 
 
 Definido na linha 22 do ficheiro Instance\+Class.\+h.
 
@@ -69,8 +75,7 @@ Definido na linha 8 do ficheiro Instance\+Class.\+cpp.
 
 Referências capturar\+Indice\+De\+Referencia(), Field\+\_\+info\+::descriptor\+\_\+index, element\+\_\+u\+::l, map\+Local\+Fields, Field\+\_\+info\+::name\+\_\+index, Static\+Class\+::obter\+Class\+File(), Class\+File\+::obter\+Constant\+Pool(), Class\+File\+::obter\+Fields(), Class\+File\+::obter\+Fields\+Count(), static\+Class, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+B\+O\+OL, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT, T\+Y\+P\+E\+\_\+\+I\+NT, T\+Y\+P\+E\+\_\+\+L\+O\+NG, T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE e typed\+Element\+\_\+s\+::value.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -88,7 +93,7 @@ Grafo de chamadas desta função\+:
 
 
 
-Defina um valor para um field da \hyperlink{classInstance}{Instance}. 
+Defina um valor para um field da Instance. 
 
 
 \begin{DoxyParams}{Parâmetros}

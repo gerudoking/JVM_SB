@@ -60,7 +60,6 @@ var searchData=
   ['info',['info',['../structAttribute__info.html#a8612e1228cbf9673986c9fee603dceca',1,'Attribute_info::info()'],['../structCp__info.html#ace48d3773256ae8a504dea48352c0b93',1,'Cp_info::info()']]],
   ['inicializararquivo',['inicializarArquivo',['../classClassFile.html#a5fa3d7587821ed1c8e3eabb94544da29',1,'ClassFile']]],
   ['inicializarpc',['inicializarPC',['../classPilhaJVM.html#a08adb78983b512cf3d97becfa2e9a5f0',1,'PilhaJVM']]],
-  ['instance',['Instance',['../classInstance.html',1,'']]],
   ['instanceclass',['InstanceClass',['../classInstanceClass.html',1,'InstanceClass'],['../classInstanceClass.html#ac1bee1eb9725e1fec8de7f4cf97f369c',1,'InstanceClass::InstanceClass()']]],
   ['instanceclass_2ecpp',['InstanceClass.cpp',['../InstanceClass_8cpp.html',1,'']]],
   ['instanceclass_2eh',['InstanceClass.h',['../InstanceClass_8h.html',1,'']]],

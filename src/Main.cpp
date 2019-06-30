@@ -14,6 +14,7 @@
  * @brief Funcao principal, dá a opção de escolha entre exibidor e interpretador
  * 
  * @param argc, *argv[]
+ * @brief Grupo 4
  * @brief Membros:
  * @author Ana Luisa Salvador Alvarez - 16/0048036
  * @author Eduardo de Azevedo dos Santos - 14/0136967

@@ -37,6 +37,8 @@ typedef struct frame_s {
 class PilhaJVM {
 private:
 	stack<Frame*> stackFrame;
+	Frame frame;
+
 	/** @fn bool proximaInstrucao()
 	 * @brief Atualiza o PC, se não for possível atualizar, dá um pop no método atual
 	 */

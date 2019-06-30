@@ -36,7 +36,7 @@ var searchData=
   ['float_5fplusinfinity',['Float_PlusInfinity',['../BasicTypes_8h.html#af40742e3f905fd8d0968a3f0b5160649',1,'BasicTypes.h']]],
   ['fmul',['fmul',['../classOperations.html#ad4caf68c912edd7bfac5c8d74c1e2036',1,'Operations']]],
   ['fneg',['fneg',['../classOperations.html#a17a7d8f333373d30ae5b1595d96594e5',1,'Operations']]],
-  ['frame',['frame',['../classOperations.html#a0dc7b3710786c9cbd14801ac3e5d34b2',1,'Operations::frame()'],['../PilhaJVM_8h.html#acc380914b41a084dcc8e4b38fb200145',1,'Frame():&#160;PilhaJVM.h']]],
+  ['frame',['frame',['../classOperations.html#a0dc7b3710786c9cbd14801ac3e5d34b2',1,'Operations::frame()'],['../classPilhaJVM.html#adebac9c22fbb328afca1d2a98e6d486c',1,'PilhaJVM::frame()'],['../PilhaJVM_8h.html#acc380914b41a084dcc8e4b38fb200145',1,'Frame():&#160;PilhaJVM.h']]],
   ['frame_5fs',['frame_s',['../structframe__s.html',1,'']]],
   ['frem',['frem',['../classOperations.html#ad29eac4f222e4b74667086c3da0d5538',1,'Operations']]],
   ['freturn',['freturn',['../classOperations.html#a701431fe6d5d20fafa747dbeae90e1d4',1,'Operations']]],

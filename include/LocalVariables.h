@@ -27,10 +27,10 @@ using namespace std;
 #define TYPE_BOOL 5
 #define TYPE_REFERENCE 6
 
-/*! @class VariaveisLocais
- @brief classe VariaveisLocais
-
- Responsible for all operations that envolves the local variables
+/**
+ * @class LocalVariables
+ * @brief classe das Variaveis Locais
+ * @brief Responsible for all operations that envolves the local variables
  */
 class LocalVariables {
 private:

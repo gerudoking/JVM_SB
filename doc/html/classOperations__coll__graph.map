@@ -1,7 +1,7 @@
 <map id="Operations" name="Operations">
-<area shape="rect" id="node2" href="$classPilhaJVM.html" title="Classe de pilha de frames. " alt="" coords="116,184,195,211"/>
-<area shape="rect" id="node3" href="$structframe__s.html" title="Estrutura de armazenamento. " alt="" coords="219,184,289,211"/>
-<area shape="rect" id="node4" href="$classLocalVariables.html" title="LocalVariables" alt="" coords="378,95,485,121"/>
+<area shape="rect" id="node2" href="$classPilhaJVM.html" title="Classe de pilha de frames. " alt="" coords="176,273,255,300"/>
+<area shape="rect" id="node3" href="$structframe__s.html" title="Estrutura de armazenamento. " alt="" coords="225,184,294,211"/>
+<area shape="rect" id="node4" href="$classLocalVariables.html" title="classe das Variaveis Locais " alt="" coords="378,95,485,121"/>
 <area shape="rect" id="node5" href="$structMethod__info.html" title="Struct responsável por armazenar os metodos declarados. " alt="" coords="125,95,218,121"/>
 <area shape="rect" id="node6" href="$structAttribute__info.html" title="Protótipo da struct &quot;attribute_info&quot;. " alt="" coords="485,5,583,32"/>
 <area shape="rect" id="node10" href="$structCode__attribute.html" title="Estrutura de dados para salvar atributos do tipo code. " alt="" coords="930,95,1037,121"/>

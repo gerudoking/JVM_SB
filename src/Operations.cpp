@@ -2111,14 +2111,14 @@ void Operations::invokevirtual() {
 
 	Cp_info constantPool_method = frame->constantPool[indexByte];
 	if (constantPool_method.tag != METHOD_REF) {
-		throw runtime_error("Elemento da constant pool apontado por index, não é uma referencia para METHOD_REF!");
+		throw runtime_error("1 - invokevirtual - Elemento da constant pool apontado por index, não é uma referencia para METHOD_REF!");
 	}
 
 	string class_name = capturarIndiceDeReferencia(frame->constantPool, constantPool_method.info[0].u2);
 
 	Cp_info constantPool_name_and_type = frame->constantPool[constantPool_method.info[1].u2];
 	if (constantPool_name_and_type.tag != NAME_AND_TYPE) {
-		throw runtime_error("Elemento da constant pool apontado por index, não é uma referencia para NAME_AND_TYPE!");
+		throw runtime_error("2 - invokevirtual - Elemento da constant pool apontado por index, não é uma referencia para NAME_AND_TYPE!");
 	}
 
 	string name = capturarIndiceDeReferencia(frame->constantPool, constantPool_name_and_type.info[0].u2);
@@ -2182,7 +2182,7 @@ void Operations::invokevirtual() {
 
 				frame->operandsStack->empilharTypedElement(typedElementReference);
 			} else {
-				throw runtime_error("Dado Invalido.");
+				throw runtime_error("3 - invokevirtual - Dado Invalido.");
 			}
 
 		} else if (class_name == "java/lang/String" && name == "equals") {
@@ -2203,13 +2203,13 @@ void Operations::invokevirtual() {
 
 				frame->operandsStack->empilharTypedElement(typedElementReference);
 			} else {
-				throw runtime_error("Dados Invalidos.");
+				throw runtime_error("4 - invokevirtual - Dados Invalidos.");
 			}
 
 		} else {
-			throw runtime_error("Metodo Invalido.");
+			throw runtime_error("5 - invokevirtual - Metodo Invalido.");
 		}
-	} else {
+	} else {//quando é referencia
 
 		uint16_t num_args = 0; // numero de argumentos contidos na pilha de operandos
 		uint16_t i = 1; // pulando o primeiro '('
@@ -2242,7 +2242,7 @@ void Operations::invokevirtual() {
 
 		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
 		if (typedElement.type == TYPE_REFERENCE) {
-			throw runtime_error("Elemento não é uma referencia para REFERENCE!");
+			throw runtime_error("6 - invokevirtual - Elemento não é uma referencia para REFERENCE!");
 		}
 		vectorArgumentos.insert(vectorArgumentos.begin(), typedElement);
 
@@ -2269,14 +2269,14 @@ void Operations::invokespecial() {
 
 	Cp_info constantPool_method = frame->constantPool[indexByte];
 	if (constantPool_method.tag != METHOD_REF) {
-		throw runtime_error("Elemento da constant pool apontado por index, não é uma referencia para METHOD_REF!");
+		throw runtime_error("1 - invokespecial - Elemento da constant pool apontado por index, não é uma referencia para METHOD_REF!");
 	}
 
 	string classe = capturarIndiceDeReferencia(frame->constantPool, constantPool_method.info[0].u2);
 
 	Cp_info constantPool_name_and_type = frame->constantPool[constantPool_method.info[1].u2];
 	if (constantPool_name_and_type.tag != NAME_AND_TYPE) {
-		throw runtime_error("Elemento da constant pool apontado por index, não é uma referencia para NAME_AND_TYPE!");
+		throw runtime_error("2 - invokespecial - Elemento da constant pool apontado por index, não é uma referencia para NAME_AND_TYPE!");
 	}
 
 	string name = capturarIndiceDeReferencia(frame->constantPool, constantPool_name_and_type.info[0].u2);
@@ -2366,13 +2366,13 @@ void Operations::invokestatic() {
 	Cp_info constantPool__method = frame->constantPool[indexbyte];
 
 	if (constantPool__method.tag != METHOD_REF)
-		throw runtime_error("Elemento da constant pool apontado por index, não é uma referencia para METHOD_REF!");
+		throw runtime_error("1 - invokestatic - Elemento da constant pool apontado por index, não é uma referencia para METHOD_REF!");
 
 	string class_name = capturarIndiceDeReferencia(frame->constantPool, constantPool__method.info[0].u2);
 	Cp_info constantPool_name_and_type = frame->constantPool[constantPool__method.info[1].u2];
 
 	if (constantPool_name_and_type.tag != NAME_AND_TYPE) {
-		throw runtime_error("Elemento da constant pool apontado por index, não é uma referencia para NAME_AND_TYPE!");
+		throw runtime_error("2 - invokestatic - Elemento da constant pool apontado por index, não é uma referencia para NAME_AND_TYPE!");
 	}
 
 	string name = capturarIndiceDeReferencia(frame->constantPool, constantPool_name_and_type.info[0].u2);
@@ -2384,7 +2384,7 @@ void Operations::invokestatic() {
 	}
 
 	if (class_name.find("java/") != string::npos) {
-		cerr << "Tentando invocar metodo estatico invalido: " << name << endl;
+		cerr << "3 - invokestatic - Tentando invocar metodo estatico invalido: " << name << endl;
 	} else {
 		uint16_t quantidade = 0; // numero de argumentos contidos na pilha de operandos
 		uint16_t i = 1; // pulando o primeiro '('
@@ -2446,20 +2446,20 @@ void Operations::invokeinterface() {
 	Cp_info constantPool_interface = frame->constantPool[indexbyte];
 
 	if (constantPool_interface.tag != INTERFACE_REF) {
-		throw runtime_error("Elemento da constant pool apontado por index, não é uma referencia para INTERFACE_REF!");
+		throw runtime_error("1 - invokeinterface - Elemento da constant pool apontado por index, não é uma referencia para INTERFACE_REF!");
 	}
 
 	string class_name = capturarIndiceDeReferencia(frame->constantPool, constantPool_interface.info[0].u2);
 	Cp_info constantPool_name_and_type = frame->constantPool[constantPool_interface.info[1].u2];
 	if (constantPool_name_and_type.tag != NAME_AND_TYPE) {
-		throw runtime_error("Elemento da constant pool apontado por index, não é uma referencia para NAME_AND_TYPE!");
+		throw runtime_error("2 - invokeinterface - Elemento da constant pool apontado por index, não é uma referencia para NAME_AND_TYPE!");
 	}
 
 	string name = capturarIndiceDeReferencia(frame->constantPool, constantPool_name_and_type.info[0].u2);
 	string descriptor = capturarIndiceDeReferencia(frame->constantPool, constantPool_name_and_type.info[1].u2);
 
 	if (class_name.find("java/") != string::npos) {
-		throw runtime_error("Tentativa de invocar metodo de interface invalido!");
+		throw runtime_error("3 - invokeinterface - Tentativa de invocar metodo de interface invalido!");
 	} else {
 		uint16_t num_args = 0; //numero de argumentos na pilha de operandos
 		uint16_t i = 1; //pulando primeiro argumento '('
@@ -2492,7 +2492,7 @@ void Operations::invokeinterface() {
 
 		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
 		if (typedElement.type != TYPE_REFERENCE) {
-			throw runtime_error("Elemento do topo da pilha não e uma referencia!");
+			throw runtime_error("4 - invokeinterface - Elemento do topo da pilha não e uma referencia!");
 		}
 		vectorParametros.insert(vectorParametros.begin(), typedElement);
 

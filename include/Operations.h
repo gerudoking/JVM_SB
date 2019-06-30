@@ -48,6 +48,7 @@ private:
 	static void aload_n(short index);
 
 	//operacoes que serao adicionadas ao vetor de funcoes
+	//membro 1 Luan 1-53
 	static void nop();
 	static void aconst_null();
 	static void iconst_m1();
@@ -64,7 +65,7 @@ private:
 	static void fconst_2();
 	static void dconst_0();
 	static void dconst_1();
-	//************************************final linha 0
+
 	static void bipush();
 	static void sipush();
 	static void ldc();
@@ -81,7 +82,7 @@ private:
 	static void iload_3();
 	static void lload_0();
 	static void lload_1();
-	//************************************final linha 1
+
 	static void lload_2();
 	static void lload_3();
 	static void fload_0();
@@ -98,13 +99,16 @@ private:
 	static void aload_3();
 	static void iaload();
 	static void laload();
-	//************************************final linha 2
+
 	static void faload();
 	static void daload();
 	static void aaload();
 	static void baload();
 	static void caload();
 	static void saload();
+	// Fim Luan
+
+	//membro 2
 	static void istore();
 	static void lstore();
 	static void fstore();
@@ -115,7 +119,7 @@ private:
 	static void istore_3();
 	static void istore_0();
 	static void lstore_0();
-	//************************************final linha 3
+
 	static void lstore_1();
 	static void lstore_2();
 	static void lstore_3();
@@ -132,7 +136,7 @@ private:
 	static void astore_2();
 	static void astore_3();
 	static void iastore();
-	//************************************final linha 4
+
 	static void lastore();
 	static void fastore();
 	static void dastore();
@@ -149,7 +153,8 @@ private:
 	static void dup2_x1();
 	static void dup2_x2();
 	static void swap();
-	//************************************final linha 5
+
+	//membro 3
 	static void iadd();
 	static void ladd();
 	static void fadd();
@@ -166,7 +171,7 @@ private:
 	static void ldiv();
 	static void fdiv();
 	static void ddiv();
-	//************************************final linha 6
+
 	static void irem();
 	static void lrem();
 	static void frem();
@@ -183,12 +188,14 @@ private:
 	static void lushr();
 	static void iand();
 	static void land();
-	//************************************final linha 7
+
 	static void ior();
 	static void lor();
 	static void ixor();
 	static void lxor();
 	static void iinc();
+
+	//membro 4
 	static void i2l();
 	static void i2f();
 	static void i2d();
@@ -200,7 +207,7 @@ private:
 	static void f2d();
 	static void d2i();
 	static void d2l();
-	//************************************final linha 8
+
 	static void d2f();
 	static void i2b();
 	static void i2c();
@@ -217,7 +224,7 @@ private:
 	static void ifgt();
 	static void ifle();
 	static void if_icmpeq();
-	//************************************final linha 9
+
 	static void if_icmpne();
 	static void if_icmplt();
 	static void if_icmpge();
@@ -234,9 +241,11 @@ private:
 	static void lreturn();
 	static void freturn();
 	static void dreturn();
-	//************************************final linha 10
+
 	static void areturn();
 	static void func_return();
+
+	// todos os membros
 	static void getstatic();
 	static void putstatic();
 	static void getfield();
