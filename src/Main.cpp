@@ -59,7 +59,7 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 
-	cout << "Fim do programa JVM" << endl;
+	//cout << "Fim do programa JVM" << endl;
 
 	return 0;
 }

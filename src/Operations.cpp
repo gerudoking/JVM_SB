@@ -1986,14 +1986,14 @@ void Operations::getstatic() {
 	Frame *frameAux = frame;
 	Cp_info constantPool_field = frame->constantPool[indexByte];
 	if (constantPool_field.tag != FIELD_REF) {
-		throw runtime_error("Elemento da constant pool apontado por index, não é uma referencia para FIELD_REF!");
+		throw runtime_error("1 - getstatic - Elemento da constant pool apontado por index, não é uma referencia para FIELD_REF!");
 	}
 
 	string class_name = capturarIndiceDeReferencia(frame->constantPool, constantPool_field.info[0].u2);
 
 	Cp_info constantPool_name_and_type = frame->constantPool[constantPool_field.info[1].u2];
 	if (constantPool_name_and_type.tag != NAME_AND_TYPE) {
-		throw runtime_error("Elemento da constant pool apontado por index, não é uma referencia para NAME_AND_TYPE!");
+		throw runtime_error("2 - getstatic - Elemento da constant pool apontado por index, não é uma referencia para NAME_AND_TYPE!");
 	}
 
 	string name = capturarIndiceDeReferencia(frame->constantPool, constantPool_name_and_type.info[0].u2);
@@ -2008,7 +2008,7 @@ void Operations::getstatic() {
 	StaticClass* staticClass = obterStaticClassThatHasField(MethodArea::obterClass(class_name), name);
 
 	if (staticClass == NULL)
-		throw runtime_error("Field nao existe na classe definida!");
+		throw runtime_error("3 - getstatic - Field nao existe na classe definida!");
 
 	// Caso <clinit> seja empilhado.
 	if (stackFrame->top() != frameAux) {
@@ -2033,14 +2033,14 @@ void Operations::putstatic() {
 	uint16_t indexByte = obterNBytesValue(2, &frame->pc);
 	Cp_info constantPool_field = frame->constantPool[indexByte];
 	if (constantPool_field.tag != FIELD_REF) {
-		throw runtime_error("Elemento da constant pool apontado por index, não é uma referencia para FIELD_REF!");
+		throw runtime_error("1 - putstatic - Elemento da constant pool apontado por index, não é uma referencia para FIELD_REF!");
 	}
 
 	string class_name = capturarIndiceDeReferencia(frame->constantPool, constantPool_field.info[0].u2);
 
 	Cp_info constantPool_name_and_type = frame->constantPool[constantPool_field.info[1].u2];
 	if (constantPool_name_and_type.tag != NAME_AND_TYPE) {
-		throw runtime_error("Elemento da constant pool apontado por index, não é uma referencia para NAME_AND_TYPE!");
+		throw runtime_error("2 - putstatic - Elemento da constant pool apontado por index, não é uma referencia para NAME_AND_TYPE!");
 	}
 
 	string name = capturarIndiceDeReferencia(frame->constantPool, constantPool_name_and_type.info[0].u2);
@@ -2054,7 +2054,7 @@ void Operations::putstatic() {
 	StaticClass* static_class = obterStaticClassThatHasField(MethodArea::obterClass(class_name), name);
 
 	if (static_class == NULL)
-		throw runtime_error("Field nao existe na classe definida!");
+		throw runtime_error("3 - putstatic - Field nao existe na classe definida!");
 
 	// Caso <clinit> seja empilhado.
 	if (stackFrame->top() != frameAux) {
@@ -2535,7 +2535,7 @@ void Operations::newarray() {
 	int32_t index = frame->operandsStack->desempilha().is;
 
 	if (index < 0)
-		throw runtime_error("Negative Array Size.");
+		throw runtime_error("1 - newarray - Negative Array Size.");
 
 	int *array;
 
@@ -2578,7 +2578,7 @@ void Operations::anewarray() {
 	int32_t count = frame->operandsStack->desempilha().is;
 
 	if (count < 0)
-		throw runtime_error("Negative Array Size.");
+		throw runtime_error("1 - anewarray - Negative Array Size.");
 
 	LocalVariables *localVariables = new LocalVariables(count * (BITS ? 2 : 1), BITS);
 	for (int i = 0; i < count; i++) {
@@ -2626,7 +2626,7 @@ void Operations::multianewarray() {
 
 	Cp_info constantPool = frame->constantPool[indexbyte];
 	if (constantPool.tag != CLASS) {
-		throw runtime_error("Elemento da constant pool apontado por index, não é uma referencia para CLASS!");
+		throw runtime_error("1 - multianewarray - Elemento da constant pool apontado por index, não é uma referencia para CLASS!");
 	}
 
 	string class_name = capturarIndiceDeReferencia(frame->constantPool, constantPool.info[0].u2);
