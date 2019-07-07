@@ -196,6 +196,10 @@ Membros públicos</h2></td></tr>
 <tr class="memitem:acdb7018a6926b187bc6ecc18abf0fff8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#acdb7018a6926b187bc6ecc18abf0fff8">validacao</a> (void)</td></tr>
 <tr class="memdesc:acdb7018a6926b187bc6ecc18abf0fff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida estrutura obrigatoria.  <a href="#acdb7018a6926b187bc6ecc18abf0fff8">Mais...</a><br /></td></tr>
 <tr class="separator:acdb7018a6926b187bc6ecc18abf0fff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a423be12c855bb2f0479ff83823973da3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a423be12c855bb2f0479ff83823973da3">verificarVersaoClass</a> ()</td></tr>
+<tr class="separator:a423be12c855bb2f0479ff83823973da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dc8bb02efc19507cd93208d8477b436"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a1dc8bb02efc19507cd93208d8477b436">validarVersaoClass</a> (uint16_t major)</td></tr>
+<tr class="separator:a1dc8bb02efc19507cd93208d8477b436"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Membros privados</h2></td></tr>
@@ -291,7 +295,7 @@ DESCRIPTION</h1>
 
 <p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00008">8</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00246">fileName</a> e <a class="el" href="ClassFile_8h_source.html#l00244">status</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00278">fileName</a> e <a class="el" href="ClassFile_8h_source.html#l00276">status</a>.</p>
 
 </div>
 </div>
@@ -321,7 +325,7 @@ DESCRIPTION</h1>
 
 <p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00015">15</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00246">fileName</a> e <a class="el" href="ClassFile_8h_source.html#l00244">status</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00278">fileName</a> e <a class="el" href="ClassFile_8h_source.html#l00276">status</a>.</p>
 
 </div>
 </div>
@@ -344,9 +348,9 @@ DESCRIPTION</h1>
 <p>Carrega o class file na classe. </p>
 <dl class="section return"><dt>Retorna</dt><dd>variavel status que indica se houve erro no programa </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00068">68</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00085">85</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00249">accessFlags</a>, <a class="el" href="ClassFile_8h_source.html#l00255">arquivoClass</a>, <a class="el" href="ClassFile_8h_source.html#l00254">attributes</a>, <a class="el" href="ClassFile_8h_source.html#l00249">attributesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00035">CANT_OPEN</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00008">carregarConstantPool()</a>, <a class="el" href="ClassFile_8h_source.html#l00251">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00245">encontrouClinit</a>, <a class="el" href="ClassFile_8h_source.html#l00245">encontrouMain</a>, <a class="el" href="ClassFile_8h_source.html#l00252">fields</a>, <a class="el" href="ClassFile_8h_source.html#l00248">fieldsCount</a>, <a class="el" href="ClassFile_8h_source.html#l00246">fileName</a>, <a class="el" href="ClassFile_8h_source.html#l00250">interfaces</a>, <a class="el" href="ClassFile_8h_source.html#l00248">interfacesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00039">INVALID_EXTENSION</a>, <a class="el" href="ClassFile_8h_source.html#l00036">INVALID_FILE</a>, <a class="el" href="ClassFile_8h_source.html#l00038">INVALID_NAME</a>, <a class="el" href="ClassFile_8h_source.html#l00247">lengthCP</a>, <a class="el" href="Interfaces_8cpp_source.html#l00008">lerTodasInterfaces()</a>, <a class="el" href="Attributes_8cpp_source.html#l00092">lerTodosAttributes()</a>, <a class="el" href="Fields_8cpp_source.html#l00061">lerTodosFields()</a>, <a class="el" href="Methods_8cpp_source.html#l00024">lerTodosMethods()</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00008">lerU2()</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00040">lerU4()</a>, <a class="el" href="ClassFile_8h_source.html#l00247">majVersion</a>, <a class="el" href="ClassFile_8h_source.html#l00253">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00249">methodsCount</a>, <a class="el" href="ClassFile_8h_source.html#l00247">minVersion</a>, <a class="el" href="ClassFile_8h_source.html#l00034">MISSING_ARGUMENT</a>, <a class="el" href="ClassFile_8cpp_source.html#l00408">obterErro()</a>, <a class="el" href="ClassFile_8h_source.html#l00244">status</a>, <a class="el" href="ClassFile_8h_source.html#l00248">super_class</a>, <a class="el" href="ClassFile_8h_source.html#l00248">this_class</a>, <a class="el" href="ClassFile_8h_source.html#l00037">UNKNOWN_TYPE</a>, <a class="el" href="ClassFile_8cpp_source.html#l00284">validarExtensao()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00320">verificarClinit()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00297">verificarMain()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00362">verificarThisClass()</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00281">accessFlags</a>, <a class="el" href="ClassFile_8h_source.html#l00287">arquivoClass</a>, <a class="el" href="ClassFile_8h_source.html#l00286">attributes</a>, <a class="el" href="ClassFile_8h_source.html#l00281">attributesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00035">CANT_OPEN</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00008">carregarConstantPool()</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00277">encontrouClinit</a>, <a class="el" href="ClassFile_8h_source.html#l00277">encontrouMain</a>, <a class="el" href="ClassFile_8h_source.html#l00284">fields</a>, <a class="el" href="ClassFile_8h_source.html#l00280">fieldsCount</a>, <a class="el" href="ClassFile_8h_source.html#l00278">fileName</a>, <a class="el" href="ClassFile_8h_source.html#l00282">interfaces</a>, <a class="el" href="ClassFile_8h_source.html#l00280">interfacesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00039">INVALID_EXTENSION</a>, <a class="el" href="ClassFile_8h_source.html#l00036">INVALID_FILE</a>, <a class="el" href="ClassFile_8h_source.html#l00279">lengthCP</a>, <a class="el" href="Interfaces_8cpp_source.html#l00008">lerTodasInterfaces()</a>, <a class="el" href="Attributes_8cpp_source.html#l00092">lerTodosAttributes()</a>, <a class="el" href="Fields_8cpp_source.html#l00061">lerTodosFields()</a>, <a class="el" href="Methods_8cpp_source.html#l00024">lerTodosMethods()</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00008">lerU2()</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00040">lerU4()</a>, <a class="el" href="ClassFile_8h_source.html#l00279">majVersion</a>, <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a>, <a class="el" href="ClassFile_8h_source.html#l00279">minVersion</a>, <a class="el" href="ClassFile_8h_source.html#l00034">MISSING_ARGUMENT</a>, <a class="el" href="ClassFile_8cpp_source.html#l00434">obterErro()</a>, <a class="el" href="ClassFile_8h_source.html#l00276">status</a>, <a class="el" href="ClassFile_8h_source.html#l00280">super_class</a>, <a class="el" href="ClassFile_8h_source.html#l00280">this_class</a>, <a class="el" href="ClassFile_8h_source.html#l00037">UNKNOWN_TYPE</a>, <a class="el" href="ClassFile_8cpp_source.html#l00310">validarExtensao()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00045">validarVersaoClass()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00346">verificarClinit()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00323">verificarMain()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00049">verificarVersaoClass()</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="MethodArea_8cpp_source.html#l00021">MethodArea::adicionarClasse()</a> e <a class="el" href="Main_8cpp_source.html#l00025">main()</a>.</p>
 <div class="dynheader">
@@ -354,27 +358,28 @@ Grafo de chamadas desta função:</div>
 <div class="dyncontent">
 <div class="center"><img src="classClassFile_a619e102ada15202ab84981d43362a3e9_cgraph.png" border="0" usemap="#classClassFile_a619e102ada15202ab84981d43362a3e9_cgraph" alt=""/></div>
 <map name="classClassFile_a619e102ada15202ab84981d43362a3e9_cgraph" id="classClassFile_a619e102ada15202ab84981d43362a3e9_cgraph">
-<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a56798a87affc6fb3e55cc85ef7086dc4" title="carregarConstantPool" alt="" coords="597,106,745,133"/>
-<area shape="rect" id="node4" href="BasicTypes_8cpp.html#a7e2b72c2ee2be091607d2165abc06244" title="Função para ler 2 bytes do arquivo .class. " alt="" coords="1254,436,1307,462"/>
-<area shape="rect" id="node5" href="BasicTypes_8cpp.html#a74cf9475c49284eba16e6f1d4b7d0985" title="Função para ler 4 bytes do arquivo .class. " alt="" coords="1072,360,1125,386"/>
-<area shape="rect" id="node7" href="Interfaces_8cpp.html#a107c86b6178f848a1159aedf372996ba" title="Carrega as interfaces na mem�ria a partir do arquivo class. " alt="" coords="412,321,543,348"/>
-<area shape="rect" id="node8" href="Attributes_8cpp.html#afa0c4d01d9ac9907bcb78af9e8b92c71" title="lerTodosAttributes" alt="" coords="413,410,541,437"/>
-<area shape="rect" id="node14" href="Fields_8cpp.html#a888245ea152dedf33b1f8de23c254a37" title="lerTodosFields" alt="" coords="221,461,328,488"/>
-<area shape="rect" id="node16" href="Methods_8cpp.html#ae335dbeb4b8f1f2c4af9077318e10795" title="lerTodosMethods" alt="" coords="213,512,336,538"/>
-<area shape="rect" id="node18" href="classClassFile.html#a32767b8d966ef87249aa3a41ec5d67c3" title="Retorna a string que contém uma mensagem de erro correspondente ao índice que recebe como parâmetro..." alt="" coords="205,562,344,589"/>
-<area shape="rect" id="node19" href="classClassFile.html#a8dd042ff6873b9f0d16f8ee3812261e1" title="Verifica se a extensão do arquivo é .class. " alt="" coords="185,613,364,640"/>
-<area shape="rect" id="node20" href="classClassFile.html#ab0394185a299f35a9b5be68143385e84" title="Encontra em qual method esta a clinit, se existir. " alt="" coords="591,664,752,690"/>
-<area shape="rect" id="node21" href="classClassFile.html#ae8e4445e763c4ee7c04995fcea0369e0" title="Encontro em qual method está a main. " alt="" coords="800,714,959,741"/>
-<area shape="rect" id="node22" href="classClassFile.html#a6b8f23db0ee4af80a2e75d46a191dc20" title="Verifica se a class definida é igual ao nome da classe sem extensões. " alt="" coords="593,766,749,807"/>
-<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a4d51a7260f72d442b5fee1afad067e66" title="Função para ler 1 byte do arquivo .class. " alt="" coords="1072,106,1125,133"/>
-<area shape="rect" id="node6" href="BasicTypes_8cpp.html#ab43eecd93f5d0413f80c9dc9253f7ccb" title="Função para ler os bytes de uma string UTF&#45;8. " alt="" coords="845,56,914,82"/>
-<area shape="rect" id="node9" href="Attributes_8cpp.html#a37c90da63b21074fff4ffd05b7410be2" title="lerAttribute" alt="" coords="629,461,714,488"/>
-<area shape="rect" id="node10" href="Attributes_8cpp.html#adde2fdfec7796550e3b7753705bee880" title="lerAttributeInfo" alt="" coords="826,461,933,488"/>
-<area shape="rect" id="node11" href="ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="1007,701,1191,728"/>
-<area shape="rect" id="node13" href="Attributes_8cpp.html#a7575ffc9147cf9ff818f11e41e5799d2" title="Função de leitura de exceções. " alt="" coords="1029,461,1168,488"/>
-<area shape="rect" id="node12" href="BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="1239,701,1323,728"/>
-<area shape="rect" id="node15" href="Fields_8cpp.html#ab22eb8eb41d1c698fc206c34ccfbef68" title="lerField" alt="" coords="445,461,509,488"/>
-<area shape="rect" id="node17" href="Methods_8cpp.html#a1ae1d752fe2209d5b687b01d8be9ba6b" title="lerMethod" alt="" coords="438,512,517,538"/>
+<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a56798a87affc6fb3e55cc85ef7086dc4" title="carregarConstantPool" alt="" coords="597,146,745,172"/>
+<area shape="rect" id="node4" href="BasicTypes_8cpp.html#a7e2b72c2ee2be091607d2165abc06244" title="Função para ler 2 bytes do arquivo .class. " alt="" coords="1254,374,1307,400"/>
+<area shape="rect" id="node5" href="BasicTypes_8cpp.html#a74cf9475c49284eba16e6f1d4b7d0985" title="Função para ler 4 bytes do arquivo .class. " alt="" coords="1072,298,1125,324"/>
+<area shape="rect" id="node7" href="Interfaces_8cpp.html#a107c86b6178f848a1159aedf372996ba" title="Carrega as interfaces na mem�ria a partir do arquivo class. " alt="" coords="412,399,543,426"/>
+<area shape="rect" id="node8" href="Attributes_8cpp.html#afa0c4d01d9ac9907bcb78af9e8b92c71" title="lerTodosAttributes" alt="" coords="413,348,541,375"/>
+<area shape="rect" id="node14" href="Fields_8cpp.html#a888245ea152dedf33b1f8de23c254a37" title="lerTodosFields" alt="" coords="221,450,328,476"/>
+<area shape="rect" id="node16" href="Methods_8cpp.html#ae335dbeb4b8f1f2c4af9077318e10795" title="lerTodosMethods" alt="" coords="213,247,336,274"/>
+<area shape="rect" id="node18" href="classClassFile.html#a32767b8d966ef87249aa3a41ec5d67c3" title="Retorna a string que contém uma mensagem de erro correspondente ao índice que recebe como parâmetro..." alt="" coords="205,500,344,527"/>
+<area shape="rect" id="node19" href="classClassFile.html#a8dd042ff6873b9f0d16f8ee3812261e1" title="Verifica se a extensão do arquivo é .class. " alt="" coords="185,551,364,578"/>
+<area shape="rect" id="node20" href="classClassFile.html#a1dc8bb02efc19507cd93208d8477b436" title="ClassFile::validarVersao\lClass" alt="" coords="193,602,357,644"/>
+<area shape="rect" id="node21" href="classClassFile.html#ab0394185a299f35a9b5be68143385e84" title="Encontra em qual method esta a clinit, se existir. " alt="" coords="591,668,752,695"/>
+<area shape="rect" id="node22" href="classClassFile.html#ae8e4445e763c4ee7c04995fcea0369e0" title="Encontro em qual method está a main. " alt="" coords="800,719,959,746"/>
+<area shape="rect" id="node23" href="classClassFile.html#a423be12c855bb2f0479ff83823973da3" title="ClassFile::verificarVersao\lClass" alt="" coords="189,770,361,812"/>
+<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a4d51a7260f72d442b5fee1afad067e66" title="Função para ler 1 byte do arquivo .class. " alt="" coords="1072,146,1125,172"/>
+<area shape="rect" id="node6" href="BasicTypes_8cpp.html#ab43eecd93f5d0413f80c9dc9253f7ccb" title="Função para ler os bytes de uma string UTF&#45;8. " alt="" coords="845,146,914,172"/>
+<area shape="rect" id="node9" href="Attributes_8cpp.html#a37c90da63b21074fff4ffd05b7410be2" title="lerAttribute" alt="" coords="629,399,714,426"/>
+<area shape="rect" id="node10" href="Attributes_8cpp.html#adde2fdfec7796550e3b7753705bee880" title="lerAttributeInfo" alt="" coords="826,399,933,426"/>
+<area shape="rect" id="node11" href="ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="1007,668,1191,695"/>
+<area shape="rect" id="node13" href="Attributes_8cpp.html#a7575ffc9147cf9ff818f11e41e5799d2" title="Função de leitura de exceções. " alt="" coords="1029,399,1168,426"/>
+<area shape="rect" id="node12" href="BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="1239,668,1323,695"/>
+<area shape="rect" id="node15" href="Fields_8cpp.html#ab22eb8eb41d1c698fc206c34ccfbef68" title="lerField" alt="" coords="445,450,509,476"/>
+<area shape="rect" id="node17" href="Methods_8cpp.html#a1ae1d752fe2209d5b687b01d8be9ba6b" title="lerMethod" alt="" coords="438,247,517,274"/>
 </map>
 </div>
 
@@ -398,9 +403,9 @@ Grafo de chamadas desta função:</div>
 <p>Imprime todas as informações do .class. </p>
 <dl class="section return"><dt>Retorna</dt><dd>true ou false dependendo se a variavel status indicar que houve erro na leitura </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00176">176</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00202">202</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00254">attributes</a>, <a class="el" href="ClassFile_8h_source.html#l00249">attributesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00251">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00252">fields</a>, <a class="el" href="ClassFile_8h_source.html#l00248">fieldsCount</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00091">imprimirConstantPool()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00224">imprimirInformacoesGerais()</a>, <a class="el" href="Interfaces_8cpp_source.html#l00018">imprimirTodasInterfaces()</a>, <a class="el" href="Attributes_8cpp_source.html#l00104">imprimirTodosAttributes()</a>, <a class="el" href="Fields_8cpp_source.html#l00021">imprimirTodosField()</a>, <a class="el" href="Methods_8cpp_source.html#l00060">imprimirTodosMethods()</a>, <a class="el" href="ClassFile_8h_source.html#l00250">interfaces</a>, <a class="el" href="ClassFile_8h_source.html#l00248">interfacesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00247">lengthCP</a>, <a class="el" href="ClassFile_8h_source.html#l00253">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00249">methodsCount</a> e <a class="el" href="ClassFile_8h_source.html#l00244">status</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00286">attributes</a>, <a class="el" href="ClassFile_8h_source.html#l00281">attributesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00284">fields</a>, <a class="el" href="ClassFile_8h_source.html#l00280">fieldsCount</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00091">imprimirConstantPool()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a>, <a class="el" href="Interfaces_8cpp_source.html#l00018">imprimirTodasInterfaces()</a>, <a class="el" href="Attributes_8cpp_source.html#l00104">imprimirTodosAttributes()</a>, <a class="el" href="Fields_8cpp_source.html#l00021">imprimirTodosField()</a>, <a class="el" href="Methods_8cpp_source.html#l00060">imprimirTodosMethods()</a>, <a class="el" href="ClassFile_8h_source.html#l00282">interfaces</a>, <a class="el" href="ClassFile_8h_source.html#l00280">interfacesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00279">lengthCP</a>, <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a> e <a class="el" href="ClassFile_8h_source.html#l00276">status</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="Main_8cpp_source.html#l00025">main()</a>.</p>
 <div class="dynheader">
@@ -452,9 +457,9 @@ Grafo de chamadas desta função:</div>
 <p>Verifica se o .class tem o método clinit. </p>
 <dl class="section return"><dt>Retorna</dt><dd>booleano que indica se existe o metodo clinit </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00344">344</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00370">370</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00245">encontrouClinit</a> e <a class="el" href="ClassFile_8cpp_source.html#l00320">verificarClinit()</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00277">encontrouClinit</a> e <a class="el" href="ClassFile_8cpp_source.html#l00346">verificarClinit()</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="MethodArea_8cpp_source.html#l00021">MethodArea::adicionarClasse()</a>.</p>
 <div class="dynheader">
@@ -488,9 +493,9 @@ Grafo de chamadas desta função:</div>
 <p>Verifica se o .class possui função main. </p>
 <dl class="section return"><dt>Retorna</dt><dd>booleano que indica se existe o metodo main </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00338">338</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00364">364</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00245">encontrouMain</a> e <a class="el" href="ClassFile_8cpp_source.html#l00297">verificarMain()</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00277">encontrouMain</a> e <a class="el" href="ClassFile_8cpp_source.html#l00323">verificarMain()</a>.</p>
 <div class="dynheader">
 Grafo de chamadas desta função:</div>
 <div class="dyncontent">
@@ -523,7 +528,7 @@ Grafo de chamadas desta função:</div>
 
 <p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00041">41</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00256">arquivoSaida</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00288">arquivoSaida</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="Main_8cpp_source.html#l00025">main()</a>.</p>
 
@@ -547,9 +552,9 @@ Grafo de chamadas desta função:</div>
 <p>Gravar todas as informações do .class em um arquivo. </p>
 <dl class="section return"><dt>Retorna</dt><dd>true ou false dependendo se a variavel status indicar que houve erro na leitura </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00203">203</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00229">229</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00256">arquivoSaida</a>, <a class="el" href="ClassFile_8h_source.html#l00254">attributes</a>, <a class="el" href="ClassFile_8h_source.html#l00249">attributesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00251">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00252">fields</a>, <a class="el" href="ClassFile_8h_source.html#l00248">fieldsCount</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00135">gravarArquivoConstantPool()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00253">gravarArquivoInformacoesGerais()</a>, <a class="el" href="Interfaces_8cpp_source.html#l00028">gravarArquivoTodasInterfaces()</a>, <a class="el" href="Attributes_8cpp_source.html#l00167">gravarArquivoTodosAttributes()</a>, <a class="el" href="Fields_8cpp_source.html#l00040">gravarArquivoTodosField()</a>, <a class="el" href="Methods_8cpp_source.html#l00080">gravarArquivoTodosMethods()</a>, <a class="el" href="ClassFile_8h_source.html#l00250">interfaces</a>, <a class="el" href="ClassFile_8h_source.html#l00248">interfacesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00247">lengthCP</a>, <a class="el" href="ClassFile_8h_source.html#l00253">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00249">methodsCount</a> e <a class="el" href="ClassFile_8h_source.html#l00244">status</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00288">arquivoSaida</a>, <a class="el" href="ClassFile_8h_source.html#l00286">attributes</a>, <a class="el" href="ClassFile_8h_source.html#l00281">attributesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00284">fields</a>, <a class="el" href="ClassFile_8h_source.html#l00280">fieldsCount</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00135">gravarArquivoConstantPool()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a>, <a class="el" href="Interfaces_8cpp_source.html#l00028">gravarArquivoTodasInterfaces()</a>, <a class="el" href="Attributes_8cpp_source.html#l00167">gravarArquivoTodosAttributes()</a>, <a class="el" href="Fields_8cpp_source.html#l00040">gravarArquivoTodosField()</a>, <a class="el" href="Methods_8cpp_source.html#l00080">gravarArquivoTodosMethods()</a>, <a class="el" href="ClassFile_8h_source.html#l00282">interfaces</a>, <a class="el" href="ClassFile_8h_source.html#l00280">interfacesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00279">lengthCP</a>, <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a> e <a class="el" href="ClassFile_8h_source.html#l00276">status</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="Main_8cpp_source.html#l00025">main()</a>.</p>
 <div class="dynheader">
@@ -601,11 +606,11 @@ Grafo de chamadas desta função:</div>
 <p>Gravar informações gerais do .class em um arquivo. </p>
 <dl class="section return"><dt>Retorna</dt><dd>variavel status que indica se houve erro no programa </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00253">253</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00279">279</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00249">accessFlags</a>, <a class="el" href="ClassFile_8h_source.html#l00256">arquivoSaida</a>, <a class="el" href="ClassFile_8h_source.html#l00249">attributesCount</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00251">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00248">fieldsCount</a>, <a class="el" href="Flags_8cpp_source.html#l00064">gravarArquivoFlags()</a>, <a class="el" href="ClassFile_8h_source.html#l00248">interfacesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00247">lengthCP</a>, <a class="el" href="ClassFile_8h_source.html#l00247">majVersion</a>, <a class="el" href="ClassFile_8h_source.html#l00249">methodsCount</a>, <a class="el" href="ClassFile_8h_source.html#l00247">minVersion</a>, <a class="el" href="ClassFile_8h_source.html#l00248">super_class</a> e <a class="el" href="ClassFile_8h_source.html#l00248">this_class</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00281">accessFlags</a>, <a class="el" href="ClassFile_8h_source.html#l00288">arquivoSaida</a>, <a class="el" href="ClassFile_8h_source.html#l00281">attributesCount</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00280">fieldsCount</a>, <a class="el" href="Flags_8cpp_source.html#l00064">gravarArquivoFlags()</a>, <a class="el" href="ClassFile_8h_source.html#l00280">interfacesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00279">lengthCP</a>, <a class="el" href="ClassFile_8h_source.html#l00279">majVersion</a>, <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a>, <a class="el" href="ClassFile_8h_source.html#l00279">minVersion</a>, <a class="el" href="ClassFile_8h_source.html#l00280">super_class</a> e <a class="el" href="ClassFile_8h_source.html#l00280">this_class</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00203">gravarArquivo()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>.</p>
 <div class="dynheader">
 Grafo de chamadas desta função:</div>
 <div class="dyncontent">
@@ -637,11 +642,11 @@ Grafo de chamadas desta função:</div>
 <p>Imprime informações gerais do .class. </p>
 <dl class="section return"><dt>Retorna</dt><dd>variavel status que indica se houve erro no programa </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00224">224</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00250">250</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00249">accessFlags</a>, <a class="el" href="ClassFile_8h_source.html#l00249">attributesCount</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00251">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00248">fieldsCount</a>, <a class="el" href="Flags_8cpp_source.html#l00008">imprimirFlags()</a>, <a class="el" href="ClassFile_8h_source.html#l00248">interfacesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00247">lengthCP</a>, <a class="el" href="ClassFile_8h_source.html#l00247">majVersion</a>, <a class="el" href="ClassFile_8h_source.html#l00249">methodsCount</a>, <a class="el" href="ClassFile_8h_source.html#l00247">minVersion</a>, <a class="el" href="ClassFile_8h_source.html#l00248">super_class</a> e <a class="el" href="ClassFile_8h_source.html#l00248">this_class</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00281">accessFlags</a>, <a class="el" href="ClassFile_8h_source.html#l00281">attributesCount</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00280">fieldsCount</a>, <a class="el" href="Flags_8cpp_source.html#l00008">imprimirFlags()</a>, <a class="el" href="ClassFile_8h_source.html#l00280">interfacesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00279">lengthCP</a>, <a class="el" href="ClassFile_8h_source.html#l00279">majVersion</a>, <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a>, <a class="el" href="ClassFile_8h_source.html#l00279">minVersion</a>, <a class="el" href="ClassFile_8h_source.html#l00280">super_class</a> e <a class="el" href="ClassFile_8h_source.html#l00280">this_class</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00176">exibir()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>.</p>
 <div class="dynheader">
 Grafo de chamadas desta função:</div>
 <div class="dyncontent">
@@ -675,7 +680,7 @@ Grafo de chamadas desta função:</div>
 
 <p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00027">27</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00256">arquivoSaida</a> e <a class="el" href="ClassFile_8h_source.html#l00244">status</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00288">arquivoSaida</a> e <a class="el" href="ClassFile_8h_source.html#l00276">status</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="Main_8cpp_source.html#l00025">main()</a>.</p>
 
@@ -717,11 +722,11 @@ Grafo de chamadas desta função:</div>
 </dl>
 <dl class="section return"><dt>Retorna</dt><dd>classe <a class="el" href="classClassFile.html">ClassFile</a> </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00538">538</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00564">564</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00251">constantPool</a>, <a class="el" href="Methods_8h_source.html#l00022">Method_info::descriptor_index</a>, <a class="el" href="ClassFile_8h_source.html#l00253">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00249">methodsCount</a>, <a class="el" href="Methods_8h_source.html#l00021">Method_info::name_index</a>, <a class="el" href="MethodArea_8cpp_source.html#l00012">MethodArea::obterClass()</a>, <a class="el" href="StaticClass_8cpp_source.html#l00112">StaticClass::obterClassFile()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00538">obterClassThatHasSerachedMethod()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00492">obterSuper_class()</a>.</p>
+<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="Methods_8h_source.html#l00022">Method_info::descriptor_index</a>, <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a>, <a class="el" href="Methods_8h_source.html#l00021">Method_info::name_index</a>, <a class="el" href="MethodArea_8cpp_source.html#l00012">MethodArea::obterClass()</a>, <a class="el" href="StaticClass_8cpp_source.html#l00112">StaticClass::obterClassFile()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00564">obterClassThatHasSerachedMethod()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00518">obterSuper_class()</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l02443">Operations::invokeinterface()</a>, <a class="el" href="Operations_8cpp_source.html#l02266">Operations::invokespecial()</a>, <a class="el" href="Operations_8cpp_source.html#l02363">Operations::invokestatic()</a>, <a class="el" href="Operations_8cpp_source.html#l02107">Operations::invokevirtual()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00538">obterClassThatHasSerachedMethod()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l02443">Operations::invokeinterface()</a>, <a class="el" href="Operations_8cpp_source.html#l02266">Operations::invokespecial()</a>, <a class="el" href="Operations_8cpp_source.html#l02363">Operations::invokestatic()</a>, <a class="el" href="Operations_8cpp_source.html#l02107">Operations::invokevirtual()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00564">obterClassThatHasSerachedMethod()</a>.</p>
 <div class="dynheader">
 Grafo de chamadas desta função:</div>
 <div class="dyncontent">
@@ -755,9 +760,9 @@ Grafo de chamadas desta função:</div>
 <p>Retorna o método clinit. </p>
 <dl class="section return"><dt>Retorna</dt><dd>struct method_info contendo informações sobre o método </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00358">358</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00384">384</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00244">clinit</a> e <a class="el" href="ClassFile_8h_source.html#l00253">methods</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00276">clinit</a> e <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="MethodArea_8cpp_source.html#l00021">MethodArea::adicionarClasse()</a>.</p>
 
@@ -781,9 +786,9 @@ Grafo de chamadas desta função:</div>
 <p>Retorna referencia a constant pool. </p>
 <dl class="section return"><dt>Retorna</dt><dd>Retorna a array com a constant pool </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00441">441</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00467">467</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00251">constantPool</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="MethodArea_8cpp_source.html#l00021">MethodArea::adicionarClasse()</a>, <a class="el" href="InstanceClass_8cpp_source.html#l00008">InstanceClass::InstanceClass()</a>, <a class="el" href="Operations_8cpp_source.html#l02443">Operations::invokeinterface()</a>, <a class="el" href="Operations_8cpp_source.html#l02266">Operations::invokespecial()</a>, <a class="el" href="Operations_8cpp_source.html#l02363">Operations::invokestatic()</a>, <a class="el" href="Operations_8cpp_source.html#l02107">Operations::invokevirtual()</a>, <a class="el" href="Operations_8cpp_source.html#l01965">Operations::obterStaticClassThatHasField()</a>, <a class="el" href="PilhaJVM_8cpp_source.html#l00008">PilhaJVM::PilhaJVM()</a> e <a class="el" href="StaticClass_8cpp_source.html#l00008">StaticClass::StaticClass()</a>.</p>
 
@@ -822,11 +827,11 @@ Grafo de chamadas desta função:</div>
 </dl>
 <dl class="section return"><dt>Retorna</dt><dd>string contendo informação sobre o tipo de erro encontrado </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00408">408</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00434">434</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00035">CANT_OPEN</a>, <a class="el" href="ClassFile_8h_source.html#l00246">fileName</a>, <a class="el" href="ClassFile_8h_source.html#l00039">INVALID_EXTENSION</a>, <a class="el" href="ClassFile_8h_source.html#l00036">INVALID_FILE</a>, <a class="el" href="ClassFile_8h_source.html#l00038">INVALID_NAME</a>, <a class="el" href="ClassFile_8h_source.html#l00034">MISSING_ARGUMENT</a>, <a class="el" href="ClassFile_8h_source.html#l00041">MISSING_CLINIT</a>, <a class="el" href="ClassFile_8h_source.html#l00040">MISSING_MAIN</a> e <a class="el" href="ClassFile_8h_source.html#l00037">UNKNOWN_TYPE</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00035">CANT_OPEN</a>, <a class="el" href="ClassFile_8h_source.html#l00278">fileName</a>, <a class="el" href="ClassFile_8h_source.html#l00039">INVALID_EXTENSION</a>, <a class="el" href="ClassFile_8h_source.html#l00036">INVALID_FILE</a>, <a class="el" href="ClassFile_8h_source.html#l00038">INVALID_NAME</a>, <a class="el" href="ClassFile_8h_source.html#l00034">MISSING_ARGUMENT</a>, <a class="el" href="ClassFile_8h_source.html#l00041">MISSING_CLINIT</a>, <a class="el" href="ClassFile_8h_source.html#l00040">MISSING_MAIN</a> e <a class="el" href="ClassFile_8h_source.html#l00037">UNKNOWN_TYPE</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00045">validacao()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00061">validacao()</a>.</p>
 
 </div>
 </div>
@@ -855,9 +860,9 @@ Grafo de chamadas desta função:</div>
 </dl>
 <dl class="section return"><dt>Retorna</dt><dd>struct field_info com a informação da field passada no parâmetro </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00504">504</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00530">530</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00251">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00252">fields</a> e <a class="el" href="ClassFile_8cpp_source.html#l00496">obterFieldsCount()</a>.</p>
+<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00284">fields</a> e <a class="el" href="ClassFile_8cpp_source.html#l00522">obterFieldsCount()</a>.</p>
 <div class="dynheader">
 Grafo de chamadas desta função:</div>
 <div class="dyncontent">
@@ -889,9 +894,9 @@ Grafo de chamadas desta função:</div>
 <p>Retorna a array com as fields lidas. </p>
 <dl class="section return"><dt>Retorna</dt><dd>a array da struct field_info </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00500">500</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00526">526</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00252">fields</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00284">fields</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="InstanceClass_8cpp_source.html#l00008">InstanceClass::InstanceClass()</a> e <a class="el" href="StaticClass_8cpp_source.html#l00008">StaticClass::StaticClass()</a>.</p>
 
@@ -915,11 +920,11 @@ Grafo de chamadas desta função:</div>
 <p>Retorna número de fields. </p>
 <dl class="section return"><dt>Retorna</dt><dd>uint16_t indicando o numero de fields </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00496">496</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00522">522</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00248">fieldsCount</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00280">fieldsCount</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="InstanceClass_8cpp_source.html#l00008">InstanceClass::InstanceClass()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00504">obterField()</a> e <a class="el" href="StaticClass_8cpp_source.html#l00008">StaticClass::StaticClass()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="InstanceClass_8cpp_source.html#l00008">InstanceClass::InstanceClass()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00530">obterField()</a> e <a class="el" href="StaticClass_8cpp_source.html#l00008">StaticClass::StaticClass()</a>.</p>
 
 </div>
 </div>
@@ -941,9 +946,9 @@ Grafo de chamadas desta função:</div>
 <p>Retorna o método main. </p>
 <dl class="section return"><dt>Retorna</dt><dd>struct method_info contendo informações sobre o método </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00350">350</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00376">376</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00245">encontrouMain</a>, <a class="el" href="ClassFile_8h_source.html#l00244">mainMethod</a> e <a class="el" href="ClassFile_8h_source.html#l00253">methods</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00277">encontrouMain</a>, <a class="el" href="ClassFile_8h_source.html#l00276">mainMethod</a> e <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="PilhaJVM_8cpp_source.html#l00008">PilhaJVM::PilhaJVM()</a>.</p>
 
@@ -982,11 +987,11 @@ Grafo de chamadas desta função:</div>
   </dd>
 </dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00515">515</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00541">541</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00251">constantPool</a>, <a class="el" href="Methods_8h_source.html#l00022">Method_info::descriptor_index</a>, <a class="el" href="ClassFile_8h_source.html#l00253">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00249">methodsCount</a>, <a class="el" href="Methods_8h_source.html#l00021">Method_info::name_index</a>, <a class="el" href="MethodArea_8cpp_source.html#l00012">MethodArea::obterClass()</a>, <a class="el" href="StaticClass_8cpp_source.html#l00112">StaticClass::obterClassFile()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00515">obterMethod()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00492">obterSuper_class()</a>.</p>
+<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="Methods_8h_source.html#l00022">Method_info::descriptor_index</a>, <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a>, <a class="el" href="Methods_8h_source.html#l00021">Method_info::name_index</a>, <a class="el" href="MethodArea_8cpp_source.html#l00012">MethodArea::obterClass()</a>, <a class="el" href="StaticClass_8cpp_source.html#l00112">StaticClass::obterClassFile()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00541">obterMethod()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00518">obterSuper_class()</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l02443">Operations::invokeinterface()</a>, <a class="el" href="Operations_8cpp_source.html#l02266">Operations::invokespecial()</a>, <a class="el" href="Operations_8cpp_source.html#l02363">Operations::invokestatic()</a>, <a class="el" href="Operations_8cpp_source.html#l02107">Operations::invokevirtual()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00515">obterMethod()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l02443">Operations::invokeinterface()</a>, <a class="el" href="Operations_8cpp_source.html#l02266">Operations::invokespecial()</a>, <a class="el" href="Operations_8cpp_source.html#l02363">Operations::invokestatic()</a>, <a class="el" href="Operations_8cpp_source.html#l02107">Operations::invokevirtual()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00541">obterMethod()</a>.</p>
 <div class="dynheader">
 Grafo de chamadas desta função:</div>
 <div class="dyncontent">
@@ -1020,9 +1025,9 @@ Grafo de chamadas desta função:</div>
 <p>Retorna todos os métodos. </p>
 <dl class="section return"><dt>Retorna</dt><dd>array do tipo method_info </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00480">480</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00506">506</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00253">methods</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>.</p>
 
 </div>
 </div>
@@ -1044,9 +1049,9 @@ Grafo de chamadas desta função:</div>
 <p>Retorna o numero de Methods. </p>
 <dl class="section return"><dt>Retorna</dt><dd>uint16_t indicando o numero de metodos </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00484">484</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00510">510</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00249">methodsCount</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a>.</p>
 
 </div>
 </div>
@@ -1068,9 +1073,9 @@ Grafo de chamadas desta função:</div>
 <p>Pega o caminho do arquivo .class. </p>
 <dl class="section return"><dt>Retorna</dt><dd>Retorna a string com o caminho total do arquivo </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00449">449</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00475">475</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00246">fileName</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00278">fileName</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="Main_8cpp_source.html#l00025">main()</a>.</p>
 
@@ -1094,9 +1099,9 @@ Grafo de chamadas desta função:</div>
 <p>Retorna o status lido, informando para o método que chamou o que aconteceu. </p>
 <dl class="section return"><dt>Retorna</dt><dd>status </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00404">404</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00430">430</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00244">status</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00276">status</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="MethodArea_8cpp_source.html#l00049">MethodArea::adicionarClasse()</a> e <a class="el" href="Main_8cpp_source.html#l00025">main()</a>.</p>
 
@@ -1120,11 +1125,11 @@ Grafo de chamadas desta função:</div>
 <p>Retorna um índice da constant pool que aponta para string com nome da superclass. </p>
 <dl class="section return"><dt>Retorna</dt><dd>uint16_t super_class </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00492">492</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00518">518</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00248">super_class</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00280">super_class</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00538">obterClassThatHasSerachedMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00515">obterMethod()</a> e <a class="el" href="Operations_8cpp_source.html#l01965">Operations::obterStaticClassThatHasField()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00564">obterClassThatHasSerachedMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00541">obterMethod()</a> e <a class="el" href="Operations_8cpp_source.html#l01965">Operations::obterStaticClassThatHasField()</a>.</p>
 
 </div>
 </div>
@@ -1146,9 +1151,9 @@ Grafo de chamadas desta função:</div>
 <p>Retorna o valor do tamanho da constant pool. </p>
 <dl class="section return"><dt>Retorna</dt><dd>Retorna a array com a constant pool </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00445">445</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00471">471</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00247">lengthCP</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00279">lengthCP</a>.</p>
 
 </div>
 </div>
@@ -1170,9 +1175,9 @@ Grafo de chamadas desta função:</div>
 <p>Retorna um índice da constant pool que aponta para string com nome da class. </p>
 <dl class="section return"><dt>Retorna</dt><dd>uint16_t this_class </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00488">488</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00514">514</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00248">this_class</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00280">this_class</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="MethodArea_8cpp_source.html#l00049">MethodArea::adicionarClasse()</a>.</p>
 
@@ -1196,9 +1201,9 @@ Grafo de chamadas desta função:</div>
 
 <p>Valida estrutura obrigatoria. </p>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00045">45</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00061">61</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00039">INVALID_EXTENSION</a>, <a class="el" href="ClassFile_8h_source.html#l00038">INVALID_NAME</a>, <a class="el" href="ClassFile_8h_source.html#l00040">MISSING_MAIN</a>, <a class="el" href="ClassFile_8cpp_source.html#l00408">obterErro()</a>, <a class="el" href="ClassFile_8h_source.html#l00244">status</a>, <a class="el" href="ClassFile_8cpp_source.html#l00284">validarExtensao()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00297">verificarMain()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00362">verificarThisClass()</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00039">INVALID_EXTENSION</a>, <a class="el" href="ClassFile_8h_source.html#l00038">INVALID_NAME</a>, <a class="el" href="ClassFile_8h_source.html#l00040">MISSING_MAIN</a>, <a class="el" href="ClassFile_8cpp_source.html#l00434">obterErro()</a>, <a class="el" href="ClassFile_8h_source.html#l00276">status</a>, <a class="el" href="ClassFile_8cpp_source.html#l00310">validarExtensao()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00323">verificarMain()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00388">verificarThisClass()</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="Main_8cpp_source.html#l00025">main()</a>.</p>
 <div class="dynheader">
@@ -1235,11 +1240,42 @@ Grafo de chamadas desta função:</div>
 <p>Verifica se a extensão do arquivo é .class. </p>
 <dl class="section return"><dt>Retorna</dt><dd>booleano que indica se existe o .class </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00284">284</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00310">310</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00246">fileName</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00278">fileName</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="MethodArea_8cpp_source.html#l00021">MethodArea::adicionarClasse()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00045">validacao()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="MethodArea_8cpp_source.html#l00021">MethodArea::adicionarClasse()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00061">validacao()</a>.</p>
+
+</div>
+</div>
+<a id="a1dc8bb02efc19507cd93208d8477b436"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dc8bb02efc19507cd93208d8477b436">&#9670;&nbsp;</a></span>validarVersaoClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ClassFile::validarVersaoClass </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>major</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Verifica a validade da versão de uma estrutura <a class="el" href="classClassFile.html">ClassFile</a>; devendo esta ser igual ou anterior à versão explicitada em major. O campo major_version da estrutura <a class="el" href="classClassFile.html">ClassFile</a> é usado nessa avaliação. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">major</td><td>Versão a se comparar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Verdadeiro de a versão é no máximo major ou Falso caso contrário </dd></dl>
+
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00045">45</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00279">majVersion</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>.</p>
 
 </div>
 </div>
@@ -1269,11 +1305,11 @@ Grafo de chamadas desta função:</div>
 <p>Encontra em qual method esta a clinit, se existir. </p>
 <dl class="section return"><dt>Retorna</dt><dd>booleano que indica se existe o metodo clinit </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00320">320</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00346">346</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00244">clinit</a>, <a class="el" href="ClassFile_8h_source.html#l00251">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00253">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00249">methodsCount</a> e <a class="el" href="Methods_8h_source.html#l00021">Method_info::name_index</a>.</p>
+<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00276">clinit</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a> e <a class="el" href="Methods_8h_source.html#l00021">Method_info::name_index</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00344">existeClinit()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00370">existeClinit()</a>.</p>
 <div class="dynheader">
 Grafo de chamadas desta função:</div>
 <div class="dyncontent">
@@ -1312,11 +1348,11 @@ Grafo de chamadas desta função:</div>
 <p>Encontro em qual method está a main. </p>
 <dl class="section return"><dt>Retorna</dt><dd>booleano que indica se existe o metodo main </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00297">297</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00323">323</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="Methods_8h_source.html#l00020">Method_info::access_flags</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00251">constantPool</a>, <a class="el" href="Methods_8h_source.html#l00022">Method_info::descriptor_index</a>, <a class="el" href="ClassFile_8h_source.html#l00244">mainMethod</a>, <a class="el" href="ClassFile_8h_source.html#l00253">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00249">methodsCount</a> e <a class="el" href="Methods_8h_source.html#l00021">Method_info::name_index</a>.</p>
+<p class="reference">Referências <a class="el" href="Methods_8h_source.html#l00020">Method_info::access_flags</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="Methods_8h_source.html#l00022">Method_info::descriptor_index</a>, <a class="el" href="ClassFile_8h_source.html#l00276">mainMethod</a>, <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a> e <a class="el" href="Methods_8h_source.html#l00021">Method_info::name_index</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00338">existeMain()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00045">validacao()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00364">existeMain()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00061">validacao()</a>.</p>
 <div class="dynheader">
 Grafo de chamadas desta função:</div>
 <div class="dyncontent">
@@ -1347,11 +1383,11 @@ Grafo de chamadas desta função:</div>
 <p>Verifica se a class definida é igual ao nome da classe sem extensões. </p>
 <dl class="section return"><dt>Retorna</dt><dd>booleano indicando se a .class está correta </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00362">362</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00388">388</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00251">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00246">fileName</a> e <a class="el" href="ClassFile_8h_source.html#l00248">this_class</a>.</p>
+<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00278">fileName</a> e <a class="el" href="ClassFile_8h_source.html#l00280">this_class</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00045">validacao()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00061">validacao()</a>.</p>
 <div class="dynheader">
 Grafo de chamadas desta função:</div>
 <div class="dyncontent">
@@ -1361,6 +1397,29 @@ Grafo de chamadas desta função:</div>
 <area shape="rect" id="node3" href="BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="441,29,525,56"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="a423be12c855bb2f0479ff83823973da3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a423be12c855bb2f0479ff83823973da3">&#9670;&nbsp;</a></span>verificarVersaoClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ClassFile::verificarVersaoClass </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00049">49</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00279">majVersion</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>.</p>
 
 </div>
 </div>
@@ -1385,9 +1444,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00249">249</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00281">281</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00253">gravarArquivoInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00224">imprimirInformacoesGerais()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a>.</p>
 
 </div>
 </div>
@@ -1411,9 +1470,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00255">255</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00287">287</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>.</p>
 
 </div>
 </div>
@@ -1437,9 +1496,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00256">256</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00288">288</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00041">fecharArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00203">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00253">gravarArquivoInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00027">inicializarArquivo()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00041">fecharArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00027">inicializarArquivo()</a>.</p>
 
 </div>
 </div>
@@ -1463,9 +1522,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00254">254</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00286">286</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00176">exibir()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00203">gravarArquivo()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>.</p>
 
 </div>
 </div>
@@ -1489,9 +1548,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00249">249</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00281">281</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00176">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00203">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00253">gravarArquivoInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00224">imprimirInformacoesGerais()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a>.</p>
 
 </div>
 </div>
@@ -1515,9 +1574,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00244">244</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00276">276</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00358">obterClinit()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00320">verificarClinit()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00384">obterClinit()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00346">verificarClinit()</a>.</p>
 
 </div>
 </div>
@@ -1541,9 +1600,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00251">251</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00283">283</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00176">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00203">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00253">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00224">imprimirInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00538">obterClassThatHasSerachedMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00441">obterConstantPool()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00504">obterField()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00515">obterMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00320">verificarClinit()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00297">verificarMain()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00362">verificarThisClass()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00564">obterClassThatHasSerachedMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00467">obterConstantPool()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00530">obterField()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00541">obterMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00346">verificarClinit()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00323">verificarMain()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00388">verificarThisClass()</a>.</p>
 
 </div>
 </div>
@@ -1567,9 +1626,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00245">245</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00277">277</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00344">existeClinit()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00370">existeClinit()</a>.</p>
 
 </div>
 </div>
@@ -1593,9 +1652,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00245">245</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00277">277</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00338">existeMain()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00350">obterMain()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00364">existeMain()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00376">obterMain()</a>.</p>
 
 </div>
 </div>
@@ -1619,9 +1678,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00252">252</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00284">284</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00176">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00203">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00504">obterField()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00500">obterFields()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00530">obterField()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00526">obterFields()</a>.</p>
 
 </div>
 </div>
@@ -1645,9 +1704,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00248">248</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00280">280</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00176">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00203">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00253">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00224">imprimirInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00496">obterFieldsCount()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00522">obterFieldsCount()</a>.</p>
 
 </div>
 </div>
@@ -1671,9 +1730,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00246">246</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00278">278</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00008">ClassFile()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00408">obterErro()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00449">obterPath()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00284">validarExtensao()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00362">verificarThisClass()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00008">ClassFile()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00434">obterErro()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00475">obterPath()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00310">validarExtensao()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00388">verificarThisClass()</a>.</p>
 
 </div>
 </div>
@@ -1697,9 +1756,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00250">250</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00282">282</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00176">exibir()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00203">gravarArquivo()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>.</p>
 
 </div>
 </div>
@@ -1723,9 +1782,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00248">248</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00280">280</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00176">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00203">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00253">gravarArquivoInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00224">imprimirInformacoesGerais()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a>.</p>
 
 </div>
 </div>
@@ -1749,9 +1808,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00247">247</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00279">279</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00176">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00203">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00253">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00224">imprimirInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00445">obterTamanhoConstantPool()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00471">obterTamanhoConstantPool()</a>.</p>
 
 </div>
 </div>
@@ -1775,9 +1834,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00244">244</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00276">276</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00350">obterMain()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00297">verificarMain()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00376">obterMain()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00323">verificarMain()</a>.</p>
 
 </div>
 </div>
@@ -1801,9 +1860,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00247">247</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00279">279</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00253">gravarArquivoInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00224">imprimirInformacoesGerais()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00045">validarVersaoClass()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00049">verificarVersaoClass()</a>.</p>
 
 </div>
 </div>
@@ -1827,9 +1886,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00253">253</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00285">285</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00176">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00203">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00538">obterClassThatHasSerachedMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00358">obterClinit()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00350">obterMain()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00515">obterMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00480">obterMethods()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00320">verificarClinit()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00297">verificarMain()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00564">obterClassThatHasSerachedMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00384">obterClinit()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00376">obterMain()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00541">obterMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00506">obterMethods()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00346">verificarClinit()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00323">verificarMain()</a>.</p>
 
 </div>
 </div>
@@ -1853,9 +1912,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00249">249</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00281">281</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00176">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00203">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00253">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00224">imprimirInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00538">obterClassThatHasSerachedMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00515">obterMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00484">obterMethodsCount()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00320">verificarClinit()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00297">verificarMain()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00564">obterClassThatHasSerachedMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00541">obterMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00510">obterMethodsCount()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00346">verificarClinit()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00323">verificarMain()</a>.</p>
 
 </div>
 </div>
@@ -1879,9 +1938,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00247">247</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00279">279</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00253">gravarArquivoInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00224">imprimirInformacoesGerais()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a>.</p>
 
 </div>
 </div>
@@ -1905,9 +1964,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00244">244</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00276">276</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00008">ClassFile()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00176">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00203">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00027">inicializarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00404">obterStatus()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00045">validacao()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00008">ClassFile()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00027">inicializarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00430">obterStatus()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00061">validacao()</a>.</p>
 
 </div>
 </div>
@@ -1931,9 +1990,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00248">248</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00280">280</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00253">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00224">imprimirInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00492">obterSuper_class()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00518">obterSuper_class()</a>.</p>
 
 </div>
 </div>
@@ -1957,9 +2016,9 @@ Grafo de chamadas desta função:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00248">248</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00280">280</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00068">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00253">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00224">imprimirInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00488">obterThis_class()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00362">verificarThisClass()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00514">obterThis_class()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00388">verificarThisClass()</a>.</p>
 
 </div>
 </div>

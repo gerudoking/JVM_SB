@@ -35,7 +35,7 @@ var searchData=
   ['obtervalor',['obterValor',['../classOperations.html#a926006a1873abe481d6877428355fdf2',1,'Operations']]],
   ['obtervalornbytes',['obterValorNBytes',['../Attributes_8cpp.html#a2c00cc0bad9d04b8667ccbc5a166650c',1,'obterValorNBytes(uint8_t numero, unsigned char *codigo, int *indice):&#160;Attributes.cpp'],['../Attributes_8h.html#a2c00cc0bad9d04b8667ccbc5a166650c',1,'obterValorNBytes(uint8_t numero, unsigned char *codigo, int *indice):&#160;Attributes.cpp']]],
   ['opcode',['opcode',['../classPilhaJVM.html#a90e6f9da43b72798ea0331c57b72af09',1,'PilhaJVM']]],
-  ['operandsstack',['OperandsStack',['../classOperandsStack.html',1,'OperandsStack'],['../structframe__s.html#ac26720ef0e7627d29c868eba6a15bfc1',1,'frame_s::operandsStack()'],['../classOperandsStack.html#a5ea2e7d609262388d0d4bc3ba08a2c32',1,'OperandsStack::OperandsStack()']]],
+  ['operandsstack',['OperandsStack',['../classOperandsStack.html',1,'OperandsStack'],['../classOperandsStack.html#a5ea2e7d609262388d0d4bc3ba08a2c32',1,'OperandsStack::OperandsStack()'],['../structframe__s.html#ac26720ef0e7627d29c868eba6a15bfc1',1,'frame_s::operandsStack()']]],
   ['operandsstack_2ecpp',['OperandsStack.cpp',['../OperandsStack_8cpp.html',1,'']]],
   ['operandsstack_2eh',['OperandsStack.h',['../OperandsStack_8h.html',1,'']]],
   ['operations',['Operations',['../classOperations.html',1,'Operations'],['../classOperations.html#a302329a641fa78f54d1f1f307736b870',1,'Operations::Operations()']]],

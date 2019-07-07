@@ -42,7 +42,24 @@ void ClassFile::fecharArquivo() {
 	arquivoSaida.close();
 }
 
+bool ClassFile::validarVersaoClass(uint16_t major) {
+	return majVersion <= major;
+}
+
+int ClassFile::verificarVersaoClass() {
+	if (majVersion < 45 || majVersion > 52) {
+		return 5 + (majVersion - 49);
+	}
+
+	/*if (majVersion <= 48) { // versões artigas jdk
+		return 1.0 + (majVersion - 44) * 0.1;
+	}*/
+
+	return 0;
+}
+
 int ClassFile::validacao(void) {
+	status = 0;
 	//**verifica se o arquivo possui a extensao .class
 	if (!validarExtensao()) {
 		cout << obterErro(INVALID_EXTENSION) << endl;
@@ -61,7 +78,7 @@ int ClassFile::validacao(void) {
 		status = MISSING_MAIN;
 	}
 
-	return (status = 0);
+	return status;
 
 }
 
@@ -106,6 +123,15 @@ int ClassFile::carregar() {
 	//armazena major version
 	majVersion = lerU2(arquivoClass);
 
+	// JDK 1.1 = 45
+	if (validarVersaoClass(45) == false) {
+		int versao = ClassFile::verificarVersaoClass();
+		if (versao != 0) {
+			printf("Não tem suporte para versão Superior a 1.8 (52) a versão da class é Java SE %d\n", versao);
+			return status = 1;
+		}
+	}
+
 	//le o numero de constantes na constant pool
 	lengthCP = lerU2(arquivoClass);
 
@@ -127,10 +153,10 @@ int ClassFile::carregar() {
 	this_class = lerU2(arquivoClass);
 
 	//**verifica se o nome do arquivo bate com o nome da class definida no bytecode
-	if (!verificarThisClass()) {
-		cerr << obterErro(INVALID_NAME);
-		return (status = INVALID_NAME);
-	}
+	//if (!verificarThisClass()) {
+	//	cerr << obterErro(INVALID_NAME);
+	//return (status = INVALID_NAME);
+	//}
 
 	//armazena informacao sobre a superclass
 	super_class = lerU2(arquivoClass);
@@ -285,7 +311,7 @@ bool ClassFile::validarExtensao() {
 	string aux = "", auxFilename(this->fileName);
 	int size = auxFilename.size();
 
-	if (size > 7) {
+	if (size >= 7) {
 		for (int i = size - 6; i < size; i++) {
 			aux += auxFilename[i];
 		}
@@ -556,3 +582,4 @@ ClassFile* ClassFile::obterClassThatHasSerachedMethod(string nome, string descri
 		return classFile->obterClassThatHasSerachedMethod(nome, descriptor);
 	}
 }
+

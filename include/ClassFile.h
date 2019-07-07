@@ -221,6 +221,38 @@ public:
 	 * @brief Valida estrutura obrigatoria */
 	int validacao(void);
 
+	/**	@fn int verficarVersaoClass(ClassFile *classFile)
+	 * Converte os dados de versão obtidos da struct classFile para a convenção encontrada em https://en.wikipedia.org/wiki/Java_class_file#General_layout
+	 *
+	 * Não Tratados
+	 * Java SE 14 = 58
+	 * Java SE 13 = 57
+	 * Java SE 12 = 56
+	 * Java SE 11 = 55
+	 * Java SE 10 = 54
+	 * Java SE 9 = 53
+	 *
+	 * Tratados
+	 * J2SE 8 = 52
+	 * J2SE 7 = 51
+	 * J2SE 6.0 = 50
+	 * J2SE 5.0 = 49
+	 * JDK 1.4 = 48
+	 * JDK 1.3 = 47
+	 * JDK 1.2 = 46
+	 * JDK 1.1 = 45
+	 * @return O valor equivalente à versão lida em *classFile.
+	 */
+	int verificarVersaoClass();
+
+	/** @fn bool validarVersaoClass(uint16_t major)
+	 * Verifica a validade da versão de uma estrutura ClassFile; devendo esta ser igual ou anterior à versão explicitada em major.
+	 * O campo major_version da estrutura ClassFile é usado nessa avaliação.
+	 * @param major Versão a se comparar.
+	 * @return Verdadeiro de a versão é no máximo major ou Falso caso contrário
+	 */
+	bool validarVersaoClass(uint16_t major);
+
 private:
 	/** @fn bool verificarMain()
 	 @brief Encontro em qual method está a main

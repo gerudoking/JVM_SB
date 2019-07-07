@@ -73,7 +73,11 @@ char $\ast$ \hyperlink{classClassFile_a4803bd3f325fbab1bf9c0f774b3a8c97}{obter\+
 \hyperlink{classClassFile}{Class\+File} $\ast$ \hyperlink{classClassFile_a4d0ac62c4d6218ddada33f715ebaf633}{obter\+Class\+That\+Has\+Serached\+Method} (string nome, string descriptor)
 \begin{DoxyCompactList}\small\item\em Retorna o ponteiro para o leitor do .class que contém o método encontrado em get\+Method. \end{DoxyCompactList}\item 
 int \hyperlink{classClassFile_acdb7018a6926b187bc6ecc18abf0fff8}{validacao} (void)
-\begin{DoxyCompactList}\small\item\em Valida estrutura obrigatoria. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Valida estrutura obrigatoria. \end{DoxyCompactList}\item 
+int \hyperlink{classClassFile_a423be12c855bb2f0479ff83823973da3}{verificar\+Versao\+Class} ()
+\item 
+bool \hyperlink{classClassFile_a1dc8bb02efc19507cd93208d8477b436}{validar\+Versao\+Class} (uint16\+\_\+t major)
+\end{DoxyCompactItemize}
 \subsection*{Membros privados}
 \begin{DoxyCompactItemize}
 \item 
@@ -207,17 +211,18 @@ variavel status que indica se houve erro no programa
 \end{DoxyReturn}
 
 
-Definido na linha 68 do ficheiro Class\+File.\+cpp.
+Definido na linha 85 do ficheiro Class\+File.\+cpp.
 
 
 
-Referências access\+Flags, arquivo\+Class, attributes, attributes\+Count, C\+A\+N\+T\+\_\+\+O\+P\+EN, carregar\+Constant\+Pool(), constant\+Pool, encontrou\+Clinit, encontrou\+Main, fields, fields\+Count, file\+Name, interfaces, interfaces\+Count, I\+N\+V\+A\+L\+I\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON, I\+N\+V\+A\+L\+I\+D\+\_\+\+F\+I\+LE, I\+N\+V\+A\+L\+I\+D\+\_\+\+N\+A\+ME, length\+CP, ler\+Todas\+Interfaces(), ler\+Todos\+Attributes(), ler\+Todos\+Fields(), ler\+Todos\+Methods(), ler\+U2(), ler\+U4(), maj\+Version, methods, methods\+Count, min\+Version, M\+I\+S\+S\+I\+N\+G\+\_\+\+A\+R\+G\+U\+M\+E\+NT, obter\+Erro(), status, super\+\_\+class, this\+\_\+class, U\+N\+K\+N\+O\+W\+N\+\_\+\+T\+Y\+PE, validar\+Extensao(), verificar\+Clinit(), verificar\+Main() e verificar\+This\+Class().
+Referências access\+Flags, arquivo\+Class, attributes, attributes\+Count, C\+A\+N\+T\+\_\+\+O\+P\+EN, carregar\+Constant\+Pool(), constant\+Pool, encontrou\+Clinit, encontrou\+Main, fields, fields\+Count, file\+Name, interfaces, interfaces\+Count, I\+N\+V\+A\+L\+I\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON, I\+N\+V\+A\+L\+I\+D\+\_\+\+F\+I\+LE, length\+CP, ler\+Todas\+Interfaces(), ler\+Todos\+Attributes(), ler\+Todos\+Fields(), ler\+Todos\+Methods(), ler\+U2(), ler\+U4(), maj\+Version, methods, methods\+Count, min\+Version, M\+I\+S\+S\+I\+N\+G\+\_\+\+A\+R\+G\+U\+M\+E\+NT, obter\+Erro(), status, super\+\_\+class, this\+\_\+class, U\+N\+K\+N\+O\+W\+N\+\_\+\+T\+Y\+PE, validar\+Extensao(), validar\+Versao\+Class(), verificar\+Clinit(), verificar\+Main() e verificar\+Versao\+Class().
 
 
 
 Referenciado por Method\+Area\+::adicionar\+Classe() e main().
 
-Grafo de chamadas desta função\+:\nopagebreak
+Grafo de chamadas desta função\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -239,7 +244,7 @@ true ou false dependendo se a variavel status indicar que houve erro na leitura
 \end{DoxyReturn}
 
 
-Definido na linha 176 do ficheiro Class\+File.\+cpp.
+Definido na linha 202 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -249,7 +254,8 @@ Referências attributes, attributes\+Count, constant\+Pool, fields, fields\+Coun
 
 Referenciado por main().
 
-Grafo de chamadas desta função\+:\nopagebreak
+Grafo de chamadas desta função\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -271,7 +277,7 @@ booleano que indica se existe o metodo clinit
 \end{DoxyReturn}
 
 
-Definido na linha 344 do ficheiro Class\+File.\+cpp.
+Definido na linha 370 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -281,7 +287,8 @@ Referências encontrou\+Clinit e verificar\+Clinit().
 
 Referenciado por Method\+Area\+::adicionar\+Classe().
 
-Grafo de chamadas desta função\+:\nopagebreak
+Grafo de chamadas desta função\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -303,13 +310,14 @@ booleano que indica se existe o metodo main
 \end{DoxyReturn}
 
 
-Definido na linha 338 do ficheiro Class\+File.\+cpp.
+Definido na linha 364 do ficheiro Class\+File.\+cpp.
 
 
 
 Referências encontrou\+Main e verificar\+Main().
 
-Grafo de chamadas desta função\+:\nopagebreak
+Grafo de chamadas desta função\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -353,7 +361,7 @@ true ou false dependendo se a variavel status indicar que houve erro na leitura
 \end{DoxyReturn}
 
 
-Definido na linha 203 do ficheiro Class\+File.\+cpp.
+Definido na linha 229 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -363,7 +371,8 @@ Referências arquivo\+Saida, attributes, attributes\+Count, constant\+Pool, fiel
 
 Referenciado por main().
 
-Grafo de chamadas desta função\+:\nopagebreak
+Grafo de chamadas desta função\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -385,7 +394,7 @@ variavel status que indica se houve erro no programa
 \end{DoxyReturn}
 
 
-Definido na linha 253 do ficheiro Class\+File.\+cpp.
+Definido na linha 279 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -395,7 +404,8 @@ Referências access\+Flags, arquivo\+Saida, attributes\+Count, capturar\+Indice\
 
 Referenciado por gravar\+Arquivo().
 
-Grafo de chamadas desta função\+:\nopagebreak
+Grafo de chamadas desta função\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -417,7 +427,7 @@ variavel status que indica se houve erro no programa
 \end{DoxyReturn}
 
 
-Definido na linha 224 do ficheiro Class\+File.\+cpp.
+Definido na linha 250 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -427,7 +437,8 @@ Referências access\+Flags, attributes\+Count, capturar\+Indice\+De\+Referencia(
 
 Referenciado por exibir().
 
-Grafo de chamadas desta função\+:\nopagebreak
+Grafo de chamadas desta função\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -478,7 +489,7 @@ classe \hyperlink{classClassFile}{Class\+File}
 \end{DoxyReturn}
 
 
-Definido na linha 538 do ficheiro Class\+File.\+cpp.
+Definido na linha 564 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -488,7 +499,8 @@ Referências capturar\+Indice\+De\+Referencia(), constant\+Pool, Method\+\_\+inf
 
 Referenciado por Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual() e obter\+Class\+That\+Has\+Serached\+Method().
 
-Grafo de chamadas desta função\+:\nopagebreak
+Grafo de chamadas desta função\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -510,7 +522,7 @@ struct method\+\_\+info contendo informações sobre o método
 \end{DoxyReturn}
 
 
-Definido na linha 358 do ficheiro Class\+File.\+cpp.
+Definido na linha 384 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -535,7 +547,7 @@ Retorna a array com a constant pool
 \end{DoxyReturn}
 
 
-Definido na linha 441 do ficheiro Class\+File.\+cpp.
+Definido na linha 467 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -565,7 +577,7 @@ string contendo informação sobre o tipo de erro encontrado
 \end{DoxyReturn}
 
 
-Definido na linha 408 do ficheiro Class\+File.\+cpp.
+Definido na linha 434 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -595,13 +607,14 @@ struct field\+\_\+info com a informação da field passada no parâmetro
 \end{DoxyReturn}
 
 
-Definido na linha 504 do ficheiro Class\+File.\+cpp.
+Definido na linha 530 do ficheiro Class\+File.\+cpp.
 
 
 
 Referências capturar\+Indice\+De\+Referencia(), constant\+Pool, fields e obter\+Fields\+Count().
 
-Grafo de chamadas desta função\+:\nopagebreak
+Grafo de chamadas desta função\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -623,7 +636,7 @@ a array da struct field\+\_\+info
 \end{DoxyReturn}
 
 
-Definido na linha 500 do ficheiro Class\+File.\+cpp.
+Definido na linha 526 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -648,7 +661,7 @@ uint16\+\_\+t indicando o numero de fields
 \end{DoxyReturn}
 
 
-Definido na linha 496 do ficheiro Class\+File.\+cpp.
+Definido na linha 522 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -673,7 +686,7 @@ struct method\+\_\+info contendo informações sobre o método
 \end{DoxyReturn}
 
 
-Definido na linha 350 do ficheiro Class\+File.\+cpp.
+Definido na linha 376 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -698,7 +711,7 @@ Referenciado por Pilha\+J\+V\+M\+::\+Pilha\+J\+V\+M().
 \end{DoxyParams}
 
 
-Definido na linha 515 do ficheiro Class\+File.\+cpp.
+Definido na linha 541 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -708,7 +721,8 @@ Referências capturar\+Indice\+De\+Referencia(), constant\+Pool, Method\+\_\+inf
 
 Referenciado por Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual() e obter\+Method().
 
-Grafo de chamadas desta função\+:\nopagebreak
+Grafo de chamadas desta função\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -730,7 +744,7 @@ array do tipo method\+\_\+info
 \end{DoxyReturn}
 
 
-Definido na linha 480 do ficheiro Class\+File.\+cpp.
+Definido na linha 506 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -751,7 +765,7 @@ uint16\+\_\+t indicando o numero de metodos
 \end{DoxyReturn}
 
 
-Definido na linha 484 do ficheiro Class\+File.\+cpp.
+Definido na linha 510 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -772,7 +786,7 @@ Retorna a string com o caminho total do arquivo
 \end{DoxyReturn}
 
 
-Definido na linha 449 do ficheiro Class\+File.\+cpp.
+Definido na linha 475 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -797,7 +811,7 @@ status
 \end{DoxyReturn}
 
 
-Definido na linha 404 do ficheiro Class\+File.\+cpp.
+Definido na linha 430 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -822,7 +836,7 @@ uint16\+\_\+t super\+\_\+class
 \end{DoxyReturn}
 
 
-Definido na linha 492 do ficheiro Class\+File.\+cpp.
+Definido na linha 518 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -847,7 +861,7 @@ Retorna a array com a constant pool
 \end{DoxyReturn}
 
 
-Definido na linha 445 do ficheiro Class\+File.\+cpp.
+Definido na linha 471 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -868,7 +882,7 @@ uint16\+\_\+t this\+\_\+class
 \end{DoxyReturn}
 
 
-Definido na linha 488 do ficheiro Class\+File.\+cpp.
+Definido na linha 514 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -890,7 +904,7 @@ Valida estrutura obrigatoria.
 
 
 
-Definido na linha 45 do ficheiro Class\+File.\+cpp.
+Definido na linha 61 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -900,7 +914,8 @@ Referências I\+N\+V\+A\+L\+I\+D\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON, I\+N\+V\+A\+L\+
 
 Referenciado por main().
 
-Grafo de chamadas desta função\+:\nopagebreak
+Grafo de chamadas desta função\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -922,7 +937,7 @@ booleano que indica se existe o .class
 \end{DoxyReturn}
 
 
-Definido na linha 284 do ficheiro Class\+File.\+cpp.
+Definido na linha 310 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -931,6 +946,32 @@ Referências file\+Name.
 
 
 Referenciado por Method\+Area\+::adicionar\+Classe(), carregar() e validacao().
+
+\mbox{\Hypertarget{classClassFile_a1dc8bb02efc19507cd93208d8477b436}\label{classClassFile_a1dc8bb02efc19507cd93208d8477b436}} 
+\index{Class\+File@{Class\+File}!validar\+Versao\+Class@{validar\+Versao\+Class}}
+\index{validar\+Versao\+Class@{validar\+Versao\+Class}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{validar\+Versao\+Class()}{validarVersaoClass()}}
+{\footnotesize\ttfamily bool Class\+File\+::validar\+Versao\+Class (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{major }\end{DoxyParamCaption})}
+
+Verifica a validade da versão de uma estrutura \hyperlink{classClassFile}{Class\+File}; devendo esta ser igual ou anterior à versão explicitada em major. O campo major\+\_\+version da estrutura \hyperlink{classClassFile}{Class\+File} é usado nessa avaliação. 
+\begin{DoxyParams}{Parâmetros}
+{\em major} & Versão a se comparar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Verdadeiro de a versão é no máximo major ou Falso caso contrário 
+\end{DoxyReturn}
+
+
+Definido na linha 45 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências maj\+Version.
+
+
+
+Referenciado por carregar().
 
 \mbox{\Hypertarget{classClassFile_ab0394185a299f35a9b5be68143385e84}\label{classClassFile_ab0394185a299f35a9b5be68143385e84}} 
 \index{Class\+File@{Class\+File}!verificar\+Clinit@{verificar\+Clinit}}
@@ -947,7 +988,7 @@ booleano que indica se existe o metodo clinit
 \end{DoxyReturn}
 
 
-Definido na linha 320 do ficheiro Class\+File.\+cpp.
+Definido na linha 346 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -957,7 +998,8 @@ Referências capturar\+Indice\+De\+Referencia(), clinit, constant\+Pool, methods
 
 Referenciado por carregar() e existe\+Clinit().
 
-Grafo de chamadas desta função\+:\nopagebreak
+Grafo de chamadas desta função\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -979,7 +1021,7 @@ booleano que indica se existe o metodo main
 \end{DoxyReturn}
 
 
-Definido na linha 297 do ficheiro Class\+File.\+cpp.
+Definido na linha 323 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -989,7 +1031,8 @@ Referências Method\+\_\+info\+::access\+\_\+flags, capturar\+Indice\+De\+Refere
 
 Referenciado por carregar(), existe\+Main() e validacao().
 
-Grafo de chamadas desta função\+:\nopagebreak
+Grafo de chamadas desta função\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1011,7 +1054,7 @@ booleano indicando se a .class está correta
 \end{DoxyReturn}
 
 
-Definido na linha 362 do ficheiro Class\+File.\+cpp.
+Definido na linha 388 do ficheiro Class\+File.\+cpp.
 
 
 
@@ -1019,15 +1062,34 @@ Referências capturar\+Indice\+De\+Referencia(), constant\+Pool, file\+Name e th
 
 
 
-Referenciado por carregar() e validacao().
+Referenciado por validacao().
 
-Grafo de chamadas desta função\+:\nopagebreak
+Grafo de chamadas desta função\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classClassFile_a6b8f23db0ee4af80a2e75d46a191dc20_cgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classClassFile_a423be12c855bb2f0479ff83823973da3}\label{classClassFile_a423be12c855bb2f0479ff83823973da3}} 
+\index{Class\+File@{Class\+File}!verificar\+Versao\+Class@{verificar\+Versao\+Class}}
+\index{verificar\+Versao\+Class@{verificar\+Versao\+Class}!Class\+File@{Class\+File}}
+\subsubsection{\texorpdfstring{verificar\+Versao\+Class()}{verificarVersaoClass()}}
+{\footnotesize\ttfamily int Class\+File\+::verificar\+Versao\+Class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definido na linha 49 do ficheiro Class\+File.\+cpp.
+
+
+
+Referências maj\+Version.
+
+
+
+Referenciado por carregar().
+
 
 
 \subsection{Documentação dos dados membro}
@@ -1039,7 +1101,7 @@ Grafo de chamadas desta função\+:\nopagebreak
 
 
 
-Definido na linha 249 do ficheiro Class\+File.\+h.
+Definido na linha 281 do ficheiro Class\+File.\+h.
 
 
 
@@ -1053,7 +1115,7 @@ Referenciado por carregar(), gravar\+Arquivo\+Informacoes\+Gerais() e imprimir\+
 
 
 
-Definido na linha 255 do ficheiro Class\+File.\+h.
+Definido na linha 287 do ficheiro Class\+File.\+h.
 
 
 
@@ -1067,7 +1129,7 @@ Referenciado por carregar().
 
 
 
-Definido na linha 256 do ficheiro Class\+File.\+h.
+Definido na linha 288 do ficheiro Class\+File.\+h.
 
 
 
@@ -1081,7 +1143,7 @@ Referenciado por fechar\+Arquivo(), gravar\+Arquivo(), gravar\+Arquivo\+Informac
 
 
 
-Definido na linha 254 do ficheiro Class\+File.\+h.
+Definido na linha 286 do ficheiro Class\+File.\+h.
 
 
 
@@ -1095,7 +1157,7 @@ Referenciado por carregar(), exibir() e gravar\+Arquivo().
 
 
 
-Definido na linha 249 do ficheiro Class\+File.\+h.
+Definido na linha 281 do ficheiro Class\+File.\+h.
 
 
 
@@ -1109,7 +1171,7 @@ Referenciado por carregar(), exibir(), gravar\+Arquivo(), gravar\+Arquivo\+Infor
 
 
 
-Definido na linha 244 do ficheiro Class\+File.\+h.
+Definido na linha 276 do ficheiro Class\+File.\+h.
 
 
 
@@ -1123,7 +1185,7 @@ Referenciado por obter\+Clinit() e verificar\+Clinit().
 
 
 
-Definido na linha 251 do ficheiro Class\+File.\+h.
+Definido na linha 283 do ficheiro Class\+File.\+h.
 
 
 
@@ -1137,7 +1199,7 @@ Referenciado por carregar(), exibir(), gravar\+Arquivo(), gravar\+Arquivo\+Infor
 
 
 
-Definido na linha 245 do ficheiro Class\+File.\+h.
+Definido na linha 277 do ficheiro Class\+File.\+h.
 
 
 
@@ -1151,7 +1213,7 @@ Referenciado por carregar() e existe\+Clinit().
 
 
 
-Definido na linha 245 do ficheiro Class\+File.\+h.
+Definido na linha 277 do ficheiro Class\+File.\+h.
 
 
 
@@ -1165,7 +1227,7 @@ Referenciado por carregar(), existe\+Main() e obter\+Main().
 
 
 
-Definido na linha 252 do ficheiro Class\+File.\+h.
+Definido na linha 284 do ficheiro Class\+File.\+h.
 
 
 
@@ -1179,7 +1241,7 @@ Referenciado por carregar(), exibir(), gravar\+Arquivo(), obter\+Field() e obter
 
 
 
-Definido na linha 248 do ficheiro Class\+File.\+h.
+Definido na linha 280 do ficheiro Class\+File.\+h.
 
 
 
@@ -1193,7 +1255,7 @@ Referenciado por carregar(), exibir(), gravar\+Arquivo(), gravar\+Arquivo\+Infor
 
 
 
-Definido na linha 246 do ficheiro Class\+File.\+h.
+Definido na linha 278 do ficheiro Class\+File.\+h.
 
 
 
@@ -1207,7 +1269,7 @@ Referenciado por carregar(), Class\+File(), obter\+Erro(), obter\+Path(), valida
 
 
 
-Definido na linha 250 do ficheiro Class\+File.\+h.
+Definido na linha 282 do ficheiro Class\+File.\+h.
 
 
 
@@ -1221,7 +1283,7 @@ Referenciado por carregar(), exibir() e gravar\+Arquivo().
 
 
 
-Definido na linha 248 do ficheiro Class\+File.\+h.
+Definido na linha 280 do ficheiro Class\+File.\+h.
 
 
 
@@ -1235,7 +1297,7 @@ Referenciado por carregar(), exibir(), gravar\+Arquivo(), gravar\+Arquivo\+Infor
 
 
 
-Definido na linha 247 do ficheiro Class\+File.\+h.
+Definido na linha 279 do ficheiro Class\+File.\+h.
 
 
 
@@ -1249,7 +1311,7 @@ Referenciado por carregar(), exibir(), gravar\+Arquivo(), gravar\+Arquivo\+Infor
 
 
 
-Definido na linha 244 do ficheiro Class\+File.\+h.
+Definido na linha 276 do ficheiro Class\+File.\+h.
 
 
 
@@ -1263,11 +1325,11 @@ Referenciado por obter\+Main() e verificar\+Main().
 
 
 
-Definido na linha 247 do ficheiro Class\+File.\+h.
+Definido na linha 279 do ficheiro Class\+File.\+h.
 
 
 
-Referenciado por carregar(), gravar\+Arquivo\+Informacoes\+Gerais() e imprimir\+Informacoes\+Gerais().
+Referenciado por carregar(), gravar\+Arquivo\+Informacoes\+Gerais(), imprimir\+Informacoes\+Gerais(), validar\+Versao\+Class() e verificar\+Versao\+Class().
 
 \mbox{\Hypertarget{classClassFile_a5906980e6c5121e5a864346fd3617083}\label{classClassFile_a5906980e6c5121e5a864346fd3617083}} 
 \index{Class\+File@{Class\+File}!methods@{methods}}
@@ -1277,7 +1339,7 @@ Referenciado por carregar(), gravar\+Arquivo\+Informacoes\+Gerais() e imprimir\+
 
 
 
-Definido na linha 253 do ficheiro Class\+File.\+h.
+Definido na linha 285 do ficheiro Class\+File.\+h.
 
 
 
@@ -1291,7 +1353,7 @@ Referenciado por carregar(), exibir(), gravar\+Arquivo(), obter\+Class\+That\+Ha
 
 
 
-Definido na linha 249 do ficheiro Class\+File.\+h.
+Definido na linha 281 do ficheiro Class\+File.\+h.
 
 
 
@@ -1305,7 +1367,7 @@ Referenciado por carregar(), exibir(), gravar\+Arquivo(), gravar\+Arquivo\+Infor
 
 
 
-Definido na linha 247 do ficheiro Class\+File.\+h.
+Definido na linha 279 do ficheiro Class\+File.\+h.
 
 
 
@@ -1319,7 +1381,7 @@ Referenciado por carregar(), gravar\+Arquivo\+Informacoes\+Gerais() e imprimir\+
 
 
 
-Definido na linha 244 do ficheiro Class\+File.\+h.
+Definido na linha 276 do ficheiro Class\+File.\+h.
 
 
 
@@ -1333,7 +1395,7 @@ Referenciado por carregar(), Class\+File(), exibir(), gravar\+Arquivo(), inicial
 
 
 
-Definido na linha 248 do ficheiro Class\+File.\+h.
+Definido na linha 280 do ficheiro Class\+File.\+h.
 
 
 
@@ -1347,7 +1409,7 @@ Referenciado por carregar(), gravar\+Arquivo\+Informacoes\+Gerais(), imprimir\+I
 
 
 
-Definido na linha 248 do ficheiro Class\+File.\+h.
+Definido na linha 280 do ficheiro Class\+File.\+h.
 
 
 
