@@ -2,96 +2,1257 @@
 \label{classLeitorExibidor}\index{Leitor\+Exibidor@{Leitor\+Exibidor}}
 
 
+A classe \hyperlink{classLeitorExibidor}{Leitor\+Exibidor} contém o necessário para ler o bytecode, exibilo e armazena-\/lo em memoria.  
+
+
+
+
 {\ttfamily \#include $<$Leitor\+Exibidor.\+h$>$}
 
-
-
-Diagrama de colaboração para Leitor\+Exibidor\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classLeitorExibidor__coll__graph}
-\end{center}
-\end{figure}
 \subsection*{Membros públicos}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classLeitorExibidor_a3a925accb2da9a51859f02005737e58f}{Leitor\+Exibidor} (\hyperlink{classClassFile}{Class\+File} $\ast$p\+Class)
-\begin{DoxyCompactList}\small\item\em Construtor que configura um objeto da classe \hyperlink{classLeitorExibidor}{Leitor\+Exibidor} com o nome do arquivo passado. \end{DoxyCompactList}\item 
-\hyperlink{classLeitorExibidor_a246be764c0b6895539f915cc0f813e7b}{Leitor\+Exibidor} ()
-\begin{DoxyCompactList}\small\item\em Construtor padrao. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Atributos Públicos}
+\hyperlink{classLeitorExibidor_a7785a12083b7979aa615915cb8e2d274}{$\sim$\+Leitor\+Exibidor} ()
+\begin{DoxyCompactList}\small\item\em Destrutor padrão. \end{DoxyCompactList}\item 
+\hyperlink{classClassFile}{Class\+File} $\ast$ \hyperlink{classLeitorExibidor_af6f4f84cbfaf72e6673e1dc42023b308}{read\+Class\+File} (F\+I\+LE $\ast$file)
+\end{DoxyCompactItemize}
+\subsection*{Membros públicos estáticos}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classClassFile}{Class\+File} $\ast$ \hyperlink{classLeitorExibidor_abd4251746a10c01f8bb566c4d6ba55b4}{class\+File}
+static \hyperlink{classLeitorExibidor}{Leitor\+Exibidor} \& \hyperlink{classLeitorExibidor_ab6f5cece56cf5d2e486a5512d52de392}{get\+Instance} ()
+\begin{DoxyCompactList}\small\item\em Obter a única instância do Class\+Loader. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membros privados}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLeitorExibidor_a246be764c0b6895539f915cc0f813e7b}{Leitor\+Exibidor} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão. \end{DoxyCompactList}\item 
+\hyperlink{classLeitorExibidor_a98a0f84f7d42d7868317cacfc883398d}{Leitor\+Exibidor} (\hyperlink{classLeitorExibidor}{Leitor\+Exibidor} const \&)
+\item 
+void \hyperlink{classLeitorExibidor_ad273b8b4b3210bf1c246b1226bdaf1c8}{operator=} (\hyperlink{classLeitorExibidor}{Leitor\+Exibidor} const \&)
+\item 
+bool \hyperlink{classLeitorExibidor_ac8ff6248b6897d88bb5cf22ea987a6ab}{test\+Endianess} ()
+\item 
+\hyperlink{BasicTypes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1} \hyperlink{classLeitorExibidor_af679ae83326347418cd0d3c90776d7a3}{read\+U1} (F\+I\+LE $\ast$file)
+\item 
+\hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} \hyperlink{classLeitorExibidor_aa801d28856915543cfd59fb787e59626}{read\+U2} (F\+I\+LE $\ast$file)
+\item 
+\hyperlink{BasicTypes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4} \hyperlink{classLeitorExibidor_a5ce4bdf25870ab04449d4ba35a961390}{read\+U4} (F\+I\+LE $\ast$file)
+\item 
+void \hyperlink{classLeitorExibidor_a08d4a6ea1c0f054f6f2969afe96a1d99}{set\+Magic} (F\+I\+LE $\ast$fp, \hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+bool \hyperlink{classLeitorExibidor_ad6afc52067f5e3542024c7b494ce3ae3}{is\+Magic\+Valid} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{classLeitorExibidor_a9a11956018816200897ca137c027cbf1}{set\+Version} (F\+I\+LE $\ast$fp, \hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+bool \hyperlink{classLeitorExibidor_a11629e5b6b841cefaa2f8544ef2b9ab1}{is\+Version\+Valid} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File, uint16\+\_\+t major)
+\item 
+void \hyperlink{classLeitorExibidor_a13b5c2cf5de57b6cea330a425f7e55be}{set\+Constant\+Pool\+Size} (F\+I\+LE $\ast$fp, \hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{classLeitorExibidor_a34dc148775506753f609e643ac931cac}{set\+Constant\+Pool} (F\+I\+LE $\ast$fp, \hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+\hyperlink{structCONSTANT__Class__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Class\+\_\+info} \hyperlink{classLeitorExibidor_a105cc85df3dce1817b67d49a6af55075}{get\+Constant\+Class\+Info} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structCONSTANT__Fieldref__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref\+\_\+info} \hyperlink{classLeitorExibidor_abef996cec1493870298ba1c13aba9a12}{get\+Constant\+Field\+Ref\+Info} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structCONSTANT__Methodref__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref\+\_\+info} \hyperlink{classLeitorExibidor_adfb763ec31e25964a5566c3d453ea297}{get\+Constant\+Method\+Ref\+Info} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structCONSTANT__InterfaceMethodref__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref\+\_\+info} \hyperlink{classLeitorExibidor_a01b35468a048d479576f9c99440b9306}{get\+Constant\+Interface\+Method\+Ref\+Info} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structCONSTANT__String__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+String\+\_\+info} \hyperlink{classLeitorExibidor_a4b2e1f73e85d73953a97571684ec9ceb}{get\+Constant\+String\+Info} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structCONSTANT__Integer__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer\+\_\+info} \hyperlink{classLeitorExibidor_aa9d25cd5fe52c32bb51f9209cf8ef7e6}{get\+Constant\+Integer\+Info} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structCONSTANT__Float__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Float\+\_\+info} \hyperlink{classLeitorExibidor_af858b066d00fec9a5fcc6b4e63046393}{get\+Constant\+Float\+Info} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structCONSTANT__Long__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long\+\_\+info} \hyperlink{classLeitorExibidor_a336e0f9abfbda32438aa285469993547}{get\+Constant\+Long\+Info} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structCONSTANT__Double__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double\+\_\+info} \hyperlink{classLeitorExibidor_aa16859827e46b1a61c8d0bfa747754e3}{get\+Constant\+Double\+Info} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structCONSTANT__NameAndType__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type\+\_\+info} \hyperlink{classLeitorExibidor_a11acaf5d8c110037608d86273bf4c24e}{get\+Constant\+Name\+And\+Type\+Info} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structCONSTANT__Utf8__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info} \hyperlink{classLeitorExibidor_ac377ddc183e03ec12941e8bd557104f7}{get\+Constant\+Utf8\+Info} (F\+I\+LE $\ast$fp)
+\item 
+void \hyperlink{classLeitorExibidor_a7934c3a6d4da59ecb351d32b74240c60}{set\+Access\+Flags} (F\+I\+LE $\ast$fp, \hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{classLeitorExibidor_af0f402911ed326bd9e495eef93a43c24}{set\+This\+Class} (F\+I\+LE $\ast$fp, \hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{classLeitorExibidor_af726ef535e88d9d86938a2d6aad6658c}{set\+Super\+Class} (F\+I\+LE $\ast$fp, \hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{classLeitorExibidor_afbe776f3eb57a38dde0bfe862dd5650a}{set\+Interfaces\+Count} (F\+I\+LE $\ast$fp, \hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{classLeitorExibidor_aff26e69a60fa1285388e300ac7ec3342}{set\+Interfaces} (F\+I\+LE $\ast$fp, \hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{classLeitorExibidor_af325d9f6276a66c6bac95b09e83405c9}{set\+Fields\+Count} (F\+I\+LE $\ast$fp, \hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{classLeitorExibidor_a682c7ad4fd18b4dce390285c3c643b7b}{set\+Fields} (F\+I\+LE $\ast$fp, \hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+\hyperlink{structattribute__info}{attribute\+\_\+info} \hyperlink{classLeitorExibidor_a81a7c01ab5ad3fb4fb1bb524d85ee5c0}{get\+Attribute\+Info} (F\+I\+LE $\ast$fp, \hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+\hyperlink{structConstantValue__attribute}{Constant\+Value\+\_\+attribute} \hyperlink{classLeitorExibidor_a90079e579d24fc03705b624a906709e3}{get\+Attribute\+Constant\+Value} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structExceptionTable}{Exception\+Table} \hyperlink{classLeitorExibidor_afc06b4ce567e2b0d2c26ad0fc797f735}{get\+Exception\+Table} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structCode__attribute}{Code\+\_\+attribute} \hyperlink{classLeitorExibidor_a3ebd90beea3ea327aa7d22b84357c4d0}{get\+Attribute\+Code} (F\+I\+LE $\ast$fp, \hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+\hyperlink{structExceptions__attribute}{Exceptions\+\_\+attribute} \hyperlink{classLeitorExibidor_a36e7bb07a50754e6236dd555654d9032}{get\+Attribute\+Exceptions} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structClass}{Class} \hyperlink{classLeitorExibidor_a331d5d793343e29a8180771a4d2aa29c}{get\+Class} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structInnerClasses__attribute}{Inner\+Classes\+\_\+attribute} \hyperlink{classLeitorExibidor_a466d543f9134cc30ab471b359e19e765}{get\+Attribute\+Inner\+Classes} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structSynthetic__attribute}{Synthetic\+\_\+attribute} \hyperlink{classLeitorExibidor_a96f65a9e09e511128366ec9a1407ecb1}{get\+Attribute\+Synthetic} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structSourceFile__attribute}{Source\+File\+\_\+attribute} \hyperlink{classLeitorExibidor_a265f56dc5c7eb8cfc9471435735c2145}{get\+Attribute\+Source\+File} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structLineNumberTable}{Line\+Number\+Table} \hyperlink{classLeitorExibidor_ae0197a46804ec6e06829f53439f6c563}{get\+Line\+Number\+Table} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structLineNumberTable__attribute}{Line\+Number\+Table\+\_\+attribute} \hyperlink{classLeitorExibidor_a3b8b5cdf9d3f583088496091ab3d53c7}{get\+Attribute\+Line\+Number\+Table} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structLocalVariableTable}{Local\+Variable\+Table} \hyperlink{classLeitorExibidor_a4b4d4ae7d4d68d9b0869cf0141965a43}{get\+Local\+Variable\+Table} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structLocalVariableTable__attribute}{Local\+Variable\+Table\+\_\+attribute} \hyperlink{classLeitorExibidor_a95ba6c34c4225f737bf0571f065de7aa}{get\+Attribute\+Local\+Variable} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structDeprecated__attribute}{Deprecated\+\_\+attribute} \hyperlink{classLeitorExibidor_aa39f3fc481e6182eea0461d218ad6ec9}{get\+Attribute\+Deprecated} (F\+I\+LE $\ast$fp)
+\item 
+\hyperlink{structCONSTANT__Utf8__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info} \hyperlink{classLeitorExibidor_ad3299334f937507986cef571036b93c0}{get\+Utf8\+From\+Constant\+Pool} (\hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} index, \hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{classLeitorExibidor_a6292517ec3beae1ef6ff67678110e961}{set\+Methods\+Count} (F\+I\+LE $\ast$fp, \hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{classLeitorExibidor_aa7ce00ed1b02c20c2eb7ff1b503563d5}{set\+Methods} (F\+I\+LE $\ast$fp, \hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{classLeitorExibidor_a891dc9f2ceb6f5c337f91a973d2ad6ee}{set\+Attributes\+Count} (F\+I\+LE $\ast$fp, \hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{classLeitorExibidor_a988287e777377265b23482e307eb4a63}{set\+Attributes} (F\+I\+LE $\ast$fp, \hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
 \end{DoxyCompactItemize}
+\subsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classLeitorExibidor_a25a267e1238c481356a970b17d2fd044}{is\+Little\+Endian}
+\begin{DoxyCompactList}\small\item\em Armazena {\ttfamily true} caso o computador seja little endian, e {\ttfamily false} caso contrário. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Descrição detalhada}
-A classe \hyperlink{classLeitorExibidor}{Leitor\+Exibidor} contém o necessário para ler o bytecode, exibilo e armazena-\/lo em memoria 
+A classe \hyperlink{classLeitorExibidor}{Leitor\+Exibidor} contém o necessário para ler o bytecode, exibilo e armazena-\/lo em memoria. 
 
-Definido na linha 10 do ficheiro Leitor\+Exibidor.\+h.
+Essa classe é um singleton, ou seja, somente existe no máximo 1 instância dela para cada instância da J\+VM. 
+
+Definido na linha 21 do ficheiro Leitor\+Exibidor.\+h.
 
 
 
 \subsection{Documentação dos Construtores \& Destrutor}
-\mbox{\Hypertarget{classLeitorExibidor_a3a925accb2da9a51859f02005737e58f}\label{classLeitorExibidor_a3a925accb2da9a51859f02005737e58f}} 
-\index{Leitor\+Exibidor@{Leitor\+Exibidor}!Leitor\+Exibidor@{Leitor\+Exibidor}}
-\index{Leitor\+Exibidor@{Leitor\+Exibidor}!Leitor\+Exibidor@{Leitor\+Exibidor}}
-\subsubsection{\texorpdfstring{Leitor\+Exibidor()}{LeitorExibidor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Leitor\+Exibidor\+::\+Leitor\+Exibidor (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{p\+Class }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classLeitorExibidor_a7785a12083b7979aa615915cb8e2d274}\label{classLeitorExibidor_a7785a12083b7979aa615915cb8e2d274}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!````~Leitor\+Exibidor@{$\sim$\+Leitor\+Exibidor}}
+\index{````~Leitor\+Exibidor@{$\sim$\+Leitor\+Exibidor}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{$\sim$\+Leitor\+Exibidor()}{~LeitorExibidor()}}
+{\footnotesize\ttfamily Leitor\+Exibidor\+::$\sim$\+Leitor\+Exibidor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Construtor que configura um objeto da classe \hyperlink{classLeitorExibidor}{Leitor\+Exibidor} com o nome do arquivo passado. 
+Destrutor padrão. 
 
-
-\begin{DoxyParams}{Parâmetros}
-{\em p\+Class} & ponteiro da class. \\
-\hline
-\end{DoxyParams}
 
 
 Definido na linha 10 do ficheiro Leitor\+Exibidor.\+cpp.
 
-
-
-Referências class\+File.
-
 \mbox{\Hypertarget{classLeitorExibidor_a246be764c0b6895539f915cc0f813e7b}\label{classLeitorExibidor_a246be764c0b6895539f915cc0f813e7b}} 
 \index{Leitor\+Exibidor@{Leitor\+Exibidor}!Leitor\+Exibidor@{Leitor\+Exibidor}}
 \index{Leitor\+Exibidor@{Leitor\+Exibidor}!Leitor\+Exibidor@{Leitor\+Exibidor}}
-\subsubsection{\texorpdfstring{Leitor\+Exibidor()}{LeitorExibidor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Leitor\+Exibidor\+::\+Leitor\+Exibidor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{Leitor\+Exibidor()}{LeitorExibidor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Leitor\+Exibidor\+::\+Leitor\+Exibidor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Construtor padrao. 
+Construtor padrão. 
 
 
 
 Definido na linha 6 do ficheiro Leitor\+Exibidor.\+cpp.
 
+\mbox{\Hypertarget{classLeitorExibidor_a98a0f84f7d42d7868317cacfc883398d}\label{classLeitorExibidor_a98a0f84f7d42d7868317cacfc883398d}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{Leitor\+Exibidor()}{LeitorExibidor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Leitor\+Exibidor\+::\+Leitor\+Exibidor (\begin{DoxyParamCaption}\item[{\hyperlink{classLeitorExibidor}{Leitor\+Exibidor} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
-Referências class\+File.
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classLeitorExibidor_a3ebd90beea3ea327aa7d22b84357c4d0}\label{classLeitorExibidor_a3ebd90beea3ea327aa7d22b84357c4d0}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Attribute\+Code@{get\+Attribute\+Code}}
+\index{get\+Attribute\+Code@{get\+Attribute\+Code}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Attribute\+Code()}{getAttributeCode()}}
+{\footnotesize\ttfamily \hyperlink{structCode__attribute}{Code\+\_\+attribute} Leitor\+Exibidor\+::get\+Attribute\+Code (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structCode__attribute}{Code\+\_\+attribute}, preenchendo seus campos max\+\_\+stack, max\+\_\+locals, code\+\_\+length, code, exception\+\_\+table\+\_\+length, exception\+\_\+table, attributes\+\_\+count e attributes. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structCode__attribute}{Code\+\_\+attribute} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 329 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Code\+\_\+attribute\+::attributes, Code\+\_\+attribute\+::attributes\+\_\+count, Code\+\_\+attribute\+::code, Code\+\_\+attribute\+::code\+\_\+length, Code\+\_\+attribute\+::exception\+\_\+table, Code\+\_\+attribute\+::exception\+\_\+table\+\_\+length, Code\+\_\+attribute\+::max\+\_\+locals e Code\+\_\+attribute\+::max\+\_\+stack.
+
+\mbox{\Hypertarget{classLeitorExibidor_a90079e579d24fc03705b624a906709e3}\label{classLeitorExibidor_a90079e579d24fc03705b624a906709e3}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Attribute\+Constant\+Value@{get\+Attribute\+Constant\+Value}}
+\index{get\+Attribute\+Constant\+Value@{get\+Attribute\+Constant\+Value}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Attribute\+Constant\+Value()}{getAttributeConstantValue()}}
+{\footnotesize\ttfamily \hyperlink{structConstantValue__attribute}{Constant\+Value\+\_\+attribute} Leitor\+Exibidor\+::get\+Attribute\+Constant\+Value (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structConstantValue__attribute}{Constant\+Value\+\_\+attribute}, preenchendo seu campo index. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structConstantValue__attribute}{Constant\+Value\+\_\+attribute} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 314 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Constant\+Value\+\_\+attribute\+::constantvalue\+\_\+index.
+
+\mbox{\Hypertarget{classLeitorExibidor_aa39f3fc481e6182eea0461d218ad6ec9}\label{classLeitorExibidor_aa39f3fc481e6182eea0461d218ad6ec9}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Attribute\+Deprecated@{get\+Attribute\+Deprecated}}
+\index{get\+Attribute\+Deprecated@{get\+Attribute\+Deprecated}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Attribute\+Deprecated()}{getAttributeDeprecated()}}
+{\footnotesize\ttfamily \hyperlink{structDeprecated__attribute}{Deprecated\+\_\+attribute} Leitor\+Exibidor\+::get\+Attribute\+Deprecated (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Fornece uma estrutura \hyperlink{structDeprecated__attribute}{Deprecated\+\_\+attribute}. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structDeprecated__attribute}{Deprecated\+\_\+attribute}. 
+\end{DoxyReturn}
+
+
+Definido na linha 433 do ficheiro Leitor\+Exibidor.\+cpp.
+
+\mbox{\Hypertarget{classLeitorExibidor_a36e7bb07a50754e6236dd555654d9032}\label{classLeitorExibidor_a36e7bb07a50754e6236dd555654d9032}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Attribute\+Exceptions@{get\+Attribute\+Exceptions}}
+\index{get\+Attribute\+Exceptions@{get\+Attribute\+Exceptions}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Attribute\+Exceptions()}{getAttributeExceptions()}}
+{\footnotesize\ttfamily \hyperlink{structExceptions__attribute}{Exceptions\+\_\+attribute} Leitor\+Exibidor\+::get\+Attribute\+Exceptions (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structExceptions__attribute}{Exceptions\+\_\+attribute}, preenchendo seus campos number\+\_\+of\+\_\+exceptions e exception\+\_\+index\+\_\+table. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structExceptions__attribute}{Exceptions\+\_\+attribute} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 356 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Exceptions\+\_\+attribute\+::exception\+\_\+index\+\_\+table e Exceptions\+\_\+attribute\+::number\+\_\+of\+\_\+exceptions.
+
+\mbox{\Hypertarget{classLeitorExibidor_a81a7c01ab5ad3fb4fb1bb524d85ee5c0}\label{classLeitorExibidor_a81a7c01ab5ad3fb4fb1bb524d85ee5c0}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Attribute\+Info@{get\+Attribute\+Info}}
+\index{get\+Attribute\+Info@{get\+Attribute\+Info}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Attribute\+Info()}{getAttributeInfo()}}
+{\footnotesize\ttfamily \hyperlink{structattribute__info}{attribute\+\_\+info} Leitor\+Exibidor\+::get\+Attribute\+Info (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structattribute__info}{attribute\+\_\+info}, preenchendo seus campos attribute\+\_\+name\+\_\+index, attribute\+\_\+length e info. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structattribute__info}{attribute\+\_\+info} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 438 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências attribute\+\_\+info\+::attribute\+\_\+length, attribute\+\_\+info\+::attribute\+\_\+name\+\_\+index, attribute\+\_\+info\+::code\+\_\+info, Utils\+::comparar\+Utf8\+String(), attribute\+\_\+info\+::constant\+Value\+\_\+info, attribute\+\_\+info\+::deprecated\+\_\+info, attribute\+\_\+info\+::exceptions\+\_\+info, attribute\+\_\+info\+::info, attribute\+\_\+info\+::inner\+Classes\+\_\+info, attribute\+\_\+info\+::line\+Number\+Table\+\_\+info, attribute\+\_\+info\+::local\+Variable\+Table\+\_\+info, attribute\+\_\+info\+::source\+File\+\_\+info e attribute\+\_\+info\+::synthetic\+\_\+info.
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLeitorExibidor_a81a7c01ab5ad3fb4fb1bb524d85ee5c0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLeitorExibidor_a466d543f9134cc30ab471b359e19e765}\label{classLeitorExibidor_a466d543f9134cc30ab471b359e19e765}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Attribute\+Inner\+Classes@{get\+Attribute\+Inner\+Classes}}
+\index{get\+Attribute\+Inner\+Classes@{get\+Attribute\+Inner\+Classes}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Attribute\+Inner\+Classes()}{getAttributeInnerClasses()}}
+{\footnotesize\ttfamily \hyperlink{structInnerClasses__attribute}{Inner\+Classes\+\_\+attribute} Leitor\+Exibidor\+::get\+Attribute\+Inner\+Classes (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structInnerClasses__attribute}{Inner\+Classes\+\_\+attribute}, preenchendo seus campos number\+\_\+of\+\_\+classes e classes. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structInnerClasses__attribute}{Inner\+Classes\+\_\+attribute} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 375 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Inner\+Classes\+\_\+attribute\+::classes e Inner\+Classes\+\_\+attribute\+::number\+\_\+of\+\_\+classes.
+
+\mbox{\Hypertarget{classLeitorExibidor_a3b8b5cdf9d3f583088496091ab3d53c7}\label{classLeitorExibidor_a3b8b5cdf9d3f583088496091ab3d53c7}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Attribute\+Line\+Number\+Table@{get\+Attribute\+Line\+Number\+Table}}
+\index{get\+Attribute\+Line\+Number\+Table@{get\+Attribute\+Line\+Number\+Table}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Attribute\+Line\+Number\+Table()}{getAttributeLineNumberTable()}}
+{\footnotesize\ttfamily \hyperlink{structLineNumberTable__attribute}{Line\+Number\+Table\+\_\+attribute} Leitor\+Exibidor\+::get\+Attribute\+Line\+Number\+Table (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structLineNumberTable__attribute}{Line\+Number\+Table\+\_\+attribute}, preenchendo seus campos line\+\_\+number\+\_\+table\+\_\+length e line\+\_\+number\+\_\+table. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structLineNumberTable__attribute}{Line\+Number\+Table\+\_\+attribute} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 403 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Line\+Number\+Table\+\_\+attribute\+::line\+\_\+number\+\_\+table e Line\+Number\+Table\+\_\+attribute\+::line\+\_\+number\+\_\+table\+\_\+length.
+
+\mbox{\Hypertarget{classLeitorExibidor_a95ba6c34c4225f737bf0571f065de7aa}\label{classLeitorExibidor_a95ba6c34c4225f737bf0571f065de7aa}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Attribute\+Local\+Variable@{get\+Attribute\+Local\+Variable}}
+\index{get\+Attribute\+Local\+Variable@{get\+Attribute\+Local\+Variable}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Attribute\+Local\+Variable()}{getAttributeLocalVariable()}}
+{\footnotesize\ttfamily \hyperlink{structLocalVariableTable__attribute}{Local\+Variable\+Table\+\_\+attribute} Leitor\+Exibidor\+::get\+Attribute\+Local\+Variable (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structLocalVariableTable__attribute}{Local\+Variable\+Table\+\_\+attribute}, preenchendo seus campos local\+\_\+variable\+\_\+table\+\_\+length e local\+\_\+variable\+\_\+table. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structLocalVariableTable__attribute}{Local\+Variable\+Table\+\_\+attribute} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 423 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Local\+Variable\+Table\+\_\+attribute\+::local\+\_\+variable\+\_\+table\+\_\+length e Local\+Variable\+Table\+\_\+attribute\+::local\+Variable\+Table.
+
+\mbox{\Hypertarget{classLeitorExibidor_a265f56dc5c7eb8cfc9471435735c2145}\label{classLeitorExibidor_a265f56dc5c7eb8cfc9471435735c2145}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Attribute\+Source\+File@{get\+Attribute\+Source\+File}}
+\index{get\+Attribute\+Source\+File@{get\+Attribute\+Source\+File}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Attribute\+Source\+File()}{getAttributeSourceFile()}}
+{\footnotesize\ttfamily \hyperlink{structSourceFile__attribute}{Source\+File\+\_\+attribute} Leitor\+Exibidor\+::get\+Attribute\+Source\+File (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structSourceFile__attribute}{Source\+File\+\_\+attribute}, preenchendo seu campo sourcefile\+\_\+index. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structSourceFile__attribute}{Source\+File\+\_\+attribute} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 390 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Source\+File\+\_\+attribute\+::sourcefile\+\_\+index.
+
+\mbox{\Hypertarget{classLeitorExibidor_a96f65a9e09e511128366ec9a1407ecb1}\label{classLeitorExibidor_a96f65a9e09e511128366ec9a1407ecb1}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Attribute\+Synthetic@{get\+Attribute\+Synthetic}}
+\index{get\+Attribute\+Synthetic@{get\+Attribute\+Synthetic}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Attribute\+Synthetic()}{getAttributeSynthetic()}}
+{\footnotesize\ttfamily \hyperlink{structSynthetic__attribute}{Synthetic\+\_\+attribute} Leitor\+Exibidor\+::get\+Attribute\+Synthetic (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Fornece uma estrutura \hyperlink{structSynthetic__attribute}{Synthetic\+\_\+attribute}. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structSynthetic__attribute}{Synthetic\+\_\+attribute}. 
+\end{DoxyReturn}
+
+
+Definido na linha 385 do ficheiro Leitor\+Exibidor.\+cpp.
+
+\mbox{\Hypertarget{classLeitorExibidor_a331d5d793343e29a8180771a4d2aa29c}\label{classLeitorExibidor_a331d5d793343e29a8180771a4d2aa29c}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Class@{get\+Class}}
+\index{get\+Class@{get\+Class}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Class()}{getClass()}}
+{\footnotesize\ttfamily \hyperlink{structClass}{Class} Leitor\+Exibidor\+::get\+Class (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structClass}{Class}, preenchendo seus campos inner\+\_\+class\+\_\+info\+\_\+index, outer\+\_\+class\+\_\+info\+\_\+index, inner\+\_\+name\+\_\+index e inner\+\_\+class\+\_\+access\+\_\+flags. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structExceptions__attribute}{Exceptions\+\_\+attribute} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 366 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Class\+::inner\+\_\+class\+\_\+access\+\_\+flags, Class\+::inner\+\_\+class\+\_\+info\+\_\+index, Class\+::inner\+\_\+name\+\_\+index e Class\+::outer\+\_\+class\+\_\+info\+\_\+index.
+
+\mbox{\Hypertarget{classLeitorExibidor_a105cc85df3dce1817b67d49a6af55075}\label{classLeitorExibidor_a105cc85df3dce1817b67d49a6af55075}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Constant\+Class\+Info@{get\+Constant\+Class\+Info}}
+\index{get\+Constant\+Class\+Info@{get\+Constant\+Class\+Info}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Constant\+Class\+Info()}{getConstantClassInfo()}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__Class__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Class\+\_\+info} Leitor\+Exibidor\+::get\+Constant\+Class\+Info (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Lê 2 bytes de um arquivo .class e os atribui a uma estrutura \hyperlink{structCONSTANT__Class__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Class\+\_\+info}. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structCONSTANT__Class__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Class\+\_\+info} preenchida com os 2 bytes lidos. 
+\end{DoxyReturn}
+
+
+Definido na linha 182 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Class\+\_\+info\+::name\+\_\+index.
+
+\mbox{\Hypertarget{classLeitorExibidor_aa16859827e46b1a61c8d0bfa747754e3}\label{classLeitorExibidor_aa16859827e46b1a61c8d0bfa747754e3}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Constant\+Double\+Info@{get\+Constant\+Double\+Info}}
+\index{get\+Constant\+Double\+Info@{get\+Constant\+Double\+Info}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Constant\+Double\+Info()}{getConstantDoubleInfo()}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__Double__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double\+\_\+info} Leitor\+Exibidor\+::get\+Constant\+Double\+Info (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structCONSTANT__Double__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double\+\_\+info}, preenchendo seus campos high\+\_\+bytes e low\+\_\+bytes. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structCONSTANT__Double__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double\+\_\+info} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 234 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double\+\_\+info\+::high\+\_\+bytes e C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double\+\_\+info\+::low\+\_\+bytes.
+
+\mbox{\Hypertarget{classLeitorExibidor_abef996cec1493870298ba1c13aba9a12}\label{classLeitorExibidor_abef996cec1493870298ba1c13aba9a12}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Constant\+Field\+Ref\+Info@{get\+Constant\+Field\+Ref\+Info}}
+\index{get\+Constant\+Field\+Ref\+Info@{get\+Constant\+Field\+Ref\+Info}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Constant\+Field\+Ref\+Info()}{getConstantFieldRefInfo()}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__Fieldref__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref\+\_\+info} Leitor\+Exibidor\+::get\+Constant\+Field\+Ref\+Info (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structCONSTANT__Fieldref__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref\+\_\+info}, preenchendo seus campos class\+\_\+index e name\+\_\+and\+\_\+type\+\_\+index. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structCONSTANT__Fieldref__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref\+\_\+info} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 188 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref\+\_\+info\+::class\+\_\+index e C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref\+\_\+info\+::name\+\_\+and\+\_\+type\+\_\+index.
+
+\mbox{\Hypertarget{classLeitorExibidor_af858b066d00fec9a5fcc6b4e63046393}\label{classLeitorExibidor_af858b066d00fec9a5fcc6b4e63046393}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Constant\+Float\+Info@{get\+Constant\+Float\+Info}}
+\index{get\+Constant\+Float\+Info@{get\+Constant\+Float\+Info}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Constant\+Float\+Info()}{getConstantFloatInfo()}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__Float__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Float\+\_\+info} Leitor\+Exibidor\+::get\+Constant\+Float\+Info (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structCONSTANT__Float__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Float\+\_\+info}, preenchendo seu campo bytes. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structCONSTANT__Float__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Float\+\_\+info} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 221 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Float\+\_\+info\+::bytes.
+
+\mbox{\Hypertarget{classLeitorExibidor_aa9d25cd5fe52c32bb51f9209cf8ef7e6}\label{classLeitorExibidor_aa9d25cd5fe52c32bb51f9209cf8ef7e6}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Constant\+Integer\+Info@{get\+Constant\+Integer\+Info}}
+\index{get\+Constant\+Integer\+Info@{get\+Constant\+Integer\+Info}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Constant\+Integer\+Info()}{getConstantIntegerInfo()}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__Integer__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer\+\_\+info} Leitor\+Exibidor\+::get\+Constant\+Integer\+Info (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structCONSTANT__Integer__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer\+\_\+info}, preenchendo seu campo bytes. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structCONSTANT__Integer__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer\+\_\+info} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 215 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer\+\_\+info\+::bytes.
+
+\mbox{\Hypertarget{classLeitorExibidor_a01b35468a048d479576f9c99440b9306}\label{classLeitorExibidor_a01b35468a048d479576f9c99440b9306}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Constant\+Interface\+Method\+Ref\+Info@{get\+Constant\+Interface\+Method\+Ref\+Info}}
+\index{get\+Constant\+Interface\+Method\+Ref\+Info@{get\+Constant\+Interface\+Method\+Ref\+Info}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Constant\+Interface\+Method\+Ref\+Info()}{getConstantInterfaceMethodRefInfo()}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__InterfaceMethodref__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref\+\_\+info} Leitor\+Exibidor\+::get\+Constant\+Interface\+Method\+Ref\+Info (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structCONSTANT__InterfaceMethodref__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref\+\_\+info}, preenchendo seus campos class\+\_\+index e name\+\_\+and\+\_\+type\+\_\+index. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structCONSTANT__InterfaceMethodref__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref\+\_\+info} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 202 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref\+\_\+info\+::class\+\_\+index e C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref\+\_\+info\+::name\+\_\+and\+\_\+type\+\_\+index.
+
+\mbox{\Hypertarget{classLeitorExibidor_a336e0f9abfbda32438aa285469993547}\label{classLeitorExibidor_a336e0f9abfbda32438aa285469993547}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Constant\+Long\+Info@{get\+Constant\+Long\+Info}}
+\index{get\+Constant\+Long\+Info@{get\+Constant\+Long\+Info}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Constant\+Long\+Info()}{getConstantLongInfo()}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__Long__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long\+\_\+info} Leitor\+Exibidor\+::get\+Constant\+Long\+Info (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structCONSTANT__Long__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long\+\_\+info}, preenchendo seus campos high\+\_\+bytes e low\+\_\+bytes. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structCONSTANT__Long__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long\+\_\+info} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 227 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long\+\_\+info\+::high\+\_\+bytes e C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long\+\_\+info\+::low\+\_\+bytes.
+
+\mbox{\Hypertarget{classLeitorExibidor_adfb763ec31e25964a5566c3d453ea297}\label{classLeitorExibidor_adfb763ec31e25964a5566c3d453ea297}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Constant\+Method\+Ref\+Info@{get\+Constant\+Method\+Ref\+Info}}
+\index{get\+Constant\+Method\+Ref\+Info@{get\+Constant\+Method\+Ref\+Info}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Constant\+Method\+Ref\+Info()}{getConstantMethodRefInfo()}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__Methodref__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref\+\_\+info} Leitor\+Exibidor\+::get\+Constant\+Method\+Ref\+Info (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structCONSTANT__Methodref__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref\+\_\+info}, preenchendo seus campos class\+\_\+index e name\+\_\+and\+\_\+type\+\_\+index. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structCONSTANT__Methodref__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref\+\_\+info} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 195 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref\+\_\+info\+::class\+\_\+index e C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref\+\_\+info\+::name\+\_\+and\+\_\+type\+\_\+index.
+
+\mbox{\Hypertarget{classLeitorExibidor_a11acaf5d8c110037608d86273bf4c24e}\label{classLeitorExibidor_a11acaf5d8c110037608d86273bf4c24e}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Constant\+Name\+And\+Type\+Info@{get\+Constant\+Name\+And\+Type\+Info}}
+\index{get\+Constant\+Name\+And\+Type\+Info@{get\+Constant\+Name\+And\+Type\+Info}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Constant\+Name\+And\+Type\+Info()}{getConstantNameAndTypeInfo()}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__NameAndType__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type\+\_\+info} Leitor\+Exibidor\+::get\+Constant\+Name\+And\+Type\+Info (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structCONSTANT__NameAndType__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type\+\_\+info}, preenchendo seus campos name\+\_\+index e descriptor\+\_\+index. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structCONSTANT__NameAndType__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type\+\_\+info} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 241 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type\+\_\+info\+::descriptor\+\_\+index e C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type\+\_\+info\+::name\+\_\+index.
+
+\mbox{\Hypertarget{classLeitorExibidor_a4b2e1f73e85d73953a97571684ec9ceb}\label{classLeitorExibidor_a4b2e1f73e85d73953a97571684ec9ceb}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Constant\+String\+Info@{get\+Constant\+String\+Info}}
+\index{get\+Constant\+String\+Info@{get\+Constant\+String\+Info}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Constant\+String\+Info()}{getConstantStringInfo()}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__String__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+String\+\_\+info} Leitor\+Exibidor\+::get\+Constant\+String\+Info (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structCONSTANT__String__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+String\+\_\+info}, preenchendo seu campo string\+\_\+index. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structCONSTANT__String__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+String\+\_\+info} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 209 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+String\+\_\+info\+::string\+\_\+index.
+
+\mbox{\Hypertarget{classLeitorExibidor_ac377ddc183e03ec12941e8bd557104f7}\label{classLeitorExibidor_ac377ddc183e03ec12941e8bd557104f7}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Constant\+Utf8\+Info@{get\+Constant\+Utf8\+Info}}
+\index{get\+Constant\+Utf8\+Info@{get\+Constant\+Utf8\+Info}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Constant\+Utf8\+Info()}{getConstantUtf8Info()}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__Utf8__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info} Leitor\+Exibidor\+::get\+Constant\+Utf8\+Info (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structCONSTANT__Utf8__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info}, preenchendo seus campos length e bytes. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structCONSTANT__Utf8__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 249 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info\+::bytes e C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info\+::length.
+
+\mbox{\Hypertarget{classLeitorExibidor_afc06b4ce567e2b0d2c26ad0fc797f735}\label{classLeitorExibidor_afc06b4ce567e2b0d2c26ad0fc797f735}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Exception\+Table@{get\+Exception\+Table}}
+\index{get\+Exception\+Table@{get\+Exception\+Table}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Exception\+Table()}{getExceptionTable()}}
+{\footnotesize\ttfamily \hyperlink{structExceptionTable}{Exception\+Table} Leitor\+Exibidor\+::get\+Exception\+Table (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structExceptionTable}{Exception\+Table}, preenchendo seus campos start\+\_\+pc, end\+\_\+pc, handler\+\_\+pc e catch\+\_\+type. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structExceptionTable}{Exception\+Table} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 320 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Exception\+Table\+::catch\+\_\+type, Exception\+Table\+::end\+\_\+pc, Exception\+Table\+::handler\+\_\+pc e Exception\+Table\+::start\+\_\+pc.
+
+\mbox{\Hypertarget{classLeitorExibidor_ab6f5cece56cf5d2e486a5512d52de392}\label{classLeitorExibidor_ab6f5cece56cf5d2e486a5512d52de392}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily static \hyperlink{classLeitorExibidor}{Leitor\+Exibidor}\& Leitor\+Exibidor\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obter a única instância do Class\+Loader. 
+
+\begin{DoxyReturn}{Retorna}
+A instância do Class\+Loader. 
+\end{DoxyReturn}
+
+
+Definido na linha 28 do ficheiro Leitor\+Exibidor.\+h.
+
+
+
+Referenciado por Method\+Area\+::carregar\+Class\+Named().
+
+\mbox{\Hypertarget{classLeitorExibidor_ae0197a46804ec6e06829f53439f6c563}\label{classLeitorExibidor_ae0197a46804ec6e06829f53439f6c563}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Line\+Number\+Table@{get\+Line\+Number\+Table}}
+\index{get\+Line\+Number\+Table@{get\+Line\+Number\+Table}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Line\+Number\+Table()}{getLineNumberTable()}}
+{\footnotesize\ttfamily \hyperlink{structLineNumberTable}{Line\+Number\+Table} Leitor\+Exibidor\+::get\+Line\+Number\+Table (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structLineNumberTable}{Line\+Number\+Table}, preenchendo seus campos start\+\_\+pc e line\+\_\+number. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structLineNumberTable}{Line\+Number\+Table} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 396 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Line\+Number\+Table\+::line\+\_\+number e Line\+Number\+Table\+::start\+\_\+pc.
+
+\mbox{\Hypertarget{classLeitorExibidor_a4b4d4ae7d4d68d9b0869cf0141965a43}\label{classLeitorExibidor_a4b4d4ae7d4d68d9b0869cf0141965a43}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Local\+Variable\+Table@{get\+Local\+Variable\+Table}}
+\index{get\+Local\+Variable\+Table@{get\+Local\+Variable\+Table}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Local\+Variable\+Table()}{getLocalVariableTable()}}
+{\footnotesize\ttfamily \hyperlink{structLocalVariableTable}{Local\+Variable\+Table} Leitor\+Exibidor\+::get\+Local\+Variable\+Table (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{structLocalVariableTable}{Local\+Variable\+Table}, preenchendo seus campos start\+\_\+pc, length, name\+\_\+index, descriptor\+\_\+index e index. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structLocalVariableTable}{Local\+Variable\+Table} preenchida. 
+\end{DoxyReturn}
+
+
+Definido na linha 413 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Local\+Variable\+Table\+::descriptor\+\_\+index, Local\+Variable\+Table\+::index, Local\+Variable\+Table\+::length, Local\+Variable\+Table\+::name\+\_\+index e Local\+Variable\+Table\+::start\+\_\+pc.
+
+\mbox{\Hypertarget{classLeitorExibidor_ad3299334f937507986cef571036b93c0}\label{classLeitorExibidor_ad3299334f937507986cef571036b93c0}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Utf8\+From\+Constant\+Pool@{get\+Utf8\+From\+Constant\+Pool}}
+\index{get\+Utf8\+From\+Constant\+Pool@{get\+Utf8\+From\+Constant\+Pool}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{get\+Utf8\+From\+Constant\+Pool()}{getUtf8FromConstantPool()}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__Utf8__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info} Leitor\+Exibidor\+::get\+Utf8\+From\+Constant\+Pool (\begin{DoxyParamCaption}\item[{\hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}]{index,  }\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Fornece a estrutura \hyperlink{structCONSTANT__Utf8__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info} contida no índice index da pool de constantes de uma estrutura \hyperlink{classClassFile}{Class\+File}. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
+{\em index} & índice da pool de constantes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Uma estrutura \hyperlink{structCONSTANT__Utf8__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info} com os dados constantes no índice index da pool de constantes de uma estrutura \hyperlink{classClassFile}{Class\+File}. 
+\end{DoxyReturn}
+
+
+Definido na linha 308 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Class\+File\+::constant\+\_\+pool, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8, cp\+\_\+info\+::info, cp\+\_\+info\+::tag e cp\+\_\+info\+::utf8\+\_\+info.
+
+\mbox{\Hypertarget{classLeitorExibidor_ad6afc52067f5e3542024c7b494ce3ae3}\label{classLeitorExibidor_ad6afc52067f5e3542024c7b494ce3ae3}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!is\+Magic\+Valid@{is\+Magic\+Valid}}
+\index{is\+Magic\+Valid@{is\+Magic\+Valid}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{is\+Magic\+Valid()}{isMagicValid()}}
+{\footnotesize\ttfamily bool Leitor\+Exibidor\+::is\+Magic\+Valid (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Avalia se campo magic de uma struct \hyperlink{classClassFile}{Class\+File} é válido. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Verdadeiro ou Falso. 
+\end{DoxyReturn}
+
+
+Definido na linha 113 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Class\+File\+::magic.
+
+\mbox{\Hypertarget{classLeitorExibidor_a11629e5b6b841cefaa2f8544ef2b9ab1}\label{classLeitorExibidor_a11629e5b6b841cefaa2f8544ef2b9ab1}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!is\+Version\+Valid@{is\+Version\+Valid}}
+\index{is\+Version\+Valid@{is\+Version\+Valid}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{is\+Version\+Valid()}{isVersionValid()}}
+{\footnotesize\ttfamily bool Leitor\+Exibidor\+::is\+Version\+Valid (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File,  }\item[{uint16\+\_\+t}]{major }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Verifica a validade da versão de uma estrutura \hyperlink{classClassFile}{Class\+File}; devendo esta ser igual ou anterior à versão explicitada em major. O campo major\+\_\+version da estrutura \hyperlink{classClassFile}{Class\+File} é usado nessa avaliação. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
+{\em major} & Versão a se comparar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Verdadeiro de a versão é no máximo major ou Falso caso contrário 
+\end{DoxyReturn}
+
+
+Definido na linha 122 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Class\+File\+::major\+\_\+version.
+
+\mbox{\Hypertarget{classLeitorExibidor_ad273b8b4b3210bf1c246b1226bdaf1c8}\label{classLeitorExibidor_ad273b8b4b3210bf1c246b1226bdaf1c8}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!operator=@{operator=}}
+\index{operator=@{operator=}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily void Leitor\+Exibidor\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classLeitorExibidor}{Leitor\+Exibidor} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classLeitorExibidor_af6f4f84cbfaf72e6673e1dc42023b308}\label{classLeitorExibidor_af6f4f84cbfaf72e6673e1dc42023b308}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!read\+Class\+File@{read\+Class\+File}}
+\index{read\+Class\+File@{read\+Class\+File}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{read\+Class\+File()}{readClassFile()}}
+{\footnotesize\ttfamily \hyperlink{classClassFile}{Class\+File} $\ast$ Leitor\+Exibidor\+::read\+Class\+File (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{file }\end{DoxyParamCaption})}
+
+Lê o arquivo .class, verifica seus campos magic e version e carrega todas as estruturas descritas por este arquivo. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 19 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Utils\+::verificar\+Versao\+Class().
+
+
+
+Referenciado por Method\+Area\+::carregar\+Class\+Named().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLeitorExibidor_af6f4f84cbfaf72e6673e1dc42023b308_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLeitorExibidor_af679ae83326347418cd0d3c90776d7a3}\label{classLeitorExibidor_af679ae83326347418cd0d3c90776d7a3}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!read\+U1@{read\+U1}}
+\index{read\+U1@{read\+U1}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{read\+U1()}{readU1()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1} Leitor\+Exibidor\+::read\+U1 (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Lê 1 byte do arquivo .class. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O byte lido. 
+\end{DoxyReturn}
+
+
+Definido na linha 75 do ficheiro Leitor\+Exibidor.\+cpp.
+
+\mbox{\Hypertarget{classLeitorExibidor_aa801d28856915543cfd59fb787e59626}\label{classLeitorExibidor_aa801d28856915543cfd59fb787e59626}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!read\+U2@{read\+U2}}
+\index{read\+U2@{read\+U2}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{read\+U2()}{readU2()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} Leitor\+Exibidor\+::read\+U2 (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Lê 2 bytes do arquivo .class, verificando se o sistema é Big Endian ou Little Endian para armazenamento adequado. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Os 2 bytes lidos. 
+\end{DoxyReturn}
+
+
+Definido na linha 81 do ficheiro Leitor\+Exibidor.\+cpp.
+
+\mbox{\Hypertarget{classLeitorExibidor_a5ce4bdf25870ab04449d4ba35a961390}\label{classLeitorExibidor_a5ce4bdf25870ab04449d4ba35a961390}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!read\+U4@{read\+U4}}
+\index{read\+U4@{read\+U4}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{read\+U4()}{readU4()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4} Leitor\+Exibidor\+::read\+U4 (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Lê 4 bytes do arquivo .class, verificando se o sistema é Big Endian ou Little Endian para armazenamento adequado. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Os 4 bytes lidos. 
+\end{DoxyReturn}
+
+
+Definido na linha 95 do ficheiro Leitor\+Exibidor.\+cpp.
+
+\mbox{\Hypertarget{classLeitorExibidor_a7934c3a6d4da59ecb351d32b74240c60}\label{classLeitorExibidor_a7934c3a6d4da59ecb351d32b74240c60}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!set\+Access\+Flags@{set\+Access\+Flags}}
+\index{set\+Access\+Flags@{set\+Access\+Flags}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{set\+Access\+Flags()}{setAccessFlags()}}
+{\footnotesize\ttfamily void Leitor\+Exibidor\+::set\+Access\+Flags (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Lê as flags de acesso de um arquivo .class e o armazena em uma estrutura \hyperlink{classClassFile}{Class\+File}. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 261 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Class\+File\+::access\+\_\+flags.
+
+\mbox{\Hypertarget{classLeitorExibidor_a988287e777377265b23482e307eb4a63}\label{classLeitorExibidor_a988287e777377265b23482e307eb4a63}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!set\+Attributes@{set\+Attributes}}
+\index{set\+Attributes@{set\+Attributes}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{set\+Attributes()}{setAttributes()}}
+{\footnotesize\ttfamily void Leitor\+Exibidor\+::set\+Attributes (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Aloca em \hyperlink{classClassFile}{Class\+File} um vetor de atributos, referenciado pelo ponteiro attributes, e o preenche com os dados de um arquivo .class. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 493 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Class\+File\+::attributes e Class\+File\+::attributes\+\_\+count.
+
+\mbox{\Hypertarget{classLeitorExibidor_a891dc9f2ceb6f5c337f91a973d2ad6ee}\label{classLeitorExibidor_a891dc9f2ceb6f5c337f91a973d2ad6ee}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!set\+Attributes\+Count@{set\+Attributes\+Count}}
+\index{set\+Attributes\+Count@{set\+Attributes\+Count}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{set\+Attributes\+Count()}{setAttributesCount()}}
+{\footnotesize\ttfamily void Leitor\+Exibidor\+::set\+Attributes\+Count (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Lê o campo attributes\+\_\+count no arquivo .class e o armazena em uma estrutura \hyperlink{classClassFile}{Class\+File}. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 489 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Class\+File\+::attributes\+\_\+count.
+
+\mbox{\Hypertarget{classLeitorExibidor_a34dc148775506753f609e643ac931cac}\label{classLeitorExibidor_a34dc148775506753f609e643ac931cac}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!set\+Constant\+Pool@{set\+Constant\+Pool}}
+\index{set\+Constant\+Pool@{set\+Constant\+Pool}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{set\+Constant\+Pool()}{setConstantPool()}}
+{\footnotesize\ttfamily void Leitor\+Exibidor\+::set\+Constant\+Pool (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Preenche a pool de constantes de uma estrutura \hyperlink{classClassFile}{Class\+File} a partir de um arquivo .class. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 130 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências cp\+\_\+info\+::class\+\_\+info, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Class, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Float, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+N\+U\+LL, Class\+File\+::constant\+\_\+pool, Class\+File\+::constant\+\_\+pool\+\_\+count, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+String, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8, cp\+\_\+info\+::double\+\_\+info, cp\+\_\+info\+::fieldref\+\_\+info, cp\+\_\+info\+::float\+\_\+info, cp\+\_\+info\+::info, cp\+\_\+info\+::integer\+\_\+info, cp\+\_\+info\+::interface\+Methodref\+\_\+info, cp\+\_\+info\+::long\+\_\+info, cp\+\_\+info\+::methodref\+\_\+info, cp\+\_\+info\+::name\+And\+Type\+\_\+info, cp\+\_\+info\+::string\+\_\+info, cp\+\_\+info\+::tag e cp\+\_\+info\+::utf8\+\_\+info.
+
+\mbox{\Hypertarget{classLeitorExibidor_a13b5c2cf5de57b6cea330a425f7e55be}\label{classLeitorExibidor_a13b5c2cf5de57b6cea330a425f7e55be}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!set\+Constant\+Pool\+Size@{set\+Constant\+Pool\+Size}}
+\index{set\+Constant\+Pool\+Size@{set\+Constant\+Pool\+Size}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{set\+Constant\+Pool\+Size()}{setConstantPoolSize()}}
+{\footnotesize\ttfamily void Leitor\+Exibidor\+::set\+Constant\+Pool\+Size (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Lê o tamanho da pool de constantes de um arquivo .class e o armazena em uma estrutura \hyperlink{classClassFile}{Class\+File}. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 126 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Class\+File\+::constant\+\_\+pool\+\_\+count.
+
+\mbox{\Hypertarget{classLeitorExibidor_a682c7ad4fd18b4dce390285c3c643b7b}\label{classLeitorExibidor_a682c7ad4fd18b4dce390285c3c643b7b}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!set\+Fields@{set\+Fields}}
+\index{set\+Fields@{set\+Fields}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{set\+Fields()}{setFields()}}
+{\footnotesize\ttfamily void Leitor\+Exibidor\+::set\+Fields (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Aloca em \hyperlink{classClassFile}{Class\+File} um vetor de estruturas \hyperlink{structfield__info}{field\+\_\+info}, o qual é referenciado pelo ponteiro fields, e o preenche com os dados de um arquivo .class. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 288 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências field\+\_\+info\+::access\+\_\+flags, field\+\_\+info\+::attributes, field\+\_\+info\+::attributes\+\_\+count, field\+\_\+info\+::descriptor\+\_\+index, Class\+File\+::fields, Class\+File\+::fields\+\_\+count e field\+\_\+info\+::name\+\_\+index.
+
+\mbox{\Hypertarget{classLeitorExibidor_af325d9f6276a66c6bac95b09e83405c9}\label{classLeitorExibidor_af325d9f6276a66c6bac95b09e83405c9}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!set\+Fields\+Count@{set\+Fields\+Count}}
+\index{set\+Fields\+Count@{set\+Fields\+Count}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{set\+Fields\+Count()}{setFieldsCount()}}
+{\footnotesize\ttfamily void Leitor\+Exibidor\+::set\+Fields\+Count (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Lê o índice fields\+\_\+count de um arquivo .class e o armazena em uma estrutura \hyperlink{classClassFile}{Class\+File}. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 284 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Class\+File\+::fields\+\_\+count.
+
+\mbox{\Hypertarget{classLeitorExibidor_aff26e69a60fa1285388e300ac7ec3342}\label{classLeitorExibidor_aff26e69a60fa1285388e300ac7ec3342}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!set\+Interfaces@{set\+Interfaces}}
+\index{set\+Interfaces@{set\+Interfaces}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{set\+Interfaces()}{setInterfaces()}}
+{\footnotesize\ttfamily void Leitor\+Exibidor\+::set\+Interfaces (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Aloca em \hyperlink{classClassFile}{Class\+File} um vetor de interfaces, referenciado pelo ponteiro interfaces, e o preenche com os dados de um arquivo .class. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 277 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Class\+File\+::interfaces e Class\+File\+::interfaces\+\_\+count.
+
+\mbox{\Hypertarget{classLeitorExibidor_afbe776f3eb57a38dde0bfe862dd5650a}\label{classLeitorExibidor_afbe776f3eb57a38dde0bfe862dd5650a}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!set\+Interfaces\+Count@{set\+Interfaces\+Count}}
+\index{set\+Interfaces\+Count@{set\+Interfaces\+Count}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{set\+Interfaces\+Count()}{setInterfacesCount()}}
+{\footnotesize\ttfamily void Leitor\+Exibidor\+::set\+Interfaces\+Count (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Lê o índice interfaces\+\_\+count de um arquivo .class e o armazena em uma estrutura \hyperlink{classClassFile}{Class\+File}. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 273 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Class\+File\+::interfaces\+\_\+count.
+
+\mbox{\Hypertarget{classLeitorExibidor_a08d4a6ea1c0f054f6f2969afe96a1d99}\label{classLeitorExibidor_a08d4a6ea1c0f054f6f2969afe96a1d99}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!set\+Magic@{set\+Magic}}
+\index{set\+Magic@{set\+Magic}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{set\+Magic()}{setMagic()}}
+{\footnotesize\ttfamily void Leitor\+Exibidor\+::set\+Magic (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Lê o campo magic no arquivo .class e o armazena em uma estrutura \hyperlink{classClassFile}{Class\+File}. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 109 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Class\+File\+::magic.
+
+\mbox{\Hypertarget{classLeitorExibidor_aa7ce00ed1b02c20c2eb7ff1b503563d5}\label{classLeitorExibidor_aa7ce00ed1b02c20c2eb7ff1b503563d5}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!set\+Methods@{set\+Methods}}
+\index{set\+Methods@{set\+Methods}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{set\+Methods()}{setMethods()}}
+{\footnotesize\ttfamily void Leitor\+Exibidor\+::set\+Methods (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Aloca em \hyperlink{classClassFile}{Class\+File} um vetor de métodos, referenciado pelo ponteiro methods, e o preenche com os dados de um arquivo .class. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 474 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências method\+\_\+info\+::access\+\_\+flags, method\+\_\+info\+::attributes, method\+\_\+info\+::attributes\+\_\+count, method\+\_\+info\+::descriptor\+\_\+index, Class\+File\+::methods, Class\+File\+::methods\+\_\+count e method\+\_\+info\+::name\+\_\+index.
+
+\mbox{\Hypertarget{classLeitorExibidor_a6292517ec3beae1ef6ff67678110e961}\label{classLeitorExibidor_a6292517ec3beae1ef6ff67678110e961}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!set\+Methods\+Count@{set\+Methods\+Count}}
+\index{set\+Methods\+Count@{set\+Methods\+Count}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{set\+Methods\+Count()}{setMethodsCount()}}
+{\footnotesize\ttfamily void Leitor\+Exibidor\+::set\+Methods\+Count (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Lê o campo methods\+\_\+count no arquivo .class e o armazena em uma estrutura \hyperlink{classClassFile}{Class\+File}. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 470 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Class\+File\+::methods\+\_\+count.
+
+\mbox{\Hypertarget{classLeitorExibidor_af726ef535e88d9d86938a2d6aad6658c}\label{classLeitorExibidor_af726ef535e88d9d86938a2d6aad6658c}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!set\+Super\+Class@{set\+Super\+Class}}
+\index{set\+Super\+Class@{set\+Super\+Class}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{set\+Super\+Class()}{setSuperClass()}}
+{\footnotesize\ttfamily void Leitor\+Exibidor\+::set\+Super\+Class (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Lê o índice super\+\_\+class de um arquivo .class e o armazena em uma estrutura \hyperlink{classClassFile}{Class\+File}. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 269 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Class\+File\+::super\+\_\+class.
+
+\mbox{\Hypertarget{classLeitorExibidor_af0f402911ed326bd9e495eef93a43c24}\label{classLeitorExibidor_af0f402911ed326bd9e495eef93a43c24}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!set\+This\+Class@{set\+This\+Class}}
+\index{set\+This\+Class@{set\+This\+Class}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{set\+This\+Class()}{setThisClass()}}
+{\footnotesize\ttfamily void Leitor\+Exibidor\+::set\+This\+Class (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Lê o índice this\+\_\+class de um arquivo .class e o armazena em uma estrutura \hyperlink{classClassFile}{Class\+File}. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 265 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Class\+File\+::this\+\_\+class.
+
+\mbox{\Hypertarget{classLeitorExibidor_a9a11956018816200897ca137c027cbf1}\label{classLeitorExibidor_a9a11956018816200897ca137c027cbf1}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!set\+Version@{set\+Version}}
+\index{set\+Version@{set\+Version}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{set\+Version()}{setVersion()}}
+{\footnotesize\ttfamily void Leitor\+Exibidor\+::set\+Version (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Lê a versão de um arquivo .class e a armazena em uma estrutura \hyperlink{classClassFile}{Class\+File}. A versão é dada por major\+\_\+version.\+minor\+\_\+version. 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+\hline
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 117 do ficheiro Leitor\+Exibidor.\+cpp.
+
+
+
+Referências Class\+File\+::major\+\_\+version e Class\+File\+::minor\+\_\+version.
+
+\mbox{\Hypertarget{classLeitorExibidor_ac8ff6248b6897d88bb5cf22ea987a6ab}\label{classLeitorExibidor_ac8ff6248b6897d88bb5cf22ea987a6ab}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!test\+Endianess@{test\+Endianess}}
+\index{test\+Endianess@{test\+Endianess}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{test\+Endianess()}{testEndianess()}}
+{\footnotesize\ttfamily bool Leitor\+Exibidor\+::test\+Endianess (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+retorna T\+R\+UE se o sistema é Little Endian e F\+A\+L\+SE caso contrario. obtido de\+: \href{http://stackoverflow.com/a/4181991/351527}{\tt http\+://stackoverflow.\+com/a/4181991/351527} 
+
+Definido na linha 14 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
 \subsection{Documentação dos dados membro}
-\mbox{\Hypertarget{classLeitorExibidor_abd4251746a10c01f8bb566c4d6ba55b4}\label{classLeitorExibidor_abd4251746a10c01f8bb566c4d6ba55b4}} 
-\index{Leitor\+Exibidor@{Leitor\+Exibidor}!class\+File@{class\+File}}
-\index{class\+File@{class\+File}!Leitor\+Exibidor@{Leitor\+Exibidor}}
-\subsubsection{\texorpdfstring{class\+File}{classFile}}
-{\footnotesize\ttfamily \hyperlink{classClassFile}{Class\+File}$\ast$ Leitor\+Exibidor\+::class\+File}
+\mbox{\Hypertarget{classLeitorExibidor_a25a267e1238c481356a970b17d2fd044}\label{classLeitorExibidor_a25a267e1238c481356a970b17d2fd044}} 
+\index{Leitor\+Exibidor@{Leitor\+Exibidor}!is\+Little\+Endian@{is\+Little\+Endian}}
+\index{is\+Little\+Endian@{is\+Little\+Endian}!Leitor\+Exibidor@{Leitor\+Exibidor}}
+\subsubsection{\texorpdfstring{is\+Little\+Endian}{isLittleEndian}}
+{\footnotesize\ttfamily bool Leitor\+Exibidor\+::is\+Little\+Endian\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Definido na linha 13 do ficheiro Leitor\+Exibidor.\+h.
+Armazena {\ttfamily true} caso o computador seja little endian, e {\ttfamily false} caso contrário. 
 
 
 
-Referenciado por Leitor\+Exibidor() e main().
+Definido na linha 56 do ficheiro Leitor\+Exibidor.\+h.
 
 
 

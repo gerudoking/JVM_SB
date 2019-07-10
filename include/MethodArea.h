@@ -1,56 +1,77 @@
-/*!
- * \file MethodArea.h
- * \brief Responsável por todas as operações que gerenciam os métodos
- */
-#ifndef METHOD_AREA_H
-#define METHOD_AREA_H
+#ifndef methodarea_h
+#define methodarea_h
 
-#include "StaticClass.h"
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <cstdlib>
+
 #include <map>
-#include <algorithm>
-#include <string.h>
+#include <string>
 
 #include "BasicTypes.h"
-#include "ClassFile.h"
-#include "ConstantPool.h"
-#include "PilhaJVM.h"
+#include "StaticClass.h"
 
 using namespace std;
 
+
 /** @class MethodArea
  * @brief Classe responsável por todas as operações que gerenciam os métodos
+ * @brief Essa classe é um singleton, ou seja, somente existe no máximo 1 instância dela para cada instância da JVM.
  */
 class MethodArea {
-private:
-	static map<string, StaticClass*> mapStaticClass;
-	static PilhaJVM *pilhaJVM;
-
+    
 public:
-	static string path;
-
-	/** @fn static StaticClass *obterClass(string)
-	 * @brief Retorna referência para classe estática
-	 * @param classe Nome da classe
-	 */
-	static StaticClass *obterClass(string classe);
-
-	/** @fn static bool adicionarClasse(string classe)
-	 * @brief Carrega a classe na memória
-	 * @param classe Nome da classe
-	 */
-	static bool adicionarClasse(string classe);
-
-	/** @fn static bool adicionarClasse(ClassFile *classFile)
-	 * @brief Carrega classe na memória
-	 * @param classFile informação do arquivo .class na memória
-	 */
-	static bool adicionarClasse(ClassFile *classFile);
-
-	/** @fn static void atualizarPilhaJVM(FrameStack *pStackFrame)
-	 * @brief Atualiza a pilha referência da pilha da jvm para o próximo instrução
-	 * @param pPilhaJVM a pilha da jvm
-	 */
-	static void atualizarPilhaJVM(PilhaJVM *pPilhaJVM);
+    /**
+     * @brief Obter a única instância do MethodArea.
+     * @return A instância do MethodArea.
+     */
+    static MethodArea& getInstance() {
+        static MethodArea instance;
+        return instance;
+    }
+    
+    /**
+     * @brief Destrutor padrão.
+     */
+    ~MethodArea();
+    
+    /**
+     * @brief Carrega a classe com o nome dado e a adiciona na área de métodos.
+     * @param className O nome da classe (contendo o sufixo .class ou não).
+     * @result O ponteiro para \c ClassFile da classe carregada.
+     */
+    StaticClass* carregarClassNamed(const string &className);
+    
+    /**
+     * @brief Busca por uma classe com o nome qualificado passado (e.g. java/lang/Object).
+     * @param className O nome qualificado da classe que será buscado.
+     * @return Um ponteiro para a classe será retornado caso ela exista, e \c NULL caso contrário.
+     */
+    StaticClass* getClassNamed(const string &className);
+    
+private:
+    /**
+     * @brief Construtor padrão.
+     */
+    MethodArea();
+    
+    MethodArea(MethodArea const&); // não permitir implementação do construtor de cópia
+    void operator=(MethodArea const&); // não permitir implementação do operador de igual
+    
+    /**
+     * @brief Adiciona uma classe à área de métodos.
+     * @param classFile A classe que será adicionada.
+     * @return \c true caso a classe foi adicionada, e \c false caso contrário, pois uma classe com o mesmo nome já está adicionada.
+     */
+    bool addClass(StaticClass *classFile);
+    
+    /**
+     * Um \c map contendo todas as classes presentes na área de métodos.
+     *
+     * A chave do map é o nome qualificado da classe, e o valor é um ponteiro para o \c ClassFile correspondente.
+     */
+    map<string, StaticClass*> _classes;
 };
 
-#endif
+#endif /* methodarea_h */

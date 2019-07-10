@@ -1,6 +1,6 @@
 <map id="Operations::dload_0" name="Operations::dload_0">
-<area shape="rect" id="node2" href="$classOperations.html#a44536bc4112eb4eebe23ff85e9b7d02b" title="Operations::dload_n" alt="" coords="192,31,331,57"/>
-<area shape="rect" id="node3" href="$classLocalVariables.html#a4abbb4a732d7dd0f11a147b79c15ae10" title="Gets element on past position by index. " alt="" coords="417,5,551,32"/>
-<area shape="rect" id="node4" href="$classOperandsStack.html#a45dde91cc54ad980d1cbb7cdb1e084cd" title="Empilha um valor de tipo double. " alt="" coords="379,56,589,83"/>
-<area shape="rect" id="node5" href="$classOperandsStack.html#a6ea316fc2b2503af2175fada4d4a9741" title="retorna o tamanho da pilha de operandos " alt="" coords="637,56,840,83"/>
+<area shape="rect" id="node2" href="$classFrame.html#af2481010c4795fbe1cba48122609cf1e" title="Adiciona um operando na pilha de operandos. " alt="" coords="192,5,391,32"/>
+<area shape="rect" id="node3" href="$classPilhaJVM.html#a13bf1c43de7819ea7761616f7a04c3b9" title="Obter a única instância da pilha. " alt="" coords="214,56,369,83"/>
+<area shape="rect" id="node4" href="$classPilhaJVM.html#aa0e43da476df6147c86c8cc3d6899718" title="Obtém o frame no topo da pilha da JVM. " alt="" coords="210,107,373,133"/>
+<area shape="rect" id="node5" href="$classFrame.html#ae074652eb3b71fb4cb28afd1ba91885d" title="Obtém o valor de uma variável local localizada no índice dado. " alt="" coords="204,158,379,199"/>
 </map>

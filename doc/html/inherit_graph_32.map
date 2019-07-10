@@ -1,0 +1,6 @@
+<map id="Representação gráfica da hiearquia da classe" name="Representação gráfica da hiearquia da classe">
+<area shape="rect" id="node1" href="$classObject.html" title="n classe utilizada para todos elementos que se caracterizam como objetos, como: instância de classe e..." alt="" coords="5,56,65,83"/>
+<area shape="rect" id="node2" href="$classArrayObject.html" title="Estrutura de armazenamento. " alt="" coords="121,5,212,32"/>
+<area shape="rect" id="node3" href="$classInstanceClass.html" title="Lida com operações que lidam com uma instância da classe. " alt="" coords="113,56,220,83"/>
+<area shape="rect" id="node4" href="$classStringObject.html" title="Representa um objeto do tipo String. " alt="" coords="119,107,214,133"/>
+</map>

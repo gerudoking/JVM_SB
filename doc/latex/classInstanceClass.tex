@@ -2,7 +2,7 @@
 \label{classInstanceClass}\index{Instance\+Class@{Instance\+Class}}
 
 
-Class instantiation.  
+Lida com operações que lidam com uma instância da classe.  
 
 
 
@@ -11,7 +11,18 @@ Class instantiation.
 
 
 
-Diagrama de colaboração para Instance\+Class\+:\nopagebreak
+Diagrama de heranças da classe Instance\+Class
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classInstanceClass__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboração para Instance\+Class\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,234 +32,246 @@ Diagrama de colaboração para Instance\+Class\+:\nopagebreak
 \subsection*{Membros públicos}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classInstanceClass_ac1bee1eb9725e1fec8de7f4cf97f369c}{Instance\+Class} (\hyperlink{classStaticClass}{Static\+Class} $\ast$\hyperlink{classInstanceClass_a45804f1afe3666a4b4511cf8e3f1013b}{static\+Class})
-\begin{DoxyCompactList}\small\item\em Lida com operações que manipulam a instância da classe. \end{DoxyCompactList}\item 
-\hyperlink{classStaticClass}{Static\+Class} $\ast$ \hyperlink{classInstanceClass_a6da567a64a8373d609792821f5acb9a3}{obter\+Static\+Class} ()
-\begin{DoxyCompactList}\small\item\em Retorna referência para a classe estatica. \end{DoxyCompactList}\item 
-\hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} \hyperlink{classInstanceClass_a98084eb37c43d680169298bc50f09c98}{obter\+Field} (string field)
-\begin{DoxyCompactList}\small\item\em Retorna field instanciado. \end{DoxyCompactList}\item 
-bool \hyperlink{classInstanceClass_a3af2fc7bfe8f406b5ea6efbf18161514}{atualizar\+Field} (string field, \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} typed\+Element)
-\begin{DoxyCompactList}\small\item\em Defina um valor para um field da Instance. \end{DoxyCompactList}\item 
-bool \hyperlink{classInstanceClass_a05a47d4bf656908ce3dacc53d9d791b2}{atualizar\+Field\+Finals} (string field, \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} typed\+Element)
-\begin{DoxyCompactList}\small\item\em Define Field como final. \end{DoxyCompactList}\item 
-void \hyperlink{classInstanceClass_a9790b6bb982d58a0bbddcb8c9ba358d4}{imprimir\+Instance} ()
-\begin{DoxyCompactList}\small\item\em Mostra todas as classes instanciadas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{classInstanceClass_a86ab031eb0f0240b0a54423003000322}{Instance\+Class} (\hyperlink{classStaticClass}{Static\+Class} $\ast$class\+Runtime)
+\begin{DoxyCompactList}\small\item\em Construtor padrão. \end{DoxyCompactList}\item 
+\hyperlink{classInstanceClass_a441cc692dedc481373b7e670fab72556}{$\sim$\+Instance\+Class} ()
+\begin{DoxyCompactList}\small\item\em Destrutor padrão. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a842c5e2e69277690b064bf363c017980}{Object\+Type} \hyperlink{classInstanceClass_ae8570307f49cb95cc01fb8d6bda23763}{object\+Type} ()
+\begin{DoxyCompactList}\small\item\em Método utilizado para declaração do tipo de objeto. \end{DoxyCompactList}\item 
+\hyperlink{classStaticClass}{Static\+Class} $\ast$ \hyperlink{classInstanceClass_adf2af3015bb8f777a3181d85aa279de8}{get\+Class\+Runtime} ()
+\begin{DoxyCompactList}\small\item\em Obtém a classe correspondente ao objeto. \end{DoxyCompactList}\item 
+void \hyperlink{classInstanceClass_af445c2e244c91b6cce4bb2c2798a720c}{put\+Value\+Into\+Field} (\hyperlink{structValue}{Value} value, string field\+Name)
+\begin{DoxyCompactList}\small\item\em Adiciona um valor no field de índice informado. \end{DoxyCompactList}\item 
+\hyperlink{structValue}{Value} \hyperlink{classInstanceClass_aee974c71919d470ea2e9aa75cf741a39}{get\+Value\+From\+Field} (string field\+Name)
+\begin{DoxyCompactList}\small\item\em Obtém o valor contido em um field informado. \end{DoxyCompactList}\item 
+bool \hyperlink{classInstanceClass_a284c7d0a062623c614a2f9440340070f}{field\+Exists} (string field\+Name)
+\begin{DoxyCompactList}\small\item\em Verifica se existe um field com o nome dado. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Atributos Privados}
 \begin{DoxyCompactItemize}
 \item 
-map$<$ string, \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} $\ast$ $>$ \hyperlink{classInstanceClass_a455e05eefc1273e6cf22607c8941e9c0}{map\+Local\+Fields}
+\hyperlink{classStaticClass}{Static\+Class} $\ast$ \hyperlink{classInstanceClass_aa8ed961b694f26f470dc2399532d3538}{\+\_\+class\+Runtime}
 \item 
-\hyperlink{classStaticClass}{Static\+Class} $\ast$ \hyperlink{classInstanceClass_a45804f1afe3666a4b4511cf8e3f1013b}{static\+Class}
+map$<$ string, \hyperlink{structValue}{Value} $>$ \hyperlink{classInstanceClass_a603a0866f5113d16ff8f80b5d6bf152b}{\+\_\+fields}
 \end{DoxyCompactItemize}
 
 
 \subsection{Descrição detalhada}
-Class instantiation. 
+Lida com operações que lidam com uma instância da classe. 
 
-Lida com operações que lidam com uma instância da classe 
-
-Definido na linha 22 do ficheiro Instance\+Class.\+h.
+Definido na linha 19 do ficheiro Instance\+Class.\+h.
 
 
 
 \subsection{Documentação dos Construtores \& Destrutor}
-\mbox{\Hypertarget{classInstanceClass_ac1bee1eb9725e1fec8de7f4cf97f369c}\label{classInstanceClass_ac1bee1eb9725e1fec8de7f4cf97f369c}} 
+\mbox{\Hypertarget{classInstanceClass_a86ab031eb0f0240b0a54423003000322}\label{classInstanceClass_a86ab031eb0f0240b0a54423003000322}} 
 \index{Instance\+Class@{Instance\+Class}!Instance\+Class@{Instance\+Class}}
 \index{Instance\+Class@{Instance\+Class}!Instance\+Class@{Instance\+Class}}
 \subsubsection{\texorpdfstring{Instance\+Class()}{InstanceClass()}}
-{\footnotesize\ttfamily Instance\+Class\+::\+Instance\+Class (\begin{DoxyParamCaption}\item[{\hyperlink{classStaticClass}{Static\+Class} $\ast$}]{static\+Class }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Instance\+Class\+::\+Instance\+Class (\begin{DoxyParamCaption}\item[{\hyperlink{classStaticClass}{Static\+Class} $\ast$}]{class\+Runtime }\end{DoxyParamCaption})}
 
 
 
-Lida com operações que manipulam a instância da classe. 
+Construtor padrão. 
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em static\+Class} & Referência para a \hyperlink{classStaticClass}{Static\+Class} \\
+{\em class\+Runtime} & A classe correspondente ao objeto. \\
 \hline
 \end{DoxyParams}
 
 
-Definido na linha 8 do ficheiro Instance\+Class.\+cpp.
+Definido na linha 10 do ficheiro Instance\+Class.\+cpp.
 
 
 
-Referências capturar\+Indice\+De\+Referencia(), Field\+\_\+info\+::descriptor\+\_\+index, element\+\_\+u\+::l, map\+Local\+Fields, Field\+\_\+info\+::name\+\_\+index, Static\+Class\+::obter\+Class\+File(), Class\+File\+::obter\+Constant\+Pool(), Class\+File\+::obter\+Fields(), Class\+File\+::obter\+Fields\+Count(), static\+Class, typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+B\+O\+OL, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT, T\+Y\+P\+E\+\_\+\+I\+NT, T\+Y\+P\+E\+\_\+\+L\+O\+NG, T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE e typed\+Element\+\_\+s\+::value.
+Referências Class\+File\+::access\+\_\+flags, field\+\_\+info\+::access\+\_\+flags, Heap\+::add\+Object(), B\+O\+O\+L\+E\+AN, B\+Y\+TE, Value\+::byte\+Value, C\+H\+AR, Value\+::char\+Value, Class\+File\+::constant\+\_\+pool, Value\+::data, field\+\_\+info\+::descriptor\+\_\+index, D\+O\+U\+B\+LE, Value\+::double\+Value, Class\+File\+::fields, Class\+File\+::fields\+\_\+count, F\+L\+O\+AT, Value\+::float\+Value, Static\+Class\+::get\+Class\+File(), get\+Formatted\+Constant(), Heap\+::get\+Instance(), I\+NT, Value\+::int\+Value, L\+O\+NG, Value\+::long\+Value, field\+\_\+info\+::name\+\_\+index, Value\+::object, put\+Value\+Into\+Field(), R\+E\+F\+E\+R\+E\+N\+CE, S\+H\+O\+RT, Value\+::short\+Value e Value\+::type.
 
-Grafo de chamadas desta função\+:\nopagebreak
+Grafo de chamadas desta função\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classInstanceClass_ac1bee1eb9725e1fec8de7f4cf97f369c_cgraph}
+\includegraphics[width=350pt]{classInstanceClass_a86ab031eb0f0240b0a54423003000322_cgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classInstanceClass_a441cc692dedc481373b7e670fab72556}\label{classInstanceClass_a441cc692dedc481373b7e670fab72556}} 
+\index{Instance\+Class@{Instance\+Class}!````~Instance\+Class@{$\sim$\+Instance\+Class}}
+\index{````~Instance\+Class@{$\sim$\+Instance\+Class}!Instance\+Class@{Instance\+Class}}
+\subsubsection{\texorpdfstring{$\sim$\+Instance\+Class()}{~InstanceClass()}}
+{\footnotesize\ttfamily Instance\+Class\+::$\sim$\+Instance\+Class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destrutor padrão. 
+
+
+
+Definido na linha 79 do ficheiro Instance\+Class.\+cpp.
+
 
 
 \subsection{Documentação dos métodos}
-\mbox{\Hypertarget{classInstanceClass_a3af2fc7bfe8f406b5ea6efbf18161514}\label{classInstanceClass_a3af2fc7bfe8f406b5ea6efbf18161514}} 
-\index{Instance\+Class@{Instance\+Class}!atualizar\+Field@{atualizar\+Field}}
-\index{atualizar\+Field@{atualizar\+Field}!Instance\+Class@{Instance\+Class}}
-\subsubsection{\texorpdfstring{atualizar\+Field()}{atualizarField()}}
-{\footnotesize\ttfamily bool Instance\+Class\+::atualizar\+Field (\begin{DoxyParamCaption}\item[{string}]{field,  }\item[{\hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element}}]{typed\+Element }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classInstanceClass_a284c7d0a062623c614a2f9440340070f}\label{classInstanceClass_a284c7d0a062623c614a2f9440340070f}} 
+\index{Instance\+Class@{Instance\+Class}!field\+Exists@{field\+Exists}}
+\index{field\+Exists@{field\+Exists}!Instance\+Class@{Instance\+Class}}
+\subsubsection{\texorpdfstring{field\+Exists()}{fieldExists()}}
+{\footnotesize\ttfamily bool Instance\+Class\+::field\+Exists (\begin{DoxyParamCaption}\item[{string}]{field\+Name }\end{DoxyParamCaption})}
 
 
 
-Defina um valor para um field da Instance. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em field} & nome do field \\
-\hline
-{\em typed\+Element} & novo tipo que será atribuido ao field \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Retorna}
-booleano indicado se o field foi definido 
-\end{DoxyReturn}
-
-
-Definido na linha 75 do ficheiro Instance\+Class.\+cpp.
-
-
-
-Referências map\+Local\+Fields e typed\+Element\+\_\+s\+::type.
-
-
-
-Referenciado por Operations\+::putfield().
-
-\mbox{\Hypertarget{classInstanceClass_a05a47d4bf656908ce3dacc53d9d791b2}\label{classInstanceClass_a05a47d4bf656908ce3dacc53d9d791b2}} 
-\index{Instance\+Class@{Instance\+Class}!atualizar\+Field\+Finals@{atualizar\+Field\+Finals}}
-\index{atualizar\+Field\+Finals@{atualizar\+Field\+Finals}!Instance\+Class@{Instance\+Class}}
-\subsubsection{\texorpdfstring{atualizar\+Field\+Finals()}{atualizarFieldFinals()}}
-{\footnotesize\ttfamily bool Instance\+Class\+::atualizar\+Field\+Finals (\begin{DoxyParamCaption}\item[{string}]{field,  }\item[{\hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element}}]{typed\+Element }\end{DoxyParamCaption})}
-
-
-
-Define Field como final. 
+Verifica se existe um field com o nome dado. 
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em field} & nome do field desejado \\
-\hline
-{\em typed\+Element} & tipo para o field \\
+{\em string} & O nome do field. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
-booleano que indica se o field foi setado com o novo tipo ou não 
+Retorna {\ttfamily true} caso o field existir, e {\ttfamily false} caso contrário. 
 \end{DoxyReturn}
 
 
-Definido na linha 94 do ficheiro Instance\+Class.\+cpp.
+Definido na linha 104 do ficheiro Instance\+Class.\+cpp.
 
 
 
-Referências map\+Local\+Fields e typed\+Element\+\_\+s\+::type.
+Referências \+\_\+fields.
+
+\mbox{\Hypertarget{classInstanceClass_adf2af3015bb8f777a3181d85aa279de8}\label{classInstanceClass_adf2af3015bb8f777a3181d85aa279de8}} 
+\index{Instance\+Class@{Instance\+Class}!get\+Class\+Runtime@{get\+Class\+Runtime}}
+\index{get\+Class\+Runtime@{get\+Class\+Runtime}!Instance\+Class@{Instance\+Class}}
+\subsubsection{\texorpdfstring{get\+Class\+Runtime()}{getClassRuntime()}}
+{\footnotesize\ttfamily \hyperlink{classStaticClass}{Static\+Class} $\ast$ Instance\+Class\+::get\+Class\+Runtime (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Referenciado por Operations\+::putfield().
+Obtém a classe correspondente ao objeto. 
 
-\mbox{\Hypertarget{classInstanceClass_a9790b6bb982d58a0bbddcb8c9ba358d4}\label{classInstanceClass_a9790b6bb982d58a0bbddcb8c9ba358d4}} 
-\index{Instance\+Class@{Instance\+Class}!imprimir\+Instance@{imprimir\+Instance}}
-\index{imprimir\+Instance@{imprimir\+Instance}!Instance\+Class@{Instance\+Class}}
-\subsubsection{\texorpdfstring{imprimir\+Instance()}{imprimirInstance()}}
-{\footnotesize\ttfamily void Instance\+Class\+::imprimir\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\begin{DoxyReturn}{Retorna}
+Retorna a classe do objeto. 
+\end{DoxyReturn}
 
 
-
-Mostra todas as classes instanciadas. 
+Definido na linha 87 do ficheiro Instance\+Class.\+cpp.
 
 
 
-Definido na linha 113 do ficheiro Instance\+Class.\+cpp.
+Referências \+\_\+class\+Runtime.
 
 
 
-Referências map\+Local\+Fields.
+Referenciado por Operations\+::checkcast() e Operations\+::instanceof().
 
-\mbox{\Hypertarget{classInstanceClass_a98084eb37c43d680169298bc50f09c98}\label{classInstanceClass_a98084eb37c43d680169298bc50f09c98}} 
-\index{Instance\+Class@{Instance\+Class}!obter\+Field@{obter\+Field}}
-\index{obter\+Field@{obter\+Field}!Instance\+Class@{Instance\+Class}}
-\subsubsection{\texorpdfstring{obter\+Field()}{obterField()}}
-{\footnotesize\ttfamily typed\+Element Instance\+Class\+::obter\+Field (\begin{DoxyParamCaption}\item[{string}]{field }\end{DoxyParamCaption})}
-
-
-
-Retorna field instanciado. 
+\mbox{\Hypertarget{classInstanceClass_aee974c71919d470ea2e9aa75cf741a39}\label{classInstanceClass_aee974c71919d470ea2e9aa75cf741a39}} 
+\index{Instance\+Class@{Instance\+Class}!get\+Value\+From\+Field@{get\+Value\+From\+Field}}
+\index{get\+Value\+From\+Field@{get\+Value\+From\+Field}!Instance\+Class@{Instance\+Class}}
+\subsubsection{\texorpdfstring{get\+Value\+From\+Field()}{getValueFromField()}}
+{\footnotesize\ttfamily \hyperlink{structValue}{Value} Instance\+Class\+::get\+Value\+From\+Field (\begin{DoxyParamCaption}\item[{string}]{field\+Name }\end{DoxyParamCaption})}
 
 
+
+Obtém o valor contido em um field informado. 
+
+Caso o nome do field seja inválido, um erro será emitido. 
 \begin{DoxyParams}{Parâmetros}
-{\em field} & do field. \\
+{\em index} & O índice do field. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
-struct typed\+Element que contém informações sobre nome do tipo e valor 
+O valor correspondente ao field. 
 \end{DoxyReturn}
 
 
-Definido na linha 58 do ficheiro Instance\+Class.\+cpp.
+Definido na linha 95 do ficheiro Instance\+Class.\+cpp.
 
 
 
-Referências map\+Local\+Fields, typed\+Element\+\_\+s\+::type e T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+S\+ET.
+Referências \+\_\+fields.
+
+\mbox{\Hypertarget{classInstanceClass_ae8570307f49cb95cc01fb8d6bda23763}\label{classInstanceClass_ae8570307f49cb95cc01fb8d6bda23763}} 
+\index{Instance\+Class@{Instance\+Class}!object\+Type@{object\+Type}}
+\index{object\+Type@{object\+Type}!Instance\+Class@{Instance\+Class}}
+\subsubsection{\texorpdfstring{object\+Type()}{objectType()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a842c5e2e69277690b064bf363c017980}{Object\+Type} Instance\+Class\+::object\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-Referenciado por Operations\+::getfield().
+Método utilizado para declaração do tipo de objeto. 
 
-\mbox{\Hypertarget{classInstanceClass_a6da567a64a8373d609792821f5acb9a3}\label{classInstanceClass_a6da567a64a8373d609792821f5acb9a3}} 
-\index{Instance\+Class@{Instance\+Class}!obter\+Static\+Class@{obter\+Static\+Class}}
-\index{obter\+Static\+Class@{obter\+Static\+Class}!Instance\+Class@{Instance\+Class}}
-\subsubsection{\texorpdfstring{obter\+Static\+Class()}{obterStaticClass()}}
-{\footnotesize\ttfamily \hyperlink{classStaticClass}{Static\+Class} $\ast$ Instance\+Class\+::obter\+Static\+Class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\begin{DoxyReturn}{Retorna}
+O tipo de objeto. 
+\end{DoxyReturn}
 
 
-
-Retorna referência para a classe estatica. 
+Implementa \hyperlink{classObject_a08cee945bc224fc81f4448086625183d}{Object}.
 
 
 
-Definido na linha 71 do ficheiro Instance\+Class.\+cpp.
+Definido na linha 83 do ficheiro Instance\+Class.\+cpp.
 
 
 
-Referências static\+Class.
+Referências C\+L\+A\+S\+S\+\_\+\+I\+N\+S\+T\+A\+N\+CE.
+
+\mbox{\Hypertarget{classInstanceClass_af445c2e244c91b6cce4bb2c2798a720c}\label{classInstanceClass_af445c2e244c91b6cce4bb2c2798a720c}} 
+\index{Instance\+Class@{Instance\+Class}!put\+Value\+Into\+Field@{put\+Value\+Into\+Field}}
+\index{put\+Value\+Into\+Field@{put\+Value\+Into\+Field}!Instance\+Class@{Instance\+Class}}
+\subsubsection{\texorpdfstring{put\+Value\+Into\+Field()}{putValueIntoField()}}
+{\footnotesize\ttfamily void Instance\+Class\+::put\+Value\+Into\+Field (\begin{DoxyParamCaption}\item[{\hyperlink{structValue}{Value}}]{value,  }\item[{string}]{field\+Name }\end{DoxyParamCaption})}
 
 
 
-Referenciado por Operations\+::invokeinterface(), Operations\+::invokespecial() e Operations\+::invokevirtual().
+Adiciona um valor no field de índice informado. 
+
+Caso o índice do field (i.\+e. não exista na CP da classe atual seja inválido), um erro será emitido. 
+\begin{DoxyParams}{Parâmetros}
+{\em value} & O valor que será inserido no field. \\
+\hline
+{\em field\+Name} & O nome do field que será alterado. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 91 do ficheiro Instance\+Class.\+cpp.
+
+
+
+Referências \+\_\+fields.
+
+
+
+Referenciado por Instance\+Class() e Operations\+::putfield().
 
 
 
 \subsection{Documentação dos dados membro}
-\mbox{\Hypertarget{classInstanceClass_a455e05eefc1273e6cf22607c8941e9c0}\label{classInstanceClass_a455e05eefc1273e6cf22607c8941e9c0}} 
-\index{Instance\+Class@{Instance\+Class}!map\+Local\+Fields@{map\+Local\+Fields}}
-\index{map\+Local\+Fields@{map\+Local\+Fields}!Instance\+Class@{Instance\+Class}}
-\subsubsection{\texorpdfstring{map\+Local\+Fields}{mapLocalFields}}
-{\footnotesize\ttfamily map$<$string, \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element}$\ast$$>$ Instance\+Class\+::map\+Local\+Fields\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{classInstanceClass_aa8ed961b694f26f470dc2399532d3538}\label{classInstanceClass_aa8ed961b694f26f470dc2399532d3538}} 
+\index{Instance\+Class@{Instance\+Class}!\+\_\+class\+Runtime@{\+\_\+class\+Runtime}}
+\index{\+\_\+class\+Runtime@{\+\_\+class\+Runtime}!Instance\+Class@{Instance\+Class}}
+\subsubsection{\texorpdfstring{\+\_\+class\+Runtime}{\_classRuntime}}
+{\footnotesize\ttfamily \hyperlink{classStaticClass}{Static\+Class}$\ast$ Instance\+Class\+::\+\_\+class\+Runtime\hspace{0.3cm}{\ttfamily [private]}}
+
+Armazena a classe correspondente ao objeto. 
+
+Definido na linha 74 do ficheiro Instance\+Class.\+h.
 
 
 
-Definido na linha 24 do ficheiro Instance\+Class.\+h.
+Referenciado por get\+Class\+Runtime().
+
+\mbox{\Hypertarget{classInstanceClass_a603a0866f5113d16ff8f80b5d6bf152b}\label{classInstanceClass_a603a0866f5113d16ff8f80b5d6bf152b}} 
+\index{Instance\+Class@{Instance\+Class}!\+\_\+fields@{\+\_\+fields}}
+\index{\+\_\+fields@{\+\_\+fields}!Instance\+Class@{Instance\+Class}}
+\subsubsection{\texorpdfstring{\+\_\+fields}{\_fields}}
+{\footnotesize\ttfamily map$<$string, \hyperlink{structValue}{Value}$>$ Instance\+Class\+::\+\_\+fields\hspace{0.3cm}{\ttfamily [private]}}
+
+Armazena os fields do objeto (de instância). 
+
+Definido na linha 79 do ficheiro Instance\+Class.\+h.
 
 
 
-Referenciado por atualizar\+Field(), atualizar\+Field\+Finals(), imprimir\+Instance(), Instance\+Class() e obter\+Field().
-
-\mbox{\Hypertarget{classInstanceClass_a45804f1afe3666a4b4511cf8e3f1013b}\label{classInstanceClass_a45804f1afe3666a4b4511cf8e3f1013b}} 
-\index{Instance\+Class@{Instance\+Class}!static\+Class@{static\+Class}}
-\index{static\+Class@{static\+Class}!Instance\+Class@{Instance\+Class}}
-\subsubsection{\texorpdfstring{static\+Class}{staticClass}}
-{\footnotesize\ttfamily \hyperlink{classStaticClass}{Static\+Class}$\ast$ Instance\+Class\+::static\+Class\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definido na linha 25 do ficheiro Instance\+Class.\+h.
-
-
-
-Referenciado por Instance\+Class() e obter\+Static\+Class().
+Referenciado por field\+Exists(), get\+Value\+From\+Field() e put\+Value\+Into\+Field().
 
 
 

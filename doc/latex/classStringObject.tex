@@ -1,0 +1,187 @@
+\hypertarget{classStringObject}{}\section{Referência à classe String\+Object}
+\label{classStringObject}\index{String\+Object@{String\+Object}}
+
+
+Representa um objeto do tipo String.  
+
+
+
+
+{\ttfamily \#include $<$Stringobject.\+h$>$}
+
+
+
+Diagrama de heranças da classe String\+Object
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{classStringObject__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboração para String\+Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{classStringObject__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStringObject_af29d58fcfbd76c7708e5c8689321ab32}{String\+Object} (string s=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Construtor padrão. \end{DoxyCompactList}\item 
+\hyperlink{classStringObject_a7db6683d04fe432e570458daf305500b}{$\sim$\+String\+Object} ()
+\begin{DoxyCompactList}\small\item\em Destrutor padrão. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a842c5e2e69277690b064bf363c017980}{Object\+Type} \hyperlink{classStringObject_a7d89db7df43b17354baf5337edd636b7}{object\+Type} ()
+\begin{DoxyCompactList}\small\item\em Obtém o tipo do objeto (string). \end{DoxyCompactList}\item 
+string \hyperlink{classStringObject_aedd2df1630c9b291ea17407b3f626573}{get\+String} ()
+\begin{DoxyCompactList}\small\item\em Obtém a sequência de caracteres presente na string. \end{DoxyCompactList}\item 
+void \hyperlink{classStringObject_a96812d8ef025b1f897b09f816d0297f7}{set\+String} (string s)
+\begin{DoxyCompactList}\small\item\em Substitui o valor da string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classStringObject_a129b52ebca78da26c58175e45e1869cc}{\+\_\+internal\+String}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Representa um objeto do tipo String. 
+
+Definido na linha 15 do ficheiro Stringobject.\+h.
+
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{classStringObject_af29d58fcfbd76c7708e5c8689321ab32}\label{classStringObject_af29d58fcfbd76c7708e5c8689321ab32}} 
+\index{String\+Object@{String\+Object}!String\+Object@{String\+Object}}
+\index{String\+Object@{String\+Object}!String\+Object@{String\+Object}}
+\subsubsection{\texorpdfstring{String\+Object()}{StringObject()}}
+{\footnotesize\ttfamily String\+Object\+::\+String\+Object (\begin{DoxyParamCaption}\item[{string}]{s = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Construtor padrão. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em s} & O valor inicial da string. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 4 do ficheiro Stringobject.\+cpp.
+
+\mbox{\Hypertarget{classStringObject_a7db6683d04fe432e570458daf305500b}\label{classStringObject_a7db6683d04fe432e570458daf305500b}} 
+\index{String\+Object@{String\+Object}!````~String\+Object@{$\sim$\+String\+Object}}
+\index{````~String\+Object@{$\sim$\+String\+Object}!String\+Object@{String\+Object}}
+\subsubsection{\texorpdfstring{$\sim$\+String\+Object()}{~StringObject()}}
+{\footnotesize\ttfamily String\+Object\+::$\sim$\+String\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destrutor padrão. 
+
+
+
+Definido na linha 8 do ficheiro Stringobject.\+cpp.
+
+
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classStringObject_aedd2df1630c9b291ea17407b3f626573}\label{classStringObject_aedd2df1630c9b291ea17407b3f626573}} 
+\index{String\+Object@{String\+Object}!get\+String@{get\+String}}
+\index{get\+String@{get\+String}!String\+Object@{String\+Object}}
+\subsubsection{\texorpdfstring{get\+String()}{getString()}}
+{\footnotesize\ttfamily string String\+Object\+::get\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtém a sequência de caracteres presente na string. 
+
+\begin{DoxyReturn}{Retorna}
+Retorna a string como uma std\+::string. 
+\end{DoxyReturn}
+
+
+Definido na linha 16 do ficheiro Stringobject.\+cpp.
+
+
+
+Referências \+\_\+internal\+String.
+
+\mbox{\Hypertarget{classStringObject_a7d89db7df43b17354baf5337edd636b7}\label{classStringObject_a7d89db7df43b17354baf5337edd636b7}} 
+\index{String\+Object@{String\+Object}!object\+Type@{object\+Type}}
+\index{object\+Type@{object\+Type}!String\+Object@{String\+Object}}
+\subsubsection{\texorpdfstring{object\+Type()}{objectType()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a842c5e2e69277690b064bf363c017980}{Object\+Type} String\+Object\+::object\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Obtém o tipo do objeto (string). 
+
+\begin{DoxyReturn}{Retorna}
+O tipo do objeto. 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classObject_a08cee945bc224fc81f4448086625183d}{Object}.
+
+
+
+Definido na linha 12 do ficheiro Stringobject.\+cpp.
+
+
+
+Referências S\+T\+R\+I\+N\+G\+\_\+\+I\+N\+S\+T\+A\+N\+CE.
+
+\mbox{\Hypertarget{classStringObject_a96812d8ef025b1f897b09f816d0297f7}\label{classStringObject_a96812d8ef025b1f897b09f816d0297f7}} 
+\index{String\+Object@{String\+Object}!set\+String@{set\+String}}
+\index{set\+String@{set\+String}!String\+Object@{String\+Object}}
+\subsubsection{\texorpdfstring{set\+String()}{setString()}}
+{\footnotesize\ttfamily void String\+Object\+::set\+String (\begin{DoxyParamCaption}\item[{string}]{s }\end{DoxyParamCaption})}
+
+
+
+Substitui o valor da string. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em s} & O novo valor da string. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 20 do ficheiro Stringobject.\+cpp.
+
+
+
+Referências \+\_\+internal\+String.
+
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{classStringObject_a129b52ebca78da26c58175e45e1869cc}\label{classStringObject_a129b52ebca78da26c58175e45e1869cc}} 
+\index{String\+Object@{String\+Object}!\+\_\+internal\+String@{\+\_\+internal\+String}}
+\index{\+\_\+internal\+String@{\+\_\+internal\+String}!String\+Object@{String\+Object}}
+\subsubsection{\texorpdfstring{\+\_\+internal\+String}{\_internalString}}
+{\footnotesize\ttfamily string String\+Object\+::\+\_\+internal\+String\hspace{0.3cm}{\ttfamily [private]}}
+
+A string interna. 
+
+Definido na linha 51 do ficheiro Stringobject.\+h.
+
+
+
+Referenciado por get\+String() e set\+String().
+
+
+
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Stringobject_8h}{Stringobject.\+h}\item 
+src/\hyperlink{Stringobject_8cpp}{Stringobject.\+cpp}\end{DoxyCompactItemize}

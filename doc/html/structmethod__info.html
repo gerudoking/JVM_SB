@@ -87,53 +87,61 @@ $(document).ready(function(){initNavTree('structmethod__info.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="Methods_8h_source.html">Methods.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>&gt;</code></p>
 <div class="dynheader">
 Diagrama de colaboração para method_info:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmethod__info__coll__graph.png" border="0" usemap="#method__info_coll__map" alt="Collaboration graph"/></div>
 <map name="method__info_coll__map" id="method__info_coll__map">
-<area shape="rect" id="node2" href="structattribute__info.html" title="Protótipo da struct &quot;attribute_info&quot;. " alt="" coords="97,5,194,32"/>
-<area shape="rect" id="node4" href="structcode__attribute.html" title="Estrutura de dados para salvar atributos do tipo code. " alt="" coords="196,95,300,121"/>
-<area shape="rect" id="node3" href="uniont__info.html" title="Estrutura de dados que agrega informações sobre cada atributo lido. " alt="" coords="303,184,358,211"/>
-<area shape="rect" id="node5" href="structt__exception__table.html" title="Struct para salvar exceções identificadas. Será utilizada como componente da struct &quot;code_attribute&quot;..." alt="" coords="218,5,342,32"/>
-<area shape="rect" id="node6" href="structexception__attribute.html" title="exception_attribute" alt="" coords="325,95,457,121"/>
-<area shape="rect" id="node7" href="structconstantvalue__attribute.html" title="Struct para carregar o index dos atributos da &quot;constantpool&quot;. " alt="" coords="481,95,639,121"/>
+<area shape="rect" id="node2" href="structattribute__info.html" title="attribute_info" alt="" coords="669,193,766,220"/>
+<area shape="rect" id="node14" href="structCode__attribute.html" title="Code_attribute" alt="" coords="917,148,1024,175"/>
+<area shape="rect" id="node3" href="structLineNumberTable__attribute.html" title="LineNumberTable_attribute" alt="" coords="296,16,475,43"/>
+<area shape="rect" id="node4" href="structLineNumberTable.html" title="LineNumberTable" alt="" coords="9,16,133,43"/>
+<area shape="rect" id="node5" href="structConstantValue__attribute.html" title="ConstantValue_attribute" alt="" coords="304,67,467,93"/>
+<area shape="rect" id="node6" href="structSynthetic__attribute.html" title="Synthetic_attribute" alt="" coords="320,117,451,144"/>
+<area shape="rect" id="node7" href="structInnerClasses__attribute.html" title="InnerClasses_attribute" alt="" coords="309,168,462,195"/>
+<area shape="rect" id="node8" href="structClass.html" title="Class" alt="" coords="43,168,99,195"/>
+<area shape="rect" id="node9" href="structSourceFile__attribute.html" title="SourceFile_attribute" alt="" coords="316,219,455,245"/>
+<area shape="rect" id="node10" href="structDeprecated__attribute.html" title="Deprecated_attribute" alt="" coords="314,269,457,296"/>
+<area shape="rect" id="node11" href="structLocalVariableTable__attribute.html" title="LocalVariableTable\l_attribute" alt="" coords="319,321,451,362"/>
+<area shape="rect" id="node12" href="structLocalVariableTable.html" title="LocalVariableTable" alt="" coords="5,328,137,355"/>
+<area shape="rect" id="node13" href="structExceptions__attribute.html" title="Exceptions_attribute" alt="" coords="315,387,456,413"/>
+<area shape="rect" id="node15" href="structExceptionTable.html" title="ExceptionTable" alt="" coords="661,103,773,129"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legenda</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Atributos Públicos</h2></td></tr>
-<tr class="memitem:a8fc68aba419f2617deda879c467f5410"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmethod__info.html#a8fc68aba419f2617deda879c467f5410">access_flags</a></td></tr>
-<tr class="separator:a8fc68aba419f2617deda879c467f5410"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0ba3d6d566432e74eed5c37cd998c14"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmethod__info.html#af0ba3d6d566432e74eed5c37cd998c14">name_index</a></td></tr>
-<tr class="separator:af0ba3d6d566432e74eed5c37cd998c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abccd6a5202d4c0ee1be6b89692d0352a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmethod__info.html#abccd6a5202d4c0ee1be6b89692d0352a">descriptor_index</a></td></tr>
-<tr class="separator:abccd6a5202d4c0ee1be6b89692d0352a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e711e4dfb8181f7dce16c6f640ba734"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmethod__info.html#a9e711e4dfb8181f7dce16c6f640ba734">attributes_count</a></td></tr>
-<tr class="separator:a9e711e4dfb8181f7dce16c6f640ba734"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b657027a141cdbc94ded28607c98be5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmethod__info.html#a3b657027a141cdbc94ded28607c98be5">access_flags</a></td></tr>
+<tr class="separator:a3b657027a141cdbc94ded28607c98be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab91d62d0658b77bba83f6bb685e3bbb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmethod__info.html#ab91d62d0658b77bba83f6bb685e3bbb9">name_index</a></td></tr>
+<tr class="separator:ab91d62d0658b77bba83f6bb685e3bbb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7713103e0c8d060630ad62774fb9be37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmethod__info.html#a7713103e0c8d060630ad62774fb9be37">descriptor_index</a></td></tr>
+<tr class="separator:a7713103e0c8d060630ad62774fb9be37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9e5e1e2fc850806addadd6deab8565d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmethod__info.html#ad9e5e1e2fc850806addadd6deab8565d">attributes_count</a></td></tr>
+<tr class="separator:ad9e5e1e2fc850806addadd6deab8565d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ce4caaa03680c91f548558a38647ad8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structattribute__info.html">attribute_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmethod__info.html#a8ce4caaa03680c91f548558a38647ad8">attributes</a></td></tr>
 <tr class="separator:a8ce4caaa03680c91f548558a38647ad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock">
-<p class="definition">Definido na linha <a class="el" href="Methods_8h_source.html#l00016">16</a> do ficheiro <a class="el" href="Methods_8h_source.html">Methods.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00107">107</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
 </div><h2 class="groupheader">Documentação dos dados membro</h2>
-<a id="a8fc68aba419f2617deda879c467f5410"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fc68aba419f2617deda879c467f5410">&#9670;&nbsp;</a></span>access_flags</h2>
+<a id="a3b657027a141cdbc94ded28607c98be5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b657027a141cdbc94ded28607c98be5">&#9670;&nbsp;</a></span>access_flags</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t method_info::access_flags</td>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a> method_info::access_flags</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="Methods_8h_source.html#l00017">17</a> do ficheiro <a class="el" href="Methods_8h_source.html">Methods.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00108">108</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="Methods_8cpp_source.html#l00067">gravarArquivoMethod()</a>, <a class="el" href="Methods_8cpp_source.html#l00035">imprimirMethod()</a>, <a class="el" href="Methods_8cpp_source.html#l00008">lerMethod()</a> e <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00297">LeitorExibidor::verificarMain()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00331">exibe_Methods()</a>, <a class="el" href="Frame_8cpp_source.html#l00007">Frame::Frame()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00305">printArquivo_Methods()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00474">LeitorExibidor::setMethods()</a>.</p>
 
 </div>
 </div>
@@ -149,68 +157,68 @@ Atributos Públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="Methods_8h_source.html#l00021">21</a> do ficheiro <a class="el" href="Methods_8h_source.html">Methods.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00112">112</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="Frame_8cpp_source.html#l00097">FrameStack::adicionarFrame()</a>, <a class="el" href="Frame_8cpp_source.html#l00008">FrameStack::FrameStack()</a>, <a class="el" href="Methods_8cpp_source.html#l00067">gravarArquivoMethod()</a>, <a class="el" href="Methods_8cpp_source.html#l00035">imprimirMethod()</a>, <a class="el" href="Frame_8cpp_source.html#l00091">FrameStack::inicializarPC()</a>, <a class="el" href="Methods_8cpp_source.html#l00008">lerMethod()</a>, <a class="el" href="Operations_8cpp_source.html#l01867">Operations::lookupswitch()</a> e <a class="el" href="Operations_8cpp_source.html#l01836">Operations::tableswitch()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="Frame_8cpp_source.html#l00126">Frame::encontrarAttributes()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00331">exibe_Methods()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00305">printArquivo_Methods()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00474">LeitorExibidor::setMethods()</a>.</p>
 
 </div>
 </div>
-<a id="a9e711e4dfb8181f7dce16c6f640ba734"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e711e4dfb8181f7dce16c6f640ba734">&#9670;&nbsp;</a></span>attributes_count</h2>
+<a id="ad9e5e1e2fc850806addadd6deab8565d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9e5e1e2fc850806addadd6deab8565d">&#9670;&nbsp;</a></span>attributes_count</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t method_info::attributes_count</td>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a> method_info::attributes_count</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="Methods_8h_source.html#l00020">20</a> do ficheiro <a class="el" href="Methods_8h_source.html">Methods.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00111">111</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="Methods_8cpp_source.html#l00067">gravarArquivoMethod()</a>, <a class="el" href="Methods_8cpp_source.html#l00035">imprimirMethod()</a> e <a class="el" href="Methods_8cpp_source.html#l00008">lerMethod()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="Frame_8cpp_source.html#l00126">Frame::encontrarAttributes()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00331">exibe_Methods()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00305">printArquivo_Methods()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00474">LeitorExibidor::setMethods()</a>.</p>
 
 </div>
 </div>
-<a id="abccd6a5202d4c0ee1be6b89692d0352a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abccd6a5202d4c0ee1be6b89692d0352a">&#9670;&nbsp;</a></span>descriptor_index</h2>
+<a id="a7713103e0c8d060630ad62774fb9be37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7713103e0c8d060630ad62774fb9be37">&#9670;&nbsp;</a></span>descriptor_index</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t method_info::descriptor_index</td>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a> method_info::descriptor_index</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="Methods_8h_source.html#l00019">19</a> do ficheiro <a class="el" href="Methods_8h_source.html">Methods.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00110">110</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="Methods_8cpp_source.html#l00067">gravarArquivoMethod()</a>, <a class="el" href="Methods_8cpp_source.html#l00035">imprimirMethod()</a>, <a class="el" href="Methods_8cpp_source.html#l00008">lerMethod()</a>, <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00538">LeitorExibidor::obterClassThatHasSerachedMethod()</a>, <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00515">LeitorExibidor::obterMethod()</a> e <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00297">LeitorExibidor::verificarMain()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00331">exibe_Methods()</a>, <a class="el" href="Frame_8cpp_source.html#l00094">Frame::obterMethodNamed()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00305">printArquivo_Methods()</a>, <a class="el" href="LeitorExibidor_8cpp_source.html#l00474">LeitorExibidor::setMethods()</a> e <a class="el" href="Operations_8cpp_source.html#l00041">Operations::verificarMetodoExiste()</a>.</p>
 
 </div>
 </div>
-<a id="af0ba3d6d566432e74eed5c37cd998c14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0ba3d6d566432e74eed5c37cd998c14">&#9670;&nbsp;</a></span>name_index</h2>
+<a id="ab91d62d0658b77bba83f6bb685e3bbb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab91d62d0658b77bba83f6bb685e3bbb9">&#9670;&nbsp;</a></span>name_index</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t method_info::name_index</td>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a> method_info::name_index</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="Methods_8h_source.html#l00018">18</a> do ficheiro <a class="el" href="Methods_8h_source.html">Methods.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00109">109</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="Methods_8cpp_source.html#l00067">gravarArquivoMethod()</a>, <a class="el" href="Methods_8cpp_source.html#l00035">imprimirMethod()</a>, <a class="el" href="Methods_8cpp_source.html#l00008">lerMethod()</a>, <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00538">LeitorExibidor::obterClassThatHasSerachedMethod()</a>, <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00515">LeitorExibidor::obterMethod()</a>, <a class="el" href="Operations_8cpp_source.html#l02093">Operations::putfield()</a>, <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00320">LeitorExibidor::verificarClinit()</a> e <a class="el" href="ClasseLeitorExibidor_8cpp_source.html#l00297">LeitorExibidor::verificarMain()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00331">exibe_Methods()</a>, <a class="el" href="Frame_8cpp_source.html#l00094">Frame::obterMethodNamed()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00305">printArquivo_Methods()</a>, <a class="el" href="LeitorExibidor_8cpp_source.html#l00474">LeitorExibidor::setMethods()</a> e <a class="el" href="Operations_8cpp_source.html#l00041">Operations::verificarMetodoExiste()</a>.</p>
 
 </div>
 </div>
 <hr/>A documentação para esta estrutura foi gerada a partir do seguinte ficheiro:<ul>
-<li>include/<a class="el" href="Methods_8h_source.html">Methods.h</a></li>
+<li>include/<a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

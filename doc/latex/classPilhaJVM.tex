@@ -2,355 +2,232 @@
 \label{classPilhaJVM}\index{Pilha\+J\+VM@{Pilha\+J\+VM}}
 
 
-Classe de pilha de frames.  
-
-
-
-
 {\ttfamily \#include $<$Pilha\+J\+V\+M.\+h$>$}
 
-
-
-Diagrama de colaboração para Pilha\+J\+VM\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classPilhaJVM__coll__graph}
-\end{center}
-\end{figure}
 \subsection*{Membros públicos}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classPilhaJVM_a9acc6081073376a6f658c9dcfd3f6011}{Pilha\+J\+VM} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
-\begin{DoxyCompactList}\small\item\em Contrutor da pilha de frame. \end{DoxyCompactList}\item 
-void \hyperlink{classPilhaJVM_a43252c128cf31ac202373d6b66868a77}{atualizar\+Argumentos} (vector$<$ \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} $>$ vector\+Argumentos)
-\begin{DoxyCompactList}\small\item\em Configura os argumentos. \end{DoxyCompactList}\item 
-void \hyperlink{classPilhaJVM_a8c87f8255b289be137dd09360d135e86}{executar\+Metodos} ()
-\begin{DoxyCompactList}\small\item\em Executa o método atual e os métodos chamados. \end{DoxyCompactList}\item 
-void \hyperlink{classPilhaJVM_a9add990f9c258d39d2fcd791398c96ac}{adicionar\+Frame} (\hyperlink{structMethod__info}{Method\+\_\+info} method, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool)
-\begin{DoxyCompactList}\small\item\em Adiciona um frame no topo da pilha. \end{DoxyCompactList}\item 
-void \hyperlink{classPilhaJVM_a6a47624a1e9923e59258454e6e6d1271}{adicionar\+Frame} (\hyperlink{structMethod__info}{Method\+\_\+info} $\ast$method, \hyperlink{structCp__info}{Cp\+\_\+info} $\ast$constant\+Pool)
-\begin{DoxyCompactList}\small\item\em Adiciona um frame no topo da pilha. \end{DoxyCompactList}\item 
-void \hyperlink{classPilhaJVM_a4f83f8d59b436cb1813a2a35e1538045}{pop\+Remover\+Objetos} ()
-\begin{DoxyCompactList}\small\item\em Dá um pop no método atual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{classPilhaJVM_a7995ffc4e2ca9b149b83293cbbe0ea1b}{$\sim$\+Pilha\+J\+VM} ()
+\begin{DoxyCompactList}\small\item\em Destrutor padrão. \end{DoxyCompactList}\item 
+void \hyperlink{classPilhaJVM_a64d7185bc812d3c81e5270c54c212e07}{add\+Frame} (\hyperlink{classFrame}{Frame} $\ast$\hyperlink{classframe}{frame})
+\begin{DoxyCompactList}\small\item\em Adiciona um frame na pilha da J\+VM. \end{DoxyCompactList}\item 
+\hyperlink{classFrame}{Frame} $\ast$ \hyperlink{classPilhaJVM_aa0e43da476df6147c86c8cc3d6899718}{get\+Top\+Frame} ()
+\begin{DoxyCompactList}\small\item\em Obtém o frame no topo da pilha da J\+VM. \end{DoxyCompactList}\item 
+bool \hyperlink{classPilhaJVM_a8ae0ed77b894fa95e73ea4077ebdeea2}{destroy\+Top\+Frame} ()
+\begin{DoxyCompactList}\small\item\em Remove o frame do topo da pilha e o libera da memória. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classPilhaJVM_a22d7bcd7db598b00ae219c9c2efb2c88}{size} ()
+\begin{DoxyCompactList}\small\item\em Obtém o tamanho da pilha da J\+VM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membros públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classPilhaJVM}{Pilha\+J\+VM} \& \hyperlink{classPilhaJVM_a13bf1c43de7819ea7761616f7a04c3b9}{get\+Instance} ()
+\begin{DoxyCompactList}\small\item\em Obter a única instância da pilha. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Membros privados}
 \begin{DoxyCompactItemize}
 \item 
-bool \hyperlink{classPilhaJVM_a914a4707e58e23e8913fcdc0c53f8c5c}{proxima\+Instrucao} ()
-\begin{DoxyCompactList}\small\item\em Atualiza o PC, se não for possível atualizar, dá um pop no método atual. \end{DoxyCompactList}\item 
-void \hyperlink{classPilhaJVM_a08adb78983b512cf3d97becfa2e9a5f0}{inicializar\+PC} (\hyperlink{PilhaJVM_8h_acc380914b41a084dcc8e4b38fb200145}{Frame} $\ast$\hyperlink{classPilhaJVM_adebac9c22fbb328afca1d2a98e6d486c}{frame})
-\begin{DoxyCompactList}\small\item\em Põe o PC na posição inicial. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{classPilhaJVM_a7f0451ca9cf124f5098d43928566fadf}{Pilha\+J\+VM} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão. \end{DoxyCompactList}\item 
+\hyperlink{classPilhaJVM_a051085f51d79d3333356c5d36bef4687}{Pilha\+J\+VM} (\hyperlink{classPilhaJVM}{Pilha\+J\+VM} const \&)
+\item 
+void \hyperlink{classPilhaJVM_a636c01ded057b339aa00486003db9037}{operator=} (\hyperlink{classPilhaJVM}{Pilha\+J\+VM} const \&)
+\end{DoxyCompactItemize}
 \subsection*{Atributos Privados}
 \begin{DoxyCompactItemize}
 \item 
-stack$<$ \hyperlink{PilhaJVM_8h_acc380914b41a084dcc8e4b38fb200145}{Frame} $\ast$ $>$ \hyperlink{classPilhaJVM_a4d70c8b3d6fbddb38e943dc8b1a00c2d}{stack\+Frame}
-\item 
-\hyperlink{PilhaJVM_8h_acc380914b41a084dcc8e4b38fb200145}{Frame} \hyperlink{classPilhaJVM_adebac9c22fbb328afca1d2a98e6d486c}{frame}
-\item 
-int \hyperlink{classPilhaJVM_a90e6f9da43b72798ea0331c57b72af09}{opcode}
-\begin{DoxyCompactList}\small\item\em Contêm o opcode que corresponde a uma instrução. \end{DoxyCompactList}\end{DoxyCompactItemize}
+stack$<$ \hyperlink{classFrame}{Frame} $\ast$ $>$ \hyperlink{classPilhaJVM_a09290179ef6c914aa32297ab9dae94ed}{\+\_\+frame\+Stack}
+\end{DoxyCompactItemize}
 
 
 \subsection{Descrição detalhada}
-Classe de pilha de frames. 
 
-Responsável por todas as operações que usam o frame. 
 
-Definido na linha 37 do ficheiro Pilha\+J\+V\+M.\+h.
+Definido na linha 18 do ficheiro Pilha\+J\+V\+M.\+h.
 
 
 
 \subsection{Documentação dos Construtores \& Destrutor}
-\mbox{\Hypertarget{classPilhaJVM_a9acc6081073376a6f658c9dcfd3f6011}\label{classPilhaJVM_a9acc6081073376a6f658c9dcfd3f6011}} 
+\mbox{\Hypertarget{classPilhaJVM_a7995ffc4e2ca9b149b83293cbbe0ea1b}\label{classPilhaJVM_a7995ffc4e2ca9b149b83293cbbe0ea1b}} 
+\index{Pilha\+J\+VM@{Pilha\+J\+VM}!````~Pilha\+J\+VM@{$\sim$\+Pilha\+J\+VM}}
+\index{````~Pilha\+J\+VM@{$\sim$\+Pilha\+J\+VM}!Pilha\+J\+VM@{Pilha\+J\+VM}}
+\subsubsection{\texorpdfstring{$\sim$\+Pilha\+J\+V\+M()}{~PilhaJVM()}}
+{\footnotesize\ttfamily Pilha\+J\+V\+M\+::$\sim$\+Pilha\+J\+VM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destrutor padrão. 
+
+
+
+Definido na linha 9 do ficheiro Pilha\+J\+V\+M.\+cpp.
+
+\mbox{\Hypertarget{classPilhaJVM_a7f0451ca9cf124f5098d43928566fadf}\label{classPilhaJVM_a7f0451ca9cf124f5098d43928566fadf}} 
 \index{Pilha\+J\+VM@{Pilha\+J\+VM}!Pilha\+J\+VM@{Pilha\+J\+VM}}
 \index{Pilha\+J\+VM@{Pilha\+J\+VM}!Pilha\+J\+VM@{Pilha\+J\+VM}}
-\subsubsection{\texorpdfstring{Pilha\+J\+V\+M()}{PilhaJVM()}}
-{\footnotesize\ttfamily Pilha\+J\+V\+M\+::\+Pilha\+J\+VM (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{Pilha\+J\+V\+M()}{PilhaJVM()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Pilha\+J\+V\+M\+::\+Pilha\+J\+VM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Contrutor da pilha de frame. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em class\+File} & O que é lido do arquivo .class. \\
-\hline
-\end{DoxyParams}
-
-
-Definido na linha 8 do ficheiro Pilha\+J\+V\+M.\+cpp.
+Construtor padrão. 
 
 
 
-Referências Method\+\_\+info\+::attributes, Operations\+::atualizar\+Frame(), Method\+Area\+::atualizar\+Pilha\+J\+V\+M(), Operations\+::atualizar\+Pilha\+J\+V\+M(), Operations\+::atualizar\+Stack\+Frame(), T\+\_\+info\+::code\+Attribute, frame\+\_\+s\+::constant\+Pool, frame, Attribute\+\_\+info\+::info, inicializar\+P\+C(), frame\+\_\+s\+::local\+Variables, Code\+\_\+attribute\+::max\+\_\+locals, Code\+\_\+attribute\+::max\+\_\+stack, frame\+\_\+s\+::method, Class\+File\+::obter\+Constant\+Pool(), Class\+File\+::obter\+Main(), opcode, frame\+\_\+s\+::operands\+Stack e stack\+Frame.
+Definido na linha 5 do ficheiro Pilha\+J\+V\+M.\+cpp.
 
-Grafo de chamadas desta função\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classPilhaJVM_a9acc6081073376a6f658c9dcfd3f6011_cgraph}
-\end{center}
-\end{figure}
+\mbox{\Hypertarget{classPilhaJVM_a051085f51d79d3333356c5d36bef4687}\label{classPilhaJVM_a051085f51d79d3333356c5d36bef4687}} 
+\index{Pilha\+J\+VM@{Pilha\+J\+VM}!Pilha\+J\+VM@{Pilha\+J\+VM}}
+\index{Pilha\+J\+VM@{Pilha\+J\+VM}!Pilha\+J\+VM@{Pilha\+J\+VM}}
+\subsubsection{\texorpdfstring{Pilha\+J\+V\+M()}{PilhaJVM()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Pilha\+J\+V\+M\+::\+Pilha\+J\+VM (\begin{DoxyParamCaption}\item[{\hyperlink{classPilhaJVM}{Pilha\+J\+VM} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
 
 
 \subsection{Documentação dos métodos}
-\mbox{\Hypertarget{classPilhaJVM_a9add990f9c258d39d2fcd791398c96ac}\label{classPilhaJVM_a9add990f9c258d39d2fcd791398c96ac}} 
-\index{Pilha\+J\+VM@{Pilha\+J\+VM}!adicionar\+Frame@{adicionar\+Frame}}
-\index{adicionar\+Frame@{adicionar\+Frame}!Pilha\+J\+VM@{Pilha\+J\+VM}}
-\subsubsection{\texorpdfstring{adicionar\+Frame()}{adicionarFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void Pilha\+J\+V\+M\+::adicionar\+Frame (\begin{DoxyParamCaption}\item[{\hyperlink{structMethod__info}{Method\+\_\+info}}]{method,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classPilhaJVM_a64d7185bc812d3c81e5270c54c212e07}\label{classPilhaJVM_a64d7185bc812d3c81e5270c54c212e07}} 
+\index{Pilha\+J\+VM@{Pilha\+J\+VM}!add\+Frame@{add\+Frame}}
+\index{add\+Frame@{add\+Frame}!Pilha\+J\+VM@{Pilha\+J\+VM}}
+\subsubsection{\texorpdfstring{add\+Frame()}{addFrame()}}
+{\footnotesize\ttfamily void Pilha\+J\+V\+M\+::add\+Frame (\begin{DoxyParamCaption}\item[{\hyperlink{classFrame}{Frame} $\ast$}]{frame }\end{DoxyParamCaption})}
 
 
 
-Adiciona um frame no topo da pilha. 
+Adiciona um frame na pilha da J\+VM. 
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em method} & Método no qual o frame será criado. \\
-\hline
-{\em constant\+Pool} & Um ponteiro para o pool de constantes. \\
+{\em frame} & Um ponteiro para o frame que será adicionado na pilha. \\
 \hline
 \end{DoxyParams}
 
 
-Definido na linha 97 do ficheiro Pilha\+J\+V\+M.\+cpp.
+Definido na linha 13 do ficheiro Pilha\+J\+V\+M.\+cpp.
 
 
 
-Referências Method\+\_\+info\+::attributes, Operations\+::atualizar\+Frame(), Method\+Area\+::atualizar\+Pilha\+J\+V\+M(), Operations\+::atualizar\+Pilha\+J\+V\+M(), Operations\+::atualizar\+Stack\+Frame(), T\+\_\+info\+::code\+Attribute, frame\+\_\+s\+::constant\+Pool, frame, Attribute\+\_\+info\+::info, inicializar\+P\+C(), frame\+\_\+s\+::local\+Variables, Code\+\_\+attribute\+::max\+\_\+locals, Code\+\_\+attribute\+::max\+\_\+stack, frame\+\_\+s\+::method, frame\+\_\+s\+::operands\+Stack e stack\+Frame.
+Referências \+\_\+frame\+Stack.
 
 
 
-Referenciado por Method\+Area\+::adicionar\+Classe(), adicionar\+Frame(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic() e Operations\+::invokevirtual().
+Referenciado por Method\+Area\+::carregar\+Class\+Named(), Operations\+::executar\+Metodos(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic() e Operations\+::invokevirtual().
 
-Grafo de chamadas desta função\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classPilhaJVM_a9add990f9c258d39d2fcd791398c96ac_cgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{classPilhaJVM_a6a47624a1e9923e59258454e6e6d1271}\label{classPilhaJVM_a6a47624a1e9923e59258454e6e6d1271}} 
-\index{Pilha\+J\+VM@{Pilha\+J\+VM}!adicionar\+Frame@{adicionar\+Frame}}
-\index{adicionar\+Frame@{adicionar\+Frame}!Pilha\+J\+VM@{Pilha\+J\+VM}}
-\subsubsection{\texorpdfstring{adicionar\+Frame()}{adicionarFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void Pilha\+J\+V\+M\+::adicionar\+Frame (\begin{DoxyParamCaption}\item[{\hyperlink{structMethod__info}{Method\+\_\+info} $\ast$}]{method,  }\item[{\hyperlink{structCp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classPilhaJVM_a8ae0ed77b894fa95e73ea4077ebdeea2}\label{classPilhaJVM_a8ae0ed77b894fa95e73ea4077ebdeea2}} 
+\index{Pilha\+J\+VM@{Pilha\+J\+VM}!destroy\+Top\+Frame@{destroy\+Top\+Frame}}
+\index{destroy\+Top\+Frame@{destroy\+Top\+Frame}!Pilha\+J\+VM@{Pilha\+J\+VM}}
+\subsubsection{\texorpdfstring{destroy\+Top\+Frame()}{destroyTopFrame()}}
+{\footnotesize\ttfamily bool Pilha\+J\+V\+M\+::destroy\+Top\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Adiciona um frame no topo da pilha. 
+Remove o frame do topo da pilha e o libera da memória. 
 
+\begin{DoxyReturn}{Retorna}
+Retorna {\ttfamily true} caso o frame foi deletado, e {\ttfamily false} caso contrário. 
+\end{DoxyReturn}
 
-\begin{DoxyParams}{Parâmetros}
-{\em method} & Ponteiro para o método no qual o frame será criado. \\
-\hline
-{\em constant\+Pool} & Um ponteiro para o pool de constantes. \\
-\hline
-\end{DoxyParams}
 
+Definido na linha 31 do ficheiro Pilha\+J\+V\+M.\+cpp.
 
-Definido na linha 119 do ficheiro Pilha\+J\+V\+M.\+cpp.
 
 
+Referências \+\_\+frame\+Stack.
 
-Referências adicionar\+Frame().
 
-Grafo de chamadas desta função\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classPilhaJVM_a6a47624a1e9923e59258454e6e6d1271_cgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{classPilhaJVM_a43252c128cf31ac202373d6b66868a77}\label{classPilhaJVM_a43252c128cf31ac202373d6b66868a77}} 
-\index{Pilha\+J\+VM@{Pilha\+J\+VM}!atualizar\+Argumentos@{atualizar\+Argumentos}}
-\index{atualizar\+Argumentos@{atualizar\+Argumentos}!Pilha\+J\+VM@{Pilha\+J\+VM}}
-\subsubsection{\texorpdfstring{atualizar\+Argumentos()}{atualizarArgumentos()}}
-{\footnotesize\ttfamily void Pilha\+J\+V\+M\+::atualizar\+Argumentos (\begin{DoxyParamCaption}\item[{vector$<$ \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} $>$}]{vector\+Argumentos }\end{DoxyParamCaption})}
 
+Referenciado por Operations\+::areturn(), Operations\+::dreturn(), Operations\+::freturn(), Operations\+::func\+\_\+return(), Operations\+::ireturn() e Operations\+::lreturn().
 
+\mbox{\Hypertarget{classPilhaJVM_a13bf1c43de7819ea7761616f7a04c3b9}\label{classPilhaJVM_a13bf1c43de7819ea7761616f7a04c3b9}} 
+\index{Pilha\+J\+VM@{Pilha\+J\+VM}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Pilha\+J\+VM@{Pilha\+J\+VM}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily static \hyperlink{classPilhaJVM}{Pilha\+J\+VM}\& Pilha\+J\+V\+M\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-Configura os argumentos. 
 
 
-\begin{DoxyParams}{Parâmetros}
-{\em vector\+Argumentos} & Vetor com os argumentos a serem copiados para o vetor de variáveis locais \\
-\hline
-\end{DoxyParams}
+Obter a única instância da pilha. 
 
+\begin{DoxyReturn}{Retorna}
+A instância da pilha. 
+\end{DoxyReturn}
 
-Definido na linha 124 do ficheiro Pilha\+J\+V\+M.\+cpp.
 
+Definido na linha 25 do ficheiro Pilha\+J\+V\+M.\+h.
 
 
-Referências B\+I\+TS, stack\+Frame, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE, T\+Y\+P\+E\+\_\+\+L\+O\+NG e T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE.
 
+Referenciado por Operations\+::aaload(), Operations\+::aastore(), Operations\+::aconst\+\_\+null(), Operations\+::aload(), Operations\+::aload\+\_\+0(), Operations\+::aload\+\_\+1(), Operations\+::aload\+\_\+2(), Operations\+::aload\+\_\+3(), Operations\+::anewarray(), Operations\+::areturn(), Operations\+::arraylength(), Operations\+::astore(), Operations\+::astore\+\_\+0(), Operations\+::astore\+\_\+1(), Operations\+::astore\+\_\+2(), Operations\+::astore\+\_\+3(), Operations\+::athrow(), Operations\+::baload(), Operations\+::bastore(), Operations\+::bipush(), Operations\+::caload(), Method\+Area\+::carregar\+Class\+Named(), Operations\+::castore(), Operations\+::checkcast(), Operations\+::d2f(), Operations\+::d2i(), Operations\+::d2l(), Operations\+::dadd(), Operations\+::daload(), Operations\+::dastore(), Operations\+::dcmpg(), Operations\+::dcmpl(), Operations\+::dconst\+\_\+0(), Operations\+::dconst\+\_\+1(), Operations\+::ddiv(), Operations\+::dload(), Operations\+::dload\+\_\+0(), Operations\+::dload\+\_\+1(), Operations\+::dload\+\_\+2(), Operations\+::dload\+\_\+3(), Operations\+::dmul(), Operations\+::dneg(), Operations\+::drem(), Operations\+::dreturn(), Operations\+::dstore(), Operations\+::dstore\+\_\+0(), Operations\+::dstore\+\_\+1(), Operations\+::dstore\+\_\+2(), Operations\+::dstore\+\_\+3(), Operations\+::dsub(), Operations\+::dup(), Operations\+::dup2(), Operations\+::dup2\+\_\+x1(), Operations\+::dup2\+\_\+x2(), Operations\+::dup\+\_\+x1(), Operations\+::dup\+\_\+x2(), Operations\+::executar\+Metodos(), Operations\+::f2d(), Operations\+::f2i(), Operations\+::f2l(), Operations\+::fadd(), Operations\+::faload(), Operations\+::fastore(), Operations\+::fcmpg(), Operations\+::fcmpl(), Operations\+::fconst\+\_\+0(), Operations\+::fconst\+\_\+1(), Operations\+::fconst\+\_\+2(), Operations\+::fdiv(), Operations\+::fload(), Operations\+::fload\+\_\+0(), Operations\+::fload\+\_\+1(), Operations\+::fload\+\_\+2(), Operations\+::fload\+\_\+3(), Operations\+::fmul(), Operations\+::fneg(), Operations\+::frem(), Operations\+::freturn(), Operations\+::fstore(), Operations\+::fstore\+\_\+0(), Operations\+::fstore\+\_\+1(), Operations\+::fstore\+\_\+2(), Operations\+::fstore\+\_\+3(), Operations\+::fsub(), Operations\+::func\+\_\+goto(), Operations\+::func\+\_\+new(), Operations\+::func\+\_\+return(), Operations\+::getfield(), Operations\+::getstatic(), Operations\+::goto\+\_\+w(), Operations\+::i2b(), Operations\+::i2c(), Operations\+::i2d(), Operations\+::i2f(), Operations\+::i2l(), Operations\+::i2s(), Operations\+::iadd(), Operations\+::iaload(), Operations\+::iand(), Operations\+::iastore(), Operations\+::iconst\+\_\+0(), Operations\+::iconst\+\_\+1(), Operations\+::iconst\+\_\+2(), Operations\+::iconst\+\_\+3(), Operations\+::iconst\+\_\+4(), Operations\+::iconst\+\_\+5(), Operations\+::iconst\+\_\+m1(), Operations\+::idiv(), Operations\+::if\+\_\+acmpeq(), Operations\+::if\+\_\+acmpne(), Operations\+::if\+\_\+icmpeq(), Operations\+::if\+\_\+icmpge(), Operations\+::if\+\_\+icmpgt(), Operations\+::if\+\_\+icmple(), Operations\+::if\+\_\+icmplt(), Operations\+::if\+\_\+icmpne(), Operations\+::ifeq(), Operations\+::ifge(), Operations\+::ifgt(), Operations\+::ifle(), Operations\+::iflt(), Operations\+::ifne(), Operations\+::ifnonnull(), Operations\+::ifnull(), Operations\+::iinc(), Operations\+::iload(), Operations\+::iload\+\_\+0(), Operations\+::iload\+\_\+1(), Operations\+::iload\+\_\+2(), Operations\+::iload\+\_\+3(), Operations\+::imul(), Operations\+::ineg(), Operations\+::instanceof(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::ior(), Operations\+::irem(), Operations\+::ireturn(), Operations\+::ishl(), Operations\+::ishr(), Operations\+::istore(), Operations\+::istore\+\_\+0(), Operations\+::istore\+\_\+1(), Operations\+::istore\+\_\+2(), Operations\+::istore\+\_\+3(), Operations\+::isub(), Operations\+::iushr(), Operations\+::ixor(), Operations\+::jsr(), Operations\+::jsr\+\_\+w(), Operations\+::l2d(), Operations\+::l2f(), Operations\+::l2i(), Operations\+::ladd(), Operations\+::laload(), Operations\+::land(), Operations\+::lastore(), Operations\+::lcmp(), Operations\+::lconst\+\_\+0(), Operations\+::lconst\+\_\+1(), Operations\+::ldc(), Operations\+::ldc2\+\_\+w(), Operations\+::ldc\+\_\+w(), Operations\+::ldiv(), Operations\+::lload(), Operations\+::lload\+\_\+0(), Operations\+::lload\+\_\+1(), Operations\+::lload\+\_\+2(), Operations\+::lload\+\_\+3(), Operations\+::lmul(), Operations\+::lneg(), Operations\+::lookupswitch(), Operations\+::lor(), Operations\+::lrem(), Operations\+::lreturn(), Operations\+::lshl(), Operations\+::lshr(), Operations\+::lstore(), Operations\+::lstore\+\_\+0(), Operations\+::lstore\+\_\+1(), Operations\+::lstore\+\_\+2(), Operations\+::lstore\+\_\+3(), Operations\+::lsub(), Operations\+::lushr(), Operations\+::lxor(), Operations\+::monitorenter(), Operations\+::monitorexit(), Operations\+::multianewarray(), Operations\+::newarray(), Operations\+::nop(), Operations\+::pop(), Operations\+::pop2(), Operations\+::putfield(), Operations\+::putstatic(), Operations\+::ret(), Operations\+::saload(), Operations\+::sastore(), Operations\+::sipush(), Operations\+::swap(), Operations\+::tableswitch() e Operations\+::wide().
 
+\mbox{\Hypertarget{classPilhaJVM_aa0e43da476df6147c86c8cc3d6899718}\label{classPilhaJVM_aa0e43da476df6147c86c8cc3d6899718}} 
+\index{Pilha\+J\+VM@{Pilha\+J\+VM}!get\+Top\+Frame@{get\+Top\+Frame}}
+\index{get\+Top\+Frame@{get\+Top\+Frame}!Pilha\+J\+VM@{Pilha\+J\+VM}}
+\subsubsection{\texorpdfstring{get\+Top\+Frame()}{getTopFrame()}}
+{\footnotesize\ttfamily \hyperlink{classFrame}{Frame} $\ast$ Pilha\+J\+V\+M\+::get\+Top\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Referenciado por Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic() e Operations\+::invokevirtual().
 
-\mbox{\Hypertarget{classPilhaJVM_a8c87f8255b289be137dd09360d135e86}\label{classPilhaJVM_a8c87f8255b289be137dd09360d135e86}} 
-\index{Pilha\+J\+VM@{Pilha\+J\+VM}!executar\+Metodos@{executar\+Metodos}}
-\index{executar\+Metodos@{executar\+Metodos}!Pilha\+J\+VM@{Pilha\+J\+VM}}
-\subsubsection{\texorpdfstring{executar\+Metodos()}{executarMetodos()}}
-{\footnotesize\ttfamily void Pilha\+J\+V\+M\+::executar\+Metodos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+Obtém o frame no topo da pilha da J\+VM. 
 
+\begin{DoxyReturn}{Retorna}
+Retorna o frame no topo da pilha. Caso a pilha esteja vazia, é retornado {\ttfamily N\+U\+LL}. 
+\end{DoxyReturn}
 
-Executa o método atual e os métodos chamados. 
 
+Definido na linha 23 do ficheiro Pilha\+J\+V\+M.\+cpp.
 
 
-Definido na linha 35 do ficheiro Pilha\+J\+V\+M.\+cpp.
 
+Referências \+\_\+frame\+Stack.
 
 
-Referências Operations\+::executar\+Operacao(), opcode e proxima\+Instrucao().
 
+Referenciado por Operations\+::aaload(), Operations\+::aastore(), Operations\+::aconst\+\_\+null(), Operations\+::aload(), Operations\+::aload\+\_\+0(), Operations\+::aload\+\_\+1(), Operations\+::aload\+\_\+2(), Operations\+::aload\+\_\+3(), Operations\+::anewarray(), Operations\+::areturn(), Operations\+::arraylength(), Operations\+::astore(), Operations\+::astore\+\_\+0(), Operations\+::astore\+\_\+1(), Operations\+::astore\+\_\+2(), Operations\+::astore\+\_\+3(), Operations\+::athrow(), Operations\+::baload(), Operations\+::bastore(), Operations\+::bipush(), Operations\+::caload(), Operations\+::castore(), Operations\+::checkcast(), Operations\+::d2f(), Operations\+::d2i(), Operations\+::d2l(), Operations\+::dadd(), Operations\+::daload(), Operations\+::dastore(), Operations\+::dcmpg(), Operations\+::dcmpl(), Operations\+::dconst\+\_\+0(), Operations\+::dconst\+\_\+1(), Operations\+::ddiv(), Operations\+::dload(), Operations\+::dload\+\_\+0(), Operations\+::dload\+\_\+1(), Operations\+::dload\+\_\+2(), Operations\+::dload\+\_\+3(), Operations\+::dmul(), Operations\+::dneg(), Operations\+::drem(), Operations\+::dreturn(), Operations\+::dstore(), Operations\+::dstore\+\_\+0(), Operations\+::dstore\+\_\+1(), Operations\+::dstore\+\_\+2(), Operations\+::dstore\+\_\+3(), Operations\+::dsub(), Operations\+::dup(), Operations\+::dup2(), Operations\+::dup2\+\_\+x1(), Operations\+::dup2\+\_\+x2(), Operations\+::dup\+\_\+x1(), Operations\+::dup\+\_\+x2(), Operations\+::executar\+Metodos(), Operations\+::f2d(), Operations\+::f2i(), Operations\+::f2l(), Operations\+::fadd(), Operations\+::faload(), Operations\+::fastore(), Operations\+::fcmpg(), Operations\+::fcmpl(), Operations\+::fconst\+\_\+0(), Operations\+::fconst\+\_\+1(), Operations\+::fconst\+\_\+2(), Operations\+::fdiv(), Operations\+::fload(), Operations\+::fload\+\_\+0(), Operations\+::fload\+\_\+1(), Operations\+::fload\+\_\+2(), Operations\+::fload\+\_\+3(), Operations\+::fmul(), Operations\+::fneg(), Operations\+::frem(), Operations\+::freturn(), Operations\+::fstore(), Operations\+::fstore\+\_\+0(), Operations\+::fstore\+\_\+1(), Operations\+::fstore\+\_\+2(), Operations\+::fstore\+\_\+3(), Operations\+::fsub(), Operations\+::func\+\_\+goto(), Operations\+::func\+\_\+new(), Operations\+::getfield(), Operations\+::getstatic(), Operations\+::goto\+\_\+w(), Operations\+::i2b(), Operations\+::i2c(), Operations\+::i2d(), Operations\+::i2f(), Operations\+::i2l(), Operations\+::i2s(), Operations\+::iadd(), Operations\+::iaload(), Operations\+::iand(), Operations\+::iastore(), Operations\+::iconst\+\_\+0(), Operations\+::iconst\+\_\+1(), Operations\+::iconst\+\_\+2(), Operations\+::iconst\+\_\+3(), Operations\+::iconst\+\_\+4(), Operations\+::iconst\+\_\+5(), Operations\+::iconst\+\_\+m1(), Operations\+::idiv(), Operations\+::if\+\_\+acmpeq(), Operations\+::if\+\_\+acmpne(), Operations\+::if\+\_\+icmpeq(), Operations\+::if\+\_\+icmpge(), Operations\+::if\+\_\+icmpgt(), Operations\+::if\+\_\+icmple(), Operations\+::if\+\_\+icmplt(), Operations\+::if\+\_\+icmpne(), Operations\+::ifeq(), Operations\+::ifge(), Operations\+::ifgt(), Operations\+::ifle(), Operations\+::iflt(), Operations\+::ifne(), Operations\+::ifnonnull(), Operations\+::ifnull(), Operations\+::iinc(), Operations\+::iload(), Operations\+::iload\+\_\+0(), Operations\+::iload\+\_\+1(), Operations\+::iload\+\_\+2(), Operations\+::iload\+\_\+3(), Operations\+::imul(), Operations\+::ineg(), Operations\+::instanceof(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::ior(), Operations\+::irem(), Operations\+::ireturn(), Operations\+::ishl(), Operations\+::ishr(), Operations\+::istore(), Operations\+::istore\+\_\+0(), Operations\+::istore\+\_\+1(), Operations\+::istore\+\_\+2(), Operations\+::istore\+\_\+3(), Operations\+::isub(), Operations\+::iushr(), Operations\+::ixor(), Operations\+::jsr(), Operations\+::jsr\+\_\+w(), Operations\+::l2d(), Operations\+::l2f(), Operations\+::l2i(), Operations\+::ladd(), Operations\+::laload(), Operations\+::land(), Operations\+::lastore(), Operations\+::lcmp(), Operations\+::lconst\+\_\+0(), Operations\+::lconst\+\_\+1(), Operations\+::ldc(), Operations\+::ldc2\+\_\+w(), Operations\+::ldc\+\_\+w(), Operations\+::ldiv(), Operations\+::lload(), Operations\+::lload\+\_\+0(), Operations\+::lload\+\_\+1(), Operations\+::lload\+\_\+2(), Operations\+::lload\+\_\+3(), Operations\+::lmul(), Operations\+::lneg(), Operations\+::lookupswitch(), Operations\+::lor(), Operations\+::lrem(), Operations\+::lreturn(), Operations\+::lshl(), Operations\+::lshr(), Operations\+::lstore(), Operations\+::lstore\+\_\+0(), Operations\+::lstore\+\_\+1(), Operations\+::lstore\+\_\+2(), Operations\+::lstore\+\_\+3(), Operations\+::lsub(), Operations\+::lushr(), Operations\+::lxor(), Operations\+::monitorenter(), Operations\+::monitorexit(), Operations\+::multianewarray(), Operations\+::newarray(), Operations\+::nop(), Operations\+::pop(), Operations\+::pop2(), Operations\+::putfield(), Operations\+::putstatic(), Operations\+::ret(), Operations\+::saload(), Operations\+::sastore(), Operations\+::sipush(), Operations\+::swap(), Operations\+::tableswitch() e Operations\+::wide().
 
+\mbox{\Hypertarget{classPilhaJVM_a636c01ded057b339aa00486003db9037}\label{classPilhaJVM_a636c01ded057b339aa00486003db9037}} 
+\index{Pilha\+J\+VM@{Pilha\+J\+VM}!operator=@{operator=}}
+\index{operator=@{operator=}!Pilha\+J\+VM@{Pilha\+J\+VM}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily void Pilha\+J\+V\+M\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classPilhaJVM}{Pilha\+J\+VM} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Referenciado por main().
+\mbox{\Hypertarget{classPilhaJVM_a22d7bcd7db598b00ae219c9c2efb2c88}\label{classPilhaJVM_a22d7bcd7db598b00ae219c9c2efb2c88}} 
+\index{Pilha\+J\+VM@{Pilha\+J\+VM}!size@{size}}
+\index{size@{size}!Pilha\+J\+VM@{Pilha\+J\+VM}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily uint32\+\_\+t Pilha\+J\+V\+M\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Grafo de chamadas desta função\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classPilhaJVM_a8c87f8255b289be137dd09360d135e86_cgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{classPilhaJVM_a08adb78983b512cf3d97becfa2e9a5f0}\label{classPilhaJVM_a08adb78983b512cf3d97becfa2e9a5f0}} 
-\index{Pilha\+J\+VM@{Pilha\+J\+VM}!inicializar\+PC@{inicializar\+PC}}
-\index{inicializar\+PC@{inicializar\+PC}!Pilha\+J\+VM@{Pilha\+J\+VM}}
-\subsubsection{\texorpdfstring{inicializar\+P\+C()}{inicializarPC()}}
-{\footnotesize\ttfamily void Pilha\+J\+V\+M\+::inicializar\+PC (\begin{DoxyParamCaption}\item[{\hyperlink{PilhaJVM_8h_acc380914b41a084dcc8e4b38fb200145}{Frame} $\ast$}]{frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
+Obtém o tamanho da pilha da J\+VM. 
 
-Põe o PC na posição inicial. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em frame} & Estrutura do tipo frame. \\
-\hline
-\end{DoxyParams}
-
-
-Definido na linha 91 do ficheiro Pilha\+J\+V\+M.\+cpp.
-
-
-
-Referências Method\+\_\+info\+::attributes, T\+\_\+info\+::code\+Attribute, Code\+\_\+attribute\+::codigo, Attribute\+\_\+info\+::info, frame\+\_\+s\+::method e frame\+\_\+s\+::pc.
-
-
-
-Referenciado por adicionar\+Frame() e Pilha\+J\+V\+M().
-
-\mbox{\Hypertarget{classPilhaJVM_a4f83f8d59b436cb1813a2a35e1538045}\label{classPilhaJVM_a4f83f8d59b436cb1813a2a35e1538045}} 
-\index{Pilha\+J\+VM@{Pilha\+J\+VM}!pop\+Remover\+Objetos@{pop\+Remover\+Objetos}}
-\index{pop\+Remover\+Objetos@{pop\+Remover\+Objetos}!Pilha\+J\+VM@{Pilha\+J\+VM}}
-\subsubsection{\texorpdfstring{pop\+Remover\+Objetos()}{popRemoverObjetos()}}
-{\footnotesize\ttfamily void Pilha\+J\+V\+M\+::pop\+Remover\+Objetos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Dá um pop no método atual. 
-
-
-
-Definido na linha 72 do ficheiro Pilha\+J\+V\+M.\+cpp.
-
-
-
-Referências Operations\+::atualizar\+Frame(), Operations\+::atualizar\+Stack\+Frame() e stack\+Frame.
-
-
-
-Referenciado por Operations\+::func\+\_\+return() e proxima\+Instrucao().
-
-Grafo de chamadas desta função\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classPilhaJVM_a4f83f8d59b436cb1813a2a35e1538045_cgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{classPilhaJVM_a914a4707e58e23e8913fcdc0c53f8c5c}\label{classPilhaJVM_a914a4707e58e23e8913fcdc0c53f8c5c}} 
-\index{Pilha\+J\+VM@{Pilha\+J\+VM}!proxima\+Instrucao@{proxima\+Instrucao}}
-\index{proxima\+Instrucao@{proxima\+Instrucao}!Pilha\+J\+VM@{Pilha\+J\+VM}}
-\subsubsection{\texorpdfstring{proxima\+Instrucao()}{proximaInstrucao()}}
-{\footnotesize\ttfamily bool Pilha\+J\+V\+M\+::proxima\+Instrucao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Atualiza o PC, se não for possível atualizar, dá um pop no método atual. 
-
+\begin{DoxyReturn}{Retorna}
+Obtém o número de frames contidos na pilha da J\+VM. 
+\end{DoxyReturn}
 
 
 Definido na linha 43 do ficheiro Pilha\+J\+V\+M.\+cpp.
 
 
 
-Referências opcode, pop\+Remover\+Objetos() e stack\+Frame.
+Referências \+\_\+frame\+Stack.
 
 
 
-Referenciado por executar\+Metodos().
+Referenciado por Operations\+::executar\+Metodos().
 
-Grafo de chamadas desta função\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classPilhaJVM_a914a4707e58e23e8913fcdc0c53f8c5c_cgraph}
-\end{center}
-\end{figure}
 
 
 \subsection{Documentação dos dados membro}
-\mbox{\Hypertarget{classPilhaJVM_adebac9c22fbb328afca1d2a98e6d486c}\label{classPilhaJVM_adebac9c22fbb328afca1d2a98e6d486c}} 
-\index{Pilha\+J\+VM@{Pilha\+J\+VM}!frame@{frame}}
-\index{frame@{frame}!Pilha\+J\+VM@{Pilha\+J\+VM}}
-\subsubsection{\texorpdfstring{frame}{frame}}
-{\footnotesize\ttfamily \hyperlink{PilhaJVM_8h_acc380914b41a084dcc8e4b38fb200145}{Frame} Pilha\+J\+V\+M\+::frame\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{classPilhaJVM_a09290179ef6c914aa32297ab9dae94ed}\label{classPilhaJVM_a09290179ef6c914aa32297ab9dae94ed}} 
+\index{Pilha\+J\+VM@{Pilha\+J\+VM}!\+\_\+frame\+Stack@{\+\_\+frame\+Stack}}
+\index{\+\_\+frame\+Stack@{\+\_\+frame\+Stack}!Pilha\+J\+VM@{Pilha\+J\+VM}}
+\subsubsection{\texorpdfstring{\+\_\+frame\+Stack}{\_frameStack}}
+{\footnotesize\ttfamily stack$<$\hyperlink{classFrame}{Frame}$\ast$$>$ Pilha\+J\+V\+M\+::\+\_\+frame\+Stack\hspace{0.3cm}{\ttfamily [private]}}
+
+Armazena a pilha da J\+VM, que contém frames. 
+
+Definido na linha 71 do ficheiro Pilha\+J\+V\+M.\+h.
 
 
 
-Definido na linha 40 do ficheiro Pilha\+J\+V\+M.\+h.
-
-
-
-Referenciado por adicionar\+Frame() e Pilha\+J\+V\+M().
-
-\mbox{\Hypertarget{classPilhaJVM_a90e6f9da43b72798ea0331c57b72af09}\label{classPilhaJVM_a90e6f9da43b72798ea0331c57b72af09}} 
-\index{Pilha\+J\+VM@{Pilha\+J\+VM}!opcode@{opcode}}
-\index{opcode@{opcode}!Pilha\+J\+VM@{Pilha\+J\+VM}}
-\subsubsection{\texorpdfstring{opcode}{opcode}}
-{\footnotesize\ttfamily int Pilha\+J\+V\+M\+::opcode\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Contêm o opcode que corresponde a uma instrução. 
-
-
-
-Definido na linha 50 do ficheiro Pilha\+J\+V\+M.\+h.
-
-
-
-Referenciado por executar\+Metodos(), Pilha\+J\+V\+M() e proxima\+Instrucao().
-
-\mbox{\Hypertarget{classPilhaJVM_a4d70c8b3d6fbddb38e943dc8b1a00c2d}\label{classPilhaJVM_a4d70c8b3d6fbddb38e943dc8b1a00c2d}} 
-\index{Pilha\+J\+VM@{Pilha\+J\+VM}!stack\+Frame@{stack\+Frame}}
-\index{stack\+Frame@{stack\+Frame}!Pilha\+J\+VM@{Pilha\+J\+VM}}
-\subsubsection{\texorpdfstring{stack\+Frame}{stackFrame}}
-{\footnotesize\ttfamily stack$<$\hyperlink{PilhaJVM_8h_acc380914b41a084dcc8e4b38fb200145}{Frame}$\ast$$>$ Pilha\+J\+V\+M\+::stack\+Frame\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definido na linha 39 do ficheiro Pilha\+J\+V\+M.\+h.
-
-
-
-Referenciado por adicionar\+Frame(), atualizar\+Argumentos(), Pilha\+J\+V\+M(), pop\+Remover\+Objetos() e proxima\+Instrucao().
+Referenciado por add\+Frame(), destroy\+Top\+Frame(), get\+Top\+Frame() e size().
 
 
 

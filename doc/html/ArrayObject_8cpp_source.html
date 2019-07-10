@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Java Virtual Machine: Código-Fonte de src/ArrayObject.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Java Virtual Machine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ArrayObject_8cpp_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ArrayObject.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ArrayObject_8cpp.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ArrayObject_8h.html">ArrayObject.h</a>&quot;</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="BasicTypes_8h.html">BasicTypes.h</a>&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Object_8h.html">Object.h</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classArrayObject.html#afd91a9df894ad32f51e40da74de7f2c4">    8</a></span>&#160;<a class="code" href="classArrayObject.html#afd91a9df894ad32f51e40da74de7f2c4">ArrayObject::ArrayObject</a>(<a class="code" href="BasicTypes_8h.html#ad9971b6ef33e02ba2c75d19c1d2518a1">ValueType</a> type) : _arrayType(type) {</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    </div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classArrayObject.html#a91c9426247002224d484c32883ff51b1">   12</a></span>&#160;<a class="code" href="classArrayObject.html#a91c9426247002224d484c32883ff51b1">ArrayObject::~ArrayObject</a>() {</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    </div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classArrayObject.html#a63034d166dcd6caad9261c86c338a417">   17</a></span>&#160;<a class="code" href="BasicTypes_8h.html#a842c5e2e69277690b064bf363c017980">ObjectType</a> <a class="code" href="classArrayObject.html#a63034d166dcd6caad9261c86c338a417">ArrayObject::objectType</a>() {</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="BasicTypes_8h.html#a842c5e2e69277690b064bf363c017980a1e029fbf0c881b85d80fc8e89b753688">ObjectType::ARRAY</a>;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classArrayObject.html#a389af37c0ab94e2c84985ab1698ce679">   21</a></span>&#160;<a class="code" href="BasicTypes_8h.html#ad9971b6ef33e02ba2c75d19c1d2518a1">ValueType</a> <a class="code" href="classArrayObject.html#a389af37c0ab94e2c84985ab1698ce679">ArrayObject::arrayContentType</a>() {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classArrayObject.html#a83a4c777ec1059f3e85aaa698442f72b">_arrayType</a>;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classArrayObject.html#a3f6f6445f0598bace2e29b338838333f">   25</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classArrayObject.html#a3f6f6445f0598bace2e29b338838333f">ArrayObject::pushValue</a>(<a class="code" href="structValue.html">Value</a> value) {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    assert(value.<a class="code" href="structValue.html#ab45dfd167290d4324ba4832abcc4064d">type</a> == <a class="code" href="classArrayObject.html#a83a4c777ec1059f3e85aaa698442f72b">_arrayType</a>);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    </div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classArrayObject.html#a1d085d50c90613812fdf539472e76b0c">_elements</a>.push_back(value);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classArrayObject.html#ab229e48175e46d03c2fab756cce11b5f">   31</a></span>&#160;<a class="code" href="structValue.html">Value</a> <a class="code" href="classArrayObject.html#ab229e48175e46d03c2fab756cce11b5f">ArrayObject::removeAt</a>(uint32_t index) {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    assert(<a class="code" href="classArrayObject.html#a1d085d50c90613812fdf539472e76b0c">_elements</a>.size() &gt; 0);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    assert(index &lt; <a class="code" href="classArrayObject.html#a1d085d50c90613812fdf539472e76b0c">_elements</a>.size());</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="structValue.html">Value</a> value = <a class="code" href="classArrayObject.html#a1d085d50c90613812fdf539472e76b0c">_elements</a>[index];</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classArrayObject.html#a1d085d50c90613812fdf539472e76b0c">_elements</a>.erase(<a class="code" href="classArrayObject.html#a1d085d50c90613812fdf539472e76b0c">_elements</a>.begin() + index);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> value;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classArrayObject.html#a5235153943129699da298a3ecc7cfa14">   40</a></span>&#160;<a class="code" href="structValue.html">Value</a> <a class="code" href="classArrayObject.html#a5235153943129699da298a3ecc7cfa14">ArrayObject::removeLast</a>() {</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    assert(<a class="code" href="classArrayObject.html#a1d085d50c90613812fdf539472e76b0c">_elements</a>.size() &gt; 0);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    </div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="structValue.html">Value</a> value = <a class="code" href="classArrayObject.html#a1d085d50c90613812fdf539472e76b0c">_elements</a>.back();</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classArrayObject.html#a1d085d50c90613812fdf539472e76b0c">_elements</a>.pop_back();</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> value;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classArrayObject.html#aaf722b5670d62f09370aeab36ebe0dfd">   48</a></span>&#160;<a class="code" href="structValue.html">Value</a> <a class="code" href="classArrayObject.html#aaf722b5670d62f09370aeab36ebe0dfd">ArrayObject::removeFirst</a>() {</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    assert(<a class="code" href="classArrayObject.html#a1d085d50c90613812fdf539472e76b0c">_elements</a>.size() &gt; 0);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    </div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="structValue.html">Value</a> value = <a class="code" href="classArrayObject.html#a1d085d50c90613812fdf539472e76b0c">_elements</a>.front();</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classArrayObject.html#a1d085d50c90613812fdf539472e76b0c">_elements</a>.erase(<a class="code" href="classArrayObject.html#a1d085d50c90613812fdf539472e76b0c">_elements</a>.begin());</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> value;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classArrayObject.html#af43b8f4106c2f15def7fecd3e3f6b239">   56</a></span>&#160;uint32_t <a class="code" href="classArrayObject.html#af43b8f4106c2f15def7fecd3e3f6b239">ArrayObject::getSize</a>() {</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classArrayObject.html#a1d085d50c90613812fdf539472e76b0c">_elements</a>.size();</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classArrayObject.html#a468341ed2c683c3152a0ea58b2094c0f">   60</a></span>&#160;<a class="code" href="structValue.html">Value</a> <a class="code" href="classArrayObject.html#a468341ed2c683c3152a0ea58b2094c0f">ArrayObject::getValue</a>(uint32_t index) {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    assert(<a class="code" href="classArrayObject.html#a1d085d50c90613812fdf539472e76b0c">_elements</a>.size() &gt; 0);</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">//    assert(index &lt; _elements.size());</span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> (index &gt;= <a class="code" href="classArrayObject.html#a1d085d50c90613812fdf539472e76b0c">_elements</a>.size()) {</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;ArrayIndexOutOfBoundsException&quot;</span> &lt;&lt; endl;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        exit(1);</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    </div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classArrayObject.html#a1d085d50c90613812fdf539472e76b0c">_elements</a>[index];</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classArrayObject.html#a20e1735b3bc9db6c9bd219d70355f160">   72</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classArrayObject.html#a20e1735b3bc9db6c9bd219d70355f160">ArrayObject::changeValueAt</a>(uint32_t index, <a class="code" href="structValue.html">Value</a> value) {</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="classArrayObject.html#a1d085d50c90613812fdf539472e76b0c">_elements</a>[index] = value;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div><div class="ttc" id="classArrayObject_html_a468341ed2c683c3152a0ea58b2094c0f"><div class="ttname"><a href="classArrayObject.html#a468341ed2c683c3152a0ea58b2094c0f">ArrayObject::getValue</a></div><div class="ttdeci">Value getValue(uint32_t index)</div><div class="ttdoc">Obtém o elemento dado o seu índice. </div><div class="ttdef"><b>Definition:</b> <a href="ArrayObject_8cpp_source.html#l00060">ArrayObject.cpp:60</a></div></div>
+<div class="ttc" id="classArrayObject_html_a91c9426247002224d484c32883ff51b1"><div class="ttname"><a href="classArrayObject.html#a91c9426247002224d484c32883ff51b1">ArrayObject::~ArrayObject</a></div><div class="ttdeci">~ArrayObject()</div><div class="ttdoc">Destrutor padrão. </div><div class="ttdef"><b>Definition:</b> <a href="ArrayObject_8cpp_source.html#l00012">ArrayObject.cpp:12</a></div></div>
+<div class="ttc" id="classArrayObject_html_a3f6f6445f0598bace2e29b338838333f"><div class="ttname"><a href="classArrayObject.html#a3f6f6445f0598bace2e29b338838333f">ArrayObject::pushValue</a></div><div class="ttdeci">void pushValue(Value value)</div><div class="ttdoc">Realiza a adição de um valor no array. </div><div class="ttdef"><b>Definition:</b> <a href="ArrayObject_8cpp_source.html#l00025">ArrayObject.cpp:25</a></div></div>
+<div class="ttc" id="BasicTypes_8h_html_ad9971b6ef33e02ba2c75d19c1d2518a1"><div class="ttname"><a href="BasicTypes_8h.html#ad9971b6ef33e02ba2c75d19c1d2518a1">ValueType</a></div><div class="ttdeci">ValueType</div><div class="ttdef"><b>Definition:</b> <a href="BasicTypes_8h_source.html#l00018">BasicTypes.h:18</a></div></div>
+<div class="ttc" id="BasicTypes_8h_html_a842c5e2e69277690b064bf363c017980a1e029fbf0c881b85d80fc8e89b753688"><div class="ttname"><a href="BasicTypes_8h.html#a842c5e2e69277690b064bf363c017980a1e029fbf0c881b85d80fc8e89b753688">ARRAY</a></div><div class="ttdef"><b>Definition:</b> <a href="BasicTypes_8h_source.html#l00014">BasicTypes.h:14</a></div></div>
+<div class="ttc" id="classArrayObject_html_a20e1735b3bc9db6c9bd219d70355f160"><div class="ttname"><a href="classArrayObject.html#a20e1735b3bc9db6c9bd219d70355f160">ArrayObject::changeValueAt</a></div><div class="ttdeci">void changeValueAt(uint32_t index, Value value)</div><div class="ttdoc">Substitui um elemento do array. </div><div class="ttdef"><b>Definition:</b> <a href="ArrayObject_8cpp_source.html#l00072">ArrayObject.cpp:72</a></div></div>
+<div class="ttc" id="classArrayObject_html_a1d085d50c90613812fdf539472e76b0c"><div class="ttname"><a href="classArrayObject.html#a1d085d50c90613812fdf539472e76b0c">ArrayObject::_elements</a></div><div class="ttdeci">vector&lt; Value &gt; _elements</div><div class="ttdef"><b>Definition:</b> <a href="ArrayObject_8h_source.html#l00101">ArrayObject.h:101</a></div></div>
+<div class="ttc" id="classArrayObject_html_af43b8f4106c2f15def7fecd3e3f6b239"><div class="ttname"><a href="classArrayObject.html#af43b8f4106c2f15def7fecd3e3f6b239">ArrayObject::getSize</a></div><div class="ttdeci">uint32_t getSize()</div><div class="ttdoc">Obtém o tamanho atual do array. </div><div class="ttdef"><b>Definition:</b> <a href="ArrayObject_8cpp_source.html#l00056">ArrayObject.cpp:56</a></div></div>
+<div class="ttc" id="classArrayObject_html_a389af37c0ab94e2c84985ab1698ce679"><div class="ttname"><a href="classArrayObject.html#a389af37c0ab94e2c84985ab1698ce679">ArrayObject::arrayContentType</a></div><div class="ttdeci">ValueType arrayContentType()</div><div class="ttdoc">Obtém o tipo de conteúdo do array. </div><div class="ttdef"><b>Definition:</b> <a href="ArrayObject_8cpp_source.html#l00021">ArrayObject.cpp:21</a></div></div>
+<div class="ttc" id="structValue_html_ab45dfd167290d4324ba4832abcc4064d"><div class="ttname"><a href="structValue.html#ab45dfd167290d4324ba4832abcc4064d">Value::type</a></div><div class="ttdeci">ValueType type</div><div class="ttdef"><b>Definition:</b> <a href="BasicTypes_8h_source.html#l00037">BasicTypes.h:37</a></div></div>
+<div class="ttc" id="BasicTypes_8h_html"><div class="ttname"><a href="BasicTypes_8h.html">BasicTypes.h</a></div></div>
+<div class="ttc" id="classArrayObject_html_a5235153943129699da298a3ecc7cfa14"><div class="ttname"><a href="classArrayObject.html#a5235153943129699da298a3ecc7cfa14">ArrayObject::removeLast</a></div><div class="ttdeci">Value removeLast()</div><div class="ttdoc">Remove o último elemento do array. </div><div class="ttdef"><b>Definition:</b> <a href="ArrayObject_8cpp_source.html#l00040">ArrayObject.cpp:40</a></div></div>
+<div class="ttc" id="classArrayObject_html_ab229e48175e46d03c2fab756cce11b5f"><div class="ttname"><a href="classArrayObject.html#ab229e48175e46d03c2fab756cce11b5f">ArrayObject::removeAt</a></div><div class="ttdeci">Value removeAt(uint32_t index)</div><div class="ttdoc">Remove um elemento do array dado o seu índice. </div><div class="ttdef"><b>Definition:</b> <a href="ArrayObject_8cpp_source.html#l00031">ArrayObject.cpp:31</a></div></div>
+<div class="ttc" id="structValue_html"><div class="ttname"><a href="structValue.html">Value</a></div><div class="ttdef"><b>Definition:</b> <a href="BasicTypes_8h_source.html#l00035">BasicTypes.h:35</a></div></div>
+<div class="ttc" id="classArrayObject_html_a83a4c777ec1059f3e85aaa698442f72b"><div class="ttname"><a href="classArrayObject.html#a83a4c777ec1059f3e85aaa698442f72b">ArrayObject::_arrayType</a></div><div class="ttdeci">ValueType _arrayType</div><div class="ttdef"><b>Definition:</b> <a href="ArrayObject_8h_source.html#l00096">ArrayObject.h:96</a></div></div>
+<div class="ttc" id="classArrayObject_html_aaf722b5670d62f09370aeab36ebe0dfd"><div class="ttname"><a href="classArrayObject.html#aaf722b5670d62f09370aeab36ebe0dfd">ArrayObject::removeFirst</a></div><div class="ttdeci">Value removeFirst()</div><div class="ttdoc">Remove o primeiro elemento do array. </div><div class="ttdef"><b>Definition:</b> <a href="ArrayObject_8cpp_source.html#l00048">ArrayObject.cpp:48</a></div></div>
+<div class="ttc" id="classArrayObject_html_a63034d166dcd6caad9261c86c338a417"><div class="ttname"><a href="classArrayObject.html#a63034d166dcd6caad9261c86c338a417">ArrayObject::objectType</a></div><div class="ttdeci">ObjectType objectType()</div><div class="ttdoc">Representa o tipo de objeto (ObjectType::ARRAY). </div><div class="ttdef"><b>Definition:</b> <a href="ArrayObject_8cpp_source.html#l00017">ArrayObject.cpp:17</a></div></div>
+<div class="ttc" id="Object_8h_html"><div class="ttname"><a href="Object_8h.html">Object.h</a></div></div>
+<div class="ttc" id="BasicTypes_8h_html_a842c5e2e69277690b064bf363c017980"><div class="ttname"><a href="BasicTypes_8h.html#a842c5e2e69277690b064bf363c017980">ObjectType</a></div><div class="ttdeci">ObjectType</div><div class="ttdef"><b>Definition:</b> <a href="BasicTypes_8h_source.html#l00011">BasicTypes.h:11</a></div></div>
+<div class="ttc" id="ArrayObject_8h_html"><div class="ttname"><a href="ArrayObject_8h.html">ArrayObject.h</a></div></div>
+<div class="ttc" id="classArrayObject_html_afd91a9df894ad32f51e40da74de7f2c4"><div class="ttname"><a href="classArrayObject.html#afd91a9df894ad32f51e40da74de7f2c4">ArrayObject::ArrayObject</a></div><div class="ttdeci">ArrayObject(ValueType type)</div><div class="ttdoc">Construtor padrão. </div><div class="ttdef"><b>Definition:</b> <a href="ArrayObject_8cpp_source.html#l00008">ArrayObject.cpp:8</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="ArrayObject_8cpp.html">ArrayObject.cpp</a></li>
+    <li class="footer">Gerado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

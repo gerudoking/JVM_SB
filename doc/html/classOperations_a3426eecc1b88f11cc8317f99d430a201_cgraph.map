@@ -1,0 +1,4 @@
+<map id="Operations::nop" name="Operations::nop">
+<area shape="rect" id="node2" href="$classPilhaJVM.html#a13bf1c43de7819ea7761616f7a04c3b9" title="Obter a única instância da pilha. " alt="" coords="172,5,327,32"/>
+<area shape="rect" id="node3" href="$classPilhaJVM.html#aa0e43da476df6147c86c8cc3d6899718" title="Obtém o frame no topo da pilha da JVM. " alt="" coords="168,56,331,83"/>
+</map>

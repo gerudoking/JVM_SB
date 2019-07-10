@@ -1,17 +1,16 @@
 var searchData=
 [
-  ['empilhar',['empilhar',['../classOperandsStack.html#a50b642d5ff6a7a1f56b8cfc75bde1192',1,'OperandsStack']]],
-  ['empilharbool',['empilharBool',['../classOperandsStack.html#aca2be3100b76689949f029196a893712',1,'OperandsStack']]],
-  ['empilhardouble',['empilharDouble',['../classOperandsStack.html#a45dde91cc54ad980d1cbb7cdb1e084cd',1,'OperandsStack']]],
-  ['empilharfloat',['empilharFloat',['../classOperandsStack.html#aeed478b52748b87ac85db261332b633b',1,'OperandsStack']]],
-  ['empilharint',['empilharInt',['../classOperandsStack.html#a5006a59c2d815e4a24b055e2e4d2e741',1,'OperandsStack']]],
-  ['empilharlong',['empilharLong',['../classOperandsStack.html#a927ca84358d7e0f45f74d122f9a500d2',1,'OperandsStack']]],
-  ['empilharreferencia',['empilharReferencia',['../classOperandsStack.html#a47af7d965172984b9cc5c61d8c4c1ce3',1,'OperandsStack']]],
-  ['empilhartypedelement',['empilharTypedElement',['../classOperandsStack.html#a73960b4536c99847bf4545a45f04f089',1,'OperandsStack']]],
-  ['estavazia',['estaVazia',['../classOperandsStack.html#aa6dbee87661011453ba2c57405bd9a4e',1,'OperandsStack']]],
-  ['executarmetodos',['executarMetodos',['../classPilhaJVM.html#a8c87f8255b289be137dd09360d135e86',1,'PilhaJVM']]],
-  ['executaroperacao',['executarOperacao',['../classOperations.html#ab63307824c7d6412e0afb1d037b995f1',1,'Operations']]],
-  ['exibir',['exibir',['../classClassFile.html#a7da7cc6de8de3fc6f27faf3b76f4883a',1,'ClassFile']]],
-  ['existeclinit',['existeClinit',['../classClassFile.html#a2a886bdb4c42bfaaf5ea8ff1b2c41209',1,'ClassFile']]],
-  ['existemain',['existeMain',['../classClassFile.html#a10bfe22492b473fb0197e55f451978e5',1,'ClassFile']]]
+  ['empilharoperandstack',['empilharOperandStack',['../classFrame.html#af2481010c4795fbe1cba48122609cf1e',1,'Frame']]],
+  ['encontrarattributes',['encontrarAttributes',['../classFrame.html#a6950091ee708f622befdfcc7c35b7025',1,'Frame']]],
+  ['executarmetodos',['executarMetodos',['../classOperations.html#ab771bdb83af6f55d93d126b944d4e73b',1,'Operations']]],
+  ['exibe_5fattributeinfo',['exibe_AttributeInfo',['../ClassVisao_8cpp.html#acbff59b0e64482bfbcd4389721ef44f6',1,'exibe_AttributeInfo(attribute_info attributeInfo, uint32_t index, cp_info *constantPool, uint8_t indentation):&#160;ClassVisao.cpp'],['../ClassVisao_8h.html#acbff59b0e64482bfbcd4389721ef44f6',1,'exibe_AttributeInfo(attribute_info attributeInfo, uint32_t index, cp_info *constantPool, uint8_t indentation):&#160;ClassVisao.cpp']]],
+  ['exibe_5fattributes',['exibe_Attributes',['../ClassVisao_8cpp.html#a138dd6967f36f1e164174be7c1c5a616',1,'exibe_Attributes(ClassFile *classFile):&#160;ClassVisao.cpp'],['../ClassVisao_8h.html#a138dd6967f36f1e164174be7c1c5a616',1,'exibe_Attributes(ClassFile *classFile):&#160;ClassVisao.cpp']]],
+  ['exibe_5fconstantpool',['exibe_ConstantPool',['../ClassVisao_8cpp.html#a7b06f7cbd2e84645ca9da6a00dc38fb1',1,'exibe_ConstantPool(ClassFile *classFile):&#160;ClassVisao.cpp'],['../ClassVisao_8h.html#a7b06f7cbd2e84645ca9da6a00dc38fb1',1,'exibe_ConstantPool(ClassFile *classFile):&#160;ClassVisao.cpp']]],
+  ['exibe_5ffields',['exibe_Fields',['../ClassVisao_8cpp.html#a413637379cd0ea3f1413a005b2a49290',1,'exibe_Fields(ClassFile *classFile):&#160;ClassVisao.cpp'],['../ClassVisao_8h.html#a413637379cd0ea3f1413a005b2a49290',1,'exibe_Fields(ClassFile *classFile):&#160;ClassVisao.cpp']]],
+  ['exibe_5fgeneralinformation',['exibe_GeneralInformation',['../ClassVisao_8cpp.html#a8640dcbbc4d40260eedc022e580596bf',1,'exibe_GeneralInformation(ClassFile *classFile):&#160;ClassVisao.cpp'],['../ClassVisao_8h.html#a8640dcbbc4d40260eedc022e580596bf',1,'exibe_GeneralInformation(ClassFile *classFile):&#160;ClassVisao.cpp']]],
+  ['exibe_5finterfaces',['exibe_Interfaces',['../ClassVisao_8cpp.html#a41a2c6700e050ef2095b4f45590bf433',1,'exibe_Interfaces(ClassFile *classFile):&#160;ClassVisao.cpp'],['../ClassVisao_8h.html#a41a2c6700e050ef2095b4f45590bf433',1,'exibe_Interfaces(ClassFile *classFile):&#160;ClassVisao.cpp']]],
+  ['exibe_5fmethods',['exibe_Methods',['../ClassVisao_8cpp.html#aa7b125a5277bc70b283856dc2ad5caef',1,'exibe_Methods(ClassFile *classFile):&#160;ClassVisao.cpp'],['../ClassVisao_8h.html#aa7b125a5277bc70b283856dc2ad5caef',1,'exibe_Methods(ClassFile *classFile):&#160;ClassVisao.cpp']]],
+  ['exibebytecode',['exibeByteCode',['../ClassVisao_8cpp.html#a4f58f38f8be2bd6ab424e4f57e68f0b2',1,'exibeByteCode(Code_attribute codeAttribute, cp_info *constantPool, uint8_t indentation):&#160;ClassVisao.cpp'],['../ClassVisao_8h.html#a4f58f38f8be2bd6ab424e4f57e68f0b2',1,'exibeByteCode(Code_attribute codeAttribute, cp_info *constantPool, uint8_t indentation):&#160;ClassVisao.cpp']]],
+  ['exibeclassfile',['exibeClassFile',['../ClassVisao_8cpp.html#a78619a05de0e6d7bd60070461eaf3696',1,'exibeClassFile(ClassFile *classFile):&#160;ClassVisao.cpp'],['../ClassVisao_8h.html#a78619a05de0e6d7bd60070461eaf3696',1,'exibeClassFile(ClassFile *classFile):&#160;ClassVisao.cpp']]],
+  ['exibetabs',['exibeTabs',['../classUtils.html#a2a13f135d652b68fae6f4b8a9b21464e',1,'Utils::exibeTabs(uint8_t n)'],['../classUtils.html#aebfca2747bb35554f74b1ad6abe7c2c3',1,'Utils::exibeTabs(FILE *out, uint8_t n)']]]
 ];

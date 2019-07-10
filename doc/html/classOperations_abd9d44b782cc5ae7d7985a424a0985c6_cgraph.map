@@ -1,6 +1,8 @@
 <map id="Operations::lload" name="Operations::lload">
-<area shape="rect" id="node2" href="$classOperandsStack.html#a927ca84358d7e0f45f74d122f9a500d2" title="Empilha um valor de tipo long. " alt="" coords="174,5,371,32"/>
-<area shape="rect" id="node4" href="$classLocalVariables.html#a4abbb4a732d7dd0f11a147b79c15ae10" title="Gets element on past position by index. " alt="" coords="206,56,339,83"/>
-<area shape="rect" id="node5" href="$classOperations.html#a6906050cc72d774f77d8ba33607b1c62" title="Function that returns a n bytes value. " alt="" coords="173,107,372,133"/>
-<area shape="rect" id="node3" href="$classOperandsStack.html#a6ea316fc2b2503af2175fada4d4a9741" title="retorna o tamanho da pilha de operandos " alt="" coords="420,5,623,32"/>
+<area shape="rect" id="node2" href="$classFrame.html#af2481010c4795fbe1cba48122609cf1e" title="Adiciona um operando na pilha de operandos. " alt="" coords="173,5,372,32"/>
+<area shape="rect" id="node3" href="$classFrame.html#a6863584ef3a6f2e4b1f93fb0deb09f4b" title="Obtém o código do método a partir de um offset. " alt="" coords="215,56,331,83"/>
+<area shape="rect" id="node4" href="$classPilhaJVM.html#a13bf1c43de7819ea7761616f7a04c3b9" title="Obter a única instância da pilha. " alt="" coords="195,107,350,133"/>
+<area shape="rect" id="node5" href="$classPilhaJVM.html#aa0e43da476df6147c86c8cc3d6899718" title="Obtém o frame no topo da pilha da JVM. " alt="" coords="191,157,354,184"/>
+<area shape="rect" id="node6" href="$classFrame.html#ae074652eb3b71fb4cb28afd1ba91885d" title="Obtém o valor de uma variável local localizada no índice dado. " alt="" coords="185,209,360,250"/>
+<area shape="rect" id="node7" href="$classFrame.html#a2b65f6fa2195970fd25d69c17b5ca933" title="Retorna o comprimento do vetor de variáveis locais associado ao frame. " alt="" coords="185,275,361,301"/>
 </map>

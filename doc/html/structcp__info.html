@@ -87,69 +87,294 @@ $(document).ready(function(){initNavTree('structcp__info.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Possui um elemento pool de constante.  
- <a href="structcp__info.html#details">Mais...</a></p>
-
-<p><code>#include &lt;<a class="el" href="ConstantPool_8h_source.html">ConstantPool.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>&gt;</code></p>
 <div class="dynheader">
 Diagrama de colaboração para cp_info:</div>
 <div class="dyncontent">
 <div class="center"><img src="structcp__info__coll__graph.png" border="0" usemap="#cp__info_coll__map" alt="Collaboration graph"/></div>
 <map name="cp__info_coll__map" id="cp__info_coll__map">
-<area shape="rect" id="node2" href="unionClassLoaderType.html" title="Estrutura de dados para armazenamento Union responsável por armazenar todos os tamanhos de variáveis ..." alt="" coords="5,5,129,32"/>
+<area shape="rect" id="node2" href="structCONSTANT__Integer__info.html" title="CONSTANT_Integer_info" alt="" coords="40,19,211,45"/>
+<area shape="rect" id="node3" href="structCONSTANT__NameAndType__info.html" title="CONSTANT_NameAndType_info" alt="" coords="16,69,235,96"/>
+<area shape="rect" id="node4" href="structCONSTANT__Long__info.html" title="CONSTANT_Long_info" alt="" coords="46,120,205,147"/>
+<area shape="rect" id="node5" href="structCONSTANT__Fieldref__info.html" title="CONSTANT_Fieldref_info" alt="" coords="38,171,213,197"/>
+<area shape="rect" id="node6" href="structCONSTANT__Methodref__info.html" title="CONSTANT_Methodref_info" alt="" coords="31,221,220,248"/>
+<area shape="rect" id="node7" href="structCONSTANT__Utf8__info.html" title="CONSTANT_Utf8_info" alt="" coords="47,272,203,299"/>
+<area shape="rect" id="node8" href="structCONSTANT__InterfaceMethodref__info.html" title="CONSTANT_InterfaceMethodref_info" alt="" coords="5,323,245,349"/>
+<area shape="rect" id="node9" href="structCONSTANT__Double__info.html" title="CONSTANT_Double_info" alt="" coords="39,373,211,400"/>
+<area shape="rect" id="node10" href="structCONSTANT__Float__info.html" title="CONSTANT_Float_info" alt="" coords="45,424,205,451"/>
+<area shape="rect" id="node11" href="structCONSTANT__Class__info.html" title="CONSTANT_Class_info" alt="" coords="43,475,208,501"/>
+<area shape="rect" id="node12" href="structCONSTANT__String__info.html" title="CONSTANT_String_info" alt="" coords="43,525,208,552"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legenda</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Atributos Públicos</h2></td></tr>
-<tr class="memitem:a850b66fa196e9fc2e898ca41d558e248"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a9bffe5bb2564f91cd90fb7d06848f9a8">U1</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcp__info.html#a850b66fa196e9fc2e898ca41d558e248">tag</a></td></tr>
-<tr class="separator:a850b66fa196e9fc2e898ca41d558e248"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafa07de27e22632ed56ab8fbffbe2559"><td class="memItemLeft" align="right" valign="top"><a class="el" href="unionClassLoaderType.html">ClassLoaderType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcp__info.html#aafa07de27e22632ed56ab8fbffbe2559">info</a></td></tr>
-<tr class="separator:aafa07de27e22632ed56ab8fbffbe2559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a045b8801a6e96a2a31d3b62ea684f141"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#ad9f4cdb6757615aae2fad89dab3c5470">u1</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcp__info.html#a045b8801a6e96a2a31d3b62ea684f141">tag</a></td></tr>
+<tr class="separator:a045b8801a6e96a2a31d3b62ea684f141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aca171d81e9715b113c7919e8c16dce"><td class="memItemLeft" >union {</td></tr>
+<tr class="memitem:ab3dd6e43ddede19dc7f95c7d21958421"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structCONSTANT__Class__info.html">CONSTANT_Class_info</a>&#160;&#160;&#160;<a class="el" href="structcp__info.html#add01ad1b269bc065f0863469cf8183b8">class_info</a></td></tr>
+<tr class="separator:ab3dd6e43ddede19dc7f95c7d21958421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9829fd143001e66e794769e8668735b"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structCONSTANT__Fieldref__info.html">CONSTANT_Fieldref_info</a>&#160;&#160;&#160;<a class="el" href="structcp__info.html#a12c0c04a72137ea73d22a3d652de1774">fieldref_info</a></td></tr>
+<tr class="separator:ac9829fd143001e66e794769e8668735b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac54fdad2ad255fc816c3df8b2e193f81"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structCONSTANT__Methodref__info.html">CONSTANT_Methodref_info</a>&#160;&#160;&#160;<a class="el" href="structcp__info.html#ab1304804bef6a0fe6575671223d7d689">methodref_info</a></td></tr>
+<tr class="separator:ac54fdad2ad255fc816c3df8b2e193f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac17e23443d4f5126aa5dbd431ccabdb"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structCONSTANT__InterfaceMethodref__info.html">CONSTANT_InterfaceMethodref_info</a>&#160;&#160;&#160;<a class="el" href="structcp__info.html#aaebedef650f8f22c5f66057bf1b1271a">interfaceMethodref_info</a></td></tr>
+<tr class="separator:aac17e23443d4f5126aa5dbd431ccabdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72e041377317883ce215dfb7b75a521d"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structCONSTANT__String__info.html">CONSTANT_String_info</a>&#160;&#160;&#160;<a class="el" href="structcp__info.html#a4d1d5a06448e8b86b4b23608d64cfe7e">string_info</a></td></tr>
+<tr class="separator:a72e041377317883ce215dfb7b75a521d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a8cc8849895949824e61f809f680305"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structCONSTANT__Integer__info.html">CONSTANT_Integer_info</a>&#160;&#160;&#160;<a class="el" href="structcp__info.html#a134087258f855dca61e8e8922665d050">integer_info</a></td></tr>
+<tr class="separator:a1a8cc8849895949824e61f809f680305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a832b43dc5dd10f3baa280073591ed861"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structCONSTANT__Float__info.html">CONSTANT_Float_info</a>&#160;&#160;&#160;<a class="el" href="structcp__info.html#a367569f3e0a70a50afc482c4ac2aece1">float_info</a></td></tr>
+<tr class="separator:a832b43dc5dd10f3baa280073591ed861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0245877489d15d2dd886b1d48a5590f"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structCONSTANT__Long__info.html">CONSTANT_Long_info</a>&#160;&#160;&#160;<a class="el" href="structcp__info.html#ab0a2bfb802609dbdb4985cb55f465e6f">long_info</a></td></tr>
+<tr class="separator:ad0245877489d15d2dd886b1d48a5590f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6fb57d1d4fc3392a20dd7bfd2cc8555"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structCONSTANT__Double__info.html">CONSTANT_Double_info</a>&#160;&#160;&#160;<a class="el" href="structcp__info.html#aa76301d1853395d7594520988422c3d0">double_info</a></td></tr>
+<tr class="separator:aa6fb57d1d4fc3392a20dd7bfd2cc8555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a499fe5a037d1ac22fd03a3de8379673c"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structCONSTANT__NameAndType__info.html">CONSTANT_NameAndType_info</a>&#160;&#160;&#160;<a class="el" href="structcp__info.html#a1e020df4bc85c0a41365a8bb466f8781">nameAndType_info</a></td></tr>
+<tr class="separator:a499fe5a037d1ac22fd03a3de8379673c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2412f1ad4d47109ac42b5c28109fb7c7"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structCONSTANT__Utf8__info.html">CONSTANT_Utf8_info</a>&#160;&#160;&#160;<a class="el" href="structcp__info.html#a980c5cbcb2aefe984b7a4988f1f71576">utf8_info</a></td></tr>
+<tr class="separator:a2412f1ad4d47109ac42b5c28109fb7c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aca171d81e9715b113c7919e8c16dce"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcp__info.html#a8aca171d81e9715b113c7919e8c16dce">info</a></td></tr>
+<tr class="separator:a8aca171d81e9715b113c7919e8c16dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
-<div class="textblock"><p>Possui um elemento pool de constante. </p>
-
-<p class="definition">Definido na linha <a class="el" href="ConstantPool_8h_source.html#l00018">18</a> do ficheiro <a class="el" href="ConstantPool_8h_source.html">ConstantPool.h</a>.</p>
+<div class="textblock">
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00181">181</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
 </div><h2 class="groupheader">Documentação dos dados membro</h2>
-<a id="aafa07de27e22632ed56ab8fbffbe2559"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafa07de27e22632ed56ab8fbffbe2559">&#9670;&nbsp;</a></span>info</h2>
+<a id="add01ad1b269bc065f0863469cf8183b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add01ad1b269bc065f0863469cf8183b8">&#9670;&nbsp;</a></span>class_info</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="unionClassLoaderType.html">ClassLoaderType</a>* cp_info::info</td>
+          <td class="memname"><a class="el" href="structCONSTANT__Class__info.html">CONSTANT_Class_info</a> cp_info::class_info</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ConstantPool_8h_source.html#l00020">20</a> do ficheiro <a class="el" href="ConstantPool_8h_source.html">ConstantPool.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00184">184</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ConstantPool_8cpp_source.html#l00008">carregarConstantPool()</a>, <a class="el" href="Operations_8cpp_source.html#l02078">Operations::getfield()</a>, <a class="el" href="Operations_8cpp_source.html#l01985">Operations::getstatic()</a>, <a class="el" href="Operations_8cpp_source.html#l02448">Operations::invokeinterface()</a>, <a class="el" href="Operations_8cpp_source.html#l02271">Operations::invokespecial()</a>, <a class="el" href="Operations_8cpp_source.html#l02368">Operations::invokestatic()</a>, <a class="el" href="Operations_8cpp_source.html#l02112">Operations::invokevirtual()</a>, <a class="el" href="Operations_8cpp_source.html#l00179">Operations::ldc()</a>, <a class="el" href="Operations_8cpp_source.html#l00207">Operations::ldc2_w()</a>, <a class="el" href="Operations_8cpp_source.html#l00196">Operations::ldc_w()</a>, <a class="el" href="Operations_8cpp_source.html#l02627">Operations::multianewarray()</a>, <a class="el" href="Operations_8cpp_source.html#l02093">Operations::putfield()</a> e <a class="el" href="Operations_8cpp_source.html#l02035">Operations::putstatic()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l04385">Operations::anewarray()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00169">exibe_ConstantPool()</a>, <a class="el" href="Operations_8cpp_source.html#l04259">Operations::func_new()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00384">getFormattedConstant()</a>, <a class="el" href="Operations_8cpp_source.html#l04610">Operations::multianewarray()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00095">printArquivo_ConstantPool()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00130">LeitorExibidor::setConstantPool()</a>.</p>
 
 </div>
 </div>
-<a id="a850b66fa196e9fc2e898ca41d558e248"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a850b66fa196e9fc2e898ca41d558e248">&#9670;&nbsp;</a></span>tag</h2>
+<a id="aa76301d1853395d7594520988422c3d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa76301d1853395d7594520988422c3d0">&#9670;&nbsp;</a></span>double_info</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="BasicTypes_8h.html#a9bffe5bb2564f91cd90fb7d06848f9a8">U1</a> cp_info::tag</td>
+          <td class="memname"><a class="el" href="structCONSTANT__Double__info.html">CONSTANT_Double_info</a> cp_info::double_info</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ConstantPool_8h_source.html#l00019">19</a> do ficheiro <a class="el" href="ConstantPool_8h_source.html">ConstantPool.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00192">192</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ConstantPool_8cpp_source.html#l00008">carregarConstantPool()</a>, <a class="el" href="Operations_8cpp_source.html#l01985">Operations::getstatic()</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00135">gravarArquivoConstantPool()</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00091">imprimirConstantPool()</a>, <a class="el" href="Operations_8cpp_source.html#l02448">Operations::invokeinterface()</a>, <a class="el" href="Operations_8cpp_source.html#l02271">Operations::invokespecial()</a>, <a class="el" href="Operations_8cpp_source.html#l02368">Operations::invokestatic()</a>, <a class="el" href="Operations_8cpp_source.html#l02112">Operations::invokevirtual()</a>, <a class="el" href="Operations_8cpp_source.html#l00179">Operations::ldc()</a>, <a class="el" href="Operations_8cpp_source.html#l00207">Operations::ldc2_w()</a>, <a class="el" href="Operations_8cpp_source.html#l00196">Operations::ldc_w()</a>, <a class="el" href="Operations_8cpp_source.html#l02627">Operations::multianewarray()</a> e <a class="el" href="Operations_8cpp_source.html#l02035">Operations::putstatic()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00169">exibe_ConstantPool()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00384">getFormattedConstant()</a>, <a class="el" href="Operations_8cpp_source.html#l00445">Operations::ldc2_w()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00095">printArquivo_ConstantPool()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00130">LeitorExibidor::setConstantPool()</a>.</p>
+
+</div>
+</div>
+<a id="a12c0c04a72137ea73d22a3d652de1774"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12c0c04a72137ea73d22a3d652de1774">&#9670;&nbsp;</a></span>fieldref_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCONSTANT__Fieldref__info.html">CONSTANT_Fieldref_info</a> cp_info::fieldref_info</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00185">185</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00169">exibe_ConstantPool()</a>, <a class="el" href="Operations_8cpp_source.html#l03679">Operations::getfield()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00384">getFormattedConstant()</a>, <a class="el" href="Operations_8cpp_source.html#l03512">Operations::getstatic()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00095">printArquivo_ConstantPool()</a>, <a class="el" href="Operations_8cpp_source.html#l03748">Operations::putfield()</a>, <a class="el" href="Operations_8cpp_source.html#l03601">Operations::putstatic()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00130">LeitorExibidor::setConstantPool()</a>.</p>
+
+</div>
+</div>
+<a id="a367569f3e0a70a50afc482c4ac2aece1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a367569f3e0a70a50afc482c4ac2aece1">&#9670;&nbsp;</a></span>float_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCONSTANT__Float__info.html">CONSTANT_Float_info</a> cp_info::float_info</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00190">190</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00169">exibe_ConstantPool()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00384">getFormattedConstant()</a>, <a class="el" href="Operations_8cpp_source.html#l00347">Operations::ldc()</a>, <a class="el" href="Operations_8cpp_source.html#l00395">Operations::ldc_w()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00095">printArquivo_ConstantPool()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00130">LeitorExibidor::setConstantPool()</a>.</p>
+
+</div>
+</div>
+<a id="a8aca171d81e9715b113c7919e8c16dce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aca171d81e9715b113c7919e8c16dce">&#9670;&nbsp;</a></span>info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union { ... }   cp_info::info</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l04385">Operations::anewarray()</a>, <a class="el" href="Frame_8cpp_source.html#l00126">Frame::encontrarAttributes()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00608">exibe_AttributeInfo()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00169">exibe_ConstantPool()</a>, <a class="el" href="Operations_8cpp_source.html#l04259">Operations::func_new()</a>, <a class="el" href="Operations_8cpp_source.html#l03679">Operations::getfield()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00384">getFormattedConstant()</a>, <a class="el" href="Operations_8cpp_source.html#l03512">Operations::getstatic()</a>, <a class="el" href="LeitorExibidor_8cpp_source.html#l00308">LeitorExibidor::getUtf8FromConstantPool()</a>, <a class="el" href="Operations_8cpp_source.html#l04172">Operations::invokeinterface()</a>, <a class="el" href="Operations_8cpp_source.html#l03991">Operations::invokespecial()</a>, <a class="el" href="Operations_8cpp_source.html#l04089">Operations::invokestatic()</a>, <a class="el" href="Operations_8cpp_source.html#l03808">Operations::invokevirtual()</a>, <a class="el" href="Operations_8cpp_source.html#l00347">Operations::ldc()</a>, <a class="el" href="Operations_8cpp_source.html#l00445">Operations::ldc2_w()</a>, <a class="el" href="Operations_8cpp_source.html#l00395">Operations::ldc_w()</a>, <a class="el" href="Operations_8cpp_source.html#l04610">Operations::multianewarray()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00489">print_AttributeInfo()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00095">printArquivo_ConstantPool()</a>, <a class="el" href="Operations_8cpp_source.html#l03748">Operations::putfield()</a>, <a class="el" href="Operations_8cpp_source.html#l03601">Operations::putstatic()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00130">LeitorExibidor::setConstantPool()</a>.</p>
+
+</div>
+</div>
+<a id="a134087258f855dca61e8e8922665d050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a134087258f855dca61e8e8922665d050">&#9670;&nbsp;</a></span>integer_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCONSTANT__Integer__info.html">CONSTANT_Integer_info</a> cp_info::integer_info</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00189">189</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00169">exibe_ConstantPool()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00384">getFormattedConstant()</a>, <a class="el" href="Operations_8cpp_source.html#l00347">Operations::ldc()</a>, <a class="el" href="Operations_8cpp_source.html#l00395">Operations::ldc_w()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00095">printArquivo_ConstantPool()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00130">LeitorExibidor::setConstantPool()</a>.</p>
+
+</div>
+</div>
+<a id="aaebedef650f8f22c5f66057bf1b1271a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaebedef650f8f22c5f66057bf1b1271a">&#9670;&nbsp;</a></span>interfaceMethodref_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCONSTANT__InterfaceMethodref__info.html">CONSTANT_InterfaceMethodref_info</a> cp_info::interfaceMethodref_info</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00187">187</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00169">exibe_ConstantPool()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00384">getFormattedConstant()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00095">printArquivo_ConstantPool()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00130">LeitorExibidor::setConstantPool()</a>.</p>
+
+</div>
+</div>
+<a id="ab0a2bfb802609dbdb4985cb55f465e6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0a2bfb802609dbdb4985cb55f465e6f">&#9670;&nbsp;</a></span>long_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCONSTANT__Long__info.html">CONSTANT_Long_info</a> cp_info::long_info</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00191">191</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00169">exibe_ConstantPool()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00384">getFormattedConstant()</a>, <a class="el" href="Operations_8cpp_source.html#l00445">Operations::ldc2_w()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00095">printArquivo_ConstantPool()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00130">LeitorExibidor::setConstantPool()</a>.</p>
+
+</div>
+</div>
+<a id="ab1304804bef6a0fe6575671223d7d689"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1304804bef6a0fe6575671223d7d689">&#9670;&nbsp;</a></span>methodref_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCONSTANT__Methodref__info.html">CONSTANT_Methodref_info</a> cp_info::methodref_info</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00186">186</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00169">exibe_ConstantPool()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00384">getFormattedConstant()</a>, <a class="el" href="Operations_8cpp_source.html#l04172">Operations::invokeinterface()</a>, <a class="el" href="Operations_8cpp_source.html#l03991">Operations::invokespecial()</a>, <a class="el" href="Operations_8cpp_source.html#l04089">Operations::invokestatic()</a>, <a class="el" href="Operations_8cpp_source.html#l03808">Operations::invokevirtual()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00095">printArquivo_ConstantPool()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00130">LeitorExibidor::setConstantPool()</a>.</p>
+
+</div>
+</div>
+<a id="a1e020df4bc85c0a41365a8bb466f8781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e020df4bc85c0a41365a8bb466f8781">&#9670;&nbsp;</a></span>nameAndType_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCONSTANT__NameAndType__info.html">CONSTANT_NameAndType_info</a> cp_info::nameAndType_info</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00193">193</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00169">exibe_ConstantPool()</a>, <a class="el" href="Operations_8cpp_source.html#l03679">Operations::getfield()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00384">getFormattedConstant()</a>, <a class="el" href="Operations_8cpp_source.html#l03512">Operations::getstatic()</a>, <a class="el" href="Operations_8cpp_source.html#l04172">Operations::invokeinterface()</a>, <a class="el" href="Operations_8cpp_source.html#l03991">Operations::invokespecial()</a>, <a class="el" href="Operations_8cpp_source.html#l04089">Operations::invokestatic()</a>, <a class="el" href="Operations_8cpp_source.html#l03808">Operations::invokevirtual()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00095">printArquivo_ConstantPool()</a>, <a class="el" href="Operations_8cpp_source.html#l03748">Operations::putfield()</a>, <a class="el" href="Operations_8cpp_source.html#l03601">Operations::putstatic()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00130">LeitorExibidor::setConstantPool()</a>.</p>
+
+</div>
+</div>
+<a id="a4d1d5a06448e8b86b4b23608d64cfe7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d1d5a06448e8b86b4b23608d64cfe7e">&#9670;&nbsp;</a></span>string_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCONSTANT__String__info.html">CONSTANT_String_info</a> cp_info::string_info</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00188">188</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00169">exibe_ConstantPool()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00384">getFormattedConstant()</a>, <a class="el" href="Operations_8cpp_source.html#l00347">Operations::ldc()</a>, <a class="el" href="Operations_8cpp_source.html#l00395">Operations::ldc_w()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00095">printArquivo_ConstantPool()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00130">LeitorExibidor::setConstantPool()</a>.</p>
+
+</div>
+</div>
+<a id="a045b8801a6e96a2a31d3b62ea684f141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a045b8801a6e96a2a31d3b62ea684f141">&#9670;&nbsp;</a></span>tag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#ad9f4cdb6757615aae2fad89dab3c5470">u1</a> cp_info::tag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00182">182</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l04385">Operations::anewarray()</a>, <a class="el" href="Operations_8cpp_source.html#l04460">Operations::checkcast()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00169">exibe_ConstantPool()</a>, <a class="el" href="Operations_8cpp_source.html#l04259">Operations::func_new()</a>, <a class="el" href="Operations_8cpp_source.html#l03679">Operations::getfield()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00384">getFormattedConstant()</a>, <a class="el" href="Operations_8cpp_source.html#l03512">Operations::getstatic()</a>, <a class="el" href="LeitorExibidor_8cpp_source.html#l00308">LeitorExibidor::getUtf8FromConstantPool()</a>, <a class="el" href="Operations_8cpp_source.html#l04526">Operations::instanceof()</a>, <a class="el" href="Operations_8cpp_source.html#l04172">Operations::invokeinterface()</a>, <a class="el" href="Operations_8cpp_source.html#l03991">Operations::invokespecial()</a>, <a class="el" href="Operations_8cpp_source.html#l04089">Operations::invokestatic()</a>, <a class="el" href="Operations_8cpp_source.html#l03808">Operations::invokevirtual()</a>, <a class="el" href="Operations_8cpp_source.html#l00347">Operations::ldc()</a>, <a class="el" href="Operations_8cpp_source.html#l00445">Operations::ldc2_w()</a>, <a class="el" href="Operations_8cpp_source.html#l00395">Operations::ldc_w()</a>, <a class="el" href="Operations_8cpp_source.html#l04610">Operations::multianewarray()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00095">printArquivo_ConstantPool()</a>, <a class="el" href="Operations_8cpp_source.html#l03748">Operations::putfield()</a>, <a class="el" href="Operations_8cpp_source.html#l03601">Operations::putstatic()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00130">LeitorExibidor::setConstantPool()</a>.</p>
+
+</div>
+</div>
+<a id="a980c5cbcb2aefe984b7a4988f1f71576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a980c5cbcb2aefe984b7a4988f1f71576">&#9670;&nbsp;</a></span>utf8_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCONSTANT__Utf8__info.html">CONSTANT_Utf8_info</a> cp_info::utf8_info</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="BasicTypes_8h_source.html#l00194">194</a> do ficheiro <a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Frame_8cpp_source.html#l00126">Frame::encontrarAttributes()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00608">exibe_AttributeInfo()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00169">exibe_ConstantPool()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00384">getFormattedConstant()</a>, <a class="el" href="LeitorExibidor_8cpp_source.html#l00308">LeitorExibidor::getUtf8FromConstantPool()</a>, <a class="el" href="Operations_8cpp_source.html#l00347">Operations::ldc()</a>, <a class="el" href="Operations_8cpp_source.html#l00395">Operations::ldc_w()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00489">print_AttributeInfo()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00095">printArquivo_ConstantPool()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00130">LeitorExibidor::setConstantPool()</a>.</p>
 
 </div>
 </div>
 <hr/>A documentação para esta estrutura foi gerada a partir do seguinte ficheiro:<ul>
-<li>include/<a class="el" href="ConstantPool_8h_source.html">ConstantPool.h</a></li>
+<li>include/<a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

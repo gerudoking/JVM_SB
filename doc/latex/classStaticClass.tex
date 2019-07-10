@@ -2,7 +2,7 @@
 \label{classStaticClass}\index{Static\+Class@{Static\+Class}}
 
 
-Fields Estáticos compartilhados por todas as instâncias.  
+Representação de uma classe carregada durante o runtime. O seu limite é dado por {\ttfamily F\+R\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+S\+I\+ZE}.  
 
 
 
@@ -11,7 +11,8 @@ Fields Estáticos compartilhados por todas as instâncias.
 
 
 
-Diagrama de colaboração para Static\+Class\+:\nopagebreak
+Diagrama de colaboração para Static\+Class\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,33 +22,31 @@ Diagrama de colaboração para Static\+Class\+:\nopagebreak
 \subsection*{Membros públicos}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classStaticClass_a6c0e4d8842888a97160f1e815c8e6ac3}{Static\+Class} (\hyperlink{classClassFile}{Class\+File} $\ast$\hyperlink{classStaticClass_a809f1e4dabb3db229a18423f0d0b4a95}{class\+File})
-\begin{DoxyCompactList}\small\item\em Construtor da \hyperlink{classStaticClass}{Static\+Class}. \end{DoxyCompactList}\item 
-\hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} \hyperlink{classStaticClass_ac6d7d4b5b1c315623a8be477c66f38c3}{obter\+Field} (string field)
-\begin{DoxyCompactList}\small\item\em Retorna as informações de um field. \end{DoxyCompactList}\item 
-bool \hyperlink{classStaticClass_aa0d9a3db46155bf6971476a22c4f2eaa}{atualizar\+Field} (string field, \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} typed\+Element)
-\begin{DoxyCompactList}\small\item\em Coloca um novo valor pra um field. \end{DoxyCompactList}\item 
-bool \hyperlink{classStaticClass_a4e5d8d70d10266989b2821e10bd8dacc}{atualizar\+Field\+Finals} (string field, \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} typed\+Element)
-\begin{DoxyCompactList}\small\item\em Marca Field como final. \end{DoxyCompactList}\item 
-\hyperlink{classClassFile}{Class\+File} $\ast$ \hyperlink{classStaticClass_a49b4258a26420be4c6a1a79cdbdc2d5c}{obter\+Class\+File} ()
-\begin{DoxyCompactList}\small\item\em Retorna as informações do class file. \end{DoxyCompactList}\item 
-\hyperlink{classInstanceClass}{Instance\+Class} $\ast$ \hyperlink{classStaticClass_a2990aa887bcb06eaec53afe467e361ef}{obter\+Instance\+Class} ()
-\begin{DoxyCompactList}\small\item\em Retorna a instância da classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{classStaticClass_a6c0e4d8842888a97160f1e815c8e6ac3}{Static\+Class} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\begin{DoxyCompactList}\small\item\em Construtor padrão. \end{DoxyCompactList}\item 
+\hyperlink{classClassFile}{Class\+File} $\ast$ \hyperlink{classStaticClass_ae00772669e7a0e54980ed303ff933cef}{get\+Class\+File} ()
+\begin{DoxyCompactList}\small\item\em Destrutor padrão. \end{DoxyCompactList}\item 
+void \hyperlink{classStaticClass_a010cf8cd301416ef4408c066e0fbcda6}{put\+Value\+Into\+Field} (\hyperlink{structValue}{Value} value, string field\+Name)
+\begin{DoxyCompactList}\small\item\em Insere um valor no field estático informado. \end{DoxyCompactList}\item 
+\hyperlink{structValue}{Value} \hyperlink{classStaticClass_a24545b54a3e3b6ae17dc8cd04004c883}{get\+Value\+From\+Field} (string field\+Name)
+\begin{DoxyCompactList}\small\item\em Obtém o valor de um field estático. \end{DoxyCompactList}\item 
+bool \hyperlink{classStaticClass_a4d2f7ca3157461323a6e471328ed7092}{field\+Exists} (string field\+Name)
+\begin{DoxyCompactList}\small\item\em Verifica se o field informado existe. \end{DoxyCompactList}\item 
+string \hyperlink{classStaticClass_a6acf891b8d9119fddeec52169b364d66}{inicializar\+Arquivo} (char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em formata arquivo saida se o field informado existe. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Atributos Privados}
 \begin{DoxyCompactItemize}
 \item 
-map$<$ string, \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} $\ast$ $>$ \hyperlink{classStaticClass_a472067db1f02a84897348f6a2ca68636}{map\+Typed\+Element}
+\hyperlink{classClassFile}{Class\+File} $\ast$ \hyperlink{classStaticClass_ae54948d5ec18075dd5b68c7faf4ccc8b}{\+\_\+class\+File}
 \item 
-\hyperlink{classClassFile}{Class\+File} $\ast$ \hyperlink{classStaticClass_a809f1e4dabb3db229a18423f0d0b4a95}{class\+File}
+map$<$ string, \hyperlink{structValue}{Value} $>$ \hyperlink{classStaticClass_a3f328810c97cb2b6e15830e3c1cd6289}{\+\_\+static\+Fields}
 \end{DoxyCompactItemize}
 
 
 \subsection{Descrição detalhada}
-Fields Estáticos compartilhados por todas as instâncias. 
+Representação de uma classe carregada durante o runtime. O seu limite é dado por {\ttfamily F\+R\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+S\+I\+ZE}. 
 
-Define operações que manipulam classes estáticas 
-
-Definido na linha 22 do ficheiro Static\+Class.\+h.
+Definido na linha 17 do ficheiro Static\+Class.\+h.
 
 
 
@@ -60,24 +59,23 @@ Definido na linha 22 do ficheiro Static\+Class.\+h.
 
 
 
-Construtor da \hyperlink{classStaticClass}{Static\+Class}. 
+Construtor padrão. 
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em class\+File} & informação do class file já carregada na memória \\
+{\em class\+File} & A {\ttfamily \hyperlink{classClassFile}{Class\+File}} correspondente à classe. \\
 \hline
 \end{DoxyParams}
-class file lido
 
-get numero de fields 
 
-Definido na linha 8 do ficheiro Static\+Class.\+cpp.
+Definido na linha 6 do ficheiro Static\+Class.\+cpp.
 
 
 
-Referências capturar\+Indice\+De\+Referencia(), class\+File, Field\+\_\+info\+::descriptor\+\_\+index, element\+\_\+u\+::l, map\+Typed\+Element, Field\+\_\+info\+::name\+\_\+index, Class\+File\+::obter\+Constant\+Pool(), Class\+File\+::obter\+Fields(), Class\+File\+::obter\+Fields\+Count(), typed\+Element\+\_\+s\+::type, T\+Y\+P\+E\+\_\+\+B\+O\+OL, T\+Y\+P\+E\+\_\+\+D\+O\+U\+B\+LE, T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT, T\+Y\+P\+E\+\_\+\+I\+NT, T\+Y\+P\+E\+\_\+\+L\+O\+NG, T\+Y\+P\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+CE e typed\+Element\+\_\+s\+::value.
+Referências field\+\_\+info\+::access\+\_\+flags, B\+O\+O\+L\+E\+AN, B\+Y\+TE, Value\+::byte\+Value, C\+H\+AR, Value\+::char\+Value, Class\+File\+::constant\+\_\+pool, Value\+::data, field\+\_\+info\+::descriptor\+\_\+index, D\+O\+U\+B\+LE, Value\+::double\+Value, Class\+File\+::fields, Class\+File\+::fields\+\_\+count, F\+L\+O\+AT, Value\+::float\+Value, get\+Formatted\+Constant(), I\+NT, Value\+::int\+Value, L\+O\+NG, Value\+::long\+Value, field\+\_\+info\+::name\+\_\+index, Value\+::object, put\+Value\+Into\+Field(), R\+E\+F\+E\+R\+E\+N\+CE, S\+H\+O\+RT, Value\+::short\+Value e Value\+::type.
 
-Grafo de chamadas desta função\+:\nopagebreak
+Grafo de chamadas desta função\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -87,180 +85,173 @@ Grafo de chamadas desta função\+:\nopagebreak
 
 
 \subsection{Documentação dos métodos}
-\mbox{\Hypertarget{classStaticClass_aa0d9a3db46155bf6971476a22c4f2eaa}\label{classStaticClass_aa0d9a3db46155bf6971476a22c4f2eaa}} 
-\index{Static\+Class@{Static\+Class}!atualizar\+Field@{atualizar\+Field}}
-\index{atualizar\+Field@{atualizar\+Field}!Static\+Class@{Static\+Class}}
-\subsubsection{\texorpdfstring{atualizar\+Field()}{atualizarField()}}
-{\footnotesize\ttfamily bool Static\+Class\+::atualizar\+Field (\begin{DoxyParamCaption}\item[{string}]{field,  }\item[{\hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element}}]{typed\+Element }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classStaticClass_a4d2f7ca3157461323a6e471328ed7092}\label{classStaticClass_a4d2f7ca3157461323a6e471328ed7092}} 
+\index{Static\+Class@{Static\+Class}!field\+Exists@{field\+Exists}}
+\index{field\+Exists@{field\+Exists}!Static\+Class@{Static\+Class}}
+\subsubsection{\texorpdfstring{field\+Exists()}{fieldExists()}}
+{\footnotesize\ttfamily bool Static\+Class\+::field\+Exists (\begin{DoxyParamCaption}\item[{string}]{field\+Name }\end{DoxyParamCaption})}
 
 
 
-Coloca um novo valor pra um field. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em field} & nome do field desejado \\
-\hline
-{\em typed\+Element} & tipo para o field \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Retorna}
-booleano que indica se o field foi setado com o novo tipo ou não 
-\end{DoxyReturn}
-
-
-Definido na linha 74 do ficheiro Static\+Class.\+cpp.
-
-
-
-Referências map\+Typed\+Element e typed\+Element\+\_\+s\+::type.
-
-
-
-Referenciado por Operations\+::putstatic().
-
-\mbox{\Hypertarget{classStaticClass_a4e5d8d70d10266989b2821e10bd8dacc}\label{classStaticClass_a4e5d8d70d10266989b2821e10bd8dacc}} 
-\index{Static\+Class@{Static\+Class}!atualizar\+Field\+Finals@{atualizar\+Field\+Finals}}
-\index{atualizar\+Field\+Finals@{atualizar\+Field\+Finals}!Static\+Class@{Static\+Class}}
-\subsubsection{\texorpdfstring{atualizar\+Field\+Finals()}{atualizarFieldFinals()}}
-{\footnotesize\ttfamily bool Static\+Class\+::atualizar\+Field\+Finals (\begin{DoxyParamCaption}\item[{string}]{field,  }\item[{\hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element}}]{typed\+Element }\end{DoxyParamCaption})}
-
-
-
-Marca Field como final. 
+Verifica se o field informado existe. 
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em field} & nome do field desejado \\
-\hline
-{\em typed\+Element} & tipo para o field \\
+{\em field\+Name} & O nome do field que será verificado a existência. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
-booleano que indica se o field foi setado com o novo tipo ou não 
+Retorna {\ttfamily true} caso o field exista, e {\ttfamily false} caso contrário. 
 \end{DoxyReturn}
 
 
-Definido na linha 93 do ficheiro Static\+Class.\+cpp.
+Definido na linha 81 do ficheiro Static\+Class.\+cpp.
 
 
 
-Referências map\+Typed\+Element e typed\+Element\+\_\+s\+::type.
-
-\mbox{\Hypertarget{classStaticClass_a49b4258a26420be4c6a1a79cdbdc2d5c}\label{classStaticClass_a49b4258a26420be4c6a1a79cdbdc2d5c}} 
-\index{Static\+Class@{Static\+Class}!obter\+Class\+File@{obter\+Class\+File}}
-\index{obter\+Class\+File@{obter\+Class\+File}!Static\+Class@{Static\+Class}}
-\subsubsection{\texorpdfstring{obter\+Class\+File()}{obterClassFile()}}
-{\footnotesize\ttfamily Leitor $\ast$ Static\+Class\+::obter\+Class\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+Referências \+\_\+static\+Fields.
 
 
 
-Retorna as informações do class file. 
+Referenciado por Operations\+::getstatic() e Operations\+::putstatic().
 
-\begin{DoxyReturn}{Retorna}
-ponteiro para a instancia de Classe\+Leitor que contém as informações salvas na memória 
-\end{DoxyReturn}
-
-
-Definido na linha 112 do ficheiro Static\+Class.\+cpp.
-
-
-
-Referências class\+File.
+\mbox{\Hypertarget{classStaticClass_ae00772669e7a0e54980ed303ff933cef}\label{classStaticClass_ae00772669e7a0e54980ed303ff933cef}} 
+\index{Static\+Class@{Static\+Class}!get\+Class\+File@{get\+Class\+File}}
+\index{get\+Class\+File@{get\+Class\+File}!Static\+Class@{Static\+Class}}
+\subsubsection{\texorpdfstring{get\+Class\+File()}{getClassFile()}}
+{\footnotesize\ttfamily \hyperlink{classClassFile}{Class\+File} $\ast$ Static\+Class\+::get\+Class\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Referenciado por Instance\+Class\+::\+Instance\+Class(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Class\+File\+::obter\+Class\+That\+Has\+Serached\+Method(), Class\+File\+::obter\+Method() e Operations\+::obter\+Static\+Class\+That\+Has\+Field().
-
-\mbox{\Hypertarget{classStaticClass_ac6d7d4b5b1c315623a8be477c66f38c3}\label{classStaticClass_ac6d7d4b5b1c315623a8be477c66f38c3}} 
-\index{Static\+Class@{Static\+Class}!obter\+Field@{obter\+Field}}
-\index{obter\+Field@{obter\+Field}!Static\+Class@{Static\+Class}}
-\subsubsection{\texorpdfstring{obter\+Field()}{obterField()}}
-{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element} Static\+Class\+::obter\+Field (\begin{DoxyParamCaption}\item[{string}]{field }\end{DoxyParamCaption})}
+Destrutor padrão. 
 
 
 
-Retorna as informações de um field. 
+Definido na linha 63 do ficheiro Static\+Class.\+cpp.
+
+
+
+Referências \+\_\+class\+File.
+
+
+
+Referenciado por Method\+Area\+::add\+Class(), Operations\+::checkcast(), Operations\+::getstatic(), Instance\+Class\+::\+Instance\+Class(), Operations\+::instanceof(), main(), Frame\+::obter\+Constant\+Pool(), Frame\+::obter\+Method\+Named(), Operations\+::putstatic() e Operations\+::verificar\+Metodo\+Existe().
+
+\mbox{\Hypertarget{classStaticClass_a24545b54a3e3b6ae17dc8cd04004c883}\label{classStaticClass_a24545b54a3e3b6ae17dc8cd04004c883}} 
+\index{Static\+Class@{Static\+Class}!get\+Value\+From\+Field@{get\+Value\+From\+Field}}
+\index{get\+Value\+From\+Field@{get\+Value\+From\+Field}!Static\+Class@{Static\+Class}}
+\subsubsection{\texorpdfstring{get\+Value\+From\+Field()}{getValueFromField()}}
+{\footnotesize\ttfamily \hyperlink{structValue}{Value} Static\+Class\+::get\+Value\+From\+Field (\begin{DoxyParamCaption}\item[{string}]{field\+Name }\end{DoxyParamCaption})}
+
+
+
+Obtém o valor de um field estático. 
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em field} & nome do field desejado \\
+{\em field\+Name} & O valor do field que será obtido. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
-struct typed\+Element que contém informações sobre nome do tipo e valor 
+Retorna o valor correspondente ao field estático. 
 \end{DoxyReturn}
 
 
-Definido na linha 58 do ficheiro Static\+Class.\+cpp.
+Definido na linha 71 do ficheiro Static\+Class.\+cpp.
 
 
 
-Referências map\+Typed\+Element, typed\+Element\+\_\+s\+::type e T\+Y\+P\+E\+\_\+\+N\+O\+T\+\_\+\+S\+ET.
+Referências \+\_\+static\+Fields.
 
 
 
-Referenciado por Operations\+::getstatic() e Operations\+::obter\+Static\+Class\+That\+Has\+Field().
+Referenciado por Operations\+::getstatic().
 
-\mbox{\Hypertarget{classStaticClass_a2990aa887bcb06eaec53afe467e361ef}\label{classStaticClass_a2990aa887bcb06eaec53afe467e361ef}} 
-\index{Static\+Class@{Static\+Class}!obter\+Instance\+Class@{obter\+Instance\+Class}}
-\index{obter\+Instance\+Class@{obter\+Instance\+Class}!Static\+Class@{Static\+Class}}
-\subsubsection{\texorpdfstring{obter\+Instance\+Class()}{obterInstanceClass()}}
-{\footnotesize\ttfamily Instance $\ast$ Static\+Class\+::obter\+Instance\+Class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Retorna a instância da classe. 
+\mbox{\Hypertarget{classStaticClass_a6acf891b8d9119fddeec52169b364d66}\label{classStaticClass_a6acf891b8d9119fddeec52169b364d66}} 
+\index{Static\+Class@{Static\+Class}!inicializar\+Arquivo@{inicializar\+Arquivo}}
+\index{inicializar\+Arquivo@{inicializar\+Arquivo}!Static\+Class@{Static\+Class}}
+\subsubsection{\texorpdfstring{inicializar\+Arquivo()}{inicializarArquivo()}}
+{\footnotesize\ttfamily string Static\+Class\+::inicializar\+Arquivo (\begin{DoxyParamCaption}\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
 
 
-Definido na linha 116 do ficheiro Static\+Class.\+cpp.
+formata arquivo saida se o field informado existe. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em field\+Name} & O nome arquivo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Retorna nome arquivo. 
+\end{DoxyReturn}
+
+
+Definido na linha 85 do ficheiro Static\+Class.\+cpp.
 
 
 
-Referências Heap\+::adicionar\+Instancia().
+Referenciado por main().
+
+\mbox{\Hypertarget{classStaticClass_a010cf8cd301416ef4408c066e0fbcda6}\label{classStaticClass_a010cf8cd301416ef4408c066e0fbcda6}} 
+\index{Static\+Class@{Static\+Class}!put\+Value\+Into\+Field@{put\+Value\+Into\+Field}}
+\index{put\+Value\+Into\+Field@{put\+Value\+Into\+Field}!Static\+Class@{Static\+Class}}
+\subsubsection{\texorpdfstring{put\+Value\+Into\+Field()}{putValueIntoField()}}
+{\footnotesize\ttfamily void Static\+Class\+::put\+Value\+Into\+Field (\begin{DoxyParamCaption}\item[{\hyperlink{structValue}{Value}}]{value,  }\item[{string}]{field\+Name }\end{DoxyParamCaption})}
 
 
 
-Referenciado por Operations\+::func\+\_\+new().
+Insere um valor no field estático informado. 
 
-Grafo de chamadas desta função\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classStaticClass_a2990aa887bcb06eaec53afe467e361ef_cgraph}
-\end{center}
-\end{figure}
+
+\begin{DoxyParams}{Parâmetros}
+{\em value} & O valor que será inserido. \\
+\hline
+{\em field\+Name} & O nome do field estático. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 67 do ficheiro Static\+Class.\+cpp.
+
+
+
+Referências \+\_\+static\+Fields.
+
+
+
+Referenciado por Operations\+::putstatic() e Static\+Class().
+
 
 
 \subsection{Documentação dos dados membro}
-\mbox{\Hypertarget{classStaticClass_a809f1e4dabb3db229a18423f0d0b4a95}\label{classStaticClass_a809f1e4dabb3db229a18423f0d0b4a95}} 
-\index{Static\+Class@{Static\+Class}!class\+File@{class\+File}}
-\index{class\+File@{class\+File}!Static\+Class@{Static\+Class}}
-\subsubsection{\texorpdfstring{class\+File}{classFile}}
-{\footnotesize\ttfamily \hyperlink{classClassFile}{Class\+File}$\ast$ Static\+Class\+::class\+File\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{classStaticClass_ae54948d5ec18075dd5b68c7faf4ccc8b}\label{classStaticClass_ae54948d5ec18075dd5b68c7faf4ccc8b}} 
+\index{Static\+Class@{Static\+Class}!\+\_\+class\+File@{\+\_\+class\+File}}
+\index{\+\_\+class\+File@{\+\_\+class\+File}!Static\+Class@{Static\+Class}}
+\subsubsection{\texorpdfstring{\+\_\+class\+File}{\_classFile}}
+{\footnotesize\ttfamily \hyperlink{classClassFile}{Class\+File}$\ast$ Static\+Class\+::\+\_\+class\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+A {\ttfamily \hyperlink{classClassFile}{Class\+File}} correspondente à classe. 
+
+Definido na linha 63 do ficheiro Static\+Class.\+h.
 
 
 
-Definido na linha 25 do ficheiro Static\+Class.\+h.
+Referenciado por get\+Class\+File().
+
+\mbox{\Hypertarget{classStaticClass_a3f328810c97cb2b6e15830e3c1cd6289}\label{classStaticClass_a3f328810c97cb2b6e15830e3c1cd6289}} 
+\index{Static\+Class@{Static\+Class}!\+\_\+static\+Fields@{\+\_\+static\+Fields}}
+\index{\+\_\+static\+Fields@{\+\_\+static\+Fields}!Static\+Class@{Static\+Class}}
+\subsubsection{\texorpdfstring{\+\_\+static\+Fields}{\_staticFields}}
+{\footnotesize\ttfamily map$<$string, \hyperlink{structValue}{Value}$>$ Static\+Class\+::\+\_\+static\+Fields\hspace{0.3cm}{\ttfamily [private]}}
+
+Os fields estáticos da classe. 
+
+Definido na linha 68 do ficheiro Static\+Class.\+h.
 
 
 
-Referenciado por obter\+Class\+File() e Static\+Class().
-
-\mbox{\Hypertarget{classStaticClass_a472067db1f02a84897348f6a2ca68636}\label{classStaticClass_a472067db1f02a84897348f6a2ca68636}} 
-\index{Static\+Class@{Static\+Class}!map\+Typed\+Element@{map\+Typed\+Element}}
-\index{map\+Typed\+Element@{map\+Typed\+Element}!Static\+Class@{Static\+Class}}
-\subsubsection{\texorpdfstring{map\+Typed\+Element}{mapTypedElement}}
-{\footnotesize\ttfamily map$<$string, \hyperlink{BasicTypes_8h_a97b332303b1262282599e6ede0637b82}{Typed\+Element}$\ast$$>$ Static\+Class\+::map\+Typed\+Element\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definido na linha 24 do ficheiro Static\+Class.\+h.
-
-
-
-Referenciado por atualizar\+Field(), atualizar\+Field\+Finals(), obter\+Field() e Static\+Class().
+Referenciado por field\+Exists(), get\+Value\+From\+Field() e put\+Value\+Into\+Field().
 
 
 

@@ -81,41 +81,27 @@ $(document).ready(function(){initNavTree('PilhaJVM_8h.html','');});
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Componentes</a> &#124;
-<a href="#typedef-members">Definições de tipos</a>  </div>
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
 <div class="title">Referência ao ficheiro PilhaJVM.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Contém tudo necessário para a execução de um método.  
-<a href="#details">Mais...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="OperandsStack_8h_source.html">OperandsStack.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LocalVariables_8h_source.html">LocalVariables.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Operations_8h_source.html">Operations.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Attributes_8h_source.html">Attributes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MethodArea_8h_source.html">MethodArea.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;stack&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &quot;<a class="el" href="Frame_8h_source.html">Frame.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Diagrama de dependências de inclusão para PilhaJVM.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="PilhaJVM_8h__incl.png" border="0" usemap="#include_2PilhaJVM_8h" alt=""/></div>
 <map name="include_2PilhaJVM_8h" id="include_2PilhaJVM_8h">
-<area shape="rect" id="node2" href="ClassFile_8h.html" title="Definição da ClassFile. " alt="" coords="940,155,1028,181"/>
-<area shape="rect" id="node10" href="BasicTypes_8h.html" title="Tipos básicos utilizados para implementarmos a JVM. " alt="" coords="889,528,991,555"/>
-<area shape="rect" id="node18" href="Attributes_8h.html" title="Atributos a serem usados na execuçao da JVM. " alt="" coords="302,379,391,405"/>
-<area shape="rect" id="node22" href="OperandsStack_8h.html" title="Pilha responsável por armazenar os operandos da JVM. " alt="" coords="1356,453,1479,480"/>
-<area shape="rect" id="node28" href="MethodArea_8h.html" title="Responsável por todas as operações que gerenciam os métodos. " alt="" coords="750,229,853,256"/>
-<area shape="rect" id="node31" href="LocalVariables_8h.html" title="Stores local variables to current method. " alt="" coords="1503,453,1622,480"/>
-<area shape="rect" id="node33" href="Operations_8h.html" title="Operations.h" alt="" coords="948,80,1044,107"/>
-<area shape="rect" id="node15" href="ConstantPool_8h.html" title="Módulo Constant pool. " alt="" coords="557,453,669,480"/>
-<area shape="rect" id="node16" href="Flags_8h.html" title="ClassFlags (public, final, super, interface and abstract) " alt="" coords="94,453,159,480"/>
-<area shape="rect" id="node17" href="Fields_8h.html" title="Gerencia as informações dos campos do arquivo .class. " alt="" coords="337,304,405,331"/>
-<area shape="rect" id="node19" href="Interfaces_8h.html" title="Gerencia as informações da interfaces do arquivo .class. " alt="" coords="720,379,811,405"/>
-<area shape="rect" id="node20" href="Methods_8h.html" title="Gerencia as informações dos metodos do arquivo .class. " alt="" coords="429,304,512,331"/>
-<area shape="rect" id="node21" href="StaticClass_8h.html" title="Definição da StaticClass. " alt="" coords="1256,304,1357,331"/>
-<area shape="rect" id="node25" href="InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="1240,379,1357,405"/>
-<area shape="rect" id="node26" href="Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="1217,453,1281,480"/>
+<area shape="rect" id="node5" href="Frame_8h.html" title="Frame.h" alt="" coords="896,80,967,107"/>
+<area shape="rect" id="node10" href="BasicTypes_8h.html" title="BasicTypes.h" alt="" coords="199,453,301,480"/>
+<area shape="rect" id="node12" href="InstanceClass_8h.html" title="InstanceClass.h" alt="" coords="755,155,873,181"/>
+<area shape="rect" id="node15" href="StaticClass_8h.html" title="StaticClass.h" alt="" coords="891,229,993,256"/>
+<area shape="rect" id="node13" href="Object_8h.html" title="Object.h" alt="" coords="389,229,460,256"/>
+<area shape="rect" id="node16" href="LeitorExibidor_8h.html" title="LeitorExibidor.h" alt="" coords="606,304,718,331"/>
+<area shape="rect" id="node19" href="ClassFile_8h.html" title="Definição da ClassFile. " alt="" coords="793,379,881,405"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -123,22 +109,9 @@ Este grafo mostra quais são os ficheiros que incluem directamente ou indirectam
 <div class="dyncontent">
 <div class="center"><img src="PilhaJVM_8h__dep__incl.png" border="0" usemap="#include_2PilhaJVM_8hdep" alt=""/></div>
 <map name="include_2PilhaJVM_8hdep" id="include_2PilhaJVM_8hdep">
-<area shape="rect" id="node2" href="PilhaJVM_8cpp.html" title="src/PilhaJVM.cpp" alt="" coords="334,80,459,107"/>
-<area shape="rect" id="node3" href="MethodArea_8h.html" title="Responsável por todas as operações que gerenciam os métodos. " alt="" coords="535,80,683,107"/>
-<area shape="rect" id="node14" href="Operations_8h.html" title="include/Operations.h" alt="" coords="757,304,898,331"/>
-<area shape="rect" id="node4" href="MethodArea_8cpp.html" title="src/MethodArea.cpp" alt="" coords="589,155,727,181"/>
-<area shape="rect" id="node5" href="ClassFile_8h.html" title="Definição da ClassFile. " alt="" coords="381,155,514,181"/>
-<area shape="rect" id="node6" href="ClassFile_8cpp.html" title="Classe que irá realizar a leitura do bytecode e salvar as informações do class file. " alt="" coords="5,229,129,256"/>
-<area shape="rect" id="node7" href="Main_8cpp.html" title="Modulo principal, dá a opção de escolha entre exibidor e interpretador. " alt="" coords="63,304,160,331"/>
-<area shape="rect" id="node8" href="StaticClass_8h.html" title="Definição da StaticClass. " alt="" coords="487,229,634,256"/>
-<area shape="rect" id="node10" href="InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="357,304,519,331"/>
-<area shape="rect" id="node16" href="LeitorExibidor_8h.html" title="include/LeitorExibidor.h" alt="" coords="205,229,362,256"/>
-<area shape="rect" id="node9" href="StaticClass_8cpp.html" title="src/StaticClass.cpp" alt="" coords="544,304,681,331"/>
-<area shape="rect" id="node11" href="InstanceClass_8cpp.html" title="src/InstanceClass.cpp" alt="" coords="283,379,436,405"/>
-<area shape="rect" id="node12" href="Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="461,379,570,405"/>
-<area shape="rect" id="node13" href="Heap_8cpp.html" title="src/Heap.cpp" alt="" coords="465,453,565,480"/>
-<area shape="rect" id="node15" href="Operations_8cpp.html" title="src/Operations.cpp" alt="" coords="761,379,893,405"/>
-<area shape="rect" id="node17" href="LeitorExibidor_8cpp.html" title="src/LeitorExibidor.cpp" alt="" coords="184,304,332,331"/>
+<area shape="rect" id="node2" href="MethodArea_8cpp.html" title="src/MethodArea.cpp" alt="" coords="5,80,144,107"/>
+<area shape="rect" id="node3" href="Operations_8cpp.html" title="src/Operations.cpp" alt="" coords="169,80,301,107"/>
+<area shape="rect" id="node4" href="PilhaJVM_8cpp.html" title="src/PilhaJVM.cpp" alt="" coords="325,80,451,107"/>
 </map>
 </div>
 </div>
@@ -146,34 +119,28 @@ Este grafo mostra quais são os ficheiros que incluem directamente ou indirectam
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Componentes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe__s.html">frame_s</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura de armazenamento.  <a href="structframe__s.html#details">Mais...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPilhaJVM.html">PilhaJVM</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classe de pilha de frames.  <a href="classPilhaJVM.html#details">Mais...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Definições de tipos</h2></td></tr>
-<tr class="memitem:acc380914b41a084dcc8e4b38fb200145"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structframe__s.html">frame_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PilhaJVM_8h.html#acc380914b41a084dcc8e4b38fb200145">Frame</a></td></tr>
-<tr class="separator:acc380914b41a084dcc8e4b38fb200145"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a9c1b367989fff08c6b6fadfa29483da2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PilhaJVM_8h.html#a9c1b367989fff08c6b6fadfa29483da2">FRAME_MAX_SIZE</a>&#160;&#160;&#160;50</td></tr>
+<tr class="separator:a9c1b367989fff08c6b6fadfa29483da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
-<div class="textblock"><p>Contém tudo necessário para a execução de um método. </p>
-
-<p class="definition">Definido no ficheiro <a class="el" href="PilhaJVM_8h_source.html">PilhaJVM.h</a>.</p>
-</div><h2 class="groupheader">Documentação dos tipos</h2>
-<a id="acc380914b41a084dcc8e4b38fb200145"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc380914b41a084dcc8e4b38fb200145">&#9670;&nbsp;</a></span>Frame</h2>
+<h2 class="groupheader">Documentação das macros</h2>
+<a id="a9c1b367989fff08c6b6fadfa29483da2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c1b367989fff08c6b6fadfa29483da2">&#9670;&nbsp;</a></span>FRAME_MAX_SIZE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="structframe__s.html">frame_s</a>  <a class="el" href="PilhaJVM_8h.html#acc380914b41a084dcc8e4b38fb200145">Frame</a></td>
+          <td class="memname">#define FRAME_MAX_SIZE&#160;&#160;&#160;50</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definido na linha <a class="el" href="PilhaJVM_8h_source.html#l00011">11</a> do ficheiro <a class="el" href="PilhaJVM_8h_source.html">PilhaJVM.h</a>.</p>
 
 </div>
 </div>

@@ -1,4 +1,5 @@
 <map id="Operations::iconst_m1" name="Operations::iconst_m1">
-<area shape="rect" id="node2" href="$classOperandsStack.html#a5006a59c2d815e4a24b055e2e4d2e741" title="Empilha um valor de tipo inteiro. " alt="" coords="207,5,391,32"/>
-<area shape="rect" id="node3" href="$classOperandsStack.html#a6ea316fc2b2503af2175fada4d4a9741" title="retorna o tamanho da pilha de operandos " alt="" coords="439,5,641,32"/>
+<area shape="rect" id="node2" href="$classFrame.html#af2481010c4795fbe1cba48122609cf1e" title="Adiciona um operando na pilha de operandos. " alt="" coords="207,5,405,32"/>
+<area shape="rect" id="node3" href="$classPilhaJVM.html#a13bf1c43de7819ea7761616f7a04c3b9" title="Obter a única instância da pilha. " alt="" coords="229,56,383,83"/>
+<area shape="rect" id="node4" href="$classPilhaJVM.html#aa0e43da476df6147c86c8cc3d6899718" title="Obtém o frame no topo da pilha da JVM. " alt="" coords="225,107,387,133"/>
 </map>

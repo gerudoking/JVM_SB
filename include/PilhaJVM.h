@@ -1,95 +1,74 @@
-/*!
- * \file PilhaJVM.h
- * \brief Contém tudo necessário para a execução de um método.
- */
+#ifndef vmstack_h
+#define vmstack_h
 
-#ifndef PILHA_JVM_H
-#define PILHA_JVM_H
-
-class PilhaJVM;
-
-#include "ClassFile.h"
-#include "OperandsStack.h"
-#include "LocalVariables.h"
-#include "BasicTypes.h"
-#include "Operations.h"
-#include "Attributes.h"
-#include "MethodArea.h"
+#include <stack>
+#include <iostream>
+#include <cstdlib>
+#include "Frame.h"
 
 using namespace std;
 
-/** @struct frame_s
- * @brief Estrutura de armazenamento
- * @brief Responsável por todas as informações necessárias para a execução de um método.
- */
-typedef struct frame_s {
-	unsigned char *pc;
-	Cp_info *constantPool;
-	OperandsStack *operandsStack;
-	LocalVariables *localVariables;
-	Method_info method;
-} Frame;
+#define FRAME_MAX_SIZE 50
 
-/** @class PilhaJVM
- * @brief Classe de pilha de frames
- * @brief Responsável por todas as operações que usam o frame.
- */
+
+/** @class Operations
+ * @brief  Classe para representar a pilha da JVM. Uma pilha é responsável por conter frames. O seu limite é dado por \c FRAME_MAX_SIZE
+ * @brief Essa classe é um singleton, ou seja, somente existe no máximo 1 instância dela para cada instância da JVM.
+  */
 class PilhaJVM {
-private:
-	stack<Frame*> stackFrame;
-	Frame frame;
-
-	/** @fn bool proximaInstrucao()
-	 * @brief Atualiza o PC, se não for possível atualizar, dá um pop no método atual
-	 */
-	bool proximaInstrucao();
-
-	/** @var int opcode
-	 * @brief Contêm o opcode que corresponde a uma instrução.
-	 */
-	int opcode;
-
-	/** @fn void inicializarPC(frame *frame)
-	 * @brief Põe o PC na posição inicial
-	 * @param frame Estrutura do tipo frame.
-	 */
-	void inicializarPC(Frame *frame);
+    
 public:
-	/** @fn PilhaJVM(ClassFile *classFile)
-	 * @brief Contrutor da pilha de frame
-	 * @param classFile O que é lido do arquivo .class.
-	 */
-	PilhaJVM(ClassFile *classFile);
+    /**
+     * @brief Obter a única instância da pilha.
+     * @return A instância da pilha.
+     */
+    static PilhaJVM& getInstance() {
+        static PilhaJVM instance;
+        return instance;
+    }
 
-	/** @fn void atualizarArgumentos(vector<typedElement> vectorArgumentos)
-	 * @brief Configura os argumentos.
-	 * @param vectorArgumentos Vetor com os argumentos a serem copiados para o vetor de variáveis locais
-	 */
-	void atualizarArgumentos(vector<TypedElement> vectorArgumentos);
-
-	/** @fn void executarMetodos();
-	 * @brief Executa o método atual e os métodos chamados.
-	 */
-	void executarMetodos();
-
-	/** @fn void adicionarFrame(Method_info method, Cp_info *constantPool);
-	 * @brief Adiciona um frame no topo da pilha.
-	 * @param method Método no qual o frame será criado.
-	 * @param constantPool Um ponteiro para o pool de constantes.
-	 */
-	void adicionarFrame(Method_info method, Cp_info *constantPool);
-
-	/** @fn void adicionarFrame(Method_info *method, Cp_info *constantPool);
-	 * @brief Adiciona um frame no topo da pilha.
-	 * @param method Ponteiro para o método no qual o frame será criado.
-	 * @param constantPool Um ponteiro para o pool de constantes.
-	 */
-	void adicionarFrame(Method_info *method, Cp_info *constantPool);
-
-	/** @fn void popRemoverObjetos()
-	 * @brief Dá um pop no método atual.
-	 */
-	void popRemoverObjetos();
+    /**
+     * @brief Destrutor padrão.
+     */
+    ~PilhaJVM();
+    
+    /**
+     * @brief Adiciona um frame na pilha da JVM.
+     * @param frame Um ponteiro para o frame que será adicionado na pilha.
+     */
+    void addFrame(Frame *frame);
+    
+    /**
+     * @brief Obtém o frame no topo da pilha da JVM.
+     * @return Retorna o frame no topo da pilha. Caso a pilha esteja vazia, é retornado \c NULL.
+     */
+    Frame* getTopFrame();
+    
+    /**
+     * @brief Remove o frame do topo da pilha e o libera da memória.
+     * @return Retorna \c true caso o frame foi deletado, e \c false caso contrário.
+     */
+    bool destroyTopFrame();
+    
+    /**
+     * @brief Obtém o tamanho da pilha da JVM.
+     * @return Obtém o número de frames contidos na pilha da JVM.
+     */
+    uint32_t size();
+    
+private:
+    /**
+     * @brief Construtor padrão.
+     */
+    PilhaJVM();
+    
+    PilhaJVM(PilhaJVM const&); // não permitir implementação do construtor de cópia
+    void operator=(PilhaJVM const&); // não permitir implementação do operador de igual
+    
+    /**
+     * Armazena a pilha da JVM, que contém frames.
+     */
+    stack<Frame*> _frameStack;
 };
 
-#endif
+#endif /* vmstack_h */

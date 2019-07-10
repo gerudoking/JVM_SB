@@ -1,0 +1,20 @@
+<map id="Frame::Frame" name="Frame::Frame">
+<area shape="rect" id="node2" href="$classFrame.html#a6950091ee708f622befdfcc7c35b7025" title="Encontra os atributos Code e Exceptions do método associado ao frame. " alt="" coords="159,56,337,83"/>
+<area shape="rect" id="node6" href="$classFrame.html#a9920bdecf44e07796b7feea5bc4f1a6c" title="Obtém um método a partir da classe informada ou de alguma super classe. " alt="" coords="157,212,339,239"/>
+<area shape="rect" id="node3" href="$classFrame.html#a77f9705e64bfbdfc68921b7de11a893f" title="Obter um ponteiro para a pool de constantes referente ao frame atual. " alt="" coords="390,56,565,83"/>
+<area shape="rect" id="node5" href="$classUtils.html#a63daf33599b447a8f3b2ea5aef2815ce" title="Utils::compararUtf8String" alt="" coords="392,5,563,32"/>
+<area shape="rect" id="node4" href="$classStaticClass.html#ae00772669e7a0e54980ed303ff933cef" title="Destrutor padrão. " alt="" coords="863,132,1033,159"/>
+<area shape="rect" id="node7" href="$classMethodArea.html#ab5fadec94ada20bc6381e7e9ac766cad" title="Obter a única instância do MethodArea. " alt="" coords="393,212,561,239"/>
+<area shape="rect" id="node8" href="$ClassVisao_8cpp.html#ad59936a226470583b59565cf99f4375e" title="getFormattedConstant" alt="" coords="872,267,1024,293"/>
+<area shape="rect" id="node10" href="$classMethodArea.html#a6e5cd27f3133d70a8c56c5daf9190ba6" title="Carrega a classe com o nome dado e a adiciona na área de métodos. " alt="" coords="387,318,568,359"/>
+<area shape="rect" id="node9" href="$classUtils.html#abef6742f09f81fea5952454925325ea5" title="Utils::converterStreamTo\lCString" alt="" coords="1085,259,1253,301"/>
+<area shape="rect" id="node11" href="$classMethodArea.html#a1fb65cf5f35cadbe2be8ad1aece57025" title="Busca por uma classe com o nome qualificado passado (e.g. java/lang/Object). " alt="" coords="616,208,811,235"/>
+<area shape="rect" id="node12" href="$classLeitorExibidor.html#ab6f5cece56cf5d2e486a5512d52de392" title="Obter a única instância do ClassLoader. " alt="" coords="625,376,802,403"/>
+<area shape="rect" id="node13" href="$classLeitorExibidor.html#af6f4f84cbfaf72e6673e1dc42023b308" title="LeitorExibidor::readClassFile" alt="" coords="619,325,808,352"/>
+<area shape="rect" id="node15" href="$classMethodArea.html#a9e4e378de46c1a9836820d86cd9dadb8" title="Adiciona uma classe à área de métodos. " alt="" coords="636,157,791,184"/>
+<area shape="rect" id="node16" href="$classOperations.html#afd99f64338fb7f1d1b813254f005bf9a" title="Obter a única instância da Execution Engine. " alt="" coords="633,477,794,504"/>
+<area shape="rect" id="node17" href="$classOperations.html#a397caddc1ff805c556d3b71c9e525e3f" title="Verifica se o método informado existe na classe atual. " alt="" coords="622,259,805,301"/>
+<area shape="rect" id="node18" href="$classPilhaJVM.html#a13bf1c43de7819ea7761616f7a04c3b9" title="Obter a única instância da pilha. " alt="" coords="636,528,791,555"/>
+<area shape="rect" id="node19" href="$classPilhaJVM.html#a64d7185bc812d3c81e5270c54c212e07" title="Adiciona um frame na pilha da JVM. " alt="" coords="641,427,785,453"/>
+<area shape="rect" id="node14" href="$classUtils.html#a71459ff272f47bbce2081ff59fae2d2c" title="Utils::verificarVersaoClass" alt="" coords="859,325,1037,352"/>
+</map>

@@ -4,6 +4,7 @@ var NAVTREE =
     [ "Classes", "annotated.html", [
       [ "Lista de componentes", "annotated.html", "annotated_dup" ],
       [ "Índice dos componentes", "classes.html", null ],
+      [ "Hierarquia de classes", "hierarchy.html", "hierarchy" ],
       [ "Componentes membro", "functions.html", [
         [ "Tudo", "functions.html", "functions_dup" ],
         [ "Funções", "functions_func.html", "functions_func" ],
@@ -17,6 +18,8 @@ var NAVTREE =
         [ "Funções", "globals_func.html", null ],
         [ "Variáveis", "globals_vars.html", null ],
         [ "Definições de tipos", "globals_type.html", null ],
+        [ "Enumerações", "globals_enum.html", null ],
+        [ "Valores de enumerações", "globals_eval.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -25,9 +28,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Attributes_8cpp.html",
-"classClassFile.html#a4803bd3f325fbab1bf9c0f774b3a8c97",
-"classOperations.html#aa8a2c3048379b9d5cdc2b4611ef86190"
+"ArrayObject_8cpp.html",
+"classLeitorExibidor.html#a13b5c2cf5de57b6cea330a425f7e55be",
+"classOperations.html#ae3c949d56a3ee685668134493595334b"
 ];
 
 var SYNCONMSG = 'clique para desativar a sincronização do painel';

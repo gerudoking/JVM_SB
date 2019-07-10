@@ -2,7 +2,7 @@
 \label{structmethod__info}\index{method\+\_\+info@{method\+\_\+info}}
 
 
-{\ttfamily \#include $<$Methods.\+h$>$}
+{\ttfamily \#include $<$Basic\+Types.\+h$>$}
 
 
 
@@ -17,13 +17,13 @@ Diagrama de colaboração para method\+\_\+info\+:
 \subsection*{Atributos Públicos}
 \begin{DoxyCompactItemize}
 \item 
-uint16\+\_\+t \hyperlink{structmethod__info_a8fc68aba419f2617deda879c467f5410}{access\+\_\+flags}
+\hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} \hyperlink{structmethod__info_a3b657027a141cdbc94ded28607c98be5}{access\+\_\+flags}
 \item 
-uint16\+\_\+t \hyperlink{structmethod__info_af0ba3d6d566432e74eed5c37cd998c14}{name\+\_\+index}
+\hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} \hyperlink{structmethod__info_ab91d62d0658b77bba83f6bb685e3bbb9}{name\+\_\+index}
 \item 
-uint16\+\_\+t \hyperlink{structmethod__info_abccd6a5202d4c0ee1be6b89692d0352a}{descriptor\+\_\+index}
+\hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} \hyperlink{structmethod__info_a7713103e0c8d060630ad62774fb9be37}{descriptor\+\_\+index}
 \item 
-uint16\+\_\+t \hyperlink{structmethod__info_a9e711e4dfb8181f7dce16c6f640ba734}{attributes\+\_\+count}
+\hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} \hyperlink{structmethod__info_ad9e5e1e2fc850806addadd6deab8565d}{attributes\+\_\+count}
 \item 
 \hyperlink{structattribute__info}{attribute\+\_\+info} $\ast$ \hyperlink{structmethod__info_a8ce4caaa03680c91f548558a38647ad8}{attributes}
 \end{DoxyCompactItemize}
@@ -32,24 +32,24 @@ uint16\+\_\+t \hyperlink{structmethod__info_a9e711e4dfb8181f7dce16c6f640ba734}{a
 \subsection{Descrição detalhada}
 
 
-Definido na linha 16 do ficheiro Methods.\+h.
+Definido na linha 107 do ficheiro Basic\+Types.\+h.
 
 
 
 \subsection{Documentação dos dados membro}
-\mbox{\Hypertarget{structmethod__info_a8fc68aba419f2617deda879c467f5410}\label{structmethod__info_a8fc68aba419f2617deda879c467f5410}} 
+\mbox{\Hypertarget{structmethod__info_a3b657027a141cdbc94ded28607c98be5}\label{structmethod__info_a3b657027a141cdbc94ded28607c98be5}} 
 \index{method\+\_\+info@{method\+\_\+info}!access\+\_\+flags@{access\+\_\+flags}}
 \index{access\+\_\+flags@{access\+\_\+flags}!method\+\_\+info@{method\+\_\+info}}
 \subsubsection{\texorpdfstring{access\+\_\+flags}{access\_flags}}
-{\footnotesize\ttfamily uint16\+\_\+t method\+\_\+info\+::access\+\_\+flags}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} method\+\_\+info\+::access\+\_\+flags}
 
 
 
-Definido na linha 17 do ficheiro Methods.\+h.
+Definido na linha 108 do ficheiro Basic\+Types.\+h.
 
 
 
-Referenciado por gravar\+Arquivo\+Method(), imprimir\+Method(), ler\+Method() e Leitor\+Exibidor\+::verificar\+Main().
+Referenciado por exibe\+\_\+\+Methods(), Frame\+::\+Frame(), print\+Arquivo\+\_\+\+Methods() e Leitor\+Exibidor\+::set\+Methods().
 
 \mbox{\Hypertarget{structmethod__info_a8ce4caaa03680c91f548558a38647ad8}\label{structmethod__info_a8ce4caaa03680c91f548558a38647ad8}} 
 \index{method\+\_\+info@{method\+\_\+info}!attributes@{attributes}}
@@ -59,56 +59,56 @@ Referenciado por gravar\+Arquivo\+Method(), imprimir\+Method(), ler\+Method() e 
 
 
 
-Definido na linha 21 do ficheiro Methods.\+h.
+Definido na linha 112 do ficheiro Basic\+Types.\+h.
 
 
 
-Referenciado por Frame\+Stack\+::adicionar\+Frame(), Frame\+Stack\+::\+Frame\+Stack(), gravar\+Arquivo\+Method(), imprimir\+Method(), Frame\+Stack\+::inicializar\+P\+C(), ler\+Method(), Operations\+::lookupswitch() e Operations\+::tableswitch().
+Referenciado por Frame\+::encontrar\+Attributes(), exibe\+\_\+\+Methods(), print\+Arquivo\+\_\+\+Methods() e Leitor\+Exibidor\+::set\+Methods().
 
-\mbox{\Hypertarget{structmethod__info_a9e711e4dfb8181f7dce16c6f640ba734}\label{structmethod__info_a9e711e4dfb8181f7dce16c6f640ba734}} 
+\mbox{\Hypertarget{structmethod__info_ad9e5e1e2fc850806addadd6deab8565d}\label{structmethod__info_ad9e5e1e2fc850806addadd6deab8565d}} 
 \index{method\+\_\+info@{method\+\_\+info}!attributes\+\_\+count@{attributes\+\_\+count}}
 \index{attributes\+\_\+count@{attributes\+\_\+count}!method\+\_\+info@{method\+\_\+info}}
 \subsubsection{\texorpdfstring{attributes\+\_\+count}{attributes\_count}}
-{\footnotesize\ttfamily uint16\+\_\+t method\+\_\+info\+::attributes\+\_\+count}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} method\+\_\+info\+::attributes\+\_\+count}
 
 
 
-Definido na linha 20 do ficheiro Methods.\+h.
+Definido na linha 111 do ficheiro Basic\+Types.\+h.
 
 
 
-Referenciado por gravar\+Arquivo\+Method(), imprimir\+Method() e ler\+Method().
+Referenciado por Frame\+::encontrar\+Attributes(), exibe\+\_\+\+Methods(), print\+Arquivo\+\_\+\+Methods() e Leitor\+Exibidor\+::set\+Methods().
 
-\mbox{\Hypertarget{structmethod__info_abccd6a5202d4c0ee1be6b89692d0352a}\label{structmethod__info_abccd6a5202d4c0ee1be6b89692d0352a}} 
+\mbox{\Hypertarget{structmethod__info_a7713103e0c8d060630ad62774fb9be37}\label{structmethod__info_a7713103e0c8d060630ad62774fb9be37}} 
 \index{method\+\_\+info@{method\+\_\+info}!descriptor\+\_\+index@{descriptor\+\_\+index}}
 \index{descriptor\+\_\+index@{descriptor\+\_\+index}!method\+\_\+info@{method\+\_\+info}}
 \subsubsection{\texorpdfstring{descriptor\+\_\+index}{descriptor\_index}}
-{\footnotesize\ttfamily uint16\+\_\+t method\+\_\+info\+::descriptor\+\_\+index}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} method\+\_\+info\+::descriptor\+\_\+index}
 
 
 
-Definido na linha 19 do ficheiro Methods.\+h.
+Definido na linha 110 do ficheiro Basic\+Types.\+h.
 
 
 
-Referenciado por gravar\+Arquivo\+Method(), imprimir\+Method(), ler\+Method(), Leitor\+Exibidor\+::obter\+Class\+That\+Has\+Serached\+Method(), Leitor\+Exibidor\+::obter\+Method() e Leitor\+Exibidor\+::verificar\+Main().
+Referenciado por exibe\+\_\+\+Methods(), Frame\+::obter\+Method\+Named(), print\+Arquivo\+\_\+\+Methods(), Leitor\+Exibidor\+::set\+Methods() e Operations\+::verificar\+Metodo\+Existe().
 
-\mbox{\Hypertarget{structmethod__info_af0ba3d6d566432e74eed5c37cd998c14}\label{structmethod__info_af0ba3d6d566432e74eed5c37cd998c14}} 
+\mbox{\Hypertarget{structmethod__info_ab91d62d0658b77bba83f6bb685e3bbb9}\label{structmethod__info_ab91d62d0658b77bba83f6bb685e3bbb9}} 
 \index{method\+\_\+info@{method\+\_\+info}!name\+\_\+index@{name\+\_\+index}}
 \index{name\+\_\+index@{name\+\_\+index}!method\+\_\+info@{method\+\_\+info}}
 \subsubsection{\texorpdfstring{name\+\_\+index}{name\_index}}
-{\footnotesize\ttfamily uint16\+\_\+t method\+\_\+info\+::name\+\_\+index}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} method\+\_\+info\+::name\+\_\+index}
 
 
 
-Definido na linha 18 do ficheiro Methods.\+h.
+Definido na linha 109 do ficheiro Basic\+Types.\+h.
 
 
 
-Referenciado por gravar\+Arquivo\+Method(), imprimir\+Method(), ler\+Method(), Leitor\+Exibidor\+::obter\+Class\+That\+Has\+Serached\+Method(), Leitor\+Exibidor\+::obter\+Method(), Operations\+::putfield(), Leitor\+Exibidor\+::verificar\+Clinit() e Leitor\+Exibidor\+::verificar\+Main().
+Referenciado por exibe\+\_\+\+Methods(), Frame\+::obter\+Method\+Named(), print\+Arquivo\+\_\+\+Methods(), Leitor\+Exibidor\+::set\+Methods() e Operations\+::verificar\+Metodo\+Existe().
 
 
 
 A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
 \item 
-include/\hyperlink{Methods_8h}{Methods.\+h}\end{DoxyCompactItemize}
+include/\hyperlink{BasicTypes_8h}{Basic\+Types.\+h}\end{DoxyCompactItemize}

@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['u1',['u1',['../unionClassLoaderType.html#ac3612ba54bfba5c4b856dcba8db1a8a8',1,'ClassLoaderType::u1()'],['../BasicTypes_8h.html#a9bffe5bb2564f91cd90fb7d06848f9a8',1,'U1():&#160;BasicTypes.h']]],
-  ['u2',['u2',['../unionClassLoaderType.html#aaf24600dbc4afe99210fa000bdb1e6d7',1,'ClassLoaderType::u2()'],['../BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e',1,'U2():&#160;BasicTypes.h']]],
-  ['u4',['u4',['../unionClassLoaderType.html#aad01cfe6aac48729f55425b67a70622e',1,'ClassLoaderType::u4()'],['../BasicTypes_8h.html#ac6d2ba2e53dd424684ead2f40e74a8b6',1,'U4():&#160;BasicTypes.h']]],
-  ['unknown_5ftype',['UNKNOWN_TYPE',['../ClassFile_8h.html#a2d08587be7624f46d6e1ce0892ab3ad4',1,'ClassFile.h']]],
-  ['utf8',['UTF8',['../ConstantPool_8h.html#af9a8bd70343e082dbc63ac806b8ced24',1,'ConstantPool.h']]]
+  ['tableswitch',['tableswitch',['../classOperations.html#a72955f43cde98b73c503e1a8c1505352',1,'Operations']]],
+  ['tag',['tag',['../structcp__info.html#a045b8801a6e96a2a31d3b62ea684f141',1,'cp_info']]],
+  ['testendianess',['testEndianess',['../classLeitorExibidor.html#ac8ff6248b6897d88bb5cf22ea987a6ab',1,'LeitorExibidor']]],
+  ['this_5fclass',['this_class',['../classClassFile.html#a2d33db0a560a71b94bc572dd1e4ec03a',1,'ClassFile']]],
+  ['trocalocalvariable',['trocaLocalVariable',['../classFrame.html#adfa57fa3049213f13beba10ba7152500',1,'Frame']]],
+  ['type',['type',['../structValue.html#ab45dfd167290d4324ba4832abcc4064d',1,'Value']]]
 ];

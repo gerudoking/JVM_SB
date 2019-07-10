@@ -1,5 +1,7 @@
 <map id="Operations::jsr_w" name="Operations::jsr_w">
-<area shape="rect" id="node2" href="$classOperandsStack.html#aca2be3100b76689949f029196a893712" title="Empilha um valor de tipo bool. " alt="" coords="179,5,374,32"/>
-<area shape="rect" id="node4" href="$classOperations.html#a6906050cc72d774f77d8ba33607b1c62" title="Function that returns a n bytes value. " alt="" coords="177,56,376,83"/>
-<area shape="rect" id="node3" href="$classOperandsStack.html#a6ea316fc2b2503af2175fada4d4a9741" title="retorna o tamanho da pilha de operandos " alt="" coords="424,5,627,32"/>
+<area shape="rect" id="node2" href="$classFrame.html#af2481010c4795fbe1cba48122609cf1e" title="Adiciona um operando na pilha de operandos. " alt="" coords="177,5,376,32"/>
+<area shape="rect" id="node3" href="$classFrame.html#a6863584ef3a6f2e4b1f93fb0deb09f4b" title="Obtém o código do método a partir de um offset. " alt="" coords="219,56,335,83"/>
+<area shape="rect" id="node4" href="$classPilhaJVM.html#a13bf1c43de7819ea7761616f7a04c3b9" title="Obter a única instância da pilha. " alt="" coords="199,107,354,133"/>
+<area shape="rect" id="node5" href="$classPilhaJVM.html#aa0e43da476df6147c86c8cc3d6899718" title="Obtém o frame no topo da pilha da JVM. " alt="" coords="195,157,358,184"/>
+<area shape="rect" id="node6" href="$classFrame.html#a3151aeb977a24c464ed8930c9100715d" title="Retorna o comprimento do código do método não&#45;nativo em execução. " alt="" coords="215,208,338,235"/>
 </map>

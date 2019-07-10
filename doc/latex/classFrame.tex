@@ -1,0 +1,664 @@
+\hypertarget{classFrame}{}\section{Referência à classe Frame}
+\label{classFrame}\index{Frame@{Frame}}
+
+
+{\ttfamily \#include $<$Frame.\+h$>$}
+
+
+
+Diagrama de colaboração para Frame\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFrame__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFrame_a3318a2cfd762b3a31adc4f101cb006e6}{Frame} (\hyperlink{classInstanceClass}{Instance\+Class} $\ast$object, \hyperlink{classStaticClass}{Static\+Class} $\ast$class\+Runtime, string method\+Name, string method\+Descriptor, vector$<$ \hyperlink{structValue}{Value} $>$ arguments)
+\begin{DoxyCompactList}\small\item\em Construtor utilizado quando o frame está associado a um método de instância. \end{DoxyCompactList}\item 
+\hyperlink{classFrame_aa4ea414fba16a44e8c556bb0b9cfc831}{Frame} (\hyperlink{classStaticClass}{Static\+Class} $\ast$class\+Runtime, string method\+Name, string method\+Descriptor, vector$<$ \hyperlink{structValue}{Value} $>$ arguments=vector$<$ \hyperlink{structValue}{Value} $>$())
+\begin{DoxyCompactList}\small\item\em Construtor utilizado quando o frame está associado a um método estático. \end{DoxyCompactList}\item 
+\hyperlink{classFrame_abec8c7bccdfc88cb4da137caae9f73d6}{$\sim$\+Frame} ()
+\begin{DoxyCompactList}\small\item\em Destrutor padrão. \end{DoxyCompactList}\item 
+\hyperlink{structcp__info}{cp\+\_\+info} $\ast$$\ast$ \hyperlink{classFrame_a77f9705e64bfbdfc68921b7de11a893f}{obter\+Constant\+Pool} ()
+\begin{DoxyCompactList}\small\item\em Obter um ponteiro para a pool de constantes referente ao frame atual. \end{DoxyCompactList}\item 
+\hyperlink{structValue}{Value} \hyperlink{classFrame_ae074652eb3b71fb4cb28afd1ba91885d}{obter\+Local\+Variable\+Value} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Obtém o valor de uma variável local localizada no índice dado. \end{DoxyCompactList}\item 
+void \hyperlink{classFrame_adfa57fa3049213f13beba10ba7152500}{troca\+Local\+Variable} (\hyperlink{structValue}{Value} variable\+Value, uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Modifica o valor de uma variável local. \end{DoxyCompactList}\item 
+void \hyperlink{classFrame_af2481010c4795fbe1cba48122609cf1e}{empilhar\+Operand\+Stack} (\hyperlink{structValue}{Value} operand)
+\begin{DoxyCompactList}\small\item\em Adiciona um operando na pilha de operandos. \end{DoxyCompactList}\item 
+\hyperlink{structValue}{Value} \hyperlink{classFrame_a93c26ae659c3f1b11837a0e9942acb20}{desempilha\+Operand\+Stack} ()
+\begin{DoxyCompactList}\small\item\em Remove o operando do topo da pilha de operandos. \end{DoxyCompactList}\item 
+stack$<$ \hyperlink{structValue}{Value} $>$ \hyperlink{classFrame_a874ac5162f805570d944a807ebf2bd40}{backup\+Operand\+Stack} ()
+\begin{DoxyCompactList}\small\item\em Realiza uma cópia da pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{classFrame_afda87a144c907a9220ea2209ad3cd429}{set\+Operand\+Stack\+From\+Backup} (stack$<$ \hyperlink{structValue}{Value} $>$ backup)
+\begin{DoxyCompactList}\small\item\em Troca a pilha de operandos atual por uma nova. \end{DoxyCompactList}\item 
+\hyperlink{classInstanceClass}{Instance\+Class} $\ast$ \hyperlink{classFrame_a4a45cafe1eee6c6b2ae6a04e284163f9}{get\+Object} ()
+\begin{DoxyCompactList}\small\item\em Obtém o objeto associado ao frame, quando existir. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1} $\ast$ \hyperlink{classFrame_a6863584ef3a6f2e4b1f93fb0deb09f4b}{get\+Code} (uint32\+\_\+t address)
+\begin{DoxyCompactList}\small\item\em Obtém o código do método a partir de um offset. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} \hyperlink{classFrame_a2b65f6fa2195970fd25d69c17b5ca933}{size\+Local\+Variables} ()
+\begin{DoxyCompactList}\small\item\em Retorna o comprimento do vetor de variáveis locais associado ao frame. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4} \hyperlink{classFrame_a3151aeb977a24c464ed8930c9100715d}{size\+Code} ()
+\begin{DoxyCompactList}\small\item\em Retorna o comprimento do código do método não-\/nativo em execução. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{BasicTypes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4} \hyperlink{classFrame_ada6a6cf76d00cbadf43a86a686dd026c}{pc}
+\end{DoxyCompactItemize}
+\subsection*{Membros privados}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structmethod__info}{method\+\_\+info} $\ast$ \hyperlink{classFrame_a9920bdecf44e07796b7feea5bc4f1a6c}{obter\+Method\+Named} (\hyperlink{classStaticClass}{Static\+Class} $\ast$class\+Runtime, string name, string descriptor)
+\begin{DoxyCompactList}\small\item\em Obtém um método a partir da classe informada ou de alguma super classe. \end{DoxyCompactList}\item 
+void \hyperlink{classFrame_a6950091ee708f622befdfcc7c35b7025}{encontrar\+Attributes} ()
+\begin{DoxyCompactList}\small\item\em Encontra os atributos Code e Exceptions do método associado ao frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStaticClass}{Static\+Class} $\ast$ \hyperlink{classFrame_aa6f380f48c5bac83780daed06dc04f9e}{\+\_\+class\+Runtime}
+\begin{DoxyCompactList}\small\item\em Ponteiro para a classe associada ao frame. \end{DoxyCompactList}\item 
+\hyperlink{classInstanceClass}{Instance\+Class} $\ast$ \hyperlink{classFrame_a618b0873a50306f7805ea09685e8eee9}{\+\_\+object}
+\item 
+\hyperlink{structmethod__info}{method\+\_\+info} \hyperlink{classFrame_af9658f71efb91988fa39a224ce9ec9c6}{\+\_\+method}
+\item 
+\hyperlink{structCode__attribute}{Code\+\_\+attribute} $\ast$ \hyperlink{classFrame_a0b7e80617513d7c1879e20510622103d}{\+\_\+code\+Attribute}
+\item 
+\hyperlink{structExceptions__attribute}{Exceptions\+\_\+attribute} $\ast$ \hyperlink{classFrame_a5e98b7eb6642b16c03a75ec1f96c4fc4}{\+\_\+exceptions\+Attribute}
+\item 
+map$<$ uint32\+\_\+t, \hyperlink{structValue}{Value} $>$ \hyperlink{classFrame_af9a215cbac749f3f51e1e7fe239f2010}{\+\_\+local\+Variables}
+\item 
+stack$<$ \hyperlink{structValue}{Value} $>$ \hyperlink{classFrame_abb8b7f1997e7f3da06d6b0f9aaf61ab2}{\+\_\+operand\+Stack}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+
+
+Definido na linha 22 do ficheiro Frame.\+h.
+
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{classFrame_a3318a2cfd762b3a31adc4f101cb006e6}\label{classFrame_a3318a2cfd762b3a31adc4f101cb006e6}} 
+\index{Frame@{Frame}!Frame@{Frame}}
+\index{Frame@{Frame}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{Frame()}{Frame()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Frame\+::\+Frame (\begin{DoxyParamCaption}\item[{\hyperlink{classInstanceClass}{Instance\+Class} $\ast$}]{object,  }\item[{\hyperlink{classStaticClass}{Static\+Class} $\ast$}]{class\+Runtime,  }\item[{string}]{method\+Name,  }\item[{string}]{method\+Descriptor,  }\item[{vector$<$ \hyperlink{structValue}{Value} $>$}]{arguments }\end{DoxyParamCaption})}
+
+
+
+Construtor utilizado quando o frame está associado a um método de instância. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em object} & O objeto que contém o método do frame que será criado. \\
+\hline
+{\em class\+Runtime} & A classe que contém o método do frame que será criado. \\
+\hline
+{\em method\+Name} & O nome do método referente ao frame atual. \\
+\hline
+{\em method\+Descriptor} & O descritor do método referente ao frame atual. \\
+\hline
+{\em arguments} & Os argumentos do método. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 7 do ficheiro Frame.\+cpp.
+
+
+
+Referências \+\_\+local\+Variables, \+\_\+method, method\+\_\+info\+::access\+\_\+flags, encontrar\+Attributes() e obter\+Method\+Named().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFrame_a3318a2cfd762b3a31adc4f101cb006e6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFrame_aa4ea414fba16a44e8c556bb0b9cfc831}\label{classFrame_aa4ea414fba16a44e8c556bb0b9cfc831}} 
+\index{Frame@{Frame}!Frame@{Frame}}
+\index{Frame@{Frame}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{Frame()}{Frame()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Frame\+::\+Frame (\begin{DoxyParamCaption}\item[{\hyperlink{classStaticClass}{Static\+Class} $\ast$}]{class\+Runtime,  }\item[{string}]{method\+Name,  }\item[{string}]{method\+Descriptor,  }\item[{vector$<$ \hyperlink{structValue}{Value} $>$}]{arguments = {\ttfamily vector$<$\hyperlink{structValue}{Value}$>$()} }\end{DoxyParamCaption})}
+
+
+
+Construtor utilizado quando o frame está associado a um método estático. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em class\+Runtime} & A classe que contém o método do frame que será criado. \\
+\hline
+{\em method\+Name} & O nome do método referente ao frame atual. \\
+\hline
+{\em method\+Descriptor} & O descritor do método referente ao frame atual. \\
+\hline
+{\em arguments} & Os argumentos do método. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 21 do ficheiro Frame.\+cpp.
+
+
+
+Referências \+\_\+local\+Variables, \+\_\+method, method\+\_\+info\+::access\+\_\+flags, encontrar\+Attributes() e obter\+Method\+Named().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFrame_aa4ea414fba16a44e8c556bb0b9cfc831_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFrame_abec8c7bccdfc88cb4da137caae9f73d6}\label{classFrame_abec8c7bccdfc88cb4da137caae9f73d6}} 
+\index{Frame@{Frame}!````~Frame@{$\sim$\+Frame}}
+\index{````~Frame@{$\sim$\+Frame}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{$\sim$\+Frame()}{~Frame()}}
+{\footnotesize\ttfamily Frame\+::$\sim$\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destrutor padrão. 
+
+
+
+Definido na linha 35 do ficheiro Frame.\+cpp.
+
+
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classFrame_a874ac5162f805570d944a807ebf2bd40}\label{classFrame_a874ac5162f805570d944a807ebf2bd40}} 
+\index{Frame@{Frame}!backup\+Operand\+Stack@{backup\+Operand\+Stack}}
+\index{backup\+Operand\+Stack@{backup\+Operand\+Stack}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{backup\+Operand\+Stack()}{backupOperandStack()}}
+{\footnotesize\ttfamily stack$<$ \hyperlink{structValue}{Value} $>$ Frame\+::backup\+Operand\+Stack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Realiza uma cópia da pilha de operandos. 
+
+\begin{DoxyReturn}{Retorna}
+Retorna uma cópia da pilha de operandos do \hyperlink{classFrame}{Frame}. 
+\end{DoxyReturn}
+
+
+Definido na linha 82 do ficheiro Frame.\+cpp.
+
+
+
+Referências \+\_\+operand\+Stack.
+
+
+
+Referenciado por Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic() e Operations\+::invokevirtual().
+
+\mbox{\Hypertarget{classFrame_a93c26ae659c3f1b11837a0e9942acb20}\label{classFrame_a93c26ae659c3f1b11837a0e9942acb20}} 
+\index{Frame@{Frame}!desempilha\+Operand\+Stack@{desempilha\+Operand\+Stack}}
+\index{desempilha\+Operand\+Stack@{desempilha\+Operand\+Stack}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{desempilha\+Operand\+Stack()}{desempilhaOperandStack()}}
+{\footnotesize\ttfamily \hyperlink{structValue}{Value} Frame\+::desempilha\+Operand\+Stack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remove o operando do topo da pilha de operandos. 
+
+A pilha necessita ter ao menos um elemento. Caso não tenha, um erro é emitido. \begin{DoxyReturn}{Retorna}
+O valor do operando removido da pilha 
+\end{DoxyReturn}
+
+
+Definido na linha 70 do ficheiro Frame.\+cpp.
+
+
+
+Referências \+\_\+operand\+Stack.
+
+
+
+Referenciado por Operations\+::aaload(), Operations\+::aastore(), Operations\+::anewarray(), Operations\+::areturn(), Operations\+::arraylength(), Operations\+::astore(), Operations\+::astore\+\_\+0(), Operations\+::astore\+\_\+1(), Operations\+::astore\+\_\+2(), Operations\+::astore\+\_\+3(), Operations\+::baload(), Operations\+::bastore(), Operations\+::caload(), Operations\+::castore(), Operations\+::checkcast(), Operations\+::d2f(), Operations\+::d2i(), Operations\+::d2l(), Operations\+::dadd(), Operations\+::daload(), Operations\+::dastore(), Operations\+::dcmpg(), Operations\+::dcmpl(), Operations\+::ddiv(), Operations\+::dmul(), Operations\+::dneg(), Operations\+::drem(), Operations\+::dreturn(), Operations\+::dstore(), Operations\+::dstore\+\_\+0(), Operations\+::dstore\+\_\+1(), Operations\+::dstore\+\_\+2(), Operations\+::dstore\+\_\+3(), Operations\+::dsub(), Operations\+::dup(), Operations\+::dup2(), Operations\+::dup2\+\_\+x1(), Operations\+::dup2\+\_\+x2(), Operations\+::dup\+\_\+x1(), Operations\+::dup\+\_\+x2(), Operations\+::f2d(), Operations\+::f2i(), Operations\+::f2l(), Operations\+::fadd(), Operations\+::faload(), Operations\+::fastore(), Operations\+::fcmpg(), Operations\+::fcmpl(), Operations\+::fdiv(), Operations\+::fmul(), Operations\+::fneg(), Operations\+::frem(), Operations\+::freturn(), Operations\+::fstore(), Operations\+::fstore\+\_\+0(), Operations\+::fstore\+\_\+1(), Operations\+::fstore\+\_\+2(), Operations\+::fstore\+\_\+3(), Operations\+::fsub(), Operations\+::getfield(), Operations\+::i2b(), Operations\+::i2c(), Operations\+::i2d(), Operations\+::i2f(), Operations\+::i2l(), Operations\+::i2s(), Operations\+::iadd(), Operations\+::iaload(), Operations\+::iand(), Operations\+::iastore(), Operations\+::idiv(), Operations\+::if\+\_\+acmpeq(), Operations\+::if\+\_\+acmpne(), Operations\+::if\+\_\+icmpeq(), Operations\+::if\+\_\+icmpge(), Operations\+::if\+\_\+icmpgt(), Operations\+::if\+\_\+icmple(), Operations\+::if\+\_\+icmplt(), Operations\+::if\+\_\+icmpne(), Operations\+::ifeq(), Operations\+::ifge(), Operations\+::ifgt(), Operations\+::ifle(), Operations\+::iflt(), Operations\+::ifne(), Operations\+::ifnonnull(), Operations\+::ifnull(), Operations\+::imul(), Operations\+::ineg(), Operations\+::instanceof(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::ior(), Operations\+::irem(), Operations\+::ireturn(), Operations\+::ishl(), Operations\+::ishr(), Operations\+::istore(), Operations\+::istore\+\_\+0(), Operations\+::istore\+\_\+1(), Operations\+::istore\+\_\+2(), Operations\+::istore\+\_\+3(), Operations\+::isub(), Operations\+::iushr(), Operations\+::ixor(), Operations\+::l2d(), Operations\+::l2f(), Operations\+::l2i(), Operations\+::ladd(), Operations\+::laload(), Operations\+::land(), Operations\+::lastore(), Operations\+::lcmp(), Operations\+::ldiv(), Operations\+::lmul(), Operations\+::lneg(), Operations\+::lookupswitch(), Operations\+::lor(), Operations\+::lrem(), Operations\+::lreturn(), Operations\+::lshl(), Operations\+::lshr(), Operations\+::lstore(), Operations\+::lstore\+\_\+0(), Operations\+::lstore\+\_\+1(), Operations\+::lstore\+\_\+2(), Operations\+::lstore\+\_\+3(), Operations\+::lsub(), Operations\+::lushr(), Operations\+::lxor(), Operations\+::multianewarray(), Operations\+::newarray(), Operations\+::pop(), Operations\+::pop2(), Operations\+::putfield(), Operations\+::putstatic(), Operations\+::saload(), Operations\+::sastore(), Operations\+::swap() e Operations\+::tableswitch().
+
+\mbox{\Hypertarget{classFrame_af2481010c4795fbe1cba48122609cf1e}\label{classFrame_af2481010c4795fbe1cba48122609cf1e}} 
+\index{Frame@{Frame}!empilhar\+Operand\+Stack@{empilhar\+Operand\+Stack}}
+\index{empilhar\+Operand\+Stack@{empilhar\+Operand\+Stack}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{empilhar\+Operand\+Stack()}{empilharOperandStack()}}
+{\footnotesize\ttfamily void Frame\+::empilhar\+Operand\+Stack (\begin{DoxyParamCaption}\item[{\hyperlink{structValue}{Value}}]{operand }\end{DoxyParamCaption})}
+
+
+
+Adiciona um operando na pilha de operandos. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em O} & operando que será inserido \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 66 do ficheiro Frame.\+cpp.
+
+
+
+Referências \+\_\+operand\+Stack.
+
+
+
+Referenciado por Operations\+::aaload(), Operations\+::aconst\+\_\+null(), Operations\+::aload(), Operations\+::aload\+\_\+0(), Operations\+::aload\+\_\+1(), Operations\+::aload\+\_\+2(), Operations\+::aload\+\_\+3(), Operations\+::anewarray(), Operations\+::areturn(), Operations\+::arraylength(), Operations\+::baload(), Operations\+::bipush(), Operations\+::caload(), Operations\+::checkcast(), Operations\+::d2f(), Operations\+::d2i(), Operations\+::d2l(), Operations\+::dadd(), Operations\+::daload(), Operations\+::dcmpg(), Operations\+::dcmpl(), Operations\+::dconst\+\_\+0(), Operations\+::dconst\+\_\+1(), Operations\+::ddiv(), Operations\+::dload(), Operations\+::dload\+\_\+0(), Operations\+::dload\+\_\+1(), Operations\+::dload\+\_\+2(), Operations\+::dload\+\_\+3(), Operations\+::dmul(), Operations\+::dneg(), Operations\+::drem(), Operations\+::dreturn(), Operations\+::dsub(), Operations\+::dup(), Operations\+::dup2(), Operations\+::dup2\+\_\+x1(), Operations\+::dup2\+\_\+x2(), Operations\+::dup\+\_\+x1(), Operations\+::dup\+\_\+x2(), Operations\+::f2d(), Operations\+::f2i(), Operations\+::f2l(), Operations\+::fadd(), Operations\+::faload(), Operations\+::fcmpg(), Operations\+::fcmpl(), Operations\+::fconst\+\_\+0(), Operations\+::fconst\+\_\+1(), Operations\+::fconst\+\_\+2(), Operations\+::fdiv(), Operations\+::fload(), Operations\+::fload\+\_\+0(), Operations\+::fload\+\_\+1(), Operations\+::fload\+\_\+2(), Operations\+::fload\+\_\+3(), Operations\+::fmul(), Operations\+::fneg(), Operations\+::frem(), Operations\+::freturn(), Operations\+::fsub(), Operations\+::func\+\_\+new(), Operations\+::getfield(), Operations\+::getstatic(), Operations\+::i2b(), Operations\+::i2c(), Operations\+::i2d(), Operations\+::i2f(), Operations\+::i2l(), Operations\+::i2s(), Operations\+::iadd(), Operations\+::iaload(), Operations\+::iand(), Operations\+::iconst\+\_\+0(), Operations\+::iconst\+\_\+1(), Operations\+::iconst\+\_\+2(), Operations\+::iconst\+\_\+3(), Operations\+::iconst\+\_\+4(), Operations\+::iconst\+\_\+5(), Operations\+::iconst\+\_\+m1(), Operations\+::idiv(), Operations\+::iload(), Operations\+::iload\+\_\+0(), Operations\+::iload\+\_\+1(), Operations\+::iload\+\_\+2(), Operations\+::iload\+\_\+3(), Operations\+::imul(), Operations\+::ineg(), Operations\+::instanceof(), Operations\+::invokevirtual(), Operations\+::ior(), Operations\+::irem(), Operations\+::ireturn(), Operations\+::ishl(), Operations\+::ishr(), Operations\+::isub(), Operations\+::iushr(), Operations\+::ixor(), Operations\+::jsr(), Operations\+::jsr\+\_\+w(), Operations\+::l2d(), Operations\+::l2f(), Operations\+::l2i(), Operations\+::ladd(), Operations\+::laload(), Operations\+::land(), Operations\+::lcmp(), Operations\+::lconst\+\_\+0(), Operations\+::lconst\+\_\+1(), Operations\+::ldc(), Operations\+::ldc2\+\_\+w(), Operations\+::ldc\+\_\+w(), Operations\+::ldiv(), Operations\+::lload(), Operations\+::lload\+\_\+0(), Operations\+::lload\+\_\+1(), Operations\+::lload\+\_\+2(), Operations\+::lload\+\_\+3(), Operations\+::lmul(), Operations\+::lneg(), Operations\+::lor(), Operations\+::lrem(), Operations\+::lreturn(), Operations\+::lshl(), Operations\+::lshr(), Operations\+::lsub(), Operations\+::lushr(), Operations\+::lxor(), Operations\+::multianewarray(), Operations\+::newarray(), Operations\+::saload(), Operations\+::sipush() e Operations\+::swap().
+
+\mbox{\Hypertarget{classFrame_a6950091ee708f622befdfcc7c35b7025}\label{classFrame_a6950091ee708f622befdfcc7c35b7025}} 
+\index{Frame@{Frame}!encontrar\+Attributes@{encontrar\+Attributes}}
+\index{encontrar\+Attributes@{encontrar\+Attributes}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{encontrar\+Attributes()}{encontrarAttributes()}}
+{\footnotesize\ttfamily void Frame\+::encontrar\+Attributes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Encontra os atributos Code e Exceptions do método associado ao frame. 
+
+O atributo Code será armazenado em {\ttfamily \+\_\+code\+Attribute}. O atributo Exceptions, caso exista, será armazenado em {\ttfamily \+\_\+exceptions\+Attribute}, caso não existir, seu valor será setado para {\ttfamily N\+U\+LL}. 
+
+Definido na linha 126 do ficheiro Frame.\+cpp.
+
+
+
+Referências \+\_\+code\+Attribute, \+\_\+exceptions\+Attribute, \+\_\+method, attribute\+\_\+info\+::attribute\+\_\+name\+\_\+index, method\+\_\+info\+::attributes, method\+\_\+info\+::attributes\+\_\+count, attribute\+\_\+info\+::code\+\_\+info, Utils\+::comparar\+Utf8\+String(), attribute\+\_\+info\+::exceptions\+\_\+info, cp\+\_\+info\+::info, attribute\+\_\+info\+::info, obter\+Constant\+Pool() e cp\+\_\+info\+::utf8\+\_\+info.
+
+
+
+Referenciado por Frame().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFrame_a6950091ee708f622befdfcc7c35b7025_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFrame_a6863584ef3a6f2e4b1f93fb0deb09f4b}\label{classFrame_a6863584ef3a6f2e4b1f93fb0deb09f4b}} 
+\index{Frame@{Frame}!get\+Code@{get\+Code}}
+\index{get\+Code@{get\+Code}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{get\+Code()}{getCode()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1} $\ast$ Frame\+::get\+Code (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{address }\end{DoxyParamCaption})}
+
+
+
+Obtém o código do método a partir de um offset. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em address} & O offset. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O código a partir do offset dado. 
+\end{DoxyReturn}
+
+
+Definido na linha 90 do ficheiro Frame.\+cpp.
+
+
+
+Referências \+\_\+code\+Attribute e Code\+\_\+attribute\+::code.
+
+
+
+Referenciado por Operations\+::aload(), Operations\+::anewarray(), Operations\+::astore(), Operations\+::bipush(), Operations\+::checkcast(), Operations\+::dload(), Operations\+::dstore(), Operations\+::executar\+Metodos(), Operations\+::fload(), Operations\+::fstore(), Operations\+::func\+\_\+goto(), Operations\+::func\+\_\+new(), Operations\+::getfield(), Operations\+::getstatic(), Operations\+::goto\+\_\+w(), Operations\+::if\+\_\+acmpeq(), Operations\+::if\+\_\+acmpne(), Operations\+::if\+\_\+icmpeq(), Operations\+::if\+\_\+icmpge(), Operations\+::if\+\_\+icmpgt(), Operations\+::if\+\_\+icmple(), Operations\+::if\+\_\+icmplt(), Operations\+::if\+\_\+icmpne(), Operations\+::ifeq(), Operations\+::ifge(), Operations\+::ifgt(), Operations\+::ifle(), Operations\+::iflt(), Operations\+::ifne(), Operations\+::ifnonnull(), Operations\+::ifnull(), Operations\+::iinc(), Operations\+::iload(), Operations\+::instanceof(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::istore(), Operations\+::jsr(), Operations\+::jsr\+\_\+w(), Operations\+::ldc(), Operations\+::ldc2\+\_\+w(), Operations\+::ldc\+\_\+w(), Operations\+::lload(), Operations\+::lookupswitch(), Operations\+::lstore(), Operations\+::multianewarray(), Operations\+::newarray(), Operations\+::putfield(), Operations\+::putstatic(), Operations\+::ret(), Operations\+::sipush() e Operations\+::tableswitch().
+
+\mbox{\Hypertarget{classFrame_a4a45cafe1eee6c6b2ae6a04e284163f9}\label{classFrame_a4a45cafe1eee6c6b2ae6a04e284163f9}} 
+\index{Frame@{Frame}!get\+Object@{get\+Object}}
+\index{get\+Object@{get\+Object}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{get\+Object()}{getObject()}}
+{\footnotesize\ttfamily \hyperlink{classInstanceClass}{Instance\+Class}$\ast$ Frame\+::get\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtém o objeto associado ao frame, quando existir. 
+
+\begin{DoxyReturn}{Retorna}
+O objeto associado ao frame. Caso for um método estático, é retornado {\ttfamily N\+U\+LL}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFrame_a77f9705e64bfbdfc68921b7de11a893f}\label{classFrame_a77f9705e64bfbdfc68921b7de11a893f}} 
+\index{Frame@{Frame}!obter\+Constant\+Pool@{obter\+Constant\+Pool}}
+\index{obter\+Constant\+Pool@{obter\+Constant\+Pool}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{obter\+Constant\+Pool()}{obterConstantPool()}}
+{\footnotesize\ttfamily \hyperlink{structcp__info}{cp\+\_\+info} $\ast$$\ast$ Frame\+::obter\+Constant\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obter um ponteiro para a pool de constantes referente ao frame atual. 
+
+\begin{DoxyReturn}{Retorna}
+Retorna o ponteiro para a pool de constantes. 
+\end{DoxyReturn}
+
+
+Definido na linha 39 do ficheiro Frame.\+cpp.
+
+
+
+Referências \+\_\+class\+Runtime, Class\+File\+::constant\+\_\+pool e Static\+Class\+::get\+Class\+File().
+
+
+
+Referenciado por Operations\+::anewarray(), Operations\+::checkcast(), encontrar\+Attributes(), Operations\+::func\+\_\+new(), Operations\+::getfield(), Operations\+::getstatic(), Operations\+::instanceof(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::ldc(), Operations\+::ldc2\+\_\+w(), Operations\+::ldc\+\_\+w(), Operations\+::multianewarray(), Operations\+::putfield() e Operations\+::putstatic().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFrame_a77f9705e64bfbdfc68921b7de11a893f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFrame_ae074652eb3b71fb4cb28afd1ba91885d}\label{classFrame_ae074652eb3b71fb4cb28afd1ba91885d}} 
+\index{Frame@{Frame}!obter\+Local\+Variable\+Value@{obter\+Local\+Variable\+Value}}
+\index{obter\+Local\+Variable\+Value@{obter\+Local\+Variable\+Value}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{obter\+Local\+Variable\+Value()}{obterLocalVariableValue()}}
+{\footnotesize\ttfamily \hyperlink{structValue}{Value} Frame\+::obter\+Local\+Variable\+Value (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Obtém o valor de uma variável local localizada no índice dado. 
+
+Se o índice for inválido, é emitido um erro. 
+\begin{DoxyParams}{Parâmetros}
+{\em index} & O índice da variável local. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O valor da variável local. 
+\end{DoxyReturn}
+
+
+Definido na linha 43 do ficheiro Frame.\+cpp.
+
+
+
+Referências \+\_\+code\+Attribute, \+\_\+local\+Variables e Code\+\_\+attribute\+::max\+\_\+locals.
+
+
+
+Referenciado por Operations\+::aload(), Operations\+::aload\+\_\+0(), Operations\+::aload\+\_\+1(), Operations\+::aload\+\_\+2(), Operations\+::aload\+\_\+3(), Operations\+::dload(), Operations\+::dload\+\_\+0(), Operations\+::dload\+\_\+1(), Operations\+::dload\+\_\+2(), Operations\+::dload\+\_\+3(), Operations\+::fload(), Operations\+::fload\+\_\+0(), Operations\+::fload\+\_\+1(), Operations\+::fload\+\_\+2(), Operations\+::fload\+\_\+3(), Operations\+::iinc(), Operations\+::iload(), Operations\+::iload\+\_\+0(), Operations\+::iload\+\_\+1(), Operations\+::iload\+\_\+2(), Operations\+::iload\+\_\+3(), Operations\+::lload(), Operations\+::lload\+\_\+0(), Operations\+::lload\+\_\+1(), Operations\+::lload\+\_\+2(), Operations\+::lload\+\_\+3() e Operations\+::ret().
+
+\mbox{\Hypertarget{classFrame_a9920bdecf44e07796b7feea5bc4f1a6c}\label{classFrame_a9920bdecf44e07796b7feea5bc4f1a6c}} 
+\index{Frame@{Frame}!obter\+Method\+Named@{obter\+Method\+Named}}
+\index{obter\+Method\+Named@{obter\+Method\+Named}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{obter\+Method\+Named()}{obterMethodNamed()}}
+{\footnotesize\ttfamily \hyperlink{structmethod__info}{method\+\_\+info} $\ast$ Frame\+::obter\+Method\+Named (\begin{DoxyParamCaption}\item[{\hyperlink{classStaticClass}{Static\+Class} $\ast$}]{class\+Runtime,  }\item[{string}]{name,  }\item[{string}]{descriptor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Obtém um método a partir da classe informada ou de alguma super classe. 
+
+Esse método pode realizar o carregamento de novas classes. 
+\begin{DoxyParams}{Parâmetros}
+{\em class\+Runtime} & A classe em que a pesquisa pelo métood será iniciada. \\
+\hline
+{\em name} & O nome do método. \\
+\hline
+{\em descriptor} & O descritor do método. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Um ponteiro para o método encontrado, ou {\ttfamily N\+U\+LL} caso o método não exista. 
+\end{DoxyReturn}
+
+
+Definido na linha 94 do ficheiro Frame.\+cpp.
+
+
+
+Referências \+\_\+class\+Runtime, Method\+Area\+::carregar\+Class\+Named(), Class\+File\+::constant\+\_\+pool, method\+\_\+info\+::descriptor\+\_\+index, Static\+Class\+::get\+Class\+File(), get\+Formatted\+Constant(), Method\+Area\+::get\+Instance(), Class\+File\+::methods, Class\+File\+::methods\+\_\+count, method\+\_\+info\+::name\+\_\+index e Class\+File\+::super\+\_\+class.
+
+
+
+Referenciado por Frame().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFrame_a9920bdecf44e07796b7feea5bc4f1a6c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFrame_afda87a144c907a9220ea2209ad3cd429}\label{classFrame_afda87a144c907a9220ea2209ad3cd429}} 
+\index{Frame@{Frame}!set\+Operand\+Stack\+From\+Backup@{set\+Operand\+Stack\+From\+Backup}}
+\index{set\+Operand\+Stack\+From\+Backup@{set\+Operand\+Stack\+From\+Backup}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{set\+Operand\+Stack\+From\+Backup()}{setOperandStackFromBackup()}}
+{\footnotesize\ttfamily void Frame\+::set\+Operand\+Stack\+From\+Backup (\begin{DoxyParamCaption}\item[{stack$<$ \hyperlink{structValue}{Value} $>$}]{backup }\end{DoxyParamCaption})}
+
+
+
+Troca a pilha de operandos atual por uma nova. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em backup} & Uma nova pilha de operandos do \hyperlink{classFrame}{Frame}. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 86 do ficheiro Frame.\+cpp.
+
+
+
+Referências \+\_\+operand\+Stack.
+
+
+
+Referenciado por Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic() e Operations\+::invokevirtual().
+
+\mbox{\Hypertarget{classFrame_a3151aeb977a24c464ed8930c9100715d}\label{classFrame_a3151aeb977a24c464ed8930c9100715d}} 
+\index{Frame@{Frame}!size\+Code@{size\+Code}}
+\index{size\+Code@{size\+Code}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{size\+Code()}{sizeCode()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4} Frame\+::size\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o comprimento do código do método não-\/nativo em execução. 
+
+\begin{DoxyReturn}{Retorna}
+O conteúdo de \+\_\+code\+Attribute-\/$>$code\+\_\+length 
+\end{DoxyReturn}
+
+
+Definido na linha 150 do ficheiro Frame.\+cpp.
+
+
+
+Referências \+\_\+code\+Attribute e Code\+\_\+attribute\+::code\+\_\+length.
+
+
+
+Referenciado por Operations\+::jsr\+\_\+w().
+
+\mbox{\Hypertarget{classFrame_a2b65f6fa2195970fd25d69c17b5ca933}\label{classFrame_a2b65f6fa2195970fd25d69c17b5ca933}} 
+\index{Frame@{Frame}!size\+Local\+Variables@{size\+Local\+Variables}}
+\index{size\+Local\+Variables@{size\+Local\+Variables}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{size\+Local\+Variables()}{sizeLocalVariables()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} Frame\+::size\+Local\+Variables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o comprimento do vetor de variáveis locais associado ao frame. 
+
+\begin{DoxyReturn}{Retorna}
+O conteúdo de \+\_\+code\+Attribute-\/$>$max\+\_\+locals 
+\end{DoxyReturn}
+
+
+Definido na linha 146 do ficheiro Frame.\+cpp.
+
+
+
+Referências \+\_\+code\+Attribute e Code\+\_\+attribute\+::max\+\_\+locals.
+
+
+
+Referenciado por Operations\+::aload(), Operations\+::astore(), Operations\+::dload(), Operations\+::dstore(), Operations\+::fload(), Operations\+::fstore(), Operations\+::iload(), Operations\+::istore(), Operations\+::lload(), Operations\+::lstore() e Operations\+::ret().
+
+\mbox{\Hypertarget{classFrame_adfa57fa3049213f13beba10ba7152500}\label{classFrame_adfa57fa3049213f13beba10ba7152500}} 
+\index{Frame@{Frame}!troca\+Local\+Variable@{troca\+Local\+Variable}}
+\index{troca\+Local\+Variable@{troca\+Local\+Variable}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{troca\+Local\+Variable()}{trocaLocalVariable()}}
+{\footnotesize\ttfamily void Frame\+::troca\+Local\+Variable (\begin{DoxyParamCaption}\item[{\hyperlink{structValue}{Value}}]{variable\+Value,  }\item[{uint32\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Modifica o valor de uma variável local. 
+
+O valor passado necessita ser do mesmo tipo do valor já existente, caso contrário, é emitido um erro. 
+\begin{DoxyParams}{Parâmetros}
+{\em variable\+Value} & O novo valor que será colocado na variável local. \\
+\hline
+{\em index} & O índice da variável local que será modificada. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 52 do ficheiro Frame.\+cpp.
+
+
+
+Referências \+\_\+code\+Attribute, \+\_\+local\+Variables e Code\+\_\+attribute\+::max\+\_\+locals.
+
+
+
+Referenciado por Operations\+::astore(), Operations\+::astore\+\_\+0(), Operations\+::astore\+\_\+1(), Operations\+::astore\+\_\+2(), Operations\+::astore\+\_\+3(), Operations\+::dstore(), Operations\+::dstore\+\_\+0(), Operations\+::dstore\+\_\+1(), Operations\+::dstore\+\_\+2(), Operations\+::dstore\+\_\+3(), Operations\+::fstore(), Operations\+::fstore\+\_\+0(), Operations\+::fstore\+\_\+1(), Operations\+::fstore\+\_\+2(), Operations\+::fstore\+\_\+3(), Operations\+::iinc(), Operations\+::istore(), Operations\+::istore\+\_\+0(), Operations\+::istore\+\_\+1(), Operations\+::istore\+\_\+2(), Operations\+::istore\+\_\+3(), Operations\+::lstore(), Operations\+::lstore\+\_\+0(), Operations\+::lstore\+\_\+1(), Operations\+::lstore\+\_\+2(), Operations\+::lstore\+\_\+3() e Operations\+::ret().
+
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{classFrame_aa6f380f48c5bac83780daed06dc04f9e}\label{classFrame_aa6f380f48c5bac83780daed06dc04f9e}} 
+\index{Frame@{Frame}!\+\_\+class\+Runtime@{\+\_\+class\+Runtime}}
+\index{\+\_\+class\+Runtime@{\+\_\+class\+Runtime}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{\+\_\+class\+Runtime}{\_classRuntime}}
+{\footnotesize\ttfamily \hyperlink{classStaticClass}{Static\+Class}$\ast$ Frame\+::\+\_\+class\+Runtime\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ponteiro para a classe associada ao frame. 
+
+\begin{DoxyReturn}{Retorna}
+Retorna um ponteiro para a classe. 
+\end{DoxyReturn}
+
+
+Definido na linha 153 do ficheiro Frame.\+h.
+
+
+
+Referenciado por obter\+Constant\+Pool() e obter\+Method\+Named().
+
+\mbox{\Hypertarget{classFrame_a0b7e80617513d7c1879e20510622103d}\label{classFrame_a0b7e80617513d7c1879e20510622103d}} 
+\index{Frame@{Frame}!\+\_\+code\+Attribute@{\+\_\+code\+Attribute}}
+\index{\+\_\+code\+Attribute@{\+\_\+code\+Attribute}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{\+\_\+code\+Attribute}{\_codeAttribute}}
+{\footnotesize\ttfamily \hyperlink{structCode__attribute}{Code\+\_\+attribute}$\ast$ Frame\+::\+\_\+code\+Attribute\hspace{0.3cm}{\ttfamily [private]}}
+
+Ponteiro para o atributo Code referente ao método. 
+
+Definido na linha 168 do ficheiro Frame.\+h.
+
+
+
+Referenciado por encontrar\+Attributes(), get\+Code(), obter\+Local\+Variable\+Value(), size\+Code(), size\+Local\+Variables() e troca\+Local\+Variable().
+
+\mbox{\Hypertarget{classFrame_a5e98b7eb6642b16c03a75ec1f96c4fc4}\label{classFrame_a5e98b7eb6642b16c03a75ec1f96c4fc4}} 
+\index{Frame@{Frame}!\+\_\+exceptions\+Attribute@{\+\_\+exceptions\+Attribute}}
+\index{\+\_\+exceptions\+Attribute@{\+\_\+exceptions\+Attribute}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{\+\_\+exceptions\+Attribute}{\_exceptionsAttribute}}
+{\footnotesize\ttfamily \hyperlink{structExceptions__attribute}{Exceptions\+\_\+attribute}$\ast$ Frame\+::\+\_\+exceptions\+Attribute\hspace{0.3cm}{\ttfamily [private]}}
+
+Atributo Exceptions referente ao método. 
+
+Definido na linha 173 do ficheiro Frame.\+h.
+
+
+
+Referenciado por encontrar\+Attributes().
+
+\mbox{\Hypertarget{classFrame_af9a215cbac749f3f51e1e7fe239f2010}\label{classFrame_af9a215cbac749f3f51e1e7fe239f2010}} 
+\index{Frame@{Frame}!\+\_\+local\+Variables@{\+\_\+local\+Variables}}
+\index{\+\_\+local\+Variables@{\+\_\+local\+Variables}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{\+\_\+local\+Variables}{\_localVariables}}
+{\footnotesize\ttfamily map$<$uint32\+\_\+t, \hyperlink{structValue}{Value}$>$ Frame\+::\+\_\+local\+Variables\hspace{0.3cm}{\ttfamily [private]}}
+
+Vetor de variáveis locais do frame. 
+
+Definido na linha 178 do ficheiro Frame.\+h.
+
+
+
+Referenciado por Frame(), obter\+Local\+Variable\+Value() e troca\+Local\+Variable().
+
+\mbox{\Hypertarget{classFrame_af9658f71efb91988fa39a224ce9ec9c6}\label{classFrame_af9658f71efb91988fa39a224ce9ec9c6}} 
+\index{Frame@{Frame}!\+\_\+method@{\+\_\+method}}
+\index{\+\_\+method@{\+\_\+method}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{\+\_\+method}{\_method}}
+{\footnotesize\ttfamily \hyperlink{structmethod__info}{method\+\_\+info} Frame\+::\+\_\+method\hspace{0.3cm}{\ttfamily [private]}}
+
+Ponteiro para o método referente a este frame. 
+
+Definido na linha 163 do ficheiro Frame.\+h.
+
+
+
+Referenciado por encontrar\+Attributes() e Frame().
+
+\mbox{\Hypertarget{classFrame_a618b0873a50306f7805ea09685e8eee9}\label{classFrame_a618b0873a50306f7805ea09685e8eee9}} 
+\index{Frame@{Frame}!\+\_\+object@{\+\_\+object}}
+\index{\+\_\+object@{\+\_\+object}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{\+\_\+object}{\_object}}
+{\footnotesize\ttfamily \hyperlink{classInstanceClass}{Instance\+Class}$\ast$ Frame\+::\+\_\+object\hspace{0.3cm}{\ttfamily [private]}}
+
+Ponteiro para o objeto responsável por o método referente a este frame. Caso o método seja estático, seu valor é {\ttfamily N\+U\+LL}. 
+
+Definido na linha 158 do ficheiro Frame.\+h.
+
+\mbox{\Hypertarget{classFrame_abb8b7f1997e7f3da06d6b0f9aaf61ab2}\label{classFrame_abb8b7f1997e7f3da06d6b0f9aaf61ab2}} 
+\index{Frame@{Frame}!\+\_\+operand\+Stack@{\+\_\+operand\+Stack}}
+\index{\+\_\+operand\+Stack@{\+\_\+operand\+Stack}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{\+\_\+operand\+Stack}{\_operandStack}}
+{\footnotesize\ttfamily stack$<$\hyperlink{structValue}{Value}$>$ Frame\+::\+\_\+operand\+Stack\hspace{0.3cm}{\ttfamily [private]}}
+
+Pilha de operandos do frame. 
+
+Definido na linha 183 do ficheiro Frame.\+h.
+
+
+
+Referenciado por backup\+Operand\+Stack(), desempilha\+Operand\+Stack(), empilhar\+Operand\+Stack() e set\+Operand\+Stack\+From\+Backup().
+
+\mbox{\Hypertarget{classFrame_ada6a6cf76d00cbadf43a86a686dd026c}\label{classFrame_ada6a6cf76d00cbadf43a86a686dd026c}} 
+\index{Frame@{Frame}!pc@{pc}}
+\index{pc@{pc}!Frame@{Frame}}
+\subsubsection{\texorpdfstring{pc}{pc}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4} Frame\+::pc}
+
+O program counter do frame. 
+
+Definido na linha 115 do ficheiro Frame.\+h.
+
+
+
+Referenciado por Operations\+::aaload(), Operations\+::aastore(), Operations\+::aconst\+\_\+null(), Operations\+::aload(), Operations\+::aload\+\_\+0(), Operations\+::aload\+\_\+1(), Operations\+::aload\+\_\+2(), Operations\+::aload\+\_\+3(), Operations\+::anewarray(), Operations\+::arraylength(), Operations\+::astore(), Operations\+::astore\+\_\+0(), Operations\+::astore\+\_\+1(), Operations\+::astore\+\_\+2(), Operations\+::astore\+\_\+3(), Operations\+::athrow(), Operations\+::baload(), Operations\+::bastore(), Operations\+::bipush(), Operations\+::caload(), Operations\+::castore(), Operations\+::checkcast(), Operations\+::d2f(), Operations\+::d2i(), Operations\+::d2l(), Operations\+::dadd(), Operations\+::daload(), Operations\+::dastore(), Operations\+::dcmpg(), Operations\+::dcmpl(), Operations\+::dconst\+\_\+0(), Operations\+::dconst\+\_\+1(), Operations\+::ddiv(), Operations\+::dload(), Operations\+::dload\+\_\+0(), Operations\+::dload\+\_\+1(), Operations\+::dload\+\_\+2(), Operations\+::dload\+\_\+3(), Operations\+::dmul(), Operations\+::dneg(), Operations\+::drem(), Operations\+::dstore(), Operations\+::dstore\+\_\+0(), Operations\+::dstore\+\_\+1(), Operations\+::dstore\+\_\+2(), Operations\+::dstore\+\_\+3(), Operations\+::dsub(), Operations\+::dup(), Operations\+::dup2(), Operations\+::dup2\+\_\+x1(), Operations\+::dup2\+\_\+x2(), Operations\+::dup\+\_\+x1(), Operations\+::dup\+\_\+x2(), Operations\+::executar\+Metodos(), Operations\+::f2d(), Operations\+::f2i(), Operations\+::f2l(), Operations\+::fadd(), Operations\+::faload(), Operations\+::fastore(), Operations\+::fcmpg(), Operations\+::fcmpl(), Operations\+::fconst\+\_\+0(), Operations\+::fconst\+\_\+1(), Operations\+::fconst\+\_\+2(), Operations\+::fdiv(), Operations\+::fload(), Operations\+::fload\+\_\+0(), Operations\+::fload\+\_\+1(), Operations\+::fload\+\_\+2(), Operations\+::fload\+\_\+3(), Operations\+::fmul(), Operations\+::fneg(), Operations\+::frem(), Operations\+::fstore(), Operations\+::fstore\+\_\+0(), Operations\+::fstore\+\_\+1(), Operations\+::fstore\+\_\+2(), Operations\+::fstore\+\_\+3(), Operations\+::fsub(), Operations\+::func\+\_\+goto(), Operations\+::func\+\_\+new(), Operations\+::getfield(), Operations\+::getstatic(), Operations\+::goto\+\_\+w(), Operations\+::i2b(), Operations\+::i2c(), Operations\+::i2d(), Operations\+::i2f(), Operations\+::i2l(), Operations\+::i2s(), Operations\+::iadd(), Operations\+::iaload(), Operations\+::iand(), Operations\+::iastore(), Operations\+::iconst\+\_\+0(), Operations\+::iconst\+\_\+1(), Operations\+::iconst\+\_\+2(), Operations\+::iconst\+\_\+3(), Operations\+::iconst\+\_\+4(), Operations\+::iconst\+\_\+5(), Operations\+::iconst\+\_\+m1(), Operations\+::idiv(), Operations\+::if\+\_\+acmpeq(), Operations\+::if\+\_\+acmpne(), Operations\+::if\+\_\+icmpeq(), Operations\+::if\+\_\+icmpge(), Operations\+::if\+\_\+icmpgt(), Operations\+::if\+\_\+icmple(), Operations\+::if\+\_\+icmplt(), Operations\+::if\+\_\+icmpne(), Operations\+::ifeq(), Operations\+::ifge(), Operations\+::ifgt(), Operations\+::ifle(), Operations\+::iflt(), Operations\+::ifne(), Operations\+::ifnonnull(), Operations\+::ifnull(), Operations\+::iinc(), Operations\+::iload(), Operations\+::iload\+\_\+0(), Operations\+::iload\+\_\+1(), Operations\+::iload\+\_\+2(), Operations\+::iload\+\_\+3(), Operations\+::imul(), Operations\+::ineg(), Operations\+::instanceof(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::ior(), Operations\+::irem(), Operations\+::ishl(), Operations\+::ishr(), Operations\+::istore(), Operations\+::istore\+\_\+0(), Operations\+::istore\+\_\+1(), Operations\+::istore\+\_\+2(), Operations\+::istore\+\_\+3(), Operations\+::isub(), Operations\+::iushr(), Operations\+::ixor(), Operations\+::jsr(), Operations\+::jsr\+\_\+w(), Operations\+::l2d(), Operations\+::l2f(), Operations\+::l2i(), Operations\+::ladd(), Operations\+::laload(), Operations\+::land(), Operations\+::lastore(), Operations\+::lcmp(), Operations\+::lconst\+\_\+0(), Operations\+::lconst\+\_\+1(), Operations\+::ldc(), Operations\+::ldc2\+\_\+w(), Operations\+::ldc\+\_\+w(), Operations\+::ldiv(), Operations\+::lload(), Operations\+::lload\+\_\+0(), Operations\+::lload\+\_\+1(), Operations\+::lload\+\_\+2(), Operations\+::lload\+\_\+3(), Operations\+::lmul(), Operations\+::lneg(), Operations\+::lookupswitch(), Operations\+::lor(), Operations\+::lrem(), Operations\+::lshl(), Operations\+::lshr(), Operations\+::lstore(), Operations\+::lstore\+\_\+0(), Operations\+::lstore\+\_\+1(), Operations\+::lstore\+\_\+2(), Operations\+::lstore\+\_\+3(), Operations\+::lsub(), Operations\+::lushr(), Operations\+::lxor(), Operations\+::monitorenter(), Operations\+::monitorexit(), Operations\+::multianewarray(), Operations\+::newarray(), Operations\+::nop(), Operations\+::pop(), Operations\+::pop2(), Operations\+::putfield(), Operations\+::putstatic(), Operations\+::ret(), Operations\+::saload(), Operations\+::sastore(), Operations\+::sipush(), Operations\+::swap(), Operations\+::tableswitch() e Operations\+::wide().
+
+
+
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Frame_8h}{Frame.\+h}\item 
+src/\hyperlink{Frame_8cpp}{Frame.\+cpp}\end{DoxyCompactItemize}

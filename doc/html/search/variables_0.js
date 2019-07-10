@@ -1,12 +1,20 @@
 var searchData=
 [
-  ['access_5fflags',['access_flags',['../structMethod__info.html#a6d6c8c25f4bdb42b77b6a8ac6250398b',1,'Method_info']]],
-  ['accessflags',['accessFlags',['../classClassFile.html#a16d2ca3e9cdf9267adde08575c57bfa9',1,'ClassFile::accessFlags()'],['../structField__info.html#a518c6efb3e5b805d738375e3411bc7b0',1,'Field_info::accessFlags()']]],
-  ['arquivoclass',['arquivoClass',['../classClassFile.html#ae2be12dcc1a042970b4d7d7cf9709624',1,'ClassFile']]],
-  ['arquivosaida',['arquivoSaida',['../classClassFile.html#a4aee6c7763d46884d5b2c0297142df99',1,'ClassFile']]],
-  ['array',['array',['../unionClassLoaderType.html#a35ae4ff3dac1fe01b69c3649e200790c',1,'ClassLoaderType::array()'],['../structN__array.html#a86947172fed28646e92c55904ce2907c',1,'N_array::array()']]],
-  ['attribute_5fcount',['attribute_count',['../structCode__attribute.html#a13e6fb9304168a15c4caf3f37d1006e3',1,'Code_attribute']]],
-  ['attributes',['attributes',['../structCode__attribute.html#ad42c1c926ade7cce485bed5e59184049',1,'Code_attribute::attributes()'],['../classClassFile.html#a20d4b18030becbd8df5b7584477e94b6',1,'ClassFile::attributes()'],['../structField__info.html#a82d5d1b1ba57dfc6b711072777d92894',1,'Field_info::attributes()'],['../structMethod__info.html#a56fbb565dcff2992d66f57b29774c322',1,'Method_info::attributes()']]],
-  ['attributes_5fcount',['attributes_count',['../structField__info.html#a293084dbdbd13fce49fd95edf118db31',1,'Field_info::attributes_count()'],['../structMethod__info.html#afd638bcc6f20cfa8dd1de8741c8b5493',1,'Method_info::attributes_count()']]],
-  ['attributescount',['attributesCount',['../classClassFile.html#a66691e77df3f8604eebebc8759953542',1,'ClassFile']]]
+  ['_5farraytype',['_arrayType',['../classArrayObject.html#a83a4c777ec1059f3e85aaa698442f72b',1,'ArrayObject']]],
+  ['_5fclasses',['_classes',['../classMethodArea.html#a1244d392d351920d754db8c6940dd7aa',1,'MethodArea']]],
+  ['_5fclassfile',['_classFile',['../classStaticClass.html#ae54948d5ec18075dd5b68c7faf4ccc8b',1,'StaticClass']]],
+  ['_5fclassruntime',['_classRuntime',['../classFrame.html#aa6f380f48c5bac83780daed06dc04f9e',1,'Frame::_classRuntime()'],['../classInstanceClass.html#aa8ed961b694f26f470dc2399532d3538',1,'InstanceClass::_classRuntime()']]],
+  ['_5fcodeattribute',['_codeAttribute',['../classFrame.html#a0b7e80617513d7c1879e20510622103d',1,'Frame']]],
+  ['_5felements',['_elements',['../classArrayObject.html#a1d085d50c90613812fdf539472e76b0c',1,'ArrayObject']]],
+  ['_5fexceptionsattribute',['_exceptionsAttribute',['../classFrame.html#a5e98b7eb6642b16c03a75ec1f96c4fc4',1,'Frame']]],
+  ['_5ffields',['_fields',['../classInstanceClass.html#a603a0866f5113d16ff8f80b5d6bf152b',1,'InstanceClass']]],
+  ['_5fframestack',['_frameStack',['../classPilhaJVM.html#a09290179ef6c914aa32297ab9dae94ed',1,'PilhaJVM']]],
+  ['_5finternalstring',['_internalString',['../classStringObject.html#a129b52ebca78da26c58175e45e1869cc',1,'StringObject']]],
+  ['_5fiswide',['_isWide',['../classOperations.html#ab20aea5d0327c8100d12b217ecbbd62c',1,'Operations']]],
+  ['_5flocalvariables',['_localVariables',['../classFrame.html#af9a215cbac749f3f51e1e7fe239f2010',1,'Frame']]],
+  ['_5fmethod',['_method',['../classFrame.html#af9658f71efb91988fa39a224ce9ec9c6',1,'Frame']]],
+  ['_5fobject',['_object',['../classFrame.html#a618b0873a50306f7805ea09685e8eee9',1,'Frame']]],
+  ['_5fobjectvector',['_objectVector',['../classHeap.html#a55b6cf9504fbe890a49e667c80dae717',1,'Heap']]],
+  ['_5foperandstack',['_operandStack',['../classFrame.html#abb8b7f1997e7f3da06d6b0f9aaf61ab2',1,'Frame']]],
+  ['_5fstaticfields',['_staticFields',['../classStaticClass.html#a3f328810c97cb2b6e15830e3c1cd6289',1,'StaticClass']]]
 ];

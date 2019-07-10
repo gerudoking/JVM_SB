@@ -1,18 +1,5 @@
 <map id="include/PilhaJVM.h" name="include/PilhaJVM.h">
-<area shape="rect" id="node2" href="$PilhaJVM_8cpp.html" title="src/PilhaJVM.cpp" alt="" coords="334,80,459,107"/>
-<area shape="rect" id="node3" href="$MethodArea_8h.html" title="Responsável por todas as operações que gerenciam os métodos. " alt="" coords="535,80,683,107"/>
-<area shape="rect" id="node14" href="$Operations_8h.html" title="include/Operations.h" alt="" coords="757,304,898,331"/>
-<area shape="rect" id="node4" href="$MethodArea_8cpp.html" title="src/MethodArea.cpp" alt="" coords="589,155,727,181"/>
-<area shape="rect" id="node5" href="$ClassFile_8h.html" title="Definição da ClassFile. " alt="" coords="381,155,514,181"/>
-<area shape="rect" id="node6" href="$ClassFile_8cpp.html" title="Classe que irá realizar a leitura do bytecode e salvar as informações do class file. " alt="" coords="5,229,129,256"/>
-<area shape="rect" id="node7" href="$Main_8cpp.html" title="Modulo principal, dá a opção de escolha entre exibidor e interpretador. " alt="" coords="63,304,160,331"/>
-<area shape="rect" id="node8" href="$StaticClass_8h.html" title="Definição da StaticClass. " alt="" coords="487,229,634,256"/>
-<area shape="rect" id="node10" href="$InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="357,304,519,331"/>
-<area shape="rect" id="node16" href="$LeitorExibidor_8h.html" title="include/LeitorExibidor.h" alt="" coords="205,229,362,256"/>
-<area shape="rect" id="node9" href="$StaticClass_8cpp.html" title="src/StaticClass.cpp" alt="" coords="544,304,681,331"/>
-<area shape="rect" id="node11" href="$InstanceClass_8cpp.html" title="src/InstanceClass.cpp" alt="" coords="283,379,436,405"/>
-<area shape="rect" id="node12" href="$Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="461,379,570,405"/>
-<area shape="rect" id="node13" href="$Heap_8cpp.html" title="src/Heap.cpp" alt="" coords="465,453,565,480"/>
-<area shape="rect" id="node15" href="$Operations_8cpp.html" title="src/Operations.cpp" alt="" coords="761,379,893,405"/>
-<area shape="rect" id="node17" href="$LeitorExibidor_8cpp.html" title="src/LeitorExibidor.cpp" alt="" coords="184,304,332,331"/>
+<area shape="rect" id="node2" href="$MethodArea_8cpp.html" title="src/MethodArea.cpp" alt="" coords="5,80,144,107"/>
+<area shape="rect" id="node3" href="$Operations_8cpp.html" title="src/Operations.cpp" alt="" coords="169,80,301,107"/>
+<area shape="rect" id="node4" href="$PilhaJVM_8cpp.html" title="src/PilhaJVM.cpp" alt="" coords="325,80,451,107"/>
 </map>

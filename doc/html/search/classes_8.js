@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['n_5farray',['N_array',['../structN__array.html',1,'']]]
+  ['method_5finfo',['method_info',['../structmethod__info.html',1,'']]],
+  ['methodarea',['MethodArea',['../classMethodArea.html',1,'']]]
 ];

@@ -1,0 +1,11 @@
+<map id="Operations::executarMetodos" name="Operations::executarMetodos">
+<area shape="rect" id="node2" href="$classPilhaJVM.html#a64d7185bc812d3c81e5270c54c212e07" title="Adiciona um frame na pilha da JVM. " alt="" coords="266,5,410,32"/>
+<area shape="rect" id="node3" href="$classFrame.html#a6863584ef3a6f2e4b1f93fb0deb09f4b" title="Obtém o código do método a partir de um offset. " alt="" coords="280,56,396,83"/>
+<area shape="rect" id="node4" href="$classPilhaJVM.html#a13bf1c43de7819ea7761616f7a04c3b9" title="Obter a única instância da pilha. " alt="" coords="261,107,415,133"/>
+<area shape="rect" id="node5" href="$classPilhaJVM.html#aa0e43da476df6147c86c8cc3d6899718" title="Obtém o frame no topo da pilha da JVM. " alt="" coords="257,157,419,184"/>
+<area shape="rect" id="node6" href="$classPilhaJVM.html#a22d7bcd7db598b00ae219c9c2efb2c88" title="Obtém o tamanho da pilha da JVM. " alt="" coords="283,208,393,235"/>
+<area shape="rect" id="node7" href="$classOperations.html#a397caddc1ff805c556d3b71c9e525e3f" title="Verifica se o método informado existe na classe atual. " alt="" coords="247,259,429,301"/>
+<area shape="rect" id="node8" href="$classStaticClass.html#ae00772669e7a0e54980ed303ff933cef" title="Destrutor padrão. " alt="" coords="477,229,648,256"/>
+<area shape="rect" id="node9" href="$ClassVisao_8cpp.html#ad59936a226470583b59565cf99f4375e" title="getFormattedConstant" alt="" coords="487,304,639,331"/>
+<area shape="rect" id="node10" href="$classUtils.html#abef6742f09f81fea5952454925325ea5" title="Utils::converterStreamTo\lCString" alt="" coords="696,297,864,338"/>
+</map>

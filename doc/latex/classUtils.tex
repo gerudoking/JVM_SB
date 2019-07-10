@@ -1,0 +1,222 @@
+\hypertarget{classUtils}{}\section{Referência à classe Utils}
+\label{classUtils}\index{Utils@{Utils}}
+
+
+Representa classe utilitaria.  
+
+
+
+
+{\ttfamily \#include $<$Utils.\+h$>$}
+
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classUtils_aebfca2747bb35554f74b1ad6abe7c2c3}{exibe\+Tabs} (F\+I\+LE $\ast$\hyperlink{ClassVisao_8cpp_a1277960b5f2b37137fe9b0b5a1ea0beb}{out}, uint8\+\_\+t n)
+\end{DoxyCompactItemize}
+\subsection*{Membros públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{classUtils_a234dd450e6192a9ddbcd7e68e9a09841}{verificar\+Versao} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+static bool \hyperlink{classUtils_a63daf33599b447a8f3b2ea5aef2815ce}{comparar\+Utf8\+String} (\hyperlink{structCONSTANT__Utf8__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info} constant, const char $\ast$str)
+\item 
+static void \hyperlink{classUtils_a932c28783170c6aa53362fbd0c4ceefa}{imprint\+Tabs} (F\+I\+LE $\ast$\hyperlink{ClassVisao_8cpp_a1277960b5f2b37137fe9b0b5a1ea0beb}{out}, uint8\+\_\+t n)
+\item 
+static void \hyperlink{classUtils_a2a13f135d652b68fae6f4b8a9b21464e}{exibe\+Tabs} (uint8\+\_\+t n)
+\item 
+static const char $\ast$ \hyperlink{classUtils_abef6742f09f81fea5952454925325ea5}{converter\+Stream\+To\+C\+String} (const stringstream \&ss)
+\item 
+static double \hyperlink{classUtils_a71459ff272f47bbce2081ff59fae2d2c}{verificar\+Versao\+Class} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+static bool \hyperlink{classUtils_aa70b3d26f8b094e4bb4bbf3e05a6bd63}{verificar\+This\+Class} (string aux\+Filename, string aux\+Class)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Representa classe utilitaria. 
+
+Definido na linha 18 do ficheiro Utils.\+h.
+
+
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classUtils_a63daf33599b447a8f3b2ea5aef2815ce}\label{classUtils_a63daf33599b447a8f3b2ea5aef2815ce}} 
+\index{Utils@{Utils}!comparar\+Utf8\+String@{comparar\+Utf8\+String}}
+\index{comparar\+Utf8\+String@{comparar\+Utf8\+String}!Utils@{Utils}}
+\subsubsection{\texorpdfstring{comparar\+Utf8\+String()}{compararUtf8String()}}
+{\footnotesize\ttfamily bool Utils\+::comparar\+Utf8\+String (\begin{DoxyParamCaption}\item[{\hyperlink{structCONSTANT__Utf8__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info}}]{constant,  }\item[{const char $\ast$}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Verifica a igualdade entre uma string e o conteúdo de uma struct {\ttfamily \hyperlink{structCONSTANT__Utf8__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info}}. 
+\begin{DoxyParams}{Parâmetros}
+{\em constant} & Estrutura do tipo {\ttfamily \hyperlink{structCONSTANT__Utf8__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info}}. \\
+\hline
+{\em $\ast$str} & String a se comparar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+É retornado {\ttfamily true} caso a igualdade seja verdadeira, e {\ttfamily false} caso contrário. 
+\end{DoxyReturn}
+
+
+Definido na linha 95 do ficheiro Utils.\+cpp.
+
+
+
+Referências C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info\+::bytes e C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info\+::length.
+
+
+
+Referenciado por Frame\+::encontrar\+Attributes(), exibe\+\_\+\+Attribute\+Info(), Leitor\+Exibidor\+::get\+Attribute\+Info() e print\+\_\+\+Attribute\+Info().
+
+\mbox{\Hypertarget{classUtils_abef6742f09f81fea5952454925325ea5}\label{classUtils_abef6742f09f81fea5952454925325ea5}} 
+\index{Utils@{Utils}!converter\+Stream\+To\+C\+String@{converter\+Stream\+To\+C\+String}}
+\index{converter\+Stream\+To\+C\+String@{converter\+Stream\+To\+C\+String}!Utils@{Utils}}
+\subsubsection{\texorpdfstring{converter\+Stream\+To\+C\+String()}{converterStreamToCString()}}
+{\footnotesize\ttfamily const char $\ast$ Utils\+::converter\+Stream\+To\+C\+String (\begin{DoxyParamCaption}\item[{const stringstream \&}]{ss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Converte dados do tipo stringstream para {\ttfamily const} {\ttfamily char$\ast$}. 
+\begin{DoxyParams}{Parâmetros}
+{\em \&ss} & Referência para um {\ttfamily std\+::stringstream}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O resultado da conversão, uma string terminada com N\+U\+LL (i.\+e. \textbackslash{}0). 
+\end{DoxyReturn}
+
+
+Definido na linha 113 do ficheiro Utils.\+cpp.
+
+
+
+Referenciado por get\+Access\+Flags() e get\+Formatted\+Constant().
+
+\mbox{\Hypertarget{classUtils_a2a13f135d652b68fae6f4b8a9b21464e}\label{classUtils_a2a13f135d652b68fae6f4b8a9b21464e}} 
+\index{Utils@{Utils}!exibe\+Tabs@{exibe\+Tabs}}
+\index{exibe\+Tabs@{exibe\+Tabs}!Utils@{Utils}}
+\subsubsection{\texorpdfstring{exibe\+Tabs()}{exibeTabs()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Utils\+::exibe\+Tabs (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+exibe uma dada quantidade de tabs. 
+\begin{DoxyParams}{Parâmetros}
+{\em n} & Quantidade de tabs desejada. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 110 do ficheiro Utils.\+cpp.
+
+
+
+Referenciado por exibe\+\_\+\+Attribute\+Info() e exibe\+Byte\+Code().
+
+\mbox{\Hypertarget{classUtils_aebfca2747bb35554f74b1ad6abe7c2c3}\label{classUtils_aebfca2747bb35554f74b1ad6abe7c2c3}} 
+\index{Utils@{Utils}!exibe\+Tabs@{exibe\+Tabs}}
+\index{exibe\+Tabs@{exibe\+Tabs}!Utils@{Utils}}
+\subsubsection{\texorpdfstring{exibe\+Tabs()}{exibeTabs()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Utils\+::exibe\+Tabs (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{out,  }\item[{uint8\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+exibe uma dada quantidade de tabs. 
+\begin{DoxyParams}{Parâmetros}
+{\em n} & Quantidade de tabs desejada. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUtils_a932c28783170c6aa53362fbd0c4ceefa}\label{classUtils_a932c28783170c6aa53362fbd0c4ceefa}} 
+\index{Utils@{Utils}!imprint\+Tabs@{imprint\+Tabs}}
+\index{imprint\+Tabs@{imprint\+Tabs}!Utils@{Utils}}
+\subsubsection{\texorpdfstring{imprint\+Tabs()}{imprintTabs()}}
+{\footnotesize\ttfamily void Utils\+::imprint\+Tabs (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{out,  }\item[{uint8\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Imprime uma dada quantidade de tabs. 
+\begin{DoxyParams}{Parâmetros}
+{\em n} & Quantidade de tabs desejada. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 107 do ficheiro Utils.\+cpp.
+
+
+
+Referenciado por print\+\_\+\+Attribute\+Info() e print\+Arquivo\+Byte\+Code().
+
+\mbox{\Hypertarget{classUtils_aa70b3d26f8b094e4bb4bbf3e05a6bd63}\label{classUtils_aa70b3d26f8b094e4bb4bbf3e05a6bd63}} 
+\index{Utils@{Utils}!verificar\+This\+Class@{verificar\+This\+Class}}
+\index{verificar\+This\+Class@{verificar\+This\+Class}!Utils@{Utils}}
+\subsubsection{\texorpdfstring{verificar\+This\+Class()}{verificarThisClass()}}
+{\footnotesize\ttfamily bool Utils\+::verificar\+This\+Class (\begin{DoxyParamCaption}\item[{string}]{aux\+Filename,  }\item[{string}]{aux\+Class }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definido na linha 19 do ficheiro Utils.\+cpp.
+
+
+
+Referenciado por main().
+
+\mbox{\Hypertarget{classUtils_a234dd450e6192a9ddbcd7e68e9a09841}\label{classUtils_a234dd450e6192a9ddbcd7e68e9a09841}} 
+\index{Utils@{Utils}!verificar\+Versao@{verificar\+Versao}}
+\index{verificar\+Versao@{verificar\+Versao}!Utils@{Utils}}
+\subsubsection{\texorpdfstring{verificar\+Versao()}{verificarVersao()}}
+{\footnotesize\ttfamily double Utils\+::verificar\+Versao (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Converte os dados de versão obtidos da struct class\+File para a convenção encontrada em \href{https://en.wikipedia.org/wiki/Java_class_file#General_layout}{\tt https\+://en.\+wikipedia.\+org/wiki/\+Java\+\_\+class\+\_\+file\#\+General\+\_\+layout}
+
+J2\+SE 8 = 52
+
+J2\+SE 7 = 51
+
+J2\+SE 6.\+0 = 50
+
+J2\+SE 5.\+0 = 49
+
+J\+DK 1.\+4 = 48
+
+J\+DK 1.\+3 = 47
+
+J\+DK 1.\+2 = 46
+
+J\+DK 1.\+1 = 45 
+\begin{DoxyParams}{Parâmetros}
+{\em $\ast$class\+File} & Ponteiro para uma instância de struct {\ttfamily \hyperlink{classClassFile}{Class\+File}}, que descreve toda a estrutura de um arquivo .class. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O valor equivalente à versão lida em $\ast$class\+File. 
+\end{DoxyReturn}
+
+
+Definido na linha 7 do ficheiro Utils.\+cpp.
+
+
+
+Referências Class\+File\+::major\+\_\+version.
+
+
+
+Referenciado por exibe\+\_\+\+General\+Information() e print\+Arquivo\+\_\+\+General\+Information().
+
+\mbox{\Hypertarget{classUtils_a71459ff272f47bbce2081ff59fae2d2c}\label{classUtils_a71459ff272f47bbce2081ff59fae2d2c}} 
+\index{Utils@{Utils}!verificar\+Versao\+Class@{verificar\+Versao\+Class}}
+\index{verificar\+Versao\+Class@{verificar\+Versao\+Class}!Utils@{Utils}}
+\subsubsection{\texorpdfstring{verificar\+Versao\+Class()}{verificarVersaoClass()}}
+{\footnotesize\ttfamily double Utils\+::verificar\+Versao\+Class (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definido na linha 80 do ficheiro Utils.\+cpp.
+
+
+
+Referências Class\+File\+::major\+\_\+version.
+
+
+
+Referenciado por Leitor\+Exibidor\+::read\+Class\+File().
+
+
+
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Utils_8h}{Utils.\+h}\item 
+src/\hyperlink{Utils_8cpp}{Utils.\+cpp}\end{DoxyCompactItemize}

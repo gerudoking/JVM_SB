@@ -88,66 +88,95 @@ $(document).ready(function(){initNavTree('classInstanceClass.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Class instantiation.  
+<p>Lida com operações que lidam com uma instância da classe.  
  <a href="classInstanceClass.html#details">Mais...</a></p>
 
 <p><code>#include &lt;<a class="el" href="InstanceClass_8h_source.html">InstanceClass.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de heranças da classe InstanceClass</div>
+<div class="dyncontent">
+<div class="center"><img src="classInstanceClass__inherit__graph.png" border="0" usemap="#InstanceClass_inherit__map" alt="Inheritance graph"/></div>
+<map name="InstanceClass_inherit__map" id="InstanceClass_inherit__map">
+<area shape="rect" id="node2" href="classObject.html" title="n classe utilizada para todos elementos que se caracterizam como objetos, como: instância de classe e..." alt="" coords="29,5,89,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legenda</a>]</span></center></div>
 <div class="dynheader">
 Diagrama de colaboração para InstanceClass:</div>
 <div class="dyncontent">
 <div class="center"><img src="classInstanceClass__coll__graph.png" border="0" usemap="#InstanceClass_coll__map" alt="Collaboration graph"/></div>
 <map name="InstanceClass_coll__map" id="InstanceClass_coll__map">
-<area shape="rect" id="node2" href="classStaticClass.html" title="Fields Estáticos compartilhados por todas as instâncias. " alt="" coords="182,273,273,300"/>
-<area shape="rect" id="node3" href="classClassFile.html" title="ClassFile" alt="" coords="189,184,266,211"/>
-<area shape="rect" id="node4" href="structMethod__info.html" title="Struct responsável por armazenar os metodos declarados. " alt="" coords="229,95,322,121"/>
-<area shape="rect" id="node5" href="structAttribute__info.html" title="Protótipo da struct &quot;attribute_info&quot;. " alt="" coords="321,5,419,32"/>
-<area shape="rect" id="node9" href="structCode__attribute.html" title="Estrutura de dados para salvar atributos do tipo code. " alt="" coords="526,95,633,121"/>
-<area shape="rect" id="node13" href="structField__info.html" title="Struct responsável por armazenar os campos declarados. " alt="" coords="125,95,204,121"/>
-<area shape="rect" id="node6" href="unionT__info.html" title="Estrutura de dados que agrega informações sobre cada atributo lido. " alt="" coords="641,184,699,211"/>
-<area shape="rect" id="node7" href="structConstantValue__attribute.html" title="Struct para carregar o index dos atributos da &quot;constantpool&quot;. " alt="" coords="657,95,819,121"/>
-<area shape="rect" id="node8" href="structException__attribute.html" title="Estrutura de dados para salvar atributos de tipo &quot;exception&quot;. " alt="" coords="844,95,979,121"/>
-<area shape="rect" id="node10" href="structT__exception__table.html" title="Struct para salvar exceções identificadas. Será utilizada como componente da struct &quot;code_attribute&quot;..." alt="" coords="546,5,674,32"/>
-<area shape="rect" id="node11" href="structCp__info.html" title="Possui um elemento pool de constante. " alt="" coords="34,95,101,121"/>
-<area shape="rect" id="node12" href="unionClassLoaderType.html" title="Estrutura de dados para armazenamento Union responsável por armazenar todos os tamanhos de variáveis ..." alt="" coords="5,5,129,32"/>
+<area shape="rect" id="node2" href="classObject.html" title="n classe utilizada para todos elementos que se caracterizam como objetos, como: instância de classe e..." alt="" coords="1535,220,1595,247"/>
+<area shape="rect" id="node3" href="classStaticClass.html" title="Representação de uma classe carregada durante o runtime. O seu limite é dado por FRAME_MAX_SIZE. " alt="" coords="1520,271,1611,297"/>
+<area shape="rect" id="node4" href="classClassFile.html" title="ClassFile" alt="" coords="1331,271,1408,297"/>
+<area shape="rect" id="node5" href="structfield__info.html" title="field_info" alt="" coords="1107,247,1181,273"/>
+<area shape="rect" id="node6" href="structattribute__info.html" title="attribute_info" alt="" coords="733,185,830,212"/>
+<area shape="rect" id="node18" href="structCode__attribute.html" title="Code_attribute" alt="" coords="1091,96,1197,123"/>
+<area shape="rect" id="node20" href="structmethod__info.html" title="method_info" alt="" coords="1097,297,1191,324"/>
+<area shape="rect" id="node7" href="structLineNumberTable__attribute.html" title="LineNumberTable_attribute" alt="" coords="296,7,475,33"/>
+<area shape="rect" id="node8" href="structLineNumberTable.html" title="LineNumberTable" alt="" coords="9,7,133,33"/>
+<area shape="rect" id="node9" href="structConstantValue__attribute.html" title="ConstantValue_attribute" alt="" coords="304,57,467,84"/>
+<area shape="rect" id="node10" href="structSynthetic__attribute.html" title="Synthetic_attribute" alt="" coords="320,108,451,135"/>
+<area shape="rect" id="node11" href="structInnerClasses__attribute.html" title="InnerClasses_attribute" alt="" coords="309,159,462,185"/>
+<area shape="rect" id="node12" href="structClass.html" title="Class" alt="" coords="43,159,99,185"/>
+<area shape="rect" id="node13" href="structSourceFile__attribute.html" title="SourceFile_attribute" alt="" coords="316,209,455,236"/>
+<area shape="rect" id="node14" href="structDeprecated__attribute.html" title="Deprecated_attribute" alt="" coords="314,260,457,287"/>
+<area shape="rect" id="node15" href="structLocalVariableTable__attribute.html" title="LocalVariableTable\l_attribute" alt="" coords="319,311,451,353"/>
+<area shape="rect" id="node16" href="structLocalVariableTable.html" title="LocalVariableTable" alt="" coords="5,319,137,345"/>
+<area shape="rect" id="node17" href="structExceptions__attribute.html" title="Exceptions_attribute" alt="" coords="315,377,456,404"/>
+<area shape="rect" id="node19" href="structExceptionTable.html" title="ExceptionTable" alt="" coords="725,51,837,77"/>
+<area shape="rect" id="node21" href="structcp__info.html" title="cp_info" alt="" coords="1112,536,1176,563"/>
+<area shape="rect" id="node22" href="structCONSTANT__Integer__info.html" title="CONSTANT_Integer_info" alt="" coords="696,308,867,335"/>
+<area shape="rect" id="node23" href="structCONSTANT__NameAndType__info.html" title="CONSTANT_NameAndType_info" alt="" coords="672,359,891,385"/>
+<area shape="rect" id="node24" href="structCONSTANT__Long__info.html" title="CONSTANT_Long_info" alt="" coords="702,409,861,436"/>
+<area shape="rect" id="node25" href="structCONSTANT__Fieldref__info.html" title="CONSTANT_Fieldref_info" alt="" coords="694,460,869,487"/>
+<area shape="rect" id="node26" href="structCONSTANT__Methodref__info.html" title="CONSTANT_Methodref_info" alt="" coords="687,511,876,537"/>
+<area shape="rect" id="node27" href="structCONSTANT__Utf8__info.html" title="CONSTANT_Utf8_info" alt="" coords="703,561,859,588"/>
+<area shape="rect" id="node28" href="structCONSTANT__InterfaceMethodref__info.html" title="CONSTANT_InterfaceMethodref_info" alt="" coords="661,612,901,639"/>
+<area shape="rect" id="node29" href="structCONSTANT__Double__info.html" title="CONSTANT_Double_info" alt="" coords="695,663,867,689"/>
+<area shape="rect" id="node30" href="structCONSTANT__Float__info.html" title="CONSTANT_Float_info" alt="" coords="701,713,861,740"/>
+<area shape="rect" id="node31" href="structCONSTANT__Class__info.html" title="CONSTANT_Class_info" alt="" coords="699,764,864,791"/>
+<area shape="rect" id="node32" href="structCONSTANT__String__info.html" title="CONSTANT_String_info" alt="" coords="699,815,864,841"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legenda</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Membros públicos</h2></td></tr>
-<tr class="memitem:ac1bee1eb9725e1fec8de7f4cf97f369c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceClass.html#ac1bee1eb9725e1fec8de7f4cf97f369c">InstanceClass</a> (<a class="el" href="classStaticClass.html">StaticClass</a> *<a class="el" href="classInstanceClass.html#a45804f1afe3666a4b4511cf8e3f1013b">staticClass</a>)</td></tr>
-<tr class="memdesc:ac1bee1eb9725e1fec8de7f4cf97f369c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lida com operações que manipulam a instância da classe.  <a href="#ac1bee1eb9725e1fec8de7f4cf97f369c">Mais...</a><br /></td></tr>
-<tr class="separator:ac1bee1eb9725e1fec8de7f4cf97f369c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6da567a64a8373d609792821f5acb9a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classStaticClass.html">StaticClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceClass.html#a6da567a64a8373d609792821f5acb9a3">obterStaticClass</a> ()</td></tr>
-<tr class="memdesc:a6da567a64a8373d609792821f5acb9a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna referência para a classe estatica.  <a href="#a6da567a64a8373d609792821f5acb9a3">Mais...</a><br /></td></tr>
-<tr class="separator:a6da567a64a8373d609792821f5acb9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98084eb37c43d680169298bc50f09c98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a97b332303b1262282599e6ede0637b82">TypedElement</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceClass.html#a98084eb37c43d680169298bc50f09c98">obterField</a> (string field)</td></tr>
-<tr class="memdesc:a98084eb37c43d680169298bc50f09c98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna field instanciado.  <a href="#a98084eb37c43d680169298bc50f09c98">Mais...</a><br /></td></tr>
-<tr class="separator:a98084eb37c43d680169298bc50f09c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3af2fc7bfe8f406b5ea6efbf18161514"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceClass.html#a3af2fc7bfe8f406b5ea6efbf18161514">atualizarField</a> (string field, <a class="el" href="BasicTypes_8h.html#a97b332303b1262282599e6ede0637b82">TypedElement</a> typedElement)</td></tr>
-<tr class="memdesc:a3af2fc7bfe8f406b5ea6efbf18161514"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defina um valor para um field da Instance.  <a href="#a3af2fc7bfe8f406b5ea6efbf18161514">Mais...</a><br /></td></tr>
-<tr class="separator:a3af2fc7bfe8f406b5ea6efbf18161514"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05a47d4bf656908ce3dacc53d9d791b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceClass.html#a05a47d4bf656908ce3dacc53d9d791b2">atualizarFieldFinals</a> (string field, <a class="el" href="BasicTypes_8h.html#a97b332303b1262282599e6ede0637b82">TypedElement</a> typedElement)</td></tr>
-<tr class="memdesc:a05a47d4bf656908ce3dacc53d9d791b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define Field como final.  <a href="#a05a47d4bf656908ce3dacc53d9d791b2">Mais...</a><br /></td></tr>
-<tr class="separator:a05a47d4bf656908ce3dacc53d9d791b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9790b6bb982d58a0bbddcb8c9ba358d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceClass.html#a9790b6bb982d58a0bbddcb8c9ba358d4">imprimirInstance</a> ()</td></tr>
-<tr class="memdesc:a9790b6bb982d58a0bbddcb8c9ba358d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mostra todas as classes instanciadas.  <a href="#a9790b6bb982d58a0bbddcb8c9ba358d4">Mais...</a><br /></td></tr>
-<tr class="separator:a9790b6bb982d58a0bbddcb8c9ba358d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86ab031eb0f0240b0a54423003000322"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceClass.html#a86ab031eb0f0240b0a54423003000322">InstanceClass</a> (<a class="el" href="classStaticClass.html">StaticClass</a> *classRuntime)</td></tr>
+<tr class="memdesc:a86ab031eb0f0240b0a54423003000322"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor padrão.  <a href="#a86ab031eb0f0240b0a54423003000322">Mais...</a><br /></td></tr>
+<tr class="separator:a86ab031eb0f0240b0a54423003000322"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a441cc692dedc481373b7e670fab72556"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceClass.html#a441cc692dedc481373b7e670fab72556">~InstanceClass</a> ()</td></tr>
+<tr class="memdesc:a441cc692dedc481373b7e670fab72556"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor padrão.  <a href="#a441cc692dedc481373b7e670fab72556">Mais...</a><br /></td></tr>
+<tr class="separator:a441cc692dedc481373b7e670fab72556"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8570307f49cb95cc01fb8d6bda23763"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a842c5e2e69277690b064bf363c017980">ObjectType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceClass.html#ae8570307f49cb95cc01fb8d6bda23763">objectType</a> ()</td></tr>
+<tr class="memdesc:ae8570307f49cb95cc01fb8d6bda23763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método utilizado para declaração do tipo de objeto.  <a href="#ae8570307f49cb95cc01fb8d6bda23763">Mais...</a><br /></td></tr>
+<tr class="separator:ae8570307f49cb95cc01fb8d6bda23763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf2af3015bb8f777a3181d85aa279de8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classStaticClass.html">StaticClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceClass.html#adf2af3015bb8f777a3181d85aa279de8">getClassRuntime</a> ()</td></tr>
+<tr class="memdesc:adf2af3015bb8f777a3181d85aa279de8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém a classe correspondente ao objeto.  <a href="#adf2af3015bb8f777a3181d85aa279de8">Mais...</a><br /></td></tr>
+<tr class="separator:adf2af3015bb8f777a3181d85aa279de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af445c2e244c91b6cce4bb2c2798a720c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceClass.html#af445c2e244c91b6cce4bb2c2798a720c">putValueIntoField</a> (<a class="el" href="structValue.html">Value</a> value, string fieldName)</td></tr>
+<tr class="memdesc:af445c2e244c91b6cce4bb2c2798a720c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona um valor no field de índice informado.  <a href="#af445c2e244c91b6cce4bb2c2798a720c">Mais...</a><br /></td></tr>
+<tr class="separator:af445c2e244c91b6cce4bb2c2798a720c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee974c71919d470ea2e9aa75cf741a39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structValue.html">Value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceClass.html#aee974c71919d470ea2e9aa75cf741a39">getValueFromField</a> (string fieldName)</td></tr>
+<tr class="memdesc:aee974c71919d470ea2e9aa75cf741a39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém o valor contido em um field informado.  <a href="#aee974c71919d470ea2e9aa75cf741a39">Mais...</a><br /></td></tr>
+<tr class="separator:aee974c71919d470ea2e9aa75cf741a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a284c7d0a062623c614a2f9440340070f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceClass.html#a284c7d0a062623c614a2f9440340070f">fieldExists</a> (string fieldName)</td></tr>
+<tr class="memdesc:a284c7d0a062623c614a2f9440340070f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se existe um field com o nome dado.  <a href="#a284c7d0a062623c614a2f9440340070f">Mais...</a><br /></td></tr>
+<tr class="separator:a284c7d0a062623c614a2f9440340070f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Atributos Privados</h2></td></tr>
-<tr class="memitem:a455e05eefc1273e6cf22607c8941e9c0"><td class="memItemLeft" align="right" valign="top">map&lt; string, <a class="el" href="BasicTypes_8h.html#a97b332303b1262282599e6ede0637b82">TypedElement</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceClass.html#a455e05eefc1273e6cf22607c8941e9c0">mapLocalFields</a></td></tr>
-<tr class="separator:a455e05eefc1273e6cf22607c8941e9c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45804f1afe3666a4b4511cf8e3f1013b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classStaticClass.html">StaticClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceClass.html#a45804f1afe3666a4b4511cf8e3f1013b">staticClass</a></td></tr>
-<tr class="separator:a45804f1afe3666a4b4511cf8e3f1013b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8ed961b694f26f470dc2399532d3538"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classStaticClass.html">StaticClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceClass.html#aa8ed961b694f26f470dc2399532d3538">_classRuntime</a></td></tr>
+<tr class="separator:aa8ed961b694f26f470dc2399532d3538"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a603a0866f5113d16ff8f80b5d6bf152b"><td class="memItemLeft" align="right" valign="top">map&lt; string, <a class="el" href="structValue.html">Value</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceClass.html#a603a0866f5113d16ff8f80b5d6bf152b">_fields</a></td></tr>
+<tr class="separator:a603a0866f5113d16ff8f80b5d6bf152b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
-<div class="textblock"><p>Class instantiation. </p>
-<p>Lida com operações que lidam com uma instância da classe </p>
+<div class="textblock"><p>Lida com operações que lidam com uma instância da classe. </p>
 
-<p class="definition">Definido na linha <a class="el" href="InstanceClass_8h_source.html#l00022">22</a> do ficheiro <a class="el" href="InstanceClass_8h_source.html">InstanceClass.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="InstanceClass_8h_source.html#l00019">19</a> do ficheiro <a class="el" href="InstanceClass_8h_source.html">InstanceClass.h</a>.</p>
 </div><h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
-<a id="ac1bee1eb9725e1fec8de7f4cf97f369c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1bee1eb9725e1fec8de7f4cf97f369c">&#9670;&nbsp;</a></span>InstanceClass()</h2>
+<a id="a86ab031eb0f0240b0a54423003000322"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86ab031eb0f0240b0a54423003000322">&#9670;&nbsp;</a></span>InstanceClass()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -156,57 +185,200 @@ Atributos Privados</h2></td></tr>
           <td class="memname">InstanceClass::InstanceClass </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classStaticClass.html">StaticClass</a> *&#160;</td>
-          <td class="paramname"><em>staticClass</em></td><td>)</td>
+          <td class="paramname"><em>classRuntime</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Lida com operações que manipulam a instância da classe. </p>
+<p>Construtor padrão. </p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">staticClass</td><td>Referência para a <a class="el" href="classStaticClass.html" title="Fields Estáticos compartilhados por todas as instâncias. ">StaticClass</a> </td></tr>
+    <tr><td class="paramname">classRuntime</td><td>A classe correspondente ao objeto. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definido na linha <a class="el" href="InstanceClass_8cpp_source.html#l00008">8</a> do ficheiro <a class="el" href="InstanceClass_8cpp_source.html">InstanceClass.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="InstanceClass_8cpp_source.html#l00010">10</a> do ficheiro <a class="el" href="InstanceClass_8cpp_source.html">InstanceClass.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="Fields_8h_source.html#l00021">Field_info::descriptor_index</a>, <a class="el" href="BasicTypes_8h_source.html#l00060">element_u::l</a>, <a class="el" href="InstanceClass_8h_source.html#l00024">mapLocalFields</a>, <a class="el" href="Fields_8h_source.html#l00020">Field_info::name_index</a>, <a class="el" href="StaticClass_8cpp_source.html#l00112">StaticClass::obterClassFile()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00467">ClassFile::obterConstantPool()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00526">ClassFile::obterFields()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00522">ClassFile::obterFieldsCount()</a>, <a class="el" href="InstanceClass_8h_source.html#l00025">staticClass</a>, <a class="el" href="BasicTypes_8h_source.html#l00084">typedElement_s::type</a>, <a class="el" href="LocalVariables_8h_source.html#l00027">TYPE_BOOL</a>, <a class="el" href="LocalVariables_8h_source.html#l00026">TYPE_DOUBLE</a>, <a class="el" href="LocalVariables_8h_source.html#l00024">TYPE_FLOAT</a>, <a class="el" href="LocalVariables_8h_source.html#l00023">TYPE_INT</a>, <a class="el" href="LocalVariables_8h_source.html#l00025">TYPE_LONG</a>, <a class="el" href="LocalVariables_8h_source.html#l00028">TYPE_REFERENCE</a> e <a class="el" href="BasicTypes_8h_source.html#l00083">typedElement_s::value</a>.</p>
+<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00042">ClassFile::access_flags</a>, <a class="el" href="BasicTypes_8h_source.html#l00100">field_info::access_flags</a>, <a class="el" href="Heap_8cpp_source.html#l00015">Heap::addObject()</a>, <a class="el" href="BasicTypes_8h_source.html#l00019">BOOLEAN</a>, <a class="el" href="BasicTypes_8h_source.html#l00020">BYTE</a>, <a class="el" href="BasicTypes_8h_source.html#l00040">Value::byteValue</a>, <a class="el" href="BasicTypes_8h_source.html#l00021">CHAR</a>, <a class="el" href="BasicTypes_8h_source.html#l00041">Value::charValue</a>, <a class="el" href="ClassFile_8h_source.html#l00041">ClassFile::constant_pool</a>, <a class="el" href="structValue.html#a2835134be157447a3ceda1a1e839ba9e">Value::data</a>, <a class="el" href="BasicTypes_8h_source.html#l00102">field_info::descriptor_index</a>, <a class="el" href="BasicTypes_8h_source.html#l00026">DOUBLE</a>, <a class="el" href="BasicTypes_8h_source.html#l00046">Value::doubleValue</a>, <a class="el" href="ClassFile_8h_source.html#l00048">ClassFile::fields</a>, <a class="el" href="ClassFile_8h_source.html#l00047">ClassFile::fields_count</a>, <a class="el" href="BasicTypes_8h_source.html#l00024">FLOAT</a>, <a class="el" href="BasicTypes_8h_source.html#l00044">Value::floatValue</a>, <a class="el" href="StaticClass_8cpp_source.html#l00063">StaticClass::getClassFile()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00384">getFormattedConstant()</a>, <a class="el" href="Heap_8h_source.html#l00022">Heap::getInstance()</a>, <a class="el" href="BasicTypes_8h_source.html#l00023">INT</a>, <a class="el" href="BasicTypes_8h_source.html#l00043">Value::intValue</a>, <a class="el" href="BasicTypes_8h_source.html#l00025">LONG</a>, <a class="el" href="BasicTypes_8h_source.html#l00045">Value::longValue</a>, <a class="el" href="BasicTypes_8h_source.html#l00101">field_info::name_index</a>, <a class="el" href="BasicTypes_8h_source.html#l00048">Value::object</a>, <a class="el" href="InstanceClass_8cpp_source.html#l00091">putValueIntoField()</a>, <a class="el" href="BasicTypes_8h_source.html#l00028">REFERENCE</a>, <a class="el" href="BasicTypes_8h_source.html#l00022">SHORT</a>, <a class="el" href="BasicTypes_8h_source.html#l00042">Value::shortValue</a> e <a class="el" href="BasicTypes_8h_source.html#l00037">Value::type</a>.</p>
 <div class="dynheader">
 Grafo de chamadas desta função:</div>
 <div class="dyncontent">
-<div class="center"><img src="classInstanceClass_ac1bee1eb9725e1fec8de7f4cf97f369c_cgraph.png" border="0" usemap="#classInstanceClass_ac1bee1eb9725e1fec8de7f4cf97f369c_cgraph" alt=""/></div>
-<map name="classInstanceClass_ac1bee1eb9725e1fec8de7f4cf97f369c_cgraph" id="classInstanceClass_ac1bee1eb9725e1fec8de7f4cf97f369c_cgraph">
-<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="257,29,441,56"/>
-<area shape="rect" id="node4" href="classStaticClass.html#a49b4258a26420be4c6a1a79cdbdc2d5c" title="Retorna as informações do class file. " alt="" coords="257,80,440,107"/>
-<area shape="rect" id="node5" href="classClassFile.html#ab70fe581c4b7a1824adf490c3a53bcc7" title="Retorna referencia a constant pool. " alt="" coords="252,131,445,157"/>
-<area shape="rect" id="node6" href="classClassFile.html#ac3aabaa918413884416692b29165b463" title="Retorna a array com as fields lidas. " alt="" coords="274,181,423,208"/>
-<area shape="rect" id="node7" href="classClassFile.html#a0be559cd8b7b3168c81a2782e4facb0c" title="Retorna número de fields. " alt="" coords="257,232,441,259"/>
-<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="493,29,577,56"/>
+<div class="center"><img src="classInstanceClass_a86ab031eb0f0240b0a54423003000322_cgraph.png" border="0" usemap="#classInstanceClass_a86ab031eb0f0240b0a54423003000322_cgraph" alt=""/></div>
+<map name="classInstanceClass_a86ab031eb0f0240b0a54423003000322_cgraph" id="classInstanceClass_a86ab031eb0f0240b0a54423003000322_cgraph">
+<area shape="rect" id="node2" href="classHeap.html#aa2a5f92b36abe24c83853feca936548e" title="Adiciona um objeto à heap. " alt="" coords="285,5,405,32"/>
+<area shape="rect" id="node3" href="classStaticClass.html#ae00772669e7a0e54980ed303ff933cef" title="Destrutor padrão. " alt="" coords="260,56,431,83"/>
+<area shape="rect" id="node4" href="ClassVisao_8cpp.html#ad59936a226470583b59565cf99f4375e" title="getFormattedConstant" alt="" coords="269,131,421,157"/>
+<area shape="rect" id="node6" href="classHeap.html#ac030780aeff8a27e33ed5f5eb576dfda" title="Obter a única instância da Heap. " alt="" coords="281,181,410,208"/>
+<area shape="rect" id="node7" href="classInstanceClass.html#af445c2e244c91b6cce4bb2c2798a720c" title="Adiciona um valor no field de índice informado. " alt="" coords="252,233,439,274"/>
+<area shape="rect" id="node5" href="classUtils.html#abef6742f09f81fea5952454925325ea5" title="Utils::converterStreamTo\lCString" alt="" coords="487,123,655,165"/>
 </map>
 </div>
 
 </div>
 </div>
+<a id="a441cc692dedc481373b7e670fab72556"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a441cc692dedc481373b7e670fab72556">&#9670;&nbsp;</a></span>~InstanceClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">InstanceClass::~InstanceClass </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destrutor padrão. </p>
+
+<p class="definition">Definido na linha <a class="el" href="InstanceClass_8cpp_source.html#l00079">79</a> do ficheiro <a class="el" href="InstanceClass_8cpp_source.html">InstanceClass.cpp</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Documentação dos métodos</h2>
-<a id="a3af2fc7bfe8f406b5ea6efbf18161514"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3af2fc7bfe8f406b5ea6efbf18161514">&#9670;&nbsp;</a></span>atualizarField()</h2>
+<a id="a284c7d0a062623c614a2f9440340070f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a284c7d0a062623c614a2f9440340070f">&#9670;&nbsp;</a></span>fieldExists()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool InstanceClass::atualizarField </td>
+          <td class="memname">bool InstanceClass::fieldExists </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>field</em>, </td>
+          <td class="paramname"><em>fieldName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se existe um field com o nome dado. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>O nome do field. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Retorna <code>true</code> caso o field existir, e <code>false</code> caso contrário. </dd></dl>
+
+<p class="definition">Definido na linha <a class="el" href="InstanceClass_8cpp_source.html#l00104">104</a> do ficheiro <a class="el" href="InstanceClass_8cpp_source.html">InstanceClass.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="InstanceClass_8h_source.html#l00079">_fields</a>.</p>
+
+</div>
+</div>
+<a id="adf2af3015bb8f777a3181d85aa279de8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf2af3015bb8f777a3181d85aa279de8">&#9670;&nbsp;</a></span>getClassRuntime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classStaticClass.html">StaticClass</a> * InstanceClass::getClassRuntime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtém a classe correspondente ao objeto. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Retorna a classe do objeto. </dd></dl>
+
+<p class="definition">Definido na linha <a class="el" href="InstanceClass_8cpp_source.html#l00087">87</a> do ficheiro <a class="el" href="InstanceClass_8cpp_source.html">InstanceClass.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="InstanceClass_8h_source.html#l00074">_classRuntime</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l04460">Operations::checkcast()</a> e <a class="el" href="Operations_8cpp_source.html#l04526">Operations::instanceof()</a>.</p>
+
+</div>
+</div>
+<a id="aee974c71919d470ea2e9aa75cf741a39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee974c71919d470ea2e9aa75cf741a39">&#9670;&nbsp;</a></span>getValueFromField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structValue.html">Value</a> InstanceClass::getValueFromField </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>fieldName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtém o valor contido em um field informado. </p>
+<p>Caso o nome do field seja inválido, um erro será emitido. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>O índice do field. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>O valor correspondente ao field. </dd></dl>
+
+<p class="definition">Definido na linha <a class="el" href="InstanceClass_8cpp_source.html#l00095">95</a> do ficheiro <a class="el" href="InstanceClass_8cpp_source.html">InstanceClass.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="InstanceClass_8h_source.html#l00079">_fields</a>.</p>
+
+</div>
+</div>
+<a id="ae8570307f49cb95cc01fb8d6bda23763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8570307f49cb95cc01fb8d6bda23763">&#9670;&nbsp;</a></span>objectType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#a842c5e2e69277690b064bf363c017980">ObjectType</a> InstanceClass::objectType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Método utilizado para declaração do tipo de objeto. </p>
+<dl class="section return"><dt>Retorna</dt><dd>O tipo de objeto. </dd></dl>
+
+<p>Implementa <a class="el" href="classObject.html#a08cee945bc224fc81f4448086625183d">Object</a>.</p>
+
+<p class="definition">Definido na linha <a class="el" href="InstanceClass_8cpp_source.html#l00083">83</a> do ficheiro <a class="el" href="InstanceClass_8cpp_source.html">InstanceClass.cpp</a>.</p>
+
+<p class="reference">Referências <a class="el" href="BasicTypes_8h_source.html#l00012">CLASS_INSTANCE</a>.</p>
+
+</div>
+</div>
+<a id="af445c2e244c91b6cce4bb2c2798a720c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af445c2e244c91b6cce4bb2c2798a720c">&#9670;&nbsp;</a></span>putValueIntoField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InstanceClass::putValueIntoField </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structValue.html">Value</a>&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="BasicTypes_8h.html#a97b332303b1262282599e6ede0637b82">TypedElement</a>&#160;</td>
-          <td class="paramname"><em>typedElement</em>&#160;</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>fieldName</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -216,152 +388,26 @@ Grafo de chamadas desta função:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Defina um valor para um field da Instance. </p>
-<dl class="params"><dt>Parâmetros</dt><dd>
+<p>Adiciona um valor no field de índice informado. </p>
+<p>Caso o índice do field (i.e. não exista na CP da classe atual seja inválido), um erro será emitido. </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">field</td><td>nome do field </td></tr>
-    <tr><td class="paramname">typedElement</td><td>novo tipo que será atribuido ao field </td></tr>
+    <tr><td class="paramname">value</td><td>O valor que será inserido no field. </td></tr>
+    <tr><td class="paramname">fieldName</td><td>O nome do field que será alterado. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Retorna</dt><dd>booleano indicado se o field foi definido </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="InstanceClass_8cpp_source.html#l00075">75</a> do ficheiro <a class="el" href="InstanceClass_8cpp_source.html">InstanceClass.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="InstanceClass_8cpp_source.html#l00091">91</a> do ficheiro <a class="el" href="InstanceClass_8cpp_source.html">InstanceClass.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="InstanceClass_8h_source.html#l00024">mapLocalFields</a> e <a class="el" href="BasicTypes_8h_source.html#l00084">typedElement_s::type</a>.</p>
+<p class="reference">Referências <a class="el" href="InstanceClass_8h_source.html#l00079">_fields</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l02088">Operations::putfield()</a>.</p>
-
-</div>
-</div>
-<a id="a05a47d4bf656908ce3dacc53d9d791b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05a47d4bf656908ce3dacc53d9d791b2">&#9670;&nbsp;</a></span>atualizarFieldFinals()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool InstanceClass::atualizarFieldFinals </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>field</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="BasicTypes_8h.html#a97b332303b1262282599e6ede0637b82">TypedElement</a>&#160;</td>
-          <td class="paramname"><em>typedElement</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Define Field como final. </p>
-<dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">field</td><td>nome do field desejado </td></tr>
-    <tr><td class="paramname">typedElement</td><td>tipo para o field </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Retorna</dt><dd>booleano que indica se o field foi setado com o novo tipo ou não </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="InstanceClass_8cpp_source.html#l00094">94</a> do ficheiro <a class="el" href="InstanceClass_8cpp_source.html">InstanceClass.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="InstanceClass_8h_source.html#l00024">mapLocalFields</a> e <a class="el" href="BasicTypes_8h_source.html#l00084">typedElement_s::type</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l02088">Operations::putfield()</a>.</p>
-
-</div>
-</div>
-<a id="a9790b6bb982d58a0bbddcb8c9ba358d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9790b6bb982d58a0bbddcb8c9ba358d4">&#9670;&nbsp;</a></span>imprimirInstance()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void InstanceClass::imprimirInstance </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Mostra todas as classes instanciadas. </p>
-
-<p class="definition">Definido na linha <a class="el" href="InstanceClass_8cpp_source.html#l00113">113</a> do ficheiro <a class="el" href="InstanceClass_8cpp_source.html">InstanceClass.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="InstanceClass_8h_source.html#l00024">mapLocalFields</a>.</p>
-
-</div>
-</div>
-<a id="a98084eb37c43d680169298bc50f09c98"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98084eb37c43d680169298bc50f09c98">&#9670;&nbsp;</a></span>obterField()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedElement InstanceClass::obterField </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retorna field instanciado. </p>
-<dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">field</td><td>do field. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Retorna</dt><dd>struct typedElement que contém informações sobre nome do tipo e valor </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="InstanceClass_8cpp_source.html#l00058">58</a> do ficheiro <a class="el" href="InstanceClass_8cpp_source.html">InstanceClass.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="InstanceClass_8h_source.html#l00024">mapLocalFields</a>, <a class="el" href="BasicTypes_8h_source.html#l00084">typedElement_s::type</a> e <a class="el" href="LocalVariables_8h_source.html#l00022">TYPE_NOT_SET</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l02073">Operations::getfield()</a>.</p>
-
-</div>
-</div>
-<a id="a6da567a64a8373d609792821f5acb9a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6da567a64a8373d609792821f5acb9a3">&#9670;&nbsp;</a></span>obterStaticClass()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classStaticClass.html">StaticClass</a> * InstanceClass::obterStaticClass </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retorna referência para a classe estatica. </p>
-
-<p class="definition">Definido na linha <a class="el" href="InstanceClass_8cpp_source.html#l00071">71</a> do ficheiro <a class="el" href="InstanceClass_8cpp_source.html">InstanceClass.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="InstanceClass_8h_source.html#l00025">staticClass</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l02443">Operations::invokeinterface()</a>, <a class="el" href="Operations_8cpp_source.html#l02266">Operations::invokespecial()</a> e <a class="el" href="Operations_8cpp_source.html#l02107">Operations::invokevirtual()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="InstanceClass_8cpp_source.html#l00010">InstanceClass()</a> e <a class="el" href="Operations_8cpp_source.html#l03748">Operations::putfield()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentação dos dados membro</h2>
-<a id="a455e05eefc1273e6cf22607c8941e9c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a455e05eefc1273e6cf22607c8941e9c0">&#9670;&nbsp;</a></span>mapLocalFields</h2>
+<a id="aa8ed961b694f26f470dc2399532d3538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8ed961b694f26f470dc2399532d3538">&#9670;&nbsp;</a></span>_classRuntime</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -370,7 +416,7 @@ Grafo de chamadas desta função:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">map&lt;string, <a class="el" href="BasicTypes_8h.html#a97b332303b1262282599e6ede0637b82">TypedElement</a>*&gt; InstanceClass::mapLocalFields</td>
+          <td class="memname"><a class="el" href="classStaticClass.html">StaticClass</a>* InstanceClass::_classRuntime</td>
         </tr>
       </table>
   </td>
@@ -379,15 +425,16 @@ Grafo de chamadas desta função:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Armazena a classe correspondente ao objeto. </p>
 
-<p class="definition">Definido na linha <a class="el" href="InstanceClass_8h_source.html#l00024">24</a> do ficheiro <a class="el" href="InstanceClass_8h_source.html">InstanceClass.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="InstanceClass_8h_source.html#l00074">74</a> do ficheiro <a class="el" href="InstanceClass_8h_source.html">InstanceClass.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="InstanceClass_8cpp_source.html#l00075">atualizarField()</a>, <a class="el" href="InstanceClass_8cpp_source.html#l00094">atualizarFieldFinals()</a>, <a class="el" href="InstanceClass_8cpp_source.html#l00113">imprimirInstance()</a>, <a class="el" href="InstanceClass_8cpp_source.html#l00008">InstanceClass()</a> e <a class="el" href="InstanceClass_8cpp_source.html#l00058">obterField()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="InstanceClass_8cpp_source.html#l00087">getClassRuntime()</a>.</p>
 
 </div>
 </div>
-<a id="a45804f1afe3666a4b4511cf8e3f1013b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45804f1afe3666a4b4511cf8e3f1013b">&#9670;&nbsp;</a></span>staticClass</h2>
+<a id="a603a0866f5113d16ff8f80b5d6bf152b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a603a0866f5113d16ff8f80b5d6bf152b">&#9670;&nbsp;</a></span>_fields</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -396,7 +443,7 @@ Grafo de chamadas desta função:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classStaticClass.html">StaticClass</a>* InstanceClass::staticClass</td>
+          <td class="memname">map&lt;string, <a class="el" href="structValue.html">Value</a>&gt; InstanceClass::_fields</td>
         </tr>
       </table>
   </td>
@@ -405,10 +452,11 @@ Grafo de chamadas desta função:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Armazena os fields do objeto (de instância). </p>
 
-<p class="definition">Definido na linha <a class="el" href="InstanceClass_8h_source.html#l00025">25</a> do ficheiro <a class="el" href="InstanceClass_8h_source.html">InstanceClass.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="InstanceClass_8h_source.html#l00079">79</a> do ficheiro <a class="el" href="InstanceClass_8h_source.html">InstanceClass.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="InstanceClass_8cpp_source.html#l00008">InstanceClass()</a> e <a class="el" href="InstanceClass_8cpp_source.html#l00071">obterStaticClass()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="InstanceClass_8cpp_source.html#l00104">fieldExists()</a>, <a class="el" href="InstanceClass_8cpp_source.html#l00095">getValueFromField()</a> e <a class="el" href="InstanceClass_8cpp_source.html#l00091">putValueIntoField()</a>.</p>
 
 </div>
 </div>

@@ -1,0 +1,5 @@
+<map id="Operations::func_goto" name="Operations::func_goto">
+<area shape="rect" id="node2" href="$classFrame.html#a6863584ef3a6f2e4b1f93fb0deb09f4b" title="Obtém o código do método a partir de um offset. " alt="" coords="227,5,343,32"/>
+<area shape="rect" id="node3" href="$classPilhaJVM.html#a13bf1c43de7819ea7761616f7a04c3b9" title="Obter a única instância da pilha. " alt="" coords="208,56,363,83"/>
+<area shape="rect" id="node4" href="$classPilhaJVM.html#aa0e43da476df6147c86c8cc3d6899718" title="Obtém o frame no topo da pilha da JVM. " alt="" coords="204,107,367,133"/>
+</map>

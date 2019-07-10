@@ -1,14 +1,33 @@
 <map id="InstanceClass" name="InstanceClass">
-<area shape="rect" id="node2" href="$classStaticClass.html" title="Fields Estáticos compartilhados por todas as instâncias. " alt="" coords="182,273,273,300"/>
-<area shape="rect" id="node3" href="$classClassFile.html" title="ClassFile" alt="" coords="189,184,266,211"/>
-<area shape="rect" id="node4" href="$structMethod__info.html" title="Struct responsável por armazenar os metodos declarados. " alt="" coords="229,95,322,121"/>
-<area shape="rect" id="node5" href="$structAttribute__info.html" title="Protótipo da struct &quot;attribute_info&quot;. " alt="" coords="321,5,419,32"/>
-<area shape="rect" id="node9" href="$structCode__attribute.html" title="Estrutura de dados para salvar atributos do tipo code. " alt="" coords="526,95,633,121"/>
-<area shape="rect" id="node13" href="$structField__info.html" title="Struct responsável por armazenar os campos declarados. " alt="" coords="125,95,204,121"/>
-<area shape="rect" id="node6" href="$unionT__info.html" title="Estrutura de dados que agrega informações sobre cada atributo lido. " alt="" coords="641,184,699,211"/>
-<area shape="rect" id="node7" href="$structConstantValue__attribute.html" title="Struct para carregar o index dos atributos da &quot;constantpool&quot;. " alt="" coords="657,95,819,121"/>
-<area shape="rect" id="node8" href="$structException__attribute.html" title="Estrutura de dados para salvar atributos de tipo &quot;exception&quot;. " alt="" coords="844,95,979,121"/>
-<area shape="rect" id="node10" href="$structT__exception__table.html" title="Struct para salvar exceções identificadas. Será utilizada como componente da struct &quot;code_attribute&quot;..." alt="" coords="546,5,674,32"/>
-<area shape="rect" id="node11" href="$structCp__info.html" title="Possui um elemento pool de constante. " alt="" coords="34,95,101,121"/>
-<area shape="rect" id="node12" href="$unionClassLoaderType.html" title="Estrutura de dados para armazenamento Union responsável por armazenar todos os tamanhos de variáveis ..." alt="" coords="5,5,129,32"/>
+<area shape="rect" id="node2" href="$classObject.html" title="n classe utilizada para todos elementos que se caracterizam como objetos, como: instância de classe e..." alt="" coords="1535,220,1595,247"/>
+<area shape="rect" id="node3" href="$classStaticClass.html" title="Representação de uma classe carregada durante o runtime. O seu limite é dado por FRAME_MAX_SIZE. " alt="" coords="1520,271,1611,297"/>
+<area shape="rect" id="node4" href="$classClassFile.html" title="ClassFile" alt="" coords="1331,271,1408,297"/>
+<area shape="rect" id="node5" href="$structfield__info.html" title="field_info" alt="" coords="1107,247,1181,273"/>
+<area shape="rect" id="node6" href="$structattribute__info.html" title="attribute_info" alt="" coords="733,185,830,212"/>
+<area shape="rect" id="node18" href="$structCode__attribute.html" title="Code_attribute" alt="" coords="1091,96,1197,123"/>
+<area shape="rect" id="node20" href="$structmethod__info.html" title="method_info" alt="" coords="1097,297,1191,324"/>
+<area shape="rect" id="node7" href="$structLineNumberTable__attribute.html" title="LineNumberTable_attribute" alt="" coords="296,7,475,33"/>
+<area shape="rect" id="node8" href="$structLineNumberTable.html" title="LineNumberTable" alt="" coords="9,7,133,33"/>
+<area shape="rect" id="node9" href="$structConstantValue__attribute.html" title="ConstantValue_attribute" alt="" coords="304,57,467,84"/>
+<area shape="rect" id="node10" href="$structSynthetic__attribute.html" title="Synthetic_attribute" alt="" coords="320,108,451,135"/>
+<area shape="rect" id="node11" href="$structInnerClasses__attribute.html" title="InnerClasses_attribute" alt="" coords="309,159,462,185"/>
+<area shape="rect" id="node12" href="$structClass.html" title="Class" alt="" coords="43,159,99,185"/>
+<area shape="rect" id="node13" href="$structSourceFile__attribute.html" title="SourceFile_attribute" alt="" coords="316,209,455,236"/>
+<area shape="rect" id="node14" href="$structDeprecated__attribute.html" title="Deprecated_attribute" alt="" coords="314,260,457,287"/>
+<area shape="rect" id="node15" href="$structLocalVariableTable__attribute.html" title="LocalVariableTable\l_attribute" alt="" coords="319,311,451,353"/>
+<area shape="rect" id="node16" href="$structLocalVariableTable.html" title="LocalVariableTable" alt="" coords="5,319,137,345"/>
+<area shape="rect" id="node17" href="$structExceptions__attribute.html" title="Exceptions_attribute" alt="" coords="315,377,456,404"/>
+<area shape="rect" id="node19" href="$structExceptionTable.html" title="ExceptionTable" alt="" coords="725,51,837,77"/>
+<area shape="rect" id="node21" href="$structcp__info.html" title="cp_info" alt="" coords="1112,536,1176,563"/>
+<area shape="rect" id="node22" href="$structCONSTANT__Integer__info.html" title="CONSTANT_Integer_info" alt="" coords="696,308,867,335"/>
+<area shape="rect" id="node23" href="$structCONSTANT__NameAndType__info.html" title="CONSTANT_NameAndType_info" alt="" coords="672,359,891,385"/>
+<area shape="rect" id="node24" href="$structCONSTANT__Long__info.html" title="CONSTANT_Long_info" alt="" coords="702,409,861,436"/>
+<area shape="rect" id="node25" href="$structCONSTANT__Fieldref__info.html" title="CONSTANT_Fieldref_info" alt="" coords="694,460,869,487"/>
+<area shape="rect" id="node26" href="$structCONSTANT__Methodref__info.html" title="CONSTANT_Methodref_info" alt="" coords="687,511,876,537"/>
+<area shape="rect" id="node27" href="$structCONSTANT__Utf8__info.html" title="CONSTANT_Utf8_info" alt="" coords="703,561,859,588"/>
+<area shape="rect" id="node28" href="$structCONSTANT__InterfaceMethodref__info.html" title="CONSTANT_InterfaceMethodref_info" alt="" coords="661,612,901,639"/>
+<area shape="rect" id="node29" href="$structCONSTANT__Double__info.html" title="CONSTANT_Double_info" alt="" coords="695,663,867,689"/>
+<area shape="rect" id="node30" href="$structCONSTANT__Float__info.html" title="CONSTANT_Float_info" alt="" coords="701,713,861,740"/>
+<area shape="rect" id="node31" href="$structCONSTANT__Class__info.html" title="CONSTANT_Class_info" alt="" coords="699,764,864,791"/>
+<area shape="rect" id="node32" href="$structCONSTANT__String__info.html" title="CONSTANT_String_info" alt="" coords="699,815,864,841"/>
 </map>

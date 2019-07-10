@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bits',['BITS',['../LocalVariables_8h.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'LocalVariables.h']]]
+  ['frame_5fmax_5fsize',['FRAME_MAX_SIZE',['../PilhaJVM_8h.html#a9c1b367989fff08c6b6fadfa29483da2',1,'PilhaJVM.h']]]
 ];

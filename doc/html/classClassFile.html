@@ -81,8 +81,7 @@ $(document).ready(function(){initNavTree('classClassFile.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Membros públicos</a> &#124;
-<a href="#pri-methods">Membros privados</a> &#124;
-<a href="#pri-attribs">Atributos Privados</a> &#124;
+<a href="#pub-attribs">Atributos Públicos</a> &#124;
 <a href="classClassFile-members.html">Mostrar lista completa dos membros</a>  </div>
   <div class="headertitle">
 <div class="title">Referência à classe ClassFile</div>  </div>
@@ -95,16 +94,34 @@ Diagrama de colaboração para ClassFile:</div>
 <div class="dyncontent">
 <div class="center"><img src="classClassFile__coll__graph.png" border="0" usemap="#ClassFile_coll__map" alt="Collaboration graph"/></div>
 <map name="ClassFile_coll__map" id="ClassFile_coll__map">
-<area shape="rect" id="node2" href="structMethod__info.html" title="Struct responsável por armazenar os metodos declarados. " alt="" coords="229,95,322,121"/>
-<area shape="rect" id="node3" href="structAttribute__info.html" title="Protótipo da struct &quot;attribute_info&quot;. " alt="" coords="321,5,419,32"/>
-<area shape="rect" id="node7" href="structCode__attribute.html" title="Estrutura de dados para salvar atributos do tipo code. " alt="" coords="526,95,633,121"/>
-<area shape="rect" id="node11" href="structField__info.html" title="Struct responsável por armazenar os campos declarados. " alt="" coords="125,95,204,121"/>
-<area shape="rect" id="node4" href="unionT__info.html" title="Estrutura de dados que agrega informações sobre cada atributo lido. " alt="" coords="641,184,699,211"/>
-<area shape="rect" id="node5" href="structConstantValue__attribute.html" title="Struct para carregar o index dos atributos da &quot;constantpool&quot;. " alt="" coords="657,95,819,121"/>
-<area shape="rect" id="node6" href="structException__attribute.html" title="Estrutura de dados para salvar atributos de tipo &quot;exception&quot;. " alt="" coords="844,95,979,121"/>
-<area shape="rect" id="node8" href="structT__exception__table.html" title="Struct para salvar exceções identificadas. Será utilizada como componente da struct &quot;code_attribute&quot;..." alt="" coords="546,5,674,32"/>
-<area shape="rect" id="node9" href="structCp__info.html" title="Possui um elemento pool de constante. " alt="" coords="34,95,101,121"/>
-<area shape="rect" id="node10" href="unionClassLoaderType.html" title="Estrutura de dados para armazenamento Union responsável por armazenar todos os tamanhos de variáveis ..." alt="" coords="5,5,129,32"/>
+<area shape="rect" id="node2" href="structfield__info.html" title="field_info" alt="" coords="1107,247,1181,273"/>
+<area shape="rect" id="node3" href="structattribute__info.html" title="attribute_info" alt="" coords="733,185,830,212"/>
+<area shape="rect" id="node15" href="structCode__attribute.html" title="Code_attribute" alt="" coords="1091,96,1197,123"/>
+<area shape="rect" id="node17" href="structmethod__info.html" title="method_info" alt="" coords="1097,297,1191,324"/>
+<area shape="rect" id="node4" href="structLineNumberTable__attribute.html" title="LineNumberTable_attribute" alt="" coords="296,7,475,33"/>
+<area shape="rect" id="node5" href="structLineNumberTable.html" title="LineNumberTable" alt="" coords="9,7,133,33"/>
+<area shape="rect" id="node6" href="structConstantValue__attribute.html" title="ConstantValue_attribute" alt="" coords="304,57,467,84"/>
+<area shape="rect" id="node7" href="structSynthetic__attribute.html" title="Synthetic_attribute" alt="" coords="320,108,451,135"/>
+<area shape="rect" id="node8" href="structInnerClasses__attribute.html" title="InnerClasses_attribute" alt="" coords="309,159,462,185"/>
+<area shape="rect" id="node9" href="structClass.html" title="Class" alt="" coords="43,159,99,185"/>
+<area shape="rect" id="node10" href="structSourceFile__attribute.html" title="SourceFile_attribute" alt="" coords="316,209,455,236"/>
+<area shape="rect" id="node11" href="structDeprecated__attribute.html" title="Deprecated_attribute" alt="" coords="314,260,457,287"/>
+<area shape="rect" id="node12" href="structLocalVariableTable__attribute.html" title="LocalVariableTable\l_attribute" alt="" coords="319,311,451,353"/>
+<area shape="rect" id="node13" href="structLocalVariableTable.html" title="LocalVariableTable" alt="" coords="5,319,137,345"/>
+<area shape="rect" id="node14" href="structExceptions__attribute.html" title="Exceptions_attribute" alt="" coords="315,377,456,404"/>
+<area shape="rect" id="node16" href="structExceptionTable.html" title="ExceptionTable" alt="" coords="725,51,837,77"/>
+<area shape="rect" id="node18" href="structcp__info.html" title="cp_info" alt="" coords="1112,536,1176,563"/>
+<area shape="rect" id="node19" href="structCONSTANT__Integer__info.html" title="CONSTANT_Integer_info" alt="" coords="696,308,867,335"/>
+<area shape="rect" id="node20" href="structCONSTANT__NameAndType__info.html" title="CONSTANT_NameAndType_info" alt="" coords="672,359,891,385"/>
+<area shape="rect" id="node21" href="structCONSTANT__Long__info.html" title="CONSTANT_Long_info" alt="" coords="702,409,861,436"/>
+<area shape="rect" id="node22" href="structCONSTANT__Fieldref__info.html" title="CONSTANT_Fieldref_info" alt="" coords="694,460,869,487"/>
+<area shape="rect" id="node23" href="structCONSTANT__Methodref__info.html" title="CONSTANT_Methodref_info" alt="" coords="687,511,876,537"/>
+<area shape="rect" id="node24" href="structCONSTANT__Utf8__info.html" title="CONSTANT_Utf8_info" alt="" coords="703,561,859,588"/>
+<area shape="rect" id="node25" href="structCONSTANT__InterfaceMethodref__info.html" title="CONSTANT_InterfaceMethodref_info" alt="" coords="661,612,901,639"/>
+<area shape="rect" id="node26" href="structCONSTANT__Double__info.html" title="CONSTANT_Double_info" alt="" coords="695,663,867,689"/>
+<area shape="rect" id="node27" href="structCONSTANT__Float__info.html" title="CONSTANT_Float_info" alt="" coords="701,713,861,740"/>
+<area shape="rect" id="node28" href="structCONSTANT__Class__info.html" title="CONSTANT_Class_info" alt="" coords="699,764,864,791"/>
+<area shape="rect" id="node29" href="structCONSTANT__String__info.html" title="CONSTANT_String_info" alt="" coords="699,815,864,841"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legenda</a>]</span></center></div>
 <table class="memberdecls">
@@ -113,161 +130,51 @@ Membros públicos</h2></td></tr>
 <tr class="memitem:a7cf76bcaf785b984e9d1b31d52a5aa7f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a7cf76bcaf785b984e9d1b31d52a5aa7f">ClassFile</a> (char *in)</td></tr>
 <tr class="memdesc:a7cf76bcaf785b984e9d1b31d52a5aa7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor que configura um objeto da classe <a class="el" href="classClassFile.html">ClassFile</a> com o nome do arquivo passado.  <a href="#a7cf76bcaf785b984e9d1b31d52a5aa7f">Mais...</a><br /></td></tr>
 <tr class="separator:a7cf76bcaf785b984e9d1b31d52a5aa7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab442e7b0a5f8c4eeae4f668c4e02c396"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#ab442e7b0a5f8c4eeae4f668c4e02c396">ClassFile</a> (string in)</td></tr>
-<tr class="memdesc:ab442e7b0a5f8c4eeae4f668c4e02c396"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor que configura um objeto da classe <a class="el" href="classClassFile.html">ClassFile</a> com o nome do arquivo passado.  <a href="#ab442e7b0a5f8c4eeae4f668c4e02c396">Mais...</a><br /></td></tr>
-<tr class="separator:ab442e7b0a5f8c4eeae4f668c4e02c396"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fa3d7587821ed1c8e3eabb94544da29"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a5fa3d7587821ed1c8e3eabb94544da29">inicializarArquivo</a> (char *argv[])</td></tr>
-<tr class="memdesc:a5fa3d7587821ed1c8e3eabb94544da29"><td class="mdescLeft">&#160;</td><td class="mdescRight">criar e inicializar arquivo  <a href="#a5fa3d7587821ed1c8e3eabb94544da29">Mais...</a><br /></td></tr>
-<tr class="separator:a5fa3d7587821ed1c8e3eabb94544da29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a581c453009afcb8b7a2861a2de8cfb5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a581c453009afcb8b7a2861a2de8cfb5c">fecharArquivo</a> ()</td></tr>
-<tr class="memdesc:a581c453009afcb8b7a2861a2de8cfb5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fechar arquivo.  <a href="#a581c453009afcb8b7a2861a2de8cfb5c">Mais...</a><br /></td></tr>
-<tr class="separator:a581c453009afcb8b7a2861a2de8cfb5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a619e102ada15202ab84981d43362a3e9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a619e102ada15202ab84981d43362a3e9">carregar</a> ()</td></tr>
-<tr class="memdesc:a619e102ada15202ab84981d43362a3e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carrega o class file na classe.  <a href="#a619e102ada15202ab84981d43362a3e9">Mais...</a><br /></td></tr>
-<tr class="separator:a619e102ada15202ab84981d43362a3e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a482ed64fcd8a1b79d3622b3f59b5767a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a482ed64fcd8a1b79d3622b3f59b5767a">imprimirInformacoesGerais</a> ()</td></tr>
-<tr class="memdesc:a482ed64fcd8a1b79d3622b3f59b5767a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime informações gerais do .class.  <a href="#a482ed64fcd8a1b79d3622b3f59b5767a">Mais...</a><br /></td></tr>
-<tr class="separator:a482ed64fcd8a1b79d3622b3f59b5767a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a685afd10dc5aaacd5a71ed535895c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a4a685afd10dc5aaacd5a71ed535895c6">gravarArquivoInformacoesGerais</a> ()</td></tr>
-<tr class="memdesc:a4a685afd10dc5aaacd5a71ed535895c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gravar informações gerais do .class em um arquivo.  <a href="#a4a685afd10dc5aaacd5a71ed535895c6">Mais...</a><br /></td></tr>
-<tr class="separator:a4a685afd10dc5aaacd5a71ed535895c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7da7cc6de8de3fc6f27faf3b76f4883a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a7da7cc6de8de3fc6f27faf3b76f4883a">exibir</a> ()</td></tr>
-<tr class="memdesc:a7da7cc6de8de3fc6f27faf3b76f4883a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime todas as informações do .class.  <a href="#a7da7cc6de8de3fc6f27faf3b76f4883a">Mais...</a><br /></td></tr>
-<tr class="separator:a7da7cc6de8de3fc6f27faf3b76f4883a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a452169cb59d63012f98a34a3fff2c2f7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a452169cb59d63012f98a34a3fff2c2f7">gravarArquivo</a> ()</td></tr>
-<tr class="memdesc:a452169cb59d63012f98a34a3fff2c2f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gravar todas as informações do .class em um arquivo.  <a href="#a452169cb59d63012f98a34a3fff2c2f7">Mais...</a><br /></td></tr>
-<tr class="separator:a452169cb59d63012f98a34a3fff2c2f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dd042ff6873b9f0d16f8ee3812261e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a8dd042ff6873b9f0d16f8ee3812261e1">validarExtensao</a> ()</td></tr>
-<tr class="memdesc:a8dd042ff6873b9f0d16f8ee3812261e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se a extensão do arquivo é .class.  <a href="#a8dd042ff6873b9f0d16f8ee3812261e1">Mais...</a><br /></td></tr>
-<tr class="separator:a8dd042ff6873b9f0d16f8ee3812261e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10bfe22492b473fb0197e55f451978e5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a10bfe22492b473fb0197e55f451978e5">existeMain</a> ()</td></tr>
-<tr class="memdesc:a10bfe22492b473fb0197e55f451978e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se o .class possui função main.  <a href="#a10bfe22492b473fb0197e55f451978e5">Mais...</a><br /></td></tr>
-<tr class="separator:a10bfe22492b473fb0197e55f451978e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdbe9cc2f360e04273470202c4f247dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMethod__info.html">Method_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#afdbe9cc2f360e04273470202c4f247dc">obterMain</a> ()</td></tr>
-<tr class="memdesc:afdbe9cc2f360e04273470202c4f247dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o método main.  <a href="#afdbe9cc2f360e04273470202c4f247dc">Mais...</a><br /></td></tr>
-<tr class="separator:afdbe9cc2f360e04273470202c4f247dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a886bdb4c42bfaaf5ea8ff1b2c41209"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a2a886bdb4c42bfaaf5ea8ff1b2c41209">existeClinit</a> ()</td></tr>
-<tr class="memdesc:a2a886bdb4c42bfaaf5ea8ff1b2c41209"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se o .class tem o método clinit.  <a href="#a2a886bdb4c42bfaaf5ea8ff1b2c41209">Mais...</a><br /></td></tr>
-<tr class="separator:a2a886bdb4c42bfaaf5ea8ff1b2c41209"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1141f5a8c856d5f3931f0b518e219f79"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMethod__info.html">Method_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a1141f5a8c856d5f3931f0b518e219f79">obterClinit</a> ()</td></tr>
-<tr class="memdesc:a1141f5a8c856d5f3931f0b518e219f79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o método clinit.  <a href="#a1141f5a8c856d5f3931f0b518e219f79">Mais...</a><br /></td></tr>
-<tr class="separator:a1141f5a8c856d5f3931f0b518e219f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b8f23db0ee4af80a2e75d46a191dc20"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a6b8f23db0ee4af80a2e75d46a191dc20">verificarThisClass</a> ()</td></tr>
-<tr class="memdesc:a6b8f23db0ee4af80a2e75d46a191dc20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se a class definida é igual ao nome da classe sem extensões.  <a href="#a6b8f23db0ee4af80a2e75d46a191dc20">Mais...</a><br /></td></tr>
-<tr class="separator:a6b8f23db0ee4af80a2e75d46a191dc20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a170339cd16cf0afc0567865b3f372d38"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a170339cd16cf0afc0567865b3f372d38">obterStatus</a> ()</td></tr>
-<tr class="memdesc:a170339cd16cf0afc0567865b3f372d38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o status lido, informando para o método que chamou o que aconteceu.  <a href="#a170339cd16cf0afc0567865b3f372d38">Mais...</a><br /></td></tr>
-<tr class="separator:a170339cd16cf0afc0567865b3f372d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab70fe581c4b7a1824adf490c3a53bcc7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCp__info.html">Cp_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#ab70fe581c4b7a1824adf490c3a53bcc7">obterConstantPool</a> () const</td></tr>
-<tr class="memdesc:ab70fe581c4b7a1824adf490c3a53bcc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna referencia a constant pool.  <a href="#ab70fe581c4b7a1824adf490c3a53bcc7">Mais...</a><br /></td></tr>
-<tr class="separator:ab70fe581c4b7a1824adf490c3a53bcc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b60418144c498b9d9545b1784bddf21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a8b60418144c498b9d9545b1784bddf21">obterTamanhoConstantPool</a> ()</td></tr>
-<tr class="memdesc:a8b60418144c498b9d9545b1784bddf21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o valor do tamanho da constant pool.  <a href="#a8b60418144c498b9d9545b1784bddf21">Mais...</a><br /></td></tr>
-<tr class="separator:a8b60418144c498b9d9545b1784bddf21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4803bd3f325fbab1bf9c0f774b3a8c97"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a4803bd3f325fbab1bf9c0f774b3a8c97">obterPath</a> ()</td></tr>
-<tr class="memdesc:a4803bd3f325fbab1bf9c0f774b3a8c97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pega o caminho do arquivo .class.  <a href="#a4803bd3f325fbab1bf9c0f774b3a8c97">Mais...</a><br /></td></tr>
-<tr class="separator:a4803bd3f325fbab1bf9c0f774b3a8c97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ecce8d87f74c84b07f102c0298de13a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMethod__info.html">Method_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a6ecce8d87f74c84b07f102c0298de13a">obterMethods</a> ()</td></tr>
-<tr class="memdesc:a6ecce8d87f74c84b07f102c0298de13a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna todos os métodos.  <a href="#a6ecce8d87f74c84b07f102c0298de13a">Mais...</a><br /></td></tr>
-<tr class="separator:a6ecce8d87f74c84b07f102c0298de13a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16409bc8b58eb4965a1e39497cc300d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a16409bc8b58eb4965a1e39497cc300d8">obterMethodsCount</a> ()</td></tr>
-<tr class="memdesc:a16409bc8b58eb4965a1e39497cc300d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o numero de Methods.  <a href="#a16409bc8b58eb4965a1e39497cc300d8">Mais...</a><br /></td></tr>
-<tr class="separator:a16409bc8b58eb4965a1e39497cc300d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec88c5432526d16b546ed59e5cec2136"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#aec88c5432526d16b546ed59e5cec2136">obterThis_class</a> ()</td></tr>
-<tr class="memdesc:aec88c5432526d16b546ed59e5cec2136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna um índice da constant pool que aponta para string com nome da class.  <a href="#aec88c5432526d16b546ed59e5cec2136">Mais...</a><br /></td></tr>
-<tr class="separator:aec88c5432526d16b546ed59e5cec2136"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f248001f388181db10e76602031d560"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a8f248001f388181db10e76602031d560">obterSuper_class</a> ()</td></tr>
-<tr class="memdesc:a8f248001f388181db10e76602031d560"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna um índice da constant pool que aponta para string com nome da superclass.  <a href="#a8f248001f388181db10e76602031d560">Mais...</a><br /></td></tr>
-<tr class="separator:a8f248001f388181db10e76602031d560"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0be559cd8b7b3168c81a2782e4facb0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a0be559cd8b7b3168c81a2782e4facb0c">obterFieldsCount</a> ()</td></tr>
-<tr class="memdesc:a0be559cd8b7b3168c81a2782e4facb0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna número de fields.  <a href="#a0be559cd8b7b3168c81a2782e4facb0c">Mais...</a><br /></td></tr>
-<tr class="separator:a0be559cd8b7b3168c81a2782e4facb0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3aabaa918413884416692b29165b463"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structField__info.html">Field_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#ac3aabaa918413884416692b29165b463">obterFields</a> ()</td></tr>
-<tr class="memdesc:ac3aabaa918413884416692b29165b463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna a array com as fields lidas.  <a href="#ac3aabaa918413884416692b29165b463">Mais...</a><br /></td></tr>
-<tr class="separator:ac3aabaa918413884416692b29165b463"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ae90b1662ca222c9910c14997b20eaa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structField__info.html">Field_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a1ae90b1662ca222c9910c14997b20eaa">obterField</a> (string nome)</td></tr>
-<tr class="memdesc:a1ae90b1662ca222c9910c14997b20eaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna um field.  <a href="#a1ae90b1662ca222c9910c14997b20eaa">Mais...</a><br /></td></tr>
-<tr class="separator:a1ae90b1662ca222c9910c14997b20eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac49e7e39f677987b53fdf15787b8106"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMethod__info.html">Method_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#aac49e7e39f677987b53fdf15787b8106">obterMethod</a> (string nome, string descriptor)</td></tr>
-<tr class="separator:aac49e7e39f677987b53fdf15787b8106"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d0ac62c4d6218ddada33f715ebaf633"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classClassFile.html">ClassFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a4d0ac62c4d6218ddada33f715ebaf633">obterClassThatHasSerachedMethod</a> (string nome, string descriptor)</td></tr>
-<tr class="memdesc:a4d0ac62c4d6218ddada33f715ebaf633"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o ponteiro para o leitor do .class que contém o método encontrado em getMethod.  <a href="#a4d0ac62c4d6218ddada33f715ebaf633">Mais...</a><br /></td></tr>
-<tr class="separator:a4d0ac62c4d6218ddada33f715ebaf633"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdb7018a6926b187bc6ecc18abf0fff8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#acdb7018a6926b187bc6ecc18abf0fff8">validacao</a> (void)</td></tr>
-<tr class="memdesc:acdb7018a6926b187bc6ecc18abf0fff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida estrutura obrigatoria.  <a href="#acdb7018a6926b187bc6ecc18abf0fff8">Mais...</a><br /></td></tr>
-<tr class="separator:acdb7018a6926b187bc6ecc18abf0fff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a423be12c855bb2f0479ff83823973da3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a423be12c855bb2f0479ff83823973da3">verificarVersaoClass</a> ()</td></tr>
-<tr class="separator:a423be12c855bb2f0479ff83823973da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dc8bb02efc19507cd93208d8477b436"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a1dc8bb02efc19507cd93208d8477b436">validarVersaoClass</a> (uint16_t major)</td></tr>
-<tr class="separator:a1dc8bb02efc19507cd93208d8477b436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47669d90346c9fa0db30ae582c74a199"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a47669d90346c9fa0db30ae582c74a199">ClassFile</a> ()</td></tr>
+<tr class="memdesc:a47669d90346c9fa0db30ae582c74a199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor que configura um objeto da classe <a class="el" href="classClassFile.html">ClassFile</a> com o nome do arquivo passado.  <a href="#a47669d90346c9fa0db30ae582c74a199">Mais...</a><br /></td></tr>
+<tr class="separator:a47669d90346c9fa0db30ae582c74a199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Membros privados</h2></td></tr>
-<tr class="memitem:ae8e4445e763c4ee7c04995fcea0369e0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#ae8e4445e763c4ee7c04995fcea0369e0">verificarMain</a> ()</td></tr>
-<tr class="memdesc:ae8e4445e763c4ee7c04995fcea0369e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encontro em qual method está a main.  <a href="#ae8e4445e763c4ee7c04995fcea0369e0">Mais...</a><br /></td></tr>
-<tr class="separator:ae8e4445e763c4ee7c04995fcea0369e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0394185a299f35a9b5be68143385e84"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#ab0394185a299f35a9b5be68143385e84">verificarClinit</a> ()</td></tr>
-<tr class="memdesc:ab0394185a299f35a9b5be68143385e84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encontra em qual method esta a clinit, se existir.  <a href="#ab0394185a299f35a9b5be68143385e84">Mais...</a><br /></td></tr>
-<tr class="separator:ab0394185a299f35a9b5be68143385e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32767b8d966ef87249aa3a41ec5d67c3"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a32767b8d966ef87249aa3a41ec5d67c3">obterErro</a> (int erro)</td></tr>
-<tr class="memdesc:a32767b8d966ef87249aa3a41ec5d67c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna a string que contém uma mensagem de erro correspondente ao índice que recebe como parâmetro.  <a href="#a32767b8d966ef87249aa3a41ec5d67c3">Mais...</a><br /></td></tr>
-<tr class="separator:a32767b8d966ef87249aa3a41ec5d67c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Atributos Privados</h2></td></tr>
-<tr class="memitem:a9afeae9ac0889ab75909e73933e29326"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a9afeae9ac0889ab75909e73933e29326">status</a></td></tr>
-<tr class="separator:a9afeae9ac0889ab75909e73933e29326"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1cdef340faa0bd945b2236057433978"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#ac1cdef340faa0bd945b2236057433978">mainMethod</a></td></tr>
-<tr class="separator:ac1cdef340faa0bd945b2236057433978"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1eb77ebbd737bde7edde5fbdb2b6992"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#aa1eb77ebbd737bde7edde5fbdb2b6992">clinit</a></td></tr>
-<tr class="separator:aa1eb77ebbd737bde7edde5fbdb2b6992"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8d08e096c470901c62d1a9e31a202bf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#ad8d08e096c470901c62d1a9e31a202bf">encontrouMain</a></td></tr>
-<tr class="separator:ad8d08e096c470901c62d1a9e31a202bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c60c8d51584f48f22bdbdd719960e05"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a5c60c8d51584f48f22bdbdd719960e05">encontrouClinit</a></td></tr>
-<tr class="separator:a5c60c8d51584f48f22bdbdd719960e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2789cf19be5abaeadf96f83de33174a4"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a2789cf19be5abaeadf96f83de33174a4">fileName</a></td></tr>
-<tr class="separator:a2789cf19be5abaeadf96f83de33174a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0d3a4474a9907dc61893d0293525b38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#ab0d3a4474a9907dc61893d0293525b38">minVersion</a></td></tr>
-<tr class="separator:ab0d3a4474a9907dc61893d0293525b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40bd108a13debb86701cf31742572686"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a40bd108a13debb86701cf31742572686">majVersion</a></td></tr>
-<tr class="separator:a40bd108a13debb86701cf31742572686"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acde5006251ffd25149efa4d6fb725cf5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#acde5006251ffd25149efa4d6fb725cf5">lengthCP</a></td></tr>
-<tr class="separator:acde5006251ffd25149efa4d6fb725cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a205bc5af050f4676fc4c3ff7992c4959"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a205bc5af050f4676fc4c3ff7992c4959">this_class</a></td></tr>
-<tr class="separator:a205bc5af050f4676fc4c3ff7992c4959"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad92079216f8cdb366a3002e5ca2c2dfa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#ad92079216f8cdb366a3002e5ca2c2dfa">super_class</a></td></tr>
-<tr class="separator:ad92079216f8cdb366a3002e5ca2c2dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bbca13f93ec21beffa8a56e360c9f8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a1bbca13f93ec21beffa8a56e360c9f8d">interfacesCount</a></td></tr>
-<tr class="separator:a1bbca13f93ec21beffa8a56e360c9f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5eae2e906695e596b89614df0e4b060a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a5eae2e906695e596b89614df0e4b060a">fieldsCount</a></td></tr>
-<tr class="separator:a5eae2e906695e596b89614df0e4b060a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c362d4adfeaad02f4517caf1ba58103"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a4c362d4adfeaad02f4517caf1ba58103">methodsCount</a></td></tr>
-<tr class="separator:a4c362d4adfeaad02f4517caf1ba58103"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16d2ca3e9cdf9267adde08575c57bfa9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a16d2ca3e9cdf9267adde08575c57bfa9">accessFlags</a></td></tr>
-<tr class="separator:a16d2ca3e9cdf9267adde08575c57bfa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66691e77df3f8604eebebc8759953542"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a66691e77df3f8604eebebc8759953542">attributesCount</a></td></tr>
-<tr class="separator:a66691e77df3f8604eebebc8759953542"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94d1e4e835476f47e3a8b81ecd0301c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a94d1e4e835476f47e3a8b81ecd0301c0">interfaces</a></td></tr>
-<tr class="separator:a94d1e4e835476f47e3a8b81ecd0301c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5883215e48e253a84c105a18d34049ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCp__info.html">Cp_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a5883215e48e253a84c105a18d34049ca">constantPool</a></td></tr>
-<tr class="separator:a5883215e48e253a84c105a18d34049ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d6ec8aa668982ea722edc40b3ea5b1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structField__info.html">Field_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a6d6ec8aa668982ea722edc40b3ea5b1a">fields</a></td></tr>
-<tr class="separator:a6d6ec8aa668982ea722edc40b3ea5b1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5906980e6c5121e5a864346fd3617083"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMethod__info.html">Method_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a5906980e6c5121e5a864346fd3617083">methods</a></td></tr>
-<tr class="separator:a5906980e6c5121e5a864346fd3617083"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20d4b18030becbd8df5b7584477e94b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structAttribute__info.html">Attribute_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a20d4b18030becbd8df5b7584477e94b6">attributes</a></td></tr>
-<tr class="separator:a20d4b18030becbd8df5b7584477e94b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2be12dcc1a042970b4d7d7cf9709624"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#ae2be12dcc1a042970b4d7d7cf9709624">arquivoClass</a></td></tr>
-<tr class="separator:ae2be12dcc1a042970b4d7d7cf9709624"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4aee6c7763d46884d5b2c0297142df99"><td class="memItemLeft" align="right" valign="top">fstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a4aee6c7763d46884d5b2c0297142df99">arquivoSaida</a></td></tr>
-<tr class="separator:a4aee6c7763d46884d5b2c0297142df99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos Públicos</h2></td></tr>
+<tr class="memitem:a09085e9db513dae2f46da6e0a26c1b59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#ae5be1f726785414dd1b77d60df074c9d">u4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a09085e9db513dae2f46da6e0a26c1b59">magic</a></td></tr>
+<tr class="separator:a09085e9db513dae2f46da6e0a26c1b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0db7b0ea01cb9cea2cee177ca81df09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#af0db7b0ea01cb9cea2cee177ca81df09">minor_version</a></td></tr>
+<tr class="separator:af0db7b0ea01cb9cea2cee177ca81df09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abede9cb937e65072517d0ee6e26e2757"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#abede9cb937e65072517d0ee6e26e2757">major_version</a></td></tr>
+<tr class="separator:abede9cb937e65072517d0ee6e26e2757"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8fdf5cccfd632da4fdb21ae63fffa7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#ac8fdf5cccfd632da4fdb21ae63fffa7a">constant_pool_count</a></td></tr>
+<tr class="separator:ac8fdf5cccfd632da4fdb21ae63fffa7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2309d843091aad79aed04ce92470a434"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcp__info.html">cp_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a2309d843091aad79aed04ce92470a434">constant_pool</a></td></tr>
+<tr class="separator:a2309d843091aad79aed04ce92470a434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae88db578147f7ee0d6fc1aeacb341854"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#ae88db578147f7ee0d6fc1aeacb341854">access_flags</a></td></tr>
+<tr class="separator:ae88db578147f7ee0d6fc1aeacb341854"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d33db0a560a71b94bc572dd1e4ec03a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a2d33db0a560a71b94bc572dd1e4ec03a">this_class</a></td></tr>
+<tr class="separator:a2d33db0a560a71b94bc572dd1e4ec03a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f6c11c0ccb02fd992b5c102725253ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a5f6c11c0ccb02fd992b5c102725253ec">super_class</a></td></tr>
+<tr class="separator:a5f6c11c0ccb02fd992b5c102725253ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a337fcb7da33d1b64631441115c7de305"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a337fcb7da33d1b64631441115c7de305">interfaces_count</a></td></tr>
+<tr class="separator:a337fcb7da33d1b64631441115c7de305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af599de97e062c98966470f1590496425"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#af599de97e062c98966470f1590496425">interfaces</a></td></tr>
+<tr class="separator:af599de97e062c98966470f1590496425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acea207ee523fbc16611d3cf436c390e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#acea207ee523fbc16611d3cf436c390e0">fields_count</a></td></tr>
+<tr class="separator:acea207ee523fbc16611d3cf436c390e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa324f88c75aa96c632f8c57d010aab0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfield__info.html">field_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#aa324f88c75aa96c632f8c57d010aab0c">fields</a></td></tr>
+<tr class="separator:aa324f88c75aa96c632f8c57d010aab0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacfb45d4af64216324b1ae5269c870d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#aacfb45d4af64216324b1ae5269c870d5">methods_count</a></td></tr>
+<tr class="separator:aacfb45d4af64216324b1ae5269c870d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad061f06cd709d10dbfbf82f443e43632"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmethod__info.html">method_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#ad061f06cd709d10dbfbf82f443e43632">methods</a></td></tr>
+<tr class="separator:ad061f06cd709d10dbfbf82f443e43632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a633c696fbe08e7e7906b2ab1e52f3d1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a633c696fbe08e7e7906b2ab1e52f3d1b">attributes_count</a></td></tr>
+<tr class="separator:a633c696fbe08e7e7906b2ab1e52f3d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bf809db8e1008f401dc3cda5e9cdb14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structattribute__info.html">attribute_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassFile.html#a8bf809db8e1008f401dc3cda5e9cdb14">attributes</a></td></tr>
+<tr class="separator:a8bf809db8e1008f401dc3cda5e9cdb14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><h1><a class="anchor" id="DESCRIPTION"></a>
 DESCRIPTION</h1>
 <p>A classe <a class="el" href="classClassFile.html">ClassFile</a> contém os bytecodes armazenados em memoria </p>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00048">48</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00023">23</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 </div><h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
 <a id="a7cf76bcaf785b984e9d1b31d52a5aa7f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7cf76bcaf785b984e9d1b31d52a5aa7f">&#9670;&nbsp;</a></span>ClassFile() <span class="overload">[1/2]</span></h2>
@@ -295,12 +202,10 @@ DESCRIPTION</h1>
 
 <p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00008">8</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00278">fileName</a> e <a class="el" href="ClassFile_8h_source.html#l00276">status</a>.</p>
-
 </div>
 </div>
-<a id="ab442e7b0a5f8c4eeae4f668c4e02c396"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab442e7b0a5f8c4eeae4f668c4e02c396">&#9670;&nbsp;</a></span>ClassFile() <span class="overload">[2/2]</span></h2>
+<a id="a47669d90346c9fa0db30ae582c74a199"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47669d90346c9fa0db30ae582c74a199">&#9670;&nbsp;</a></span>ClassFile() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -308,8 +213,7 @@ DESCRIPTION</h1>
         <tr>
           <td class="memname">ClassFile::ClassFile </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>in</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -323,1702 +227,296 @@ DESCRIPTION</h1>
   </dd>
 </dl>
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00015">15</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00278">fileName</a> e <a class="el" href="ClassFile_8h_source.html#l00276">status</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Documentação dos métodos</h2>
-<a id="a619e102ada15202ab84981d43362a3e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a619e102ada15202ab84981d43362a3e9">&#9670;&nbsp;</a></span>carregar()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int ClassFile::carregar </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Carrega o class file na classe. </p>
-<dl class="section return"><dt>Retorna</dt><dd>variavel status que indica se houve erro no programa </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00085">85</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00281">accessFlags</a>, <a class="el" href="ClassFile_8h_source.html#l00287">arquivoClass</a>, <a class="el" href="ClassFile_8h_source.html#l00286">attributes</a>, <a class="el" href="ClassFile_8h_source.html#l00281">attributesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00035">CANT_OPEN</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00008">carregarConstantPool()</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00277">encontrouClinit</a>, <a class="el" href="ClassFile_8h_source.html#l00277">encontrouMain</a>, <a class="el" href="ClassFile_8h_source.html#l00284">fields</a>, <a class="el" href="ClassFile_8h_source.html#l00280">fieldsCount</a>, <a class="el" href="ClassFile_8h_source.html#l00278">fileName</a>, <a class="el" href="ClassFile_8h_source.html#l00282">interfaces</a>, <a class="el" href="ClassFile_8h_source.html#l00280">interfacesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00039">INVALID_EXTENSION</a>, <a class="el" href="ClassFile_8h_source.html#l00036">INVALID_FILE</a>, <a class="el" href="ClassFile_8h_source.html#l00279">lengthCP</a>, <a class="el" href="Interfaces_8cpp_source.html#l00008">lerTodasInterfaces()</a>, <a class="el" href="Attributes_8cpp_source.html#l00092">lerTodosAttributes()</a>, <a class="el" href="Fields_8cpp_source.html#l00061">lerTodosFields()</a>, <a class="el" href="Methods_8cpp_source.html#l00024">lerTodosMethods()</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00008">lerU2()</a>, <a class="el" href="BasicTypes_8cpp_source.html#l00040">lerU4()</a>, <a class="el" href="ClassFile_8h_source.html#l00279">majVersion</a>, <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a>, <a class="el" href="ClassFile_8h_source.html#l00279">minVersion</a>, <a class="el" href="ClassFile_8h_source.html#l00034">MISSING_ARGUMENT</a>, <a class="el" href="ClassFile_8cpp_source.html#l00434">obterErro()</a>, <a class="el" href="ClassFile_8h_source.html#l00276">status</a>, <a class="el" href="ClassFile_8h_source.html#l00280">super_class</a>, <a class="el" href="ClassFile_8h_source.html#l00280">this_class</a>, <a class="el" href="ClassFile_8h_source.html#l00037">UNKNOWN_TYPE</a>, <a class="el" href="ClassFile_8cpp_source.html#l00310">validarExtensao()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00045">validarVersaoClass()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00346">verificarClinit()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00323">verificarMain()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00049">verificarVersaoClass()</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="MethodArea_8cpp_source.html#l00021">MethodArea::adicionarClasse()</a> e <a class="el" href="Main_8cpp_source.html#l00025">main()</a>.</p>
-<div class="dynheader">
-Grafo de chamadas desta função:</div>
-<div class="dyncontent">
-<div class="center"><img src="classClassFile_a619e102ada15202ab84981d43362a3e9_cgraph.png" border="0" usemap="#classClassFile_a619e102ada15202ab84981d43362a3e9_cgraph" alt=""/></div>
-<map name="classClassFile_a619e102ada15202ab84981d43362a3e9_cgraph" id="classClassFile_a619e102ada15202ab84981d43362a3e9_cgraph">
-<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a56798a87affc6fb3e55cc85ef7086dc4" title="carregarConstantPool" alt="" coords="597,146,745,172"/>
-<area shape="rect" id="node4" href="BasicTypes_8cpp.html#a7e2b72c2ee2be091607d2165abc06244" title="Função para ler 2 bytes do arquivo .class. " alt="" coords="1254,374,1307,400"/>
-<area shape="rect" id="node5" href="BasicTypes_8cpp.html#a74cf9475c49284eba16e6f1d4b7d0985" title="Função para ler 4 bytes do arquivo .class. " alt="" coords="1072,298,1125,324"/>
-<area shape="rect" id="node7" href="Interfaces_8cpp.html#a107c86b6178f848a1159aedf372996ba" title="Carrega as interfaces na mem�ria a partir do arquivo class. " alt="" coords="412,399,543,426"/>
-<area shape="rect" id="node8" href="Attributes_8cpp.html#afa0c4d01d9ac9907bcb78af9e8b92c71" title="lerTodosAttributes" alt="" coords="413,348,541,375"/>
-<area shape="rect" id="node14" href="Fields_8cpp.html#a888245ea152dedf33b1f8de23c254a37" title="lerTodosFields" alt="" coords="221,450,328,476"/>
-<area shape="rect" id="node16" href="Methods_8cpp.html#ae335dbeb4b8f1f2c4af9077318e10795" title="lerTodosMethods" alt="" coords="213,247,336,274"/>
-<area shape="rect" id="node18" href="classClassFile.html#a32767b8d966ef87249aa3a41ec5d67c3" title="Retorna a string que contém uma mensagem de erro correspondente ao índice que recebe como parâmetro..." alt="" coords="205,500,344,527"/>
-<area shape="rect" id="node19" href="classClassFile.html#a8dd042ff6873b9f0d16f8ee3812261e1" title="Verifica se a extensão do arquivo é .class. " alt="" coords="185,551,364,578"/>
-<area shape="rect" id="node20" href="classClassFile.html#a1dc8bb02efc19507cd93208d8477b436" title="ClassFile::validarVersao\lClass" alt="" coords="193,602,357,644"/>
-<area shape="rect" id="node21" href="classClassFile.html#ab0394185a299f35a9b5be68143385e84" title="Encontra em qual method esta a clinit, se existir. " alt="" coords="591,668,752,695"/>
-<area shape="rect" id="node22" href="classClassFile.html#ae8e4445e763c4ee7c04995fcea0369e0" title="Encontro em qual method está a main. " alt="" coords="800,719,959,746"/>
-<area shape="rect" id="node23" href="classClassFile.html#a423be12c855bb2f0479ff83823973da3" title="ClassFile::verificarVersao\lClass" alt="" coords="189,770,361,812"/>
-<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a4d51a7260f72d442b5fee1afad067e66" title="Função para ler 1 byte do arquivo .class. " alt="" coords="1072,146,1125,172"/>
-<area shape="rect" id="node6" href="BasicTypes_8cpp.html#ab43eecd93f5d0413f80c9dc9253f7ccb" title="Função para ler os bytes de uma string UTF&#45;8. " alt="" coords="845,146,914,172"/>
-<area shape="rect" id="node9" href="Attributes_8cpp.html#a37c90da63b21074fff4ffd05b7410be2" title="lerAttribute" alt="" coords="629,399,714,426"/>
-<area shape="rect" id="node10" href="Attributes_8cpp.html#adde2fdfec7796550e3b7753705bee880" title="lerAttributeInfo" alt="" coords="826,399,933,426"/>
-<area shape="rect" id="node11" href="ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="1007,668,1191,695"/>
-<area shape="rect" id="node13" href="Attributes_8cpp.html#a7575ffc9147cf9ff818f11e41e5799d2" title="Função de leitura de exceções. " alt="" coords="1029,399,1168,426"/>
-<area shape="rect" id="node12" href="BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="1239,668,1323,695"/>
-<area shape="rect" id="node15" href="Fields_8cpp.html#ab22eb8eb41d1c698fc206c34ccfbef68" title="lerField" alt="" coords="445,450,509,476"/>
-<area shape="rect" id="node17" href="Methods_8cpp.html#a1ae1d752fe2209d5b687b01d8be9ba6b" title="lerMethod" alt="" coords="438,247,517,274"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a7da7cc6de8de3fc6f27faf3b76f4883a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7da7cc6de8de3fc6f27faf3b76f4883a">&#9670;&nbsp;</a></span>exibir()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ClassFile::exibir </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Imprime todas as informações do .class. </p>
-<dl class="section return"><dt>Retorna</dt><dd>true ou false dependendo se a variavel status indicar que houve erro na leitura </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00202">202</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00286">attributes</a>, <a class="el" href="ClassFile_8h_source.html#l00281">attributesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00284">fields</a>, <a class="el" href="ClassFile_8h_source.html#l00280">fieldsCount</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00091">imprimirConstantPool()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a>, <a class="el" href="Interfaces_8cpp_source.html#l00018">imprimirTodasInterfaces()</a>, <a class="el" href="Attributes_8cpp_source.html#l00104">imprimirTodosAttributes()</a>, <a class="el" href="Fields_8cpp_source.html#l00021">imprimirTodosField()</a>, <a class="el" href="Methods_8cpp_source.html#l00060">imprimirTodosMethods()</a>, <a class="el" href="ClassFile_8h_source.html#l00282">interfaces</a>, <a class="el" href="ClassFile_8h_source.html#l00280">interfacesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00279">lengthCP</a>, <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a> e <a class="el" href="ClassFile_8h_source.html#l00276">status</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="Main_8cpp_source.html#l00025">main()</a>.</p>
-<div class="dynheader">
-Grafo de chamadas desta função:</div>
-<div class="dyncontent">
-<div class="center"><img src="classClassFile_a7da7cc6de8de3fc6f27faf3b76f4883a_cgraph.png" border="0" usemap="#classClassFile_a7da7cc6de8de3fc6f27faf3b76f4883a_cgraph" alt=""/></div>
-<map name="classClassFile_a7da7cc6de8de3fc6f27faf3b76f4883a_cgraph" id="classClassFile_a7da7cc6de8de3fc6f27faf3b76f4883a_cgraph">
-<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a3a43d47502d328c76641be74a9f3efc3" title="imprimirConstantPool" alt="" coords="628,80,775,107"/>
-<area shape="rect" id="node8" href="classClassFile.html#a482ed64fcd8a1b79d3622b3f59b5767a" title="Imprime informações gerais do .class. " alt="" coords="169,149,372,190"/>
-<area shape="rect" id="node10" href="Interfaces_8cpp.html#a0ddfbcb84bcd0d1146b48cb8465f5b94" title="Imprimir todas as interfaces do arquivo. " alt="" coords="189,236,352,263"/>
-<area shape="rect" id="node12" href="Attributes_8cpp.html#af90fff93fb73ca1959c149ab0b9fad27" title="imprimirTodosAttributes" alt="" coords="420,465,580,492"/>
-<area shape="rect" id="node17" href="Fields_8cpp.html#ab3fbecb8bab9abf8a9bc9936c45d276d" title="imprimirTodosField" alt="" coords="205,292,337,319"/>
-<area shape="rect" id="node20" href="Methods_8cpp.html#a6e0de4fe25fbed32a095c350ad843d70" title="imprimirTodosMethods" alt="" coords="193,343,348,369"/>
-<area shape="rect" id="node3" href="ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="823,232,1007,259"/>
-<area shape="rect" id="node4" href="BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="1086,195,1170,221"/>
-<area shape="rect" id="node5" href="BasicTypes_8cpp.html#a01de6b870a770894bf9ce59df9604f88" title="Função para converter 8 bytes em um duplo. " alt="" coords="835,56,995,83"/>
-<area shape="rect" id="node6" href="BasicTypes_8cpp.html#a590862e1a2d76855d55ae13604d53a2e" title="Função para converter 8 bytes em um longo. " alt="" coords="1055,81,1201,108"/>
-<area shape="rect" id="node7" href="BasicTypes_8cpp.html#afc44e15d2eb03c5c2d21787097696c56" title="Função para converter 4 bytes em float. " alt="" coords="841,5,988,32"/>
-<area shape="rect" id="node9" href="Flags_8cpp.html#ab6541b004248f7fcdf231db8e32b9344" title="Função que mostra as flags de acesso para os usuários. " alt="" coords="450,105,550,132"/>
-<area shape="rect" id="node11" href="Interfaces_8cpp.html#a62aecb5fb8d3b99b8dfbb144dc99fa29" title="Imprimir informação de uma interface específica com o indice da interface. " alt="" coords="441,211,559,237"/>
-<area shape="rect" id="node13" href="Attributes_8cpp.html#ac6086cd4e65467a39adcb35b70b30483" title="imprimirAttribute" alt="" coords="643,484,760,511"/>
-<area shape="rect" id="node14" href="Attributes_8cpp.html#a0a73dec553ae8bc41785faaac9c120a1" title="Retorna o nome da operação. " alt="" coords="855,509,974,536"/>
-<area shape="rect" id="node15" href="Attributes_8cpp.html#a2b0254c9dbb34d0fddd35925597b6659" title="Função que mostra na tela os parâmetros dos opcodes. " alt="" coords="833,459,996,485"/>
-<area shape="rect" id="node16" href="Attributes_8cpp.html#a2c00cc0bad9d04b8667ccbc5a166650c" title="Função para retornar o conteúdo dos próximos n bytes. " alt="" coords="1065,459,1191,485"/>
-<area shape="rect" id="node18" href="Fields_8cpp.html#acd22396c69d5bfc307834caa7bf87530" title="imprimirField" alt="" coords="452,297,548,324"/>
-<area shape="rect" id="node19" href="Fields_8cpp.html#a8ec1dcda5ee23f9d0163d506d7379db2" title="Função para mostrar as flags dos campos. " alt="" coords="649,257,753,284"/>
-<area shape="rect" id="node21" href="Methods_8cpp.html#aaed342bbd3d60e0ef79f4d3803cfb1f2" title="imprimirMethod" alt="" coords="445,377,555,404"/>
-<area shape="rect" id="node22" href="Methods_8cpp.html#aeebb57e68a3f6a889f385323cd28885e" title="obterFlagMethod" alt="" coords="642,359,761,385"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a2a886bdb4c42bfaaf5ea8ff1b2c41209"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a886bdb4c42bfaaf5ea8ff1b2c41209">&#9670;&nbsp;</a></span>existeClinit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ClassFile::existeClinit </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Verifica se o .class tem o método clinit. </p>
-<dl class="section return"><dt>Retorna</dt><dd>booleano que indica se existe o metodo clinit </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00370">370</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00277">encontrouClinit</a> e <a class="el" href="ClassFile_8cpp_source.html#l00346">verificarClinit()</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="MethodArea_8cpp_source.html#l00021">MethodArea::adicionarClasse()</a>.</p>
-<div class="dynheader">
-Grafo de chamadas desta função:</div>
-<div class="dyncontent">
-<div class="center"><img src="classClassFile_a2a886bdb4c42bfaaf5ea8ff1b2c41209_cgraph.png" border="0" usemap="#classClassFile_a2a886bdb4c42bfaaf5ea8ff1b2c41209_cgraph" alt=""/></div>
-<map name="classClassFile_a2a886bdb4c42bfaaf5ea8ff1b2c41209_cgraph" id="classClassFile_a2a886bdb4c42bfaaf5ea8ff1b2c41209_cgraph">
-<area shape="rect" id="node2" href="classClassFile.html#ab0394185a299f35a9b5be68143385e84" title="Encontra em qual method esta a clinit, se existir. " alt="" coords="204,29,365,56"/>
-<area shape="rect" id="node3" href="ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="413,29,597,56"/>
-<area shape="rect" id="node4" href="BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="645,29,729,56"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a10bfe22492b473fb0197e55f451978e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10bfe22492b473fb0197e55f451978e5">&#9670;&nbsp;</a></span>existeMain()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ClassFile::existeMain </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Verifica se o .class possui função main. </p>
-<dl class="section return"><dt>Retorna</dt><dd>booleano que indica se existe o metodo main </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00364">364</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00277">encontrouMain</a> e <a class="el" href="ClassFile_8cpp_source.html#l00323">verificarMain()</a>.</p>
-<div class="dynheader">
-Grafo de chamadas desta função:</div>
-<div class="dyncontent">
-<div class="center"><img src="classClassFile_a10bfe22492b473fb0197e55f451978e5_cgraph.png" border="0" usemap="#classClassFile_a10bfe22492b473fb0197e55f451978e5_cgraph" alt=""/></div>
-<map name="classClassFile_a10bfe22492b473fb0197e55f451978e5_cgraph" id="classClassFile_a10bfe22492b473fb0197e55f451978e5_cgraph">
-<area shape="rect" id="node2" href="classClassFile.html#ae8e4445e763c4ee7c04995fcea0369e0" title="Encontro em qual method está a main. " alt="" coords="201,29,360,56"/>
-<area shape="rect" id="node3" href="ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="408,29,592,56"/>
-<area shape="rect" id="node4" href="BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="640,29,724,56"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a581c453009afcb8b7a2861a2de8cfb5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a581c453009afcb8b7a2861a2de8cfb5c">&#9670;&nbsp;</a></span>fecharArquivo()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ClassFile::fecharArquivo </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Fechar arquivo. </p>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00041">41</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00288">arquivoSaida</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="Main_8cpp_source.html#l00025">main()</a>.</p>
-
-</div>
-</div>
-<a id="a452169cb59d63012f98a34a3fff2c2f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a452169cb59d63012f98a34a3fff2c2f7">&#9670;&nbsp;</a></span>gravarArquivo()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ClassFile::gravarArquivo </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gravar todas as informações do .class em um arquivo. </p>
-<dl class="section return"><dt>Retorna</dt><dd>true ou false dependendo se a variavel status indicar que houve erro na leitura </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00229">229</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00288">arquivoSaida</a>, <a class="el" href="ClassFile_8h_source.html#l00286">attributes</a>, <a class="el" href="ClassFile_8h_source.html#l00281">attributesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00284">fields</a>, <a class="el" href="ClassFile_8h_source.html#l00280">fieldsCount</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00135">gravarArquivoConstantPool()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a>, <a class="el" href="Interfaces_8cpp_source.html#l00028">gravarArquivoTodasInterfaces()</a>, <a class="el" href="Attributes_8cpp_source.html#l00167">gravarArquivoTodosAttributes()</a>, <a class="el" href="Fields_8cpp_source.html#l00040">gravarArquivoTodosField()</a>, <a class="el" href="Methods_8cpp_source.html#l00080">gravarArquivoTodosMethods()</a>, <a class="el" href="ClassFile_8h_source.html#l00282">interfaces</a>, <a class="el" href="ClassFile_8h_source.html#l00280">interfacesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00279">lengthCP</a>, <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a> e <a class="el" href="ClassFile_8h_source.html#l00276">status</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="Main_8cpp_source.html#l00025">main()</a>.</p>
-<div class="dynheader">
-Grafo de chamadas desta função:</div>
-<div class="dyncontent">
-<div class="center"><img src="classClassFile_a452169cb59d63012f98a34a3fff2c2f7_cgraph.png" border="0" usemap="#classClassFile_a452169cb59d63012f98a34a3fff2c2f7_cgraph" alt=""/></div>
-<map name="classClassFile_a452169cb59d63012f98a34a3fff2c2f7_cgraph" id="classClassFile_a452169cb59d63012f98a34a3fff2c2f7_cgraph">
-<area shape="rect" id="node2" href="ConstantPool_8cpp.html#adeab961d0adcf041f088ef0f6568dbd7" title="gravarArquivoConstantPool" alt="" coords="705,68,887,95"/>
-<area shape="rect" id="node8" href="classClassFile.html#a4a685afd10dc5aaacd5a71ed535895c6" title="Gravar informações gerais do .class em um arquivo. " alt="" coords="234,142,399,183"/>
-<area shape="rect" id="node10" href="Interfaces_8cpp.html#ad817a71d833eba20fd61c86c9a6b0a00" title="gravarArquivoTodasInterfaces" alt="" coords="219,229,415,256"/>
-<area shape="rect" id="node12" href="Attributes_8cpp.html#a82ca1308f0dc5fb2ca83e20666c04ba8" title="gravarArquivoTodosAttributes" alt="" coords="463,445,657,472"/>
-<area shape="rect" id="node17" href="Fields_8cpp.html#acfb92bde21d024aaa2e1316f104be828" title="gravarArquivoTodosField" alt="" coords="233,285,400,312"/>
-<area shape="rect" id="node20" href="Methods_8cpp.html#ab82275fb422c00093dc9434927d0c32d" title="gravarArquivoTodosMethods" alt="" coords="223,348,411,375"/>
-<area shape="rect" id="node3" href="ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="941,232,1125,259"/>
-<area shape="rect" id="node4" href="BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="1211,195,1295,221"/>
-<area shape="rect" id="node5" href="BasicTypes_8cpp.html#a01de6b870a770894bf9ce59df9604f88" title="Função para converter 8 bytes em um duplo. " alt="" coords="953,56,1113,83"/>
-<area shape="rect" id="node6" href="BasicTypes_8cpp.html#a590862e1a2d76855d55ae13604d53a2e" title="Função para converter 8 bytes em um longo. " alt="" coords="1180,81,1327,108"/>
-<area shape="rect" id="node7" href="BasicTypes_8cpp.html#afc44e15d2eb03c5c2d21787097696c56" title="Função para converter 4 bytes em float. " alt="" coords="960,5,1107,32"/>
-<area shape="rect" id="node9" href="Flags_8cpp.html#a1808aebb7a681fc70a6e3f23a7743b94" title="Função que gravar as flags de acesso em um arquivo. " alt="" coords="493,99,627,125"/>
-<area shape="rect" id="node11" href="Interfaces_8cpp.html#a208b88dc4800761f4291479a4dabf7bb" title="gravarArquivoInterface" alt="" coords="483,215,637,241"/>
-<area shape="rect" id="node13" href="Attributes_8cpp.html#a90f6cbbff4706a7ac5a0195d8c68186f" title="gravarArquivoAttribute" alt="" coords="721,477,871,504"/>
-<area shape="rect" id="node14" href="Attributes_8cpp.html#a0d5cc4f3ba829f59c18c4137e188ea26" title="Função que mostra na tela os parâmetros dos opcodes. " alt="" coords="935,441,1132,482"/>
-<area shape="rect" id="node16" href="Attributes_8cpp.html#a0a73dec553ae8bc41785faaac9c120a1" title="Retorna o nome da operação. " alt="" coords="974,507,1093,533"/>
-<area shape="rect" id="node15" href="Attributes_8cpp.html#a2c00cc0bad9d04b8667ccbc5a166650c" title="Função para retornar o conteúdo dos próximos n bytes. " alt="" coords="1191,448,1316,475"/>
-<area shape="rect" id="node18" href="Fields_8cpp.html#adc292314cfc0b7efa5665b89c7ec7116" title="gravarArquivoField" alt="" coords="495,291,625,317"/>
-<area shape="rect" id="node19" href="Fields_8cpp.html#a8ec1dcda5ee23f9d0163d506d7379db2" title="Função para mostrar as flags dos campos. " alt="" coords="744,301,848,328"/>
-<area shape="rect" id="node21" href="Methods_8cpp.html#ae979a905d7e51fa6eace52a474a0b599" title="gravarArquivoMethod" alt="" coords="487,383,633,409"/>
-<area shape="rect" id="node22" href="Methods_8cpp.html#aeebb57e68a3f6a889f385323cd28885e" title="obterFlagMethod" alt="" coords="737,403,855,429"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a4a685afd10dc5aaacd5a71ed535895c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a685afd10dc5aaacd5a71ed535895c6">&#9670;&nbsp;</a></span>gravarArquivoInformacoesGerais()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ClassFile::gravarArquivoInformacoesGerais </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gravar informações gerais do .class em um arquivo. </p>
-<dl class="section return"><dt>Retorna</dt><dd>variavel status que indica se houve erro no programa </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00279">279</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00281">accessFlags</a>, <a class="el" href="ClassFile_8h_source.html#l00288">arquivoSaida</a>, <a class="el" href="ClassFile_8h_source.html#l00281">attributesCount</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00280">fieldsCount</a>, <a class="el" href="Flags_8cpp_source.html#l00064">gravarArquivoFlags()</a>, <a class="el" href="ClassFile_8h_source.html#l00280">interfacesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00279">lengthCP</a>, <a class="el" href="ClassFile_8h_source.html#l00279">majVersion</a>, <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a>, <a class="el" href="ClassFile_8h_source.html#l00279">minVersion</a>, <a class="el" href="ClassFile_8h_source.html#l00280">super_class</a> e <a class="el" href="ClassFile_8h_source.html#l00280">this_class</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>.</p>
-<div class="dynheader">
-Grafo de chamadas desta função:</div>
-<div class="dyncontent">
-<div class="center"><img src="classClassFile_a4a685afd10dc5aaacd5a71ed535895c6_cgraph.png" border="0" usemap="#classClassFile_a4a685afd10dc5aaacd5a71ed535895c6_cgraph" alt=""/></div>
-<map name="classClassFile_a4a685afd10dc5aaacd5a71ed535895c6_cgraph" id="classClassFile_a4a685afd10dc5aaacd5a71ed535895c6_cgraph">
-<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="219,29,403,56"/>
-<area shape="rect" id="node4" href="Flags_8cpp.html#a1808aebb7a681fc70a6e3f23a7743b94" title="Função que gravar as flags de acesso em um arquivo. " alt="" coords="243,80,378,107"/>
-<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="451,29,535,56"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a482ed64fcd8a1b79d3622b3f59b5767a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a482ed64fcd8a1b79d3622b3f59b5767a">&#9670;&nbsp;</a></span>imprimirInformacoesGerais()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ClassFile::imprimirInformacoesGerais </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Imprime informações gerais do .class. </p>
-<dl class="section return"><dt>Retorna</dt><dd>variavel status que indica se houve erro no programa </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00250">250</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00281">accessFlags</a>, <a class="el" href="ClassFile_8h_source.html#l00281">attributesCount</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00280">fieldsCount</a>, <a class="el" href="Flags_8cpp_source.html#l00008">imprimirFlags()</a>, <a class="el" href="ClassFile_8h_source.html#l00280">interfacesCount</a>, <a class="el" href="ClassFile_8h_source.html#l00279">lengthCP</a>, <a class="el" href="ClassFile_8h_source.html#l00279">majVersion</a>, <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a>, <a class="el" href="ClassFile_8h_source.html#l00279">minVersion</a>, <a class="el" href="ClassFile_8h_source.html#l00280">super_class</a> e <a class="el" href="ClassFile_8h_source.html#l00280">this_class</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>.</p>
-<div class="dynheader">
-Grafo de chamadas desta função:</div>
-<div class="dyncontent">
-<div class="center"><img src="classClassFile_a482ed64fcd8a1b79d3622b3f59b5767a_cgraph.png" border="0" usemap="#classClassFile_a482ed64fcd8a1b79d3622b3f59b5767a_cgraph" alt=""/></div>
-<map name="classClassFile_a482ed64fcd8a1b79d3622b3f59b5767a_cgraph" id="classClassFile_a482ed64fcd8a1b79d3622b3f59b5767a_cgraph">
-<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="256,29,440,56"/>
-<area shape="rect" id="node4" href="Flags_8cpp.html#ab6541b004248f7fcdf231db8e32b9344" title="Função que mostra as flags de acesso para os usuários. " alt="" coords="298,80,398,107"/>
-<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="488,29,572,56"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a5fa3d7587821ed1c8e3eabb94544da29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fa3d7587821ed1c8e3eabb94544da29">&#9670;&nbsp;</a></span>inicializarArquivo()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int ClassFile::inicializarArquivo </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>argv</em>[]</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>criar e inicializar arquivo </p>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00027">27</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00288">arquivoSaida</a> e <a class="el" href="ClassFile_8h_source.html#l00276">status</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="Main_8cpp_source.html#l00025">main()</a>.</p>
-
-</div>
-</div>
-<a id="a4d0ac62c4d6218ddada33f715ebaf633"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d0ac62c4d6218ddada33f715ebaf633">&#9670;&nbsp;</a></span>obterClassThatHasSerachedMethod()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classClassFile.html">ClassFile</a> * ClassFile::obterClassThatHasSerachedMethod </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>nome</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>descriptor</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retorna o ponteiro para o leitor do .class que contém o método encontrado em getMethod. </p>
-<dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">nome</td><td>Nome do method desejado </td></tr>
-    <tr><td class="paramname">descriptor</td><td>Descritor do method desejado </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Retorna</dt><dd>classe <a class="el" href="classClassFile.html">ClassFile</a> </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00564">564</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="Methods_8h_source.html#l00022">Method_info::descriptor_index</a>, <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a>, <a class="el" href="Methods_8h_source.html#l00021">Method_info::name_index</a>, <a class="el" href="MethodArea_8cpp_source.html#l00012">MethodArea::obterClass()</a>, <a class="el" href="StaticClass_8cpp_source.html#l00112">StaticClass::obterClassFile()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00564">obterClassThatHasSerachedMethod()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00518">obterSuper_class()</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l02443">Operations::invokeinterface()</a>, <a class="el" href="Operations_8cpp_source.html#l02266">Operations::invokespecial()</a>, <a class="el" href="Operations_8cpp_source.html#l02363">Operations::invokestatic()</a>, <a class="el" href="Operations_8cpp_source.html#l02107">Operations::invokevirtual()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00564">obterClassThatHasSerachedMethod()</a>.</p>
-<div class="dynheader">
-Grafo de chamadas desta função:</div>
-<div class="dyncontent">
-<div class="center"><img src="classClassFile_a4d0ac62c4d6218ddada33f715ebaf633_cgraph.png" border="0" usemap="#classClassFile_a4d0ac62c4d6218ddada33f715ebaf633_cgraph" alt=""/></div>
-<map name="classClassFile_a4d0ac62c4d6218ddada33f715ebaf633_cgraph" id="classClassFile_a4d0ac62c4d6218ddada33f715ebaf633_cgraph">
-<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="228,29,412,56"/>
-<area shape="rect" id="node4" href="classMethodArea.html#a6e9d922892887daadd4624729268094f" title="Retorna referência para classe estática. " alt="" coords="239,80,401,107"/>
-<area shape="rect" id="node5" href="classStaticClass.html#a49b4258a26420be4c6a1a79cdbdc2d5c" title="Retorna as informações do class file. " alt="" coords="229,131,411,157"/>
-<area shape="rect" id="node6" href="classClassFile.html#a8f248001f388181db10e76602031d560" title="Retorna um índice da constant pool que aponta para string com nome da superclass. ..." alt="" coords="246,182,394,223"/>
-<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="460,29,544,56"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a1141f5a8c856d5f3931f0b518e219f79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1141f5a8c856d5f3931f0b518e219f79">&#9670;&nbsp;</a></span>obterClinit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">method_info ClassFile::obterClinit </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retorna o método clinit. </p>
-<dl class="section return"><dt>Retorna</dt><dd>struct method_info contendo informações sobre o método </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00384">384</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00276">clinit</a> e <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="MethodArea_8cpp_source.html#l00021">MethodArea::adicionarClasse()</a>.</p>
-
-</div>
-</div>
-<a id="ab70fe581c4b7a1824adf490c3a53bcc7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab70fe581c4b7a1824adf490c3a53bcc7">&#9670;&nbsp;</a></span>obterConstantPool()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">cp_info * ClassFile::obterConstantPool </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retorna referencia a constant pool. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Retorna a array com a constant pool </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00467">467</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="MethodArea_8cpp_source.html#l00021">MethodArea::adicionarClasse()</a>, <a class="el" href="InstanceClass_8cpp_source.html#l00008">InstanceClass::InstanceClass()</a>, <a class="el" href="Operations_8cpp_source.html#l02443">Operations::invokeinterface()</a>, <a class="el" href="Operations_8cpp_source.html#l02266">Operations::invokespecial()</a>, <a class="el" href="Operations_8cpp_source.html#l02363">Operations::invokestatic()</a>, <a class="el" href="Operations_8cpp_source.html#l02107">Operations::invokevirtual()</a>, <a class="el" href="Operations_8cpp_source.html#l01965">Operations::obterStaticClassThatHasField()</a>, <a class="el" href="PilhaJVM_8cpp_source.html#l00008">PilhaJVM::PilhaJVM()</a> e <a class="el" href="StaticClass_8cpp_source.html#l00008">StaticClass::StaticClass()</a>.</p>
-
-</div>
-</div>
-<a id="a32767b8d966ef87249aa3a41ec5d67c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32767b8d966ef87249aa3a41ec5d67c3">&#9670;&nbsp;</a></span>obterErro()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string ClassFile::obterErro </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>erro</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Retorna a string que contém uma mensagem de erro correspondente ao índice que recebe como parâmetro. </p>
-<dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">erro</td><td>MACRO com o erro que foi encontrado </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Retorna</dt><dd>string contendo informação sobre o tipo de erro encontrado </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00434">434</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00035">CANT_OPEN</a>, <a class="el" href="ClassFile_8h_source.html#l00278">fileName</a>, <a class="el" href="ClassFile_8h_source.html#l00039">INVALID_EXTENSION</a>, <a class="el" href="ClassFile_8h_source.html#l00036">INVALID_FILE</a>, <a class="el" href="ClassFile_8h_source.html#l00038">INVALID_NAME</a>, <a class="el" href="ClassFile_8h_source.html#l00034">MISSING_ARGUMENT</a>, <a class="el" href="ClassFile_8h_source.html#l00041">MISSING_CLINIT</a>, <a class="el" href="ClassFile_8h_source.html#l00040">MISSING_MAIN</a> e <a class="el" href="ClassFile_8h_source.html#l00037">UNKNOWN_TYPE</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00061">validacao()</a>.</p>
-
-</div>
-</div>
-<a id="a1ae90b1662ca222c9910c14997b20eaa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ae90b1662ca222c9910c14997b20eaa">&#9670;&nbsp;</a></span>obterField()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">field_info * ClassFile::obterField </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>nome</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retorna um field. </p>
-<dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">nome</td><td>do field desejado que deseja retornar </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Retorna</dt><dd>struct field_info com a informação da field passada no parâmetro </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00530">530</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00284">fields</a> e <a class="el" href="ClassFile_8cpp_source.html#l00522">obterFieldsCount()</a>.</p>
-<div class="dynheader">
-Grafo de chamadas desta função:</div>
-<div class="dyncontent">
-<div class="center"><img src="classClassFile_a1ae90b1662ca222c9910c14997b20eaa_cgraph.png" border="0" usemap="#classClassFile_a1ae90b1662ca222c9910c14997b20eaa_cgraph" alt=""/></div>
-<map name="classClassFile_a1ae90b1662ca222c9910c14997b20eaa_cgraph" id="classClassFile_a1ae90b1662ca222c9910c14997b20eaa_cgraph">
-<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="196,29,380,56"/>
-<area shape="rect" id="node4" href="classClassFile.html#a0be559cd8b7b3168c81a2782e4facb0c" title="Retorna número de fields. " alt="" coords="196,80,380,107"/>
-<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="428,29,512,56"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="ac3aabaa918413884416692b29165b463"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3aabaa918413884416692b29165b463">&#9670;&nbsp;</a></span>obterFields()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">field_info ClassFile::obterFields </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retorna a array com as fields lidas. </p>
-<dl class="section return"><dt>Retorna</dt><dd>a array da struct field_info </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00526">526</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00284">fields</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="InstanceClass_8cpp_source.html#l00008">InstanceClass::InstanceClass()</a> e <a class="el" href="StaticClass_8cpp_source.html#l00008">StaticClass::StaticClass()</a>.</p>
-
-</div>
-</div>
-<a id="a0be559cd8b7b3168c81a2782e4facb0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0be559cd8b7b3168c81a2782e4facb0c">&#9670;&nbsp;</a></span>obterFieldsCount()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a> ClassFile::obterFieldsCount </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retorna número de fields. </p>
-<dl class="section return"><dt>Retorna</dt><dd>uint16_t indicando o numero de fields </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00522">522</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00280">fieldsCount</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="InstanceClass_8cpp_source.html#l00008">InstanceClass::InstanceClass()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00530">obterField()</a> e <a class="el" href="StaticClass_8cpp_source.html#l00008">StaticClass::StaticClass()</a>.</p>
-
-</div>
-</div>
-<a id="afdbe9cc2f360e04273470202c4f247dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afdbe9cc2f360e04273470202c4f247dc">&#9670;&nbsp;</a></span>obterMain()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">method_info ClassFile::obterMain </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retorna o método main. </p>
-<dl class="section return"><dt>Retorna</dt><dd>struct method_info contendo informações sobre o método </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00376">376</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00277">encontrouMain</a>, <a class="el" href="ClassFile_8h_source.html#l00276">mainMethod</a> e <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="PilhaJVM_8cpp_source.html#l00008">PilhaJVM::PilhaJVM()</a>.</p>
-
-</div>
-</div>
-<a id="aac49e7e39f677987b53fdf15787b8106"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac49e7e39f677987b53fdf15787b8106">&#9670;&nbsp;</a></span>obterMethod()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">method_info * ClassFile::obterMethod </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>nome</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>descriptor</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">nome</td><td>Nome do method desejado </td></tr>
-    <tr><td class="paramname">descriptor</td><td>Descritor do method desejado </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00541">541</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="Methods_8h_source.html#l00022">Method_info::descriptor_index</a>, <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a>, <a class="el" href="Methods_8h_source.html#l00021">Method_info::name_index</a>, <a class="el" href="MethodArea_8cpp_source.html#l00012">MethodArea::obterClass()</a>, <a class="el" href="StaticClass_8cpp_source.html#l00112">StaticClass::obterClassFile()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00541">obterMethod()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00518">obterSuper_class()</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l02443">Operations::invokeinterface()</a>, <a class="el" href="Operations_8cpp_source.html#l02266">Operations::invokespecial()</a>, <a class="el" href="Operations_8cpp_source.html#l02363">Operations::invokestatic()</a>, <a class="el" href="Operations_8cpp_source.html#l02107">Operations::invokevirtual()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00541">obterMethod()</a>.</p>
-<div class="dynheader">
-Grafo de chamadas desta função:</div>
-<div class="dyncontent">
-<div class="center"><img src="classClassFile_aac49e7e39f677987b53fdf15787b8106_cgraph.png" border="0" usemap="#classClassFile_aac49e7e39f677987b53fdf15787b8106_cgraph" alt=""/></div>
-<map name="classClassFile_aac49e7e39f677987b53fdf15787b8106_cgraph" id="classClassFile_aac49e7e39f677987b53fdf15787b8106_cgraph">
-<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="211,29,395,56"/>
-<area shape="rect" id="node4" href="classMethodArea.html#a6e9d922892887daadd4624729268094f" title="Retorna referência para classe estática. " alt="" coords="221,80,384,107"/>
-<area shape="rect" id="node5" href="classStaticClass.html#a49b4258a26420be4c6a1a79cdbdc2d5c" title="Retorna as informações do class file. " alt="" coords="211,131,394,157"/>
-<area shape="rect" id="node6" href="classClassFile.html#a8f248001f388181db10e76602031d560" title="Retorna um índice da constant pool que aponta para string com nome da superclass. ..." alt="" coords="229,182,377,223"/>
-<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="443,29,527,56"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a6ecce8d87f74c84b07f102c0298de13a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ecce8d87f74c84b07f102c0298de13a">&#9670;&nbsp;</a></span>obterMethods()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">method_info * ClassFile::obterMethods </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retorna todos os métodos. </p>
-<dl class="section return"><dt>Retorna</dt><dd>array do tipo method_info </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00506">506</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>.</p>
-
-</div>
-</div>
-<a id="a16409bc8b58eb4965a1e39497cc300d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16409bc8b58eb4965a1e39497cc300d8">&#9670;&nbsp;</a></span>obterMethodsCount()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a> ClassFile::obterMethodsCount </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retorna o numero de Methods. </p>
-<dl class="section return"><dt>Retorna</dt><dd>uint16_t indicando o numero de metodos </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00510">510</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a>.</p>
-
-</div>
-</div>
-<a id="a4803bd3f325fbab1bf9c0f774b3a8c97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4803bd3f325fbab1bf9c0f774b3a8c97">&#9670;&nbsp;</a></span>obterPath()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char * ClassFile::obterPath </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pega o caminho do arquivo .class. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Retorna a string com o caminho total do arquivo </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00475">475</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00278">fileName</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="Main_8cpp_source.html#l00025">main()</a>.</p>
-
-</div>
-</div>
-<a id="a170339cd16cf0afc0567865b3f372d38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a170339cd16cf0afc0567865b3f372d38">&#9670;&nbsp;</a></span>obterStatus()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int ClassFile::obterStatus </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retorna o status lido, informando para o método que chamou o que aconteceu. </p>
-<dl class="section return"><dt>Retorna</dt><dd>status </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00430">430</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00276">status</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="MethodArea_8cpp_source.html#l00049">MethodArea::adicionarClasse()</a> e <a class="el" href="Main_8cpp_source.html#l00025">main()</a>.</p>
-
-</div>
-</div>
-<a id="a8f248001f388181db10e76602031d560"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f248001f388181db10e76602031d560">&#9670;&nbsp;</a></span>obterSuper_class()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a> ClassFile::obterSuper_class </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retorna um índice da constant pool que aponta para string com nome da superclass. </p>
-<dl class="section return"><dt>Retorna</dt><dd>uint16_t super_class </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00518">518</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00280">super_class</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00564">obterClassThatHasSerachedMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00541">obterMethod()</a> e <a class="el" href="Operations_8cpp_source.html#l01965">Operations::obterStaticClassThatHasField()</a>.</p>
-
-</div>
-</div>
-<a id="a8b60418144c498b9d9545b1784bddf21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b60418144c498b9d9545b1784bddf21">&#9670;&nbsp;</a></span>obterTamanhoConstantPool()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a> ClassFile::obterTamanhoConstantPool </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retorna o valor do tamanho da constant pool. </p>
-<dl class="section return"><dt>Retorna</dt><dd>Retorna a array com a constant pool </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00471">471</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00279">lengthCP</a>.</p>
-
-</div>
-</div>
-<a id="aec88c5432526d16b546ed59e5cec2136"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec88c5432526d16b546ed59e5cec2136">&#9670;&nbsp;</a></span>obterThis_class()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a> ClassFile::obterThis_class </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retorna um índice da constant pool que aponta para string com nome da class. </p>
-<dl class="section return"><dt>Retorna</dt><dd>uint16_t this_class </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00514">514</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00280">this_class</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="MethodArea_8cpp_source.html#l00049">MethodArea::adicionarClasse()</a>.</p>
-
-</div>
-</div>
-<a id="acdb7018a6926b187bc6ecc18abf0fff8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdb7018a6926b187bc6ecc18abf0fff8">&#9670;&nbsp;</a></span>validacao()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ClassFile::validacao </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Valida estrutura obrigatoria. </p>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00061">61</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00039">INVALID_EXTENSION</a>, <a class="el" href="ClassFile_8h_source.html#l00038">INVALID_NAME</a>, <a class="el" href="ClassFile_8h_source.html#l00040">MISSING_MAIN</a>, <a class="el" href="ClassFile_8cpp_source.html#l00434">obterErro()</a>, <a class="el" href="ClassFile_8h_source.html#l00276">status</a>, <a class="el" href="ClassFile_8cpp_source.html#l00310">validarExtensao()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00323">verificarMain()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00388">verificarThisClass()</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="Main_8cpp_source.html#l00025">main()</a>.</p>
-<div class="dynheader">
-Grafo de chamadas desta função:</div>
-<div class="dyncontent">
-<div class="center"><img src="classClassFile_acdb7018a6926b187bc6ecc18abf0fff8_cgraph.png" border="0" usemap="#classClassFile_acdb7018a6926b187bc6ecc18abf0fff8_cgraph" alt=""/></div>
-<map name="classClassFile_acdb7018a6926b187bc6ecc18abf0fff8_cgraph" id="classClassFile_acdb7018a6926b187bc6ecc18abf0fff8_cgraph">
-<area shape="rect" id="node2" href="classClassFile.html#a32767b8d966ef87249aa3a41ec5d67c3" title="Retorna a string que contém uma mensagem de erro correspondente ao índice que recebe como parâmetro..." alt="" coords="213,5,352,32"/>
-<area shape="rect" id="node3" href="classClassFile.html#a8dd042ff6873b9f0d16f8ee3812261e1" title="Verifica se a extensão do arquivo é .class. " alt="" coords="193,56,372,83"/>
-<area shape="rect" id="node4" href="classClassFile.html#ae8e4445e763c4ee7c04995fcea0369e0" title="Encontro em qual method está a main. " alt="" coords="203,107,362,133"/>
-<area shape="rect" id="node7" href="classClassFile.html#a6b8f23db0ee4af80a2e75d46a191dc20" title="Verifica se a class definida é igual ao nome da classe sem extensões. " alt="" coords="205,158,361,199"/>
-<area shape="rect" id="node5" href="ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="420,136,604,163"/>
-<area shape="rect" id="node6" href="BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="652,136,736,163"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a8dd042ff6873b9f0d16f8ee3812261e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8dd042ff6873b9f0d16f8ee3812261e1">&#9670;&nbsp;</a></span>validarExtensao()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ClassFile::validarExtensao </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Verifica se a extensão do arquivo é .class. </p>
-<dl class="section return"><dt>Retorna</dt><dd>booleano que indica se existe o .class </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00310">310</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00278">fileName</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="MethodArea_8cpp_source.html#l00021">MethodArea::adicionarClasse()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00061">validacao()</a>.</p>
-
-</div>
-</div>
-<a id="a1dc8bb02efc19507cd93208d8477b436"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1dc8bb02efc19507cd93208d8477b436">&#9670;&nbsp;</a></span>validarVersaoClass()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ClassFile::validarVersaoClass </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>major</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Verifica a validade da versão de uma estrutura <a class="el" href="classClassFile.html">ClassFile</a>; devendo esta ser igual ou anterior à versão explicitada em major. O campo major_version da estrutura <a class="el" href="classClassFile.html">ClassFile</a> é usado nessa avaliação. </p><dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">major</td><td>Versão a se comparar. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Retorna</dt><dd>Verdadeiro de a versão é no máximo major ou Falso caso contrário </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00045">45</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00279">majVersion</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>.</p>
-
-</div>
-</div>
-<a id="ab0394185a299f35a9b5be68143385e84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0394185a299f35a9b5be68143385e84">&#9670;&nbsp;</a></span>verificarClinit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ClassFile::verificarClinit </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Encontra em qual method esta a clinit, se existir. </p>
-<dl class="section return"><dt>Retorna</dt><dd>booleano que indica se existe o metodo clinit </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00346">346</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00276">clinit</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a> e <a class="el" href="Methods_8h_source.html#l00021">Method_info::name_index</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00370">existeClinit()</a>.</p>
-<div class="dynheader">
-Grafo de chamadas desta função:</div>
-<div class="dyncontent">
-<div class="center"><img src="classClassFile_ab0394185a299f35a9b5be68143385e84_cgraph.png" border="0" usemap="#classClassFile_ab0394185a299f35a9b5be68143385e84_cgraph" alt=""/></div>
-<map name="classClassFile_ab0394185a299f35a9b5be68143385e84_cgraph" id="classClassFile_ab0394185a299f35a9b5be68143385e84_cgraph">
-<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="215,29,399,56"/>
-<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="447,29,531,56"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="ae8e4445e763c4ee7c04995fcea0369e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8e4445e763c4ee7c04995fcea0369e0">&#9670;&nbsp;</a></span>verificarMain()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ClassFile::verificarMain </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Encontro em qual method está a main. </p>
-<dl class="section return"><dt>Retorna</dt><dd>booleano que indica se existe o metodo main </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00323">323</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="Methods_8h_source.html#l00020">Method_info::access_flags</a>, <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="Methods_8h_source.html#l00022">Method_info::descriptor_index</a>, <a class="el" href="ClassFile_8h_source.html#l00276">mainMethod</a>, <a class="el" href="ClassFile_8h_source.html#l00285">methods</a>, <a class="el" href="ClassFile_8h_source.html#l00281">methodsCount</a> e <a class="el" href="Methods_8h_source.html#l00021">Method_info::name_index</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00364">existeMain()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00061">validacao()</a>.</p>
-<div class="dynheader">
-Grafo de chamadas desta função:</div>
-<div class="dyncontent">
-<div class="center"><img src="classClassFile_ae8e4445e763c4ee7c04995fcea0369e0_cgraph.png" border="0" usemap="#classClassFile_ae8e4445e763c4ee7c04995fcea0369e0_cgraph" alt=""/></div>
-<map name="classClassFile_ae8e4445e763c4ee7c04995fcea0369e0_cgraph" id="classClassFile_ae8e4445e763c4ee7c04995fcea0369e0_cgraph">
-<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="212,29,396,56"/>
-<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="444,29,528,56"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a6b8f23db0ee4af80a2e75d46a191dc20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b8f23db0ee4af80a2e75d46a191dc20">&#9670;&nbsp;</a></span>verificarThisClass()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ClassFile::verificarThisClass </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Verifica se a class definida é igual ao nome da classe sem extensões. </p>
-<dl class="section return"><dt>Retorna</dt><dd>booleano indicando se a .class está correta </dd></dl>
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00388">388</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ConstantPool_8cpp_source.html#l00065">capturarIndiceDeReferencia()</a>, <a class="el" href="ClassFile_8h_source.html#l00283">constantPool</a>, <a class="el" href="ClassFile_8h_source.html#l00278">fileName</a> e <a class="el" href="ClassFile_8h_source.html#l00280">this_class</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00061">validacao()</a>.</p>
-<div class="dynheader">
-Grafo de chamadas desta função:</div>
-<div class="dyncontent">
-<div class="center"><img src="classClassFile_a6b8f23db0ee4af80a2e75d46a191dc20_cgraph.png" border="0" usemap="#classClassFile_a6b8f23db0ee4af80a2e75d46a191dc20_cgraph" alt=""/></div>
-<map name="classClassFile_a6b8f23db0ee4af80a2e75d46a191dc20_cgraph" id="classClassFile_a6b8f23db0ee4af80a2e75d46a191dc20_cgraph">
-<area shape="rect" id="node2" href="ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="209,29,393,56"/>
-<area shape="rect" id="node3" href="BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="441,29,525,56"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a423be12c855bb2f0479ff83823973da3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a423be12c855bb2f0479ff83823973da3">&#9670;&nbsp;</a></span>verificarVersaoClass()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int ClassFile::verificarVersaoClass </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00049">49</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
-
-<p class="reference">Referências <a class="el" href="ClassFile_8h_source.html#l00279">majVersion</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8cpp_source.html#l00012">12</a> do ficheiro <a class="el" href="ClassFile_8cpp_source.html">ClassFile.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentação dos dados membro</h2>
-<a id="a16d2ca3e9cdf9267adde08575c57bfa9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16d2ca3e9cdf9267adde08575c57bfa9">&#9670;&nbsp;</a></span>accessFlags</h2>
+<a id="ae88db578147f7ee0d6fc1aeacb341854"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae88db578147f7ee0d6fc1aeacb341854">&#9670;&nbsp;</a></span>access_flags</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a> ClassFile::accessFlags</td>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a> ClassFile::access_flags</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00281">281</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00042">42</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00075">exibe_GeneralInformation()</a>, <a class="el" href="InstanceClass_8cpp_source.html#l00010">InstanceClass::InstanceClass()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00055">printArquivo_GeneralInformation()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00261">LeitorExibidor::setAccessFlags()</a>.</p>
 
 </div>
 </div>
-<a id="ae2be12dcc1a042970b4d7d7cf9709624"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2be12dcc1a042970b4d7d7cf9709624">&#9670;&nbsp;</a></span>arquivoClass</h2>
+<a id="a8bf809db8e1008f401dc3cda5e9cdb14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bf809db8e1008f401dc3cda5e9cdb14">&#9670;&nbsp;</a></span>attributes</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">FILE* ClassFile::arquivoClass</td>
+          <td class="memname"><a class="el" href="structattribute__info.html">attribute_info</a>* ClassFile::attributes</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00287">287</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00052">52</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00363">exibe_Attributes()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00358">printArquivo_Attributes()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00493">LeitorExibidor::setAttributes()</a>.</p>
 
 </div>
 </div>
-<a id="a4aee6c7763d46884d5b2c0297142df99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4aee6c7763d46884d5b2c0297142df99">&#9670;&nbsp;</a></span>arquivoSaida</h2>
+<a id="a633c696fbe08e7e7906b2ab1e52f3d1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a633c696fbe08e7e7906b2ab1e52f3d1b">&#9670;&nbsp;</a></span>attributes_count</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">fstream ClassFile::arquivoSaida</td>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a> ClassFile::attributes_count</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00288">288</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00051">51</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00041">fecharArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00027">inicializarArquivo()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00363">exibe_Attributes()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00075">exibe_GeneralInformation()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00033">exibeClassFile()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00358">printArquivo_Attributes()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00055">printArquivo_GeneralInformation()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00009">printArquivoClassFile()</a>, <a class="el" href="LeitorExibidor_8cpp_source.html#l00493">LeitorExibidor::setAttributes()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00489">LeitorExibidor::setAttributesCount()</a>.</p>
 
 </div>
 </div>
-<a id="a20d4b18030becbd8df5b7584477e94b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20d4b18030becbd8df5b7584477e94b6">&#9670;&nbsp;</a></span>attributes</h2>
+<a id="a2309d843091aad79aed04ce92470a434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2309d843091aad79aed04ce92470a434">&#9670;&nbsp;</a></span>constant_pool</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structAttribute__info.html">Attribute_info</a>* ClassFile::attributes</td>
+          <td class="memname"><a class="el" href="structcp__info.html">cp_info</a>* ClassFile::constant_pool</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00286">286</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00041">41</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="MethodArea_8cpp_source.html#l00065">MethodArea::addClass()</a>, <a class="el" href="Operations_8cpp_source.html#l04460">Operations::checkcast()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00363">exibe_Attributes()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00169">exibe_ConstantPool()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00284">exibe_Fields()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00075">exibe_GeneralInformation()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00254">exibe_Interfaces()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00331">exibe_Methods()</a>, <a class="el" href="Operations_8cpp_source.html#l03512">Operations::getstatic()</a>, <a class="el" href="LeitorExibidor_8cpp_source.html#l00308">LeitorExibidor::getUtf8FromConstantPool()</a>, <a class="el" href="InstanceClass_8cpp_source.html#l00010">InstanceClass::InstanceClass()</a>, <a class="el" href="Operations_8cpp_source.html#l04526">Operations::instanceof()</a>, <a class="el" href="Main_8cpp_source.html#l00035">main()</a>, <a class="el" href="Frame_8cpp_source.html#l00039">Frame::obterConstantPool()</a>, <a class="el" href="Frame_8cpp_source.html#l00094">Frame::obterMethodNamed()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00358">printArquivo_Attributes()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00095">printArquivo_ConstantPool()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00263">printArquivo_Fields()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00055">printArquivo_GeneralInformation()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00244">printArquivo_Interfaces()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00305">printArquivo_Methods()</a>, <a class="el" href="Operations_8cpp_source.html#l03601">Operations::putstatic()</a>, <a class="el" href="LeitorExibidor_8cpp_source.html#l00130">LeitorExibidor::setConstantPool()</a>, <a class="el" href="StaticClass_8cpp_source.html#l00006">StaticClass::StaticClass()</a> e <a class="el" href="Operations_8cpp_source.html#l00041">Operations::verificarMetodoExiste()</a>.</p>
 
 </div>
 </div>
-<a id="a66691e77df3f8604eebebc8759953542"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66691e77df3f8604eebebc8759953542">&#9670;&nbsp;</a></span>attributesCount</h2>
+<a id="ac8fdf5cccfd632da4fdb21ae63fffa7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8fdf5cccfd632da4fdb21ae63fffa7a">&#9670;&nbsp;</a></span>constant_pool_count</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a> ClassFile::attributesCount</td>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a> ClassFile::constant_pool_count</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00281">281</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00040">40</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00169">exibe_ConstantPool()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00075">exibe_GeneralInformation()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00033">exibeClassFile()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00095">printArquivo_ConstantPool()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00055">printArquivo_GeneralInformation()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00009">printArquivoClassFile()</a>, <a class="el" href="LeitorExibidor_8cpp_source.html#l00130">LeitorExibidor::setConstantPool()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00126">LeitorExibidor::setConstantPoolSize()</a>.</p>
 
 </div>
 </div>
-<a id="aa1eb77ebbd737bde7edde5fbdb2b6992"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1eb77ebbd737bde7edde5fbdb2b6992">&#9670;&nbsp;</a></span>clinit</h2>
+<a id="aa324f88c75aa96c632f8c57d010aab0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa324f88c75aa96c632f8c57d010aab0c">&#9670;&nbsp;</a></span>fields</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int ClassFile::clinit</td>
+          <td class="memname"><a class="el" href="structfield__info.html">field_info</a>* ClassFile::fields</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00276">276</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00048">48</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00384">obterClinit()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00346">verificarClinit()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00284">exibe_Fields()</a>, <a class="el" href="InstanceClass_8cpp_source.html#l00010">InstanceClass::InstanceClass()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00263">printArquivo_Fields()</a>, <a class="el" href="LeitorExibidor_8cpp_source.html#l00288">LeitorExibidor::setFields()</a> e <a class="el" href="StaticClass_8cpp_source.html#l00006">StaticClass::StaticClass()</a>.</p>
 
 </div>
 </div>
-<a id="a5883215e48e253a84c105a18d34049ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5883215e48e253a84c105a18d34049ca">&#9670;&nbsp;</a></span>constantPool</h2>
+<a id="acea207ee523fbc16611d3cf436c390e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acea207ee523fbc16611d3cf436c390e0">&#9670;&nbsp;</a></span>fields_count</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structCp__info.html">Cp_info</a>* ClassFile::constantPool</td>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a> ClassFile::fields_count</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00283">283</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00047">47</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00564">obterClassThatHasSerachedMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00467">obterConstantPool()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00530">obterField()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00541">obterMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00346">verificarClinit()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00323">verificarMain()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00388">verificarThisClass()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00284">exibe_Fields()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00075">exibe_GeneralInformation()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00033">exibeClassFile()</a>, <a class="el" href="InstanceClass_8cpp_source.html#l00010">InstanceClass::InstanceClass()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00263">printArquivo_Fields()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00055">printArquivo_GeneralInformation()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00009">printArquivoClassFile()</a>, <a class="el" href="LeitorExibidor_8cpp_source.html#l00288">LeitorExibidor::setFields()</a>, <a class="el" href="LeitorExibidor_8cpp_source.html#l00284">LeitorExibidor::setFieldsCount()</a> e <a class="el" href="StaticClass_8cpp_source.html#l00006">StaticClass::StaticClass()</a>.</p>
 
 </div>
 </div>
-<a id="a5c60c8d51584f48f22bdbdd719960e05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c60c8d51584f48f22bdbdd719960e05">&#9670;&nbsp;</a></span>encontrouClinit</h2>
+<a id="af599de97e062c98966470f1590496425"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af599de97e062c98966470f1590496425">&#9670;&nbsp;</a></span>interfaces</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool ClassFile::encontrouClinit</td>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a>* ClassFile::interfaces</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00277">277</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00046">46</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00370">existeClinit()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00254">exibe_Interfaces()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00244">printArquivo_Interfaces()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00277">LeitorExibidor::setInterfaces()</a>.</p>
 
 </div>
 </div>
-<a id="ad8d08e096c470901c62d1a9e31a202bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8d08e096c470901c62d1a9e31a202bf">&#9670;&nbsp;</a></span>encontrouMain</h2>
+<a id="a337fcb7da33d1b64631441115c7de305"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a337fcb7da33d1b64631441115c7de305">&#9670;&nbsp;</a></span>interfaces_count</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool ClassFile::encontrouMain</td>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a> ClassFile::interfaces_count</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00277">277</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00045">45</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00364">existeMain()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00376">obterMain()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00075">exibe_GeneralInformation()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00254">exibe_Interfaces()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00033">exibeClassFile()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00055">printArquivo_GeneralInformation()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00244">printArquivo_Interfaces()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00009">printArquivoClassFile()</a>, <a class="el" href="LeitorExibidor_8cpp_source.html#l00277">LeitorExibidor::setInterfaces()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00273">LeitorExibidor::setInterfacesCount()</a>.</p>
 
 </div>
 </div>
-<a id="a6d6ec8aa668982ea722edc40b3ea5b1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d6ec8aa668982ea722edc40b3ea5b1a">&#9670;&nbsp;</a></span>fields</h2>
+<a id="a09085e9db513dae2f46da6e0a26c1b59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09085e9db513dae2f46da6e0a26c1b59">&#9670;&nbsp;</a></span>magic</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structField__info.html">Field_info</a>* ClassFile::fields</td>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#ae5be1f726785414dd1b77d60df074c9d">u4</a> ClassFile::magic</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00284">284</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00037">37</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00530">obterField()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00526">obterFields()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="LeitorExibidor_8cpp_source.html#l00113">LeitorExibidor::isMagicValid()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00109">LeitorExibidor::setMagic()</a>.</p>
 
 </div>
 </div>
-<a id="a5eae2e906695e596b89614df0e4b060a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5eae2e906695e596b89614df0e4b060a">&#9670;&nbsp;</a></span>fieldsCount</h2>
+<a id="abede9cb937e65072517d0ee6e26e2757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abede9cb937e65072517d0ee6e26e2757">&#9670;&nbsp;</a></span>major_version</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a> ClassFile::fieldsCount</td>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a> ClassFile::major_version</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00280">280</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00039">39</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00522">obterFieldsCount()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00075">exibe_GeneralInformation()</a>, <a class="el" href="LeitorExibidor_8cpp_source.html#l00122">LeitorExibidor::isVersionValid()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00055">printArquivo_GeneralInformation()</a>, <a class="el" href="LeitorExibidor_8cpp_source.html#l00117">LeitorExibidor::setVersion()</a>, <a class="el" href="Utils_8cpp_source.html#l00007">Utils::verificarVersao()</a> e <a class="el" href="Utils_8cpp_source.html#l00080">Utils::verificarVersaoClass()</a>.</p>
 
 </div>
 </div>
-<a id="a2789cf19be5abaeadf96f83de33174a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2789cf19be5abaeadf96f83de33174a4">&#9670;&nbsp;</a></span>fileName</h2>
+<a id="ad061f06cd709d10dbfbf82f443e43632"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad061f06cd709d10dbfbf82f443e43632">&#9670;&nbsp;</a></span>methods</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char* ClassFile::fileName</td>
+          <td class="memname"><a class="el" href="structmethod__info.html">method_info</a>* ClassFile::methods</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00278">278</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00050">50</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00008">ClassFile()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00434">obterErro()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00475">obterPath()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00310">validarExtensao()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00388">verificarThisClass()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00331">exibe_Methods()</a>, <a class="el" href="Frame_8cpp_source.html#l00094">Frame::obterMethodNamed()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00305">printArquivo_Methods()</a>, <a class="el" href="LeitorExibidor_8cpp_source.html#l00474">LeitorExibidor::setMethods()</a> e <a class="el" href="Operations_8cpp_source.html#l00041">Operations::verificarMetodoExiste()</a>.</p>
 
 </div>
 </div>
-<a id="a94d1e4e835476f47e3a8b81ecd0301c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94d1e4e835476f47e3a8b81ecd0301c0">&#9670;&nbsp;</a></span>interfaces</h2>
+<a id="aacfb45d4af64216324b1ae5269c870d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacfb45d4af64216324b1ae5269c870d5">&#9670;&nbsp;</a></span>methods_count</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a>* ClassFile::interfaces</td>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a> ClassFile::methods_count</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00282">282</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00049">49</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00075">exibe_GeneralInformation()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00331">exibe_Methods()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00033">exibeClassFile()</a>, <a class="el" href="Frame_8cpp_source.html#l00094">Frame::obterMethodNamed()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00055">printArquivo_GeneralInformation()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00305">printArquivo_Methods()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00009">printArquivoClassFile()</a>, <a class="el" href="LeitorExibidor_8cpp_source.html#l00474">LeitorExibidor::setMethods()</a>, <a class="el" href="LeitorExibidor_8cpp_source.html#l00470">LeitorExibidor::setMethodsCount()</a> e <a class="el" href="Operations_8cpp_source.html#l00041">Operations::verificarMetodoExiste()</a>.</p>
 
 </div>
 </div>
-<a id="a1bbca13f93ec21beffa8a56e360c9f8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1bbca13f93ec21beffa8a56e360c9f8d">&#9670;&nbsp;</a></span>interfacesCount</h2>
+<a id="af0db7b0ea01cb9cea2cee177ca81df09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0db7b0ea01cb9cea2cee177ca81df09">&#9670;&nbsp;</a></span>minor_version</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a> ClassFile::interfacesCount</td>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a> ClassFile::minor_version</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00280">280</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00038">38</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="ClassVisao_8cpp_source.html#l00075">exibe_GeneralInformation()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00055">printArquivo_GeneralInformation()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00117">LeitorExibidor::setVersion()</a>.</p>
 
 </div>
 </div>
-<a id="acde5006251ffd25149efa4d6fb725cf5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acde5006251ffd25149efa4d6fb725cf5">&#9670;&nbsp;</a></span>lengthCP</h2>
+<a id="a5f6c11c0ccb02fd992b5c102725253ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f6c11c0ccb02fd992b5c102725253ec">&#9670;&nbsp;</a></span>super_class</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a> ClassFile::lengthCP</td>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a> ClassFile::super_class</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00279">279</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00044">44</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00471">obterTamanhoConstantPool()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="Operations_8cpp_source.html#l04460">Operations::checkcast()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00075">exibe_GeneralInformation()</a>, <a class="el" href="Operations_8cpp_source.html#l03512">Operations::getstatic()</a>, <a class="el" href="Operations_8cpp_source.html#l04526">Operations::instanceof()</a>, <a class="el" href="Frame_8cpp_source.html#l00094">Frame::obterMethodNamed()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00055">printArquivo_GeneralInformation()</a>, <a class="el" href="Operations_8cpp_source.html#l03601">Operations::putstatic()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00269">LeitorExibidor::setSuperClass()</a>.</p>
 
 </div>
 </div>
-<a id="ac1cdef340faa0bd945b2236057433978"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1cdef340faa0bd945b2236057433978">&#9670;&nbsp;</a></span>mainMethod</h2>
+<a id="a2d33db0a560a71b94bc572dd1e4ec03a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d33db0a560a71b94bc572dd1e4ec03a">&#9670;&nbsp;</a></span>this_class</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int ClassFile::mainMethod</td>
+          <td class="memname"><a class="el" href="BasicTypes_8h.html#a732cde1300aafb73b0ea6c2558a7a54f">u2</a> ClassFile::this_class</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00276">276</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00043">43</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00376">obterMain()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00323">verificarMain()</a>.</p>
-
-</div>
-</div>
-<a id="a40bd108a13debb86701cf31742572686"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40bd108a13debb86701cf31742572686">&#9670;&nbsp;</a></span>majVersion</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a> ClassFile::majVersion</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00279">279</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00045">validarVersaoClass()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00049">verificarVersaoClass()</a>.</p>
-
-</div>
-</div>
-<a id="a5906980e6c5121e5a864346fd3617083"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5906980e6c5121e5a864346fd3617083">&#9670;&nbsp;</a></span>methods</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structMethod__info.html">Method_info</a>* ClassFile::methods</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00285">285</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00564">obterClassThatHasSerachedMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00384">obterClinit()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00376">obterMain()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00541">obterMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00506">obterMethods()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00346">verificarClinit()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00323">verificarMain()</a>.</p>
-
-</div>
-</div>
-<a id="a4c362d4adfeaad02f4517caf1ba58103"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c362d4adfeaad02f4517caf1ba58103">&#9670;&nbsp;</a></span>methodsCount</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a> ClassFile::methodsCount</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00281">281</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00564">obterClassThatHasSerachedMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00541">obterMethod()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00510">obterMethodsCount()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00346">verificarClinit()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00323">verificarMain()</a>.</p>
-
-</div>
-</div>
-<a id="ab0d3a4474a9907dc61893d0293525b38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0d3a4474a9907dc61893d0293525b38">&#9670;&nbsp;</a></span>minVersion</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a> ClassFile::minVersion</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00279">279</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a>.</p>
-
-</div>
-</div>
-<a id="a9afeae9ac0889ab75909e73933e29326"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9afeae9ac0889ab75909e73933e29326">&#9670;&nbsp;</a></span>status</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int ClassFile::status</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00276">276</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00008">ClassFile()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00027">inicializarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00430">obterStatus()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00061">validacao()</a>.</p>
-
-</div>
-</div>
-<a id="ad92079216f8cdb366a3002e5ca2c2dfa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad92079216f8cdb366a3002e5ca2c2dfa">&#9670;&nbsp;</a></span>super_class</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a> ClassFile::super_class</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00280">280</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00518">obterSuper_class()</a>.</p>
-
-</div>
-</div>
-<a id="a205bc5af050f4676fc4c3ff7992c4959"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a205bc5af050f4676fc4c3ff7992c4959">&#9670;&nbsp;</a></span>this_class</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="BasicTypes_8h.html#a90240657108b1b457eef9d3f76e0202e">U2</a> ClassFile::this_class</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definido na linha <a class="el" href="ClassFile_8h_source.html#l00280">280</a> do ficheiro <a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>.</p>
-
-<p class="reference">Referenciado por <a class="el" href="ClassFile_8cpp_source.html#l00085">carregar()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00279">gravarArquivoInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00250">imprimirInformacoesGerais()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00514">obterThis_class()</a> e <a class="el" href="ClassFile_8cpp_source.html#l00388">verificarThisClass()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="MethodArea_8cpp_source.html#l00065">MethodArea::addClass()</a>, <a class="el" href="Operations_8cpp_source.html#l04460">Operations::checkcast()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00075">exibe_GeneralInformation()</a>, <a class="el" href="Operations_8cpp_source.html#l04526">Operations::instanceof()</a>, <a class="el" href="Main_8cpp_source.html#l00035">main()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00055">printArquivo_GeneralInformation()</a> e <a class="el" href="LeitorExibidor_8cpp_source.html#l00265">LeitorExibidor::setThisClass()</a>.</p>
 
 </div>
 </div>

@@ -1,13 +1,19 @@
 \hypertarget{Main_8cpp}{}\section{Referência ao ficheiro src/\+Main.cpp}
 \label{Main_8cpp}\index{src/\+Main.\+cpp@{src/\+Main.\+cpp}}
-
-
-Modulo principal, dá a opção de escolha entre exibidor e interpretador.  
-
-
-{\ttfamily \#include \char`\"{}Class\+File.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}Class\+Visao.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Heap.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Instance\+Class.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Leitor\+Exibidor.\+h\char`\"{}}\newline
-Diagrama de dependências de inclusão para Main.\+cpp\+:\nopagebreak
+{\ttfamily \#include \char`\"{}Method\+Area.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Operations.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Static\+Class.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para Main.\+cpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -19,11 +25,6 @@ Diagrama de dependências de inclusão para Main.\+cpp\+:\nopagebreak
 \item 
 int \hyperlink{Main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
 \begin{DoxyCompactList}\small\item\em Funcao principal, dá a opção de escolha entre exibidor e interpretador. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\subsection{Descrição detalhada}
-Modulo principal, dá a opção de escolha entre exibidor e interpretador. 
-
 
 
 \subsection{Documentação das funções}
@@ -59,11 +60,11 @@ Miguel Barreto Rezende Marques de Freitas -\/ 12/0130424
 \end{DoxyAuthor}
 
 
-Definido na linha 25 do ficheiro Main.\+cpp.
+Definido na linha 35 do ficheiro Main.\+cpp.
 
 
 
-Referências Method\+Area\+::adicionar\+Classe(), Class\+File\+::carregar(), Leitor\+Exibidor\+::class\+File, Pilha\+J\+V\+M\+::executar\+Metodos(), Class\+File\+::exibir(), Class\+File\+::fechar\+Arquivo(), Class\+File\+::gravar\+Arquivo(), Class\+File\+::inicializar\+Arquivo(), Class\+File\+::obter\+Path(), Class\+File\+::obter\+Status(), Method\+Area\+::path e Class\+File\+::validacao().
+Referências Method\+Area\+::carregar\+Class\+Named(), Class\+File\+::constant\+\_\+pool, Operations\+::executar\+Metodos(), exibe\+Class\+File(), Static\+Class\+::get\+Class\+File(), get\+Formatted\+Constant(), Method\+Area\+::get\+Instance(), Operations\+::get\+Instance(), Static\+Class\+::inicializar\+Arquivo(), print\+Arquivo\+Class\+File(), Class\+File\+::this\+\_\+class, Operations\+::verificar\+Metodo\+Existe() e Utils\+::verificar\+This\+Class().
 
 Grafo de chamadas desta função\+:
 \nopagebreak

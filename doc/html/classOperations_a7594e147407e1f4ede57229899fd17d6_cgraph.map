@@ -1,41 +1,20 @@
 <map id="Operations::func_new" name="Operations::func_new">
-<area shape="rect" id="node2" href="$classMethodArea.html#a30233142aefa26c17a3a222582cb56c1" title="Carrega a classe na memória. " alt="" coords="222,661,415,687"/>
-<area shape="rect" id="node19" href="$ConstantPool_8cpp.html#a6d4c1142e097f7e5f09ecada3b79f3e0" title="capturarIndiceDeReferencia" alt="" coords="1527,1025,1711,1051"/>
-<area shape="rect" id="node35" href="$classOperandsStack.html#a47af7d965172984b9cc5c61d8c4c1ce3" title="Empilha um valor de tipo referencia. " alt="" coords="203,1151,435,1178"/>
-<area shape="rect" id="node37" href="$classMethodArea.html#a6e9d922892887daadd4624729268094f" title="Retorna referência para classe estática. " alt="" coords="237,1202,400,1229"/>
-<area shape="rect" id="node38" href="$classStaticClass.html#a2990aa887bcb06eaec53afe467e361ef" title="Retorna a instância da classe. " alt="" coords="230,1253,407,1295"/>
-<area shape="rect" id="node40" href="$classOperations.html#a6906050cc72d774f77d8ba33607b1c62" title="Function that returns a n bytes value. " alt="" coords="219,1319,418,1346"/>
-<area shape="rect" id="node3" href="$classPilhaJVM.html#a9add990f9c258d39d2fcd791398c96ac" title="Adiciona um frame no topo da pilha. " alt="" coords="497,147,671,174"/>
-<area shape="rect" id="node9" href="$classClassFile.html#a619e102ada15202ab84981d43362a3e9" title="Carrega o class file na classe. " alt="" coords="518,661,650,687"/>
-<area shape="rect" id="node27" href="$classClassFile.html#a8dd042ff6873b9f0d16f8ee3812261e1" title="Verifica se a extensão do arquivo é .class. " alt="" coords="747,914,925,941"/>
-<area shape="rect" id="node32" href="$classClassFile.html#a2a886bdb4c42bfaaf5ea8ff1b2c41209" title="Verifica se o .class tem o método clinit. " alt="" coords="509,749,659,775"/>
-<area shape="rect" id="node33" href="$classClassFile.html#a1141f5a8c856d5f3931f0b518e219f79" title="Retorna o método clinit. " alt="" coords="512,559,656,586"/>
-<area shape="rect" id="node34" href="$classClassFile.html#ab70fe581c4b7a1824adf490c3a53bcc7" title="Retorna referencia a constant pool. " alt="" coords="487,610,681,637"/>
-<area shape="rect" id="node4" href="$classPilhaJVM.html#a08adb78983b512cf3d97becfa2e9a5f0" title="Põe o PC na posição inicial. " alt="" coords="757,173,915,199"/>
-<area shape="rect" id="node5" href="$classOperations.html#a705efecd2a658615f2dfe777f0bd7032" title="Atualiza a referência do frame do metodo. " alt="" coords="747,223,925,250"/>
-<area shape="rect" id="node6" href="$classOperations.html#a2564df73b5b237e5bda042909c4747b1" title="Atualiza a referência da pilha de frames para o próximo frame. " alt="" coords="748,5,924,47"/>
-<area shape="rect" id="node7" href="$classOperations.html#a5b31ab2923ed10b6ad3705f9954ed49e" title="Atualiza a pilha referência da pilha da jvm para o próximo instrução. " alt="" coords="737,71,935,98"/>
-<area shape="rect" id="node8" href="$classMethodArea.html#a6ee32cdf91b461ff3c8a278b5d0cd126" title="Atualiza a pilha referência da pilha da jvm para o próximo instrução. " alt="" coords="733,122,939,149"/>
-<area shape="rect" id="node10" href="$ConstantPool_8cpp.html#a56798a87affc6fb3e55cc85ef7086dc4" title="carregarConstantPool" alt="" coords="1171,847,1319,874"/>
-<area shape="rect" id="node12" href="$BasicTypes_8cpp.html#a7e2b72c2ee2be091607d2165abc06244" title="Função para ler 2 bytes do arquivo .class. " alt="" coords="1774,645,1827,671"/>
-<area shape="rect" id="node13" href="$BasicTypes_8cpp.html#a74cf9475c49284eba16e6f1d4b7d0985" title="Função para ler 4 bytes do arquivo .class. " alt="" coords="1592,645,1645,671"/>
-<area shape="rect" id="node15" href="$Interfaces_8cpp.html#a107c86b6178f848a1159aedf372996ba" title="Carrega as interfaces na mem�ria a partir do arquivo class. " alt="" coords="987,333,1117,359"/>
-<area shape="rect" id="node16" href="$Attributes_8cpp.html#afa0c4d01d9ac9907bcb78af9e8b92c71" title="lerTodosAttributes" alt="" coords="988,661,1116,687"/>
-<area shape="rect" id="node22" href="$Fields_8cpp.html#a888245ea152dedf33b1f8de23c254a37" title="lerTodosFields" alt="" coords="783,559,889,586"/>
-<area shape="rect" id="node24" href="$Methods_8cpp.html#ae335dbeb4b8f1f2c4af9077318e10795" title="lerTodosMethods" alt="" coords="775,711,897,738"/>
-<area shape="rect" id="node26" href="$classClassFile.html#a32767b8d966ef87249aa3a41ec5d67c3" title="Retorna a string que contém uma mensagem de erro correspondente ao índice que recebe como parâmetro..." alt="" coords="767,325,905,351"/>
-<area shape="rect" id="node28" href="$classClassFile.html#a1dc8bb02efc19507cd93208d8477b436" title="ClassFile::validarVersao\lClass" alt="" coords="754,376,918,417"/>
-<area shape="rect" id="node29" href="$classClassFile.html#ab0394185a299f35a9b5be68143385e84" title="Encontra em qual method esta a clinit, se existir. " alt="" coords="755,863,917,890"/>
-<area shape="rect" id="node30" href="$classClassFile.html#ae8e4445e763c4ee7c04995fcea0369e0" title="Encontro em qual method está a main. " alt="" coords="1165,949,1324,975"/>
-<area shape="rect" id="node31" href="$classClassFile.html#a423be12c855bb2f0479ff83823973da3" title="ClassFile::verificarVersao\lClass" alt="" coords="750,493,922,535"/>
-<area shape="rect" id="node11" href="$BasicTypes_8cpp.html#a4d51a7260f72d442b5fee1afad067e66" title="Função para ler 1 byte do arquivo .class. " alt="" coords="1592,898,1645,925"/>
-<area shape="rect" id="node14" href="$BasicTypes_8cpp.html#ab43eecd93f5d0413f80c9dc9253f7ccb" title="Função para ler os bytes de uma string UTF&#45;8. " alt="" coords="1391,949,1460,975"/>
-<area shape="rect" id="node17" href="$Attributes_8cpp.html#a37c90da63b21074fff4ffd05b7410be2" title="lerAttribute" alt="" coords="1202,661,1287,687"/>
-<area shape="rect" id="node18" href="$Attributes_8cpp.html#adde2fdfec7796550e3b7753705bee880" title="lerAttributeInfo" alt="" coords="1372,746,1479,773"/>
-<area shape="rect" id="node21" href="$Attributes_8cpp.html#a7575ffc9147cf9ff818f11e41e5799d2" title="Função de leitura de exceções. " alt="" coords="1549,746,1688,773"/>
-<area shape="rect" id="node20" href="$BasicTypes_8cpp.html#a7ec91f702390cc8f0ec6dbe21bc5ac47" title="Função para montar e mostrar a uma string UTF&#45;8. " alt="" coords="1759,1025,1843,1051"/>
-<area shape="rect" id="node23" href="$Fields_8cpp.html#ab22eb8eb41d1c698fc206c34ccfbef68" title="lerField" alt="" coords="1020,559,1084,586"/>
-<area shape="rect" id="node25" href="$Methods_8cpp.html#a1ae1d752fe2209d5b687b01d8be9ba6b" title="lerMethod" alt="" coords="1013,711,1091,738"/>
-<area shape="rect" id="node36" href="$classOperandsStack.html#a6ea316fc2b2503af2175fada4d4a9741" title="retorna o tamanho da pilha de operandos " alt="" coords="483,1151,685,1178"/>
-<area shape="rect" id="node39" href="$classHeap.html#a5361fe54c9cca238575e2fe2b8462366" title="Adiciona novo objeto no heap. " alt="" coords="501,1261,667,1287"/>
+<area shape="rect" id="node2" href="$classMethodArea.html#a6e5cd27f3133d70a8c56c5daf9190ba6" title="Carrega a classe com o nome dado e a adiciona na área de métodos. " alt="" coords="211,223,393,264"/>
+<area shape="rect" id="node5" href="$ClassVisao_8cpp.html#ad59936a226470583b59565cf99f4375e" title="getFormattedConstant" alt="" coords="705,390,857,417"/>
+<area shape="rect" id="node9" href="$classPilhaJVM.html#a13bf1c43de7819ea7761616f7a04c3b9" title="Obter a única instância da pilha. " alt="" coords="469,78,624,105"/>
+<area shape="rect" id="node15" href="$classFrame.html#af2481010c4795fbe1cba48122609cf1e" title="Adiciona um operando na pilha de operandos. " alt="" coords="203,289,401,315"/>
+<area shape="rect" id="node16" href="$classFrame.html#a6863584ef3a6f2e4b1f93fb0deb09f4b" title="Obtém o código do método a partir de um offset. " alt="" coords="244,339,360,366"/>
+<area shape="rect" id="node17" href="$classMethodArea.html#ab5fadec94ada20bc6381e7e9ac766cad" title="Obter a única instância do MethodArea. " alt="" coords="218,390,386,417"/>
+<area shape="rect" id="node18" href="$classPilhaJVM.html#aa0e43da476df6147c86c8cc3d6899718" title="Obtém o frame no topo da pilha da JVM. " alt="" coords="221,441,383,467"/>
+<area shape="rect" id="node19" href="$classFrame.html#a77f9705e64bfbdfc68921b7de11a893f" title="Obter um ponteiro para a pool de constantes referente ao frame atual. " alt="" coords="215,495,389,522"/>
+<area shape="rect" id="node3" href="$classMethodArea.html#a9e4e378de46c1a9836820d86cd9dadb8" title="Adiciona uma classe à área de métodos. " alt="" coords="469,449,624,475"/>
+<area shape="rect" id="node7" href="$classPilhaJVM.html#a64d7185bc812d3c81e5270c54c212e07" title="Adiciona um frame na pilha da JVM. " alt="" coords="475,179,619,206"/>
+<area shape="rect" id="node8" href="$classMethodArea.html#a1fb65cf5f35cadbe2be8ad1aece57025" title="Busca por uma classe com o nome qualificado passado (e.g. java/lang/Object). " alt="" coords="449,281,644,307"/>
+<area shape="rect" id="node10" href="$classLeitorExibidor.html#ab6f5cece56cf5d2e486a5512d52de392" title="Obter a única instância do ClassLoader. " alt="" coords="458,331,635,358"/>
+<area shape="rect" id="node11" href="$classOperations.html#afd99f64338fb7f1d1b813254f005bf9a" title="Obter a única instância da Execution Engine. " alt="" coords="466,129,627,155"/>
+<area shape="rect" id="node12" href="$classLeitorExibidor.html#af6f4f84cbfaf72e6673e1dc42023b308" title="LeitorExibidor::readClassFile" alt="" coords="452,230,641,257"/>
+<area shape="rect" id="node14" href="$classOperations.html#a397caddc1ff805c556d3b71c9e525e3f" title="Verifica se o método informado existe na classe atual. " alt="" coords="455,383,638,424"/>
+<area shape="rect" id="node4" href="$classStaticClass.html#ae00772669e7a0e54980ed303ff933cef" title="Destrutor padrão. " alt="" coords="696,449,867,475"/>
+<area shape="rect" id="node6" href="$classUtils.html#abef6742f09f81fea5952454925325ea5" title="Utils::converterStreamTo\lCString" alt="" coords="919,383,1087,424"/>
+<area shape="rect" id="node13" href="$classUtils.html#a71459ff272f47bbce2081ff59fae2d2c" title="Utils::verificarVersaoClass" alt="" coords="692,230,871,257"/>
 </map>

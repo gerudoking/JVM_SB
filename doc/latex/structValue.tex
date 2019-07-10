@@ -1,0 +1,232 @@
+\hypertarget{structValue}{}\section{Referência à estrutura Value}
+\label{structValue}\index{Value@{Value}}
+
+
+{\ttfamily \#include $<$Basic\+Types.\+h$>$}
+
+
+
+Diagrama de colaboração para Value\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=133pt]{structValue__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{BasicTypes_8h_ad9971b6ef33e02ba2c75d19c1d2518a1}{Value\+Type} \hyperlink{structValue_aa4139e3895034b3b47155a5862ea2010}{print\+Type}
+\item 
+\hyperlink{BasicTypes_8h_ad9971b6ef33e02ba2c75d19c1d2518a1}{Value\+Type} \hyperlink{structValue_ab45dfd167290d4324ba4832abcc4064d}{type}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>bool \hyperlink{structValue_a30e34bb4435bed7be1c5287e8f4c4838}{booleanValue}\\
+\>int8\_t \hyperlink{structValue_a5fe45e55ee027508eaa68b9133776591}{byteValue}\\
+\>uint8\_t \hyperlink{structValue_a100a56df80b9c3f796f053b9eef2b69a}{charValue}\\
+\>int16\_t \hyperlink{structValue_a9055b0f42ce03a06758b262c3bb32358}{shortValue}\\
+\>int32\_t \hyperlink{structValue_a0a2a9c06ef5a473232b4349395fd68dd}{intValue}\\
+\>float \hyperlink{structValue_a45b6c1f608872f5420b3da208a7c1ef0}{floatValue}\\
+\>int64\_t \hyperlink{structValue_a91024026ad1f8f7221fa84f5a44a3d6c}{longValue}\\
+\>double \hyperlink{structValue_a645fe257d42cf5076170f86f9f1ab65c}{doubleValue}\\
+\>\hyperlink{BasicTypes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4} \hyperlink{structValue_a0ff202a46baf275595d520cf800f596e}{returnAddress}\\
+\>\hyperlink{classObject}{Object} $\ast$ \hyperlink{structValue_a39c8a4a3203f603f82f1c80561bc735b}{object}\\
+\} \hyperlink{structValue_a2835134be157447a3ceda1a1e839ba9e}{data}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+
+
+Definido na linha 35 do ficheiro Basic\+Types.\+h.
+
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{structValue_a30e34bb4435bed7be1c5287e8f4c4838}\label{structValue_a30e34bb4435bed7be1c5287e8f4c4838}} 
+\index{Value@{Value}!boolean\+Value@{boolean\+Value}}
+\index{boolean\+Value@{boolean\+Value}!Value@{Value}}
+\subsubsection{\texorpdfstring{boolean\+Value}{booleanValue}}
+{\footnotesize\ttfamily bool Value\+::boolean\+Value}
+
+
+
+Definido na linha 39 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::baload(), Operations\+::bastore() e Operations\+::invokevirtual().
+
+\mbox{\Hypertarget{structValue_a5fe45e55ee027508eaa68b9133776591}\label{structValue_a5fe45e55ee027508eaa68b9133776591}} 
+\index{Value@{Value}!byte\+Value@{byte\+Value}}
+\index{byte\+Value@{byte\+Value}!Value@{Value}}
+\subsubsection{\texorpdfstring{byte\+Value}{byteValue}}
+{\footnotesize\ttfamily int8\+\_\+t Value\+::byte\+Value}
+
+
+
+Definido na linha 40 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::baload(), Operations\+::bastore(), Instance\+Class\+::\+Instance\+Class(), Operations\+::invokevirtual() e Static\+Class\+::\+Static\+Class().
+
+\mbox{\Hypertarget{structValue_a100a56df80b9c3f796f053b9eef2b69a}\label{structValue_a100a56df80b9c3f796f053b9eef2b69a}} 
+\index{Value@{Value}!char\+Value@{char\+Value}}
+\index{char\+Value@{char\+Value}!Value@{Value}}
+\subsubsection{\texorpdfstring{char\+Value}{charValue}}
+{\footnotesize\ttfamily uint8\+\_\+t Value\+::char\+Value}
+
+
+
+Definido na linha 41 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::caload(), Operations\+::castore(), Operations\+::i2c(), Instance\+Class\+::\+Instance\+Class(), Operations\+::invokevirtual() e Static\+Class\+::\+Static\+Class().
+
+\mbox{\Hypertarget{structValue_a2835134be157447a3ceda1a1e839ba9e}\label{structValue_a2835134be157447a3ceda1a1e839ba9e}} 
+\index{Value@{Value}!data@{data}}
+\index{data@{data}!Value@{Value}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily union \{ ... \}   Value\+::data}
+
+
+
+Referenciado por Operations\+::aaload(), Operations\+::aastore(), Operations\+::aconst\+\_\+null(), Operations\+::anewarray(), Operations\+::arraylength(), Operations\+::baload(), Operations\+::bastore(), Operations\+::bipush(), Operations\+::caload(), Operations\+::castore(), Operations\+::checkcast(), Operations\+::d2f(), Operations\+::d2i(), Operations\+::d2l(), Operations\+::dadd(), Operations\+::daload(), Operations\+::dastore(), Operations\+::dcmpg(), Operations\+::dcmpl(), Operations\+::dconst\+\_\+0(), Operations\+::dconst\+\_\+1(), Operations\+::ddiv(), Operations\+::dmul(), Operations\+::dneg(), Operations\+::drem(), Operations\+::dsub(), Operations\+::executar\+Metodos(), Operations\+::f2d(), Operations\+::f2i(), Operations\+::f2l(), Operations\+::fadd(), Operations\+::faload(), Operations\+::fastore(), Operations\+::fcmpg(), Operations\+::fcmpl(), Operations\+::fconst\+\_\+0(), Operations\+::fconst\+\_\+1(), Operations\+::fconst\+\_\+2(), Operations\+::fdiv(), Operations\+::fmul(), Operations\+::fneg(), Operations\+::frem(), Operations\+::fsub(), Operations\+::func\+\_\+new(), Operations\+::getfield(), Operations\+::i2b(), Operations\+::i2c(), Operations\+::i2d(), Operations\+::i2f(), Operations\+::i2l(), Operations\+::i2s(), Operations\+::iadd(), Operations\+::iaload(), Operations\+::iand(), Operations\+::iastore(), Operations\+::iconst\+\_\+0(), Operations\+::iconst\+\_\+1(), Operations\+::iconst\+\_\+2(), Operations\+::iconst\+\_\+3(), Operations\+::iconst\+\_\+4(), Operations\+::iconst\+\_\+5(), Operations\+::iconst\+\_\+m1(), Operations\+::idiv(), Operations\+::if\+\_\+acmpeq(), Operations\+::if\+\_\+acmpne(), Operations\+::if\+\_\+icmpeq(), Operations\+::if\+\_\+icmpge(), Operations\+::if\+\_\+icmpgt(), Operations\+::if\+\_\+icmple(), Operations\+::if\+\_\+icmplt(), Operations\+::if\+\_\+icmpne(), Operations\+::ifeq(), Operations\+::ifge(), Operations\+::ifgt(), Operations\+::ifle(), Operations\+::iflt(), Operations\+::ifne(), Operations\+::ifnonnull(), Operations\+::ifnull(), Operations\+::iinc(), Operations\+::imul(), Operations\+::ineg(), Instance\+Class\+::\+Instance\+Class(), Operations\+::instanceof(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokevirtual(), Operations\+::ior(), Operations\+::irem(), Operations\+::ishl(), Operations\+::ishr(), Operations\+::isub(), Operations\+::iushr(), Operations\+::ixor(), Operations\+::jsr(), Operations\+::jsr\+\_\+w(), Operations\+::l2d(), Operations\+::l2f(), Operations\+::l2i(), Operations\+::ladd(), Operations\+::laload(), Operations\+::land(), Operations\+::lastore(), Operations\+::lcmp(), Operations\+::lconst\+\_\+0(), Operations\+::lconst\+\_\+1(), Operations\+::ldc(), Operations\+::ldc2\+\_\+w(), Operations\+::ldc\+\_\+w(), Operations\+::ldiv(), Operations\+::lmul(), Operations\+::lneg(), Operations\+::lookupswitch(), Operations\+::lor(), Operations\+::lrem(), Operations\+::lshl(), Operations\+::lshr(), Operations\+::lsub(), Operations\+::lushr(), Operations\+::lxor(), Operations\+::multianewarray(), Operations\+::newarray(), Operations\+::populate\+Multiarray(), Operations\+::putfield(), Operations\+::saload(), Operations\+::sastore(), Operations\+::sipush(), Static\+Class\+::\+Static\+Class() e Operations\+::tableswitch().
+
+\mbox{\Hypertarget{structValue_a645fe257d42cf5076170f86f9f1ab65c}\label{structValue_a645fe257d42cf5076170f86f9f1ab65c}} 
+\index{Value@{Value}!double\+Value@{double\+Value}}
+\index{double\+Value@{double\+Value}!Value@{Value}}
+\subsubsection{\texorpdfstring{double\+Value}{doubleValue}}
+{\footnotesize\ttfamily double Value\+::double\+Value}
+
+
+
+Definido na linha 46 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::d2f(), Operations\+::d2i(), Operations\+::d2l(), Operations\+::dadd(), Operations\+::dcmpg(), Operations\+::dcmpl(), Operations\+::dconst\+\_\+0(), Operations\+::dconst\+\_\+1(), Operations\+::ddiv(), Operations\+::dmul(), Operations\+::dneg(), Operations\+::drem(), Operations\+::dsub(), Operations\+::f2d(), Operations\+::i2d(), Instance\+Class\+::\+Instance\+Class(), Operations\+::invokevirtual(), Operations\+::l2d(), Operations\+::ldc2\+\_\+w() e Static\+Class\+::\+Static\+Class().
+
+\mbox{\Hypertarget{structValue_a45b6c1f608872f5420b3da208a7c1ef0}\label{structValue_a45b6c1f608872f5420b3da208a7c1ef0}} 
+\index{Value@{Value}!float\+Value@{float\+Value}}
+\index{float\+Value@{float\+Value}!Value@{Value}}
+\subsubsection{\texorpdfstring{float\+Value}{floatValue}}
+{\footnotesize\ttfamily float Value\+::float\+Value}
+
+
+
+Definido na linha 44 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::d2f(), Operations\+::f2d(), Operations\+::f2i(), Operations\+::f2l(), Operations\+::fadd(), Operations\+::fcmpg(), Operations\+::fcmpl(), Operations\+::fconst\+\_\+0(), Operations\+::fconst\+\_\+1(), Operations\+::fconst\+\_\+2(), Operations\+::fdiv(), Operations\+::fmul(), Operations\+::fneg(), Operations\+::frem(), Operations\+::fsub(), Operations\+::i2f(), Instance\+Class\+::\+Instance\+Class(), Operations\+::invokevirtual(), Operations\+::l2f(), Operations\+::ldc(), Operations\+::ldc\+\_\+w() e Static\+Class\+::\+Static\+Class().
+
+\mbox{\Hypertarget{structValue_a0a2a9c06ef5a473232b4349395fd68dd}\label{structValue_a0a2a9c06ef5a473232b4349395fd68dd}} 
+\index{Value@{Value}!int\+Value@{int\+Value}}
+\index{int\+Value@{int\+Value}!Value@{Value}}
+\subsubsection{\texorpdfstring{int\+Value}{intValue}}
+{\footnotesize\ttfamily int32\+\_\+t Value\+::int\+Value}
+
+
+
+Definido na linha 43 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::aaload(), Operations\+::aastore(), Operations\+::anewarray(), Operations\+::arraylength(), Operations\+::baload(), Operations\+::bastore(), Operations\+::bipush(), Operations\+::caload(), Operations\+::castore(), Operations\+::checkcast(), Operations\+::d2i(), Operations\+::daload(), Operations\+::dastore(), Operations\+::dcmpg(), Operations\+::dcmpl(), Operations\+::f2i(), Operations\+::faload(), Operations\+::fastore(), Operations\+::fcmpg(), Operations\+::fcmpl(), Operations\+::i2b(), Operations\+::i2c(), Operations\+::i2d(), Operations\+::i2f(), Operations\+::i2l(), Operations\+::i2s(), Operations\+::iadd(), Operations\+::iaload(), Operations\+::iand(), Operations\+::iastore(), Operations\+::iconst\+\_\+0(), Operations\+::iconst\+\_\+1(), Operations\+::iconst\+\_\+2(), Operations\+::iconst\+\_\+3(), Operations\+::iconst\+\_\+4(), Operations\+::iconst\+\_\+5(), Operations\+::iconst\+\_\+m1(), Operations\+::idiv(), Operations\+::if\+\_\+icmpeq(), Operations\+::if\+\_\+icmpge(), Operations\+::if\+\_\+icmpgt(), Operations\+::if\+\_\+icmple(), Operations\+::if\+\_\+icmplt(), Operations\+::if\+\_\+icmpne(), Operations\+::ifeq(), Operations\+::ifge(), Operations\+::ifgt(), Operations\+::ifle(), Operations\+::iflt(), Operations\+::ifne(), Operations\+::iinc(), Operations\+::imul(), Operations\+::ineg(), Instance\+Class\+::\+Instance\+Class(), Operations\+::instanceof(), Operations\+::invokevirtual(), Operations\+::ior(), Operations\+::irem(), Operations\+::ishl(), Operations\+::ishr(), Operations\+::isub(), Operations\+::iushr(), Operations\+::ixor(), Operations\+::l2i(), Operations\+::laload(), Operations\+::lastore(), Operations\+::lcmp(), Operations\+::ldc(), Operations\+::ldc\+\_\+w(), Operations\+::lookupswitch(), Operations\+::lshl(), Operations\+::lushr(), Operations\+::multianewarray(), Operations\+::newarray(), Operations\+::saload(), Operations\+::sastore(), Operations\+::sipush(), Static\+Class\+::\+Static\+Class() e Operations\+::tableswitch().
+
+\mbox{\Hypertarget{structValue_a91024026ad1f8f7221fa84f5a44a3d6c}\label{structValue_a91024026ad1f8f7221fa84f5a44a3d6c}} 
+\index{Value@{Value}!long\+Value@{long\+Value}}
+\index{long\+Value@{long\+Value}!Value@{Value}}
+\subsubsection{\texorpdfstring{long\+Value}{longValue}}
+{\footnotesize\ttfamily int64\+\_\+t Value\+::long\+Value}
+
+
+
+Definido na linha 45 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::d2l(), Operations\+::f2l(), Operations\+::i2l(), Instance\+Class\+::\+Instance\+Class(), Operations\+::invokevirtual(), Operations\+::l2d(), Operations\+::l2f(), Operations\+::ladd(), Operations\+::land(), Operations\+::lcmp(), Operations\+::lconst\+\_\+0(), Operations\+::lconst\+\_\+1(), Operations\+::ldc2\+\_\+w(), Operations\+::ldiv(), Operations\+::lmul(), Operations\+::lneg(), Operations\+::lor(), Operations\+::lrem(), Operations\+::lshl(), Operations\+::lshr(), Operations\+::lsub(), Operations\+::lushr(), Operations\+::lxor(), Operations\+::newarray(), Operations\+::populate\+Multiarray() e Static\+Class\+::\+Static\+Class().
+
+\mbox{\Hypertarget{structValue_a39c8a4a3203f603f82f1c80561bc735b}\label{structValue_a39c8a4a3203f603f82f1c80561bc735b}} 
+\index{Value@{Value}!object@{object}}
+\index{object@{object}!Value@{Value}}
+\subsubsection{\texorpdfstring{object}{object}}
+{\footnotesize\ttfamily \hyperlink{classObject}{Object}$\ast$ Value\+::object}
+
+
+
+Definido na linha 48 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::aaload(), Operations\+::aastore(), Operations\+::aconst\+\_\+null(), Operations\+::anewarray(), Operations\+::arraylength(), Operations\+::baload(), Operations\+::bastore(), Operations\+::caload(), Operations\+::castore(), Operations\+::checkcast(), Operations\+::daload(), Operations\+::dastore(), Operations\+::executar\+Metodos(), Operations\+::faload(), Operations\+::fastore(), Operations\+::func\+\_\+new(), Operations\+::getfield(), Operations\+::iaload(), Operations\+::iastore(), Operations\+::if\+\_\+acmpeq(), Operations\+::if\+\_\+acmpne(), Operations\+::ifnonnull(), Operations\+::ifnull(), Instance\+Class\+::\+Instance\+Class(), Operations\+::instanceof(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokevirtual(), Operations\+::laload(), Operations\+::lastore(), Operations\+::ldc(), Operations\+::ldc\+\_\+w(), Operations\+::multianewarray(), Operations\+::newarray(), Operations\+::populate\+Multiarray(), Operations\+::putfield(), Operations\+::saload(), Operations\+::sastore() e Static\+Class\+::\+Static\+Class().
+
+\mbox{\Hypertarget{structValue_aa4139e3895034b3b47155a5862ea2010}\label{structValue_aa4139e3895034b3b47155a5862ea2010}} 
+\index{Value@{Value}!print\+Type@{print\+Type}}
+\index{print\+Type@{print\+Type}!Value@{Value}}
+\subsubsection{\texorpdfstring{print\+Type}{printType}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_ad9971b6ef33e02ba2c75d19c1d2518a1}{Value\+Type} Value\+::print\+Type}
+
+
+
+Definido na linha 36 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::baload(), Operations\+::bastore(), Operations\+::bipush(), Operations\+::caload(), Operations\+::castore(), Operations\+::d2i(), Operations\+::dcmpg(), Operations\+::dcmpl(), Operations\+::f2i(), Operations\+::fcmpg(), Operations\+::fcmpl(), Operations\+::getfield(), Operations\+::getstatic(), Operations\+::i2b(), Operations\+::i2c(), Operations\+::i2s(), Operations\+::iadd(), Operations\+::iand(), Operations\+::iastore(), Operations\+::iconst\+\_\+0(), Operations\+::iconst\+\_\+1(), Operations\+::iconst\+\_\+2(), Operations\+::iconst\+\_\+3(), Operations\+::iconst\+\_\+4(), Operations\+::iconst\+\_\+5(), Operations\+::iconst\+\_\+m1(), Operations\+::idiv(), Operations\+::imul(), Operations\+::ineg(), Operations\+::invokevirtual(), Operations\+::ior(), Operations\+::irem(), Operations\+::ishl(), Operations\+::ishr(), Operations\+::isub(), Operations\+::iushr(), Operations\+::ixor(), Operations\+::l2i(), Operations\+::lcmp(), Operations\+::ldc(), Operations\+::ldc\+\_\+w(), Operations\+::newarray(), Operations\+::populate\+Multiarray(), Operations\+::putfield(), Operations\+::putstatic(), Operations\+::saload(), Operations\+::sastore() e Operations\+::sipush().
+
+\mbox{\Hypertarget{structValue_a0ff202a46baf275595d520cf800f596e}\label{structValue_a0ff202a46baf275595d520cf800f596e}} 
+\index{Value@{Value}!return\+Address@{return\+Address}}
+\index{return\+Address@{return\+Address}!Value@{Value}}
+\subsubsection{\texorpdfstring{return\+Address}{returnAddress}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4} Value\+::return\+Address}
+
+
+
+Definido na linha 47 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::jsr() e Operations\+::jsr\+\_\+w().
+
+\mbox{\Hypertarget{structValue_a9055b0f42ce03a06758b262c3bb32358}\label{structValue_a9055b0f42ce03a06758b262c3bb32358}} 
+\index{Value@{Value}!short\+Value@{short\+Value}}
+\index{short\+Value@{short\+Value}!Value@{Value}}
+\subsubsection{\texorpdfstring{short\+Value}{shortValue}}
+{\footnotesize\ttfamily int16\+\_\+t Value\+::short\+Value}
+
+
+
+Definido na linha 42 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Instance\+Class\+::\+Instance\+Class(), Operations\+::invokevirtual(), Operations\+::saload(), Operations\+::sastore() e Static\+Class\+::\+Static\+Class().
+
+\mbox{\Hypertarget{structValue_ab45dfd167290d4324ba4832abcc4064d}\label{structValue_ab45dfd167290d4324ba4832abcc4064d}} 
+\index{Value@{Value}!type@{type}}
+\index{type@{type}!Value@{Value}}
+\subsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_ad9971b6ef33e02ba2c75d19c1d2518a1}{Value\+Type} Value\+::type}
+
+
+
+Definido na linha 37 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::aaload(), Operations\+::aastore(), Operations\+::aconst\+\_\+null(), Operations\+::aload\+\_\+0(), Operations\+::aload\+\_\+1(), Operations\+::aload\+\_\+2(), Operations\+::aload\+\_\+3(), Operations\+::anewarray(), Operations\+::areturn(), Operations\+::arraylength(), Operations\+::astore(), Operations\+::astore\+\_\+0(), Operations\+::astore\+\_\+1(), Operations\+::astore\+\_\+2(), Operations\+::astore\+\_\+3(), Operations\+::baload(), Operations\+::bastore(), Operations\+::bipush(), Operations\+::caload(), Operations\+::castore(), Operations\+::checkcast(), Operations\+::d2f(), Operations\+::d2i(), Operations\+::d2l(), Operations\+::dadd(), Operations\+::daload(), Operations\+::dastore(), Operations\+::dcmpg(), Operations\+::dcmpl(), Operations\+::dconst\+\_\+0(), Operations\+::dconst\+\_\+1(), Operations\+::ddiv(), Operations\+::dload(), Operations\+::dload\+\_\+0(), Operations\+::dload\+\_\+1(), Operations\+::dload\+\_\+2(), Operations\+::dload\+\_\+3(), Operations\+::dmul(), Operations\+::dneg(), Operations\+::drem(), Operations\+::dreturn(), Operations\+::dstore(), Operations\+::dstore\+\_\+0(), Operations\+::dstore\+\_\+1(), Operations\+::dstore\+\_\+2(), Operations\+::dstore\+\_\+3(), Operations\+::dsub(), Operations\+::dup(), Operations\+::dup2(), Operations\+::dup2\+\_\+x1(), Operations\+::dup2\+\_\+x2(), Operations\+::dup\+\_\+x1(), Operations\+::dup\+\_\+x2(), Operations\+::executar\+Metodos(), Operations\+::f2d(), Operations\+::f2i(), Operations\+::f2l(), Operations\+::fadd(), Operations\+::faload(), Operations\+::fastore(), Operations\+::fcmpg(), Operations\+::fcmpl(), Operations\+::fconst\+\_\+0(), Operations\+::fconst\+\_\+1(), Operations\+::fconst\+\_\+2(), Operations\+::fdiv(), Operations\+::fload\+\_\+0(), Operations\+::fload\+\_\+1(), Operations\+::fload\+\_\+2(), Operations\+::fload\+\_\+3(), Operations\+::fmul(), Operations\+::fneg(), Operations\+::frem(), Operations\+::freturn(), Operations\+::fstore(), Operations\+::fstore\+\_\+0(), Operations\+::fstore\+\_\+1(), Operations\+::fstore\+\_\+2(), Operations\+::fstore\+\_\+3(), Operations\+::fsub(), Operations\+::func\+\_\+new(), Operations\+::getfield(), Operations\+::getstatic(), Operations\+::i2b(), Operations\+::i2c(), Operations\+::i2d(), Operations\+::i2f(), Operations\+::i2l(), Operations\+::i2s(), Operations\+::iadd(), Operations\+::iaload(), Operations\+::iand(), Operations\+::iastore(), Operations\+::iconst\+\_\+0(), Operations\+::iconst\+\_\+1(), Operations\+::iconst\+\_\+2(), Operations\+::iconst\+\_\+3(), Operations\+::iconst\+\_\+4(), Operations\+::iconst\+\_\+5(), Operations\+::iconst\+\_\+m1(), Operations\+::idiv(), Operations\+::if\+\_\+acmpeq(), Operations\+::if\+\_\+acmpne(), Operations\+::if\+\_\+icmpeq(), Operations\+::if\+\_\+icmpge(), Operations\+::if\+\_\+icmpgt(), Operations\+::if\+\_\+icmple(), Operations\+::if\+\_\+icmplt(), Operations\+::if\+\_\+icmpne(), Operations\+::ifeq(), Operations\+::ifge(), Operations\+::ifgt(), Operations\+::ifle(), Operations\+::iflt(), Operations\+::ifne(), Operations\+::ifnonnull(), Operations\+::ifnull(), Operations\+::iinc(), Operations\+::iload\+\_\+0(), Operations\+::iload\+\_\+1(), Operations\+::iload\+\_\+2(), Operations\+::iload\+\_\+3(), Operations\+::imul(), Operations\+::ineg(), Instance\+Class\+::\+Instance\+Class(), Operations\+::instanceof(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::ior(), Operations\+::irem(), Operations\+::ireturn(), Operations\+::ishl(), Operations\+::ishr(), Operations\+::istore(), Operations\+::istore\+\_\+0(), Operations\+::istore\+\_\+1(), Operations\+::istore\+\_\+2(), Operations\+::istore\+\_\+3(), Operations\+::isub(), Operations\+::iushr(), Operations\+::ixor(), Operations\+::jsr(), Operations\+::jsr\+\_\+w(), Operations\+::l2d(), Operations\+::l2f(), Operations\+::l2i(), Operations\+::ladd(), Operations\+::laload(), Operations\+::land(), Operations\+::lastore(), Operations\+::lcmp(), Operations\+::lconst\+\_\+0(), Operations\+::lconst\+\_\+1(), Operations\+::ldc(), Operations\+::ldc2\+\_\+w(), Operations\+::ldc\+\_\+w(), Operations\+::ldiv(), Operations\+::lload(), Operations\+::lload\+\_\+0(), Operations\+::lload\+\_\+1(), Operations\+::lload\+\_\+2(), Operations\+::lload\+\_\+3(), Operations\+::lmul(), Operations\+::lneg(), Operations\+::lookupswitch(), Operations\+::lor(), Operations\+::lrem(), Operations\+::lreturn(), Operations\+::lshl(), Operations\+::lshr(), Operations\+::lstore(), Operations\+::lstore\+\_\+0(), Operations\+::lstore\+\_\+1(), Operations\+::lstore\+\_\+2(), Operations\+::lstore\+\_\+3(), Operations\+::lsub(), Operations\+::lushr(), Operations\+::lxor(), Operations\+::multianewarray(), Operations\+::newarray(), Operations\+::pop(), Operations\+::populate\+Multiarray(), Array\+Object\+::push\+Value(), Operations\+::putfield(), Operations\+::putstatic(), Operations\+::saload(), Operations\+::sastore(), Operations\+::sipush(), Static\+Class\+::\+Static\+Class(), Operations\+::swap() e Operations\+::tableswitch().
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{BasicTypes_8h}{Basic\+Types.\+h}\end{DoxyCompactItemize}

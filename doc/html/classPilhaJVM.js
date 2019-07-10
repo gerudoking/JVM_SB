@@ -1,14 +1,13 @@
 var classPilhaJVM =
 [
-    [ "PilhaJVM", "classPilhaJVM.html#a9acc6081073376a6f658c9dcfd3f6011", null ],
-    [ "adicionarFrame", "classPilhaJVM.html#a9add990f9c258d39d2fcd791398c96ac", null ],
-    [ "adicionarFrame", "classPilhaJVM.html#a6a47624a1e9923e59258454e6e6d1271", null ],
-    [ "atualizarArgumentos", "classPilhaJVM.html#a43252c128cf31ac202373d6b66868a77", null ],
-    [ "executarMetodos", "classPilhaJVM.html#a8c87f8255b289be137dd09360d135e86", null ],
-    [ "inicializarPC", "classPilhaJVM.html#a08adb78983b512cf3d97becfa2e9a5f0", null ],
-    [ "popRemoverObjetos", "classPilhaJVM.html#a4f83f8d59b436cb1813a2a35e1538045", null ],
-    [ "proximaInstrucao", "classPilhaJVM.html#a914a4707e58e23e8913fcdc0c53f8c5c", null ],
-    [ "frame", "classPilhaJVM.html#adebac9c22fbb328afca1d2a98e6d486c", null ],
-    [ "opcode", "classPilhaJVM.html#a90e6f9da43b72798ea0331c57b72af09", null ],
-    [ "stackFrame", "classPilhaJVM.html#a4d70c8b3d6fbddb38e943dc8b1a00c2d", null ]
+    [ "~PilhaJVM", "classPilhaJVM.html#a7995ffc4e2ca9b149b83293cbbe0ea1b", null ],
+    [ "PilhaJVM", "classPilhaJVM.html#a7f0451ca9cf124f5098d43928566fadf", null ],
+    [ "PilhaJVM", "classPilhaJVM.html#a051085f51d79d3333356c5d36bef4687", null ],
+    [ "addFrame", "classPilhaJVM.html#a64d7185bc812d3c81e5270c54c212e07", null ],
+    [ "destroyTopFrame", "classPilhaJVM.html#a8ae0ed77b894fa95e73ea4077ebdeea2", null ],
+    [ "getInstance", "classPilhaJVM.html#a13bf1c43de7819ea7761616f7a04c3b9", null ],
+    [ "getTopFrame", "classPilhaJVM.html#aa0e43da476df6147c86c8cc3d6899718", null ],
+    [ "operator=", "classPilhaJVM.html#a636c01ded057b339aa00486003db9037", null ],
+    [ "size", "classPilhaJVM.html#a22d7bcd7db598b00ae219c9c2efb2c88", null ],
+    [ "_frameStack", "classPilhaJVM.html#a09290179ef6c914aa32297ab9dae94ed", null ]
 ];

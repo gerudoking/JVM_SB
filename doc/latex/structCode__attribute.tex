@@ -2,16 +2,12 @@
 \label{structCode__attribute}\index{Code\+\_\+attribute@{Code\+\_\+attribute}}
 
 
-Estrutura de dados para salvar atributos do tipo code.  
+{\ttfamily \#include $<$Basic\+Types.\+h$>$}
 
 
 
-
-{\ttfamily \#include $<$Attributes.\+h$>$}
-
-
-
-Diagrama de colaboração para Code\+\_\+attribute\+:\nopagebreak
+Diagrama de colaboração para Code\+\_\+attribute\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,146 +17,146 @@ Diagrama de colaboração para Code\+\_\+attribute\+:\nopagebreak
 \subsection*{Atributos Públicos}
 \begin{DoxyCompactItemize}
 \item 
-unsigned short \hyperlink{structCode__attribute_a79788dd1a87f20447908885db5eeb43e}{max\+\_\+stack}
+\hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} \hyperlink{structCode__attribute_a300885ff1326f01f7c86e7b4425f0d35}{max\+\_\+stack}
 \item 
-unsigned short \hyperlink{structCode__attribute_a5c78e8e2f4557c3f95ef4ce844e4c34f}{max\+\_\+locals}
+\hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} \hyperlink{structCode__attribute_ad710ec86a1d37c6daa999383f8f2fd35}{max\+\_\+locals}
 \item 
-unsigned int \hyperlink{structCode__attribute_a2e5718559f43a06fcdea23b2bb289c5b}{code\+\_\+length}
+\hyperlink{BasicTypes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4} \hyperlink{structCode__attribute_a80af47e824a13ef4dc604e5b8671f793}{code\+\_\+length}
 \item 
-unsigned char $\ast$ \hyperlink{structCode__attribute_a7ca728e51c5888fc4a95ec8b14bcab59}{codigo}
+\hyperlink{BasicTypes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1} $\ast$ \hyperlink{structCode__attribute_a26d83aeded05528b11dd486555d1ece2}{code}
 \item 
-unsigned short \hyperlink{structCode__attribute_ab29373557f9cfffb736fe8d275884c70}{exception\+\_\+table\+\_\+length}
+\hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} \hyperlink{structCode__attribute_a24b063ad994d77688db7468fae11e7aa}{exception\+\_\+table\+\_\+length}
 \item 
-\hyperlink{structT__exception__table}{T\+\_\+exception\+\_\+table} $\ast$$\ast$ \hyperlink{structCode__attribute_a21aaa6b7c7e11176c026c57f78046e05}{exception\+\_\+table}
+\hyperlink{structExceptionTable}{Exception\+Table} $\ast$ \hyperlink{structCode__attribute_a080b3f7a5717321484a648ec83c11f12}{exception\+\_\+table}
 \item 
-unsigned short \hyperlink{structCode__attribute_a13e6fb9304168a15c4caf3f37d1006e3}{attribute\+\_\+count}
+\hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} \hyperlink{structCode__attribute_a9ca1435aa65ae02d764ff53a36fb842f}{attributes\+\_\+count}
 \item 
-\hyperlink{structAttribute__info}{Attribute\+\_\+info} $\ast$ \hyperlink{structCode__attribute_ad42c1c926ade7cce485bed5e59184049}{attributes}
+\hyperlink{structattribute__info}{attribute\+\_\+info} $\ast$ \hyperlink{structCode__attribute_abb5d2d93e2f165dd908c3788a323d093}{attributes}
 \end{DoxyCompactItemize}
 
 
 \subsection{Descrição detalhada}
-Estrutura de dados para salvar atributos do tipo code. 
 
-Definido na linha 43 do ficheiro Attributes.\+h.
+
+Definido na linha 209 do ficheiro Basic\+Types.\+h.
 
 
 
 \subsection{Documentação dos dados membro}
-\mbox{\Hypertarget{structCode__attribute_a13e6fb9304168a15c4caf3f37d1006e3}\label{structCode__attribute_a13e6fb9304168a15c4caf3f37d1006e3}} 
-\index{Code\+\_\+attribute@{Code\+\_\+attribute}!attribute\+\_\+count@{attribute\+\_\+count}}
-\index{attribute\+\_\+count@{attribute\+\_\+count}!Code\+\_\+attribute@{Code\+\_\+attribute}}
-\subsubsection{\texorpdfstring{attribute\+\_\+count}{attribute\_count}}
-{\footnotesize\ttfamily unsigned short Code\+\_\+attribute\+::attribute\+\_\+count}
-
-
-
-Definido na linha 50 do ficheiro Attributes.\+h.
-
-
-
-Referenciado por gravar\+Arquivo\+Attribute(), imprimir\+Attribute() e ler\+Attribute\+Info().
-
-\mbox{\Hypertarget{structCode__attribute_ad42c1c926ade7cce485bed5e59184049}\label{structCode__attribute_ad42c1c926ade7cce485bed5e59184049}} 
+\mbox{\Hypertarget{structCode__attribute_abb5d2d93e2f165dd908c3788a323d093}\label{structCode__attribute_abb5d2d93e2f165dd908c3788a323d093}} 
 \index{Code\+\_\+attribute@{Code\+\_\+attribute}!attributes@{attributes}}
 \index{attributes@{attributes}!Code\+\_\+attribute@{Code\+\_\+attribute}}
 \subsubsection{\texorpdfstring{attributes}{attributes}}
-{\footnotesize\ttfamily \hyperlink{structAttribute__info}{Attribute\+\_\+info}$\ast$ Code\+\_\+attribute\+::attributes}
+{\footnotesize\ttfamily \hyperlink{structattribute__info}{attribute\+\_\+info}$\ast$ Code\+\_\+attribute\+::attributes}
 
 
 
-Definido na linha 51 do ficheiro Attributes.\+h.
+Definido na linha 217 do ficheiro Basic\+Types.\+h.
 
 
 
-Referenciado por gravar\+Arquivo\+Attribute(), imprimir\+Attribute() e ler\+Attribute\+Info().
+Referenciado por exibe\+\_\+\+Attribute\+Info(), Leitor\+Exibidor\+::get\+Attribute\+Code() e print\+\_\+\+Attribute\+Info().
 
-\mbox{\Hypertarget{structCode__attribute_a2e5718559f43a06fcdea23b2bb289c5b}\label{structCode__attribute_a2e5718559f43a06fcdea23b2bb289c5b}} 
+\mbox{\Hypertarget{structCode__attribute_a9ca1435aa65ae02d764ff53a36fb842f}\label{structCode__attribute_a9ca1435aa65ae02d764ff53a36fb842f}} 
+\index{Code\+\_\+attribute@{Code\+\_\+attribute}!attributes\+\_\+count@{attributes\+\_\+count}}
+\index{attributes\+\_\+count@{attributes\+\_\+count}!Code\+\_\+attribute@{Code\+\_\+attribute}}
+\subsubsection{\texorpdfstring{attributes\+\_\+count}{attributes\_count}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} Code\+\_\+attribute\+::attributes\+\_\+count}
+
+
+
+Definido na linha 216 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por exibe\+\_\+\+Attribute\+Info(), Leitor\+Exibidor\+::get\+Attribute\+Code() e print\+\_\+\+Attribute\+Info().
+
+\mbox{\Hypertarget{structCode__attribute_a26d83aeded05528b11dd486555d1ece2}\label{structCode__attribute_a26d83aeded05528b11dd486555d1ece2}} 
+\index{Code\+\_\+attribute@{Code\+\_\+attribute}!code@{code}}
+\index{code@{code}!Code\+\_\+attribute@{Code\+\_\+attribute}}
+\subsubsection{\texorpdfstring{code}{code}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1}$\ast$ Code\+\_\+attribute\+::code}
+
+
+
+Definido na linha 213 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por exibe\+Byte\+Code(), Leitor\+Exibidor\+::get\+Attribute\+Code(), Frame\+::get\+Code() e print\+Arquivo\+Byte\+Code().
+
+\mbox{\Hypertarget{structCode__attribute_a80af47e824a13ef4dc604e5b8671f793}\label{structCode__attribute_a80af47e824a13ef4dc604e5b8671f793}} 
 \index{Code\+\_\+attribute@{Code\+\_\+attribute}!code\+\_\+length@{code\+\_\+length}}
 \index{code\+\_\+length@{code\+\_\+length}!Code\+\_\+attribute@{Code\+\_\+attribute}}
 \subsubsection{\texorpdfstring{code\+\_\+length}{code\_length}}
-{\footnotesize\ttfamily unsigned int Code\+\_\+attribute\+::code\+\_\+length}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_ae5be1f726785414dd1b77d60df074c9d}{u4} Code\+\_\+attribute\+::code\+\_\+length}
 
 
 
-Definido na linha 46 do ficheiro Attributes.\+h.
+Definido na linha 212 do ficheiro Basic\+Types.\+h.
 
 
 
-Referenciado por gravar\+Arquivo\+Attribute(), imprimir\+Attribute() e ler\+Attribute\+Info().
+Referenciado por exibe\+\_\+\+Attribute\+Info(), exibe\+Byte\+Code(), Leitor\+Exibidor\+::get\+Attribute\+Code(), print\+\_\+\+Attribute\+Info(), print\+Arquivo\+Byte\+Code() e Frame\+::size\+Code().
 
-\mbox{\Hypertarget{structCode__attribute_a7ca728e51c5888fc4a95ec8b14bcab59}\label{structCode__attribute_a7ca728e51c5888fc4a95ec8b14bcab59}} 
-\index{Code\+\_\+attribute@{Code\+\_\+attribute}!codigo@{codigo}}
-\index{codigo@{codigo}!Code\+\_\+attribute@{Code\+\_\+attribute}}
-\subsubsection{\texorpdfstring{codigo}{codigo}}
-{\footnotesize\ttfamily unsigned char$\ast$ Code\+\_\+attribute\+::codigo}
-
-
-
-Definido na linha 47 do ficheiro Attributes.\+h.
-
-
-
-Referenciado por gravar\+Arquivo\+Attribute(), imprimir\+Attribute(), Pilha\+J\+V\+M\+::inicializar\+P\+C(), ler\+Attribute\+Info(), Operations\+::lookupswitch() e Operations\+::tableswitch().
-
-\mbox{\Hypertarget{structCode__attribute_a21aaa6b7c7e11176c026c57f78046e05}\label{structCode__attribute_a21aaa6b7c7e11176c026c57f78046e05}} 
+\mbox{\Hypertarget{structCode__attribute_a080b3f7a5717321484a648ec83c11f12}\label{structCode__attribute_a080b3f7a5717321484a648ec83c11f12}} 
 \index{Code\+\_\+attribute@{Code\+\_\+attribute}!exception\+\_\+table@{exception\+\_\+table}}
 \index{exception\+\_\+table@{exception\+\_\+table}!Code\+\_\+attribute@{Code\+\_\+attribute}}
 \subsubsection{\texorpdfstring{exception\+\_\+table}{exception\_table}}
-{\footnotesize\ttfamily \hyperlink{structT__exception__table}{T\+\_\+exception\+\_\+table}$\ast$$\ast$ Code\+\_\+attribute\+::exception\+\_\+table}
+{\footnotesize\ttfamily \hyperlink{structExceptionTable}{Exception\+Table}$\ast$ Code\+\_\+attribute\+::exception\+\_\+table}
 
 
 
-Definido na linha 49 do ficheiro Attributes.\+h.
+Definido na linha 215 do ficheiro Basic\+Types.\+h.
 
 
 
-Referenciado por gravar\+Arquivo\+Attribute(), imprimir\+Attribute() e ler\+Attribute\+Info().
+Referenciado por exibe\+\_\+\+Attribute\+Info(), Leitor\+Exibidor\+::get\+Attribute\+Code() e print\+\_\+\+Attribute\+Info().
 
-\mbox{\Hypertarget{structCode__attribute_ab29373557f9cfffb736fe8d275884c70}\label{structCode__attribute_ab29373557f9cfffb736fe8d275884c70}} 
+\mbox{\Hypertarget{structCode__attribute_a24b063ad994d77688db7468fae11e7aa}\label{structCode__attribute_a24b063ad994d77688db7468fae11e7aa}} 
 \index{Code\+\_\+attribute@{Code\+\_\+attribute}!exception\+\_\+table\+\_\+length@{exception\+\_\+table\+\_\+length}}
 \index{exception\+\_\+table\+\_\+length@{exception\+\_\+table\+\_\+length}!Code\+\_\+attribute@{Code\+\_\+attribute}}
 \subsubsection{\texorpdfstring{exception\+\_\+table\+\_\+length}{exception\_table\_length}}
-{\footnotesize\ttfamily unsigned short Code\+\_\+attribute\+::exception\+\_\+table\+\_\+length}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} Code\+\_\+attribute\+::exception\+\_\+table\+\_\+length}
 
 
 
-Definido na linha 48 do ficheiro Attributes.\+h.
+Definido na linha 214 do ficheiro Basic\+Types.\+h.
 
 
 
-Referenciado por gravar\+Arquivo\+Attribute(), imprimir\+Attribute() e ler\+Attribute\+Info().
+Referenciado por exibe\+\_\+\+Attribute\+Info(), Leitor\+Exibidor\+::get\+Attribute\+Code() e print\+\_\+\+Attribute\+Info().
 
-\mbox{\Hypertarget{structCode__attribute_a5c78e8e2f4557c3f95ef4ce844e4c34f}\label{structCode__attribute_a5c78e8e2f4557c3f95ef4ce844e4c34f}} 
+\mbox{\Hypertarget{structCode__attribute_ad710ec86a1d37c6daa999383f8f2fd35}\label{structCode__attribute_ad710ec86a1d37c6daa999383f8f2fd35}} 
 \index{Code\+\_\+attribute@{Code\+\_\+attribute}!max\+\_\+locals@{max\+\_\+locals}}
 \index{max\+\_\+locals@{max\+\_\+locals}!Code\+\_\+attribute@{Code\+\_\+attribute}}
 \subsubsection{\texorpdfstring{max\+\_\+locals}{max\_locals}}
-{\footnotesize\ttfamily unsigned short Code\+\_\+attribute\+::max\+\_\+locals}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} Code\+\_\+attribute\+::max\+\_\+locals}
 
 
 
-Definido na linha 45 do ficheiro Attributes.\+h.
+Definido na linha 211 do ficheiro Basic\+Types.\+h.
 
 
 
-Referenciado por Pilha\+J\+V\+M\+::adicionar\+Frame(), gravar\+Arquivo\+Attribute(), imprimir\+Attribute(), ler\+Attribute\+Info() e Pilha\+J\+V\+M\+::\+Pilha\+J\+V\+M().
+Referenciado por exibe\+\_\+\+Attribute\+Info(), Leitor\+Exibidor\+::get\+Attribute\+Code(), Frame\+::obter\+Local\+Variable\+Value(), print\+\_\+\+Attribute\+Info(), Frame\+::size\+Local\+Variables() e Frame\+::troca\+Local\+Variable().
 
-\mbox{\Hypertarget{structCode__attribute_a79788dd1a87f20447908885db5eeb43e}\label{structCode__attribute_a79788dd1a87f20447908885db5eeb43e}} 
+\mbox{\Hypertarget{structCode__attribute_a300885ff1326f01f7c86e7b4425f0d35}\label{structCode__attribute_a300885ff1326f01f7c86e7b4425f0d35}} 
 \index{Code\+\_\+attribute@{Code\+\_\+attribute}!max\+\_\+stack@{max\+\_\+stack}}
 \index{max\+\_\+stack@{max\+\_\+stack}!Code\+\_\+attribute@{Code\+\_\+attribute}}
 \subsubsection{\texorpdfstring{max\+\_\+stack}{max\_stack}}
-{\footnotesize\ttfamily unsigned short Code\+\_\+attribute\+::max\+\_\+stack}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} Code\+\_\+attribute\+::max\+\_\+stack}
 
 
 
-Definido na linha 44 do ficheiro Attributes.\+h.
+Definido na linha 210 do ficheiro Basic\+Types.\+h.
 
 
 
-Referenciado por Pilha\+J\+V\+M\+::adicionar\+Frame(), gravar\+Arquivo\+Attribute(), imprimir\+Attribute(), ler\+Attribute\+Info() e Pilha\+J\+V\+M\+::\+Pilha\+J\+V\+M().
+Referenciado por exibe\+\_\+\+Attribute\+Info(), Leitor\+Exibidor\+::get\+Attribute\+Code() e print\+\_\+\+Attribute\+Info().
 
 
 
 A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
 \item 
-include/\hyperlink{Attributes_8h}{Attributes.\+h}\end{DoxyCompactItemize}
+include/\hyperlink{BasicTypes_8h}{Basic\+Types.\+h}\end{DoxyCompactItemize}

@@ -1,5 +1,7 @@
 <map id="Operations::iinc" name="Operations::iinc">
-<area shape="rect" id="node2" href="$classLocalVariables.html#a4abbb4a732d7dd0f11a147b79c15ae10" title="Gets element on past position by index. " alt="" coords="199,5,333,32"/>
-<area shape="rect" id="node3" href="$classOperations.html#a6906050cc72d774f77d8ba33607b1c62" title="Function that returns a n bytes value. " alt="" coords="167,56,365,83"/>
-<area shape="rect" id="node4" href="$classLocalVariables.html#a6d79e0c874931e97ed68a25cf60ab119" title="Receives the typed element and inserts on past index. " alt="" coords="199,107,333,133"/>
+<area shape="rect" id="node2" href="$classFrame.html#a6863584ef3a6f2e4b1f93fb0deb09f4b" title="Obtém o código do método a partir de um offset. " alt="" coords="196,5,312,32"/>
+<area shape="rect" id="node3" href="$classPilhaJVM.html#a13bf1c43de7819ea7761616f7a04c3b9" title="Obter a única instância da pilha. " alt="" coords="177,56,331,83"/>
+<area shape="rect" id="node4" href="$classPilhaJVM.html#aa0e43da476df6147c86c8cc3d6899718" title="Obtém o frame no topo da pilha da JVM. " alt="" coords="173,107,335,133"/>
+<area shape="rect" id="node5" href="$classFrame.html#ae074652eb3b71fb4cb28afd1ba91885d" title="Obtém o valor de uma variável local localizada no índice dado. " alt="" coords="167,158,341,199"/>
+<area shape="rect" id="node6" href="$classFrame.html#adfa57fa3049213f13beba10ba7152500" title="Modifica o valor de uma variável local. " alt="" coords="167,224,341,251"/>
 </map>

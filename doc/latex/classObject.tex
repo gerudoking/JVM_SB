@@ -1,0 +1,62 @@
+\hypertarget{classObject}{}\section{Referência à classe Object}
+\label{classObject}\index{Object@{Object}}
+
+
+n classe utilizada para todos elementos que se caracterizam como objetos, como\+: instância de classe e arrays.  
+
+
+
+
+{\ttfamily \#include $<$Object.\+h$>$}
+
+
+
+Diagrama de heranças da classe Object
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classObject__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{BasicTypes_8h_a842c5e2e69277690b064bf363c017980}{Object\+Type} \hyperlink{classObject_a08cee945bc224fc81f4448086625183d}{object\+Type} ()=0
+\begin{DoxyCompactList}\small\item\em Método utilizado para declaração do tipo de objeto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+n classe utilizada para todos elementos que se caracterizam como objetos, como\+: instância de classe e arrays. 
+
+Definido na linha 10 do ficheiro Object.\+h.
+
+
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classObject_a08cee945bc224fc81f4448086625183d}\label{classObject_a08cee945bc224fc81f4448086625183d}} 
+\index{Object@{Object}!object\+Type@{object\+Type}}
+\index{object\+Type@{object\+Type}!Object@{Object}}
+\subsubsection{\texorpdfstring{object\+Type()}{objectType()}}
+{\footnotesize\ttfamily virtual \hyperlink{BasicTypes_8h_a842c5e2e69277690b064bf363c017980}{Object\+Type} Object\+::object\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Método utilizado para declaração do tipo de objeto. 
+
+\begin{DoxyReturn}{Retorna}
+O tipo de objeto. 
+\end{DoxyReturn}
+
+
+Implementado em \hyperlink{classArrayObject_a63034d166dcd6caad9261c86c338a417}{Array\+Object}, \hyperlink{classInstanceClass_ae8570307f49cb95cc01fb8d6bda23763}{Instance\+Class} e \hyperlink{classStringObject_a7d89db7df43b17354baf5337edd636b7}{String\+Object}.
+
+
+
+Referenciado por Operations\+::checkcast(), Operations\+::getfield(), Operations\+::instanceof(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokevirtual() e Operations\+::putfield().
+
+
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Object_8h}{Object.\+h}\end{DoxyCompactItemize}

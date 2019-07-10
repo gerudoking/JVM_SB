@@ -1,12 +1,17 @@
-/*!
- * \file Heap.cpp
- * \brief
- */
+
 
 #include "Heap.h"
 
-vector<InstanceClass*> Heap::vectorInstanceClass;
+using namespace std;
 
-void Heap::adicionarInstancia(InstanceClass *instanceClass) {
-	vectorInstanceClass.push_back(instanceClass);
+Heap::Heap() {
+    
+}
+
+Heap::~Heap() {
+    
+}
+
+void Heap::addObject(Object *object) {    
+	_objectVector.push_back(object);
 }

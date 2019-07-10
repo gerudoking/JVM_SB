@@ -1,2900 +1,4964 @@
-/*!
- * \file Operations.cpp
- * \brief
- */
-
 #include "Operations.h"
 
-Frame *Operations::frame = nullptr;
-stack<struct frame_s*> *Operations::stackFrame = nullptr;
-PilhaJVM *Operations::pilhaJVM = nullptr;
-bool Operations::isWide = false;
+#include "Frame.h"
+#include "ArrayObject.h"
+#include "ClassVisao.h"
+#include "MethodArea.h"
+#include "Stringobject.h"
+#include "PilhaJVM.h"
+#include "StaticClass.h"
 
-const funcaoGenerica Operations::funcaoGenericaOpcodes[] = { &Operations::nop, &Operations::aconst_null, &Operations::iconst_m1,
-		&Operations::iconst_0, &Operations::iconst_1, &Operations::iconst_2, &Operations::iconst_3, &Operations::iconst_4,
-		&Operations::iconst_5, &Operations::lconst_0, &Operations::lconst_1, &Operations::fconst_0, &Operations::fconst_1,
-		&Operations::fconst_2, &Operations::dconst_0, &Operations::dconst_1, &Operations::bipush, &Operations::sipush, &Operations::ldc,
-		&Operations::ldc_w, &Operations::ldc2_w, &Operations::iload, &Operations::lload, &Operations::fload, &Operations::dload,
-		&Operations::aload, &Operations::iload_0, &Operations::iload_1, &Operations::iload_2, &Operations::iload_3, &Operations::lload_0,
-		&Operations::lload_1, &Operations::lload_2, &Operations::lload_3, &Operations::fload_0, &Operations::fload_1, &Operations::fload_2,
-		&Operations::fload_3, &Operations::dload_0, &Operations::dload_1, &Operations::dload_2, &Operations::dload_3, &Operations::aload_0,
-		&Operations::aload_1, &Operations::aload_2, &Operations::aload_3, &Operations::iaload, &Operations::laload, &Operations::faload,
-		&Operations::daload, &Operations::aaload, &Operations::baload, &Operations::caload, &Operations::saload, &Operations::istore,
-		&Operations::lstore, &Operations::fstore, &Operations::dstore, &Operations::astore, &Operations::istore_0, &Operations::istore_1,
-		&Operations::istore_2, &Operations::istore_3, &Operations::lstore_0, &Operations::lstore_1, &Operations::lstore_2,
-		&Operations::lstore_3, &Operations::fstore_0, &Operations::fstore_1, &Operations::fstore_2, &Operations::fstore_3,
-		&Operations::dstore_0, &Operations::dstore_1, &Operations::dstore_2, &Operations::dstore_3, &Operations::astore_0,
-		&Operations::astore_1, &Operations::astore_2, &Operations::astore_3, &Operations::iastore, &Operations::lastore,
-		&Operations::fastore, &Operations::dastore, &Operations::aastore, &Operations::bastore, &Operations::castore, &Operations::sastore,
-		&Operations::pop, &Operations::pop2, &Operations::dup, &Operations::dup_x1, &Operations::dup_x2, &Operations::dup2,
-		&Operations::dup2_x1, &Operations::dup2_x2, &Operations::swap, &Operations::iadd, &Operations::ladd, &Operations::fadd,
-		&Operations::dadd, &Operations::isub, &Operations::lsub, &Operations::fsub, &Operations::dsub, &Operations::imul, &Operations::lmul,
-		&Operations::fmul, &Operations::dmul, &Operations::idiv, &Operations::ldiv, &Operations::fdiv, &Operations::ddiv, &Operations::irem,
-		&Operations::lrem, &Operations::frem, &Operations::drem, &Operations::ineg, &Operations::lneg, &Operations::fneg, &Operations::dneg,
-		&Operations::ishl, &Operations::lshl, &Operations::ishr, &Operations::lshr, &Operations::iushr, &Operations::lushr,
-		&Operations::iand, &Operations::land, &Operations::ior, &Operations::lor, &Operations::ixor, &Operations::lxor, &Operations::iinc,
-		&Operations::i2l, &Operations::i2f, &Operations::i2d, &Operations::l2i, &Operations::l2f, &Operations::l2d, &Operations::f2i,
-		&Operations::f2l, &Operations::f2d, &Operations::d2i, &Operations::d2l, &Operations::d2f, &Operations::i2b, &Operations::i2c,
-		&Operations::i2s, &Operations::lcmp, &Operations::fcmpl, &Operations::fcmpg, &Operations::dcmpl, &Operations::dcmpg,
-		&Operations::ifeq, &Operations::ifne, &Operations::iflt, &Operations::ifge, &Operations::ifgt, &Operations::ifle,
-		&Operations::if_icmpeq, &Operations::if_icmpne, &Operations::if_icmplt, &Operations::if_icmpge, &Operations::if_icmpgt,
-		&Operations::if_icmple, &Operations::if_acmpeq, &Operations::if_acmpne, &Operations::funcgoto, &Operations::jsr,
-		&Operations::funcret, &Operations::tableswitch, &Operations::lookupswitch, &Operations::ireturn, &Operations::lreturn,
-		&Operations::freturn, &Operations::dreturn, &Operations::areturn, &Operations::func_return, &Operations::getstatic,
-		&Operations::putstatic, &Operations::getfield, &Operations::putfield, &Operations::invokevirtual, &Operations::invokespecial,
-		&Operations::invokestatic, &Operations::invokeinterface, &Operations::nop, &Operations::func_new, &Operations::newarray,
-		&Operations::anewarray, &Operations::arraylength, &Operations::athrow, &Operations::nop, &Operations::nop, &Operations::nop,
-		&Operations::nop, &Operations::wide, &Operations::multianewarray, &Operations::ifnull, &Operations::ifnonnull, &Operations::goto_w,
-		&Operations::jsr_w };
-
-Operations::Operations(struct frame_s *frame) {
-	this->frame = frame;
+Operations::Operations() : _isWide(false) {
+    initInstructions();
 }
 
-uint32_t Operations::obterNBytesValue(uint8_t n, unsigned char** pc) {
-	uint32_t value = **pc;
-	*pc += 1;
+Operations::~Operations() {
 
-	for (int i = 1; i < n; i++) {
-		value = (value << 8) | **pc;
-		*pc += 1;
-	}
-
-	return value;
 }
 
-void Operations::atualizarFrame(struct frame_s *pframe) {
-	frame = pframe;
+void Operations::executarMetodos(StaticClass *classRuntime) {
+    PilhaJVM &pilhaJVM = PilhaJVM::getInstance();
+
+    vector<Value> arguments;
+    Value commandLineArgs;
+    commandLineArgs.type = ValueType::REFERENCE;
+    commandLineArgs.data.object = new ArrayObject(ValueType::REFERENCE);
+    arguments.push_back(commandLineArgs);
+
+    pilhaJVM.addFrame(new Frame(classRuntime, "main", "([Ljava/lang/String;)V", arguments));
+
+    if (verificarMetodoExiste(classRuntime, "<clinit>", "()V")) {
+        pilhaJVM.addFrame(new Frame(classRuntime, "<clinit>", "()V", arguments));
+    }
+
+    while (pilhaJVM.size() > 0) {
+        Frame *topFrame = pilhaJVM.getTopFrame();
+        u1 *code = topFrame->getCode(topFrame->pc);
+        (*this.*funcaoGenerica[code[0]])();
+    }
 }
 
-void Operations::atualizarStackFrame(stack<struct frame_s*> *pStackFrame) {
-	stackFrame = pStackFrame;
+bool Operations::verificarMetodoExiste(StaticClass *classRuntime, string name, string descriptor) {
+    ClassFile *classFile = classRuntime->getClassFile();
+
+    bool found = false;
+    method_info method;
+    for (int i = 0; i < classFile->methods_count; i++) {
+        method = classFile->methods[i];
+        string methodName = getFormattedConstant(classFile->constant_pool, method.name_index);
+        string methodDesc = getFormattedConstant(classFile->constant_pool, method.descriptor_index);
+
+        if (methodName == name && methodDesc == descriptor) {
+            found = true;
+            break;
+        }
+    }
+
+    return found;
 }
 
-void Operations::atualizarPilhaJVM(PilhaJVM* pPilhaJVM) {
-	pilhaJVM = pPilhaJVM;
+void Operations::populateMultiarray(ArrayObject *array, ValueType valueType, stack<int> count) {
+    int currCount = count.top();
+    count.pop();
+    
+    ValueType arrayType = (count.size() > 1) ? ValueType::REFERENCE : valueType;
+    
+    if (count.size() == 0) {
+        for (int i = 0; i < currCount; i++) {
+            Value subarrayValue;
+            subarrayValue.type = valueType;
+            subarrayValue.printType = valueType;
+            subarrayValue.data.longValue = 0;
+            array->pushValue(subarrayValue);
+        }
+    } else {
+        for (int i = 0; i < currCount; i++) {
+            ArrayObject *subarray = new ArrayObject(arrayType);
+            populateMultiarray(subarray, valueType, count);
+            
+            Value subarrayValue;
+            subarrayValue.type = ValueType::REFERENCE;
+            subarrayValue.data.object = subarray;
+            array->pushValue(subarrayValue);
+        }
+    }
 }
 
-void Operations::executarOperacao(int opcode) {
-	funcaoGenericaOpcodes[opcode]();
-}
-
-// Do nothing
 void Operations::nop() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    topFrame->pc += 1;
 }
 
-// Push in the a null reference (0) to the operands stack
 void Operations::aconst_null() {
-	frame->operandsStack->empilharReferencia((int*) (nullptr));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value;
+    value.type = ValueType::REFERENCE;
+    value.data.object = NULL;
+
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Push (int) -1 to the operands stack
 void Operations::iconst_m1() {
-	frame->operandsStack->empilharInt(int(-1));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value;
+    value.printType = ValueType::INT;
+    value.type = ValueType::INT;
+    value.data.intValue = -1;
+
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Push (int) 0 to the operands stack
 void Operations::iconst_0() {
-	frame->operandsStack->empilharInt(int(0));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value;
+    value.printType = ValueType::INT;
+    value.type = ValueType::INT;
+    value.data.intValue = 0;
+
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Push (int) 1 to the operands stack
 void Operations::iconst_1() {
-	frame->operandsStack->empilharInt(int(1));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value;
+    value.printType = ValueType::INT;
+    value.type = ValueType::INT;
+    value.data.intValue = 1;
+
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Push (int) 2 to the operands stack
 void Operations::iconst_2() {
-	frame->operandsStack->empilharInt(int(2));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value;
+    value.printType = ValueType::INT;
+    value.type = ValueType::INT;
+    value.data.intValue = 2;
+
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Push (int) 3 to the operands stack
 void Operations::iconst_3() {
-	frame->operandsStack->empilharInt(int(3));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value;
+    value.printType = ValueType::INT;
+    value.type = ValueType::INT;
+    value.data.intValue = 3;
+
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Push (int) 4 to the operands stack
 void Operations::iconst_4() {
-	frame->operandsStack->empilharInt(int(4));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value;
+    value.printType = ValueType::INT;
+    value.type = ValueType::INT;
+    value.data.intValue = 4;
+
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Push (int) 5 to the operands stack
 void Operations::iconst_5() {
-	frame->operandsStack->empilharInt(int(5));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value;
+    value.printType = ValueType::INT;
+    value.type = ValueType::INT;
+    value.data.intValue = 5;
+
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Push (long) 0 to the operands stack
 void Operations::lconst_0() {
-	frame->operandsStack->empilharLong(long(0));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value padding;
+    padding.type = ValueType::PADDING;
+
+    Value value;
+    value.type = ValueType::LONG;
+    value.data.longValue = 0;
+
+    topFrame->empilharOperandStack(padding);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Push (long) 1 to the operands stack
 void Operations::lconst_1() {
-	frame->operandsStack->empilharLong(long(1));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value padding;
+    padding.type = ValueType::PADDING;
+
+    Value value;
+    value.type = ValueType::LONG;
+    value.data.longValue = 1;
+
+    topFrame->empilharOperandStack(padding);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Push (float) 0.0 to the operands stack
 void Operations::fconst_0() {
-	frame->operandsStack->empilharFloat(float(0.0));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value;
+    value.type = ValueType::FLOAT;
+    value.data.floatValue = 0;
+
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Push (float) 1.0 to the operands stack
 void Operations::fconst_1() {
-	frame->operandsStack->empilharFloat(float(1.0));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value;
+    value.type = ValueType::FLOAT;
+    value.data.floatValue = 1;
+
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Push (float) 2.0 to the operands stack
 void Operations::fconst_2() {
-	frame->operandsStack->empilharFloat(float(2.0));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value;
+    value.type = ValueType::FLOAT;
+    value.data.floatValue = 2;
+
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Push (double) 0.0 to the operands stack
 void Operations::dconst_0() {
-	frame->operandsStack->empilharDouble(double(0.0));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value padding;
+    padding.type = ValueType::PADDING;
+
+    Value value;
+    value.type = ValueType::DOUBLE;
+    value.data.doubleValue = 0;
+
+    topFrame->empilharOperandStack(padding);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Push (double) 1.0 to the operands stack
 void Operations::dconst_1() {
-	frame->operandsStack->empilharDouble(double(1.0));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value padding;
+    padding.type = ValueType::PADDING;
+
+    Value value;
+    value.type = ValueType::DOUBLE;
+    value.data.doubleValue = 1;
+
+    topFrame->empilharOperandStack(padding);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Push a byte with signal extension
 void Operations::bipush() {
-	int32_t aux;
-	int8_t byte = obterNBytesValue(1, &frame->pc);
-	aux = (int32_t) (int8_t) byte; // signal extension
-	frame->operandsStack->empilharInt(int(aux));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    u1 *code = topFrame->getCode(topFrame->pc);
+
+    u1 byte = code[1];
+
+    Value value;
+    value.printType = ValueType::BYTE;
+    value.type = ValueType::INT;
+    value.data.intValue = (int32_t) (int8_t) byte; // convertendo para inteiro e estendendo o sinal
+
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 2;
 }
 
-// Push two bytes
 void Operations::sipush() {
-	uint16_t valShort;
-	int32_t valPushShort;
-	valShort = obterNBytesValue(2, &frame->pc);
-	valPushShort = (int32_t) (int16_t) valShort;  // signal extension
-	frame->operandsStack->empilharInt(int(valPushShort));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    u1 *code = topFrame->getCode(topFrame->pc);
+
+    u1 byte1 = code[1];
+    u1 byte2 = code[2];
+
+    uint16_t shortValue = (byte1 << 8) | byte2;
+    Value value;
+    value.printType = ValueType::SHORT;
+    value.type = ValueType::INT;
+    value.data.intValue = (int32_t) (int16_t) shortValue; // convertendo para inteiro e estendendo o sinal
+
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 3;
 }
 
-// Push a value from constant pool
 void Operations::ldc() {
-	uint8_t index = obterNBytesValue(1, &frame->pc);
-	Cp_info constantPool = frame->constantPool[index];
-	if (constantPool.tag == STRING) {
-		frame->operandsStack->empilharReferencia((int*) (frame->constantPool[constantPool.info[0].u2].info[1].array));
-	} else {
-		Element element;
-		element.i = constantPool.info[0].u4;
-		if (constantPool.tag == INTEGER) {
-			frame->operandsStack->empilhar(element, TYPE_INT);
-		} else {
-			frame->operandsStack->empilhar(element, TYPE_FLOAT);
-		}
-	}
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    u1 *code = topFrame->getCode(topFrame->pc);
+    u1 index = code[1];
+    
+    cp_info *constantPool = *(topFrame->obterConstantPool());
+    cp_info entry = constantPool[index-1];
+
+    Value value;
+    
+    if (entry.tag == CONSTANT_String) {
+        cp_info utf8Entry = constantPool[entry.info.string_info.string_index-1];
+        assert(utf8Entry.tag == CONSTANT_Utf8);
+        
+        u1* bytes = utf8Entry.info.utf8_info.bytes;
+        char utf8String[utf8Entry.info.utf8_info.length+1];
+        int i;
+        for (i = 0; i < utf8Entry.info.utf8_info.length; i++) {
+            utf8String[i] = bytes[i];
+        }
+        utf8String[i] = '\0';
+        
+        value.type = ValueType::REFERENCE;
+        value.data.object = new StringObject(utf8String);
+    } else if (entry.tag == CONSTANT_Integer) {
+        value.printType = ValueType::INT;
+        value.type = ValueType::INT;
+        value.data.intValue = (int32_t) entry.info.integer_info.bytes;
+    } else if (entry.tag == CONSTANT_Float) {
+        u4 floatBytes = entry.info.float_info.bytes;
+        int s = ((floatBytes >> 31) == 0) ? 1 : -1;
+        int e = ((floatBytes >> 23) & 0xff);
+        int m = (e == 0) ? (floatBytes & 0x7fffff) << 1 : (floatBytes & 0x7fffff) | 0x800000;
+        
+        float number = s*m*pow(2, e-150);
+        value.type = ValueType::FLOAT;
+        value.data.floatValue = number;
+    } else {
+        cerr << "ldc tentando acessar um elemento da CP invalido: " << entry.tag << endl;
+        exit(1);
+    }
+    
+    topFrame->empilharOperandStack(value);
+    topFrame->pc += 2;
 }
 
-// Push a value from constant pool (ldc wide)
 void Operations::ldc_w() {
-	uint16_t index = obterNBytesValue(2, &frame->pc);
-	Cp_info constantPool = frame->constantPool[index];
-	if (constantPool.tag == STRING) {
-		frame->operandsStack->empilharReferencia((int*) (frame->constantPool[constantPool.info[0].u2].info[1].array));
-	} else {
-		frame->operandsStack->empilharInt(int(constantPool.info[0].u4));
-	}
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    u1 *code = topFrame->getCode(topFrame->pc);
+    u1 byte1 = code[1];
+    u1 byte2 = code[2];
+    u2 index = (byte1 << 8) | byte2;
+    
+    cp_info *constantPool = *(topFrame->obterConstantPool());
+    cp_info entry = constantPool[index-1];
+    
+    Value value;
+    
+    if (entry.tag == CONSTANT_String) {
+        cp_info utf8Entry = constantPool[entry.info.string_info.string_index-1];
+        assert(utf8Entry.tag == CONSTANT_Utf8);
+        
+        u1* bytes = utf8Entry.info.utf8_info.bytes;
+        char utf8String[utf8Entry.info.utf8_info.length+1];
+        int i;
+        for (i = 0; i < utf8Entry.info.utf8_info.length; i++) {
+            utf8String[i] = bytes[i];
+        }
+        utf8String[i] = '\0';
+        
+        value.type = ValueType::REFERENCE;
+        value.data.object = new StringObject(utf8String);
+    } else if (entry.tag == CONSTANT_Integer) {
+        value.printType = ValueType::INT;
+        value.type = ValueType::INT;
+        value.data.intValue = entry.info.integer_info.bytes;
+    } else if (entry.tag == CONSTANT_Float) {
+        u4 floatBytes = entry.info.float_info.bytes;
+        int s = ((floatBytes >> 31) == 0) ? 1 : -1;
+        int e = ((floatBytes >> 23) & 0xff);
+        int m = (e == 0) ? (floatBytes & 0x7fffff) << 1 : (floatBytes & 0x7fffff) | 0x800000;
+        
+        float number = s*m*pow(2, e-150);
+        value.type = ValueType::FLOAT;
+        value.data.floatValue = number;
+    } else {
+        cerr << "ldc_w tentando acessar um elemento da CP invalido: " << entry.tag << endl;
+        exit(1);
+    }
+    
+    topFrame->empilharOperandStack(value);
+    topFrame->pc += 3;
 }
 
-// Push a long or double value from constant pool
 void Operations::ldc2_w() {
-	uint8_t index = obterNBytesValue(2, &frame->pc);
-	long valPushLong;
-	double valPushDouble;
-	if (frame->constantPool[index].tag == LONG) {
-		valPushLong = converter_u4_to_long(frame->constantPool[index].info[0], frame->constantPool[index + 1].info[0]);
-		frame->operandsStack->empilharLong(long(valPushLong));
-	} else {
-		valPushDouble = converter_u4_to_double(frame->constantPool[index].info[0], frame->constantPool[index + 1].info[0]);
-		frame->operandsStack->empilharDouble(double(valPushDouble));
-	}
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    u1 *code = topFrame->getCode(topFrame->pc);
+    u1 byte1 = code[1];
+    u1 byte2 = code[2];
+    u2 index = (byte1 << 8) | byte2;
+    
+    cp_info *classFile = *(topFrame->obterConstantPool());
+    cp_info entry = classFile[index-1];
+    
+    Value value;
+    
+    if (entry.tag == CONSTANT_Long) {
+        u4 highBytes = entry.info.long_info.high_bytes;
+        u4 lowBytes = entry.info.long_info.low_bytes;
+        
+        int64_t longNumber = ((int64_t) highBytes << 32) + lowBytes;
+        value.type = ValueType::LONG;
+        value.data.longValue = longNumber;
+        
+        Value padding;
+        padding.type = ValueType::PADDING;
+        
+        topFrame->empilharOperandStack(padding);
+    } else if (entry.tag == CONSTANT_Double) {
+        u4 highBytes = entry.info.double_info.high_bytes;
+        u4 lowBytes = entry.info.double_info.low_bytes;
+        
+        int64_t longNumber = ((int64_t) highBytes << 32) + lowBytes;
+        
+        int32_t s = ((longNumber >> 63) == 0) ? 1 : -1;
+        int32_t e = (int32_t)((longNumber >> 52) & 0x7ffL);
+        int64_t m = (e == 0) ? (longNumber & 0xfffffffffffffL) << 1 : (longNumber & 0xfffffffffffffL) | 0x10000000000000L;
+        
+        double doubleNumber = s*m*pow(2, e-1075);
+        value.type = ValueType::DOUBLE;
+        value.data.doubleValue = doubleNumber;
+        
+        Value padding;
+        padding.type = ValueType::PADDING;
+        
+        topFrame->empilharOperandStack(padding);
+    } else {
+        cerr << "ldc2_w tentando acessar um elemento da CP invalido: " << entry.tag << endl;
+        exit(1);
+    }
+    
+    topFrame->empilharOperandStack(value);
+    topFrame->pc += 3;
 }
 
-// Reads an integer from the local variables and pushes it
+// Pode ser modificado pelo wide
 void Operations::iload() {
-	uint16_t index = 0;
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
 
-	if (isWide) {
-		index = obterNBytesValue(2, &frame->pc);
-		isWide = false;
-	} else {
-		index = obterNBytesValue(1, &frame->pc);
+	u1 *code = topFrame->getCode(topFrame->pc);
+	u1 byte1 = code[1]; //índice do vetor de variáveis locais
+	int16_t index = (int16_t)byte1;
+
+	if (_isWide) {
+		u1 byte2 = code[2];
+		index = (byte1 << 8) | byte2;
+		topFrame->pc += 3;
+		_isWide = false;
+	}
+	else {
+		topFrame->pc += 2;
 	}
 
-	TypedElement typedElement = frame->localVariables->get(int(index));
-	frame->operandsStack->empilharInt(int(typedElement.value.i));
+	assert(((int16_t)(topFrame->sizeLocalVariables()) > index));
+	Value value = topFrame->obterLocalVariableValue(index);
+	assert(value.type == ValueType::INT);
+
+	topFrame->empilharOperandStack(value);
 }
 
-// Reads an long from the local variables and pushes it
+// Pode ser modificado pelo wide
 void Operations::lload() {
-	uint16_t index = 0;
-	if (isWide) {
-		index = obterNBytesValue(2, &frame->pc);
-		isWide = false;
-	} else
-		index = obterNBytesValue(1, &frame->pc);
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
 
-	TypedElement typedElement = frame->localVariables->get(int(index));
-	frame->operandsStack->empilharLong(long(typedElement.value.l));
+	u1 *code = topFrame->getCode(topFrame->pc);
+	u1 byte1 = code[1]; //índice do vetor de variáveis locais
+	int16_t index = (int16_t)byte1;
+
+	if (_isWide) {
+		u1 byte2 = code[2];
+		index = (byte1 << 8) | byte2;
+		topFrame->pc += 3;
+		_isWide = false;
+	}
+	else {
+		topFrame->pc += 2;
+	}
+
+	assert(((int16_t)(topFrame->sizeLocalVariables()) > (index + 1)));
+
+	Value value = topFrame->obterLocalVariableValue(index);
+	assert(value.type == ValueType::LONG);
+
+	Value padding;
+	padding.type = ValueType::PADDING;
+
+	topFrame->empilharOperandStack(padding);
+	topFrame->empilharOperandStack(value);
 }
 
-// Reads an float from the local variables and pushes it
+// Pode ser modificado pelo wide
 void Operations::fload() {
-	uint16_t index = 0;
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
 
-	if (isWide) {
-		index = obterNBytesValue(2, &frame->pc);
-		isWide = false;
-	} else
-		index = obterNBytesValue(1, &frame->pc);
+	u1 *code = topFrame->getCode(topFrame->pc);
+	u1 byte1 = code[1]; //índice do vetor de variáveis locais
+	int16_t index = (int16_t)byte1;
 
-	TypedElement typedElement = frame->localVariables->get(int(index));
-	frame->operandsStack->empilharFloat(float(typedElement.value.f));
+	if (_isWide) {
+		u1 byte2 = code[2];
+		index = (byte1 << 8) | byte2;
+		topFrame->pc += 3;
+		_isWide = false;
+	}
+	else {
+		topFrame->pc += 2;
+	}
+
+	assert(((int16_t)(topFrame->sizeLocalVariables()) > index));
+	Value value = topFrame->obterLocalVariableValue(index);
+	assert(value.type == ValueType::FLOAT);
+	topFrame->empilharOperandStack(value);
+
 }
 
-// Reads an double from the local variables and pushes it
+// Pode ser modificado pelo wide
 void Operations::dload() {
-	uint16_t index;
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
 
-	if (isWide) {
-		index = obterNBytesValue(2, &frame->pc);
-		isWide = false;
-	} else
-		index = obterNBytesValue(1, &frame->pc);
+	u1 *code = topFrame->getCode(topFrame->pc);
+	u1 byte1 = code[1]; // índice do vetor de variáveis locais
+	int16_t index = (int16_t) byte1;
 
-	TypedElement typedElement = frame->localVariables->get(int(index));
-	frame->operandsStack->empilharDouble(double(typedElement.value.d));
+	if (_isWide) {
+		u1 byte2 = code[2];
+		index = (byte1 << 8) | byte2;
+		topFrame->pc += 3;
+		_isWide = false;
+	}
+	else {
+		topFrame->pc += 2;
+	}
+
+	assert(((int16_t)(topFrame->sizeLocalVariables()) > (index + 1)));
+
+	Value value = topFrame->obterLocalVariableValue(index);
+	assert(value.type == ValueType::DOUBLE);
+
+	Value padding;
+	padding.type = ValueType::PADDING;
+
+	topFrame->empilharOperandStack(padding);
+	topFrame->empilharOperandStack(value);
 }
 
-// Reads a reference from the local variables and pushes it
+// Pode ser modificado pelo wide
 void Operations::aload() {
-	uint16_t index = 0;
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
 
-	if (isWide) {
-		index = obterNBytesValue(2, &frame->pc);
-		isWide = false;
-	} else
-		index = obterNBytesValue(1, &frame->pc);
+	u1 *code = topFrame->getCode(topFrame->pc);
+	u1 byte1 = code[1]; // índice do vetor de variáveis locais
+	int16_t index = (int16_t) byte1;
 
-	TypedElement typedElement = frame->localVariables->get(int(index));
-	frame->operandsStack->empilharReferencia((int*) (typedElement.value.pi));
+	if (_isWide) {
+		u1 byte2 = code[2];
+		index = (byte1 << 8) | byte2;
+		topFrame->pc += 3;
+		_isWide = false;
+	}
+	else {
+		topFrame->pc += 2;
+	}
+
+	assert(((int16_t)(topFrame->sizeLocalVariables()) > index));
+	Value value = topFrame->obterLocalVariableValue(index);
+	assert(value.type == ValueType::REFERENCE);
+	topFrame->empilharOperandStack(value);
 }
 
-// Reads an integer from the local variables, in the position 0, and pushes it
 void Operations::iload_0() {
-	TypedElement typedElement = frame->localVariables->get(0);
-	frame->operandsStack->empilharInt(int(typedElement.value.i));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->obterLocalVariableValue(0);
+    assert(value.type == ValueType::INT);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Reads an integer from the local variables, in the position 1, and pushes it
 void Operations::iload_1() {
-	TypedElement typedElement = frame->localVariables->get(1);
-	frame->operandsStack->empilharInt(int(typedElement.value.i));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->obterLocalVariableValue(1);
+    assert(value.type == ValueType::INT);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Reads an integer from the local variables, in the position 2, and pushes it
 void Operations::iload_2() {
-	TypedElement typedElement = frame->localVariables->get(2);
-	frame->operandsStack->empilharInt(int(typedElement.value.i));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->obterLocalVariableValue(2);
+    assert(value.type == ValueType::INT);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Reads an integer from the local variables, in the position 3, and pushes it
 void Operations::iload_3() {
-	TypedElement typedElement = frame->localVariables->get(3);
-	frame->operandsStack->empilharInt(int(typedElement.value.i));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->obterLocalVariableValue(3);
+    assert(value.type == ValueType::INT);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Reads an long from the local variables, in the position 0, and pushes it
 void Operations::lload_0() {
-	lload_n(0);
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value;
+
+    value = topFrame->obterLocalVariableValue(1);
+    assert(value.type == ValueType::PADDING);
+    topFrame->empilharOperandStack(value);
+
+    value = topFrame->obterLocalVariableValue(0);
+    assert(value.type == ValueType::LONG);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
-// Reads an long from the local variables, in the position 1, and pushes it
 void Operations::lload_1() {
-	lload_n(1);
-}
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
 
-// LLOAD_<N>
-void Operations::lload_n(short index) {
-	TypedElement typedElement = frame->localVariables->get(index);
-	frame->operandsStack->empilharLong(long(typedElement.value.l));
+    Value value;
+
+    value = topFrame->obterLocalVariableValue(2);
+    assert(value.type == ValueType::PADDING);
+    topFrame->empilharOperandStack(value);
+
+    value = topFrame->obterLocalVariableValue(1);
+    assert(value.type == ValueType::LONG);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
 void Operations::lload_2() {
-	lload_n(2);
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value;
+
+    value = topFrame->obterLocalVariableValue(3);
+    assert(value.type == ValueType::PADDING);
+    topFrame->empilharOperandStack(value);
+
+    value = topFrame->obterLocalVariableValue(2);
+    assert(value.type == ValueType::LONG);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
 void Operations::lload_3() {
-	lload_n(3);
-}
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
 
-// FLOAD_<N>
-void Operations::fload_n(short index) {
-	TypedElement typedElement = frame->localVariables->get(index);
-	frame->operandsStack->empilharFloat(typedElement.value.f);
+    Value value;
+
+    value = topFrame->obterLocalVariableValue(4);
+    assert(value.type == ValueType::PADDING);
+    topFrame->empilharOperandStack(value);
+
+    value = topFrame->obterLocalVariableValue(3);
+    assert(value.type == ValueType::LONG);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
 void Operations::fload_0() {
-	fload_n(0);
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->obterLocalVariableValue(0);
+    assert(value.type == ValueType::FLOAT);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
 void Operations::fload_1() {
-	fload_n(1);
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->obterLocalVariableValue(1);
+    assert(value.type == ValueType::FLOAT);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
 void Operations::fload_2() {
-	fload_n(2);
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->obterLocalVariableValue(2);
+    assert(value.type == ValueType::FLOAT);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
 void Operations::fload_3() {
-	fload_n(3);
-}
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
 
-// DLOAD_<N>
-void Operations::dload_n(short index) {
-	TypedElement typedElement = frame->localVariables->get(index);
-	frame->operandsStack->empilharDouble(typedElement.value.d);
+    Value value = topFrame->obterLocalVariableValue(3);
+    assert(value.type == ValueType::FLOAT);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
 void Operations::dload_0() {
-	dload_n(0);
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value;
+
+    value = topFrame->obterLocalVariableValue(1);
+    assert(value.type == ValueType::PADDING);
+    topFrame->empilharOperandStack(value);
+
+    value = topFrame->obterLocalVariableValue(0);
+    assert(value.type == ValueType::DOUBLE);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
 void Operations::dload_1() {
-	dload_n(1);
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value;
+
+    value = topFrame->obterLocalVariableValue(2);
+    assert(value.type == ValueType::PADDING);
+    topFrame->empilharOperandStack(value);
+
+    value = topFrame->obterLocalVariableValue(1);
+    assert(value.type == ValueType::DOUBLE);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
 void Operations::dload_2() {
-	dload_n(2);
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value;
+
+    value = topFrame->obterLocalVariableValue(3);
+    assert(value.type == ValueType::PADDING);
+    topFrame->empilharOperandStack(value);
+
+    value = topFrame->obterLocalVariableValue(2);
+    assert(value.type == ValueType::DOUBLE);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
 void Operations::dload_3() {
-	dload_n(3);
-}
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
 
-// ALOAD_<N>
-void Operations::aload_n(short index) {
-	TypedElement typedElement = frame->localVariables->get(index);
-	frame->operandsStack->empilharReferencia(typedElement.value.pi);
+    Value value;
+
+    value = topFrame->obterLocalVariableValue(4);
+    assert(value.type == ValueType::PADDING);
+    topFrame->empilharOperandStack(value);
+
+    value = topFrame->obterLocalVariableValue(3);
+    assert(value.type == ValueType::DOUBLE);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
 void Operations::aload_0() {
-	aload_n(0);
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->obterLocalVariableValue(0);
+    assert(value.type == ValueType::REFERENCE);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
 void Operations::aload_1() {
-	aload_n(1);
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->obterLocalVariableValue(1);
+    assert(value.type == ValueType::REFERENCE);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
 void Operations::aload_2() {
-	aload_n(2);
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->obterLocalVariableValue(2);
+    assert(value.type == ValueType::REFERENCE);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
 void Operations::aload_3() {
-	aload_n(3);
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->obterLocalVariableValue(3);
+    assert(value.type == ValueType::REFERENCE);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
 void Operations::iaload() {
-	element_u element1, element2;
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+	ArrayObject *array;
 
-	element1 = frame->operandsStack->desempilha();
-	element2 = frame->operandsStack->desempilha();
-	int *referencia = element2.pi;
+    Value index = topFrame->desempilhaOperandStack();
+    assert(index.type == ValueType::INT);
+    Value arrayref = topFrame->desempilhaOperandStack();
+    assert(arrayref.type == ValueType::REFERENCE);
+    assert((arrayref.data.object)->objectType() == ObjectType::ARRAY);
 
-	if (referencia == nullptr)
-		throw runtime_error("Null pointer");
-	frame->operandsStack->empilharInt(referencia[element1.i]);
+    array = (ArrayObject *) arrayref.data.object;
 
+    if (array == NULL) {
+        cerr << "NullPointerException" << endl;
+        exit(1);
+    }
+    if (index.data.intValue >(signed) array->getSize() || index.data.intValue < 0) {
+        cerr << "ArrayIndexOutOfBoundsException" << endl;
+        exit(2);
+    }
+
+    topFrame->empilharOperandStack(array->getValue(index.data.intValue));
+    topFrame->pc += 1;
 }
 
 void Operations::laload() {
-	element_u element1, element2;
-	//struct typedElement_s typedElement;
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+	ArrayObject *array;
 
-	element1 = frame->operandsStack->desempilha();
-	element2 = frame->operandsStack->desempilha();
-	LocalVariables *localVariables = (LocalVariables *) element2.pi;
-	if (localVariables == nullptr)
-		throw runtime_error("Null pointer");
+    Value index = topFrame->desempilhaOperandStack();
+    assert(index.type == ValueType::INT);
+    Value arrayref = topFrame->desempilhaOperandStack();
+    assert(arrayref.type == ValueType::REFERENCE);
+    assert((arrayref.data.object)->objectType() == ObjectType::ARRAY);
 
-	frame->operandsStack->empilharTypedElement(localVariables->get(element1.i));
+    array = (ArrayObject *) arrayref.data.object;
+
+    if (array == NULL) {
+        cerr << "NullPointerException" << endl;
+        exit(1);
+    }
+    if ((signed)index.data.intValue > (signed)array->getSize() || index.data.intValue < 0) {
+        cerr << "ArrayIndexOutOfBoundsException" << endl;
+        exit(2);
+    }
+
+    Value padding;
+    padding.type = ValueType::PADDING;
+    
+    topFrame->empilharOperandStack(padding);
+    topFrame->empilharOperandStack(array->getValue(index.data.intValue));
+    topFrame->pc += 1;
 }
 
-void Operations::lstore_0() {
-	TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-	if (typedElement.type == TYPE_LONG) {
-		frame->localVariables->set(0, typedElement);
-	} else
-		printf("Operando no topo != TYPE_LONG\n");
-}
-
-void Operations::lstore() {
-	uint16_t index = 0;
-
-	if (isWide) {
-		index = obterNBytesValue(2, &frame->pc);
-		isWide = false;
-	} else
-		index = obterNBytesValue(1, &frame->pc);
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_LONG) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(index, typedElement);
-	} else
-		printf("Operando no topo != TYPE_LONG\n");
-}
-
-void Operations::istore() {
-	uint16_t index = 0;
-
-	if (isWide) {
-		index = obterNBytesValue(2, &frame->pc);
-		isWide = false;
-	} else
-		index = obterNBytesValue(1, &frame->pc);
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_INT) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(index, typedElement);
-	} else
-		printf("Operando no topo != TYPE_INT\n");
-}
-
-void Operations::fstore() {
-	uint16_t index = 0;
-
-	if (isWide) {
-		index = obterNBytesValue(2, &frame->pc);
-		isWide = false;
-	} else
-		index = obterNBytesValue(1, &frame->pc);
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_FLOAT) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(index, typedElement);
-	} else
-		printf("Operando no topo != TYPE_FLOAT\n");
-}
-
-void Operations::dstore() {
-	uint16_t index = 0;
-
-	if (isWide) {
-		index = obterNBytesValue(2, &frame->pc);
-		isWide = false;
-	} else
-		index = obterNBytesValue(1, &frame->pc);
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_DOUBLE) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(index, typedElement);
-	} else
-		printf("Operando no topo != TYPE_DOUBLE\n");
-}
-
-void Operations::astore() {
-	uint16_t index = 0;
-
-	if (isWide) {
-		index = obterNBytesValue(2, &frame->pc);
-		isWide = false;
-	} else
-		index = obterNBytesValue(1, &frame->pc);
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_REFERENCE) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(index, typedElement);
-	} else
-		printf("Operando no topo != TYPE_REFERECE\n");
-}
-
-void Operations::istore_0() {
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_INT) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(0, typedElement);
-	} else
-		printf("Operando no topo != TYPE_INT\n");
-}
-
-void Operations::istore_1() {
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_INT) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(1, typedElement);
-	} else
-		printf("Operando no topo != TYPE_INT\n");
-}
-
-void Operations::istore_2() {
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_INT) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(2, typedElement);
-	} else
-		printf("Operando no topo != TYPE_INT\n");
-}
-
-void Operations::istore_3() {
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_INT) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(3, typedElement);
-	} else
-		printf("Operando no topo != TYPE_INT\n");
-}
-
-// Read the fload value from a array and push to the operand stack
 void Operations::faload() {
-	int index = frame->operandsStack->desempilha().i;
-	LocalVariables *localVariables = (LocalVariables *) frame->operandsStack->desempilha().pi;
-	if (localVariables == NULL) {
-	}
-	frame->operandsStack->empilharTypedElement(localVariables->get(index));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+	ArrayObject *array;
+
+    Value index = topFrame->desempilhaOperandStack();
+    assert(index.type == ValueType::INT);
+    Value arrayref = topFrame->desempilhaOperandStack();
+    assert(arrayref.type == ValueType::REFERENCE);
+    assert((arrayref.data.object)->objectType() == ObjectType::ARRAY);
+
+    array = (ArrayObject *) arrayref.data.object;
+
+    if (array == NULL) {
+        cerr << "NullPointerException" << endl;
+        exit(1);
+    }
+    if (index.data.intValue > (signed)array->getSize() || index.data.intValue < 0) {
+        cerr << "ArrayIndexOutOfBoundsException" << endl;
+        exit(2);
+    }
+
+    topFrame->empilharOperandStack(array->getValue(index.data.intValue));
+    topFrame->pc += 1;
 }
 
-// Read the double value from a array and push to the operand stack
 void Operations::daload() {
-	int index = frame->operandsStack->desempilha().i;
-	LocalVariables *localVariables = (LocalVariables *) frame->operandsStack->desempilha().pi;
-	frame->operandsStack->empilharTypedElement(localVariables->get(index));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+	ArrayObject *array;
+
+    Value index = topFrame->desempilhaOperandStack();
+    assert(index.type == ValueType::INT);
+    Value arrayref = topFrame->desempilhaOperandStack();
+    assert(arrayref.type == ValueType::REFERENCE);
+    assert((arrayref.data.object)->objectType() == ObjectType::ARRAY);
+
+    array = (ArrayObject *) arrayref.data.object;
+
+    if (array == NULL) {
+        cerr << "NullPointerException" << endl;
+        exit(1);
+    }
+    if (index.data.intValue >(signed) array->getSize() || index.data.intValue < 0) {
+        cerr << "ArrayIndexOutOfBoundsException" << endl;
+        exit(2);
+    }
+
+    Value padding;
+    padding.type = ValueType::PADDING;
+    
+    topFrame->empilharOperandStack(padding);
+    topFrame->empilharOperandStack(array->getValue(index.data.intValue));
+    topFrame->pc += 1;
 }
 
-// Read a reference value from a array and push to the operand stack
 void Operations::aaload() {
-	int index = frame->operandsStack->desempilha().i;
-	LocalVariables *localVariables = (LocalVariables *) frame->operandsStack->desempilha().pi;
-	frame->operandsStack->empilharTypedElement(localVariables->get(index));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+	ArrayObject *array;
+
+    Value index = topFrame->desempilhaOperandStack();
+    assert(index.type == ValueType::INT);
+    Value arrayref = topFrame->desempilhaOperandStack();
+    assert(arrayref.type == ValueType::REFERENCE);
+    assert((arrayref.data.object)->objectType() == ObjectType::ARRAY);
+
+    array = (ArrayObject *) arrayref.data.object;
+
+    if (array == NULL) {
+        cerr << "NullPointerException" << endl;
+        exit(1);
+    }
+    if (index.data.intValue > (signed)array->getSize() || index.data.intValue < 0) {
+        cerr << "ArrayIndexOutOfBoundsException" << endl;
+        exit(2);
+    }
+
+    topFrame->empilharOperandStack(array->getValue(index.data.intValue));
+    topFrame->pc += 1;
 }
 
-// Read the boolean value from a array and push to the operand stack
 void Operations::baload() {
-	int index = frame->operandsStack->desempilha().i;
-	LocalVariables *localVariables = (LocalVariables *) frame->operandsStack->desempilha().pi;
-	frame->operandsStack->empilharTypedElement(localVariables->get(index));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+	ArrayObject *array;
+
+    Value index = topFrame->desempilhaOperandStack();
+    assert(index.type == ValueType::INT);
+    Value arrayref = topFrame->desempilhaOperandStack();
+    assert(arrayref.type == ValueType::REFERENCE);
+    assert((arrayref.data.object)->objectType() == ObjectType::ARRAY);
+
+    array = (ArrayObject *) arrayref.data.object;
+
+    if (array == NULL) {
+        cerr << "NullPointerException" << endl;
+        exit(1);
+    }
+    if (index.data.intValue > (signed)array->getSize() || index.data.intValue < 0) {
+        cerr << "ArrayIndexOutOfBoundsException" << endl;
+        exit(2);
+    }
+
+    Value value = array->getValue(index.data.intValue);
+    assert(value.type == ValueType::BOOLEAN || value.type == ValueType::BYTE);
+    
+    if (value.type == ValueType::BOOLEAN) {
+        value.data.intValue = (uint32_t) value.data.booleanValue;
+        value.printType = ValueType::BOOLEAN;
+    } else {
+        value.data.intValue = (int32_t) value.data.byteValue;
+        value.printType = ValueType::BYTE;
+    }
+    value.type = ValueType::INT;
+
+    topFrame->empilharOperandStack(value);
+    topFrame->pc += 1;
 }
 
-// Read the char value from a array and push to the operand stack
 void Operations::caload() {
-	int index = frame->operandsStack->desempilha().i;
-	vector<char> *vectorLocalVariables = (vector<char> *) frame->operandsStack->desempilha().pi;
-	frame->operandsStack->empilharInt(vectorLocalVariables->at(index));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+	ArrayObject *array;
+
+    Value index = topFrame->desempilhaOperandStack();
+    assert(index.type == ValueType::INT);
+    Value arrayref = topFrame->desempilhaOperandStack();
+    assert(arrayref.type == ValueType::REFERENCE);
+    assert((arrayref.data.object)->objectType() == ObjectType::ARRAY);
+
+    array = (ArrayObject *) arrayref.data.object;
+
+    if (array == NULL) {
+        cerr << "NullPointerException" << endl;
+        exit(1);
+    }
+    if (index.data.intValue >(signed) array->getSize() || index.data.intValue < 0) {
+        cerr << "ArrayIndexOutOfBoundsException" << endl;
+        exit(2);
+    }
+
+    Value charValue = array->getValue(index.data.intValue);
+    charValue.data.intValue = (uint32_t) charValue.data.charValue;
+    charValue.printType = ValueType::CHAR;
+    charValue.type = ValueType::INT;
+    
+    topFrame->empilharOperandStack(charValue);
+    topFrame->pc += 1;
 }
 
 void Operations::saload() {
-	int index = frame->operandsStack->desempilha().i;
-	LocalVariables *localVariables = (LocalVariables *) frame->operandsStack->desempilha().pi;
-	frame->operandsStack->empilharTypedElement(localVariables->get(index));
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+	ArrayObject *array;
+
+    Value index = topFrame->desempilhaOperandStack();
+    assert(index.type == ValueType::INT);
+    Value arrayref = topFrame->desempilhaOperandStack();
+    assert(arrayref.type == ValueType::REFERENCE);
+    assert((arrayref.data.object)->objectType() == ObjectType::ARRAY);
+
+    array = (ArrayObject *) arrayref.data.object;
+
+    if (array == NULL) {
+        cerr << "NullPointerException" << endl;
+        exit(1);
+    }
+    if (index.data.intValue > (signed)array->getSize() || index.data.intValue < 0) {
+        cerr << "ArrayIndexOutOfBoundsException" << endl;
+        exit(2);
+    }
+    
+    Value shortValue = array->getValue(index.data.intValue);
+    shortValue.data.intValue = (int32_t) shortValue.data.shortValue;
+    shortValue.printType = ValueType::SHORT;
+    shortValue.type = ValueType::INT;
+    
+    topFrame->empilharOperandStack(shortValue);
+    topFrame->pc += 1;
+}
+
+// Pode ser modificado pelo wide
+void Operations::istore() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value = topFrame->desempilhaOperandStack();
+	assert(value.type == ValueType::INT);
+
+	u1 *code = topFrame->getCode(topFrame->pc);
+	u1 byte1 = code[1]; //índice do vetor de variáveis locais
+	int16_t index = (int16_t) byte1;
+
+	if (_isWide) {
+		u1 byte2 = code[2];
+		index = (byte1 << 8) | byte2;
+		topFrame->pc += 3;
+		_isWide = false;
+	} else {
+		topFrame->pc += 2;
+	}
+
+	assert(((int16_t)(topFrame->sizeLocalVariables()) > index));
+	topFrame->trocaLocalVariable(value, index);
+}
+
+// Pode ser modificado pelo wide
+void Operations::lstore() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value = topFrame->desempilhaOperandStack();
+	assert(value.type == ValueType::LONG);
+	topFrame->desempilhaOperandStack(); //padding
+
+	u1 *code = topFrame->getCode(topFrame->pc);
+	u1 byte1 = code[1]; //índice do vetor de variáveis locais
+	int16_t index = (int16_t)byte1;
+
+	if (_isWide) {
+		u1 byte2 = code[2];
+		index = (byte1 << 8) | byte2;
+		topFrame->pc += 3;
+		_isWide = false;
+	} else {
+		topFrame->pc += 2;
+	}
+
+	assert(((int16_t)(topFrame->sizeLocalVariables()) > (index + 1)));
+	topFrame->trocaLocalVariable(value, index);
+	Value padding;
+	padding.type = ValueType::PADDING;
+	topFrame->trocaLocalVariable(padding, index + 1);
+}
+
+// Pode ser modificado pelo wide
+void Operations::fstore() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value = topFrame->desempilhaOperandStack();
+	assert(value.type == ValueType::FLOAT);
+
+	u1 *code = topFrame->getCode(topFrame->pc);
+	u1 byte1 = code[1]; //índice do vetor de variáveis locais
+	int16_t index = (int16_t)byte1;
+
+	if (_isWide) {
+		u1 byte2 = code[2];
+		index = (byte1 << 8) | byte2;
+		topFrame->pc += 3;
+		_isWide = false;
+	} else {
+		topFrame->pc += 2;
+	}
+
+	assert(((int16_t)(topFrame->sizeLocalVariables()) > index));
+	topFrame->trocaLocalVariable(value, index);
+}
+
+// Pode ser modificado pelo wide
+void Operations::dstore() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value = topFrame->desempilhaOperandStack();
+	assert(value.type == ValueType::DOUBLE);
+	topFrame->desempilhaOperandStack(); //padding
+
+	u1 *code = topFrame->getCode(topFrame->pc);
+	u1 byte1 = code[1]; //índice do vetor de variáveis locais
+	int16_t index = (int16_t)byte1;
+
+	if (_isWide) {
+		u1 byte2 = code[2];
+		index = (byte1 << 8) | byte2;
+		topFrame->pc += 3;
+		_isWide = false;
+	} else {
+		topFrame->pc += 2;
+	}
+
+	assert(((int16_t)(topFrame->sizeLocalVariables()) > (index + 1)));
+	topFrame->trocaLocalVariable(value, index);
+	Value padding;
+	padding.type = ValueType::PADDING;
+	topFrame->trocaLocalVariable(padding, index + 1);
+}
+
+// Pode ser modificado pelo wide
+void Operations::astore() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value = topFrame->desempilhaOperandStack();
+	assert(value.type == ValueType::REFERENCE);
+
+	u1 *code = topFrame->getCode(topFrame->pc);
+	u1 byte1 = code[1]; //índice do vetor de variáveis locais
+	int16_t index = (int16_t)byte1;
+
+	if (_isWide) {
+		u1 byte2 = code[2];
+		index = (byte1 << 8) | byte2;
+		topFrame->pc += 3;
+		_isWide = false;
+	} else {
+		topFrame->pc += 2;
+	}
+
+	assert(((int16_t)(topFrame->sizeLocalVariables()) > index));
+	topFrame->trocaLocalVariable(value, index);
+}
+
+void Operations::istore_0() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::INT);
+    topFrame->trocaLocalVariable(value, 0);
+
+    topFrame->pc += 1;
+}
+
+void Operations::istore_1() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::INT);
+    topFrame->trocaLocalVariable(value, 1);
+
+    topFrame->pc += 1;
+}
+
+void Operations::istore_2() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::INT);
+    topFrame->trocaLocalVariable(value, 2);
+
+    topFrame->pc += 1;
+}
+
+void Operations::istore_3() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::INT);
+    topFrame->trocaLocalVariable(value, 3);
+
+    topFrame->pc += 1;
+}
+
+void Operations::lstore_0() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::LONG);
+    topFrame->trocaLocalVariable(value, 0);
+
+    value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::PADDING);
+    topFrame->trocaLocalVariable(value, 1);
+
+    topFrame->pc += 1;
 }
 
 void Operations::lstore_1() {
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_LONG) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(1, typedElement);
-	} else
-		printf("Operando no topo != TYPE_LONG\n");
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::LONG);
+    topFrame->trocaLocalVariable(value, 1);
+
+    value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::PADDING);
+    topFrame->trocaLocalVariable(value, 2);
+
+    topFrame->pc += 1;
 }
 
 void Operations::lstore_2() {
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_LONG) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(2, typedElement);
-	} else
-		printf("Operando no topo != TYPE_LONG\n");
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::LONG);
+    topFrame->trocaLocalVariable(value, 2);
+
+    value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::PADDING);
+    topFrame->trocaLocalVariable(value, 3);
+
+    topFrame->pc += 1;
 }
 
 void Operations::lstore_3() {
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_LONG) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(3, typedElement);
-	} else
-		printf("Operando no topo != TYPE_LONG\n");
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::LONG);
+    topFrame->trocaLocalVariable(value, 3);
+
+    value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::PADDING);
+    topFrame->trocaLocalVariable(value, 4);
+
+    topFrame->pc += 1;
 }
 
 void Operations::fstore_0() {
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_FLOAT) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(0, typedElement);
-	} else
-		printf("Operando no topo != TYPE_FLOAT\n");
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::FLOAT);
+    topFrame->trocaLocalVariable(value, 0);
+
+    topFrame->pc += 1;
 }
 
 void Operations::fstore_1() {
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_FLOAT) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(1, typedElement);
-	} else
-		printf("Operando no topo != TYPE_FLOAT\n");
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::FLOAT);
+    topFrame->trocaLocalVariable(value, 1);
+
+    topFrame->pc += 1;
 }
 
 void Operations::fstore_2() {
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_FLOAT) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(2, typedElement);
-	} else
-		printf("Operando no topo != TYPE_FLOAT\n");
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::FLOAT);
+    topFrame->trocaLocalVariable(value, 2);
+
+    topFrame->pc += 1;
 }
 
 void Operations::fstore_3() {
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_FLOAT) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(3, typedElement);
-	} else
-		printf("Operando no topo != TYPE_FLOAT\n");
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::FLOAT);
+    topFrame->trocaLocalVariable(value, 3);
+
+    topFrame->pc += 1;
 }
 
 void Operations::dstore_0() {
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_DOUBLE) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(0, typedElement);
-	} else
-		printf("Operando no topo != TYPE_DOUBLE\n");
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::DOUBLE);
+    topFrame->trocaLocalVariable(value, 0);
+
+    value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::PADDING);
+    topFrame->trocaLocalVariable(value, 1);
+
+    topFrame->pc += 1;
 }
 
 void Operations::dstore_1() {
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_DOUBLE) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(1, typedElement);
-	} else
-		printf("Operando no topo != TYPE_DOUBLE\n");
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::DOUBLE);
+    topFrame->trocaLocalVariable(value, 1);
+
+    value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::PADDING);
+    topFrame->trocaLocalVariable(value, 2);
+
+    topFrame->pc += 1;
 }
 
 void Operations::dstore_2() {
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_DOUBLE) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(2, typedElement);
-	} else
-		printf("Operando no topo != TYPE_DOUBLE\n");
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::DOUBLE);
+    topFrame->trocaLocalVariable(value, 2);
+
+    value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::PADDING);
+    topFrame->trocaLocalVariable(value, 3);
+
+    topFrame->pc += 1;
 }
 
 void Operations::dstore_3() {
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_DOUBLE) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(3, typedElement);
-	} else
-		printf("Operando no topo != TYPE_DOUBLE\n");
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::DOUBLE);
+    topFrame->trocaLocalVariable(value, 3);
+
+    value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::PADDING);
+    topFrame->trocaLocalVariable(value, 4);
+
+    topFrame->pc += 1;
 }
 
 void Operations::astore_0() {
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_REFERENCE) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(0, typedElement);
-	} else
-		printf("Operando no topo != TYPE_REFERENCE\n");
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::REFERENCE);
+    topFrame->trocaLocalVariable(value, 0);
+
+    topFrame->pc += 1;
 }
 
 void Operations::astore_1() {
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_REFERENCE) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(1, typedElement);
-	} else
-		printf("Operando no topo != TYPE_REFERENCE\n");
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::REFERENCE);
+    topFrame->trocaLocalVariable(value, 1);
+
+    topFrame->pc += 1;
 }
 
 void Operations::astore_2() {
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_REFERENCE) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(2, typedElement);
-	} else
-		printf("Operando no topo != TYPE_REFERENCE\n");
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::REFERENCE);
+    topFrame->trocaLocalVariable(value, 2);
+
+    topFrame->pc += 1;
 }
 
 void Operations::astore_3() {
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_REFERENCE) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		frame->localVariables->set(3, typedElement);
-	} else
-		printf("Operando no topo != TYPE_REFERENCE\n");
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::REFERENCE);
+    topFrame->trocaLocalVariable(value, 3);
+
+    topFrame->pc += 1;
 }
 
 void Operations::iastore() {
-	Element valorElement = frame->operandsStack->desempilha();
-	Element indiceElement = frame->operandsStack->desempilha();
-	int *vetor = frame->operandsStack->desempilha().pi;
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+	ArrayObject *array;
 
-	if (vetor == nullptr)
-		throw runtime_error("NullPointerException");
-	vetor[indiceElement.i] = valorElement.i;
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::INT);
+    Value index = topFrame->desempilhaOperandStack();
+    assert(index.type == ValueType::INT);
+    Value arrayref = topFrame->desempilhaOperandStack();
+    assert(arrayref.type == ValueType::REFERENCE);
+    assert((arrayref.data.object)->objectType() == ObjectType::ARRAY);
+
+    array = (ArrayObject *) arrayref.data.object;
+
+    if (array == NULL) {
+        cerr << "NullPointerException" << endl;
+        exit(1);
+    }
+    if (index.data.intValue >= (signed)array->getSize() || index.data.intValue < 0) {
+        cerr << "ArrayIndexOutOfBoundsException" << endl;
+        exit(2);
+    }
+
+    value.printType = ValueType::INT;
+    
+    assert(value.type == array->arrayContentType());
+    array->changeValueAt(index.data.intValue, value);
+    
+    topFrame->pc += 1;
 }
 
-// Stores a double in the operands stack as a array element
 void Operations::lastore() {
-	Element valorElement = frame->operandsStack->desempilha();
-	Element indiceElement = frame->operandsStack->desempilha();
-	LocalVariables *localVariables = (LocalVariables *) frame->operandsStack->desempilha().pi;
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+	ArrayObject *array;
 
-	if (localVariables == nullptr)
-		throw runtime_error("NullPointerException");
-	TypedElement typedElement;
-	typedElement.value.l = valorElement.l;
-	typedElement.type = TYPE_LONG;
-	typedElement.realType = RT_LONG;
-	localVariables->set(indiceElement.i, typedElement);
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::LONG);
+    Value padding = topFrame->desempilhaOperandStack();
+    assert(padding.type == ValueType::PADDING);
+    Value index = topFrame->desempilhaOperandStack();
+    assert(index.type == ValueType::INT);
+    Value arrayref = topFrame->desempilhaOperandStack();
+    assert(arrayref.type == ValueType::REFERENCE);
+    assert((arrayref.data.object)->objectType() == ObjectType::ARRAY);
+
+    array = (ArrayObject *) arrayref.data.object;
+
+    if (array == NULL) {
+        cerr << "NullPointerException" << endl;
+        exit(1);
+    }
+    if (index.data.intValue >= (signed)array->getSize() || index.data.intValue < 0) {
+        cerr << "ArrayIndexOutOfBoundsException" << endl;
+        exit(2);
+    }
+
+    assert(value.type == array->arrayContentType());
+    array->changeValueAt(index.data.intValue, value);
+
+    topFrame->pc += 1;
 }
 
-// Stores a float in the operands stack as a array element
 void Operations::fastore() {
-	Element valorElement = frame->operandsStack->desempilha();
-	Element indiceElement = frame->operandsStack->desempilha();
-	LocalVariables *localVariables = (LocalVariables *) frame->operandsStack->desempilha().pi;
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+	ArrayObject *array;
 
-	if (localVariables == nullptr)
-		throw runtime_error("NullPointerException");
-	TypedElement typedElement;
-	typedElement.value.f = valorElement.f;
-	typedElement.type = TYPE_FLOAT;
-	typedElement.realType = RT_FLOAT;
-	localVariables->set(indiceElement.i, typedElement);
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::FLOAT);
+    Value index = topFrame->desempilhaOperandStack();
+    assert(index.type == ValueType::INT);
+    Value arrayref = topFrame->desempilhaOperandStack();
+    assert(arrayref.type == ValueType::REFERENCE);
+    assert((arrayref.data.object)->objectType() == ObjectType::ARRAY);
+
+    array = (ArrayObject *) arrayref.data.object;
+
+    if (array == NULL) {
+        cerr << "NullPointerException" << endl;
+        exit(1);
+    }
+    if (index.data.intValue >= (signed)array->getSize() || index.data.intValue < 0) {
+        cerr << "ArrayIndexOutOfBoundsException" << endl;
+        exit(2);
+    }
+
+    assert(value.type == array->arrayContentType());
+    array->changeValueAt(index.data.intValue, value);
+	
+    topFrame->pc += 1;
 }
 
-// Stores a double in the operands stack as a array element
 void Operations::dastore() {
-	Element valorElement = frame->operandsStack->desempilha();
-	Element indiceElement = frame->operandsStack->desempilha();
-	LocalVariables *localVariables = (LocalVariables *) frame->operandsStack->desempilha().pi;
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+	ArrayObject *array;
 
-	if (localVariables == nullptr)
-		throw runtime_error("NullPointerException");
-	TypedElement typedElement;
-	typedElement.value.d = valorElement.d;
-	typedElement.type = TYPE_DOUBLE;
-	typedElement.realType = RT_DOUBLE;
-	localVariables->set(indiceElement.i, typedElement);
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::DOUBLE);
+    Value padding = topFrame->desempilhaOperandStack();
+    assert(padding.type == ValueType::PADDING);
+    Value index = topFrame->desempilhaOperandStack();
+    assert(index.type == ValueType::INT);
+    Value arrayref = topFrame->desempilhaOperandStack();
+    assert(arrayref.type == ValueType::REFERENCE);
+    assert((arrayref.data.object)->objectType() == ObjectType::ARRAY);
+
+    array = (ArrayObject *) arrayref.data.object;
+
+    if (array == NULL) {
+        cerr << "NullPointerException" << endl;
+        exit(1);
+    }
+    if (index.data.intValue >=(signed) array->getSize() || index.data.intValue < 0) {
+        cerr << "ArrayIndexOutOfBoundsException" << endl;
+        exit(2);
+    }
+
+    assert(value.type == array->arrayContentType());
+    array->changeValueAt(index.data.intValue, value);
+	
+    topFrame->pc += 1;
 }
 
-// Stores a reference in the operands stack as a array element
 void Operations::aastore() {
-	Element valorElement = frame->operandsStack->desempilha();
-	Element indiceElement = frame->operandsStack->desempilha();
-	LocalVariables *localVariables = (LocalVariables *) frame->operandsStack->desempilha().pi;
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+	ArrayObject *array;
 
-	if (localVariables == nullptr)
-		throw runtime_error("NullPointerException");
-	TypedElement typedElement;
-	typedElement.value.pi = valorElement.pi;
-	typedElement.type = TYPE_REFERENCE;
-	typedElement.realType = RT_REFERENCE;
-	localVariables->set(indiceElement.i, typedElement);
+	Value value = topFrame->desempilhaOperandStack(); // Valor armazenado no index do array
+	assert(value.type == ValueType::REFERENCE);
+    Value index = topFrame->desempilhaOperandStack(); // Index do arary
+    assert(index.type == ValueType::INT);
+    Value arrayref = topFrame->desempilhaOperandStack(); // Referência ao array
+    assert(arrayref.type == ValueType::REFERENCE);
+    assert((arrayref.data.object)->objectType() == ObjectType::ARRAY);
+
+    array = (ArrayObject *) arrayref.data.object;
+
+    if (array == NULL) {
+        cerr << "NullPointerException" << endl;
+        exit(1);
+    }
+    if (index.data.intValue >= (signed)array->getSize() || index.data.intValue < 0) {
+        cerr << "ArrayIndexOutOfBoundsException" << endl;
+        exit(2);
+    }
+
+	array->changeValueAt(index.data.intValue, value);
+    
+    topFrame->pc += 1;
 }
 
-// Stores a byte in the operands stack as a array element
 void Operations::bastore() {
-	Element valorElement = frame->operandsStack->desempilha();
-	Element indiceElement = frame->operandsStack->desempilha();
-	LocalVariables *localVariables = (LocalVariables *) frame->operandsStack->desempilha().pi;
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+	ArrayObject *array;
 
-	if (localVariables == nullptr)
-		throw runtime_error("NullPointerException");
-	TypedElement typedElement;
-	typedElement.value.i = valorElement.i;
-	typedElement.type = TYPE_INT;
-	typedElement.realType = RT_BOOL;
-	localVariables->set(indiceElement.i, typedElement);
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::INT);
+    Value index = topFrame->desempilhaOperandStack();
+    assert(index.type == ValueType::INT);
+    Value arrayref = topFrame->desempilhaOperandStack();
+    assert(arrayref.type == ValueType::REFERENCE);
+    assert((arrayref.data.object)->objectType() == ObjectType::ARRAY);
+
+    array = (ArrayObject *) arrayref.data.object;
+    assert(array->arrayContentType() == ValueType::BOOLEAN || array->arrayContentType() == ValueType::BYTE);
+
+    if (array == NULL) {
+        cerr << "NullPointerException" << endl;
+        exit(1);
+    }
+    if (index.data.intValue > (signed)array->getSize() || index.data.intValue < 0) {
+        cerr << "ArrayIndexOutOfBoundsException" << endl;
+        exit(2);
+    }
+
+    if (array->arrayContentType() == ValueType::BOOLEAN) {
+        value.data.booleanValue = (value.data.intValue != 0) ? true : false;
+        value.type = ValueType::BOOLEAN;
+        value.printType = ValueType::BOOLEAN;
+    } else {
+        value.data.byteValue = (uint8_t) value.data.intValue;
+        value.type = ValueType::BYTE;
+        value.printType = ValueType::BYTE;
+    }
+    
+    array->changeValueAt(index.data.intValue, value);
+	
+    topFrame->pc += 1;
 }
 
-// Stores a char in the operands stack as a array element
 void Operations::castore() {
-	Element valorElement = frame->operandsStack->desempilha();
-	Element indiceElement = frame->operandsStack->desempilha();
-	vector<uint8_t> *vetorLocalVariables = (vector<uint8_t> *) frame->operandsStack->desempilha().pi;
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+	ArrayObject *array;
 
-	if (vetorLocalVariables == nullptr)
-		throw runtime_error("NullPointerException");
-	vetorLocalVariables->at(indiceElement.i) = valorElement.bs;
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::INT);
+    Value index = topFrame->desempilhaOperandStack();
+    assert(index.type == ValueType::INT);
+    Value arrayref = topFrame->desempilhaOperandStack();
+    assert(arrayref.type == ValueType::REFERENCE);
+    assert((arrayref.data.object)->objectType() == ObjectType::ARRAY);
+
+    array = (ArrayObject *) arrayref.data.object;
+
+    if (array == NULL) {
+        cerr << "NullPointerException" << endl;
+        exit(1);
+    }
+    if (index.data.intValue > (signed)array->getSize() || index.data.intValue < 0) {
+        cerr << "ArrayIndexOutOfBoundsException" << endl;
+        exit(2);
+    }
+
+    value.data.charValue = (uint8_t) value.data.intValue;
+    value.printType = ValueType::CHAR;
+    value.type = ValueType::CHAR;
+    array->changeValueAt(index.data.intValue, value);
+	
+    topFrame->pc += 1;
 }
 
-// Stores a short in the operands stack as a array element
 void Operations::sastore() {
-	Element valorElement = frame->operandsStack->desempilha();
-	Element indiceElement = frame->operandsStack->desempilha();
-	LocalVariables *localVariables = (LocalVariables *) frame->operandsStack->desempilha().pi;
-
-	if (localVariables == nullptr)
-		throw runtime_error("NullPointerException");
-	TypedElement typedElement;
-	typedElement.value.i = valorElement.i;
-	typedElement.type = TYPE_INT;
-	typedElement.realType = RT_SHORT;
-	localVariables->set(indiceElement.i, typedElement);
-}
-
-void Operations::iadd() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_INT) {
-		element2 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um inteiro!");
-	}
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_INT) {
-		element1 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um inteiro!");
-	}
-
-	typedElement.type = TYPE_INT;
-	typedElement.realType = RT_INT;
-	typedElement.value.i = element1.i + element2.i;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::ladd() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_LONG) {
-		element2 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um long!");
-	}
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_LONG) {
-		element1 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um long!");
-	}
-
-	typedElement.type = TYPE_LONG;
-	typedElement.realType = RT_LONG;
-	typedElement.value.l = element1.l + element2.l;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::fadd() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_FLOAT) {
-		element2 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um float!");
-	}
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_FLOAT) {
-		element1 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um float!");
-	}
-
-	typedElement.type = TYPE_FLOAT;
-	typedElement.realType = RT_FLOAT;
-	typedElement.value.f = element1.f + element2.f;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::dadd() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_DOUBLE) {
-		element2 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um double!");
-	}
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_DOUBLE) {
-		element1 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um double!");
-	}
-
-	typedElement.type = TYPE_DOUBLE;
-	typedElement.realType = RT_DOUBLE;
-	typedElement.value.d = element1.d + element2.d;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::isub() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_INT) {
-		element2 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um inteiro!");
-	}
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_INT) {
-		element1 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um inteiro!");
-	}
-
-	typedElement.type = TYPE_INT;
-	typedElement.realType = RT_INT;
-	typedElement.value.i = element1.i - element2.i;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::lsub() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_LONG) {
-		element2 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um long!");
-	}
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_LONG) {
-		element1 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um long!");
-	}
-
-	typedElement.type = TYPE_LONG;
-	typedElement.realType = RT_LONG;
-	typedElement.value.l = element1.l - element2.l;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::fsub() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_FLOAT) {
-		element2 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um float!");
-	}
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_FLOAT) {
-		element1 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um float!");
-	}
-
-	typedElement.type = TYPE_FLOAT;
-	typedElement.realType = RT_FLOAT;
-	typedElement.value.f = element1.f - element2.f;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::dsub() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_DOUBLE) {
-		element2 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um double!");
-	}
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_DOUBLE) {
-		element1 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um double!");
-	}
-
-	typedElement.type = TYPE_DOUBLE;
-	typedElement.realType = RT_DOUBLE;
-	typedElement.value.d = element1.d - element2.d;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::imul() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_INT) {
-		element2 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um inteiro!");
-	}
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_INT) {
-		element1 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um inteiro!");
-	}
-
-	typedElement.type = TYPE_INT;
-	typedElement.realType = RT_INT;
-	typedElement.value.i = element1.i * element2.i;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::lmul() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_LONG) {
-		element2 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um long!");
-	}
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_LONG) {
-		element1 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um long!");
-	}
-
-	typedElement.type = TYPE_LONG;
-	typedElement.realType = RT_LONG;
-	typedElement.value.l = element1.l * element2.l;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::fmul() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_FLOAT) {
-		element2 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um float!");
-	}
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_FLOAT) {
-		element1 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um float!");
-	}
-
-	typedElement.type = TYPE_FLOAT;
-	typedElement.realType = RT_FLOAT;
-	typedElement.value.f = element1.f * element2.f;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::dmul() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_DOUBLE) {
-		element2 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um double!");
-	}
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_DOUBLE) {
-		element1 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um double!");
-	}
-
-	typedElement.type = TYPE_DOUBLE;
-	typedElement.realType = RT_DOUBLE;
-	typedElement.value.d = element1.d * element2.d;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::idiv() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_INT) {
-		element2 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um inteiro!");
-	}
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_INT) {
-		element1 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um inteiro!");
-	}
-
-	typedElement.type = TYPE_INT;
-	typedElement.realType = RT_INT;
-	typedElement.value.i = element1.i / element2.i;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::ldiv() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_LONG) {
-		element2 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um long!");
-	}
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_LONG) {
-		element1 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um long!");
-	}
-
-	typedElement.type = TYPE_LONG;
-	typedElement.realType = RT_LONG;
-	typedElement.value.l = element1.l / element2.l;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::fdiv() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_FLOAT) {
-		element2 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um float!");
-	}
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_FLOAT) {
-		element1 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um float!");
-	}
-
-	typedElement.type = TYPE_FLOAT;
-	typedElement.realType = RT_FLOAT;
-	typedElement.value.f = element1.f / element2.f;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::ddiv() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_DOUBLE) {
-		element2 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um double!");
-	}
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_DOUBLE) {
-		element1 = frame->operandsStack->desempilha();
-	} else {
-		throw runtime_error("Elemento lido nao era um double!");
-	}
-
-	typedElement.type = TYPE_DOUBLE;
-	typedElement.realType = RT_DOUBLE;
-	typedElement.value.d = element1.d / element2.d;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::irem() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	element2 = frame->operandsStack->desempilha();
-	if (element2.i == 0) {
-		throw runtime_error("Arithmetic Exeption: divisao por z    ");
-	}
-
-	element1 = frame->operandsStack->desempilha();
-
-	typedElement.type = TYPE_INT;
-	typedElement.realType = RT_INT;
-	typedElement.value.i = element1.i - int(element1.i / element2.i) * element2.i;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::lrem() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	element2 = frame->operandsStack->desempilha();
-	if (element2.l == 0) {
-		throw runtime_error("Arithmetic Exeption: divisao por zero.");
-	}
-
-	element1 = frame->operandsStack->desempilha();
-
-	typedElement.type = TYPE_LONG;
-	typedElement.realType = RT_LONG;
-	typedElement.value.l = element1.l - int(element1.l / element2.l) * element2.l;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::frem() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	element2 = frame->operandsStack->desempilha();
-	element1 = frame->operandsStack->desempilha();
-
-	if (verificarFloat(element1.f) == 3 || verificarFloat(element2.f) == 3) {
-		typedElement.value.i = Float_NaN;
-	} else if (verificarFloat(element1.f) == 1 || verificarFloat(element1.f) == 2 || element2.f == 0.0) {
-		typedElement.value.i = Float_NaN;
-	} else if (verificarFloat(element1.f) == 0 && (verificarFloat(element2.f) == 1 || verificarFloat(element2.f) == 2)) {
-		typedElement.value.f = element1.f;
-	} else if (element1.f == 0.0 && verificarFloat(element2.f) == 0) {
-		typedElement.value.f = 0.0;
-	} else {
-		typedElement.value.f = fmod(element1.f, element2.f);
-	}
-
-	typedElement.type = TYPE_FLOAT;
-	typedElement.realType = RT_FLOAT;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::drem() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	element2 = frame->operandsStack->desempilha();
-	element1 = frame->operandsStack->desempilha();
-
-	if (verificarDouble(element1.d) == 3 || verificarDouble(element2.d) == 3) {
-		typedElement.value.l = Double_NaN;
-	} else if (verificarDouble(element1.d) == 1 || verificarDouble(element1.d) == 2 || element2.d == double(0.0)) {
-		typedElement.value.l = Double_NaN;
-	} else if (verificarDouble(element1.d) == 0 && (verificarDouble(element2.d) == 1 || verificarDouble(element2.d) == 2)) {
-		typedElement.value.d = element1.d;
-	} else if (element1.d == 0.0 && verificarDouble(element2.d) == 0) {
-		typedElement.value.d = 0.0;
-	} else {
-		typedElement.value.d = fmod(element1.d, element2.d);
-	}
-
-	typedElement.type = TYPE_DOUBLE;
-	typedElement.realType = RT_DOUBLE;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::ineg() {
-	element_u value;
-	struct typedElement_s typedElement;
-
-	value = frame->operandsStack->desempilha();
-
-	typedElement.type = TYPE_INT;
-	typedElement.realType = RT_INT;
-	typedElement.value.is = 0 - value.is;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::lneg() {
-	element_u value;
-	struct typedElement_s typedElement;
-
-	value = frame->operandsStack->desempilha();
-
-	typedElement.type = TYPE_LONG;
-	typedElement.realType = RT_LONG;
-	typedElement.value.ls = 0 - value.ls;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::fneg() {
-	element_u value;
-	struct typedElement_s typedElement;
-
-	value = frame->operandsStack->desempilha();
-
-	typedElement.type = TYPE_FLOAT;
-	typedElement.realType = RT_FLOAT;
-	//inverte o bit 31
-	typedElement.value.i = value.i + 0x80000000;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::dneg() {
-	element_u value;
-	struct typedElement_s typedElement;
-
-	value = frame->operandsStack->desempilha();
-
-	typedElement.type = TYPE_DOUBLE;
-	typedElement.realType = RT_DOUBLE;
-	//inverte o bit 63
-	typedElement.value.l = value.l + 0x8000000000000000;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::ishl() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	element2 = frame->operandsStack->desempilha();
-	element1 = frame->operandsStack->desempilha();
-
-	typedElement.type = TYPE_INT;
-	typedElement.realType = RT_INT;
-	typedElement.value.i = element1.i << (element2.i & 0b011111);
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::lshl() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	element2 = frame->operandsStack->desempilha();
-	element1 = frame->operandsStack->desempilha();
-
-	typedElement.type = TYPE_LONG;
-	typedElement.realType = RT_LONG;
-	typedElement.value.l = element1.l << (element2.i & 0b0111111);
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::ishr() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	element2 = frame->operandsStack->desempilha();
-	element1 = frame->operandsStack->desempilha();
-
-	typedElement.type = TYPE_INT;
-	typedElement.realType = RT_INT;
-	typedElement.value.is = element1.is >> (element2.i & 0b011111);
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::lshr() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	element2 = frame->operandsStack->desempilha();
-	element1 = frame->operandsStack->desempilha();
-
-	typedElement.type = TYPE_LONG;
-	typedElement.realType = RT_LONG;
-	typedElement.value.ls = element1.ls >> (element2.i & 0b0111111);
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::iushr() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	element2 = frame->operandsStack->desempilha();
-	element1 = frame->operandsStack->desempilha();
-
-	typedElement.type = TYPE_INT;
-	typedElement.realType = RT_INT;
-	typedElement.value.i = element1.i >> (element2.i & 0b011111);
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::lushr() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	element2 = frame->operandsStack->desempilha();
-	element1 = frame->operandsStack->desempilha();
-
-	typedElement.type = TYPE_LONG;
-	typedElement.realType = RT_LONG;
-	typedElement.value.l = element1.l >> (element2.i & 0b0111111);
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::iand() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	element2 = frame->operandsStack->desempilha();
-	element1 = frame->operandsStack->desempilha();
-
-	typedElement.type = TYPE_INT;
-	typedElement.realType = RT_INT;
-	typedElement.value.i = element1.i & element2.i;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::land() {
-	element_u element1, element2;
-	struct typedElement_s typedElement;
-
-	element2 = frame->operandsStack->desempilha();
-	element1 = frame->operandsStack->desempilha();
-
-	typedElement.type = TYPE_LONG;
-	typedElement.realType = RT_LONG;
-	typedElement.value.l = element1.l & element2.l;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::ior() {
-	Element element1 = frame->operandsStack->desempilha();
-	Element element2 = frame->operandsStack->desempilha();
-	element1.i |= element2.i;
-	frame->operandsStack->empilhar(element1, TYPE_INT);
-}
-
-void Operations::lor() {
-	Element element1 = frame->operandsStack->desempilha();
-	Element element2 = frame->operandsStack->desempilha();
-	element1.l |= element2.l;
-	frame->operandsStack->empilhar(element1, TYPE_LONG);
-}
-
-void Operations::ixor() {
-	Element element1 = frame->operandsStack->desempilha();
-	Element element2 = frame->operandsStack->desempilha();
-	element1.i ^= element2.i;
-	frame->operandsStack->empilhar(element1, TYPE_INT);
-}
-
-void Operations::lxor() {
-	Element element1 = frame->operandsStack->desempilha();
-	Element element2 = frame->operandsStack->desempilha();
-	element1.l ^= element2.l;
-	frame->operandsStack->empilhar(element1, TYPE_LONG);
-}
-
-void Operations::iinc() {
-	uint16_t var;
-	int16_t n;
-	if (isWide) {
-		var = obterNBytesValue(2, &frame->pc);
-		n = int16_t(obterNBytesValue(2, &frame->pc));
-	} else {
-		var = obterNBytesValue(1, &frame->pc);
-		n = int8_t(obterNBytesValue(1, &frame->pc));
-	}
-
-	TypedElement typedElement = frame->localVariables->get(var);
-	if (typedElement.type == TYPE_INT)
-		typedElement.value.i += (int32_t) n;
-	frame->localVariables->set(var, typedElement);
-}
-
-void Operations::i2l() {
-	frame->operandsStack->empilhar(frame->operandsStack->desempilha(), TYPE_LONG);
-}
-
-void Operations::i2f() {
-	Element element = frame->operandsStack->desempilha();
-	element.f = (float) element.is;
-	frame->operandsStack->empilharFloat(element.f);
-}
-
-void Operations::i2d() {
-	Element element = frame->operandsStack->desempilha();
-	element.d = (double) element.is;
-	frame->operandsStack->empilharDouble(element.d);
-}
-
-void Operations::l2i() {
-	Element element = frame->operandsStack->desempilha();
-	element.i = (uint32_t) element.l;
-	frame->operandsStack->empilhar(element, TYPE_INT);
-}
-
-void Operations::l2f() {
-	Element element = frame->operandsStack->desempilha();
-	element.f = (float) element.l;
-	frame->operandsStack->empilhar(element, TYPE_FLOAT);
-}
-
-void Operations::l2d() {
-	Element element = frame->operandsStack->desempilha();
-	element.d = (double) element.l;
-	frame->operandsStack->empilharDouble(element.d);
-}
-
-void Operations::f2i() {
-	Element element = frame->operandsStack->desempilha();
-	element.is = (int32_t) element.f;
-	frame->operandsStack->empilharInt(element.is);
-}
-
-void Operations::f2l() {
-	Element element = frame->operandsStack->desempilha();
-	element.l = (int64_t) element.f;
-	frame->operandsStack->empilhar(element, TYPE_LONG);
-}
-
-void Operations::f2d() {
-	Element element = frame->operandsStack->desempilha();
-	element.d = (double) element.f;
-	frame->operandsStack->empilharDouble(element.d);
-}
-
-void Operations::d2i() {
-	Element element = frame->operandsStack->desempilha();
-	element.is = (int32_t) element.d;
-	frame->operandsStack->empilharInt(element.is);
-}
-
-void Operations::d2l() {
-	Element element = frame->operandsStack->desempilha();
-	element.l = (int64_t) element.d;
-	frame->operandsStack->empilhar(element, TYPE_LONG);
-}
-
-void Operations::d2f() {
-	Element element = frame->operandsStack->desempilha();
-	element.f = (float) element.d;
-	frame->operandsStack->empilharFloat(element.f);
-}
-
-//le um int do topo da pilha (truncado para byte), extende com sinal para um int e reinsere na pilha de operandos
-void Operations::i2b() {
-	int8_t value = frame->operandsStack->desempilha().bs;
-
-	frame->operandsStack->empilharInt(int(value));
-}
-
-//le um int do topo da pilha (truncado para char), extende com 0 para um int  e reinsere na pilha de operandos
-void Operations::i2c() {
-	TypedElement typedElement;
-	typedElement.type = TYPE_INT;
-	typedElement.realType = RT_CHAR;
-	typedElement.value.b = frame->operandsStack->desempilha().b;
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-//le um int do topo da pilha (truncado para short), extende com sinal para um int e reinsere na pilha de operandos
-void Operations::i2s() {
-	TypedElement typedElement;
-	typedElement.type = TYPE_INT;
-	typedElement.realType = RT_SHORT;
-	typedElement.value.ss = frame->operandsStack->desempilha().ss;
-
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-//le os dois primeiros elementos da pilha de operandos (dois elementos do tipo long) e os compara
-void Operations::lcmp() {
-	int64_t value2 = frame->operandsStack->desempilha().ls;
-	int64_t value1 = frame->operandsStack->desempilha().ls;
-
-	if (value1 > value2)
-		frame->operandsStack->empilharInt(int(1));
-	if (value1 == value2)
-		frame->operandsStack->empilharInt(int(0));
-	if (value1 < value2)
-		frame->operandsStack->empilharInt(int(-1));
-}
-
-//le os dois primeiros elementos da pilha de operandos (dois elementos do tipo float) e os compara
-void Operations::fcmpl() {
-	float value2 = frame->operandsStack->desempilha().f;
-	float value1 = frame->operandsStack->desempilha().f;
-	int res1, res2;
-
-	res1 = verificarFloat(value1);
-	res2 = verificarFloat(value2);
-	//se value1 ou value2 for NaN entao adiciona -1 na pilha de operandos
-	if (res1 == 3 || res2 == 3) {
-		frame->operandsStack->empilharInt(int(-1));
-	} else {
-		if (value1 > value2)
-			frame->operandsStack->empilharInt(int(1));
-		if (value1 == value2)
-			frame->operandsStack->empilharInt(int(0));
-		if (value1 < value2)
-			frame->operandsStack->empilharInt(int(-1));
-	}
-}
-
-//le os dois primeiros elementos da pilha de operandos (dois elementos do tipo float) e os compara
-void Operations::fcmpg() {
-	float value2 = frame->operandsStack->desempilha().f;
-	float value1 = frame->operandsStack->desempilha().f;
-	int res1, res2;
-
-	res1 = verificarFloat(value1);
-	res2 = verificarFloat(value2);
-	//se value1 ou value2 for NaN entao adiciona 1 na pilha de operandos
-	if (res1 == 3 || res2 == 3) {
-		frame->operandsStack->empilharInt(int(1));
-	} else {
-		if (value1 > value2)
-			frame->operandsStack->empilharInt(int(1));
-		if (value1 == value2)
-			frame->operandsStack->empilharInt(int(0));
-		if (value1 < value2)
-			frame->operandsStack->empilharInt(int(-1));
-	}
-}
-
-//le os dois primeiros elementos da pilha de operandos (dois elementos do tipo double) e os compara
-void Operations::dcmpl() {
-	double value2 = frame->operandsStack->desempilha().d;
-	double value1 = frame->operandsStack->desempilha().d;
-	int res1, res2;
-
-	res1 = verificarDouble(value1);
-	res2 = verificarDouble(value2);
-	//se value1 ou value2 for NaN entao adiciona 1 na pilha de operandos
-	if (res1 == 3 || res2 == 3) {
-		frame->operandsStack->empilharInt(int(1));
-	} else {
-		if (value1 > value2)
-			frame->operandsStack->empilharInt(int(1));
-		if (value1 == value2)
-			frame->operandsStack->empilharInt(int(0));
-		if (value1 < value2)
-			frame->operandsStack->empilharInt(int(-1));
-	}
-}
-
-//le os dois primeiros elementos da pilha de operandos (dois elementos do tipo double) e os compara
-void Operations::dcmpg() {
-	double value2 = frame->operandsStack->desempilha().d;
-	double value1 = frame->operandsStack->desempilha().d;
-	int res1, res2;
-
-	res1 = verificarDouble(value1);
-	res2 = verificarDouble(value2);
-	//se value1 ou value2 for NaN entao adiciona 1 na pilha de operandos
-	if (res1 == 3 || res2 == 3) {
-		frame->operandsStack->empilharInt(int(1));
-	} else {
-		if (value1 > value2)
-			frame->operandsStack->empilharInt(int(1));
-		if (value1 == value2)
-			frame->operandsStack->empilharInt(int(0));
-		if (value1 < value2)
-			frame->operandsStack->empilharInt(int(-1));
-	}
-}
-
-//le o valor do topo da pilha, se for igual a 0 salta
-void Operations::ifeq() {
-	int value = frame->operandsStack->desempilha().i;
-	int16_t branchbyte = int16_t(obterNBytesValue(2, &frame->pc));
-
-	if (value == 0)
-		frame->pc += branchbyte - 3;
-
-}
-
-//le o valor do topo da pilha, se for diferente de 0 salta
-void Operations::ifne() {
-	int value = frame->operandsStack->desempilha().i;
-	int16_t branchbyte = int16_t(obterNBytesValue(2, &frame->pc));
-
-	if (value != 0)
-		frame->pc += branchbyte - 3;
-
-}
-
-//le o valor do topo da pilha, se for menor que 0 salta
-void Operations::iflt() {
-	int value = frame->operandsStack->desempilha().i;
-	int16_t branchbyte = int16_t(obterNBytesValue(2, &frame->pc));
-
-	if (value < 0)
-		frame->pc += branchbyte - 3;
-
-}
-
-//le o valor do topo da pilha, se for maior ou igual a 0 salta
-void Operations::ifge() {
-	int value = frame->operandsStack->desempilha().i;
-	int16_t branchbyte = int16_t(obterNBytesValue(2, &frame->pc));
-
-	if (value >= 0)
-		frame->pc += branchbyte - 3;
-
-}
-
-//le o valor do topo da pilha, se for maior que 0 salta
-void Operations::ifgt() {
-	int value = frame->operandsStack->desempilha().i;
-	int16_t branchbyte = int16_t(obterNBytesValue(2, &frame->pc));
-
-	if (value > 0)
-		frame->pc += branchbyte - 3;
-}
-
-//le o valor do topo da pilha, se for menor ou igual a 0 salta
-void Operations::ifle() {
-	int value = frame->operandsStack->desempilha().i;
-	int16_t branchbyte = int16_t(obterNBytesValue(2, &frame->pc));
-
-	if (value <= 0)
-		frame->pc += branchbyte - 3;
-}
-
-//le dois valores da pilha, se forem iguais salta
-void Operations::if_icmpeq() {
-	int value1, value2;
-	int16_t branchbyte = int16_t(obterNBytesValue(2, &frame->pc));
-
-	value2 = frame->operandsStack->desempilha().i;
-	value1 = frame->operandsStack->desempilha().i;
-
-	if (value1 == value2) {
-		frame->pc += branchbyte - 3;
-	}
-}
-
-void Operations::if_icmpne() {
-	int value1, value2;
-	int16_t branchbyte = int16_t(obterNBytesValue(2, &frame->pc));
-
-	value2 = frame->operandsStack->desempilha().i;
-	value1 = frame->operandsStack->desempilha().i;
-
-	if (value1 != value2) {
-		frame->pc += branchbyte - 3;
-	}
-}
-
-void Operations::if_icmplt() {
-	int value1, value2;
-	int16_t branchbyte = int16_t(obterNBytesValue(2, &frame->pc));
-
-	value2 = frame->operandsStack->desempilha().i;
-	value1 = frame->operandsStack->desempilha().i;
-
-	if (value1 < value2) {
-		frame->pc += branchbyte - 3;
-	}
-}
-
-void Operations::if_icmpge() {
-	int value1, value2;
-	int16_t branchbyte = int16_t(obterNBytesValue(2, &frame->pc));
-
-	value2 = frame->operandsStack->desempilha().is;
-	value1 = frame->operandsStack->desempilha().is;
-
-	if (value1 >= value2) {
-		frame->pc += branchbyte - 3;
-	}
-}
-
-void Operations::if_icmpgt() {
-	int value1, value2;
-	int16_t branchbyte = int16_t(obterNBytesValue(2, &frame->pc));
-
-	value2 = frame->operandsStack->desempilha().i;
-	value1 = frame->operandsStack->desempilha().i;
-
-	if (value1 > value2) {
-		frame->pc += branchbyte - 3;
-	}
-}
-
-void Operations::if_icmple() {
-	int value1, value2;
-	int16_t branchbyte = int16_t(obterNBytesValue(2, &frame->pc));
-
-	value2 = frame->operandsStack->desempilha().i;
-	value1 = frame->operandsStack->desempilha().i;
-
-	if (value1 <= value2) {
-		frame->pc += branchbyte - 3;
-	}
-}
-
-void Operations::if_acmpeq() {
-	int *value1, *value2;
-	int16_t branchbyte = int16_t(obterNBytesValue(2, &frame->pc));
-
-	value2 = frame->operandsStack->desempilha().pi;
-	value1 = frame->operandsStack->desempilha().pi;
-
-	if (value1 == value2) {
-		frame->pc += branchbyte - 3;
-	}
-}
-
-void Operations::if_acmpne() {
-	int *value1, *value2;
-	int16_t branchbyte = int16_t(obterNBytesValue(2, &frame->pc));
-
-	value2 = frame->operandsStack->desempilha().pi;
-	value1 = frame->operandsStack->desempilha().pi;
-
-	if (value1 != value2) {
-		frame->pc += branchbyte - 3;
-	}
-}
-
-void Operations::funcgoto() {
-	int16_t offset;
-
-	offset = int16_t(obterNBytesValue(2, &frame->pc));
-
-	frame->pc += offset - 3;
-}
-
-void Operations::jsr() {
-	int16_t offset;
-
-	offset = int16_t(obterNBytesValue(2, &frame->pc));
-
-	frame->operandsStack->empilharReferencia((int*) frame->pc);
-
-	frame->pc += offset - 3;
-}
-
-//pode ser utilizada em conjunto com wide
-void Operations::funcret() {
-	if (isWide) {
-		frame->pc = (unsigned char *) frame->localVariables->get(obterNBytesValue(2, &frame->pc)).value.pi;
-		isWide = false;
-	} else
-		frame->pc = (unsigned char *) frame->localVariables->get(obterNBytesValue(1, &frame->pc)).value.pi;
-}
-
-void Operations::tableswitch() {
-	//guarda o valor inicial do pc
-	unsigned char *bkpPC = (frame->pc) - 1;
-	uint8_t mod = (frame->pc - frame->method.attributes->info->codeAttribute.codigo) % 4;
-	frame->pc += mod;
-
-	int32_t defaults, low, high, offset;
-	defaults = int32_t(obterNBytesValue(4, &frame->pc));
-	low = int32_t(obterNBytesValue(4, &frame->pc));
-	high = int32_t(obterNBytesValue(4, &frame->pc));
-
-	int32_t index = frame->operandsStack->desempilhaTyped().value.is;
-
-	//salto padrão caso index não esteja no range correto
-	if (index < low || index > high) {
-		frame->pc = bkpPC;
-		frame->pc += defaults;
-		return;
-	}
-
-	for (; low < high + 1; low++) {
-		offset = int32_t(obterNBytesValue(4, &frame->pc));
-		if (index == low) {
-			break;
-		}
-
-	}
-	frame->pc = bkpPC;
-	frame->pc += offset;
-}
-
-void Operations::lookupswitch() {
-	unsigned char *aux = (frame->pc) - 1;
-	int diff = (frame->pc - frame->method.attributes->info->codeAttribute.codigo) % 4;
-
-	frame->pc += diff;
-
-	int32_t defaultValue = obterNBytesValue(4, &frame->pc);
-	int32_t npairs = obterNBytesValue(4, &frame->pc);
-	int32_t match, offset, key = frame->operandsStack->desempilha().is;
-	int i;
-
-	for (i = 0; i < npairs; i++) {
-		match = obterNBytesValue(4, &frame->pc);
-		offset = obterNBytesValue(4, &frame->pc);
-
-		if (match == key) {
-			frame->pc = aux + offset;
-			break;
-		}
-	}
-
-	if (i == npairs) {
-		frame->pc = aux + defaultValue;
-	}
-}
-
-void Operations::ireturn() {
-	int value = frame->operandsStack->desempilha().i;
-
-	while (!frame->operandsStack->estaVazia()) {
-		frame->operandsStack->desempilha();
-	}
-
-	stackFrame->pop();
-	frame = stackFrame->top();
-	frame->operandsStack->empilharInt(value);
-}
-
-void Operations::lreturn() {
-	long value = frame->operandsStack->desempilha().l;
-
-	while (!frame->operandsStack->estaVazia()) {
-		frame->operandsStack->desempilha();
-	}
-
-	stackFrame->pop();
-	frame = stackFrame->top();
-	frame->operandsStack->empilharLong(value);
-}
-
-void Operations::freturn() {
-	float value = frame->operandsStack->desempilha().f;
-
-	while (!frame->operandsStack->estaVazia()) {
-		frame->operandsStack->desempilha();
-	}
-
-	stackFrame->pop();
-	frame = stackFrame->top();
-	frame->operandsStack->empilharFloat(value);
-}
-
-void Operations::dreturn() {
-	double value = frame->operandsStack->desempilha().d;
-
-	while (!frame->operandsStack->estaVazia()) {
-		frame->operandsStack->desempilha();
-	}
-
-	stackFrame->pop();
-	frame = stackFrame->top();
-	frame->operandsStack->empilharDouble(value);
-}
-
-void Operations::areturn() {
-	element_u element;
-
-	if (frame->operandsStack->desempilhaTopoTipo() == TYPE_REFERENCE) {
-		element = frame->operandsStack->desempilha();
-
-		while (!frame->operandsStack->estaVazia()) {
-			frame->operandsStack->desempilha();
-		}
-
-	} else {
-		throw runtime_error("Elemento lido nao era uma referencia!");
-	}
-
-	stackFrame->pop();
-	frame = stackFrame->top();
-
-	frame->operandsStack->empilharReferencia(element.pi);
-}
-
-void Operations::func_return() {
-	while (!frame->operandsStack->estaVazia()) {
-		frame->operandsStack->desempilha();
-	}
-
-	pilhaJVM->popRemoverObjetos();
-}
-
-StaticClass* Operations::obterStaticClassThatHasField(StaticClass* base, string field_name) {
-	TypedElement typedElement = base->obterField(field_name);
-	if (typedElement.type != TYPE_NOT_SET) {
-		return base;
-	}
-
-	int cp_index = base->obterClassFile()->obterSuper_class();
-	if (cp_index == 0) {
-		return NULL;
-	}
-
-	StaticClass* staticClass = MethodArea::obterClass(capturarIndiceDeReferencia(base->obterClassFile()->obterConstantPool(), cp_index));
-	return obterStaticClassThatHasField(staticClass, field_name);
-}
-
-void Operations::getstatic() {
-	uint16_t indexByte = obterNBytesValue(2, &frame->pc);
-
-	//volta pc para o inicio da instrucao, para caso ela tenha que ser executada novamente
-	frame->pc -= 3;
-
-	Frame *frameAux = frame;
-	Cp_info constantPool_field = frame->constantPool[indexByte];
-	if (constantPool_field.tag != FIELD_REF) {
-		throw runtime_error("1 - getstatic - Elemento da constant pool apontado por index, não é uma referencia para FIELD_REF!");
-	}
-
-	string class_name = capturarIndiceDeReferencia(frame->constantPool, constantPool_field.info[0].u2);
-
-	Cp_info constantPool_name_and_type = frame->constantPool[constantPool_field.info[1].u2];
-	if (constantPool_name_and_type.tag != NAME_AND_TYPE) {
-		throw runtime_error("2 - getstatic - Elemento da constant pool apontado por index, não é uma referencia para NAME_AND_TYPE!");
-	}
-
-	string name = capturarIndiceDeReferencia(frame->constantPool, constantPool_name_and_type.info[0].u2);
-	string descriptor = capturarIndiceDeReferencia(frame->constantPool, constantPool_name_and_type.info[1].u2);
-
-	// JAVA LANG
-	if (class_name == "java/lang/System" && descriptor == "Ljava/io/PrintStream;") {
-		frame->pc += 3;
-		return;
-	}
-
-	StaticClass* staticClass = obterStaticClassThatHasField(MethodArea::obterClass(class_name), name);
-
-	if (staticClass == NULL)
-		throw runtime_error("3 - getstatic - Field nao existe na classe definida!");
-
-	// Caso <clinit> seja empilhado.
-	if (stackFrame->top() != frameAux) {
-		return;
-	}
-
-	TypedElement typedElement = staticClass->obterField(name);
-
-	if (typedElement.type == TYPE_BOOL) {
-		typedElement.type = TYPE_INT;
-	}
-
-	frame->operandsStack->empilharTypedElement(typedElement);
-
-	//anda com o pc para a proxima instrucao
-	frame->pc += 3;
-}
-
-void Operations::putstatic() {
-	Frame *frameAux = frame;
-
-	uint16_t indexByte = obterNBytesValue(2, &frame->pc);
-	Cp_info constantPool_field = frame->constantPool[indexByte];
-	if (constantPool_field.tag != FIELD_REF) {
-		throw runtime_error("1 - putstatic - Elemento da constant pool apontado por index, não é uma referencia para FIELD_REF!");
-	}
-
-	string class_name = capturarIndiceDeReferencia(frame->constantPool, constantPool_field.info[0].u2);
-
-	Cp_info constantPool_name_and_type = frame->constantPool[constantPool_field.info[1].u2];
-	if (constantPool_name_and_type.tag != NAME_AND_TYPE) {
-		throw runtime_error("2 - putstatic - Elemento da constant pool apontado por index, não é uma referencia para NAME_AND_TYPE!");
-	}
-
-	string name = capturarIndiceDeReferencia(frame->constantPool, constantPool_name_and_type.info[0].u2);
-	string descriptor = capturarIndiceDeReferencia(frame->constantPool, constantPool_name_and_type.info[1].u2);
-
-	// JAVA LANG
-	if (class_name == "java/lang/System" && descriptor == "Ljava/io/PrintStream;") {
-		return;
-	}
-
-	StaticClass* static_class = obterStaticClassThatHasField(MethodArea::obterClass(class_name), name);
-
-	if (static_class == NULL)
-		throw runtime_error("3 - putstatic - Field nao existe na classe definida!");
-
-	// Caso <clinit> seja empilhado.
-	if (stackFrame->top() != frameAux) {
-		return;
-	}
-
-	TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-
-	if (descriptor[0] == 'B') {
-		typedElement.type = TYPE_BOOL;
-	}
-
-	static_class->atualizarField(name, typedElement);
-}
-
-void Operations::getfield() {
-	uint16_t indexbyte = obterNBytesValue(2, &frame->pc);
-
-	InstanceClass *instanceClass = (InstanceClass *) frame->operandsStack->desempilha().pi;
-
-	if (instanceClass == nullptr) {
-		throw runtime_error("Null Pointer Exception");
-	}
-
-	int index = frame->constantPool[indexbyte].info[1].u2;
-	index = frame->constantPool[index].info[0].u2;
-	TypedElement typedElement = instanceClass->obterField(capturarIndiceDeReferencia(frame->constantPool, index));
-	frame->operandsStack->empilharTypedElement(typedElement);
-}
-
-void Operations::putfield() {
-	TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-	InstanceClass *instanceClass = (InstanceClass *) frame->operandsStack->desempilha().pi;
-	uint16_t indexbyte = obterNBytesValue(2, &frame->pc);
-
-	if (instanceClass == nullptr) {
-		throw runtime_error("Null Pointer Exception");
-	}
-
-	int index = frame->constantPool[indexbyte].info[1].u2;
-	index = frame->constantPool[index].info[0].u2;
-
-	if (capturarIndiceDeReferencia(frame->constantPool, frame->method.name_index) == "<init>") {
-		instanceClass->atualizarFieldFinals(capturarIndiceDeReferencia(frame->constantPool, index), typedElement);
-	} else {
-		instanceClass->atualizarField(capturarIndiceDeReferencia(frame->constantPool, index), typedElement);
-	}
-}
-
-void Operations::invokevirtual() {
-	Frame *frameAux = frame;
-
-	uint16_t indexByte = obterNBytesValue(2, &frame->pc);
-
-	Cp_info constantPool_method = frame->constantPool[indexByte];
-	if (constantPool_method.tag != METHOD_REF) {
-		throw runtime_error("1 - invokevirtual - Elemento da constant pool apontado por index, não é uma referencia para METHOD_REF!");
-	}
-
-	string class_name = capturarIndiceDeReferencia(frame->constantPool, constantPool_method.info[0].u2);
-
-	Cp_info constantPool_name_and_type = frame->constantPool[constantPool_method.info[1].u2];
-	if (constantPool_name_and_type.tag != NAME_AND_TYPE) {
-		throw runtime_error("2 - invokevirtual - Elemento da constant pool apontado por index, não é uma referencia para NAME_AND_TYPE!");
-	}
-
-	string name = capturarIndiceDeReferencia(frame->constantPool, constantPool_name_and_type.info[0].u2);
-	string descriptor = capturarIndiceDeReferencia(frame->constantPool, constantPool_name_and_type.info[1].u2);
-
-	if (class_name.find("java/") != string::npos) {
-		// simulando println ou print
-		if (class_name == "java/io/PrintStream" && (name == "print" || name == "println")) {
-			if (descriptor != "()V") {
-				TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-				switch (typedElement.realType) {
-				case RT_DOUBLE:
-					printf("%f", typedElement.value.d);
-					break;
-				case RT_FLOAT:
-					printf("%f", typedElement.value.f);
-					break;
-				case RT_LONG:
-					printf("%ld", typedElement.value.ls);
-					break;
-				case RT_REFERENCE:
-					cout << obterUTF8((unsigned char *) typedElement.value.pi, 0);
-					break;
-				case RT_BOOL:
-					printf("%s", typedElement.value.b == 0 ? "false" : "true");
-					break;
-				case RT_BYTE:
-					printf("%d", typedElement.value.b);
-					break;
-				case RT_CHAR:
-					printf("%c", typedElement.value.bs);
-					break;
-				case RT_SHORT:
-					printf("%d", typedElement.value.ss);
-					break;
-				case RT_INT:
-					printf("%d", typedElement.value.is);
-					break;
-				default:
-					// PRECISA ?
-					//cout << "" << endl;
-					//throw runtime_error("Dado Invalido.");
-					printf("%d", typedElement.value.is);
-					break;
-				}
-			}
-
-			if (name == "println")
-				printf("\n");
-
-		} else if (class_name == "java/lang/String" && name == "length") {
-
-			TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-
-			if (typedElement.realType == RT_REFERENCE) {
-				TypedElement typedElementReference;
-				typedElementReference.type = TYPE_INT;
-				typedElementReference.realType = RT_INT;
-
-				typedElementReference.value.i = obterUTF8((unsigned char *) typedElement.value.pi, 0).size();
-
-				frame->operandsStack->empilharTypedElement(typedElementReference);
-			} else {
-				throw runtime_error("3 - invokevirtual - Dado Invalido.");
-			}
-
-		} else if (class_name == "java/lang/String" && name == "equals") {
-
-			TypedElement typedElement1 = frame->operandsStack->desempilhaTyped();
-			TypedElement typedElement2 = frame->operandsStack->desempilhaTyped();
-
-			if (typedElement1.realType == RT_REFERENCE && typedElement2.realType == RT_REFERENCE) {
-				TypedElement typedElementReference;
-				typedElementReference.type = TYPE_INT;
-				typedElementReference.realType = RT_INT;
-
-				if (obterUTF8((unsigned char *) typedElement1.value.pi, 0) == obterUTF8((unsigned char *) typedElement2.value.pi, 0)) {
-					typedElementReference.value.b = 1;
-				} else {
-					typedElementReference.value.b = 0;
-				}
-
-				frame->operandsStack->empilharTypedElement(typedElementReference);
-			} else {
-				throw runtime_error("4 - invokevirtual - Dados Invalidos.");
-			}
-
-		} else {
-			throw runtime_error("5 - invokevirtual - Metodo Invalido.");
-		}
-	} else {//quando é referencia
-
-		uint16_t num_args = 0; // numero de argumentos contidos na pilha de operandos
-		uint16_t i = 1; // pulando o primeiro '('
-		while (descriptor[i] != ')') {
-			char baseType = descriptor[i];
-			if (baseType == 'D' || baseType == 'J') {
-				num_args += 2;
-			} else if (baseType == 'L') {
-				num_args++;
-				while (descriptor[++i] != ';')
-					;
-			} else if (baseType == '[') {
-				num_args++;
-				while (descriptor[++i] == '[')
-					;
-				if (descriptor[i] == 'L')
-					while (descriptor[++i] != ';')
-						;
-			} else {
-				num_args++;
-			}
-			i++;
-		}
-
-		vector<TypedElement> vectorArgumentos;
-		for (int i = 0; i < num_args; i++) {
-			TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-			vectorArgumentos.insert(vectorArgumentos.begin(), typedElement);
-		}
-
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		if (typedElement.type == TYPE_REFERENCE) {
-			throw runtime_error("6 - invokevirtual - Elemento não é uma referencia para REFERENCE!");
-		}
-		vectorArgumentos.insert(vectorArgumentos.begin(), typedElement);
-
-		InstanceClass* instanceClass = (InstanceClass *) typedElement.value.pi;
-
-		//StaticClass *staticClass = MethodArea::obterClass(class_name);
-		MethodArea::obterClass(class_name);
-
-		// Caso <clinit> seja empilhado.
-		if (stackFrame->top() != frameAux) {
-			frame->pc = frame->pc - 3;
-			return;
-		}
-
-		pilhaJVM->adicionarFrame(instanceClass->obterStaticClass()->obterClassFile()->obterMethod(name, descriptor),
-				instanceClass->obterStaticClass()->obterClassFile()->obterClassThatHasSerachedMethod(name, descriptor)->obterConstantPool());
-		pilhaJVM->atualizarArgumentos(vectorArgumentos);
-	}
-}
-
-void Operations::invokespecial() {
-	Frame *frameAux = stackFrame->top();
-	uint16_t indexByte = obterNBytesValue(2, &frame->pc);
-
-	Cp_info constantPool_method = frame->constantPool[indexByte];
-	if (constantPool_method.tag != METHOD_REF) {
-		throw runtime_error("1 - invokespecial - Elemento da constant pool apontado por index, não é uma referencia para METHOD_REF!");
-	}
-
-	string classe = capturarIndiceDeReferencia(frame->constantPool, constantPool_method.info[0].u2);
-
-	Cp_info constantPool_name_and_type = frame->constantPool[constantPool_method.info[1].u2];
-	if (constantPool_name_and_type.tag != NAME_AND_TYPE) {
-		throw runtime_error("2 - invokespecial - Elemento da constant pool apontado por index, não é uma referencia para NAME_AND_TYPE!");
-	}
-
-	string name = capturarIndiceDeReferencia(frame->constantPool, constantPool_name_and_type.info[0].u2);
-	string desc = capturarIndiceDeReferencia(frame->constantPool, constantPool_name_and_type.info[1].u2);
-
-	//checa se é uma das classes simuladas
-	if ((classe == "java/lang/Object" || classe == "java/lang/String") && name == "<init>") {
-		if (classe == "java/lang/String") {
-			frame->operandsStack->desempilha();
-		}
-		return;
-	}
-
-	//checa se o metodo que irá executar é válido
-	if (classe.find("java/") != string::npos) {
-		cerr << "ERRO: \"" << name << "\" nao definido." << endl;
-		exit(1);
-	} else {
-		uint16_t count = 0; // numero de argumentos contidos na pilha de operandos
-		uint16_t i = 1; //variavel para andar pelo descritor
-
-		while (desc[i] != ')') {
-			char baseType = desc[i];
-			if (baseType == 'D' || baseType == 'J') {
-				(++count)++;
-			} else if (baseType == 'L') {
-				count++;
-				//para pular o nome da classe
-				while (desc[++i] != ';')
-					;
-			} else if (baseType == '[') {
-				count++;
-				//para pegar todas as dimensões mais rapidamente
-				while (desc[++i] == '[')
-					;
-				if (desc[i] == 'L') {
-					//para pular o nome da classe
-					while (desc[++i] != ';')
-						;
-				}
-			} else {
-				count++;
-			}
-			i++;
-		}
-
-		//desempilha a quantidade de parametros calculada acima
-		vector<TypedElement> vectorParametros;
-		for (int i = 0; i < count; i++) {
-			TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-			vectorParametros.insert(vectorParametros.begin(), typedElement);
-		}
-
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-
-		vectorParametros.insert(vectorParametros.begin(), typedElement);
-
-		InstanceClass* instanceClass = (InstanceClass *) typedElement.value.pi;
-
-		//ClasseEstatica *classRuntime = MethodArea::getClass(classe);
-		MethodArea::obterClass(classe);
-
-		//checa se houve uma mudança no método corrente, caso tenha, deixa o novo método executar
-		if (stackFrame->top() != frameAux) {
-			//empilha de volta os operandos desempilhados na ordem contrária que saíram
-			frame->operandsStack->empilharTypedElement(vectorParametros[0]);
-			while (count-- > 0) {
-				frame->operandsStack->empilharTypedElement(vectorParametros[count]);
-			}
-			//volta com o pc para o opcode que vai ser executado novamente
-			//ele já havia sido deslocado para o próximo opcode pela função getNBytes
-			frame->pc -= 3;
-			return;
-		}
-
-		//cria o frame no topo da pilha
-		pilhaJVM->adicionarFrame(instanceClass->obterStaticClass()->obterClassFile()->obterMethod(name, desc),
-				instanceClass->obterStaticClass()->obterClassFile()->obterClassThatHasSerachedMethod(name, desc)->obterConstantPool());
-		//adiciona os parâmetros ao vetor de variáveis locais
-		pilhaJVM->atualizarArgumentos(vectorParametros);
-	}
-}
-
-void Operations::invokestatic() {
-	Frame *auxFrame = stackFrame->top();
-	uint16_t indexbyte = obterNBytesValue(2, &frame->pc);
-	Cp_info constantPool__method = frame->constantPool[indexbyte];
-
-	if (constantPool__method.tag != METHOD_REF)
-		throw runtime_error("1 - invokestatic - Elemento da constant pool apontado por index, não é uma referencia para METHOD_REF!");
-
-	string class_name = capturarIndiceDeReferencia(frame->constantPool, constantPool__method.info[0].u2);
-	Cp_info constantPool_name_and_type = frame->constantPool[constantPool__method.info[1].u2];
-
-	if (constantPool_name_and_type.tag != NAME_AND_TYPE) {
-		throw runtime_error("2 - invokestatic - Elemento da constant pool apontado por index, não é uma referencia para NAME_AND_TYPE!");
-	}
-
-	string name = capturarIndiceDeReferencia(frame->constantPool, constantPool_name_and_type.info[0].u2);
-	string descriptor = capturarIndiceDeReferencia(frame->constantPool, constantPool_name_and_type.info[1].u2);
-
-	if (class_name == "java/lang/Object" && name == "registerNatives") {
-		frame->pc += 3;
-		return;
-	}
-
-	if (class_name.find("java/") != string::npos) {
-		cerr << "3 - invokestatic - Tentando invocar metodo estatico invalido: " << name << endl;
-	} else {
-		uint16_t quantidade = 0; // numero de argumentos contidos na pilha de operandos
-		uint16_t i = 1; // pulando o primeiro '('
-		while (descriptor[i] != ')') {
-			char baseType = descriptor[i];
-			if (baseType == 'D' || baseType == 'J') {
-				quantidade += 2;
-			} else if (baseType == 'L') {
-				quantidade++;
-				while (descriptor[++i] != ';')
-					;
-			} else if (baseType == '[') {
-				quantidade++;
-				while (descriptor[++i] == '[')
-					;
-				if (descriptor[i] == 'L')
-					while (descriptor[++i] != ';')
-						;
-			} else {
-				quantidade++;
-			}
-			i++;
-		}
-
-		vector<TypedElement> vectorParametros;
-		for (int i = 0; i < quantidade; i++) {
-			TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-			vectorParametros.insert(vectorParametros.begin(), typedElement);
-		}
-
-		StaticClass *ce = MethodArea::obterClass(class_name);
-
-		// Caso <clinit> seja empilhado.
-		if (stackFrame->top() != auxFrame) {
-			//empilha de volta os operandos desempilhados na ordem contrária que saíram
-			while (quantidade-- > 0) {
-				frame->operandsStack->empilharTypedElement(vectorParametros[quantidade]);
-			}
-			//volta com o pc para o opcode que vai ser executado novamente
-			//ele já havia sido deslocado para o próximo opcode pela função getNBytes
-			frame->pc -= 3;
-			return;
-		}
-
-		//cria o frame no topo da pilha
-		pilhaJVM->adicionarFrame(ce->obterClassFile()->obterMethod(name, descriptor),
-				ce->obterClassFile()->obterClassThatHasSerachedMethod(name, descriptor)->obterConstantPool());
-
-		//adiciona os parâmetros ao vetor de variáveis locais
-		pilhaJVM->atualizarArgumentos(vectorParametros);
-
-	}
-
-}
-
-void Operations::invokeinterface() {
-	Frame *auxFrame = stackFrame->top();
-	uint16_t indexbyte = obterNBytesValue(2, &frame->pc);
-	Cp_info constantPool_interface = frame->constantPool[indexbyte];
-
-	if (constantPool_interface.tag != INTERFACE_REF) {
-		throw runtime_error("1 - invokeinterface - Elemento da constant pool apontado por index, não é uma referencia para INTERFACE_REF!");
-	}
-
-	string class_name = capturarIndiceDeReferencia(frame->constantPool, constantPool_interface.info[0].u2);
-	Cp_info constantPool_name_and_type = frame->constantPool[constantPool_interface.info[1].u2];
-	if (constantPool_name_and_type.tag != NAME_AND_TYPE) {
-		throw runtime_error("2 - invokeinterface - Elemento da constant pool apontado por index, não é uma referencia para NAME_AND_TYPE!");
-	}
-
-	string name = capturarIndiceDeReferencia(frame->constantPool, constantPool_name_and_type.info[0].u2);
-	string descriptor = capturarIndiceDeReferencia(frame->constantPool, constantPool_name_and_type.info[1].u2);
-
-	if (class_name.find("java/") != string::npos) {
-		throw runtime_error("3 - invokeinterface - Tentativa de invocar metodo de interface invalido!");
-	} else {
-		uint16_t num_args = 0; //numero de argumentos na pilha de operandos
-		uint16_t i = 1; //pulando primeiro argumento '('
-		while (descriptor[i] != ')') {
-			char baseType = descriptor[i];
-			if (baseType == 'D' || baseType == 'J') {      //64 bits
-				num_args += 2;
-			} else if (baseType == 'L') {                  //referencia - instancia de class
-				num_args++;
-				while (descriptor[++i] != ';')
-					;
-			} else if (baseType == '[') {                  // referencia
-				num_args++;
-				while (descriptor[++i] == '[')
-					;
-				if (descriptor[i] == 'L')
-					while (descriptor[++i] != ';')
-						;
-			} else {
-				num_args++;
-			}
-			i++;
-		}
-
-		vector<TypedElement> vectorParametros;
-		for (int i = 0; i < num_args; i++) {
-			TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-			vectorParametros.insert(vectorParametros.begin(), typedElement);
-		}
-
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		if (typedElement.type != TYPE_REFERENCE) {
-			throw runtime_error("4 - invokeinterface - Elemento do topo da pilha não e uma referencia!");
-		}
-		vectorParametros.insert(vectorParametros.begin(), typedElement);
-
-		InstanceClass *instanceClass = (InstanceClass *) typedElement.value.pi;
-
-		// Caso <clinit> seja empilhado.
-		if (stackFrame->top() != auxFrame) {
-			//empilha de volta os operandos desempilhados na ordem contrária que saíram
-			while (num_args-- > 0) {
-				frame->operandsStack->empilharTypedElement(vectorParametros[num_args]);
-			}
-			//volta com o pc para o opcode que vai ser executado novamente
-			//ele já havia sido deslocado para o próximo opcode pela função getNBytes
-			frame->pc -= 3;
-			return;
-		}
-		//cria o frame no topo da pilha
-		pilhaJVM->adicionarFrame(instanceClass->obterStaticClass()->obterClassFile()->obterMethod(name, descriptor),
-				instanceClass->obterStaticClass()->obterClassFile()->obterClassThatHasSerachedMethod(name, descriptor)->obterConstantPool());
-		//adiciona os parâmetros ao vetor de variáveis locais
-		pilhaJVM->atualizarArgumentos(vectorParametros);
-	}
-}
-
-void Operations::func_new() {
-	uint16_t indexbyte = obterNBytesValue(2, &frame->pc);
-	string classe = capturarIndiceDeReferencia(frame->constantPool, indexbyte);
-	StaticClass *staticClass = MethodArea::obterClass(classe);
-
-	if (staticClass == nullptr) {
-		MethodArea::adicionarClasse(classe);
-		staticClass = MethodArea::obterClass(classe);
-	}
-
-	frame->operandsStack->empilharReferencia((int*) staticClass->obterInstanceClass());
-}
-
-void Operations::newarray() {
-	uint8_t type = obterNBytesValue(1, &frame->pc);
-	int32_t index = frame->operandsStack->desempilha().is;
-
-	if (index < 0)
-		throw runtime_error("1 - newarray - Negative Array Size.");
-
-	int *array;
-
-	switch (type) {
-	case 4:
-		array = (int*) new LocalVariables(index);
-		break;
-	case 5:
-		array = (int*) new vector<uint8_t>(index);
-		break;
-	case 6:
-		array = (int*) new LocalVariables(index);
-		break;
-	case 7:
-		array = (int*) new LocalVariables(2 * index, true);
-		break;
-	case 8:
-		array = (int*) new LocalVariables(index);
-		break;
-	case 9:
-		array = (int*) new LocalVariables(index);
-		break;
-	case 10:
-		array = (int*) malloc(sizeof(index));
-		break;
-	case 11:
-		array = (int*) new LocalVariables(2 * index, true);
-		break;
-	default:
-		array = (int*) new LocalVariables(index);
-		break;
-	}
-	//cout << array << endl;
-	frame->operandsStack->empilharReferencia(array);
-}
-
-void Operations::anewarray() {
-	//uint16_t indexbyte = getNBytesValue(2, &f->pc);
-	obterNBytesValue(2, &frame->pc);
-	int32_t count = frame->operandsStack->desempilha().is;
-
-	if (count < 0)
-		throw runtime_error("1 - anewarray - Negative Array Size.");
-
-	LocalVariables *localVariables = new LocalVariables(count * (BITS ? 2 : 1), BITS);
-	for (int i = 0; i < count; i++) {
-		TypedElement typedElement;
-		typedElement.type = TYPE_REFERENCE;
-		typedElement.value.pi = nullptr;
-		localVariables->set(i, typedElement);
-	}
-
-	frame->operandsStack->empilharReferencia((int*) localVariables);
-}
-
-void Operations::arraylength() {
-	LocalVariables *localVariables;
-
-	localVariables = (LocalVariables *) frame->operandsStack->desempilha().pi;
-	if (localVariables == nullptr)
-		throw runtime_error("Null pointer");
-
-	frame->operandsStack->empilharInt(localVariables->obterMax());
-}
-
-void Operations::athrow() {
-	int type = frame->operandsStack->desempilhaTopoTipo();
-	element_u element = frame->operandsStack->desempilha();
-
-	while (!frame->operandsStack->estaVazia()) {
-		frame->operandsStack->desempilha();
-	}
-
-	frame->operandsStack->empilhar(element, type);
-}
-
-void Operations::wide() {
-	//seta a variavel global wide -> TRUE
-	isWide = true;
-	Operations::executarOperacao(obterNBytesValue(1, &frame->pc));
-}
-
-
-void Operations::multianewarray() {
-
-	uint16_t indexbyte = obterNBytesValue(2, &frame->pc);
-	uint8_t dimensions = obterNBytesValue(1, &frame->pc);
-
-	Cp_info constantPool = frame->constantPool[indexbyte];
-	if (constantPool.tag != CLASS) {
-		throw runtime_error("1 - multianewarray - Elemento da constant pool apontado por index, não é uma referencia para CLASS!");
-	}
-
-	string class_name = capturarIndiceDeReferencia(frame->constantPool, constantPool.info[0].u2);
-
-	TypedElement typedElement;
-
-	int count = 0;
-
-	while (class_name[count] == '[') {
-		count++;
-	}
-
-	string multiArrayType = class_name.substr(count + 1, class_name.size() - count - 2); // em caso de ser uma referência (e.g. [[[Ljava/lang/String;)
-
-	switch (class_name[count]) {
-	case 'L':
-		if (multiArrayType != "java/lang/String") {
-			MethodArea::obterClass(multiArrayType); // verifica se existe classe com esse nome
-		}
-		typedElement.realType = RT_REFERENCE;
-		typedElement.type = TYPE_REFERENCE;
-		break;
-	case 'B':
-		typedElement.realType = RT_BYTE;
-		typedElement.type = TYPE_INT;
-		break;
-	case 'C':
-		typedElement.realType = RT_CHAR;
-		typedElement.type = TYPE_INT;
-		break;
-	case 'D':
-		typedElement.realType = RT_DOUBLE;
-		typedElement.type = TYPE_DOUBLE;
-		break;
-	case 'F':
-		typedElement.realType = RT_FLOAT;
-		typedElement.type = TYPE_FLOAT;
-		break;
-	case 'I':
-		typedElement.realType = RT_INT;
-		typedElement.type = TYPE_INT;
-		break;
-	case 'J':
-		typedElement.realType = RT_LONG;
-		typedElement.type = TYPE_LONG;
-		break;
-	case 'S':
-		typedElement.realType = RT_SHORT;
-		typedElement.type = TYPE_INT;
-		break;
-	case 'Z':
-		typedElement.realType = RT_BOOL;
-		typedElement.type = TYPE_INT;
-		break;
-	default:
-		exit(1);
-	}
-
-	stack<int> count_dim;
-	for (int i = 0; i < dimensions; i++) {
-		// PRECISO VERIFICAR O TIPO (INT)?
-		count_dim.push(frame->operandsStack->desempilhaTyped().value.i);
-	}
-
-	int* p = (int*) (obterNewMultiArray(count_dim));
-
-	typedElement.value.pi = p;
-
-	frame->operandsStack->empilharTypedElement(typedElement);
-
-}
-
-double Operations::obterValor(N_array array, stack<int> stackIndeces) {
-	int index = 1;
-	int aux = 0;
-
-	for (int i = 0; (unsigned int) i < sizeof(array.dims) / sizeof(*(array.dims)); i++) {
-		aux += array.dims[i] * stackIndeces.top();
-
-		index = (aux * index) + aux;
-		stackIndeces.pop();
-	}
-
-	return array.array[index];
-
-}
-
-N_array *Operations::obterNewMultiArray(stack<int> stackDimessoes) {
-	int size = 1;
-	int value;
-
-	N_array *array = (N_array*) malloc(sizeof(N_array));
-
-	int* dims = (int*) malloc(sizeof(double) * stackDimessoes.size());
-
-	for (int i = 0; stackDimessoes.size() > 0; i++) {
-
-		value = stackDimessoes.top();
-		size *= value;
-		dims[i] = value;
-		stackDimessoes.pop();
-	}
-
-	int* p = (int*) malloc(sizeof(double) * size);
-
-	for (int i = 0; i < size; i++) {
-		p[i] = 0;
-	}
-
-	array->dims = dims;
-	array->array = p;
-
-	return array;
-
-}
-
-void Operations::ifnull() {
-	int* ref = frame->operandsStack->desempilha().pi;
-	int16_t branchbyte = int16_t(obterNBytesValue(2, &frame->pc));
-
-	if (ref == nullptr)
-		frame->pc += branchbyte - 3;
-}
-
-void Operations::ifnonnull() {
-	int* ref = frame->operandsStack->desempilha().pi;
-	int16_t branchbyte = int16_t(obterNBytesValue(2, &frame->pc));
-
-	if (ref != nullptr)
-		frame->pc += branchbyte - 3;
-}
-
-void Operations::goto_w() {
-	int32_t branchbyte = int32_t(obterNBytesValue(4, &frame->pc));
-
-	frame->pc += branchbyte - 5;
-}
-
-void Operations::jsr_w() {
-	int32_t offset = int32_t(obterNBytesValue(4, &frame->pc));
-
-	frame->operandsStack->empilharBool(frame->pc);
-
-	frame->pc += offset - 5;
-}
-
-//Opcionais
-
-void Operations::dup() {
-	TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-	frame->operandsStack->empilharTypedElement(typedElement);
-	frame->operandsStack->empilharTypedElement(typedElement);
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+	ArrayObject *array;
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::INT);
+    Value index = topFrame->desempilhaOperandStack();
+    assert(index.type == ValueType::INT);
+    Value arrayref = topFrame->desempilhaOperandStack();
+    assert(arrayref.type == ValueType::REFERENCE);
+    assert((arrayref.data.object)->objectType() == ObjectType::ARRAY);
+
+    array = (ArrayObject *) arrayref.data.object;
+
+    if (array == NULL) {
+        cerr << "NullPointerException" << endl;
+        exit(1);
+    }
+    if (index.data.intValue > (signed)array->getSize() || index.data.intValue < 0) {
+        cerr << "ArrayIndexOutOfBoundsException" << endl;
+        exit(2);
+    }
+
+    value.data.shortValue = (int16_t) value.data.intValue;
+    value.printType = ValueType::SHORT;
+    value.type = ValueType::SHORT;
+    array->changeValueAt(index.data.intValue, value);
+	
+    topFrame->pc += 1;
 }
 
 void Operations::pop() {
-	frame->operandsStack->desempilhaTyped();
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type != ValueType::LONG);
+    assert(value.type != ValueType::DOUBLE);
+
+    topFrame->pc += 1;
 }
 
 void Operations::pop2() {
-	TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-	if (typedElement.type == TYPE_LONG || typedElement.type == TYPE_DOUBLE) {
-		frame->operandsStack->desempilhaTyped();
-	}
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    topFrame->desempilhaOperandStack();
+    topFrame->desempilhaOperandStack();
+
+    topFrame->pc += 1;
+}
+
+void Operations::dup() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type != ValueType::LONG);
+    assert(value.type != ValueType::DOUBLE);
+
+    topFrame->empilharOperandStack(value);
+    topFrame->empilharOperandStack(value);
+
+    topFrame->pc += 1;
 }
 
 void Operations::dup_x1() {
-	if (frame->operandsStack->desempilhaTopoTipo() != TYPE_LONG && frame->operandsStack->desempilhaTopoTipo() != TYPE_DOUBLE) {
-		TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-		if (frame->operandsStack->desempilhaTopoTipo() != TYPE_LONG && frame->operandsStack->desempilhaTopoTipo() != TYPE_DOUBLE) {
-			frame->operandsStack->desempilhaTyped();
-		} else {
-			frame->operandsStack->empilharTypedElement(typedElement);
-		}
-	}
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value_1 = topFrame->desempilhaOperandStack();
+    assert(value_1.type != ValueType::LONG);
+    assert(value_1.type != ValueType::DOUBLE);
+    Value value_2 = topFrame->desempilhaOperandStack();
+    assert(value_2.type != ValueType::LONG);
+    assert(value_2.type != ValueType::DOUBLE);
+
+    topFrame->empilharOperandStack(value_1);
+    topFrame->empilharOperandStack(value_2);
+    topFrame->empilharOperandStack(value_1);
+
+    topFrame->pc += 1;
 }
 
 void Operations::dup_x2() {
-	TypedElement typedElement = frame->operandsStack->desempilhaTyped();
-	if (frame->operandsStack->desempilhaTopoTipo() != TYPE_LONG && frame->operandsStack->desempilhaTopoTipo() != TYPE_DOUBLE) {
-		TypedElement typedElement2 = frame->operandsStack->desempilhaTyped();
-		TypedElement typedElement3 = frame->operandsStack->desempilhaTyped();
-		frame->operandsStack->empilharTypedElement(typedElement);
-		frame->operandsStack->empilharTypedElement(typedElement3);
-		frame->operandsStack->empilharTypedElement(typedElement2);
-		frame->operandsStack->empilharTypedElement(typedElement);
-	} else {
-		TypedElement typedElement2 = frame->operandsStack->desempilhaTyped();
-		frame->operandsStack->empilharTypedElement(typedElement);
-		frame->operandsStack->empilharTypedElement(typedElement2);
-		frame->operandsStack->empilharTypedElement(typedElement);
-	}
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value_1 = topFrame->desempilhaOperandStack();
+    Value value_2 = topFrame->desempilhaOperandStack();
+    Value value_3 = topFrame->desempilhaOperandStack();
+
+    assert(value_1.type != ValueType::LONG);
+    assert(value_1.type != ValueType::DOUBLE);
+    assert(value_3.type != ValueType::LONG);
+    assert(value_3.type != ValueType::DOUBLE);
+
+    topFrame->empilharOperandStack(value_1);
+    topFrame->empilharOperandStack(value_3);
+    topFrame->empilharOperandStack(value_2);
+    topFrame->empilharOperandStack(value_1);
+
+    topFrame->pc += 1;
 }
 
 void Operations::dup2() {
-	TypedElement typedElement = frame->operandsStack->desempilhaTyped();
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
 
-	if (frame->operandsStack->desempilhaTopoTipo() != TYPE_LONG && frame->operandsStack->desempilhaTopoTipo() != TYPE_DOUBLE) {
-		TypedElement typedElement2 = frame->operandsStack->desempilhaTyped();
-		frame->operandsStack->empilharTypedElement(typedElement2);
-		frame->operandsStack->empilharTypedElement(typedElement);
-		frame->operandsStack->empilharTypedElement(typedElement2);
-		frame->operandsStack->empilharTypedElement(typedElement);
-	} else {
-		frame->operandsStack->empilharTypedElement(typedElement);
-		frame->operandsStack->empilharTypedElement(typedElement);
-	}
+    Value value_1 = topFrame->desempilhaOperandStack();
+    Value value_2 = topFrame->desempilhaOperandStack();
+    assert(value_2.type != ValueType::LONG);
+    assert(value_2.type != ValueType::DOUBLE);
+
+    topFrame->empilharOperandStack(value_2);
+    topFrame->empilharOperandStack(value_1);
+    topFrame->empilharOperandStack(value_2);
+    topFrame->empilharOperandStack(value_1);
+
+    topFrame->pc += 1;
 }
 
 void Operations::dup2_x1() {
-	TypedElement typedElement = frame->operandsStack->desempilhaTyped();
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
 
-	if (frame->operandsStack->desempilhaTopoTipo() != TYPE_LONG && frame->operandsStack->desempilhaTopoTipo() != TYPE_DOUBLE) {
-		TypedElement typedElement2 = frame->operandsStack->desempilhaTyped();
-		TypedElement typedElement3 = frame->operandsStack->desempilhaTyped();
-		frame->operandsStack->empilharTypedElement(typedElement2);
-		frame->operandsStack->empilharTypedElement(typedElement);
-		frame->operandsStack->empilharTypedElement(typedElement3);
-		frame->operandsStack->empilharTypedElement(typedElement2);
-		frame->operandsStack->empilharTypedElement(typedElement);
-	} else {
-		TypedElement typedElement2 = frame->operandsStack->desempilhaTyped();
-		frame->operandsStack->empilharTypedElement(typedElement);
-		frame->operandsStack->empilharTypedElement(typedElement2);
-		frame->operandsStack->empilharTypedElement(typedElement);
-	}
+    Value value_1 = topFrame->desempilhaOperandStack();
+    Value value_2 = topFrame->desempilhaOperandStack();
+    Value value_3 = topFrame->desempilhaOperandStack();
+
+    assert(value_2.type != ValueType::LONG);
+    assert(value_2.type != ValueType::DOUBLE);
+    assert(value_3.type != ValueType::LONG);
+    assert(value_3.type != ValueType::DOUBLE);
+
+    topFrame->empilharOperandStack(value_2);
+    topFrame->empilharOperandStack(value_1);
+    topFrame->empilharOperandStack(value_3);
+    topFrame->empilharOperandStack(value_2);
+    topFrame->empilharOperandStack(value_1);
+
+    topFrame->pc += 1;
 }
 
 void Operations::dup2_x2() {
-	TypedElement typedElement = frame->operandsStack->desempilhaTyped();
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
 
-	if (frame->operandsStack->desempilhaTopoTipo() != TYPE_LONG && frame->operandsStack->desempilhaTopoTipo() != TYPE_DOUBLE) {
-		TypedElement typedElement2 = frame->operandsStack->desempilhaTyped();
-		TypedElement typedElement3 = frame->operandsStack->desempilhaTyped();
-		if (typedElement3.type == TYPE_LONG || typedElement3.type == TYPE_DOUBLE) {
-			frame->operandsStack->empilharTypedElement(typedElement2);
-			frame->operandsStack->empilharTypedElement(typedElement);
-			frame->operandsStack->empilharTypedElement(typedElement3);
-			frame->operandsStack->empilharTypedElement(typedElement2);
-			frame->operandsStack->empilharTypedElement(typedElement);
-		} else {
-			TypedElement typedElement4 = frame->operandsStack->desempilhaTyped();
-			frame->operandsStack->empilharTypedElement(typedElement2);
-			frame->operandsStack->empilharTypedElement(typedElement);
-			frame->operandsStack->empilharTypedElement(typedElement4);
-			frame->operandsStack->empilharTypedElement(typedElement3);
-			frame->operandsStack->empilharTypedElement(typedElement2);
-			frame->operandsStack->empilharTypedElement(typedElement);
-		}
-	} else {
-		TypedElement typedElement2 = frame->operandsStack->desempilhaTyped();
-		if (typedElement2.type == TYPE_LONG || typedElement2.type == TYPE_DOUBLE) {
-			frame->operandsStack->empilharTypedElement(typedElement);
-			frame->operandsStack->empilharTypedElement(typedElement2);
-			frame->operandsStack->empilharTypedElement(typedElement);
-		} else {
-			TypedElement typedElement3 = frame->operandsStack->desempilhaTyped();
-			frame->operandsStack->empilharTypedElement(typedElement);
-			frame->operandsStack->empilharTypedElement(typedElement3);
-			frame->operandsStack->empilharTypedElement(typedElement2);
-			frame->operandsStack->empilharTypedElement(typedElement);
-		}
-	}
+    Value value_1 = topFrame->desempilhaOperandStack();
+    Value value_2 = topFrame->desempilhaOperandStack();
+    Value value_3 = topFrame->desempilhaOperandStack();
+    Value value_4 = topFrame->desempilhaOperandStack();
+
+    assert(value_2.type != ValueType::LONG);
+    assert(value_2.type != ValueType::DOUBLE);
+    assert(value_4.type != ValueType::LONG);
+    assert(value_4.type != ValueType::DOUBLE);
+
+    topFrame->empilharOperandStack(value_2);
+    topFrame->empilharOperandStack(value_1);
+    topFrame->empilharOperandStack(value_4);
+    topFrame->empilharOperandStack(value_3);
+    topFrame->empilharOperandStack(value_2);
+    topFrame->empilharOperandStack(value_1);
+
+    topFrame->pc += 1;
 }
 
 void Operations::swap() {
-	TypedElement typedElement1 = frame->operandsStack->desempilhaTyped();
-	TypedElement typedElement2 = frame->operandsStack->desempilhaTyped();
-	frame->operandsStack->empilharTypedElement(typedElement1);
-	frame->operandsStack->empilharTypedElement(typedElement2);
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value_1 = topFrame->desempilhaOperandStack();
+    Value value_2 = topFrame->desempilhaOperandStack();
+
+    assert(value_1.type != ValueType::LONG);
+    assert(value_1.type != ValueType::DOUBLE);
+    assert(value_2.type != ValueType::LONG);
+    assert(value_2.type != ValueType::DOUBLE);
+
+    topFrame->empilharOperandStack(value_1);
+    topFrame->empilharOperandStack(value_2);
+
+    topFrame->pc += 1;
 }
 
+void Operations::iadd() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::INT);
+	assert(value_1.type == ValueType::INT);
+
+	value_1.data.intValue = value_1.data.intValue + (value_2.data.intValue);
+    value_1.printType = ValueType::INT;
+    
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::ladd() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack(); //padding
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::LONG);
+	assert(value_1.type == ValueType::LONG);
+
+	value_1.data.longValue = value_1.data.longValue + (value_2.data.longValue);
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::fadd() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::FLOAT);
+	assert(value_1.type == ValueType::FLOAT);
+
+	value_1.data.floatValue = value_1.data.floatValue + (value_2.data.floatValue);
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::dadd() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::DOUBLE);
+	assert(value_1.type == ValueType::DOUBLE);
+
+	value_1.data.doubleValue = value_1.data.doubleValue + (value_2.data.doubleValue);
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::isub() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::INT);
+	assert(value_1.type == ValueType::INT);
+
+    value_1.printType = ValueType::INT;
+	value_1.data.intValue = value_1.data.intValue - (value_2.data.intValue);
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::lsub() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::LONG);
+	assert(value_1.type == ValueType::LONG);
+
+	value_1.data.longValue = value_1.data.longValue - (value_2.data.longValue);
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::fsub() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::FLOAT);
+	assert(value_1.type == ValueType::FLOAT);
+
+	value_1.data.floatValue = value_1.data.floatValue - (value_2.data.floatValue);
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::dsub() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::DOUBLE);
+	assert(value_1.type == ValueType::DOUBLE);
+
+	value_1.data.doubleValue = value_1.data.doubleValue - (value_2.data.doubleValue);
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::imul() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::INT);
+	assert(value_1.type == ValueType::INT);
+
+    value_1.printType = ValueType::INT;
+	value_1.data.intValue = value_1.data.intValue * (value_2.data.intValue);
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::lmul() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::LONG);
+	assert(value_1.type == ValueType::LONG);
+
+	value_1.data.longValue = value_1.data.longValue * (value_2.data.longValue);
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::fmul() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::FLOAT);
+	assert(value_1.type == ValueType::FLOAT);
+
+	value_1.data.floatValue = value_1.data.floatValue * (value_2.data.floatValue);
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::dmul() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::DOUBLE);
+	assert(value_1.type == ValueType::DOUBLE);
+
+	value_1.data.doubleValue = value_1.data.doubleValue * (value_2.data.doubleValue);
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::idiv() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::INT);
+	assert(value_1.type == ValueType::INT);
+	if (value_2.data.intValue == 0) {
+		cerr << "ArithmeticException" << endl;
+		exit(2);
+	}
+
+    value_1.printType = ValueType::INT;
+	value_1.data.intValue = value_1.data.intValue / (value_2.data.intValue);
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::ldiv() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::LONG);
+	assert(value_1.type == ValueType::LONG);
+	if (value_2.data.longValue == 0) {
+		cerr << "ArithmeticException" << endl;
+		exit(2);
+	}
+
+	value_1.data.longValue = value_1.data.longValue / (value_2.data.longValue);
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::fdiv() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::FLOAT);
+	assert(value_1.type == ValueType::FLOAT);
+	if (value_2.data.floatValue == 0) {
+		cerr << "ArithmeticException" << endl;
+		exit(2);
+	}
+	value_1.data.floatValue = value_1.data.floatValue / (value_2.data.floatValue);
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::ddiv() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::DOUBLE);
+	assert(value_1.type == ValueType::DOUBLE);
+	if (value_2.data.doubleValue == 0) {
+		cerr << "ArithmeticException" << endl;
+		exit(2);
+	}
+	value_1.data.doubleValue = value_1.data.doubleValue / (value_2.data.doubleValue);
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::irem() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value_2 = topFrame->desempilhaOperandStack();
+    Value value_1 = topFrame->desempilhaOperandStack();
+
+    assert(value_2.type == ValueType::INT);
+    assert(value_1.type == ValueType::INT);
+	if (value_2.data.intValue == 0) {
+		cerr << "ArithmeticException" << endl;
+        exit(2);
+	}
+	
+    value_1.printType = ValueType::INT;
+	value_1.data.intValue = value_1.data.intValue - (value_1.data.intValue / value_2.data.intValue)*value_2.data.intValue;
+    topFrame->empilharOperandStack(value_1);
+
+    topFrame->pc += 1;
+}
+
+void Operations::lrem() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value_2 = topFrame->desempilhaOperandStack();
+    topFrame->desempilhaOperandStack();
+    Value value_1 = topFrame->desempilhaOperandStack();
+    // Sobra um padding na pilha que ficará abaixo do resultado
+
+    assert(value_2.type == ValueType::LONG);
+    assert(value_1.type == ValueType::LONG);
+	if (value_2.data.longValue == 0) {
+		cerr << "ArithmeticException" << endl;
+        exit(2);
+	}
+	// value_1 negativo implica em resultado negativo
+	value_1.data.longValue = value_1.data.longValue - (value_1.data.longValue / value_2.data.longValue)*value_2.data.longValue;
+    topFrame->empilharOperandStack(value_1);
+
+    topFrame->pc += 1;
+}
+
+void Operations::frem() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value_2 = topFrame->desempilhaOperandStack();
+    Value value_1 = topFrame->desempilhaOperandStack();
+
+    assert(value_2.type == ValueType::FLOAT);
+    assert(value_1.type == ValueType::FLOAT);
+	if (value_2.data.floatValue == 0) {
+		cerr << "ArithmeticException" << endl;
+        exit(2);
+	}
+	// value_1 negativo implica em resultado negativo
+	value_1.data.floatValue = value_1.data.floatValue - ((uint32_t)(value_1.data.floatValue / value_2.data.floatValue))*value_2.data.floatValue;
+    topFrame->empilharOperandStack(value_1);
+
+    topFrame->pc += 1;
+}
+
+void Operations::drem() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value_2 = topFrame->desempilhaOperandStack();
+    topFrame->desempilhaOperandStack(); // PADDING
+    Value value_1 = topFrame->desempilhaOperandStack();
+    // Sobra um padding na pilha que ficará abaixo do resultado
+
+    assert(value_2.type == ValueType::DOUBLE);
+    assert(value_1.type == ValueType::DOUBLE);
+	if (value_2.data.doubleValue == 0) {
+		cerr << "ArithmeticException" << endl;
+        exit(2);
+	}
+	// value_1 negativo implica em resultado negativo
+	value_1.data.doubleValue = value_1.data.doubleValue - ((uint64_t)(value_1.data.doubleValue / value_2.data.doubleValue))*value_2.data.doubleValue;
+    topFrame->empilharOperandStack(value_1);
+
+    topFrame->pc += 1;
+}
+
+void Operations::ineg() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value_1 = topFrame->desempilhaOperandStack();
+    assert(value_1.type == ValueType::INT);
+
+    value_1.printType = ValueType::INT;
+	value_1.data.intValue = -value_1.data.intValue;
+    topFrame->empilharOperandStack(value_1);
+
+    topFrame->pc += 1;
+}
+
+void Operations::lneg() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+	// Não precisa tirar o padding
+    Value value_1 = topFrame->desempilhaOperandStack();
+    assert(value_1.type == ValueType::LONG);
+
+	value_1.data.longValue = -value_1.data.longValue;
+    topFrame->empilharOperandStack(value_1);
+
+    topFrame->pc += 1;
+}
+
+void Operations::fneg() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value_1 = topFrame->desempilhaOperandStack();
+    assert(value_1.type == ValueType::FLOAT);
+
+	value_1.data.floatValue = -value_1.data.floatValue;
+    topFrame->empilharOperandStack(value_1);
+
+    topFrame->pc += 1;
+}
+
+void Operations::dneg() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+	// Não precisa tirar o padding
+    Value value_1 = topFrame->desempilhaOperandStack();
+    assert(value_1.type == ValueType::DOUBLE);
+
+	value_1.data.doubleValue = -value_1.data.doubleValue;
+    topFrame->empilharOperandStack(value_1);
+
+    topFrame->pc += 1;
+}
+
+void Operations::ishl() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value_2 = topFrame->desempilhaOperandStack();
+    Value value_1 = topFrame->desempilhaOperandStack();
+    assert(value_2.type == ValueType::INT);
+    assert(value_1.type == ValueType::INT);
+
+	// value_2 armazena seus 5 primeiros bits
+	value_2.data.intValue = 0x1f & value_2.data.intValue;
+	value_1.data.intValue = value_1.data.intValue << value_2.data.intValue;
+    value_1.printType = ValueType::INT;
+    topFrame->empilharOperandStack(value_1);
+
+    topFrame->pc += 1;
+}
+
+void Operations::lshl() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value_2 = topFrame->desempilhaOperandStack();
+    Value value_1 = topFrame->desempilhaOperandStack();
+    // Sobra um padding na pilha que ficará abaixo do resultado
+
+    assert(value_2.type == ValueType::INT);
+    assert(value_1.type == ValueType::LONG);
+
+    value_2.data.longValue = 0x3f & value_2.data.longValue;
+    value_1.data.longValue = (value_1.data.longValue) << value_2.data.intValue;
+    topFrame->empilharOperandStack(value_1);
+
+    topFrame->pc += 1;
+}
+
+void Operations::ishr() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value_2 = topFrame->desempilhaOperandStack();
+    Value value_1 = topFrame->desempilhaOperandStack();
+    assert(value_2.type == ValueType::INT);
+    assert(value_1.type == ValueType::INT);
+
+	// value_2 armazena seus 5 primeiros bits
+	value_2.data.intValue = 0x1f & value_2.data.intValue;
+	value_1.data.intValue = value_1.data.intValue >> value_2.data.intValue;
+    value_1.printType = ValueType::INT;
+    topFrame->empilharOperandStack(value_1);
+
+    topFrame->pc += 1;
+}
+
+void Operations::lshr() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+
+    Value value_2 = topFrame->desempilhaOperandStack();
+    Value value_1 = topFrame->desempilhaOperandStack();
+    // Sobra um padding na pilha que ficará abaixo do resultado
+
+    assert(value_2.type == ValueType::INT);
+    assert(value_1.type == ValueType::LONG);
+
+	// value_2 armazena seus 6 primeiros bits
+	value_2.data.longValue = 0x3f & value_2.data.longValue;
+	value_1.data.longValue = value_1.data.longValue >> value_2.data.longValue;
+    topFrame->empilharOperandStack(value_1);
+
+    topFrame->pc += 1;
+}
+
+void Operations::iushr() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::INT);
+	assert(value_1.type == ValueType::INT);
+
+	value_2.data.intValue = 0x1f & value_2.data.intValue;
+	value_1.data.intValue = value_1.data.intValue >> value_2.data.intValue;
+	if (value_1.data.intValue < 0) {
+		value_1.data.intValue = value_1.data.intValue + (2<<~(value_2.data.intValue));
+	}
+    value_1.printType = ValueType::INT;
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::lushr() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::INT);
+	assert(value_1.type == ValueType::LONG);
+
+	value_2.data.intValue = 0x3f & value_2.data.intValue;
+	value_1.data.longValue = value_1.data.longValue >> value_2.data.intValue;
+	if (value_1.data.longValue < 0) {
+		value_1.data.longValue = value_1.data.longValue + ((int64_t)2 << ~(value_2.data.intValue));
+	}
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::iand() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::INT);
+	assert(value_1.type == ValueType::INT);
+
+    value_1.printType = ValueType::INT;
+	value_1.data.intValue = value_1.data.intValue & value_2.data.intValue;
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::land() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack(); // PADDING
+	Value value_1 = topFrame->desempilhaOperandStack();
+	// Sobra um padding na pilha que ficará abaixo do resultado
+
+	assert(value_2.type == ValueType::LONG);
+	assert(value_1.type == ValueType::LONG);
+
+	// value_2 armazena seus 6 primeiros bits
+	value_1.data.longValue = value_1.data.longValue & value_2.data.longValue;
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::ior() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::INT);
+	assert(value_1.type == ValueType::INT);
+
+    value_1.printType = ValueType::INT;
+	value_1.data.intValue = value_1.data.intValue | value_2.data.intValue;
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::lor() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack(); // PADDING
+	Value value_1 = topFrame->desempilhaOperandStack();
+	// Sobra um padding na pilha que ficará abaixo do resultado
+
+	assert(value_2.type == ValueType::LONG);
+	assert(value_1.type == ValueType::LONG);
+
+	value_1.data.longValue = value_1.data.longValue | value_2.data.longValue;
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::ixor() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_2.type == ValueType::INT);
+	assert(value_1.type == ValueType::INT);
+
+    value_1.printType = ValueType::INT;
+	value_1.data.intValue = value_1.data.intValue ^ value_2.data.intValue;
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::lxor() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack(); // PADDING
+	Value value_1 = topFrame->desempilhaOperandStack();
+	// Sobra um padding na pilha que ficará abaixo do resultado
+
+	assert(value_2.type == ValueType::LONG);
+	assert(value_1.type == ValueType::LONG);
+
+	value_1.data.longValue = value_1.data.longValue ^ value_2.data.longValue;
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::iinc() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    u1 *code = topFrame->getCode(topFrame->pc);
+    
+    u2 index = 0;
+    if (_isWide) {
+        index = (code[1] << 8) | code[2];
+    } else {
+        index += code[1];
+    }
+    
+    Value localVariable = topFrame->obterLocalVariableValue(index);
+    assert(localVariable.type == ValueType::INT);
+    
+    int32_t inc;
+    if (_isWide) {
+        uint16_t constant = (code[3] << 8) | code[4];
+        inc = (int32_t) (int16_t) constant;
+    } else {
+        inc = (int32_t) (int8_t) code[2];
+    }
+    
+    localVariable.data.intValue += inc;
+    topFrame->trocaLocalVariable(localVariable, index);
+    
+    topFrame->pc += _isWide ? 5 : 3;
+    _isWide = false;
+}
+
+void Operations::i2l() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_1.type == ValueType::INT);
+
+	Value padding;
+	padding.type = ValueType::PADDING;
+
+	topFrame->empilharOperandStack(padding);
+
+    value_1.data.longValue = (int64_t) value_1.data.intValue;
+	value_1.type = ValueType::LONG;
+
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::i2f() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_1.type == ValueType::INT);
+
+	value_1.type = ValueType::FLOAT;
+	value_1.data.floatValue = (float) value_1.data.intValue;
+
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::i2d() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_1.type == ValueType::INT);
+
+	Value padding;
+	padding.type = ValueType::PADDING;
+	topFrame->empilharOperandStack(padding);
+
+	value_1.type = ValueType::DOUBLE;
+	value_1.data.doubleValue = (double) value_1.data.intValue;
+
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::l2i() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_1 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack(); //padding
+
+	assert(value_1.type == ValueType::LONG);
+
+    value_1.data.intValue = (int32_t) value_1.data.intValue;
+    value_1.printType = ValueType::INT;
+	value_1.type = ValueType::INT;
+
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::l2f() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_1 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack(); //padding
+
+	assert(value_1.type == ValueType::LONG);
+
+	value_1.type = ValueType::FLOAT;
+	value_1.data.floatValue = (float) value_1.data.longValue;
+
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::l2d() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_1 = topFrame->desempilhaOperandStack();
+	//manter padding na pilha de operandos
+
+	assert(value_1.type == ValueType::LONG);
+
+	value_1.type = ValueType::DOUBLE;
+	value_1.data.doubleValue = (double) value_1.data.longValue;
+
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::f2i() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_1.type == ValueType::FLOAT);
+
+    value_1.printType = ValueType::INT;
+	value_1.type = ValueType::INT;
+	value_1.data.intValue = (int32_t) value_1.data.floatValue;
+
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::f2l() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_1.type == ValueType::FLOAT);
+
+	Value padding;
+	padding.type = ValueType::PADDING;
+	topFrame->empilharOperandStack(padding);
+
+	value_1.type = ValueType::LONG;
+	value_1.data.longValue = (uint64_t) value_1.data.floatValue;
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::f2d() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_1.type == ValueType::FLOAT);
+
+	Value padding;
+	padding.type = ValueType::PADDING;
+	topFrame->empilharOperandStack(padding);
+
+	value_1.type = ValueType::DOUBLE;
+	value_1.data.doubleValue = (double) value_1.data.floatValue;
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::d2i() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_1 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack(); //padding
+
+	assert(value_1.type == ValueType::DOUBLE);
+
+    value_1.printType = ValueType::INT;
+	value_1.type = ValueType::INT;
+	value_1.data.intValue = (int32_t) value_1.data.doubleValue;
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::d2l() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_1 = topFrame->desempilhaOperandStack();
+	//manter padding na pilha de operandos
+
+	assert(value_1.type == ValueType::DOUBLE);
+
+	value_1.type = ValueType::LONG;
+	value_1.data.longValue = (int64_t) value_1.data.doubleValue;
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::d2f() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_1 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack(); //padding
+
+	assert(value_1.type == ValueType::DOUBLE);
+
+	value_1.type = ValueType::FLOAT;
+	value_1.data.floatValue = (float) value_1.data.doubleValue;
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::i2b() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_1.type == ValueType::INT);
+    
+    value_1.printType = ValueType::BYTE;
+    
+    value_1.data.intValue = (int32_t) (int8_t) value_1.data.intValue;
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::i2c() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_1.type == ValueType::INT);
+
+    value_1.printType = ValueType::CHAR;
+    
+    value_1.data.charValue = (uint32_t) (uint8_t) value_1.data.intValue;
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::i2s() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_1 = topFrame->desempilhaOperandStack();
+
+	assert(value_1.type == ValueType::INT);
+
+    value_1.printType = ValueType::SHORT;
+    
+    value_1.data.intValue = (int32_t) (int16_t) value_1.data.intValue;
+	topFrame->empilharOperandStack(value_1);
+
+	topFrame->pc += 1;
+}
+
+void Operations::lcmp() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack();
+	Value resultado;
+    resultado.printType = ValueType::INT;
+	resultado.type = ValueType::INT;
+
+	assert(value_2.type == ValueType::LONG);
+	assert(value_1.type == ValueType::LONG);
+
+	if (value_1.data.longValue > value_2.data.longValue) {
+		resultado.data.intValue = 1;
+	} else if (value_1.data.longValue == value_2.data.longValue) {
+		resultado.data.intValue = 0;
+	} else {
+		resultado.data.intValue = -1;
+	}
+
+	topFrame->empilharOperandStack(resultado);
+
+	topFrame->pc += 1;
+}
+
+void Operations::fcmpl() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+	Value resultado;
+    resultado.printType = ValueType::INT;
+	resultado.type = ValueType::INT;
+
+	assert(value_2.type == ValueType::FLOAT);
+	assert(value_1.type == ValueType::FLOAT);
+
+	if (isnan(value_1.data.floatValue) || isnan(value_2.data.floatValue)) {
+		resultado.data.intValue = -1;
+	} else if (value_1.data.floatValue > value_2.data.floatValue) {
+		resultado.data.intValue = 1;
+	} else if (value_1.data.floatValue == value_2.data.floatValue) {
+		resultado.data.intValue = 0;
+	} else {
+		resultado.data.intValue = -1;
+	}
+
+	topFrame->empilharOperandStack(resultado);
+
+	topFrame->pc += 1;
+}
+
+void Operations::fcmpg() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+	Value resultado;
+    resultado.printType = ValueType::INT;
+	resultado.type = ValueType::INT;
+
+	assert(value_2.type == ValueType::FLOAT);
+	assert(value_1.type == ValueType::FLOAT);
+
+	if (isnan(value_1.data.floatValue) || isnan(value_2.data.floatValue)) {
+		resultado.data.intValue = 1;
+	} else if (value_1.data.floatValue > value_2.data.floatValue) {
+		resultado.data.intValue = 1;
+	} else if (value_1.data.floatValue == value_2.data.floatValue) {
+		resultado.data.intValue = 0;
+	} else {
+		resultado.data.intValue = -1;
+	}
+
+	topFrame->empilharOperandStack(resultado);
+
+	topFrame->pc += 1;
+}
+
+void Operations::dcmpl() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack();
+	Value resultado;
+    resultado.printType = ValueType::INT;
+	resultado.type = ValueType::INT;
+
+	assert(value_2.type == ValueType::DOUBLE);
+	assert(value_1.type == ValueType::DOUBLE);
+
+	if (isnan(value_1.data.doubleValue) || isnan(value_2.data.doubleValue)) {
+		resultado.data.intValue = -1;
+	} else if (value_1.data.doubleValue > value_2.data.doubleValue) {
+		resultado.data.intValue = 1;
+	} else if (value_1.data.doubleValue == value_2.data.doubleValue) {
+		resultado.data.intValue = 0;
+	} else {
+		resultado.data.intValue = -1;
+	}
+
+	topFrame->empilharOperandStack(resultado);
+
+	topFrame->pc += 1;
+}
+
+void Operations::dcmpg() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value_2 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack();
+	Value value_1 = topFrame->desempilhaOperandStack();
+	topFrame->desempilhaOperandStack();
+	Value resultado;
+    resultado.printType = ValueType::INT;
+	resultado.type = ValueType::INT;
+
+	assert(value_2.type == ValueType::DOUBLE);
+	assert(value_1.type == ValueType::DOUBLE);
+
+	if (isnan(value_1.data.doubleValue) || isnan(value_2.data.doubleValue)) {
+		resultado.data.intValue = 1;
+	} else if (value_1.data.doubleValue > value_2.data.doubleValue) {
+		resultado.data.intValue = 1;
+	} else if (value_1.data.doubleValue == value_2.data.doubleValue) {
+		resultado.data.intValue = 0;
+	} else {
+		resultado.data.intValue = -1;
+	}
+
+	topFrame->empilharOperandStack(resultado);
+
+	topFrame->pc += 1;
+}
+
+void Operations::ifeq() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    Value value = topFrame->desempilhaOperandStack();
+    assert(value.type == ValueType::INT);
+    
+    if (value.data.intValue == 0) {
+        u1 *code = topFrame->getCode(topFrame->pc);
+        u1 byte1 = code[1];
+        u1 byte2 = code[2];
+        int16_t branchOffset = (byte1 << 8) | byte2;
+        topFrame->pc += branchOffset;
+    } else {
+        topFrame->pc += 3;
+    }
+}
+
+void Operations::ifne() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+	
+	Value value = topFrame->desempilhaOperandStack();
+	assert(value.type == ValueType::INT);
+	
+	if (value.data.intValue != 0) {
+		u1 *code = topFrame->getCode(topFrame->pc);
+		u1 byte1 = code[1];
+		u1 byte2 = code[2];
+		int16_t branchOffset = (byte1 << 8) | byte2;
+		topFrame->pc += branchOffset;
+    } else {
+		topFrame->pc += 3;
+    }
+}
+
+void Operations::iflt() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+	
+	Value value = topFrame->desempilhaOperandStack();
+	assert(value.type == ValueType::INT);
+	
+	if (value.data.intValue < 0) {
+		u1 *code = topFrame->getCode(topFrame->pc);
+		u1 byte1 = code[1];
+		u1 byte2 = code[2];
+		int16_t branchOffset = (byte1 << 8) | byte2;
+		topFrame->pc += branchOffset;
+    } else {
+		topFrame->pc += 3;
+    }
+}
+
+void Operations::ifge() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+	
+	Value value = topFrame->desempilhaOperandStack();
+	assert(value.type == ValueType::INT);
+	
+	if (value.data.intValue >= 0) {
+		u1 *code = topFrame->getCode(topFrame->pc);
+		u1 byte1 = code[1];
+		u1 byte2 = code[2];
+		int16_t branchOffset = (byte1 << 8) | byte2;
+		topFrame->pc += branchOffset;
+    } else {
+		topFrame->pc += 3;
+    }
+}
+
+void Operations::ifgt() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+	
+	Value value = topFrame->desempilhaOperandStack();
+	assert(value.type == ValueType::INT);
+	
+	if (value.data.intValue > 0) {
+		u1 *code = topFrame->getCode(topFrame->pc);
+		u1 byte1 = code[1];
+		u1 byte2 = code[2];
+		int16_t branchOffset = (byte1 << 8) | byte2;
+		topFrame->pc += branchOffset;
+    } else {
+		topFrame->pc += 3;
+    }
+}
+
+void Operations::ifle() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+	
+	Value value = topFrame->desempilhaOperandStack();
+	assert(value.type == ValueType::INT);
+	
+	if (value.data.intValue <= 0) {
+		u1 *code = topFrame->getCode(topFrame->pc);
+		u1 byte1 = code[1];
+		u1 byte2 = code[2];
+		int16_t branchOffset = (byte1 << 8) | byte2;
+		topFrame->pc += branchOffset;
+    } else {
+		topFrame->pc += 3;
+    }
+}
+
+void Operations::if_icmpeq() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+	
+	Value value2 = topFrame->desempilhaOperandStack();
+	Value value1 = topFrame->desempilhaOperandStack();
+	assert(value1.type == ValueType::INT);
+	assert(value2.type == ValueType::INT);
+	
+	if (value1.data.intValue == value2.data.intValue) {
+		u1 *code = topFrame->getCode(topFrame->pc);
+		u1 byte1 = code[1];
+		u1 byte2 = code[2];
+		int16_t branchOffset = (byte1 << 8) | byte2;
+		topFrame->pc += branchOffset;
+    } else {
+		topFrame->pc += 3;
+    }
+}
+
+void Operations::if_icmpne() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+	
+	Value value2 = topFrame->desempilhaOperandStack();
+	Value value1 = topFrame->desempilhaOperandStack();
+	assert(value1.type == ValueType::INT);
+	assert(value2.type == ValueType::INT);
+	
+	if (value1.data.intValue != value2.data.intValue) {
+		u1 *code = topFrame->getCode(topFrame->pc);
+		u1 byte1 = code[1];
+		u1 byte2 = code[2];
+		int16_t branchOffset = (byte1 << 8) | byte2;
+		topFrame->pc += branchOffset;
+	} else {
+		topFrame->pc += 3;
+    }
+}
+
+void Operations::if_icmplt() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+	
+	Value value2 = topFrame->desempilhaOperandStack();
+	Value value1 = topFrame->desempilhaOperandStack();
+	assert(value1.type == ValueType::INT);
+	assert(value2.type == ValueType::INT);
+	
+	if (value1.data.intValue < value2.data.intValue) {
+		u1 *code = topFrame->getCode(topFrame->pc);
+		u1 byte1 = code[1];
+		u1 byte2 = code[2];
+		int16_t branchOffset = (byte1 << 8) | byte2;
+		topFrame->pc += branchOffset;
+    } else {
+		topFrame->pc += 3;
+    }
+}
+
+void Operations::if_icmpge() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+	
+	Value value2 = topFrame->desempilhaOperandStack();
+	Value value1 = topFrame->desempilhaOperandStack();
+	assert(value1.type == ValueType::INT);
+	assert(value2.type == ValueType::INT);
+	
+	if (value1.data.intValue >= value2.data.intValue) {
+		u1 *code = topFrame->getCode(topFrame->pc);
+		u1 byte1 = code[1];
+		u1 byte2 = code[2];
+		int16_t branchOffset = (byte1 << 8) | byte2;
+		topFrame->pc += branchOffset;
+    } else {
+		topFrame->pc += 3;
+    }
+}
+
+void Operations::if_icmpgt() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+	
+	Value value2 = topFrame->desempilhaOperandStack();
+	Value value1 = topFrame->desempilhaOperandStack();
+	assert(value1.type == ValueType::INT);
+	assert(value2.type == ValueType::INT);
+	
+	if (value1.data.intValue > value2.data.intValue) {
+		u1 *code = topFrame->getCode(topFrame->pc);
+		u1 byte1 = code[1];
+		u1 byte2 = code[2];
+		int16_t branchOffset = (byte1 << 8) | byte2;
+		topFrame->pc += branchOffset;
+    } else {
+		topFrame->pc += 3;
+    }
+}
+
+void Operations::if_icmple() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+	
+	Value value2 = topFrame->desempilhaOperandStack();
+	Value value1 = topFrame->desempilhaOperandStack();
+	assert(value1.type == ValueType::INT);
+	assert(value2.type == ValueType::INT);
+	
+	if (value1.data.intValue <= value2.data.intValue) {
+		u1 *code = topFrame->getCode(topFrame->pc);
+		u1 byte1 = code[1];
+		u1 byte2 = code[2];
+		int16_t branchOffset = (byte1 << 8) | byte2;
+		topFrame->pc += branchOffset;
+    } else {
+		topFrame->pc += 3;
+    }
+}
+
+void Operations::if_acmpeq() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value2 = topFrame->desempilhaOperandStack();
+	Value value1 = topFrame->desempilhaOperandStack();
+	assert(value1.type == ValueType::REFERENCE);
+	assert(value2.type == ValueType::REFERENCE);
+	
+	if (value1.data.object == value2.data.object) {
+		u1 *code = topFrame->getCode(topFrame->pc);
+		u1 byte1 = code[1];
+		u1 byte2 = code[2];
+		int16_t branchOffset = (byte1 << 8) | byte2;
+		topFrame->pc += branchOffset;
+    } else {
+		topFrame->pc += 3;
+    }
+}
+
+void Operations::if_acmpne() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	Value value2 = topFrame->desempilhaOperandStack();
+	Value value1 = topFrame->desempilhaOperandStack();
+	assert(value1.type == ValueType::REFERENCE);
+	assert(value2.type == ValueType::REFERENCE);
+
+	if (value1.data.object != value2.data.object) {
+		u1 *code = topFrame->getCode(topFrame->pc);
+		u1 byte1 = code[1];
+		u1 byte2 = code[2];
+		int16_t branchOffset = (byte1 << 8) | byte2;
+		topFrame->pc += branchOffset;
+    } else {
+		topFrame->pc += 3;
+    }
+}
+
+void Operations::func_goto() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+	
+	u1 *code = topFrame->getCode(topFrame->pc);
+	u1 byte1 = code[1];
+	u1 byte2 = code[2];
+	int16_t branchOffset = (byte1 << 8) | byte2;
+	topFrame->pc += branchOffset;
+}
+
+void Operations::jsr() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+	
+	u1 *code = topFrame->getCode(topFrame->pc);
+	u1 byte1 = code[1];
+	u1 byte2 = code[2];
+	int16_t branchOffset = (byte1 << 8) | byte2;
+	
+	Value returnAddr;
+	returnAddr.type = ValueType::RETURN_ADDR;
+	returnAddr.data.returnAddress = topFrame->pc + 3; 
+	topFrame->empilharOperandStack(returnAddr);
+	
+	topFrame->pc += branchOffset;
+}
+
+// Pode ser modificado pelo wide
+void Operations::ret() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	u1 *code = topFrame->getCode(topFrame->pc);
+	u1 byte1 = code[1]; // índice do vetor de variáveis locais
+	uint16_t index = (uint16_t) byte1;
+
+	if (_isWide) {
+		u1 byte2 = code[2];
+		index = (byte1 << 8) | byte2;
+	}
+
+	assert(((int16_t)(topFrame->sizeLocalVariables()) > index));
+	Value value = topFrame->obterLocalVariableValue(index);
+
+	assert(value.type == ValueType::RETURN_ADDR);
+	topFrame->trocaLocalVariable(value, index);
+
+	topFrame->pc = value.data.returnAddress;
+	_isWide = false;
+}
+
+void Operations::tableswitch() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    u1* code = topFrame->getCode(topFrame->pc);
+    u1 padding = 4 - (topFrame->pc + 1) % 4;
+    padding = (padding == 4) ? 0 : padding;
+    
+    u1 defaultbyte1 = code[padding + 1];
+    u1 defaultbyte2 = code[padding + 2];
+    u1 defaultbyte3 = code[padding + 3];
+    u1 defaultbyte4 = code[padding + 4];
+    int32_t defaultBytes = (defaultbyte1 << 24) | (defaultbyte2 << 16) | (defaultbyte3 << 8) | defaultbyte4;
+    
+    u1 lowbyte1 = code[padding + 5];
+    u1 lowbyte2 = code[padding + 6];
+    u1 lowbyte3 = code[padding + 7];
+    u1 lowbyte4 = code[padding + 8];
+    uint32_t lowbytes = (lowbyte1 << 24) | (lowbyte2 << 16) | (lowbyte3 << 8) | lowbyte4;
+    
+    u1 highbyte1 = code[padding + 9];
+    u1 highbyte2 = code[padding + 10];
+    u1 highbyte3 = code[padding + 11];
+    u1 highbyte4 = code[padding + 12];
+    uint32_t highbytes = (highbyte1 << 24) | (highbyte2 << 16) | (highbyte3 << 8) | highbyte4;
+    
+    Value keyValue = topFrame->desempilhaOperandStack();
+    assert(keyValue.type == ValueType::INT);
+    int32_t key = keyValue.data.intValue;
+    
+    uint32_t i;
+    uint32_t baseIndex = padding + 13;
+    int32_t offsets = highbytes - lowbytes + 1;
+    bool matched = false;
+    for (i = 0; i < (unsigned)offsets; i++) {
+        if ((unsigned)key == (unsigned)lowbytes) {
+            int32_t offset = (code[baseIndex] << 24) | (code[baseIndex+1] << 16) | (code[baseIndex+2] << 8) | code[baseIndex+3];
+            topFrame->pc += offset;
+            matched = true;
+            break;
+        }
+        lowbytes++;
+        baseIndex += 4;
+    }
+    
+    if (!matched) {
+        topFrame->pc += defaultBytes; // salto default
+    }
+}
+
+void Operations::lookupswitch() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    u1* code = topFrame->getCode(topFrame->pc);
+    u1 padding = 4 - (topFrame->pc + 1) % 4;
+    padding = (padding == 4) ? 0 : padding;
+    
+    u1 defaultbyte1 = code[padding + 1];
+    u1 defaultbyte2 = code[padding + 2];
+    u1 defaultbyte3 = code[padding + 3];
+    u1 defaultbyte4 = code[padding + 4];
+    int32_t defaultBytes = (defaultbyte1 << 24) | (defaultbyte2 << 16) | (defaultbyte3 << 8) | defaultbyte4;
+    
+    u1 npairs1 = code[padding + 5];
+    u1 npairs2 = code[padding + 6];
+    u1 npairs3 = code[padding + 7];
+    u1 npairs4 = code[padding + 8];
+    uint32_t npairs = (npairs1 << 24) | (npairs2 << 16) | (npairs3 << 8) | npairs4;
+
+    Value keyValue = topFrame->desempilhaOperandStack();
+    assert(keyValue.type == ValueType::INT);
+    int32_t key = keyValue.data.intValue;
+    
+    uint32_t i;
+    uint32_t baseIndex = padding + 9;
+    bool matched = false;
+    for (i = 0; i < npairs; i++) {
+        int32_t match = (code[baseIndex] << 24) | (code[baseIndex+1] << 16) | (code[baseIndex+2] << 8) | code[baseIndex+3];
+        
+        if (key == match) {
+            int32_t offset = (code[baseIndex+4] << 24) | (code[baseIndex+5] << 16) | (code[baseIndex+6] << 8) | code[baseIndex+7];
+            topFrame->pc += offset;
+            matched = true;
+            break;
+        }
+        baseIndex += 8;
+    }
+    
+    if (!matched) {
+        topFrame->pc += defaultBytes; // salto default
+    }
+}
+
+void Operations::ireturn() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    Value returnValue = topFrame->desempilhaOperandStack();
+    assert(returnValue.type == ValueType::INT);
+    
+    stackFrame.destroyTopFrame();
+    
+    Frame *newTopFrame = stackFrame.getTopFrame();
+    newTopFrame->empilharOperandStack(returnValue);
+}
+
+void Operations::lreturn() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    Value returnValue = topFrame->desempilhaOperandStack();
+    assert(returnValue.type == ValueType::LONG);
+    assert(topFrame->desempilhaOperandStack().type == ValueType::PADDING); // o debaixo precisa ser padding
+    
+    stackFrame.destroyTopFrame();
+    
+    Frame *newTopFrame = stackFrame.getTopFrame();
+    Value padding;
+    padding.type = ValueType::PADDING;
+    newTopFrame->empilharOperandStack(padding);
+    newTopFrame->empilharOperandStack(returnValue);
+}
+
+void Operations::freturn() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    Value returnValue = topFrame->desempilhaOperandStack();
+    assert(returnValue.type == ValueType::FLOAT);
+    
+    stackFrame.destroyTopFrame();
+    
+    Frame *newTopFrame = stackFrame.getTopFrame();
+    newTopFrame->empilharOperandStack(returnValue);
+}
+
+void Operations::dreturn() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    Value returnValue = topFrame->desempilhaOperandStack();
+    assert(returnValue.type == ValueType::DOUBLE);
+    assert(topFrame->desempilhaOperandStack().type == ValueType::PADDING); // o debaixo precisa ser padding
+    
+    stackFrame.destroyTopFrame();
+    
+    Frame *newTopFrame = stackFrame.getTopFrame();
+    
+    Value padding;
+    padding.type = ValueType::PADDING;
+    newTopFrame->empilharOperandStack(padding);
+    newTopFrame->empilharOperandStack(returnValue);
+}
+
+void Operations::areturn() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    Value returnValue = topFrame->desempilhaOperandStack();
+    assert(returnValue.type == ValueType::REFERENCE);
+    
+    stackFrame.destroyTopFrame();
+    
+    Frame *newTopFrame = stackFrame.getTopFrame();
+    newTopFrame->empilharOperandStack(returnValue);
+}
+
+void Operations::func_return() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    stackFrame.destroyTopFrame();
+}
+
+void Operations::getstatic() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    cp_info *constantPool = *(topFrame->obterConstantPool());
+    u1 *code = topFrame->getCode(topFrame->pc);
+
+    u1 byte1 = code[1];
+    u1 byte2 = code[2];
+
+    uint16_t fieldIndex = (byte1 << 8) | byte2;
+    cp_info fieldCP = constantPool[fieldIndex-1];
+    assert(fieldCP.tag == CONSTANT_Fieldref); // precisa ser um fieldRef
+
+    CONSTANT_Fieldref_info fieldRef = fieldCP.info.fieldref_info;
+
+    string className = getFormattedConstant(constantPool, fieldRef.class_index);
+
+    cp_info nameAndTypeCP = constantPool[fieldRef.name_and_type_index-1];
+    assert(nameAndTypeCP.tag == CONSTANT_NameAndType); // precisa ser um nameAndType
+
+    CONSTANT_NameAndType_info fieldNameAndType = nameAndTypeCP.info.nameAndType_info;
+
+    string fieldName = getFormattedConstant(constantPool, fieldNameAndType.name_index);
+    string fieldDescriptor = getFormattedConstant(constantPool, fieldNameAndType.descriptor_index);
+
+    // caso especial
+    if (className == "java/lang/System" && fieldDescriptor == "Ljava/io/PrintStream;" ) {
+        topFrame->pc += 3;
+        return;
+    }
+    // fim do caso especial
+    
+    MethodArea &methodArea = MethodArea::getInstance();
+    StaticClass *classRuntime = methodArea.carregarClassNamed(className);
+
+    while (classRuntime != NULL) {
+        if (classRuntime->fieldExists(fieldName) == false) {
+            if (classRuntime->getClassFile()->super_class == 0) {
+                classRuntime = NULL;
+            } else {
+                string superClassName = getFormattedConstant(classRuntime->getClassFile()->constant_pool, classRuntime->getClassFile()->super_class);
+                classRuntime = methodArea.carregarClassNamed(superClassName);
+            }
+        } else {
+            break;
+        }
+    }
+
+    if (classRuntime == NULL) {
+        cerr << "NoSuchFieldError" << endl;
+        exit(1);
+    }
+
+    // se a stack frame mudou, é porque teve <clinit> adicionado, então terminar a execução da instrução para eles serem executados.
+    if (stackFrame.getTopFrame() != topFrame) return;
+    
+    Value staticValue = classRuntime->getValueFromField(fieldName);
+    switch (staticValue.type) {
+        case ValueType::BOOLEAN:
+            staticValue.type = ValueType::INT;
+            staticValue.printType = ValueType::BOOLEAN;
+            break;
+        case ValueType::BYTE:
+            staticValue.type = ValueType::INT;
+            staticValue.printType = ValueType::BYTE;
+            break;
+        case ValueType::SHORT:
+            staticValue.type = ValueType::INT;
+            staticValue.printType = ValueType::SHORT;
+            break;
+        case ValueType::INT:
+            staticValue.type = ValueType::INT;
+            staticValue.printType = ValueType::INT;
+            break;
+        default:
+            break;
+    }
+    
+    if (staticValue.type == ValueType::DOUBLE || staticValue.type == ValueType::LONG) {
+        Value paddingValue;
+        paddingValue.type = ValueType::PADDING;
+        topFrame->empilharOperandStack(paddingValue);
+    }
+
+    topFrame->empilharOperandStack(staticValue);
+
+    topFrame->pc += 3;
+}
+
+void Operations::putstatic() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    cp_info *constantPool = *(topFrame->obterConstantPool());
+    u1 *code = topFrame->getCode(topFrame->pc);
+
+    u1 byte1 = code[1];
+    u1 byte2 = code[2];
+
+    uint16_t fieldIndex = (byte1 << 8) | byte2;
+    cp_info fieldCP = constantPool[fieldIndex-1];
+    assert(fieldCP.tag == CONSTANT_Fieldref); // precisa ser um fieldRef
+
+    CONSTANT_Fieldref_info fieldRef = fieldCP.info.fieldref_info;
+
+    string className = getFormattedConstant(constantPool, fieldRef.class_index);
+
+    cp_info nameAndTypeCP = constantPool[fieldRef.name_and_type_index-1];
+    assert(nameAndTypeCP.tag == CONSTANT_NameAndType); // precisa ser um nameAndType
+
+    CONSTANT_NameAndType_info fieldNameAndType = nameAndTypeCP.info.nameAndType_info;
+
+    string fieldName = getFormattedConstant(constantPool, fieldNameAndType.name_index);
+    string fieldDescriptor = getFormattedConstant(constantPool, fieldNameAndType.descriptor_index);
+
+    MethodArea &methodArea = MethodArea::getInstance();
+    StaticClass *classRuntime = methodArea.carregarClassNamed(className);
+
+    while (classRuntime != NULL) {
+        if (classRuntime->fieldExists(fieldName) == false) {
+            if (classRuntime->getClassFile()->super_class == 0) {
+                classRuntime = NULL;
+            } else {
+                string superClassName = getFormattedConstant(classRuntime->getClassFile()->constant_pool, classRuntime->getClassFile()->super_class);
+                classRuntime = methodArea.carregarClassNamed(superClassName);
+            }
+        } else {
+            break;
+        }
+    }
+
+    if (classRuntime == NULL) {
+        cerr << "NoSuchFieldError" << endl;
+        exit(1);
+    }
+
+    // se a stack frame mudou, é porque teve <clinit> adicionado, então terminar a execução da instrução para eles serem executados.
+    if (stackFrame.getTopFrame() != topFrame) return;
+    
+    Value topValue = topFrame->desempilhaOperandStack();
+    if (topValue.type == ValueType::DOUBLE || topValue.type == ValueType::LONG) {
+        topFrame->desempilhaOperandStack(); // removendo padding
+    } else {
+        switch (fieldDescriptor[0]) {
+            case 'B':
+                topValue.type = ValueType::BYTE;
+                topValue.printType = ValueType::BYTE;
+                break;
+            case 'C':
+                topValue.type = ValueType::CHAR;
+                topValue.type = ValueType::CHAR;
+                break;
+            case 'S':
+                topValue.type = ValueType::SHORT;
+                topValue.type = ValueType::SHORT;
+                break;
+            case 'Z':
+                topValue.type = ValueType::BOOLEAN;
+                topValue.type = ValueType::BOOLEAN;
+                break;
+        }
+    }
+
+    classRuntime->putValueIntoField(topValue, fieldName);
+
+    topFrame->pc += 3;
+}
+
+void Operations::getfield() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    cp_info *constantPool = *(topFrame->obterConstantPool());
+    u1 *code = topFrame->getCode(topFrame->pc);
+
+    u1 byte1 = code[1];
+    u1 byte2 = code[2];
+
+    uint16_t fieldIndex = (byte1 << 8) | byte2;
+    cp_info fieldCP = constantPool[fieldIndex-1];
+    assert(fieldCP.tag == CONSTANT_Fieldref); // precisa ser um fieldRef
+
+    CONSTANT_Fieldref_info fieldRef = fieldCP.info.fieldref_info;
+
+    string className = getFormattedConstant(constantPool, fieldRef.class_index);
+
+    cp_info nameAndTypeCP = constantPool[fieldRef.name_and_type_index-1];
+    assert(nameAndTypeCP.tag == CONSTANT_NameAndType); // precisa ser um nameAndType
+
+    CONSTANT_NameAndType_info fieldNameAndType = nameAndTypeCP.info.nameAndType_info;
+
+    string fieldName = getFormattedConstant(constantPool, fieldNameAndType.name_index);
+    string fieldDescriptor = getFormattedConstant(constantPool, fieldNameAndType.descriptor_index);
+
+    Value objectValue = topFrame->desempilhaOperandStack();
+    assert(objectValue.type == ValueType::REFERENCE);
+    Object *object = objectValue.data.object;
+    assert(object->objectType() == ObjectType::CLASS_INSTANCE);
+    InstanceClass *classInstance = (InstanceClass *) object;
+
+    if (!classInstance->fieldExists(fieldName)) {
+        cerr << "NoSuchFieldError" << endl;
+        exit(1);
+    }
+
+    Value fieldValue = classInstance->getValueFromField(fieldName);
+    switch (fieldValue.type) {
+        case ValueType::BOOLEAN:
+            fieldValue.type = ValueType::INT;
+            fieldValue.printType = ValueType::BOOLEAN;
+            break;
+        case ValueType::BYTE:
+            fieldValue.type = ValueType::INT;
+            fieldValue.printType = ValueType::BYTE;
+            break;
+        case ValueType::SHORT:
+            fieldValue.type = ValueType::INT;
+            fieldValue.printType = ValueType::SHORT;
+            break;
+        case ValueType::INT:
+            fieldValue.type = ValueType::INT;
+            fieldValue.printType = ValueType::INT;
+            break;
+        default:
+            break;
+    }
+    
+    if (fieldValue.type == ValueType::DOUBLE || fieldValue.type == ValueType::LONG) {
+        Value paddingValue;
+        paddingValue.type = ValueType::PADDING;
+        topFrame->empilharOperandStack(paddingValue);
+    }
+
+    topFrame->empilharOperandStack(fieldValue);
+
+    topFrame->pc += 3;
+}
+
+void Operations::putfield() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    cp_info *constantPool = *(topFrame->obterConstantPool());
+    u1 *code = topFrame->getCode(topFrame->pc);
+
+    u1 byte1 = code[1];
+    u1 byte2 = code[2];
+
+    uint16_t fieldIndex = (byte1 << 8) | byte2;
+    cp_info fieldCP = constantPool[fieldIndex-1];
+    assert(fieldCP.tag == CONSTANT_Fieldref); // precisa ser um fieldRef
+
+    CONSTANT_Fieldref_info fieldRef = fieldCP.info.fieldref_info;
+
+    string className = getFormattedConstant(constantPool, fieldRef.class_index);
+
+    cp_info nameAndTypeCP = constantPool[fieldRef.name_and_type_index-1];
+    assert(nameAndTypeCP.tag == CONSTANT_NameAndType); // precisa ser um nameAndType
+
+    CONSTANT_NameAndType_info fieldNameAndType = nameAndTypeCP.info.nameAndType_info;
+
+    string fieldName = getFormattedConstant(constantPool, fieldNameAndType.name_index);
+    string fieldDescriptor = getFormattedConstant(constantPool, fieldNameAndType.descriptor_index);
+
+    Value valueToBeInserted = topFrame->desempilhaOperandStack();
+    if (valueToBeInserted.type == ValueType::DOUBLE || valueToBeInserted.type == ValueType::LONG) {
+        topFrame->desempilhaOperandStack(); // removendo padding
+    } else {
+        switch (fieldDescriptor[0]) {
+            case 'B':
+                valueToBeInserted.type = ValueType::BYTE;
+                valueToBeInserted.printType = ValueType::BYTE;
+                break;
+            case 'C':
+                valueToBeInserted.type = ValueType::CHAR;
+                valueToBeInserted.printType = ValueType::CHAR;
+                break;
+            case 'S':
+                valueToBeInserted.type = ValueType::SHORT;
+                valueToBeInserted.printType = ValueType::SHORT;
+                break;
+            case 'Z':
+                valueToBeInserted.type = ValueType::BOOLEAN;
+                valueToBeInserted.printType = ValueType::BOOLEAN;
+                break;
+        }
+    }
+
+    Value objectValue = topFrame->desempilhaOperandStack();
+    assert(objectValue.type == ValueType::REFERENCE);
+    Object *object = objectValue.data.object;
+    assert(object->objectType() == ObjectType::CLASS_INSTANCE);
+    InstanceClass *classInstance = (InstanceClass *) object;
+
+    classInstance->putValueIntoField(valueToBeInserted, fieldName);
+
+    topFrame->pc += 3;
+}
+
+void Operations::invokevirtual() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    stack<Value> operandStackBackup = topFrame->backupOperandStack();
+    
+    cp_info *constantPool = *(topFrame->obterConstantPool());
+    u1 *code = topFrame->getCode(topFrame->pc);
+
+    u1 byte1 = code[1];
+    u1 byte2 = code[2];
+
+    uint16_t methodIndex = (byte1 << 8) | byte2;
+    cp_info methodCP = constantPool[methodIndex-1];
+    assert(methodCP.tag == CONSTANT_Methodref); // precisa referenciar um método
+
+    CONSTANT_Methodref_info methodInfo = methodCP.info.methodref_info;
+
+    string className = getFormattedConstant(constantPool, methodInfo.class_index);
+
+    cp_info nameAndTypeCP = constantPool[methodInfo.name_and_type_index-1];
+    assert(nameAndTypeCP.tag == CONSTANT_NameAndType); // precisa ser um nameAndType
+
+    CONSTANT_NameAndType_info methodNameAndType = nameAndTypeCP.info.nameAndType_info;
+
+    string methodName = getFormattedConstant(constantPool, methodNameAndType.name_index);
+    string methodDescriptor = getFormattedConstant(constantPool, methodNameAndType.descriptor_index);
+
+    if (className.find("java/") != string::npos) {
+        // simulando println ou print
+        if (className == "java/io/PrintStream" && (methodName == "print" || methodName == "println")) {
+            if (methodDescriptor != "()V") {
+                Value printValue = topFrame->desempilhaOperandStack();
+
+                if (printValue.type == ValueType::INT) {
+                    switch (printValue.printType) {
+                        case ValueType::BOOLEAN:
+                            printf("%s", printValue.data.booleanValue == 0 ? "false" : "true");
+                            break;
+                        case ValueType::BYTE:
+                            printf("%d", printValue.data.byteValue);
+                            break;
+                        case ValueType::CHAR:
+                            printf("%c", printValue.data.charValue);
+                            break;
+                        case ValueType::SHORT:
+                            printf("%d", printValue.data.shortValue);
+                            break;
+                        default:
+                            printf("%d", printValue.data.intValue);
+                            break;
+                    }
+                } else {
+                    switch (printValue.type) {
+                        case ValueType::DOUBLE:
+                            topFrame->desempilhaOperandStack(); // removendo padding
+                            printf("%f", printValue.data.doubleValue);
+                            break;
+                        case ValueType::FLOAT:
+                            printf("%f", printValue.data.floatValue);
+                            break;
+                        case ValueType::LONG:
+                            topFrame->desempilhaOperandStack(); // removendo padding
+                            printf("%lld", (long long) printValue.data.longValue);
+
+                            break;
+                        case ValueType::REFERENCE:
+                            assert(printValue.data.object->objectType() == ObjectType::STRING_INSTANCE);
+                            printf("%s", ((StringObject *) printValue.data.object)->getString().c_str());
+                            break;
+                        case ValueType::BOOLEAN:
+                            printf("%s", printValue.data.booleanValue == 0 ? "false" : "true");
+                            break;
+                        case ValueType::BYTE:
+                            printf("%d", printValue.data.byteValue);
+                            break;
+                        case ValueType::CHAR:
+                            printf("%c", printValue.data.charValue);
+                            break;
+                        case ValueType::SHORT:
+                            printf("%d", printValue.data.shortValue);
+                            break;
+                        default:
+                            cerr << "Tentando printar tipo de dado invalido: " << printValue.type << endl;
+                            exit(1);
+                            break;
+                    }
+                }
+            }
+
+            if (methodName == "println") printf("\n");
+        } else if (className == "java/lang/String" && methodName == "equals") {
+            Value strValue1 = topFrame->desempilhaOperandStack();
+            Value strValue2 = topFrame->desempilhaOperandStack();
+            assert(strValue1.type == ValueType::REFERENCE);
+            assert(strValue2.type == ValueType::REFERENCE);
+            assert(strValue1.data.object->objectType() == ObjectType::STRING_INSTANCE);
+            assert(strValue2.data.object->objectType() == ObjectType::STRING_INSTANCE);
+            
+            StringObject *str1 = (StringObject*) strValue1.data.object;
+            StringObject *str2 = (StringObject*) strValue2.data.object;
+            
+            Value result;
+            result.printType = ValueType::INT;
+            result.type = ValueType::INT;
+            if (str1->getString() == str2->getString()) {
+                result.data.intValue = 1;
+            } else {
+                result.data.intValue = 0;
+            }
+            topFrame->empilharOperandStack(result);
+        } else if (className == "java/lang/String" && methodName == "length") {	
+            Value strValue = topFrame->desempilhaOperandStack();
+            assert(strValue.type == ValueType::REFERENCE);		
+            assert(strValue.data.object->objectType() == ObjectType::STRING_INSTANCE);		
+                    
+            StringObject *str = (StringObject*) strValue.data.object;		
+                    
+            Value result;
+            result.printType = ValueType::INT;
+            result.type = ValueType::INT;		
+            result.data.intValue = (str->getString()).size();		
+            topFrame->empilharOperandStack(result);
+        } else {
+            cerr << "Tentando invocar metodo de instancia invalido: " << methodName << endl;
+            exit(1);
+        }
+    } else {
+        uint16_t nargs = 0; // numero de argumentos contidos na pilha de operandos
+        uint16_t i = 1; // pulando o primeiro '('
+        while (methodDescriptor[i] != ')') {
+            char baseType = methodDescriptor[i];
+            if (baseType == 'D' || baseType == 'J') {
+                nargs += 2;
+            } else if (baseType == 'L') {
+                nargs++;
+                while (methodDescriptor[++i] != ';');
+            } else if (baseType == '[') {
+                nargs++;
+                while (methodDescriptor[++i] == '[');
+                if (methodDescriptor[i] == 'L') while (methodDescriptor[++i] != ';');
+            } else {
+                nargs++;
+            }
+            i++;
+        }
+
+        vector<Value> args;
+        for (int i = 0; i < nargs; i++) {
+            Value value = topFrame->desempilhaOperandStack();
+            if (value.type == ValueType::PADDING) {
+                args.insert(args.begin() + 1, value); // adicionando o padding após o valor double/long.
+            } else {
+                args.insert(args.begin(), value);
+            }
+        }
+
+        Value objectValue = topFrame->desempilhaOperandStack();
+        assert(objectValue.type == ValueType::REFERENCE); // necessita ser uma referência para objeto
+        args.insert(args.begin(), objectValue);
+
+        Object *object = objectValue.data.object;
+        assert(object->objectType() == ObjectType::CLASS_INSTANCE); // objeto precisa ser uma instância
+        InstanceClass *instance = (InstanceClass *) object;
+
+        MethodArea &methodArea = MethodArea::getInstance();
+        StaticClass *classRuntime = methodArea.carregarClassNamed(className);
+        
+        Frame *newFrame = new Frame(instance, classRuntime, methodName, methodDescriptor, args);
+
+        // se a stack frame mudou, é porque teve <clinit> adicionado, então terminar a execução da instrução para eles serem executados.
+        if (stackFrame.getTopFrame() != topFrame) {
+            topFrame->setOperandStackFromBackup(operandStackBackup);
+            delete newFrame;
+            return;
+        }
+
+        stackFrame.addFrame(newFrame);
+    }
+
+    topFrame->pc += 3;
+}
+
+void Operations::invokespecial() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    stack<Value> operandStackBackup = topFrame->backupOperandStack();
+    
+    cp_info *constantPool = *(topFrame->obterConstantPool());
+    u1 *code = topFrame->getCode(topFrame->pc);
+
+    u1 byte1 = code[1];
+    u1 byte2 = code[2];
+
+    uint16_t methodIndex = (byte1 << 8) | byte2;
+    cp_info methodCP = constantPool[methodIndex-1];
+    assert(methodCP.tag == CONSTANT_Methodref); // precisa referenciar um método
+
+    CONSTANT_Methodref_info methodInfo = methodCP.info.methodref_info;
+
+    string className = getFormattedConstant(constantPool, methodInfo.class_index);
+
+    cp_info nameAndTypeCP = constantPool[methodInfo.name_and_type_index-1];
+    assert(nameAndTypeCP.tag == CONSTANT_NameAndType); // precisa ser um nameAndType
+
+    CONSTANT_NameAndType_info methodNameAndType = nameAndTypeCP.info.nameAndType_info;
+
+    string methodName = getFormattedConstant(constantPool, methodNameAndType.name_index);
+    string methodDescriptor = getFormattedConstant(constantPool, methodNameAndType.descriptor_index);
+    
+    // casos especiais
+    if ((className == "java/lang/Object" || className == "java/lang/String") && methodName == "<init>") {
+        if (className == "java/lang/String") {
+            topFrame->desempilhaOperandStack();
+        }
+        
+        topFrame->pc += 3;
+        return;
+    }
+    // fim dos casos especiais
+    
+    if (className.find("java/") != string::npos) {
+        cerr << "Tentando invocar metodo especial invalido: " << methodName << endl;
+        exit(1);
+    } else {
+        uint16_t nargs = 0; // numero de argumentos contidos na pilha de operandos
+        uint16_t i = 1; // pulando o primeiro '('
+        while (methodDescriptor[i] != ')') {
+            char baseType = methodDescriptor[i];
+            if (baseType == 'D' || baseType == 'J') {
+                nargs += 2;
+            } else if (baseType == 'L') {
+                nargs++;
+                while (methodDescriptor[++i] != ';');
+            } else if (baseType == '[') {
+                nargs++;
+                while (methodDescriptor[++i] == '[');
+                if (methodDescriptor[i] == 'L') while (methodDescriptor[++i] != ';');
+            } else {
+                nargs++;
+            }
+            i++;
+        }
+
+        vector<Value> args;
+        for (int i = 0; i < nargs; i++) {
+            Value value = topFrame->desempilhaOperandStack();
+            if (value.type == ValueType::PADDING) {
+                args.insert(args.begin() + 1, value); // adicionando o padding após o valor double/long.
+            } else {
+                args.insert(args.begin(), value);
+            }
+        }
+
+        Value objectValue = topFrame->desempilhaOperandStack();
+        assert(objectValue.type == ValueType::REFERENCE); // necessita ser uma referência para objeto
+        args.insert(args.begin(), objectValue);
+
+        Object *object = objectValue.data.object;
+        assert(object->objectType() == ObjectType::CLASS_INSTANCE); // objeto precisa ser uma instância
+        InstanceClass *instance = (InstanceClass *) object;
+
+        MethodArea &methodArea = MethodArea::getInstance();
+        StaticClass *classRuntime = methodArea.carregarClassNamed(className);
+        
+        Frame *newFrame = new Frame(instance, classRuntime, methodName, methodDescriptor, args);
+
+        // se a stack frame mudou, é porque teve <clinit> adicionado, então terminar a execução da instrução para eles serem executados.
+        if (stackFrame.getTopFrame() != topFrame) {
+            topFrame->setOperandStackFromBackup(operandStackBackup);
+            delete newFrame;
+            return;
+        }
+
+        stackFrame.addFrame(newFrame);
+    }
+
+    topFrame->pc += 3;
+}
+
+void Operations::invokestatic() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    stack<Value> operandStackBackup = topFrame->backupOperandStack();
+    
+    cp_info *constantPool = *(topFrame->obterConstantPool());
+    u1 *code = topFrame->getCode(topFrame->pc);
+
+    u1 byte1 = code[1];
+    u1 byte2 = code[2];
+
+    uint16_t methodIndex = (byte1 << 8) | byte2;
+    cp_info methodCP = constantPool[methodIndex-1];
+    assert(methodCP.tag == CONSTANT_Methodref); // precisa referenciar um método
+
+    CONSTANT_Methodref_info methodInfo = methodCP.info.methodref_info;
+
+    string className = getFormattedConstant(constantPool, methodInfo.class_index);
+
+    cp_info nameAndTypeCP = constantPool[methodInfo.name_and_type_index-1];
+    assert(nameAndTypeCP.tag == CONSTANT_NameAndType); // precisa ser um nameAndType
+
+    CONSTANT_NameAndType_info methodNameAndType = nameAndTypeCP.info.nameAndType_info;
+
+    string methodName = getFormattedConstant(constantPool, methodNameAndType.name_index);
+    string methodDescriptor = getFormattedConstant(constantPool, methodNameAndType.descriptor_index);
+
+    if (className == "java/lang/Object" && methodName == "registerNatives") {
+        topFrame->pc += 3;
+        return;
+    }
+    
+    if (className.find("java/") != string::npos) {
+        cerr << "Tentando invocar metodo estatico invalido: " << methodName << endl;
+        exit(1);
+    } else {
+        uint16_t nargs = 0; // numero de argumentos contidos na pilha de operandos
+        uint16_t i = 1; // pulando o primeiro '('
+        while (methodDescriptor[i] != ')') {
+            char baseType = methodDescriptor[i];
+            if (baseType == 'D' || baseType == 'J') {
+                nargs += 2;
+            } else if (baseType == 'L') {
+                nargs++;
+                while (methodDescriptor[++i] != ';');
+            } else if (baseType == '[') {
+                nargs++;
+                while (methodDescriptor[++i] == '[');
+                if (methodDescriptor[i] == 'L') while (methodDescriptor[++i] != ';');
+            } else {
+                nargs++;
+            }
+            i++;
+        }
+
+        vector<Value> args;
+        for (int i = 0; i < nargs; i++) {
+            Value value = topFrame->desempilhaOperandStack();
+            if (value.type == ValueType::PADDING) {
+                args.insert(args.begin() + 1, value); // adicionando o padding após o valor double/long.
+            } else {
+                args.insert(args.begin(), value);
+            }
+        }
+
+        MethodArea &methodArea = MethodArea::getInstance();
+        StaticClass *classRuntime = methodArea.carregarClassNamed(className);
+        Frame *newFrame = new Frame(classRuntime, methodName, methodDescriptor, args);
+
+        // se a stack frame mudou, é porque teve <clinit> adicionado, então terminar a execução da instrução para eles serem executados.
+        if (stackFrame.getTopFrame() != topFrame) {
+            topFrame->setOperandStackFromBackup(operandStackBackup);
+            delete newFrame;
+            return;
+        }
+
+        stackFrame.addFrame(newFrame);
+    }
+
+    topFrame->pc += 3;
+}
+
+void Operations::invokeinterface() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    stack<Value> operandStackBackup = topFrame->backupOperandStack();
+    
+    cp_info *constantPool = *(topFrame->obterConstantPool());
+    u1 *code = topFrame->getCode(topFrame->pc);
+
+    u1 byte1 = code[1];
+    u1 byte2 = code[2];
+
+    uint16_t methodIndex = (byte1 << 8) | byte2;
+    cp_info methodCP = constantPool[methodIndex-1];
+    assert(methodCP.tag == CONSTANT_Methodref || methodCP.tag == CONSTANT_InterfaceMethodref); // precisa referenciar um método
+
+    CONSTANT_Methodref_info methodInfo = methodCP.info.methodref_info;
+
+    string className = getFormattedConstant(constantPool, methodInfo.class_index);
+
+    cp_info nameAndTypeCP = constantPool[methodInfo.name_and_type_index-1];
+    assert(nameAndTypeCP.tag == CONSTANT_NameAndType); // precisa ser um nameAndType
+
+    CONSTANT_NameAndType_info methodNameAndType = nameAndTypeCP.info.nameAndType_info;
+
+    string methodName = getFormattedConstant(constantPool, methodNameAndType.name_index);
+    string methodDescriptor = getFormattedConstant(constantPool, methodNameAndType.descriptor_index);
+
+    if (className.find("java/") != string::npos) {
+        cerr << "Tentando invocar metodo de interface invalido: " << methodName << endl;
+        exit(1);
+    } else {
+        uint16_t nargs = 0; // numero de argumentos contidos na pilha de operandos
+        uint16_t i = 1; // pulando o primeiro '('
+        while (methodDescriptor[i] != ')') {
+            char baseType = methodDescriptor[i];
+            if (baseType == 'D' || baseType == 'J') {
+                nargs += 2;
+            } else if (baseType == 'L') {
+                nargs++;
+                while (methodDescriptor[++i] != ';');
+            } else if (baseType == '[') {
+                nargs++;
+                while (methodDescriptor[++i] == '[');
+                if (methodDescriptor[i] == 'L') while (methodDescriptor[++i] != ';');
+            } else {
+                nargs++;
+            }
+            i++;
+        }
+
+        vector<Value> args;
+        for (int i = 0; i < nargs; i++) {
+            Value value = topFrame->desempilhaOperandStack();
+            if (value.type == ValueType::PADDING) {
+                args.insert(args.begin() + 1, value); // adicionando o padding após o valor double/long.
+            } else {
+                args.insert(args.begin(), value);
+            }
+        }
+
+        Value objectValue = topFrame->desempilhaOperandStack();
+        assert(objectValue.type == ValueType::REFERENCE); // necessita ser uma referência para objeto
+        args.insert(args.begin(), objectValue);
+
+        Object *object = objectValue.data.object;
+        assert(object->objectType() == ObjectType::CLASS_INSTANCE); // objeto precisa ser uma instância
+        InstanceClass *instance = (InstanceClass *) object;
+
+        MethodArea &methodArea = MethodArea::getInstance();
+        methodArea.carregarClassNamed(className); // carregando a interface (caso ainda não foi carregada).
+        
+        Frame *newFrame = new Frame(instance, instance->getClassRuntime(), methodName, methodDescriptor, args);
+
+        // se a stack frame mudou, é porque teve <clinit> adicionado, então terminar a execução da instrução para eles serem executados.
+        if (stackFrame.getTopFrame() != topFrame) {
+            topFrame->setOperandStackFromBackup(operandStackBackup);
+            delete newFrame;
+            return;
+        }
+
+        stackFrame.addFrame(newFrame);
+    }
+
+    topFrame->pc += 5;
+}
+
+void Operations::func_new() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();       
+    Frame *topFrame = stackFrame.getTopFrame();     
+    cp_info *constantPool = *(topFrame->obterConstantPool());
+    u1 *code = topFrame->getCode(topFrame->pc);
+
+    u1 byte1 = code[1];
+    u1 byte2 = code[2];
+
+    uint16_t classIndex = (byte1 << 8) | byte2;
+    cp_info classCP = constantPool[classIndex-1];
+    assert(classCP.tag == CONSTANT_Class);
+    
+    CONSTANT_Class_info classInfo = classCP.info.class_info; // Formata nome da classe
+    string className = getFormattedConstant(constantPool, classInfo.name_index);
+
+    Object *object;
+    if (className == "java/lang/String") {
+        object = new StringObject();
+    } else {
+        MethodArea &methodArea = MethodArea::getInstance();
+        StaticClass *classRuntime = methodArea.carregarClassNamed(className);
+        object = new InstanceClass(classRuntime); // Cria instancia da classe e coloca na heap
+    }
+    
+    // Armazena referência na pilha
+    Value objectref;
+    objectref.data.object = object;
+    objectref.type = ValueType::REFERENCE;
+    topFrame->empilharOperandStack(objectref);
+    
+    topFrame->pc += 3;
+}
+
+void Operations::newarray() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();       
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    Value count = topFrame->desempilhaOperandStack(); // Número de elementos no array
+    assert(count.type == ValueType::INT);
+    
+    if (count.data.intValue < 0) {
+        cerr << "NegativeArraySizeException" << endl;
+        exit(1);
+    }
+    Value padding;
+    ArrayObject *array; // array que será criado
+    Value value; // elemento que irá popular o array
+    value.data.longValue = 0; // inicializando Value com 0s
+    
+
+    padding.type = ValueType::PADDING;
+    
+    u1 *code = topFrame->getCode(topFrame->pc);
+    switch (code[1]) { // argumento representa tipo do array
+        case 4:
+            array = new ArrayObject(ValueType::BOOLEAN);
+            value.type = ValueType::BOOLEAN;
+            value.printType = ValueType::BOOLEAN;
+            for (int i = 0; i < count.data.intValue; i++) {
+                array->pushValue(value);
+            }
+            break;
+        case 5:
+            array = new ArrayObject(ValueType::CHAR);
+            value.type = ValueType::CHAR;
+            value.printType = ValueType::CHAR;
+            for (int i = 0; i < count.data.intValue; i++) {
+                array->pushValue(value);
+            }
+            break;
+        case 6:
+            array = new ArrayObject(ValueType::FLOAT);
+            value.type = ValueType::FLOAT;
+            for (int i = 0; i < count.data.intValue; i++) {
+                array->pushValue(value);
+            }
+            break;
+        case 7:
+            array = new ArrayObject(ValueType::DOUBLE);
+            value.type = ValueType::DOUBLE;
+            for (int i = 0; i < count.data.intValue; i++) {
+                array->pushValue(value);
+            }
+            break;
+        case 8:
+            array = new ArrayObject(ValueType::BYTE);
+            value.type = ValueType::BYTE;
+            value.printType = ValueType::BYTE;
+            for (int i = 0; i < count.data.intValue; i++) {
+                array->pushValue(value);
+            }
+            break;
+        case 9:
+            array = new ArrayObject(ValueType::SHORT);
+            value.type = ValueType::SHORT;
+            value.printType = ValueType::SHORT;
+            for (int i = 0; i < count.data.intValue; i++) {
+                array->pushValue(value);
+            }
+            break;
+        case 10:
+            array = new ArrayObject(ValueType::INT);
+            value.type = ValueType::INT;
+            value.printType = ValueType::INT;
+            for (int i = 0; i < count.data.intValue; i++) {
+                array->pushValue(value);
+            }
+            break;
+        case 11:
+            array = new ArrayObject(ValueType::LONG);
+            value.type = ValueType::LONG;
+            for (int i = 0; i < count.data.intValue; i++) {
+                array->pushValue(value);
+            }
+            break;
+    }
+    
+    Value arrayref; // Referencia pro array na pilha de operandos
+    arrayref.type = ValueType::REFERENCE;
+    arrayref.data.object = array;
+    
+    topFrame->empilharOperandStack(arrayref);
+    topFrame->pc += 2;
+}
+
+void Operations::anewarray() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();       
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    Value count = topFrame->desempilhaOperandStack(); // Número de elementos no array
+    assert(count.type == ValueType::INT);
+    if (count.data.intValue < 0) {
+        cerr << "NegativeArraySizeException" << endl;
+        exit(1);
+    }
+    
+    cp_info *constantPool = *(topFrame->obterConstantPool());
+    u1 *code = topFrame->getCode(topFrame->pc);
+    u1 byte1 = code[1];
+    u1 byte2 = code[2];
+
+    uint16_t classIndex = (byte1 << 8) | byte2; // Índice na pool de constantes
+    cp_info classCP = constantPool[classIndex-1];
+    assert(classCP.tag == CONSTANT_Class);
+    
+    CONSTANT_Class_info classInfo = classCP.info.class_info; // Formata nome da classe
+    string className = getFormattedConstant(constantPool, classInfo.name_index);
+
+    if (className != "java/lang/String") {
+        int i = 0;
+        while (className[i] == '[') i++;
+        if (className[i] == 'L') {
+            MethodArea &methodArea = MethodArea::getInstance();
+            methodArea.carregarClassNamed(className.substr(i+1, className.size()-i-2)); // carrega a classe de referência (se ainda não foi).
+        }
+    }
+
+    // criando objeto da classe instanciada
+    Value objectref;
+    objectref.type = ValueType::REFERENCE;
+    objectref.data.object = new ArrayObject(ValueType::REFERENCE);
+    
+    // populando array com NULL
+    Value nullValue;
+    nullValue.type = ValueType::REFERENCE;
+    nullValue.data.object = NULL;
+    for (int i = 0; i < count.data.intValue; i++) {
+        ((ArrayObject *) objectref.data.object)->pushValue(nullValue);
+    }
+
+    topFrame->empilharOperandStack(objectref);
+    
+    topFrame->pc += 3;
+}
+
+void Operations::arraylength() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();       
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    Value arrayref = topFrame->desempilhaOperandStack();  
+    assert(arrayref.type == ValueType::REFERENCE);
+    if (arrayref.data.object == NULL) {
+        cerr << "NullPointerException" << endl;
+        exit(1);
+    }
+    
+    Value length;
+    length.type = ValueType::INT;
+    length.data.intValue = ((ArrayObject *) arrayref.data.object)->getSize();
+    
+    topFrame->empilharOperandStack(length);
+    topFrame->pc += 1 ;
+}
+
+void Operations::athrow() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    topFrame->pc += 1;
+}
+
+void Operations::checkcast() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    MethodArea &methodArea = MethodArea::getInstance();
+    
+    u1 *code = topFrame->getCode(topFrame->pc);
+    u1 byte1 = code[1];
+    u1 byte2 = code[2];
+    
+    u2 cpIndex = (byte1 << 8) | byte2;
+    cp_info *constantPool = *(topFrame->obterConstantPool());
+    cp_info cpElement = constantPool[cpIndex-1];
+    assert(cpElement.tag == CONSTANT_Class);
+    string className = getFormattedConstant(constantPool, cpIndex);
+    
+    Value objectrefValue = topFrame->desempilhaOperandStack();
+    assert(objectrefValue.type == ValueType::REFERENCE);
+    
+    Value resultValue;
+    resultValue.type = ValueType::INT;
+    
+    if (objectrefValue.data.object == NULL) {
+        cerr << "ClassCastException" << endl;
+        exit(1);
+    } else {
+        Object *obj = objectrefValue.data.object;
+        
+        if (obj->objectType() == ObjectType::CLASS_INSTANCE) {
+        	InstanceClass *classInstance = (InstanceClass *) obj;
+            StaticClass *classRuntime = classInstance->getClassRuntime();
+            
+            bool found = false;
+            while (!found) {
+                ClassFile *classFile = classRuntime->getClassFile();
+                string currClassName = getFormattedConstant(classFile->constant_pool, classFile->this_class);
+                
+                if (currClassName == className) {
+                    found = true;
+                } else {
+                    if (classFile->super_class == 0) {
+                        break;
+                    } else {
+                        string superClassName = getFormattedConstant(classFile->constant_pool, classFile->this_class);
+                        classRuntime = methodArea.carregarClassNamed(superClassName);
+                    }
+                }
+            }
+            
+            resultValue.data.intValue = found ? 1 : 0;
+        } else if (obj->objectType() == ObjectType::STRING_INSTANCE) {
+            resultValue.data.intValue = (className == "java/lang/String" || className == "java/lang/Object") ? 1 : 0;
+        } else {
+            if (className == "java/lang/Object") {
+                resultValue.data.intValue = 1;
+            } else {
+                resultValue.data.intValue = 0;
+            }
+        }
+    }
+    
+    topFrame->empilharOperandStack(resultValue);
+    
+    topFrame->pc += 3;
+}
+
+void Operations::instanceof() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    MethodArea &methodArea = MethodArea::getInstance();
+
+    u1 *code = topFrame->getCode(topFrame->pc);
+    u1 byte1 = code[1];
+    u1 byte2 = code[2];
+    
+    u2 cpIndex = (byte1 << 8) | byte2;
+    cp_info *constantPool = *(topFrame->obterConstantPool());
+    cp_info cpElement = constantPool[cpIndex-1];
+    assert(cpElement.tag == CONSTANT_Class);
+    string className = getFormattedConstant(constantPool, cpIndex);
+    
+    Value objectrefValue = topFrame->desempilhaOperandStack();
+    assert(objectrefValue.type == ValueType::REFERENCE);
+    
+    Value resultValue;
+    resultValue.type = ValueType::INT;
+
+    if (objectrefValue.data.object == NULL) {
+        resultValue.data.intValue = 0;
+    } else {
+        Object *obj = objectrefValue.data.object;
+        
+        if (obj->objectType() == ObjectType::CLASS_INSTANCE) {
+            InstanceClass *classInstance = (InstanceClass *) obj;
+            StaticClass *classRuntime = classInstance->getClassRuntime();
+            
+            bool found = false;
+            while (!found) {
+                ClassFile *classFile = classRuntime->getClassFile();
+                string currClassName = getFormattedConstant(classFile->constant_pool, classFile->this_class);
+                
+                if (currClassName == className) {
+                    found = true;
+                } else {
+                    if (classFile->super_class == 0) {
+                        break;
+                    } else {
+                        string superClassName = getFormattedConstant(classFile->constant_pool, classFile->this_class);
+                        classRuntime = methodArea.carregarClassNamed(superClassName);
+                    }
+                }
+            }
+            
+            resultValue.data.intValue = found ? 1 : 0;
+        } else if (obj->objectType() == ObjectType::STRING_INSTANCE) {
+            resultValue.data.intValue = (className == "java/lang/String" || className == "java/lang/Object") ? 1 : 0;
+        } else {
+            if (className == "java/lang/Object") {
+                resultValue.data.intValue = 1;
+            } else {
+                resultValue.data.intValue = 0;
+            }
+        }
+    }
+    
+    topFrame->empilharOperandStack(resultValue);
+    
+    topFrame->pc += 3;
+}
+
+void Operations::monitorenter() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    topFrame->pc += 1;
+}
+
+void Operations::monitorexit() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    topFrame->pc += 1;
+}
+
+void Operations::wide() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();       
+    Frame *topFrame = stackFrame.getTopFrame();
+	_isWide = true;
+	topFrame->pc += 1;
+}
+
+void Operations::multianewarray() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();       
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    cp_info *constantPool = *(topFrame->obterConstantPool());
+    u1 *code = topFrame->getCode(topFrame->pc);
+    u1 byte1 = code[1];
+    u1 byte2 = code[2];
+    u1 dimensions = code[3];
+    assert(dimensions >= 1);
+
+    uint16_t classIndex = (byte1 << 8) | byte2;
+    cp_info classCP = constantPool[classIndex-1];
+    assert(classCP.tag == CONSTANT_Class);
+    
+    CONSTANT_Class_info classInfo = classCP.info.class_info;
+    string className = getFormattedConstant(constantPool, classInfo.name_index);
+    
+    // obter o tipo dentro de className:
+    ValueType valueType;
+    int i = 0;
+    while (className[i] == '[') i++;
+    
+    string multiArrayType = className.substr(i+1, className.size()-i-2); // em caso de ser uma referência (e.g. [[[Ljava/lang/String;)
+    
+    switch (className[i]) {
+        case 'L':
+            if (multiArrayType != "java/lang/String") {
+                MethodArea &methodArea = MethodArea::getInstance();
+                methodArea.carregarClassNamed(multiArrayType); // verifica se existe classe com esse nome
+            }
+            valueType = ValueType::REFERENCE;
+            break;
+        case 'B':
+            valueType = ValueType::BYTE;
+            break;
+        case 'C':
+            valueType = ValueType::CHAR;
+            break;
+        case 'D':
+            valueType = ValueType::DOUBLE;
+            break;
+        case 'F':
+            valueType = ValueType::FLOAT;
+            break;
+        case 'I':
+            valueType = ValueType::INT;
+            break;
+        case 'J':
+            valueType = ValueType::LONG;
+            break;
+        case 'S':
+            valueType = ValueType::SHORT;
+            break;
+        case 'Z':
+            valueType = ValueType::BOOLEAN;
+            break;
+        default:
+            cerr << "Descritor invalido em multianewarray" << endl;
+            exit(1);
+    }
+    
+    stack<int> count;
+    for (int i = 0; i < dimensions; i++) {
+        Value dimLength = topFrame->desempilhaOperandStack();
+        assert(dimLength.type == ValueType::INT);
+        count.push(dimLength.data.intValue);
+    }
+    
+    ArrayObject *array = new ArrayObject((dimensions > 1) ? ValueType::REFERENCE : valueType);
+    populateMultiarray(array, valueType, count);
+    
+    Value arrayValue;
+    arrayValue.type = ValueType::REFERENCE;
+    arrayValue.data.object = array;
+    
+    topFrame->empilharOperandStack(arrayValue);
+    
+    topFrame->pc += 4;
+}
+
+void Operations::ifnull() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    Value referenceValue = topFrame->desempilhaOperandStack();
+    assert(referenceValue.type == ValueType::REFERENCE);
+    
+    if (referenceValue.data.object == NULL) {
+        u1 *code = topFrame->getCode(topFrame->pc);
+        u1 byte1 = code[1];
+        u1 byte2 = code[2];
+        int16_t branch =  (byte1 << 8) | byte2;
+        topFrame->pc += branch;
+    } else {
+        topFrame->pc += 3;
+    }
+}
+
+void Operations::ifnonnull() {
+    PilhaJVM &stackFrame = PilhaJVM::getInstance();
+    Frame *topFrame = stackFrame.getTopFrame();
+    
+    Value referenceValue = topFrame->desempilhaOperandStack();
+    assert(referenceValue.type == ValueType::REFERENCE);
+    
+    if (referenceValue.data.object != NULL) {
+        u1 *code = topFrame->getCode(topFrame->pc);
+        u1 byte1 = code[1];
+        u1 byte2 = code[2];
+        int16_t branch =  (byte1 << 8) | byte2;
+        topFrame->pc += branch;
+    } else {
+        topFrame->pc += 3;
+    }
+}
+
+void Operations::goto_w() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	u1 *code = topFrame->getCode(topFrame->pc);
+	u1 byte1 = code[1];
+	u1 byte2 = code[2];
+	u1 byte3 = code[3];
+	u1 byte4 = code[4];
+	int32_t branchOffset = (byte1 << 24) | (byte2 << 16) | (byte3 << 8) | byte4;
+
+	topFrame->pc += branchOffset;
+
+}
+
+void Operations::jsr_w() {
+	PilhaJVM &stackFrame = PilhaJVM::getInstance();
+	Frame *topFrame = stackFrame.getTopFrame();
+
+	u1 *code = topFrame->getCode(topFrame->pc);
+	u1 byte1 = code[1];
+	u1 byte2 = code[2];
+	u1 byte3 = code[3];
+	u1 byte4 = code[4];
+	int32_t branchOffset = (byte1 << 24) | (byte2 << 16) | (byte3 << 8)| byte4;
+
+	Value returnAddr;
+	returnAddr.type = ValueType::RETURN_ADDR;
+	returnAddr.data.returnAddress = topFrame->pc + 5;
+	topFrame->empilharOperandStack(returnAddr);
+
+	topFrame->pc += branchOffset;
+	assert((int32_t)topFrame->pc < (int32_t)topFrame->sizeCode());
+}
+
+void Operations::initInstructions() {
+    funcaoGenerica[0x00] = &Operations::nop;
+    funcaoGenerica[0x01] = &Operations::aconst_null;
+    funcaoGenerica[0x02] = &Operations::iconst_m1;
+    funcaoGenerica[0x03] = &Operations::iconst_0;
+    funcaoGenerica[0x04] = &Operations::iconst_1;
+    funcaoGenerica[0x05] = &Operations::iconst_2;
+    funcaoGenerica[0x06] = &Operations::iconst_3;
+    funcaoGenerica[0x07] = &Operations::iconst_4;
+    funcaoGenerica[0x08] = &Operations::iconst_5;
+    funcaoGenerica[0x09] = &Operations::lconst_0;
+    funcaoGenerica[0x0a] = &Operations::lconst_1;
+    funcaoGenerica[0x0b] = &Operations::fconst_0;
+    funcaoGenerica[0x0c] = &Operations::fconst_1;
+    funcaoGenerica[0x0d] = &Operations::fconst_2;
+    funcaoGenerica[0x0e] = &Operations::dconst_0;
+    funcaoGenerica[0x0f] = &Operations::dconst_1;
+    funcaoGenerica[0x10] = &Operations::bipush;
+    funcaoGenerica[0x11] = &Operations::sipush;
+    funcaoGenerica[0x12] = &Operations::ldc;
+    funcaoGenerica[0x13] = &Operations::ldc_w;
+    funcaoGenerica[0x14] = &Operations::ldc2_w;
+    funcaoGenerica[0x15] = &Operations::iload;
+    funcaoGenerica[0x16] = &Operations::lload;
+    funcaoGenerica[0x17] = &Operations::fload;
+    funcaoGenerica[0x18] = &Operations::dload;
+    funcaoGenerica[0x19] = &Operations::aload;
+    funcaoGenerica[0x1a] = &Operations::iload_0;
+    funcaoGenerica[0x1b] = &Operations::iload_1;
+    funcaoGenerica[0x1c] = &Operations::iload_2;
+    funcaoGenerica[0x1d] = &Operations::iload_3;
+    funcaoGenerica[0x1e] = &Operations::lload_0;
+    funcaoGenerica[0x1f] = &Operations::lload_1;
+    funcaoGenerica[0x20] = &Operations::lload_2;
+    funcaoGenerica[0x21] = &Operations::lload_3;
+    funcaoGenerica[0x22] = &Operations::fload_0;
+    funcaoGenerica[0x23] = &Operations::fload_1;
+    funcaoGenerica[0x24] = &Operations::fload_2;
+    funcaoGenerica[0x25] = &Operations::fload_3;
+    funcaoGenerica[0x26] = &Operations::dload_0;
+    funcaoGenerica[0x27] = &Operations::dload_1;
+    funcaoGenerica[0x28] = &Operations::dload_2;
+    funcaoGenerica[0x29] = &Operations::dload_3;
+    funcaoGenerica[0x2a] = &Operations::aload_0;
+    funcaoGenerica[0x2b] = &Operations::aload_1;
+    funcaoGenerica[0x2c] = &Operations::aload_2;
+    funcaoGenerica[0x2d] = &Operations::aload_3;
+    funcaoGenerica[0x2e] = &Operations::iaload;
+    funcaoGenerica[0x2f] = &Operations::laload;
+    funcaoGenerica[0x30] = &Operations::faload;
+    funcaoGenerica[0x31] = &Operations::daload;
+    funcaoGenerica[0x32] = &Operations::aaload;
+    funcaoGenerica[0x33] = &Operations::baload;
+    funcaoGenerica[0x34] = &Operations::caload;
+    funcaoGenerica[0x35] = &Operations::saload;
+    funcaoGenerica[0x36] = &Operations::istore;
+    funcaoGenerica[0x37] = &Operations::lstore;
+    funcaoGenerica[0x38] = &Operations::fstore;
+    funcaoGenerica[0x39] = &Operations::dstore;
+    funcaoGenerica[0x3a] = &Operations::astore;
+    funcaoGenerica[0x3b] = &Operations::istore_0;
+    funcaoGenerica[0x3c] = &Operations::istore_1;
+    funcaoGenerica[0x3d] = &Operations::istore_2;
+    funcaoGenerica[0x3e] = &Operations::istore_3;
+    funcaoGenerica[0x3f] = &Operations::lstore_0;
+    funcaoGenerica[0x40] = &Operations::lstore_1;
+    funcaoGenerica[0x41] = &Operations::lstore_2;
+    funcaoGenerica[0x42] = &Operations::lstore_3;
+    funcaoGenerica[0x43] = &Operations::fstore_0;
+    funcaoGenerica[0x44] = &Operations::fstore_1;
+    funcaoGenerica[0x45] = &Operations::fstore_2;
+    funcaoGenerica[0x46] = &Operations::fstore_3;
+    funcaoGenerica[0x47] = &Operations::dstore_0;
+    funcaoGenerica[0x48] = &Operations::dstore_1;
+    funcaoGenerica[0x49] = &Operations::dstore_2;
+    funcaoGenerica[0x4a] = &Operations::dstore_3;
+    funcaoGenerica[0x4b] = &Operations::astore_0;
+    funcaoGenerica[0x4c] = &Operations::astore_1;
+    funcaoGenerica[0x4d] = &Operations::astore_2;
+    funcaoGenerica[0x4e] = &Operations::astore_3;
+    funcaoGenerica[0x4f] = &Operations::iastore;
+    funcaoGenerica[0x50] = &Operations::lastore;
+    funcaoGenerica[0x51] = &Operations::fastore;
+    funcaoGenerica[0x52] = &Operations::dastore;
+    funcaoGenerica[0x53] = &Operations::aastore;
+    funcaoGenerica[0x54] = &Operations::bastore;
+    funcaoGenerica[0x55] = &Operations::castore;
+    funcaoGenerica[0x56] = &Operations::sastore;
+    funcaoGenerica[0x57] = &Operations::pop;
+    funcaoGenerica[0x58] = &Operations::pop2;
+    funcaoGenerica[0x59] = &Operations::dup;
+    funcaoGenerica[0x5a] = &Operations::dup2_x1;
+    funcaoGenerica[0x5b] = &Operations::dup2_x2;
+    funcaoGenerica[0x5c] = &Operations::dup2;
+    funcaoGenerica[0x5d] = &Operations::dup2_x1;
+    funcaoGenerica[0x5e] = &Operations::dup2_x2;
+    funcaoGenerica[0x5f] = &Operations::swap;
+    funcaoGenerica[0x60] = &Operations::iadd;
+    funcaoGenerica[0x61] = &Operations::ladd;
+    funcaoGenerica[0x62] = &Operations::fadd;
+    funcaoGenerica[0x63] = &Operations::dadd;
+    funcaoGenerica[0x64] = &Operations::isub;
+    funcaoGenerica[0x65] = &Operations::lsub;
+    funcaoGenerica[0x66] = &Operations::fsub;
+    funcaoGenerica[0x67] = &Operations::dsub;
+    funcaoGenerica[0x68] = &Operations::imul;
+    funcaoGenerica[0x69] = &Operations::lmul;
+    funcaoGenerica[0x6a] = &Operations::fmul;
+    funcaoGenerica[0x6b] = &Operations::dmul;
+    funcaoGenerica[0x6c] = &Operations::idiv;
+    funcaoGenerica[0x6d] = &Operations::ldiv;
+    funcaoGenerica[0x6e] = &Operations::fdiv;
+    funcaoGenerica[0x6f] = &Operations::ddiv;
+    funcaoGenerica[0x70] = &Operations::irem;
+    funcaoGenerica[0x71] = &Operations::lrem;
+    funcaoGenerica[0x72] = &Operations::frem;
+    funcaoGenerica[0x73] = &Operations::drem;
+    funcaoGenerica[0x74] = &Operations::ineg;
+    funcaoGenerica[0x75] = &Operations::lneg;
+    funcaoGenerica[0x76] = &Operations::fneg;
+    funcaoGenerica[0x77] = &Operations::dneg;
+    funcaoGenerica[0x78] = &Operations::ishl;
+    funcaoGenerica[0x79] = &Operations::lshl;
+    funcaoGenerica[0x7a] = &Operations::ishr;
+    funcaoGenerica[0x7b] = &Operations::lshr;
+    funcaoGenerica[0x7c] = &Operations::iushr;
+    funcaoGenerica[0x7d] = &Operations::lushr;
+    funcaoGenerica[0x7e] = &Operations::iand;
+    funcaoGenerica[0x7f] = &Operations::land;
+    funcaoGenerica[0x80] = &Operations::ior;
+    funcaoGenerica[0x81] = &Operations::lor;
+    funcaoGenerica[0x82] = &Operations::ixor;
+    funcaoGenerica[0x83] = &Operations::lxor;
+    funcaoGenerica[0x84] = &Operations::iinc;
+    funcaoGenerica[0x85] = &Operations::i2l;
+    funcaoGenerica[0x86] = &Operations::i2f;
+    funcaoGenerica[0x87] = &Operations::i2d;
+    funcaoGenerica[0x88] = &Operations::l2i;
+    funcaoGenerica[0x89] = &Operations::l2f;
+    funcaoGenerica[0x8a] = &Operations::l2d;
+    funcaoGenerica[0x8b] = &Operations::f2i;
+    funcaoGenerica[0x8c] = &Operations::f2l;
+    funcaoGenerica[0x8d] = &Operations::f2d;
+    funcaoGenerica[0x8e] = &Operations::d2i;
+    funcaoGenerica[0x8f] = &Operations::d2l;
+    funcaoGenerica[0x90] = &Operations::d2f;
+    funcaoGenerica[0x91] = &Operations::i2b;
+    funcaoGenerica[0x92] = &Operations::i2c;
+    funcaoGenerica[0x93] = &Operations::i2s;
+    funcaoGenerica[0x94] = &Operations::lcmp;
+    funcaoGenerica[0x95] = &Operations::fcmpl;
+    funcaoGenerica[0x96] = &Operations::fcmpg;
+    funcaoGenerica[0x97] = &Operations::dcmpl;
+    funcaoGenerica[0x98] = &Operations::dcmpg;
+    funcaoGenerica[0x99] = &Operations::ifeq;
+    funcaoGenerica[0x9a] = &Operations::ifne;
+    funcaoGenerica[0x9b] = &Operations::iflt;
+    funcaoGenerica[0x9c] = &Operations::ifge;
+    funcaoGenerica[0x9d] = &Operations::ifgt;
+    funcaoGenerica[0x9e] = &Operations::ifle;
+    funcaoGenerica[0x9f] = &Operations::if_icmpeq;
+    funcaoGenerica[0xa0] = &Operations::if_icmpne;
+    funcaoGenerica[0xa1] = &Operations::if_icmplt;
+    funcaoGenerica[0xa2] = &Operations::if_icmpge;
+    funcaoGenerica[0xa3] = &Operations::if_icmpgt;
+    funcaoGenerica[0xa4] = &Operations::if_icmple;
+    funcaoGenerica[0xa5] = &Operations::if_acmpeq;
+    funcaoGenerica[0xa6] = &Operations::if_acmpne;
+    funcaoGenerica[0xa7] = &Operations::func_goto;
+    funcaoGenerica[0xa8] = &Operations::jsr;
+    funcaoGenerica[0xa9] = &Operations::ret;
+    funcaoGenerica[0xaa] = &Operations::tableswitch;
+    funcaoGenerica[0xab] = &Operations::lookupswitch;
+    funcaoGenerica[0xac] = &Operations::ireturn;
+    funcaoGenerica[0xad] = &Operations::lreturn;
+    funcaoGenerica[0xae] = &Operations::freturn;
+    funcaoGenerica[0xaf] = &Operations::dreturn;
+    funcaoGenerica[0xb0] = &Operations::areturn;
+    funcaoGenerica[0xb1] = &Operations::func_return;
+    funcaoGenerica[0xb2] = &Operations::getstatic;
+    funcaoGenerica[0xb3] = &Operations::putstatic;
+    funcaoGenerica[0xb4] = &Operations::getfield;
+    funcaoGenerica[0xb5] = &Operations::putfield;
+    funcaoGenerica[0xb6] = &Operations::invokevirtual;
+    funcaoGenerica[0xb7] = &Operations::invokespecial;
+    funcaoGenerica[0xb8] = &Operations::invokestatic;
+    funcaoGenerica[0xb9] = &Operations::invokeinterface;
+    funcaoGenerica[0xbb] = &Operations::func_new;
+    funcaoGenerica[0xbc] = &Operations::newarray;
+    funcaoGenerica[0xbd] = &Operations::anewarray;
+    funcaoGenerica[0xbe] = &Operations::arraylength;
+    funcaoGenerica[0xbf] = &Operations::athrow;
+    funcaoGenerica[0xc0] = &Operations::checkcast;
+    funcaoGenerica[0xc1] = &Operations::instanceof;
+    funcaoGenerica[0xc2] = &Operations::monitorenter;
+    funcaoGenerica[0xc3] = &Operations::monitorexit;
+    funcaoGenerica[0xc4] = &Operations::wide;
+    funcaoGenerica[0xc5] = &Operations::multianewarray;
+    funcaoGenerica[0xc6] = &Operations::ifnull;
+    funcaoGenerica[0xc7] = &Operations::ifnonnull;
+    funcaoGenerica[0xc8] = &Operations::goto_w;
+    funcaoGenerica[0xc9] = &Operations::jsr_w;
+}

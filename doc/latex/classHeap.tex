@@ -2,78 +2,141 @@
 \label{classHeap}\index{Heap@{Heap}}
 
 
-Classe do heap.  
+Gerencia as operações do heap.  
 
 
 
 
 {\ttfamily \#include $<$Heap.\+h$>$}
 
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHeap_a734051272cbd0945d3916a1a89707ba2}{$\sim$\+Heap} ()
+\begin{DoxyCompactList}\small\item\em Destrutor padrão. \end{DoxyCompactList}\item 
+void \hyperlink{classHeap_aa2a5f92b36abe24c83853feca936548e}{add\+Object} (\hyperlink{classObject}{Object} $\ast$object)
+\begin{DoxyCompactList}\small\item\em Adiciona um objeto à heap. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Membros públicos estáticos}
 \begin{DoxyCompactItemize}
 \item 
-static void \hyperlink{classHeap_a5361fe54c9cca238575e2fe2b8462366}{adicionar\+Instancia} (\hyperlink{classInstanceClass}{Instance\+Class} $\ast$instance\+Class)
-\begin{DoxyCompactList}\small\item\em Adiciona novo objeto no heap. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Atributos Privados Estáticos}
+static \hyperlink{classHeap}{Heap} \& \hyperlink{classHeap_ac030780aeff8a27e33ed5f5eb576dfda}{get\+Instance} ()
+\begin{DoxyCompactList}\small\item\em Obter a única instância da \hyperlink{classHeap}{Heap}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membros privados}
 \begin{DoxyCompactItemize}
 \item 
-static vector$<$ \hyperlink{classInstanceClass}{Instance\+Class} $\ast$ $>$ \hyperlink{classHeap_a228364dcf1e708ceadc9e1f38928169c}{vector\+Instance\+Class}
+\hyperlink{classHeap_a6595efd3562a6334d2f5471c2b3b7cb4}{Heap} ()
+\item 
+\hyperlink{classHeap_aac9a075f0c23c3923fabbf2093386089}{Heap} (\hyperlink{classHeap}{Heap} const \&)
+\item 
+void \hyperlink{classHeap_a2923f4b4b05267583815e185f2e28b7d}{operator=} (\hyperlink{classHeap}{Heap} const \&)
+\end{DoxyCompactItemize}
+\subsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \hyperlink{classObject}{Object} $\ast$ $>$ \hyperlink{classHeap_a55b6cf9504fbe890a49e667c80dae717}{\+\_\+object\+Vector}
 \end{DoxyCompactItemize}
 
 
 \subsection{Descrição detalhada}
-Classe do heap. 
-
 Gerencia as operações do heap. 
 
-Definido na linha 18 do ficheiro Heap.\+h.
+Essa classe é um singleton, ou seja, somente existe no máximo 1 instância dela para cada instância da J\+VM. 
+
+Definido na linha 16 do ficheiro Heap.\+h.
+
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{classHeap_a734051272cbd0945d3916a1a89707ba2}\label{classHeap_a734051272cbd0945d3916a1a89707ba2}} 
+\index{Heap@{Heap}!````~Heap@{$\sim$\+Heap}}
+\index{````~Heap@{$\sim$\+Heap}!Heap@{Heap}}
+\subsubsection{\texorpdfstring{$\sim$\+Heap()}{~Heap()}}
+{\footnotesize\ttfamily Heap\+::$\sim$\+Heap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destrutor padrão. 
+
+
+
+Definido na linha 11 do ficheiro Heap.\+cpp.
+
+\mbox{\Hypertarget{classHeap_a6595efd3562a6334d2f5471c2b3b7cb4}\label{classHeap_a6595efd3562a6334d2f5471c2b3b7cb4}} 
+\index{Heap@{Heap}!Heap@{Heap}}
+\index{Heap@{Heap}!Heap@{Heap}}
+\subsubsection{\texorpdfstring{Heap()}{Heap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Heap\+::\+Heap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Construtor padrão. 
+
+Definido na linha 7 do ficheiro Heap.\+cpp.
+
+\mbox{\Hypertarget{classHeap_aac9a075f0c23c3923fabbf2093386089}\label{classHeap_aac9a075f0c23c3923fabbf2093386089}} 
+\index{Heap@{Heap}!Heap@{Heap}}
+\index{Heap@{Heap}!Heap@{Heap}}
+\subsubsection{\texorpdfstring{Heap()}{Heap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Heap\+::\+Heap (\begin{DoxyParamCaption}\item[{\hyperlink{classHeap}{Heap} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
 \subsection{Documentação dos métodos}
-\mbox{\Hypertarget{classHeap_a5361fe54c9cca238575e2fe2b8462366}\label{classHeap_a5361fe54c9cca238575e2fe2b8462366}} 
-\index{Heap@{Heap}!adicionar\+Instancia@{adicionar\+Instancia}}
-\index{adicionar\+Instancia@{adicionar\+Instancia}!Heap@{Heap}}
-\subsubsection{\texorpdfstring{adicionar\+Instancia()}{adicionarInstancia()}}
-{\footnotesize\ttfamily static void Heap\+::adicionar\+Instancia (\begin{DoxyParamCaption}\item[{\hyperlink{classInstanceClass}{Instance\+Class} $\ast$}]{instance\+Class }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\mbox{\Hypertarget{classHeap_aa2a5f92b36abe24c83853feca936548e}\label{classHeap_aa2a5f92b36abe24c83853feca936548e}} 
+\index{Heap@{Heap}!add\+Object@{add\+Object}}
+\index{add\+Object@{add\+Object}!Heap@{Heap}}
+\subsubsection{\texorpdfstring{add\+Object()}{addObject()}}
+{\footnotesize\ttfamily void Heap\+::add\+Object (\begin{DoxyParamCaption}\item[{\hyperlink{classObject}{Object} $\ast$}]{object }\end{DoxyParamCaption})}
 
 
 
-Adiciona novo objeto no heap. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em instance\+Class} & -\/ ponteiro para o novo objeto. \\
-\hline
-\end{DoxyParams}
-
-
-Definido na linha 10 do ficheiro Heap.\+cpp.
+Adiciona um objeto à heap. 
 
 
 
-Referências vector\+Instance\+Class.
+Definido na linha 15 do ficheiro Heap.\+cpp.
 
 
 
-Referenciado por Static\+Class\+::obter\+Instance\+Class().
+Referenciado por Instance\+Class\+::\+Instance\+Class().
+
+\mbox{\Hypertarget{classHeap_ac030780aeff8a27e33ed5f5eb576dfda}\label{classHeap_ac030780aeff8a27e33ed5f5eb576dfda}} 
+\index{Heap@{Heap}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Heap@{Heap}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily static \hyperlink{classHeap}{Heap}\& Heap\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obter a única instância da \hyperlink{classHeap}{Heap}. 
+
+\begin{DoxyReturn}{Retorna}
+A instância da \hyperlink{classHeap}{Heap}. 
+\end{DoxyReturn}
+
+
+Definido na linha 22 do ficheiro Heap.\+h.
+
+
+
+Referenciado por Instance\+Class\+::\+Instance\+Class().
+
+\mbox{\Hypertarget{classHeap_a2923f4b4b05267583815e185f2e28b7d}\label{classHeap_a2923f4b4b05267583815e185f2e28b7d}} 
+\index{Heap@{Heap}!operator=@{operator=}}
+\index{operator=@{operator=}!Heap@{Heap}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily void Heap\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classHeap}{Heap} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
 \subsection{Documentação dos dados membro}
-\mbox{\Hypertarget{classHeap_a228364dcf1e708ceadc9e1f38928169c}\label{classHeap_a228364dcf1e708ceadc9e1f38928169c}} 
-\index{Heap@{Heap}!vector\+Instance\+Class@{vector\+Instance\+Class}}
-\index{vector\+Instance\+Class@{vector\+Instance\+Class}!Heap@{Heap}}
-\subsubsection{\texorpdfstring{vector\+Instance\+Class}{vectorInstanceClass}}
-{\footnotesize\ttfamily vector$<$ \hyperlink{classInstanceClass}{Instance\+Class} $\ast$ $>$ Heap\+::vector\+Instance\+Class\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+\mbox{\Hypertarget{classHeap_a55b6cf9504fbe890a49e667c80dae717}\label{classHeap_a55b6cf9504fbe890a49e667c80dae717}} 
+\index{Heap@{Heap}!\+\_\+object\+Vector@{\+\_\+object\+Vector}}
+\index{\+\_\+object\+Vector@{\+\_\+object\+Vector}!Heap@{Heap}}
+\subsubsection{\texorpdfstring{\+\_\+object\+Vector}{\_objectVector}}
+{\footnotesize\ttfamily vector$<$\hyperlink{classObject}{Object}$\ast$$>$ Heap\+::\+\_\+object\+Vector\hspace{0.3cm}{\ttfamily [private]}}
 
+Vetor interno que armazena todos os objetos. 
 
-
-Definido na linha 20 do ficheiro Heap.\+h.
-
-
-
-Referenciado por adicionar\+Instancia().
+Definido na linha 49 do ficheiro Heap.\+h.
 
 
 

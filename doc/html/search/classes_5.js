@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['instanceclass',['InstanceClass',['../classInstanceClass.html',1,'']]]
+  ['heap',['Heap',['../classHeap.html',1,'']]]
 ];

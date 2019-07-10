@@ -1,9 +1,8 @@
 <map id="Operations::dstore" name="Operations::dstore">
-<area shape="rect" id="node2" href="$classOperandsStack.html#a8c76f12ad6984b3c5b4ec8807eb63ae3" title="Recupera o tipo do topo da pilha de operandos. " alt="" coords="429,5,616,47"/>
-<area shape="rect" id="node4" href="$classOperandsStack.html#a9503313a7def4c11fb782d5881e3d6cb" title="Desempilha o topo da pilha de operandos e retorna em um elemento tipado. " alt="" coords="189,64,375,105"/>
-<area shape="rect" id="node7" href="$classOperations.html#a6906050cc72d774f77d8ba33607b1c62" title="Function that returns a n bytes value. " alt="" coords="183,130,381,157"/>
-<area shape="rect" id="node8" href="$classLocalVariables.html#a6d79e0c874931e97ed68a25cf60ab119" title="Receives the typed element and inserts on past index. " alt="" coords="215,181,349,207"/>
-<area shape="rect" id="node3" href="$classOperandsStack.html#aa6dbee87661011453ba2c57405bd9a4e" title="Retorna se a pilha está vazia (1) ou não (0) " alt="" coords="899,63,1077,90"/>
-<area shape="rect" id="node5" href="$classOperandsStack.html#a3213a1b633149de9332217d403ee84b6" title="Desempilha o topo da pilha de operandos e retorna em um elemento de valor. " alt="" coords="429,71,616,98"/>
-<area shape="rect" id="node6" href="$classOperandsStack.html#a184a99d160e17ef874a7b83f0726fb8a" title="Recupera o valor do topo da pilha de operandos. " alt="" coords="664,115,851,156"/>
+<area shape="rect" id="node2" href="$classFrame.html#a93c26ae659c3f1b11837a0e9942acb20" title="Remove o operando do topo da pilha de operandos. " alt="" coords="183,5,365,47"/>
+<area shape="rect" id="node3" href="$classFrame.html#a6863584ef3a6f2e4b1f93fb0deb09f4b" title="Obtém o código do método a partir de um offset. " alt="" coords="216,71,332,98"/>
+<area shape="rect" id="node4" href="$classPilhaJVM.html#a13bf1c43de7819ea7761616f7a04c3b9" title="Obter a única instância da pilha. " alt="" coords="197,122,351,149"/>
+<area shape="rect" id="node5" href="$classPilhaJVM.html#aa0e43da476df6147c86c8cc3d6899718" title="Obtém o frame no topo da pilha da JVM. " alt="" coords="193,173,355,199"/>
+<area shape="rect" id="node6" href="$classFrame.html#a2b65f6fa2195970fd25d69c17b5ca933" title="Retorna o comprimento do vetor de variáveis locais associado ao frame. " alt="" coords="186,223,362,250"/>
+<area shape="rect" id="node7" href="$classFrame.html#adfa57fa3049213f13beba10ba7152500" title="Modifica o valor de uma variável local. " alt="" coords="187,274,361,301"/>
 </map>

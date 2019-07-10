@@ -1,75 +1,76 @@
-/*!
- * \file MethodArea.cpp
- * \brief
- */
 
 #include "MethodArea.h"
 
-map<string, StaticClass*> MethodArea::mapStaticClass;
-string MethodArea::path = "";
-PilhaJVM *MethodArea::pilhaJVM = nullptr;
+#include "ClassVisao.h" // talvez retirar isso e colocar a getFormattedConstant() na Util.
+#include "LeitorExibidor.h"
+#include "Operations.h"
+#include "PilhaJVM.h"
 
-StaticClass *MethodArea::obterClass(string classe) {
-	for (map<string, StaticClass*>::const_iterator i = mapStaticClass.begin(); i != mapStaticClass.end(); i++) {
-		if (i->first == classe) {
-			return i->second;
-		}
-	}
-	return nullptr;
+MethodArea::MethodArea() {
+    
 }
 
-bool MethodArea::adicionarClasse(string classe) {
-	for (map<string, StaticClass*>::const_iterator i = mapStaticClass.begin(); i != mapStaticClass.end(); i++) {
-		if (i->first == classe) {
-			return false;
-		}
-	}
-
-	ClassFile *classFile = new ClassFile(string(path + classe));
-
-	if (!classFile->validarExtensao()) {
-		delete classFile;
-		classFile = new ClassFile(string(path + classe + ".class"));
-	}
-
-	if (classFile->carregar()) {
-		return false;
-	}
-
-	StaticClass *staticClass = new StaticClass(classFile);
-	mapStaticClass.insert(pair<string, StaticClass*>(classe, staticClass));
-
-	if (classFile->existeClinit()) {
-		pilhaJVM->adicionarFrame(classFile->obterClinit(), classFile->obterConstantPool());
-	}
-
-	return true;
+MethodArea::~MethodArea() {
+    
 }
 
-bool MethodArea::adicionarClasse(ClassFile *classFile) {
-	if (classFile->obterStatus() == -1) {
-		classFile->carregar();
-	}
+StaticClass* MethodArea::carregarClassNamed(const string &className) {
+    // se a classe já tiver sido carregada, retorna-la
+    if (_classes.count(className) > 0) {
+        return getClassNamed(className);
+    }
+    
+    string classNameStr(className);
+    string classLocation("");
+    string classFormat(".class");
+    
+    if (classNameStr.size() < classFormat.size() || classNameStr.compare(classNameStr.size() - classFormat.size(), classFormat.size(), classFormat) != 0) {
+        classNameStr = classLocation + classNameStr + classFormat; // concatena com ".class"
+    }
 
-	switch (classFile->obterStatus()) {
-	case 0:
-		break;
-	default:
-		return false;
-	}
-
-	StaticClass *staticClass = new StaticClass(classFile);
-	string indiceReferencia = capturarIndiceDeReferencia(classFile->obterConstantPool(), classFile->obterThis_class());
-
-	mapStaticClass.insert(pair<string, StaticClass*>(indiceReferencia, staticClass));
-
-	if (classFile->existeClinit()) {
-		pilhaJVM->adicionarFrame(classFile->obterClinit(), classFile->obterConstantPool());
-	}
-
-	return true;
+    FILE *fp = fopen(classNameStr.c_str(), "rb");
+    if (fp == NULL) {
+        cerr << "NoClassDefFoundError: " << classNameStr << endl;
+        exit(1);
+    }
+    
+    LeitorExibidor &classLoader = LeitorExibidor::getInstance();
+    ClassFile *classFile = classLoader.readClassFile(fp);
+    StaticClass *classRuntime = new StaticClass(classFile);
+    addClass(classRuntime);
+    fclose(fp);
+    
+    // adicionando <clinit> da classe (se existir) na stack frame.
+    Operations &operations = Operations::getInstance();
+    bool existsClinit = operations.verificarMetodoExiste(classRuntime, "<clinit>", "()V");
+    if (existsClinit) {
+        PilhaJVM &stackFrame = PilhaJVM::getInstance();
+        Frame *newFrame = new Frame(classRuntime, "<clinit>", "()V");
+        stackFrame.addFrame(newFrame);
+    }
+    
+    return classRuntime;
 }
 
-void MethodArea::atualizarPilhaJVM(PilhaJVM *pPilhaJVM) {
-	pilhaJVM = pPilhaJVM;
+StaticClass* MethodArea::getClassNamed(const string &className) {
+    map<string, StaticClass*>::iterator it = _classes.find(className);
+    
+    if (it == _classes.end()) {
+        return NULL;
+    }
+    
+    return it->second;
+}
+
+bool MethodArea::addClass(StaticClass *classRuntime) {
+    ClassFile *classFile = classRuntime->getClassFile();
+    
+    const char *key = getFormattedConstant(classFile->constant_pool, classFile->this_class);
+    
+    if (_classes.count(key) > 0) {
+        return false;
+    }
+    
+    _classes[key] = classRuntime;
+    return true;
 }

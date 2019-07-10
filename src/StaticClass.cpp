@@ -1,121 +1,89 @@
-/*!
- * \file StaticClass.cpp
- * \brief
- */
-
+#include "BasicTypes.h"
 #include "StaticClass.h"
+#include "ClassVisao.h"
 
-StaticClass::StaticClass(ClassFile *classFile) {
-	this->classFile = classFile; ///class file lido
-	int tamanho = classFile->obterFieldsCount(); ///get numero de fields
-	Field_info *field = classFile->obterFields();
 
-	for (int i = 0; i < tamanho; i++) {
-		if ((field[i].accessFlags & 0x08) && (field[i].accessFlags & 0x010) == 0) {
-			TypedElement *typedElement = (TypedElement *) malloc(sizeof(TypedElement));
-			typedElement->value.l = 0;
-			string type = capturarIndiceDeReferencia(classFile->obterConstantPool(), field[i].descriptor_index);
-
-			switch (type[0]) {
-			case 'B':
-				typedElement->type = TYPE_BOOL;
-				break;
-			case 'C':
-				typedElement->type = TYPE_INT;
-				break;
-			case 'D':
-				typedElement->type = TYPE_DOUBLE;
-				break;
-			case 'F':
-				typedElement->type = TYPE_FLOAT;
-				break;
-			case 'I':
-				typedElement->type = TYPE_INT;
-				break;
-			case 'J':
-				typedElement->type = TYPE_LONG;
-				break;
-			case 'L':
-				typedElement->type = TYPE_REFERENCE;
-				break;
-			case 'S':
-				typedElement->type = TYPE_INT;
-				break;
-			case 'Z':
-				typedElement->type = TYPE_BOOL;
-				break;
-			case '[':
-				typedElement->type = TYPE_REFERENCE;
-				break;
-			}
-
-			string nomeField = capturarIndiceDeReferencia(classFile->obterConstantPool(), field[i].name_index);
-			mapTypedElement.insert(pair<string, TypedElement*>(nomeField, typedElement));
-		}
-	}
+StaticClass::StaticClass(ClassFile *classFile) : _classFile(classFile) {
+    field_info *fields = classFile->fields;
+    for (int i = 0; i < classFile->fields_count; i++) {
+        field_info field = fields[i];
+        u2 staticFlag = 0x0008;
+        u2 finalFlag = 0x0010;
+        
+        if ((field.access_flags & staticFlag) != 0 && (field.access_flags & finalFlag) == 0) { // estática e não final
+            string fieldName = getFormattedConstant(classFile->constant_pool, field.name_index);
+            string fieldDescriptor = getFormattedConstant(classFile->constant_pool, field.descriptor_index);
+            
+            char fieldType = fieldDescriptor[0];
+            Value value;
+            
+            switch (fieldType) {
+                case 'B':
+                    value.type = ValueType::BYTE;
+                    value.data.byteValue = 0;
+                    break;
+                case 'C':
+                    value.type = ValueType::CHAR;
+                    value.data.charValue = 0;
+                    break;
+                case 'D':
+                    value.type = ValueType::DOUBLE;
+                    value.data.doubleValue = 0;
+                    break;
+                case 'F':
+                    value.type = ValueType::FLOAT;
+                    value.data.floatValue = 0;
+                    break;
+                case 'I':
+                    value.type = ValueType::INT;
+                    value.data.intValue = 0;
+                    break;
+                case 'J':
+                    value.type = ValueType::LONG;
+                    value.data.longValue = 0;
+                    break;
+                case 'S':
+                    value.type = ValueType::SHORT;
+                    value.data.shortValue = 0;
+                    break;
+                case 'Z':
+                    value.type = ValueType::BOOLEAN;
+                    value.data.charValue = false;
+                    break;
+                default:
+                    value.type = ValueType::REFERENCE;
+                    value.data.object = NULL;
+            }
+            
+            putValueIntoField(value, fieldName);
+        }
+    }
 }
 
-TypedElement StaticClass::obterField(string field) {
-	TypedElement typedElement;
-	typedElement.type = TYPE_NOT_SET;
-	map<string, TypedElement*>::const_iterator mapField;
-	mapField = mapTypedElement.begin();
-
-	while (mapField != mapTypedElement.end()) {
-		if (mapField->first == field) {
-			return *(mapField->second);
-		}
-		mapField++;
-	}
-
-	return typedElement;
+ClassFile* StaticClass::getClassFile() {
+    return _classFile;
 }
 
-bool StaticClass::atualizarField(string field, TypedElement typedElement) {
-	map<string, TypedElement*>::const_iterator mapField;
-	mapField = mapTypedElement.begin();
-
-	while (mapField != mapTypedElement.end()) {
-		if (mapField->first == field) {
-			if (mapField->second->type == typedElement.type) {
-				*(mapField->second) = typedElement;
-				return true;
-			} else {
-				break;
-			}
-		}
-		mapField++;
-	}
-
-	return false;
+void StaticClass::putValueIntoField(Value value, string fieldName) {
+    _staticFields[fieldName] = value;
 }
 
-bool StaticClass::atualizarFieldFinals(string field, TypedElement typedElement) {
-	map<string, TypedElement*>::const_iterator mapField;
-	mapField = mapTypedElement.begin();
-
-	while (mapField != mapTypedElement.end()) {
-		if (mapField->first == field) {
-			if (mapField->second->type == typedElement.type) {
-				*(mapField->second) = typedElement;
-				return true;
-			} else {
-				break;
-			}
-		}
-		mapField++;
-	}
-
-	return false;
+Value StaticClass::getValueFromField(string fieldName) {
+    if (_staticFields.count(fieldName) ==  0) {
+        cerr << "NoSuchFieldError" << endl;
+        exit(1);
+    }
+    
+    return _staticFields[fieldName];
 }
 
-ClassFile *StaticClass::obterClassFile() {
-	return classFile;
+
+bool StaticClass::fieldExists(string fieldName) {
+    return _staticFields.count(fieldName) > 0;
 }
-
-InstanceClass *StaticClass::obterInstanceClass() {
-	InstanceClass *instanceClass = new InstanceClass(this);
-	Heap::adicionarInstancia(instanceClass);
-
-	return instanceClass;
+/* Função que vai abrir o arquivo dado */
+string StaticClass::inicializarArquivo(char *argv[]) {
+	string str(argv[2]);
+	string nome = str.substr(0, str.length() - 6);
+	return nome;
 }

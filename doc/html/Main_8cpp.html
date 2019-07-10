@@ -85,33 +85,35 @@ $(document).ready(function(){initNavTree('Main_8cpp.html','');});
 <div class="title">Referência ao ficheiro Main.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Modulo principal, dá a opção de escolha entre exibidor e interpretador.  
-<a href="#details">Mais...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &lt;cstdio&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &quot;<a class="el" href="ClassVisao_8h_source.html">ClassVisao.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Utils_8h_source.html">Utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Heap_8h_source.html">Heap.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstanceClass_8h_source.html">InstanceClass.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="LeitorExibidor_8h_source.html">LeitorExibidor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MethodArea_8h_source.html">MethodArea.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Operations_8h_source.html">Operations.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="StaticClass_8h_source.html">StaticClass.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Diagrama de dependências de inclusão para Main.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Main_8cpp__incl.png" border="0" usemap="#src_2Main_8cpp" alt=""/></div>
 <map name="src_2Main_8cpp" id="src_2Main_8cpp">
-<area shape="rect" id="node2" href="ClassFile_8h.html" title="Definição da ClassFile. " alt="" coords="865,155,953,181"/>
-<area shape="rect" id="node35" href="LeitorExibidor_8h.html" title="LeitorExibidor.h" alt="" coords="900,80,1012,107"/>
-<area shape="rect" id="node10" href="BasicTypes_8h.html" title="Tipos básicos utilizados para implementarmos a JVM. " alt="" coords="863,677,966,704"/>
-<area shape="rect" id="node15" href="ConstantPool_8h.html" title="Módulo Constant pool. " alt="" coords="589,603,701,629"/>
-<area shape="rect" id="node16" href="Flags_8h.html" title="ClassFlags (public, final, super, interface and abstract) " alt="" coords="398,603,463,629"/>
-<area shape="rect" id="node17" href="Fields_8h.html" title="Gerencia as informações dos campos do arquivo .class. " alt="" coords="366,453,434,480"/>
-<area shape="rect" id="node18" href="Attributes_8h.html" title="Atributos a serem usados na execuçao da JVM. " alt="" coords="193,528,282,555"/>
-<area shape="rect" id="node19" href="Interfaces_8h.html" title="Gerencia as informações da interfaces do arquivo .class. " alt="" coords="813,528,904,555"/>
-<area shape="rect" id="node20" href="Methods_8h.html" title="Gerencia as informações dos metodos do arquivo .class. " alt="" coords="509,453,592,480"/>
-<area shape="rect" id="node21" href="StaticClass_8h.html" title="Definição da StaticClass. " alt="" coords="1428,453,1529,480"/>
-<area shape="rect" id="node25" href="InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="1425,528,1543,555"/>
-<area shape="rect" id="node28" href="MethodArea_8h.html" title="Responsável por todas as operações que gerenciam os métodos. " alt="" coords="973,229,1075,256"/>
-<area shape="rect" id="node22" href="OperandsStack_8h.html" title="Pilha responsável por armazenar os operandos da JVM. " alt="" coords="1224,603,1347,629"/>
-<area shape="rect" id="node26" href="Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="1460,603,1524,629"/>
-<area shape="rect" id="node31" href="PilhaJVM_8h.html" title="Contém tudo necessário para a execução de um método. " alt="" coords="973,304,1062,331"/>
-<area shape="rect" id="node32" href="LocalVariables_8h.html" title="Stores local variables to current method. " alt="" coords="1081,603,1199,629"/>
-<area shape="rect" id="node34" href="Operations_8h.html" title="Operations.h" alt="" coords="1232,379,1328,405"/>
+<area shape="rect" id="node6" href="ClassVisao_8h.html" title="ClassVisao.h" alt="" coords="518,229,618,256"/>
+<area shape="rect" id="node13" href="LeitorExibidor_8h.html" title="LeitorExibidor.h" alt="" coords="245,304,357,331"/>
+<area shape="rect" id="node21" href="Utils_8h.html" title="Utils.h" alt="" coords="271,229,331,256"/>
+<area shape="rect" id="node22" href="Heap_8h.html" title="Heap.h" alt="" coords="1720,304,1784,331"/>
+<area shape="rect" id="node25" href="InstanceClass_8h.html" title="InstanceClass.h" alt="" coords="1627,155,1744,181"/>
+<area shape="rect" id="node27" href="StaticClass_8h.html" title="StaticClass.h" alt="" coords="1165,229,1267,256"/>
+<area shape="rect" id="node28" href="MethodArea_8h.html" title="MethodArea.h" alt="" coords="1077,155,1179,181"/>
+<area shape="rect" id="node29" href="Operations_8h.html" title="Operations.h" alt="" coords="1304,80,1400,107"/>
+<area shape="rect" id="node11" href="BasicTypes_8h.html" title="BasicTypes.h" alt="" coords="925,453,1027,480"/>
+<area shape="rect" id="node15" href="ClassFile_8h.html" title="Definição da ClassFile. " alt="" coords="360,379,448,405"/>
+<area shape="rect" id="node24" href="Object_8h.html" title="Object.h" alt="" coords="1713,379,1783,405"/>
+<area shape="rect" id="node33" href="ArrayObject_8h.html" title="ArrayObject.h" alt="" coords="1491,304,1594,331"/>
 </map>
 </div>
 </div>
@@ -123,11 +125,7 @@ Funções</h2></td></tr>
 <tr class="memdesc:a0ddf1224851353fc92bfbff6f499fa97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao principal, dá a opção de escolha entre exibidor e interpretador.  <a href="#a0ddf1224851353fc92bfbff6f499fa97">Mais...</a><br /></td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
-<div class="textblock"><p>Modulo principal, dá a opção de escolha entre exibidor e interpretador. </p>
-
-<p class="definition">Definido no ficheiro <a class="el" href="Main_8cpp_source.html">Main.cpp</a>.</p>
-</div><h2 class="groupheader">Documentação das funções</h2>
+<h2 class="groupheader">Documentação das funções</h2>
 <a id="a0ddf1224851353fc92bfbff6f499fa97"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&nbsp;</a></span>main()</h2>
 
@@ -173,63 +171,57 @@ Luan Mendes Gonçalves Freitas - 15/0015585 </dd>
 <dd>
 Miguel Barreto Rezende Marques de Freitas - 12/0130424 </dd></dl>
 
-<p class="definition">Definido na linha <a class="el" href="Main_8cpp_source.html#l00025">25</a> do ficheiro <a class="el" href="Main_8cpp_source.html">Main.cpp</a>.</p>
+<p class="definition">Definido na linha <a class="el" href="Main_8cpp_source.html#l00035">35</a> do ficheiro <a class="el" href="Main_8cpp_source.html">Main.cpp</a>.</p>
 
-<p class="reference">Referências <a class="el" href="MethodArea_8cpp_source.html#l00021">MethodArea::adicionarClasse()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00085">ClassFile::carregar()</a>, <a class="el" href="LeitorExibidor_8h_source.html#l00013">LeitorExibidor::classFile</a>, <a class="el" href="PilhaJVM_8cpp_source.html#l00035">PilhaJVM::executarMetodos()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00202">ClassFile::exibir()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00041">ClassFile::fecharArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00229">ClassFile::gravarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00027">ClassFile::inicializarArquivo()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00475">ClassFile::obterPath()</a>, <a class="el" href="ClassFile_8cpp_source.html#l00430">ClassFile::obterStatus()</a>, <a class="el" href="MethodArea_8h_source.html#l00029">MethodArea::path</a> e <a class="el" href="ClassFile_8cpp_source.html#l00061">ClassFile::validacao()</a>.</p>
+<p class="reference">Referências <a class="el" href="MethodArea_8cpp_source.html#l00017">MethodArea::carregarClassNamed()</a>, <a class="el" href="ClassFile_8h_source.html#l00041">ClassFile::constant_pool</a>, <a class="el" href="Operations_8cpp_source.html#l00019">Operations::executarMetodos()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00033">exibeClassFile()</a>, <a class="el" href="StaticClass_8cpp_source.html#l00063">StaticClass::getClassFile()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00384">getFormattedConstant()</a>, <a class="el" href="MethodArea_8h_source.html#l00029">MethodArea::getInstance()</a>, <a class="el" href="Operations_8h_source.html#l00037">Operations::getInstance()</a>, <a class="el" href="StaticClass_8cpp_source.html#l00085">StaticClass::inicializarArquivo()</a>, <a class="el" href="ClassVisao_8cpp_source.html#l00009">printArquivoClassFile()</a>, <a class="el" href="ClassFile_8h_source.html#l00043">ClassFile::this_class</a>, <a class="el" href="Operations_8cpp_source.html#l00041">Operations::verificarMetodoExiste()</a> e <a class="el" href="Utils_8cpp_source.html#l00019">Utils::verificarThisClass()</a>.</p>
 <div class="dynheader">
 Grafo de chamadas desta função:</div>
 <div class="dyncontent">
 <div class="center"><img src="Main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.png" border="0" usemap="#Main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph" alt=""/></div>
 <map name="Main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph" id="Main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph">
-<area shape="rect" id="node2" href="classMethodArea.html#a30233142aefa26c17a3a222582cb56c1" title="Carrega a classe na memória. " alt="" coords="104,761,297,788"/>
-<area shape="rect" id="node4" href="classClassFile.html#a619e102ada15202ab84981d43362a3e9" title="Carrega o class file na classe. " alt="" coords="381,435,513,461"/>
-<area shape="rect" id="node28" href="classPilhaJVM.html#a8c87f8255b289be137dd09360d135e86" title="Executa o método atual e os métodos chamados. " alt="" coords="107,964,294,991"/>
-<area shape="rect" id="node31" href="classClassFile.html#a7da7cc6de8de3fc6f27faf3b76f4883a" title="Imprime todas as informações do .class. " alt="" coords="143,1157,259,1184"/>
-<area shape="rect" id="node38" href="classClassFile.html#a581c453009afcb8b7a2861a2de8cfb5c" title="Fechar arquivo. " alt="" coords="118,1208,283,1235"/>
-<area shape="rect" id="node39" href="classClassFile.html#a452169cb59d63012f98a34a3fff2c2f7" title="Gravar todas as informações do .class em um arquivo. " alt="" coords="118,1372,283,1399"/>
-<area shape="rect" id="node46" href="classClassFile.html#a5fa3d7587821ed1c8e3eabb94544da29" title="criar e inicializar arquivo " alt="" coords="109,1423,292,1449"/>
-<area shape="rect" id="node47" href="classClassFile.html#a4803bd3f325fbab1bf9c0f774b3a8c97" title="Pega o caminho do arquivo .class. " alt="" coords="130,1473,271,1500"/>
-<area shape="rect" id="node48" href="classClassFile.html#a170339cd16cf0afc0567865b3f372d38" title="Retorna o status lido, informando para o método que chamou o que aconteceu. " alt="" coords="125,1524,277,1551"/>
-<area shape="rect" id="node49" href="classClassFile.html#acdb7018a6926b187bc6ecc18abf0fff8" title="Valida estrutura obrigatoria. " alt="" coords="377,123,517,149"/>
-<area shape="rect" id="node3" href="classClassFile.html#a8dd042ff6873b9f0d16f8ee3812261e1" title="Verifica se a extensão do arquivo é .class. " alt="" coords="609,5,788,32"/>
-<area shape="rect" id="node19" href="classClassFile.html#a2a886bdb4c42bfaaf5ea8ff1b2c41209" title="Verifica se o .class tem o método clinit. " alt="" coords="371,711,522,737"/>
-<area shape="rect" id="node20" href="classPilhaJVM.html#a9add990f9c258d39d2fcd791398c96ac" title="Adiciona um frame no topo da pilha. " alt="" coords="359,761,534,788"/>
-<area shape="rect" id="node26" href="classClassFile.html#a1141f5a8c856d5f3931f0b518e219f79" title="Retorna o método clinit. " alt="" coords="375,812,519,839"/>
-<area shape="rect" id="node27" href="classClassFile.html#ab70fe581c4b7a1824adf490c3a53bcc7" title="Retorna referencia a constant pool. " alt="" coords="350,863,543,889"/>
-<area shape="rect" id="node5" href="classClassFile.html#a32767b8d966ef87249aa3a41ec5d67c3" title="Retorna a string que contém uma mensagem de erro correspondente ao índice que recebe como parâmetro..." alt="" coords="629,123,768,149"/>
-<area shape="rect" id="node6" href="BasicTypes_8cpp.html#a74cf9475c49284eba16e6f1d4b7d0985" title="Função para ler 4 bytes do arquivo .class. " alt="" coords="857,249,911,276"/>
-<area shape="rect" id="node7" href="BasicTypes_8cpp.html#a7e2b72c2ee2be091607d2165abc06244" title="Função para ler 2 bytes do arquivo .class. " alt="" coords="857,325,911,352"/>
-<area shape="rect" id="node8" href="classClassFile.html#a1dc8bb02efc19507cd93208d8477b436" title="ClassFile::validarVersao\lClass" alt="" coords="617,427,781,469"/>
-<area shape="rect" id="node9" href="classClassFile.html#a423be12c855bb2f0479ff83823973da3" title="ClassFile::verificarVersao\lClass" alt="" coords="613,493,785,534"/>
-<area shape="rect" id="node10" href="ConstantPool_8cpp.html#a56798a87affc6fb3e55cc85ef7086dc4" title="carregarConstantPool" alt="" coords="625,376,773,403"/>
-<area shape="rect" id="node13" href="Interfaces_8cpp.html#a107c86b6178f848a1159aedf372996ba" title="Carrega as interfaces na mem�ria a partir do arquivo class. " alt="" coords="633,325,764,352"/>
-<area shape="rect" id="node14" href="Fields_8cpp.html#a888245ea152dedf33b1f8de23c254a37" title="lerTodosFields" alt="" coords="645,559,752,585"/>
-<area shape="rect" id="node15" href="Methods_8cpp.html#ae335dbeb4b8f1f2c4af9077318e10795" title="lerTodosMethods" alt="" coords="637,609,760,636"/>
-<area shape="rect" id="node16" href="Attributes_8cpp.html#afa0c4d01d9ac9907bcb78af9e8b92c71" title="lerTodosAttributes" alt="" coords="635,660,763,687"/>
-<area shape="rect" id="node17" href="classClassFile.html#ae8e4445e763c4ee7c04995fcea0369e0" title="Encontro em qual method está a main. " alt="" coords="619,173,778,200"/>
-<area shape="rect" id="node18" href="classClassFile.html#ab0394185a299f35a9b5be68143385e84" title="Encontra em qual method esta a clinit, se existir. " alt="" coords="618,711,779,737"/>
-<area shape="rect" id="node11" href="BasicTypes_8cpp.html#a4d51a7260f72d442b5fee1afad067e66" title="Função para ler 1 byte do arquivo .class. " alt="" coords="967,401,1020,428"/>
-<area shape="rect" id="node12" href="BasicTypes_8cpp.html#ab43eecd93f5d0413f80c9dc9253f7ccb" title="Função para ler os bytes de uma string UTF&#45;8. " alt="" coords="849,427,919,453"/>
-<area shape="rect" id="node21" href="classPilhaJVM.html#a08adb78983b512cf3d97becfa2e9a5f0" title="Põe o PC na posição inicial. " alt="" coords="619,761,778,788"/>
-<area shape="rect" id="node22" href="classOperations.html#a705efecd2a658615f2dfe777f0bd7032" title="Atualiza a referência do frame do metodo. " alt="" coords="609,812,788,839"/>
-<area shape="rect" id="node23" href="classOperations.html#a2564df73b5b237e5bda042909c4747b1" title="Atualiza a referência da pilha de frames para o próximo frame. " alt="" coords="611,863,787,905"/>
-<area shape="rect" id="node24" href="classOperations.html#a5b31ab2923ed10b6ad3705f9954ed49e" title="Atualiza a pilha referência da pilha da jvm para o próximo instrução. " alt="" coords="599,929,798,956"/>
-<area shape="rect" id="node25" href="classMethodArea.html#a6ee32cdf91b461ff3c8a278b5d0cd126" title="Atualiza a pilha referência da pilha da jvm para o próximo instrução. " alt="" coords="596,980,801,1007"/>
-<area shape="rect" id="node29" href="classPilhaJVM.html#a914a4707e58e23e8913fcdc0c53f8c5c" title="Atualiza o PC, se não for possível atualizar, dá um pop no método atual. " alt="" coords="353,913,540,940"/>
-<area shape="rect" id="node30" href="classOperations.html#ab63307824c7d6412e0afb1d037b995f1" title="Operations::executarOperacao" alt="" coords="347,964,546,991"/>
-<area shape="rect" id="node32" href="classClassFile.html#a482ed64fcd8a1b79d3622b3f59b5767a" title="Imprime informações gerais do .class. " alt="" coords="345,1015,548,1057"/>
-<area shape="rect" id="node33" href="ConstantPool_8cpp.html#a3a43d47502d328c76641be74a9f3efc3" title="imprimirConstantPool" alt="" coords="373,1081,520,1108"/>
-<area shape="rect" id="node34" href="Interfaces_8cpp.html#a0ddfbcb84bcd0d1146b48cb8465f5b94" title="Imprimir todas as interfaces do arquivo. " alt="" coords="365,1132,528,1159"/>
-<area shape="rect" id="node35" href="Fields_8cpp.html#ab3fbecb8bab9abf8a9bc9936c45d276d" title="imprimirTodosField" alt="" coords="381,1183,513,1209"/>
-<area shape="rect" id="node36" href="Methods_8cpp.html#a6e0de4fe25fbed32a095c350ad843d70" title="imprimirTodosMethods" alt="" coords="369,1233,524,1260"/>
-<area shape="rect" id="node37" href="Attributes_8cpp.html#af90fff93fb73ca1959c149ab0b9fad27" title="imprimirTodosAttributes" alt="" coords="367,1284,527,1311"/>
-<area shape="rect" id="node40" href="classClassFile.html#a4a685afd10dc5aaacd5a71ed535895c6" title="Gravar informações gerais do .class em um arquivo. " alt="" coords="364,1335,529,1377"/>
-<area shape="rect" id="node41" href="ConstantPool_8cpp.html#adeab961d0adcf041f088ef0f6568dbd7" title="gravarArquivoConstantPool" alt="" coords="356,1401,537,1428"/>
-<area shape="rect" id="node42" href="Interfaces_8cpp.html#ad817a71d833eba20fd61c86c9a6b0a00" title="gravarArquivoTodasInterfaces" alt="" coords="349,1452,545,1479"/>
-<area shape="rect" id="node43" href="Fields_8cpp.html#acfb92bde21d024aaa2e1316f104be828" title="gravarArquivoTodosField" alt="" coords="363,1503,530,1529"/>
-<area shape="rect" id="node44" href="Methods_8cpp.html#ab82275fb422c00093dc9434927d0c32d" title="gravarArquivoTodosMethods" alt="" coords="353,1553,541,1580"/>
-<area shape="rect" id="node45" href="Attributes_8cpp.html#a82ca1308f0dc5fb2ca83e20666c04ba8" title="gravarArquivoTodosAttributes" alt="" coords="349,1604,544,1631"/>
-<area shape="rect" id="node50" href="classClassFile.html#a6b8f23db0ee4af80a2e75d46a191dc20" title="Verifica se a class definida é igual ao nome da classe sem extensões. " alt="" coords="621,57,777,98"/>
+<area shape="rect" id="node2" href="classMethodArea.html#a6e5cd27f3133d70a8c56c5daf9190ba6" title="Carrega a classe com o nome dado e a adiciona na área de métodos. " alt="" coords="110,268,291,309"/>
+<area shape="rect" id="node8" href="classStaticClass.html#ae00772669e7a0e54980ed303ff933cef" title="Destrutor padrão. " alt="" coords="607,174,777,200"/>
+<area shape="rect" id="node9" href="ClassVisao_8cpp.html#ad59936a226470583b59565cf99f4375e" title="getFormattedConstant" alt="" coords="1063,924,1215,951"/>
+<area shape="rect" id="node11" href="classOperations.html#afd99f64338fb7f1d1b813254f005bf9a" title="Obter a única instância da Execution Engine. " alt="" coords="362,72,523,99"/>
+<area shape="rect" id="node12" href="classOperations.html#a397caddc1ff805c556d3b71c9e525e3f" title="Verifica se o método informado existe na classe atual. " alt="" coords="351,326,534,368"/>
+<area shape="rect" id="node15" href="classOperations.html#ab771bdb83af6f55d93d126b944d4e73b" title="Inicia a Execution Engine com a classe passada. " alt="" coords="104,494,297,520"/>
+<area shape="rect" id="node19" href="ClassVisao_8cpp.html#a78619a05de0e6d7bd60070461eaf3696" title="exibeClassFile" alt="" coords="147,747,255,774"/>
+<area shape="rect" id="node35" href="classMethodArea.html#ab5fadec94ada20bc6381e7e9ac766cad" title="Obter a única instância do MethodArea. " alt="" coords="117,798,285,824"/>
+<area shape="rect" id="node36" href="classStaticClass.html#a6acf891b8d9119fddeec52169b364d66" title="formata arquivo saida se o field informado existe. " alt="" coords="125,849,277,890"/>
+<area shape="rect" id="node37" href="ClassVisao_8cpp.html#ab591ae1b83d6c20b31d14878874a9c5f" title="printArquivoClassFile" alt="" coords="127,1102,274,1128"/>
+<area shape="rect" id="node44" href="classUtils.html#aa70b3d26f8b094e4bb4bbf3e05a6bd63" title="Utils::verificarThisClass" alt="" coords="119,1152,282,1179"/>
+<area shape="rect" id="node3" href="classMethodArea.html#a1fb65cf5f35cadbe2be8ad1aece57025" title="Busca por uma classe com o nome qualificado passado (e.g. java/lang/Object). " alt="" coords="345,224,540,251"/>
+<area shape="rect" id="node4" href="classLeitorExibidor.html#ab6f5cece56cf5d2e486a5512d52de392" title="Obter a única instância do ClassLoader. " alt="" coords="354,275,531,302"/>
+<area shape="rect" id="node5" href="classLeitorExibidor.html#af6f4f84cbfaf72e6673e1dc42023b308" title="LeitorExibidor::readClassFile" alt="" coords="348,123,537,150"/>
+<area shape="rect" id="node7" href="classMethodArea.html#a9e4e378de46c1a9836820d86cd9dadb8" title="Adiciona uma classe à área de métodos. " alt="" coords="365,174,520,200"/>
+<area shape="rect" id="node13" href="classPilhaJVM.html#a13bf1c43de7819ea7761616f7a04c3b9" title="Obter a única instância da pilha. " alt="" coords="365,443,520,470"/>
+<area shape="rect" id="node14" href="classPilhaJVM.html#a64d7185bc812d3c81e5270c54c212e07" title="Adiciona um frame na pilha da JVM. " alt="" coords="371,392,515,419"/>
+<area shape="rect" id="node6" href="classUtils.html#a71459ff272f47bbce2081ff59fae2d2c" title="Utils::verificarVersaoClass" alt="" coords="603,123,781,150"/>
+<area shape="rect" id="node10" href="classUtils.html#abef6742f09f81fea5952454925325ea5" title="Utils::converterStreamTo\lCString" alt="" coords="1263,1006,1431,1048"/>
+<area shape="rect" id="node16" href="classPilhaJVM.html#a22d7bcd7db598b00ae219c9c2efb2c88" title="Obtém o tamanho da pilha da JVM. " alt="" coords="387,494,498,520"/>
+<area shape="rect" id="node17" href="classPilhaJVM.html#aa0e43da476df6147c86c8cc3d6899718" title="Obtém o frame no topo da pilha da JVM. " alt="" coords="361,544,524,571"/>
+<area shape="rect" id="node18" href="classFrame.html#a6863584ef3a6f2e4b1f93fb0deb09f4b" title="Obtém o código do método a partir de um offset. " alt="" coords="385,595,501,622"/>
+<area shape="rect" id="node20" href="ClassVisao_8cpp.html#a138dd6967f36f1e164174be7c1c5a616" title="exibe_Attributes" alt="" coords="385,696,501,723"/>
+<area shape="rect" id="node26" href="ClassVisao_8cpp.html#a7b06f7cbd2e84645ca9da6a00dc38fb1" title="exibe_ConstantPool" alt="" coords="860,848,999,875"/>
+<area shape="rect" id="node27" href="ClassVisao_8cpp.html#a413637379cd0ea3f1413a005b2a49290" title="exibe_Fields" alt="" coords="395,1102,490,1128"/>
+<area shape="rect" id="node31" href="ClassVisao_8cpp.html#a8640dcbbc4d40260eedc022e580596bf" title="exibe_GeneralInformation" alt="" coords="607,950,777,976"/>
+<area shape="rect" id="node33" href="ClassVisao_8cpp.html#a41a2c6700e050ef2095b4f45590bf433" title="exibe_Interfaces" alt="" coords="633,747,751,774"/>
+<area shape="rect" id="node34" href="ClassVisao_8cpp.html#aa7b125a5277bc70b283856dc2ad5caef" title="exibe_Methods" alt="" coords="387,798,498,824"/>
+<area shape="rect" id="node21" href="ClassVisao_8cpp.html#acbff59b0e64482bfbcd4389721ef44f6" title="exibe_AttributeInfo" alt="" coords="627,696,757,723"/>
+<area shape="rect" id="node22" href="classUtils.html#a63daf33599b447a8f3b2ea5aef2815ce" title="Utils::compararUtf8String" alt="" coords="844,1051,1015,1078"/>
+<area shape="rect" id="node23" href="ClassVisao_8cpp.html#a4f58f38f8be2bd6ab424e4f57e68f0b2" title="exibeByteCode" alt="" coords="874,520,985,547"/>
+<area shape="rect" id="node24" href="classUtils.html#a2a13f135d652b68fae6f4b8a9b21464e" title="Utils::exibeTabs" alt="" coords="1080,495,1197,522"/>
+<area shape="rect" id="node25" href="ClassVisao_8cpp.html#a8979e1ec10956b2181742bb0acdf59ba" title="getAccessFlags" alt="" coords="871,1203,987,1230"/>
+<area shape="rect" id="node28" href="ClassVisao_8cpp.html#af1deb5b1b5aa49b73609c4fd0a60ff79" title="print_AttributeInfo" alt="" coords="629,1379,755,1406"/>
+<area shape="rect" id="node29" href="classUtils.html#a932c28783170c6aa53362fbd0c4ceefa" title="Utils::imprintTabs" alt="" coords="1076,1468,1201,1495"/>
+<area shape="rect" id="node30" href="ClassVisao_8cpp.html#ae96c4733127420389d10f7407ec5b4a1" title="printArquivoByteCode" alt="" coords="855,1406,1004,1432"/>
+<area shape="rect" id="node32" href="classUtils.html#a234dd450e6192a9ddbcd7e68e9a09841" title="Utils::verificarVersao" alt="" coords="857,1000,1001,1027"/>
+<area shape="rect" id="node38" href="ClassVisao_8cpp.html#a4b1e9c48c6abd40b514ee761c5d7f8ac" title="printArquivo_Attributes" alt="" coords="365,1338,520,1364"/>
+<area shape="rect" id="node39" href="ClassVisao_8cpp.html#aa456eb77567dd5f9d00ccce6eea1d3f3" title="printArquivo_ConstantPool" alt="" coords="603,899,781,926"/>
+<area shape="rect" id="node40" href="ClassVisao_8cpp.html#a98d3a75317d6726a287edce2d48137f6" title="printArquivo_Fields" alt="" coords="376,1400,509,1427"/>
+<area shape="rect" id="node41" href="ClassVisao_8cpp.html#a5900e82fe680909e7687af8483b29139" title="printArquivo_GeneralInformation" alt="" coords="588,1000,796,1027"/>
+<area shape="rect" id="node42" href="ClassVisao_8cpp.html#aba15d958463cdffe0d3f53961b97a86d" title="printArquivo_Interfaces" alt="" coords="851,1254,1007,1280"/>
+<area shape="rect" id="node43" href="ClassVisao_8cpp.html#a0a9692beebcf6ba0b4ec9eea32a1bac6" title="printArquivo_Methods" alt="" coords="369,1282,517,1308"/>
 </map>
 </div>
 

@@ -1,13 +1,6 @@
 <map id="Operations::lsub" name="Operations::lsub">
-<area shape="rect" id="node2" href="$classOperandsStack.html#a3213a1b633149de9332217d403ee84b6" title="Desempilha o topo da pilha de operandos e retorna em um elemento de valor. " alt="" coords="180,71,367,98"/>
-<area shape="rect" id="node5" href="$classOperandsStack.html#a8c76f12ad6984b3c5b4ec8807eb63ae3" title="Recupera o tipo do topo da pilha de operandos. " alt="" coords="424,123,611,164"/>
-<area shape="rect" id="node6" href="$classOperandsStack.html#a73960b4536c99847bf4545a45f04f089" title="Empilha um elemento tipado, chamando a função adequada ao tipo. " alt="" coords="171,181,376,223"/>
-<area shape="rect" id="node3" href="$classOperandsStack.html#a184a99d160e17ef874a7b83f0726fb8a" title="Recupera o valor do topo da pilha de operandos. " alt="" coords="424,5,611,47"/>
-<area shape="rect" id="node4" href="$classOperandsStack.html#aa6dbee87661011453ba2c57405bd9a4e" title="Retorna se a pilha está vazia (1) ou não (0) " alt="" coords="685,71,864,98"/>
-<area shape="rect" id="node7" href="$classOperandsStack.html#a50b642d5ff6a7a1f56b8cfc75bde1192" title="Verifica o tipo do elemento que deve ser empilhado e chama a função adequada. " alt="" coords="433,189,602,215"/>
-<area shape="rect" id="node8" href="$classOperandsStack.html#a45dde91cc54ad980d1cbb7cdb1e084cd" title="Empilha um valor de tipo double. " alt="" coords="669,130,880,157"/>
-<area shape="rect" id="node10" href="$classOperandsStack.html#aeed478b52748b87ac85db261332b633b" title="Empilha um valor de tipo float. " alt="" coords="675,181,874,207"/>
-<area shape="rect" id="node11" href="$classOperandsStack.html#a5006a59c2d815e4a24b055e2e4d2e741" title="Empilha um valor de tipo inteiro. " alt="" coords="683,231,867,258"/>
-<area shape="rect" id="node12" href="$classOperandsStack.html#a47af7d965172984b9cc5c61d8c4c1ce3" title="Empilha um valor de tipo referencia. " alt="" coords="659,282,891,309"/>
-<area shape="rect" id="node9" href="$classOperandsStack.html#a6ea316fc2b2503af2175fada4d4a9741" title="retorna o tamanho da pilha de operandos " alt="" coords="939,206,1141,233"/>
+<area shape="rect" id="node2" href="$classFrame.html#a93c26ae659c3f1b11837a0e9942acb20" title="Remove o operando do topo da pilha de operandos. " alt="" coords="179,5,361,47"/>
+<area shape="rect" id="node3" href="$classFrame.html#af2481010c4795fbe1cba48122609cf1e" title="Adiciona um operando na pilha de operandos. " alt="" coords="171,71,369,98"/>
+<area shape="rect" id="node4" href="$classPilhaJVM.html#a13bf1c43de7819ea7761616f7a04c3b9" title="Obter a única instância da pilha. " alt="" coords="193,122,347,149"/>
+<area shape="rect" id="node5" href="$classPilhaJVM.html#aa0e43da476df6147c86c8cc3d6899718" title="Obtém o frame no topo da pilha da JVM. " alt="" coords="189,173,351,199"/>
 </map>

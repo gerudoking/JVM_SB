@@ -1,0 +1,8 @@
+<map id="InstanceClass::InstanceClass" name="InstanceClass::InstanceClass">
+<area shape="rect" id="node2" href="$classHeap.html#aa2a5f92b36abe24c83853feca936548e" title="Adiciona um objeto à heap. " alt="" coords="285,5,405,32"/>
+<area shape="rect" id="node3" href="$classStaticClass.html#ae00772669e7a0e54980ed303ff933cef" title="Destrutor padrão. " alt="" coords="260,56,431,83"/>
+<area shape="rect" id="node4" href="$ClassVisao_8cpp.html#ad59936a226470583b59565cf99f4375e" title="getFormattedConstant" alt="" coords="269,131,421,157"/>
+<area shape="rect" id="node6" href="$classHeap.html#ac030780aeff8a27e33ed5f5eb576dfda" title="Obter a única instância da Heap. " alt="" coords="281,181,410,208"/>
+<area shape="rect" id="node7" href="$classInstanceClass.html#af445c2e244c91b6cce4bb2c2798a720c" title="Adiciona um valor no field de índice informado. " alt="" coords="252,233,439,274"/>
+<area shape="rect" id="node5" href="$classUtils.html#abef6742f09f81fea5952454925325ea5" title="Utils::converterStreamTo\lCString" alt="" coords="487,123,655,165"/>
+</map>

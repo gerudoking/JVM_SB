@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Java Virtual Machine: Código-Fonte de include/Stringobject.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Java Virtual Machine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('Stringobject_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Stringobject.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Stringobject_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef stringobject_h</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define stringobject_h</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Object_8h.html">Object.h</a>&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classStringObject.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classStringObject.html">StringObject</a> : <span class="keyword">public</span> <a class="code" href="classObject.html">Object</a> {</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    </div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classStringObject.html">StringObject</a>(<span class="keywordtype">string</span> s = <span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    </div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    ~<a class="code" href="classStringObject.html">StringObject</a>(); <span class="comment">// @suppress(&quot;Class has a virtual method and non-virtual destructor&quot;)</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    </div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="BasicTypes_8h.html#a842c5e2e69277690b064bf363c017980">ObjectType</a> objectType();</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">string</span> getString();</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> setString(<span class="keywordtype">string</span> s);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classStringObject.html#a129b52ebca78da26c58175e45e1869cc">   51</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="classStringObject.html#a129b52ebca78da26c58175e45e1869cc">_internalString</a>;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    </div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* stringobject_h */</span><span class="preprocessor"></span></div><div class="ttc" id="classObject_html"><div class="ttname"><a href="classObject.html">Object</a></div><div class="ttdoc">n classe utilizada para todos elementos que se caracterizam como objetos, como: instância de classe e...</div><div class="ttdef"><b>Definition:</b> <a href="Object_8h_source.html#l00010">Object.h:10</a></div></div>
+<div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
+<div class="ttc" id="classStringObject_html_a129b52ebca78da26c58175e45e1869cc"><div class="ttname"><a href="classStringObject.html#a129b52ebca78da26c58175e45e1869cc">StringObject::_internalString</a></div><div class="ttdeci">string _internalString</div><div class="ttdef"><b>Definition:</b> <a href="Stringobject_8h_source.html#l00051">Stringobject.h:51</a></div></div>
+<div class="ttc" id="Object_8h_html"><div class="ttname"><a href="Object_8h.html">Object.h</a></div></div>
+<div class="ttc" id="BasicTypes_8h_html_a842c5e2e69277690b064bf363c017980"><div class="ttname"><a href="BasicTypes_8h.html#a842c5e2e69277690b064bf363c017980">ObjectType</a></div><div class="ttdeci">ObjectType</div><div class="ttdef"><b>Definition:</b> <a href="BasicTypes_8h_source.html#l00011">BasicTypes.h:11</a></div></div>
+<div class="ttc" id="classStringObject_html"><div class="ttname"><a href="classStringObject.html">StringObject</a></div><div class="ttdoc">Representa um objeto do tipo String. </div><div class="ttdef"><b>Definition:</b> <a href="Stringobject_8h_source.html#l00015">Stringobject.h:15</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="Stringobject_8h.html">Stringobject.h</a></li>
+    <li class="footer">Gerado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

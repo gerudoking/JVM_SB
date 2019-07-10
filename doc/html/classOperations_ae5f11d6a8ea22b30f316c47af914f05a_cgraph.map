@@ -1,8 +1,8 @@
 <map id="Operations::ldc2_w" name="Operations::ldc2_w">
-<area shape="rect" id="node2" href="$BasicTypes_8cpp.html#a01de6b870a770894bf9ce59df9604f88" title="Função para converter 8 bytes em um duplo. " alt="" coords="213,5,373,32"/>
-<area shape="rect" id="node3" href="$BasicTypes_8cpp.html#a590862e1a2d76855d55ae13604d53a2e" title="Função para converter 8 bytes em um longo. " alt="" coords="475,44,621,71"/>
-<area shape="rect" id="node4" href="$classOperandsStack.html#a45dde91cc54ad980d1cbb7cdb1e084cd" title="Empilha um valor de tipo double. " alt="" coords="188,107,399,133"/>
-<area shape="rect" id="node6" href="$classOperandsStack.html#a927ca84358d7e0f45f74d122f9a500d2" title="Empilha um valor de tipo long. " alt="" coords="195,157,392,184"/>
-<area shape="rect" id="node7" href="$classOperations.html#a6906050cc72d774f77d8ba33607b1c62" title="Function that returns a n bytes value. " alt="" coords="194,208,393,235"/>
-<area shape="rect" id="node5" href="$classOperandsStack.html#a6ea316fc2b2503af2175fada4d4a9741" title="retorna o tamanho da pilha de operandos " alt="" coords="447,120,649,147"/>
+<area shape="rect" id="node2" href="$classFrame.html#af2481010c4795fbe1cba48122609cf1e" title="Adiciona um operando na pilha de operandos. " alt="" coords="188,5,387,32"/>
+<area shape="rect" id="node3" href="$classFrame.html#a6863584ef3a6f2e4b1f93fb0deb09f4b" title="Obtém o código do método a partir de um offset. " alt="" coords="229,56,345,83"/>
+<area shape="rect" id="node4" href="$classPilhaJVM.html#a13bf1c43de7819ea7761616f7a04c3b9" title="Obter a única instância da pilha. " alt="" coords="210,107,365,133"/>
+<area shape="rect" id="node5" href="$classPilhaJVM.html#aa0e43da476df6147c86c8cc3d6899718" title="Obtém o frame no topo da pilha da JVM. " alt="" coords="206,157,369,184"/>
+<area shape="rect" id="node6" href="$classFrame.html#a77f9705e64bfbdfc68921b7de11a893f" title="Obter um ponteiro para a pool de constantes referente ao frame atual. " alt="" coords="200,208,375,235"/>
+<area shape="rect" id="node7" href="$classStaticClass.html#ae00772669e7a0e54980ed303ff933cef" title="Destrutor padrão. " alt="" coords="435,208,605,235"/>
 </map>

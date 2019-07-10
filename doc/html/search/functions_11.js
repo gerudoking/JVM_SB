@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['wide',['wide',['../classOperations.html#ab1474dfc4eb5142361b00d185f0a4a2b',1,'Operations']]]
+  ['tableswitch',['tableswitch',['../classOperations.html#a72955f43cde98b73c503e1a8c1505352',1,'Operations']]],
+  ['testendianess',['testEndianess',['../classLeitorExibidor.html#ac8ff6248b6897d88bb5cf22ea987a6ab',1,'LeitorExibidor']]],
+  ['trocalocalvariable',['trocaLocalVariable',['../classFrame.html#adfa57fa3049213f13beba10ba7152500',1,'Frame']]]
 ];

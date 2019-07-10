@@ -1,164 +1,288 @@
-/** @file BasicTypes.h
- * @brief Tipos básicos utilizados para implementarmos a JVM.
- */
+#ifndef TIPOS_H
+#define TIPOS_H
 
-#ifndef BASETYPE_H
-#define BASETYPE_H
-
-#include <stdio.h>
-#include <stdlib.h>
 #include <stdint.h>
-#include <iostream>
-#include <math.h>
-#include <sstream>
-#include <vector>
-#include <stdexcept>
 
-using namespace std;
+// Tipos de representação de dados da classe
+typedef uint8_t u1;
+typedef uint16_t u2;
+typedef uint32_t u4;
 
-#define Float_NaN 0x7f800001
-#define Float_PlusInfinity 0x7f800000
-#define Float_MinusInfinity 0xff800000
-#define Double_NaN 0x7ff0000000000001L 
-#define Double_PlusInfinity 0x7ff0000000000000L
-#define Double_MinusInfinity 0xfff0000000000000L
+enum ObjectType {
+    CLASS_INSTANCE,
+    STRING_INSTANCE,
+    ARRAY
+};
+typedef enum ObjectType ObjectType;
 
-#define RT_BYTE 1
-#define RT_BOOL 2
-#define RT_CHAR 3
-#define RT_SHORT 4
-#define RT_INT 5
-#define RT_FLOAT 6
-#define RT_DOUBLE 7
-#define RT_REFERENCE 8
-#define RT_LONG 9
+enum ValueType {
+    BOOLEAN,
+    BYTE,
+    CHAR,
+    SHORT,
+    INT,
+    FLOAT,
+    LONG,
+    DOUBLE,
+    RETURN_ADDR,
+    REFERENCE,
+    PADDING // usado quando o Value anterior (em uma lista) ou o Value abaixo (em uma pilha) é um long/double
+};
+typedef enum ValueType ValueType;
 
-typedef uint8_t U1;
-typedef uint16_t U2;
-typedef uint32_t U4;
+class Object;
 
-/** @union ClassLoaderType
- *	@brief Estrutura de dados para armazenamento
- *	Union responsável por armazenar todos os tamanhos de variáveis utilzadas na JVM
- */
-typedef union {
-	U1 *array; //ponteiro para uma string
-	U1 u1; //8 bytes
-	U2 u2; //16 bytes
-	U4 u4; //32 bytes
-} ClassLoaderType;
+struct Value {
+    ValueType printType; // usado para printar o valor de maneira correta (somente para int, short, byte, boolean)
+    ValueType type;
+    union {
+        bool booleanValue;
+        int8_t byteValue;
+        uint8_t charValue;
+        int16_t shortValue;
+        int32_t intValue;
+        float floatValue;
+        int64_t longValue;
+        double doubleValue;
+        u4 returnAddress;
+        Object *object;
+    } data;
+};
+typedef struct Value Value;
 
-/** @union element_u
- *	@brief Generalização de funções de retorno/input
- *	Union responsável pela generalização de funções de retorno e uma função de input.
- */
-typedef union element_u {
-	double d;
-	float f;
-	uint32_t i;
-	int32_t is;
-	uint64_t l;
-	int64_t ls;
-	uint16_t s;
-	int16_t ss;
-	uint8_t b;
-	int8_t bs;
-	int* pi;
-} Element;
+// Typedefs das estruturas de classe
 
-/** @struct N_array
- *	@brief Agregador de numeros de array
- *	Struct responsável armazenar o numero de dims e array
- */
-typedef struct {
-	int* dims;
-	int* array;
-} N_array;
+// ClassFile
 
-/** @struct typedElement_s
- *	@brief Agregador de tipos e informações.
- *	Struct responsável por juntar tipos e informações de elementos.
- */
-typedef struct typedElement_s {
-	Element value;
-	uint8_t type;
-	uint8_t realType;
-} TypedElement;
+//typedef class ClassFileNovo ClassFile;
 
-/** @fn U1 lerU1 (FILE *arquivoClass)
- *	@brief Função para ler 1 byte do arquivo .class
- *	@param arquivoClass Ponteiro pro arquivo .class
- */
-U1 lerU1(FILE *arquivoClass);
+// Pool de Constantes
+typedef struct cp_info cp_info;
+typedef struct CONSTANT_Class_info CONSTANT_Class_info;
+typedef struct CONSTANT_Fieldref_info CONSTANT_Fieldref_info;
+typedef struct CONSTANT_Methodref_info CONSTANT_Methodref_info;
+typedef struct CONSTANT_InterfaceMethodref_info CONSTANT_InterfaceMethodref_info;
+typedef struct CONSTANT_String_info CONSTANT_String_info;
+typedef struct CONSTANT_Integer_info CONSTANT_Integer_info;
+typedef struct CONSTANT_Float_info CONSTANT_Float_info;
+typedef struct CONSTANT_Long_info CONSTANT_Long_info;
+typedef struct CONSTANT_Double_info CONSTANT_Double_info;
+typedef struct CONSTANT_NameAndType_info CONSTANT_NameAndType_info;
+typedef struct CONSTANT_Utf8_info CONSTANT_Utf8_info;
 
-/** @fn U2 lerU2 (FILE *arquivoClass)
- *	@brief Função para ler 2 bytes do arquivo .class
- *	@param arquivoClass Ponteiro pro arquivo .class
- */
-U2 lerU2(FILE *arquivoClass);
+// field_info
+typedef struct field_info field_info;
 
-/** @fn U4 lerU4 (FILE *arquivoClass)
- *	@brief Função para ler 4 bytes do arquivo .class
- *	@param arquivoClass Ponteiro pro arquivo .class
- */
-U4 lerU4(FILE *arquivoClass);
+// attribute_info
+typedef struct attribute_info attribute_info;
+typedef struct ConstantValue_attribute ConstantValue_attribute;
+typedef struct ExceptionTable ExceptionTable;
+typedef struct Code_attribute Code_attribute;
+typedef struct Exceptions_attribute Exceptions_attribute;
+typedef struct Class Class;
+typedef struct InnerClasses_attribute InnerClasses_attribute;
+typedef struct Synthetic_attribute Synthetic_attribute;
+typedef struct SourceFile_attribute SourceFile_attribute;
+typedef struct LineNumberTable LineNumberTable;
+typedef struct LineNumberTable_attribute LineNumberTable_attribute;
+typedef struct LocalVariableTable LocalVariableTable;
+typedef struct LocalVariableTable_attribute LocalVariableTable_attribute;
+typedef struct Deprecated_attribute Deprecated_attribute;
 
-/** @fn U1 * lerUTF8(FILE* arquivoClass, int tamanho)
- *	@brief Função para ler os bytes de uma string UTF-8
- *	@param arquivoClass Ponteiro pro arquivo .class
- *	@param tamanho Tamanho que será alocado para a string.
- */
-U1 * lerUTF8(FILE* arquivoClass, int tamanho);
+// method_info
+typedef struct method_info method_info;
 
-/** @fn string obterUTF8(unsigned char * s, int tamanho)
- *	@brief Função para montar e mostrar a uma string UTF-8
- *	@param s Ponteiro para a posição inicial de uam string Unicode.
- *	@param tamanho Tamanho da string a ser impressa.
- */
-string obterUTF8(unsigned char * s, int tamanho);
+// Definição das estruturas de classe
 
-/** @fn int verificarFloat(float)
- *	@brief Função para verificar NaN e infinito
- *	@param f Número a ser verificado.
- */
-int verificarFloat(float f);
 
-/** @fn int verificarDouble(double)
- *	@brief Função para verificar NaN e infinito
- *	@param d Number to be checked.
- */
-int verificarDouble(double d);
 
-/** @fn string converter_float_to_string(float)
- *	@brief Função para converter float para string
- *	@param f Número a ser convertido.
- */
-string converter_float_to_string(float f);
+struct field_info {
+    u2 access_flags;
+    u2 name_index;
+    u2 descriptor_index;
+    u2 attributes_count;
+    attribute_info *attributes;
+};
 
-/** @fn string converter_double_to_string(double)
- *	@brief Função para converter double para string
- *	@param d Número a ser convertido.
- */
-string converter_double_to_string(double d);
+struct method_info {
+    u2 access_flags;
+    u2 name_index;
+    u2 descriptor_index;
+    u2 attributes_count;
+    attribute_info *attributes;
+};
 
-/** @fn float converter_u4_to_float (ClassLoaderType classLoaderType)
- *  @brief Função para converter 4 bytes em float
- *  @param classLoaderType quatro bytes a serem convertidos.
- */
-float converter_u4_to_float(ClassLoaderType classLoaderType);
+typedef enum CONSTANT_Type {
+    CONSTANT_Class = 7,
+    CONSTANT_Fieldref = 9,
+    CONSTANT_Methodref = 10,
+    CONSTANT_InterfaceMethodref = 11,
+    CONSTANT_String = 8,
+    CONSTANT_Integer = 3,
+    CONSTANT_Float = 4,
+    CONSTANT_Long = 5,
+    CONSTANT_Double = 6,
+    CONSTANT_NameAndType = 12,
+    CONSTANT_Utf8 = 1,
+    CONSTANT_NULL = 0
+} CONSTANT_Type;
 
-/** @fn long converter_u4_to_long (ClassLoaderType classLoaderTypeMaior, ClassLoaderType classLoaderTypeMenor)
- *  @brief Função para converter 8 bytes em um longo
- *  @param classLoaderTypeMaior Quatro bytes mais significativos a serem convertidos.
- *  @param classLoaderTypeMenor Quatro últimos bytes significativos a serem convertidos.
- */
-long converter_u4_to_long(ClassLoaderType classLoaderTypeMaior, ClassLoaderType low);
+struct CONSTANT_Class_info {
+	u2 name_index;
+};
 
-/** @fn double converter_u4_to_double (ClassLoaderType high, ClassLoaderType low)
- *  @brief Função para converter 8 bytes em um duplo
- *  @param high Quatro bytes mais significativos a serem convertidos.
- *  @param low Quatro últimos bytes significativos a serem convertidos.
- */
-double converter_u4_to_double(ClassLoaderType high, ClassLoaderType low);
+struct CONSTANT_Fieldref_info {
+    u2 class_index;
+    u2 name_and_type_index;
+};
+
+struct CONSTANT_Methodref_info {
+    u2 class_index;
+    u2 name_and_type_index;
+};
+
+struct CONSTANT_InterfaceMethodref_info {
+    u2 class_index;
+    u2 name_and_type_index;
+};
+
+struct CONSTANT_String_info {
+    u2 string_index;
+};
+
+struct CONSTANT_Integer_info {
+    u4 bytes;
+};
+
+struct CONSTANT_Float_info {
+    u4 bytes;
+};
+
+struct CONSTANT_Long_info {
+    u4 high_bytes;
+    u4 low_bytes;
+};
+
+struct CONSTANT_Double_info {
+    u4 high_bytes;
+    u4 low_bytes;
+};
+
+struct CONSTANT_NameAndType_info {
+	u2 name_index;
+	u2 descriptor_index;
+};
+
+struct CONSTANT_Utf8_info {
+    u2 length;
+    u1 *bytes;
+};
+
+struct cp_info {
+    u1 tag;
+    union {
+        CONSTANT_Class_info class_info;
+        CONSTANT_Fieldref_info fieldref_info;
+        CONSTANT_Methodref_info methodref_info;
+        CONSTANT_InterfaceMethodref_info interfaceMethodref_info;
+        CONSTANT_String_info string_info;
+        CONSTANT_Integer_info integer_info;
+        CONSTANT_Float_info float_info;
+        CONSTANT_Long_info long_info;
+        CONSTANT_Double_info double_info;
+        CONSTANT_NameAndType_info nameAndType_info;
+        CONSTANT_Utf8_info utf8_info;
+    } info;
+};
+
+struct ConstantValue_attribute {
+    u2 constantvalue_index;
+};
+
+struct ExceptionTable {
+    u2 start_pc;
+    u2 end_pc;
+    u2 handler_pc;
+    u2 catch_type;
+};
+
+struct Code_attribute {
+	u2 max_stack;
+	u2 max_locals;
+	u4 code_length;
+	u1 *code;
+	u2 exception_table_length;
+    ExceptionTable *exception_table;
+	u2 attributes_count;
+	attribute_info *attributes;
+};
+
+struct Exceptions_attribute {
+	u2 number_of_exceptions;
+	u2 *exception_index_table;
+};
+
+struct Class {
+    u2 inner_class_info_index;	     
+    u2 outer_class_info_index;	     
+    u2 inner_name_index;	     
+    u2 inner_class_access_flags;	
+};
+
+struct InnerClasses_attribute {
+	u2 number_of_classes;
+	Class *classes;
+};
+
+struct Synthetic_attribute {
+	// vazio
+};
+
+struct SourceFile_attribute {
+  	u2 sourcefile_index;
+};
+
+struct LineNumberTable {
+    u2 start_pc;	     
+    u2 line_number;
+};
+
+struct LineNumberTable_attribute {
+	u2 line_number_table_length;
+	LineNumberTable *line_number_table;
+};
+
+struct LocalVariableTable {
+    u2 start_pc;
+    u2 length;
+    u2 name_index;
+    u2 descriptor_index;
+    u2 index;
+};
+
+struct LocalVariableTable_attribute {
+    u2 local_variable_table_length;
+    LocalVariableTable *localVariableTable;
+};
+
+struct Deprecated_attribute {
+    // vazio
+};
+
+struct attribute_info {
+    u2 attribute_name_index;
+    u4 attribute_length;
+    union {
+        ConstantValue_attribute constantValue_info;
+        Code_attribute code_info;
+        Exceptions_attribute exceptions_info;
+        InnerClasses_attribute innerClasses_info;
+        Synthetic_attribute synthetic_info;
+        SourceFile_attribute sourceFile_info;
+        LineNumberTable_attribute lineNumberTable_info;
+        LocalVariableTable_attribute localVariableTable_info;
+        Deprecated_attribute deprecated_info;
+    } info;
+};
 
 #endif

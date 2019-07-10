@@ -1,11 +1,12 @@
 var classInstanceClass =
 [
-    [ "InstanceClass", "classInstanceClass.html#ac1bee1eb9725e1fec8de7f4cf97f369c", null ],
-    [ "atualizarField", "classInstanceClass.html#a3af2fc7bfe8f406b5ea6efbf18161514", null ],
-    [ "atualizarFieldFinals", "classInstanceClass.html#a05a47d4bf656908ce3dacc53d9d791b2", null ],
-    [ "imprimirInstance", "classInstanceClass.html#a9790b6bb982d58a0bbddcb8c9ba358d4", null ],
-    [ "obterField", "classInstanceClass.html#a98084eb37c43d680169298bc50f09c98", null ],
-    [ "obterStaticClass", "classInstanceClass.html#a6da567a64a8373d609792821f5acb9a3", null ],
-    [ "mapLocalFields", "classInstanceClass.html#a455e05eefc1273e6cf22607c8941e9c0", null ],
-    [ "staticClass", "classInstanceClass.html#a45804f1afe3666a4b4511cf8e3f1013b", null ]
+    [ "InstanceClass", "classInstanceClass.html#a86ab031eb0f0240b0a54423003000322", null ],
+    [ "~InstanceClass", "classInstanceClass.html#a441cc692dedc481373b7e670fab72556", null ],
+    [ "fieldExists", "classInstanceClass.html#a284c7d0a062623c614a2f9440340070f", null ],
+    [ "getClassRuntime", "classInstanceClass.html#adf2af3015bb8f777a3181d85aa279de8", null ],
+    [ "getValueFromField", "classInstanceClass.html#aee974c71919d470ea2e9aa75cf741a39", null ],
+    [ "objectType", "classInstanceClass.html#ae8570307f49cb95cc01fb8d6bda23763", null ],
+    [ "putValueIntoField", "classInstanceClass.html#af445c2e244c91b6cce4bb2c2798a720c", null ],
+    [ "_classRuntime", "classInstanceClass.html#aa8ed961b694f26f470dc2399532d3538", null ],
+    [ "_fields", "classInstanceClass.html#a603a0866f5113d16ff8f80b5d6bf152b", null ]
 ];

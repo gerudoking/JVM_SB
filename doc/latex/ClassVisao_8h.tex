@@ -1,0 +1,788 @@
+\hypertarget{ClassVisao_8h}{}\section{Referência ao ficheiro include/\+Class\+Visao.h}
+\label{ClassVisao_8h}\index{include/\+Class\+Visao.\+h@{include/\+Class\+Visao.\+h}}
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include \char`\"{}Basic\+Types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Leitor\+Exibidor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Class\+File.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para Class\+Visao.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h__incl}
+\end{center}
+\end{figure}
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ClassVisao_8h_ab591ae1b83d6c20b31d14878874a9c5f}{print\+Arquivo\+Class\+File} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File, F\+I\+LE $\ast$output)
+\item 
+void \hyperlink{ClassVisao_8h_a78619a05de0e6d7bd60070461eaf3696}{exibe\+Class\+File} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{ClassVisao_8h_a5900e82fe680909e7687af8483b29139}{print\+Arquivo\+\_\+\+General\+Information} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{ClassVisao_8h_a8640dcbbc4d40260eedc022e580596bf}{exibe\+\_\+\+General\+Information} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{ClassVisao_8h_a7b06f7cbd2e84645ca9da6a00dc38fb1}{exibe\+\_\+\+Constant\+Pool} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{ClassVisao_8h_aa456eb77567dd5f9d00ccce6eea1d3f3}{print\+Arquivo\+\_\+\+Constant\+Pool} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{ClassVisao_8h_a41a2c6700e050ef2095b4f45590bf433}{exibe\+\_\+\+Interfaces} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{ClassVisao_8h_aba15d958463cdffe0d3f53961b97a86d}{print\+Arquivo\+\_\+\+Interfaces} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{ClassVisao_8h_a98d3a75317d6726a287edce2d48137f6}{print\+Arquivo\+\_\+\+Fields} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{ClassVisao_8h_a413637379cd0ea3f1413a005b2a49290}{exibe\+\_\+\+Fields} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{ClassVisao_8h_aa7b125a5277bc70b283856dc2ad5caef}{exibe\+\_\+\+Methods} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{ClassVisao_8h_a0a9692beebcf6ba0b4ec9eea32a1bac6}{print\+Arquivo\+\_\+\+Methods} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{ClassVisao_8h_a138dd6967f36f1e164174be7c1c5a616}{exibe\+\_\+\+Attributes} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+void \hyperlink{ClassVisao_8h_a4b1e9c48c6abd40b514ee761c5d7f8ac}{print\+Arquivo\+\_\+\+Attributes} (\hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
+\item 
+const char $\ast$ \hyperlink{ClassVisao_8h_a8979e1ec10956b2181742bb0acdf59ba}{get\+Access\+Flags} (\hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} access\+Flags)
+\item 
+const char $\ast$ \hyperlink{ClassVisao_8h_ad59936a226470583b59565cf99f4375e}{get\+Formatted\+Constant} (\hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, \hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} index)
+\item 
+void \hyperlink{ClassVisao_8h_af1deb5b1b5aa49b73609c4fd0a60ff79}{print\+\_\+\+Attribute\+Info} (\hyperlink{structattribute__info}{attribute\+\_\+info} attribute\+Info, uint32\+\_\+t index, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, uint8\+\_\+t indentation)
+\item 
+void \hyperlink{ClassVisao_8h_acbff59b0e64482bfbcd4389721ef44f6}{exibe\+\_\+\+Attribute\+Info} (\hyperlink{structattribute__info}{attribute\+\_\+info} attribute\+Info, uint32\+\_\+t index, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, uint8\+\_\+t indentation)
+\item 
+void \hyperlink{ClassVisao_8h_ae96c4733127420389d10f7407ec5b4a1}{print\+Arquivo\+Byte\+Code} (\hyperlink{structCode__attribute}{Code\+\_\+attribute} code\+Attribute, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, uint8\+\_\+t indentation)
+\item 
+void \hyperlink{ClassVisao_8h_a4f58f38f8be2bd6ab424e4f57e68f0b2}{exibe\+Byte\+Code} (\hyperlink{structCode__attribute}{Code\+\_\+attribute} code\+Attribute, \hyperlink{structcp__info}{cp\+\_\+info} $\ast$constant\+Pool, uint8\+\_\+t indentation)
+\end{DoxyCompactItemize}
+\subsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ \hyperlink{ClassVisao_8h_ad580aad7327ecbda114c935bc381928a}{vetor\+Nome\+Funcao} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{ClassVisao_8h_acbff59b0e64482bfbcd4389721ef44f6}\label{ClassVisao_8h_acbff59b0e64482bfbcd4389721ef44f6}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!exibe\+\_\+\+Attribute\+Info@{exibe\+\_\+\+Attribute\+Info}}
+\index{exibe\+\_\+\+Attribute\+Info@{exibe\+\_\+\+Attribute\+Info}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{exibe\+\_\+\+Attribute\+Info()}{exibe\_AttributeInfo()}}
+{\footnotesize\ttfamily void exibe\+\_\+\+Attribute\+Info (\begin{DoxyParamCaption}\item[{\hyperlink{structattribute__info}{attribute\+\_\+info}}]{attribute\+Info,  }\item[{uint32\+\_\+t}]{index,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{uint8\+\_\+t}]{indentation }\end{DoxyParamCaption})}
+
+Imprime informações básicas dos atributos e as específicas de um dos 9 elementos da unios, onde Synthetic e Deprecated são ignorados por não possuirem informações extras. 
+\begin{DoxyParams}{Parâmetros}
+{\em attribute\+Info} & sctruct do atributo \\
+\hline
+{\em index} & é o índice do atributo \\
+\hline
+{\em constant\+Pool} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
+\hline
+{\em indentation} & é o número de tabs que deve ser imprimido na linha \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 608 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências attribute\+\_\+info\+::attribute\+\_\+length, attribute\+\_\+info\+::attribute\+\_\+name\+\_\+index, Code\+\_\+attribute\+::attributes, Code\+\_\+attribute\+::attributes\+\_\+count, Exception\+Table\+::catch\+\_\+type, Inner\+Classes\+\_\+attribute\+::classes, attribute\+\_\+info\+::code\+\_\+info, Code\+\_\+attribute\+::code\+\_\+length, Utils\+::comparar\+Utf8\+String(), Constant\+Value\+\_\+attribute\+::constantvalue\+\_\+index, attribute\+\_\+info\+::constant\+Value\+\_\+info, Local\+Variable\+Table\+::descriptor\+\_\+index, Exception\+Table\+::end\+\_\+pc, Exceptions\+\_\+attribute\+::exception\+\_\+index\+\_\+table, Code\+\_\+attribute\+::exception\+\_\+table, Code\+\_\+attribute\+::exception\+\_\+table\+\_\+length, attribute\+\_\+info\+::exceptions\+\_\+info, exibe\+\_\+\+Attribute\+Info(), exibe\+Byte\+Code(), Utils\+::exibe\+Tabs(), get\+Access\+Flags(), get\+Formatted\+Constant(), Exception\+Table\+::handler\+\_\+pc, Local\+Variable\+Table\+::index, cp\+\_\+info\+::info, attribute\+\_\+info\+::info, Class\+::inner\+\_\+class\+\_\+access\+\_\+flags, Class\+::inner\+\_\+class\+\_\+info\+\_\+index, Class\+::inner\+\_\+name\+\_\+index, attribute\+\_\+info\+::inner\+Classes\+\_\+info, Local\+Variable\+Table\+::length, Line\+Number\+Table\+::line\+\_\+number, Line\+Number\+Table\+\_\+attribute\+::line\+\_\+number\+\_\+table, Line\+Number\+Table\+\_\+attribute\+::line\+\_\+number\+\_\+table\+\_\+length, attribute\+\_\+info\+::line\+Number\+Table\+\_\+info, Local\+Variable\+Table\+\_\+attribute\+::local\+\_\+variable\+\_\+table\+\_\+length, Local\+Variable\+Table\+\_\+attribute\+::local\+Variable\+Table, attribute\+\_\+info\+::local\+Variable\+Table\+\_\+info, Code\+\_\+attribute\+::max\+\_\+locals, Code\+\_\+attribute\+::max\+\_\+stack, Local\+Variable\+Table\+::name\+\_\+index, Inner\+Classes\+\_\+attribute\+::number\+\_\+of\+\_\+classes, Exceptions\+\_\+attribute\+::number\+\_\+of\+\_\+exceptions, Class\+::outer\+\_\+class\+\_\+info\+\_\+index, Source\+File\+\_\+attribute\+::sourcefile\+\_\+index, attribute\+\_\+info\+::source\+File\+\_\+info, Exception\+Table\+::start\+\_\+pc, Line\+Number\+Table\+::start\+\_\+pc, Local\+Variable\+Table\+::start\+\_\+pc e cp\+\_\+info\+::utf8\+\_\+info.
+
+
+
+Referenciado por exibe\+\_\+\+Attribute\+Info(), exibe\+\_\+\+Attributes() e exibe\+\_\+\+Methods().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h_acbff59b0e64482bfbcd4389721ef44f6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ClassVisao_8h_a138dd6967f36f1e164174be7c1c5a616}\label{ClassVisao_8h_a138dd6967f36f1e164174be7c1c5a616}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!exibe\+\_\+\+Attributes@{exibe\+\_\+\+Attributes}}
+\index{exibe\+\_\+\+Attributes@{exibe\+\_\+\+Attributes}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{exibe\+\_\+\+Attributes()}{exibe\_Attributes()}}
+{\footnotesize\ttfamily void exibe\+\_\+\+Attributes (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+Imprime elementos de atributo, chamando função print\+\_\+\+Attribute\+Info para cada um deles 
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 363 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências Class\+File\+::attributes, Class\+File\+::attributes\+\_\+count, Class\+File\+::constant\+\_\+pool e exibe\+\_\+\+Attribute\+Info().
+
+
+
+Referenciado por exibe\+Class\+File().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h_a138dd6967f36f1e164174be7c1c5a616_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ClassVisao_8h_a7b06f7cbd2e84645ca9da6a00dc38fb1}\label{ClassVisao_8h_a7b06f7cbd2e84645ca9da6a00dc38fb1}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!exibe\+\_\+\+Constant\+Pool@{exibe\+\_\+\+Constant\+Pool}}
+\index{exibe\+\_\+\+Constant\+Pool@{exibe\+\_\+\+Constant\+Pool}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{exibe\+\_\+\+Constant\+Pool()}{exibe\_ConstantPool()}}
+{\footnotesize\ttfamily void exibe\+\_\+\+Constant\+Pool (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+Imprime pool de constantes e identidifica referências à elementos da própria pool de contantes (\hyperlink{structcp__info}{cp\+\_\+info}) 
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 169 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer\+\_\+info\+::bytes, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Float\+\_\+info\+::bytes, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref\+\_\+info\+::class\+\_\+index, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref\+\_\+info\+::class\+\_\+index, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref\+\_\+info\+::class\+\_\+index, cp\+\_\+info\+::class\+\_\+info, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Class, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Float, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+N\+U\+LL, Class\+File\+::constant\+\_\+pool, Class\+File\+::constant\+\_\+pool\+\_\+count, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+String, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type\+\_\+info\+::descriptor\+\_\+index, cp\+\_\+info\+::double\+\_\+info, cp\+\_\+info\+::fieldref\+\_\+info, cp\+\_\+info\+::float\+\_\+info, get\+Formatted\+Constant(), C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long\+\_\+info\+::high\+\_\+bytes, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double\+\_\+info\+::high\+\_\+bytes, cp\+\_\+info\+::info, cp\+\_\+info\+::integer\+\_\+info, cp\+\_\+info\+::interface\+Methodref\+\_\+info, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info\+::length, cp\+\_\+info\+::long\+\_\+info, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long\+\_\+info\+::low\+\_\+bytes, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double\+\_\+info\+::low\+\_\+bytes, cp\+\_\+info\+::methodref\+\_\+info, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref\+\_\+info\+::name\+\_\+and\+\_\+type\+\_\+index, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref\+\_\+info\+::name\+\_\+and\+\_\+type\+\_\+index, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref\+\_\+info\+::name\+\_\+and\+\_\+type\+\_\+index, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Class\+\_\+info\+::name\+\_\+index, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type\+\_\+info\+::name\+\_\+index, cp\+\_\+info\+::name\+And\+Type\+\_\+info, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+String\+\_\+info\+::string\+\_\+index, cp\+\_\+info\+::string\+\_\+info, cp\+\_\+info\+::tag e cp\+\_\+info\+::utf8\+\_\+info.
+
+
+
+Referenciado por exibe\+Class\+File().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h_a7b06f7cbd2e84645ca9da6a00dc38fb1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ClassVisao_8h_a413637379cd0ea3f1413a005b2a49290}\label{ClassVisao_8h_a413637379cd0ea3f1413a005b2a49290}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!exibe\+\_\+\+Fields@{exibe\+\_\+\+Fields}}
+\index{exibe\+\_\+\+Fields@{exibe\+\_\+\+Fields}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{exibe\+\_\+\+Fields()}{exibe\_Fields()}}
+{\footnotesize\ttfamily void exibe\+\_\+\+Fields (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+Imprime elementos de field, suas referências à pool de constantes e decodifica o valor das flags de acesso, utilizando a seguinte tabela de referência\+:
+
+A\+C\+C\+\_\+\+P\+U\+B\+L\+IC\+: 0x0001
+
+A\+C\+C\+\_\+\+S\+U\+P\+ER\+: 0x0020
+
+A\+C\+C\+\_\+\+P\+R\+I\+V\+A\+TE\+: 0x0002
+
+A\+C\+C\+\_\+\+I\+N\+T\+E\+R\+F\+A\+CE\+: 0x0200
+
+A\+C\+C\+\_\+\+A\+B\+S\+T\+R\+A\+CT\+: 0x0400
+
+A\+C\+C\+\_\+\+P\+R\+O\+T\+E\+C\+T\+ED\+: 0x0004
+
+A\+C\+C\+\_\+\+S\+T\+A\+T\+IC\+: 0x0008
+
+A\+C\+C\+\_\+\+F\+I\+N\+AL\+: 0x0010
+
+A\+C\+C\+\_\+\+V\+O\+L\+A\+T\+I\+LE\+: 0x0040
+
+A\+C\+C\+\_\+\+T\+R\+A\+N\+S\+I\+E\+NT \+: 0x0080 
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 284 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências field\+\_\+info\+::access\+\_\+flags, field\+\_\+info\+::attributes, field\+\_\+info\+::attributes\+\_\+count, Class\+File\+::constant\+\_\+pool, field\+\_\+info\+::descriptor\+\_\+index, Class\+File\+::fields, Class\+File\+::fields\+\_\+count, get\+Access\+Flags(), get\+Formatted\+Constant(), field\+\_\+info\+::name\+\_\+index e print\+\_\+\+Attribute\+Info().
+
+
+
+Referenciado por exibe\+Class\+File().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h_a413637379cd0ea3f1413a005b2a49290_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ClassVisao_8h_a8640dcbbc4d40260eedc022e580596bf}\label{ClassVisao_8h_a8640dcbbc4d40260eedc022e580596bf}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!exibe\+\_\+\+General\+Information@{exibe\+\_\+\+General\+Information}}
+\index{exibe\+\_\+\+General\+Information@{exibe\+\_\+\+General\+Information}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{exibe\+\_\+\+General\+Information()}{exibe\_GeneralInformation()}}
+{\footnotesize\ttfamily void exibe\+\_\+\+General\+Information (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+Imprime informações gerais do arquivo .class 
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 75 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências Class\+File\+::access\+\_\+flags, Class\+File\+::attributes\+\_\+count, Class\+File\+::constant\+\_\+pool, Class\+File\+::constant\+\_\+pool\+\_\+count, Class\+File\+::fields\+\_\+count, get\+Access\+Flags(), get\+Formatted\+Constant(), Class\+File\+::interfaces\+\_\+count, Class\+File\+::major\+\_\+version, Class\+File\+::methods\+\_\+count, Class\+File\+::minor\+\_\+version, Class\+File\+::super\+\_\+class, Class\+File\+::this\+\_\+class e Utils\+::verificar\+Versao().
+
+
+
+Referenciado por exibe\+Class\+File().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h_a8640dcbbc4d40260eedc022e580596bf_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ClassVisao_8h_a41a2c6700e050ef2095b4f45590bf433}\label{ClassVisao_8h_a41a2c6700e050ef2095b4f45590bf433}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!exibe\+\_\+\+Interfaces@{exibe\+\_\+\+Interfaces}}
+\index{exibe\+\_\+\+Interfaces@{exibe\+\_\+\+Interfaces}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{exibe\+\_\+\+Interfaces()}{exibe\_Interfaces()}}
+{\footnotesize\ttfamily void exibe\+\_\+\+Interfaces (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+Imprime elementos de interface e suas referẽncias à pool de constantes 
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 254 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências Class\+File\+::constant\+\_\+pool, get\+Formatted\+Constant(), Class\+File\+::interfaces, Class\+File\+::interfaces\+\_\+count e out.
+
+
+
+Referenciado por exibe\+Class\+File().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h_a41a2c6700e050ef2095b4f45590bf433_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ClassVisao_8h_aa7b125a5277bc70b283856dc2ad5caef}\label{ClassVisao_8h_aa7b125a5277bc70b283856dc2ad5caef}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!exibe\+\_\+\+Methods@{exibe\+\_\+\+Methods}}
+\index{exibe\+\_\+\+Methods@{exibe\+\_\+\+Methods}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{exibe\+\_\+\+Methods()}{exibe\_Methods()}}
+{\footnotesize\ttfamily void exibe\+\_\+\+Methods (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+Imprime elementos de método, suas referências à pool de constantes e chama função para imprimir os atributos relacionados aos métodos. 
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 331 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências method\+\_\+info\+::access\+\_\+flags, method\+\_\+info\+::attributes, method\+\_\+info\+::attributes\+\_\+count, Class\+File\+::constant\+\_\+pool, method\+\_\+info\+::descriptor\+\_\+index, exibe\+\_\+\+Attribute\+Info(), get\+Access\+Flags(), get\+Formatted\+Constant(), Class\+File\+::methods, Class\+File\+::methods\+\_\+count e method\+\_\+info\+::name\+\_\+index.
+
+
+
+Referenciado por exibe\+Class\+File().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h_aa7b125a5277bc70b283856dc2ad5caef_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ClassVisao_8h_a4f58f38f8be2bd6ab424e4f57e68f0b2}\label{ClassVisao_8h_a4f58f38f8be2bd6ab424e4f57e68f0b2}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!exibe\+Byte\+Code@{exibe\+Byte\+Code}}
+\index{exibe\+Byte\+Code@{exibe\+Byte\+Code}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{exibe\+Byte\+Code()}{exibeByteCode()}}
+{\footnotesize\ttfamily void exibe\+Byte\+Code (\begin{DoxyParamCaption}\item[{\hyperlink{structCode__attribute}{Code\+\_\+attribute}}]{code\+Attribute,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{uint8\+\_\+t}]{indentation }\end{DoxyParamCaption})}
+
+Imprime strings que representam instruções através da variável de código do atributo. O valor do código em hexa é decriptado na função \hyperlink{ClassVisao_8h_ad59936a226470583b59565cf99f4375e}{get\+Formatted\+Constant()}. A lista de instruções está armazenada em \char`\"{}instructions\mbox{[}$\,$\mbox{]}\char`\"{} e o que faz acesso à elas é \char`\"{}code\mbox{[}i\mbox{]}\char`\"{}, ou seja, o vetor de códigos de cada atributo. 
+\begin{DoxyParams}{Parâmetros}
+{\em code\+Attribute} & struct do código de atributos \\
+\hline
+{\em constant\+Pool} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
+\hline
+{\em indentation} & é o número de tabs que deve ser imprimido na linha \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 849 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências Code\+\_\+attribute\+::code, Code\+\_\+attribute\+::code\+\_\+length, Utils\+::exibe\+Tabs(), get\+Formatted\+Constant() e vetor\+Nome\+Funcao.
+
+
+
+Referenciado por exibe\+\_\+\+Attribute\+Info().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h_a4f58f38f8be2bd6ab424e4f57e68f0b2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ClassVisao_8h_a78619a05de0e6d7bd60070461eaf3696}\label{ClassVisao_8h_a78619a05de0e6d7bd60070461eaf3696}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!exibe\+Class\+File@{exibe\+Class\+File}}
+\index{exibe\+Class\+File@{exibe\+Class\+File}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{exibe\+Class\+File()}{exibeClassFile()}}
+{\footnotesize\ttfamily void exibe\+Class\+File (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+Imprime os elementos do Leitor/\+Exibidor de classe em ordem\+: Informações gerais, pool de constantes, interfaces, campos, métodos e atributos. 
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
+\hline
+{\em output} & é o arquivo exibidor da J\+VM. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 33 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências Class\+File\+::attributes\+\_\+count, Class\+File\+::constant\+\_\+pool\+\_\+count, exibe\+\_\+\+Attributes(), exibe\+\_\+\+Constant\+Pool(), exibe\+\_\+\+Fields(), exibe\+\_\+\+General\+Information(), exibe\+\_\+\+Interfaces(), exibe\+\_\+\+Methods(), Class\+File\+::fields\+\_\+count, Class\+File\+::interfaces\+\_\+count e Class\+File\+::methods\+\_\+count.
+
+
+
+Referenciado por main().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h_a78619a05de0e6d7bd60070461eaf3696_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ClassVisao_8h_a8979e1ec10956b2181742bb0acdf59ba}\label{ClassVisao_8h_a8979e1ec10956b2181742bb0acdf59ba}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!get\+Access\+Flags@{get\+Access\+Flags}}
+\index{get\+Access\+Flags@{get\+Access\+Flags}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{get\+Access\+Flags()}{getAccessFlags()}}
+{\footnotesize\ttfamily const char$\ast$ get\+Access\+Flags (\begin{DoxyParamCaption}\item[{\hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}]{access\+Flags }\end{DoxyParamCaption})}
+
+Encapsula decriptação das flags de acesso 
+\begin{DoxyParams}{Parâmetros}
+{\em access\+Flags} & é o hexadecimal lido referente à flag de acesso \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+flags de acesso em forma de string 
+\end{DoxyReturn}
+
+
+Definido na linha 370 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências Utils\+::converter\+Stream\+To\+C\+String().
+
+
+
+Referenciado por exibe\+\_\+\+Attribute\+Info(), exibe\+\_\+\+Fields(), exibe\+\_\+\+General\+Information(), exibe\+\_\+\+Methods(), print\+\_\+\+Attribute\+Info(), print\+Arquivo\+\_\+\+Fields(), print\+Arquivo\+\_\+\+General\+Information() e print\+Arquivo\+\_\+\+Methods().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{ClassVisao_8h_a8979e1ec10956b2181742bb0acdf59ba_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ClassVisao_8h_ad59936a226470583b59565cf99f4375e}\label{ClassVisao_8h_ad59936a226470583b59565cf99f4375e}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!get\+Formatted\+Constant@{get\+Formatted\+Constant}}
+\index{get\+Formatted\+Constant@{get\+Formatted\+Constant}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{get\+Formatted\+Constant()}{getFormattedConstant()}}
+{\footnotesize\ttfamily const char$\ast$ get\+Formatted\+Constant (\begin{DoxyParamCaption}\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{\hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2}}]{index }\end{DoxyParamCaption})}
+
+Função recursiva que busca um valor em bytes a partir de um índice que faz referência à qualquer elemento da pool de constantes. Esse valor pode ser tanto numérico (inteiro, long, float ou double) ou string (Utf-\/8) 
+\begin{DoxyParams}{Parâmetros}
+{\em constant\+Pool} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
+\hline
+{\em index} & é o índice do elemento \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+constante formatada de acordo com o seu tipo 
+\end{DoxyReturn}
+
+
+Definido na linha 384 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer\+\_\+info\+::bytes, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Float\+\_\+info\+::bytes, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info\+::bytes, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref\+\_\+info\+::class\+\_\+index, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref\+\_\+info\+::class\+\_\+index, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref\+\_\+info\+::class\+\_\+index, cp\+\_\+info\+::class\+\_\+info, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Class, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Float, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+String, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8, Utils\+::converter\+Stream\+To\+C\+String(), C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type\+\_\+info\+::descriptor\+\_\+index, cp\+\_\+info\+::double\+\_\+info, cp\+\_\+info\+::fieldref\+\_\+info, cp\+\_\+info\+::float\+\_\+info, get\+Formatted\+Constant(), C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long\+\_\+info\+::high\+\_\+bytes, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double\+\_\+info\+::high\+\_\+bytes, cp\+\_\+info\+::info, cp\+\_\+info\+::integer\+\_\+info, cp\+\_\+info\+::interface\+Methodref\+\_\+info, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info\+::length, cp\+\_\+info\+::long\+\_\+info, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long\+\_\+info\+::low\+\_\+bytes, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double\+\_\+info\+::low\+\_\+bytes, cp\+\_\+info\+::methodref\+\_\+info, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref\+\_\+info\+::name\+\_\+and\+\_\+type\+\_\+index, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref\+\_\+info\+::name\+\_\+and\+\_\+type\+\_\+index, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref\+\_\+info\+::name\+\_\+and\+\_\+type\+\_\+index, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Class\+\_\+info\+::name\+\_\+index, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type\+\_\+info\+::name\+\_\+index, cp\+\_\+info\+::name\+And\+Type\+\_\+info, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+String\+\_\+info\+::string\+\_\+index, cp\+\_\+info\+::string\+\_\+info, cp\+\_\+info\+::tag e cp\+\_\+info\+::utf8\+\_\+info.
+
+
+
+Referenciado por Method\+Area\+::add\+Class(), Operations\+::anewarray(), Operations\+::checkcast(), exibe\+\_\+\+Attribute\+Info(), exibe\+\_\+\+Constant\+Pool(), exibe\+\_\+\+Fields(), exibe\+\_\+\+General\+Information(), exibe\+\_\+\+Interfaces(), exibe\+\_\+\+Methods(), exibe\+Byte\+Code(), Operations\+::func\+\_\+new(), Operations\+::getfield(), get\+Formatted\+Constant(), Operations\+::getstatic(), Instance\+Class\+::\+Instance\+Class(), Operations\+::instanceof(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), main(), Operations\+::multianewarray(), Frame\+::obter\+Method\+Named(), print\+\_\+\+Attribute\+Info(), print\+Arquivo\+\_\+\+Constant\+Pool(), print\+Arquivo\+\_\+\+Fields(), print\+Arquivo\+\_\+\+General\+Information(), print\+Arquivo\+\_\+\+Interfaces(), print\+Arquivo\+\_\+\+Methods(), print\+Arquivo\+Byte\+Code(), Operations\+::putfield(), Operations\+::putstatic(), Static\+Class\+::\+Static\+Class() e Operations\+::verificar\+Metodo\+Existe().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h_ad59936a226470583b59565cf99f4375e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ClassVisao_8h_af1deb5b1b5aa49b73609c4fd0a60ff79}\label{ClassVisao_8h_af1deb5b1b5aa49b73609c4fd0a60ff79}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!print\+\_\+\+Attribute\+Info@{print\+\_\+\+Attribute\+Info}}
+\index{print\+\_\+\+Attribute\+Info@{print\+\_\+\+Attribute\+Info}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{print\+\_\+\+Attribute\+Info()}{print\_AttributeInfo()}}
+{\footnotesize\ttfamily void print\+\_\+\+Attribute\+Info (\begin{DoxyParamCaption}\item[{\hyperlink{structattribute__info}{attribute\+\_\+info}}]{attribute\+Info,  }\item[{uint32\+\_\+t}]{index,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{uint8\+\_\+t}]{indentation }\end{DoxyParamCaption})}
+
+Imprime informações básicas dos atributos e as específicas de um dos 9 elementos da unios, onde Synthetic e Deprecated são ignorados por não possuirem informações extras. 
+\begin{DoxyParams}{Parâmetros}
+{\em attribute\+Info} & sctruct do atributo \\
+\hline
+{\em index} & é o índice do atributo \\
+\hline
+{\em constant\+Pool} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
+\hline
+{\em indentation} & é o número de tabs que deve ser imprimido na linha \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 489 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências attribute\+\_\+info\+::attribute\+\_\+length, attribute\+\_\+info\+::attribute\+\_\+name\+\_\+index, Code\+\_\+attribute\+::attributes, Code\+\_\+attribute\+::attributes\+\_\+count, Exception\+Table\+::catch\+\_\+type, Inner\+Classes\+\_\+attribute\+::classes, attribute\+\_\+info\+::code\+\_\+info, Code\+\_\+attribute\+::code\+\_\+length, Utils\+::comparar\+Utf8\+String(), Constant\+Value\+\_\+attribute\+::constantvalue\+\_\+index, attribute\+\_\+info\+::constant\+Value\+\_\+info, Local\+Variable\+Table\+::descriptor\+\_\+index, Exception\+Table\+::end\+\_\+pc, Exceptions\+\_\+attribute\+::exception\+\_\+index\+\_\+table, Code\+\_\+attribute\+::exception\+\_\+table, Code\+\_\+attribute\+::exception\+\_\+table\+\_\+length, attribute\+\_\+info\+::exceptions\+\_\+info, get\+Access\+Flags(), get\+Formatted\+Constant(), Exception\+Table\+::handler\+\_\+pc, Utils\+::imprint\+Tabs(), Local\+Variable\+Table\+::index, cp\+\_\+info\+::info, attribute\+\_\+info\+::info, Class\+::inner\+\_\+class\+\_\+access\+\_\+flags, Class\+::inner\+\_\+class\+\_\+info\+\_\+index, Class\+::inner\+\_\+name\+\_\+index, attribute\+\_\+info\+::inner\+Classes\+\_\+info, Local\+Variable\+Table\+::length, Line\+Number\+Table\+::line\+\_\+number, Line\+Number\+Table\+\_\+attribute\+::line\+\_\+number\+\_\+table, Line\+Number\+Table\+\_\+attribute\+::line\+\_\+number\+\_\+table\+\_\+length, attribute\+\_\+info\+::line\+Number\+Table\+\_\+info, Local\+Variable\+Table\+\_\+attribute\+::local\+\_\+variable\+\_\+table\+\_\+length, Local\+Variable\+Table\+\_\+attribute\+::local\+Variable\+Table, attribute\+\_\+info\+::local\+Variable\+Table\+\_\+info, Code\+\_\+attribute\+::max\+\_\+locals, Code\+\_\+attribute\+::max\+\_\+stack, Local\+Variable\+Table\+::name\+\_\+index, Inner\+Classes\+\_\+attribute\+::number\+\_\+of\+\_\+classes, Exceptions\+\_\+attribute\+::number\+\_\+of\+\_\+exceptions, out, Class\+::outer\+\_\+class\+\_\+info\+\_\+index, print\+\_\+\+Attribute\+Info(), print\+Arquivo\+Byte\+Code(), Source\+File\+\_\+attribute\+::sourcefile\+\_\+index, attribute\+\_\+info\+::source\+File\+\_\+info, Exception\+Table\+::start\+\_\+pc, Line\+Number\+Table\+::start\+\_\+pc, Local\+Variable\+Table\+::start\+\_\+pc e cp\+\_\+info\+::utf8\+\_\+info.
+
+
+
+Referenciado por exibe\+\_\+\+Fields(), print\+\_\+\+Attribute\+Info(), print\+Arquivo\+\_\+\+Attributes(), print\+Arquivo\+\_\+\+Fields() e print\+Arquivo\+\_\+\+Methods().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h_af1deb5b1b5aa49b73609c4fd0a60ff79_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ClassVisao_8h_a4b1e9c48c6abd40b514ee761c5d7f8ac}\label{ClassVisao_8h_a4b1e9c48c6abd40b514ee761c5d7f8ac}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!print\+Arquivo\+\_\+\+Attributes@{print\+Arquivo\+\_\+\+Attributes}}
+\index{print\+Arquivo\+\_\+\+Attributes@{print\+Arquivo\+\_\+\+Attributes}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{print\+Arquivo\+\_\+\+Attributes()}{printArquivo\_Attributes()}}
+{\footnotesize\ttfamily void print\+Arquivo\+\_\+\+Attributes (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+Imprime elementos de atributo, chamando função print\+\_\+\+Attribute\+Info para cada um deles 
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 358 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências Class\+File\+::attributes, Class\+File\+::attributes\+\_\+count, Class\+File\+::constant\+\_\+pool e print\+\_\+\+Attribute\+Info().
+
+
+
+Referenciado por print\+Arquivo\+Class\+File().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h_a4b1e9c48c6abd40b514ee761c5d7f8ac_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ClassVisao_8h_aa456eb77567dd5f9d00ccce6eea1d3f3}\label{ClassVisao_8h_aa456eb77567dd5f9d00ccce6eea1d3f3}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!print\+Arquivo\+\_\+\+Constant\+Pool@{print\+Arquivo\+\_\+\+Constant\+Pool}}
+\index{print\+Arquivo\+\_\+\+Constant\+Pool@{print\+Arquivo\+\_\+\+Constant\+Pool}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{print\+Arquivo\+\_\+\+Constant\+Pool()}{printArquivo\_ConstantPool()}}
+{\footnotesize\ttfamily void print\+Arquivo\+\_\+\+Constant\+Pool (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+Imprime pool de constantes e identidifica referências à elementos da própria pool de contantes (\hyperlink{structcp__info}{cp\+\_\+info}) 
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 95 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer\+\_\+info\+::bytes, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Float\+\_\+info\+::bytes, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref\+\_\+info\+::class\+\_\+index, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref\+\_\+info\+::class\+\_\+index, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref\+\_\+info\+::class\+\_\+index, cp\+\_\+info\+::class\+\_\+info, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Class, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Float, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+N\+U\+LL, Class\+File\+::constant\+\_\+pool, Class\+File\+::constant\+\_\+pool\+\_\+count, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+String, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type\+\_\+info\+::descriptor\+\_\+index, cp\+\_\+info\+::double\+\_\+info, cp\+\_\+info\+::fieldref\+\_\+info, cp\+\_\+info\+::float\+\_\+info, get\+Formatted\+Constant(), C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long\+\_\+info\+::high\+\_\+bytes, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double\+\_\+info\+::high\+\_\+bytes, cp\+\_\+info\+::info, cp\+\_\+info\+::integer\+\_\+info, cp\+\_\+info\+::interface\+Methodref\+\_\+info, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info\+::length, cp\+\_\+info\+::long\+\_\+info, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long\+\_\+info\+::low\+\_\+bytes, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double\+\_\+info\+::low\+\_\+bytes, cp\+\_\+info\+::methodref\+\_\+info, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref\+\_\+info\+::name\+\_\+and\+\_\+type\+\_\+index, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref\+\_\+info\+::name\+\_\+and\+\_\+type\+\_\+index, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref\+\_\+info\+::name\+\_\+and\+\_\+type\+\_\+index, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Class\+\_\+info\+::name\+\_\+index, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type\+\_\+info\+::name\+\_\+index, cp\+\_\+info\+::name\+And\+Type\+\_\+info, out, C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+String\+\_\+info\+::string\+\_\+index, cp\+\_\+info\+::string\+\_\+info, cp\+\_\+info\+::tag e cp\+\_\+info\+::utf8\+\_\+info.
+
+
+
+Referenciado por print\+Arquivo\+Class\+File().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h_aa456eb77567dd5f9d00ccce6eea1d3f3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ClassVisao_8h_a98d3a75317d6726a287edce2d48137f6}\label{ClassVisao_8h_a98d3a75317d6726a287edce2d48137f6}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!print\+Arquivo\+\_\+\+Fields@{print\+Arquivo\+\_\+\+Fields}}
+\index{print\+Arquivo\+\_\+\+Fields@{print\+Arquivo\+\_\+\+Fields}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{print\+Arquivo\+\_\+\+Fields()}{printArquivo\_Fields()}}
+{\footnotesize\ttfamily void print\+Arquivo\+\_\+\+Fields (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+Imprime elementos de field, suas referências à pool de constantes e decodifica o valor das flags de acesso, utilizando a seguinte tabela de referência\+:
+
+A\+C\+C\+\_\+\+P\+U\+B\+L\+IC\+: 0x0001
+
+A\+C\+C\+\_\+\+S\+U\+P\+ER\+: 0x0020
+
+A\+C\+C\+\_\+\+P\+R\+I\+V\+A\+TE\+: 0x0002
+
+A\+C\+C\+\_\+\+I\+N\+T\+E\+R\+F\+A\+CE\+: 0x0200
+
+A\+C\+C\+\_\+\+A\+B\+S\+T\+R\+A\+CT\+: 0x0400
+
+A\+C\+C\+\_\+\+P\+R\+O\+T\+E\+C\+T\+ED\+: 0x0004
+
+A\+C\+C\+\_\+\+S\+T\+A\+T\+IC\+: 0x0008
+
+A\+C\+C\+\_\+\+F\+I\+N\+AL\+: 0x0010
+
+A\+C\+C\+\_\+\+V\+O\+L\+A\+T\+I\+LE\+: 0x0040
+
+A\+C\+C\+\_\+\+T\+R\+A\+N\+S\+I\+E\+NT \+: 0x0080 
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 263 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências field\+\_\+info\+::access\+\_\+flags, field\+\_\+info\+::attributes, field\+\_\+info\+::attributes\+\_\+count, Class\+File\+::constant\+\_\+pool, field\+\_\+info\+::descriptor\+\_\+index, Class\+File\+::fields, Class\+File\+::fields\+\_\+count, get\+Access\+Flags(), get\+Formatted\+Constant(), field\+\_\+info\+::name\+\_\+index, out e print\+\_\+\+Attribute\+Info().
+
+
+
+Referenciado por print\+Arquivo\+Class\+File().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h_a98d3a75317d6726a287edce2d48137f6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ClassVisao_8h_a5900e82fe680909e7687af8483b29139}\label{ClassVisao_8h_a5900e82fe680909e7687af8483b29139}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!print\+Arquivo\+\_\+\+General\+Information@{print\+Arquivo\+\_\+\+General\+Information}}
+\index{print\+Arquivo\+\_\+\+General\+Information@{print\+Arquivo\+\_\+\+General\+Information}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{print\+Arquivo\+\_\+\+General\+Information()}{printArquivo\_GeneralInformation()}}
+{\footnotesize\ttfamily void print\+Arquivo\+\_\+\+General\+Information (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+Imprime informações gerais do arquivo .class 
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 55 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências Class\+File\+::access\+\_\+flags, Class\+File\+::attributes\+\_\+count, Class\+File\+::constant\+\_\+pool, Class\+File\+::constant\+\_\+pool\+\_\+count, Class\+File\+::fields\+\_\+count, get\+Access\+Flags(), get\+Formatted\+Constant(), Class\+File\+::interfaces\+\_\+count, Class\+File\+::major\+\_\+version, Class\+File\+::methods\+\_\+count, Class\+File\+::minor\+\_\+version, out, Class\+File\+::super\+\_\+class, Class\+File\+::this\+\_\+class e Utils\+::verificar\+Versao().
+
+
+
+Referenciado por print\+Arquivo\+Class\+File().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h_a5900e82fe680909e7687af8483b29139_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ClassVisao_8h_aba15d958463cdffe0d3f53961b97a86d}\label{ClassVisao_8h_aba15d958463cdffe0d3f53961b97a86d}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!print\+Arquivo\+\_\+\+Interfaces@{print\+Arquivo\+\_\+\+Interfaces}}
+\index{print\+Arquivo\+\_\+\+Interfaces@{print\+Arquivo\+\_\+\+Interfaces}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{print\+Arquivo\+\_\+\+Interfaces()}{printArquivo\_Interfaces()}}
+{\footnotesize\ttfamily void print\+Arquivo\+\_\+\+Interfaces (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+Imprime elementos de interface e suas referẽncias à pool de constantes 
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 244 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências Class\+File\+::constant\+\_\+pool, get\+Formatted\+Constant(), Class\+File\+::interfaces, Class\+File\+::interfaces\+\_\+count e out.
+
+
+
+Referenciado por print\+Arquivo\+Class\+File().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h_aba15d958463cdffe0d3f53961b97a86d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ClassVisao_8h_a0a9692beebcf6ba0b4ec9eea32a1bac6}\label{ClassVisao_8h_a0a9692beebcf6ba0b4ec9eea32a1bac6}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!print\+Arquivo\+\_\+\+Methods@{print\+Arquivo\+\_\+\+Methods}}
+\index{print\+Arquivo\+\_\+\+Methods@{print\+Arquivo\+\_\+\+Methods}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{print\+Arquivo\+\_\+\+Methods()}{printArquivo\_Methods()}}
+{\footnotesize\ttfamily void print\+Arquivo\+\_\+\+Methods (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+Imprime elementos de método, suas referências à pool de constantes e chama função para imprimir os atributos relacionados aos métodos. 
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 305 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências method\+\_\+info\+::access\+\_\+flags, method\+\_\+info\+::attributes, method\+\_\+info\+::attributes\+\_\+count, Class\+File\+::constant\+\_\+pool, method\+\_\+info\+::descriptor\+\_\+index, get\+Access\+Flags(), get\+Formatted\+Constant(), Class\+File\+::methods, Class\+File\+::methods\+\_\+count, method\+\_\+info\+::name\+\_\+index, out e print\+\_\+\+Attribute\+Info().
+
+
+
+Referenciado por print\+Arquivo\+Class\+File().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h_a0a9692beebcf6ba0b4ec9eea32a1bac6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ClassVisao_8h_ae96c4733127420389d10f7407ec5b4a1}\label{ClassVisao_8h_ae96c4733127420389d10f7407ec5b4a1}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!print\+Arquivo\+Byte\+Code@{print\+Arquivo\+Byte\+Code}}
+\index{print\+Arquivo\+Byte\+Code@{print\+Arquivo\+Byte\+Code}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{print\+Arquivo\+Byte\+Code()}{printArquivoByteCode()}}
+{\footnotesize\ttfamily void print\+Arquivo\+Byte\+Code (\begin{DoxyParamCaption}\item[{\hyperlink{structCode__attribute}{Code\+\_\+attribute}}]{code\+Attribute,  }\item[{\hyperlink{structcp__info}{cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{uint8\+\_\+t}]{indentation }\end{DoxyParamCaption})}
+
+Imprime strings que representam instruções através da variável de código do atributo. O valor do código em hexa é decriptado na função \hyperlink{ClassVisao_8h_ad59936a226470583b59565cf99f4375e}{get\+Formatted\+Constant()}. A lista de instruções está armazenada em \char`\"{}instructions\mbox{[}$\,$\mbox{]}\char`\"{} e o que faz acesso à elas é \char`\"{}code\mbox{[}i\mbox{]}\char`\"{}, ou seja, o vetor de códigos de cada atributo. 
+\begin{DoxyParams}{Parâmetros}
+{\em code\+Attribute} & struct do código de atributos \\
+\hline
+{\em constant\+Pool} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
+\hline
+{\em indentation} & é o número de tabs que deve ser imprimido na linha \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 728 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências Code\+\_\+attribute\+::code, Code\+\_\+attribute\+::code\+\_\+length, get\+Formatted\+Constant(), Utils\+::imprint\+Tabs(), out e vetor\+Nome\+Funcao.
+
+
+
+Referenciado por print\+\_\+\+Attribute\+Info().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h_ae96c4733127420389d10f7407ec5b4a1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ClassVisao_8h_ab591ae1b83d6c20b31d14878874a9c5f}\label{ClassVisao_8h_ab591ae1b83d6c20b31d14878874a9c5f}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!print\+Arquivo\+Class\+File@{print\+Arquivo\+Class\+File}}
+\index{print\+Arquivo\+Class\+File@{print\+Arquivo\+Class\+File}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{print\+Arquivo\+Class\+File()}{printArquivoClassFile()}}
+{\footnotesize\ttfamily void print\+Arquivo\+Class\+File (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File,  }\item[{F\+I\+LE $\ast$}]{output }\end{DoxyParamCaption})}
+
+Imprime os elementos do Leitor/\+Exibidor de classe em ordem\+: Informações gerais, pool de constantes, interfaces, campos, métodos e atributos. 
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
+\hline
+{\em output} & é o arquivo exibidor da J\+VM. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 9 do ficheiro Class\+Visao.\+cpp.
+
+
+
+Referências Class\+File\+::attributes\+\_\+count, Class\+File\+::constant\+\_\+pool\+\_\+count, Class\+File\+::fields\+\_\+count, Class\+File\+::interfaces\+\_\+count, Class\+File\+::methods\+\_\+count, out, print\+Arquivo\+\_\+\+Attributes(), print\+Arquivo\+\_\+\+Constant\+Pool(), print\+Arquivo\+\_\+\+Fields(), print\+Arquivo\+\_\+\+General\+Information(), print\+Arquivo\+\_\+\+Interfaces() e print\+Arquivo\+\_\+\+Methods().
+
+
+
+Referenciado por main().
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClassVisao_8h_ab591ae1b83d6c20b31d14878874a9c5f_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentação das variáveis}
+\mbox{\Hypertarget{ClassVisao_8h_ad580aad7327ecbda114c935bc381928a}\label{ClassVisao_8h_ad580aad7327ecbda114c935bc381928a}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!vetor\+Nome\+Funcao@{vetor\+Nome\+Funcao}}
+\index{vetor\+Nome\+Funcao@{vetor\+Nome\+Funcao}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{vetor\+Nome\+Funcao}{vetorNomeFuncao}}
+{\footnotesize\ttfamily const char$\ast$ vetor\+Nome\+Funcao\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+Vetor contendo os mnemônicos de todas as instruções do bytecode Java. 
+
+Definido na linha 222 do ficheiro Class\+Visao.\+h.
+
+
+
+Referenciado por exibe\+Byte\+Code() e print\+Arquivo\+Byte\+Code().
+

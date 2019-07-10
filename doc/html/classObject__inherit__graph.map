@@ -1,0 +1,5 @@
+<map id="Object" name="Object">
+<area shape="rect" id="node2" href="$classArrayObject.html" title="Estrutura de armazenamento. " alt="" coords="5,80,96,107"/>
+<area shape="rect" id="node3" href="$classInstanceClass.html" title="Lida com operações que lidam com uma instância da classe. " alt="" coords="120,80,227,107"/>
+<area shape="rect" id="node4" href="$classStringObject.html" title="Representa um objeto do tipo String. " alt="" coords="251,80,346,107"/>
+</map>

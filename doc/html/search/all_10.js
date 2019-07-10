@@ -1,21 +1,14 @@
 var searchData=
 [
-  ['s',['s',['../unionelement__u.html#a85c036f57770aeab7ed90947ffdfda53',1,'element_u']]],
-  ['saload',['saload',['../classOperations.html#ac97743869c458c3ffcda48383308e9b4',1,'Operations']]],
-  ['sastore',['sastore',['../classOperations.html#aab1c34c455478d75c21cdb06d6c94172',1,'Operations']]],
-  ['set',['set',['../classLocalVariables.html#a6d79e0c874931e97ed68a25cf60ab119',1,'LocalVariables']]],
-  ['sipush',['sipush',['../classOperations.html#aed3838c73d7febfcacab9f101e6946ad',1,'Operations']]],
-  ['ss',['ss',['../unionelement__u.html#ab90ee55202fd11a2dc3cf48c74e55dab',1,'element_u']]],
-  ['stackelementos',['stackElementos',['../classOperandsStack.html#a4d7bd7c3814e216168022849158c733d',1,'OperandsStack']]],
-  ['stackframe',['stackFrame',['../classOperations.html#ae813b6fad395a04f6cd8e0c355dc056d',1,'Operations::stackFrame()'],['../classPilhaJVM.html#a4d70c8b3d6fbddb38e943dc8b1a00c2d',1,'PilhaJVM::stackFrame()']]],
-  ['stacktipos',['stackTipos',['../classOperandsStack.html#ad784cabd1a3153f7a870adf07215189a',1,'OperandsStack']]],
-  ['stacktiposreais',['stackTiposReais',['../classOperandsStack.html#a14729c0f92cf41d1ec65660a7c82555a',1,'OperandsStack']]],
-  ['start_5fpc',['start_pc',['../structT__exception__table.html#a89ad17b9f257aa9589ed07bfaa263005',1,'T_exception_table']]],
-  ['staticclass',['StaticClass',['../classStaticClass.html',1,'StaticClass'],['../classInstanceClass.html#a45804f1afe3666a4b4511cf8e3f1013b',1,'InstanceClass::staticClass()'],['../classStaticClass.html#a6c0e4d8842888a97160f1e815c8e6ac3',1,'StaticClass::StaticClass()']]],
-  ['staticclass_2ecpp',['StaticClass.cpp',['../StaticClass_8cpp.html',1,'']]],
-  ['staticclass_2eh',['StaticClass.h',['../StaticClass_8h.html',1,'']]],
-  ['status',['status',['../classClassFile.html#a9afeae9ac0889ab75909e73933e29326',1,'ClassFile']]],
-  ['string',['STRING',['../ConstantPool_8h.html#a0f4d394a3ab4e09bff60f714c66dc5ee',1,'ConstantPool.h']]],
-  ['super_5fclass',['super_class',['../classClassFile.html#ad92079216f8cdb366a3002e5ca2c2dfa',1,'ClassFile']]],
-  ['swap',['swap',['../classOperations.html#ad800d04ce11806455dd5b84a7ecd6144',1,'Operations']]]
+  ['readclassfile',['readClassFile',['../classLeitorExibidor.html#af6f4f84cbfaf72e6673e1dc42023b308',1,'LeitorExibidor']]],
+  ['readu1',['readU1',['../classLeitorExibidor.html#af679ae83326347418cd0d3c90776d7a3',1,'LeitorExibidor']]],
+  ['readu2',['readU2',['../classLeitorExibidor.html#aa801d28856915543cfd59fb787e59626',1,'LeitorExibidor']]],
+  ['readu4',['readU4',['../classLeitorExibidor.html#a5ce4bdf25870ab04449d4ba35a961390',1,'LeitorExibidor']]],
+  ['reference',['REFERENCE',['../BasicTypes_8h.html#ad9971b6ef33e02ba2c75d19c1d2518a1a4dc014d38d8f5ea326043e8491cfb6a3',1,'BasicTypes.h']]],
+  ['removeat',['removeAt',['../classArrayObject.html#ab229e48175e46d03c2fab756cce11b5f',1,'ArrayObject']]],
+  ['removefirst',['removeFirst',['../classArrayObject.html#aaf722b5670d62f09370aeab36ebe0dfd',1,'ArrayObject']]],
+  ['removelast',['removeLast',['../classArrayObject.html#a5235153943129699da298a3ecc7cfa14',1,'ArrayObject']]],
+  ['ret',['ret',['../classOperations.html#a3e7225adafc030be5d6e1c2b0a963a9b',1,'Operations']]],
+  ['return_5faddr',['RETURN_ADDR',['../BasicTypes_8h.html#ad9971b6ef33e02ba2c75d19c1d2518a1a8cdcfd804fa5989360eff9bc8b1ac371',1,'BasicTypes.h']]],
+  ['returnaddress',['returnAddress',['../structValue.html#a0ff202a46baf275595d520cf800f596e',1,'Value']]]
 ];

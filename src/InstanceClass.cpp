@@ -1,121 +1,106 @@
-/*!
- * \file InstanceClass.cpp
- * \brief
- */
-
 #include "InstanceClass.h"
 
-InstanceClass::InstanceClass(StaticClass* staticClass) {
-	this->staticClass = staticClass;
+#include "Heap.h"
+#include "Stringobject.h"
+#include "ArrayObject.h"
+#include "ClassVisao.h"
+#include "MethodArea.h"
 
-	int tamanho = staticClass->obterClassFile()->obterFieldsCount();
-	Field_info *field = staticClass->obterClassFile()->obterFields();
 
-	for (int i = 0; i < tamanho; i++) {
-		if ((field[i].accessFlags & 0x08) == 0) {
-			TypedElement *typedElement = (TypedElement *) malloc(sizeof(TypedElement));
-			typedElement->value.l = 0;
-			string type = capturarIndiceDeReferencia(staticClass->obterClassFile()->obterConstantPool(), field[i].descriptor_index);
-
-			switch (type[0]) {
-			case 'B':
-				typedElement->type = TYPE_BOOL;
-				break;
-			case 'C':
-				typedElement->type = TYPE_INT;
-				break;
-			case 'D':
-				typedElement->type = TYPE_DOUBLE;
-				break;
-			case 'F':
-				typedElement->type = TYPE_FLOAT;
-				break;
-			case 'I':
-				typedElement->type = TYPE_INT;
-				break;
-			case 'J':
-				typedElement->type = TYPE_LONG;
-				break;
-			case 'L':
-				typedElement->type = TYPE_REFERENCE;
-				break;
-			case 'S':
-				typedElement->type = TYPE_INT;
-				break;
-			case 'Z':
-				typedElement->type = TYPE_BOOL;
-				break;
-			case '[':
-				typedElement->type = TYPE_REFERENCE;
-				break;
-			}
-			string nomeField = capturarIndiceDeReferencia(staticClass->obterClassFile()->obterConstantPool(), field[i].name_index);
-			mapLocalFields.insert(pair<string, TypedElement*>(nomeField, typedElement));
-		}
-	}
+InstanceClass::InstanceClass(StaticClass *classRuntime) : _classRuntime(classRuntime) {
+    ClassFile *classFile = classRuntime->getClassFile();
+    field_info *fields = classFile->fields;
+    u2 abstractFlag = 0x0400;
+    
+    if ((classFile->access_flags & abstractFlag) != 0) {
+        // Não pode instanciar se for classe abstrata (i.e., interface)
+        cerr << "InstantiationError" << endl;
+        exit(1);
+    }
+    
+    for (int i = 0; i < classFile->fields_count; i++) {
+        field_info field = fields[i];
+        u2 staticAndFinalFlag = 0x0008 | 0x0010;
+        
+        if ((field.access_flags & staticAndFinalFlag) == 0) { // não estática e não final
+            string fieldName = getFormattedConstant(classFile->constant_pool, field.name_index);
+            string fieldDescriptor = getFormattedConstant(classFile->constant_pool, field.descriptor_index);
+            
+            char fieldType = fieldDescriptor[0];
+            Value value;
+            
+            switch (fieldType) {
+                case 'B':
+                    value.type = ValueType::BYTE;
+                    value.data.byteValue = 0;
+                    break;
+                case 'C':
+                    value.type = ValueType::CHAR;
+                    value.data.charValue = 0;
+                    break;
+                case 'D':
+                    value.type = ValueType::DOUBLE;
+                    value.data.doubleValue = 0;
+                    break;
+                case 'F':
+                    value.type = ValueType::FLOAT;
+                    value.data.floatValue = 0;
+                    break;
+                case 'I':
+                    value.type = ValueType::INT;
+                    value.data.intValue = 0;
+                    break;
+                case 'J':
+                    value.type = ValueType::LONG;
+                    value.data.longValue = 0;
+                    break;
+                case 'S':
+                    value.type = ValueType::SHORT;
+                    value.data.shortValue = 0;
+                    break;
+                case 'Z':
+                    value.type = ValueType::BOOLEAN;
+                    value.data.charValue = false;
+                    break;
+                default:
+                    value.type = ValueType::REFERENCE;
+                    value.data.object = NULL;
+            }
+            
+            putValueIntoField(value, fieldName);
+        }
+    }
+    
+    // quando um objeto é criado, ele precisa ser armazenado na Heap
+    Heap &heap = Heap::getInstance();
+    heap.addObject(this);
 }
 
-TypedElement InstanceClass::obterField(string field) {
-	TypedElement typedElement;
-	typedElement.type = TYPE_NOT_SET;
-
-	for (map<string, TypedElement*>::const_iterator mapField = mapLocalFields.begin(); mapField != mapLocalFields.end(); mapField++) {
-		if (mapField->first == field) {
-			return *(mapField->second);
-		}
-	}
-
-	return typedElement;
+InstanceClass::~InstanceClass() {
+    
 }
 
-StaticClass *InstanceClass::obterStaticClass() {
-	return staticClass;
+ObjectType InstanceClass::objectType() {
+    return ObjectType::CLASS_INSTANCE;
 }
 
-bool InstanceClass::atualizarField(string field, TypedElement typedElement) {
-	map<string, TypedElement*>::const_iterator mapField;
-	mapField = mapLocalFields.begin();
-
-	while (mapField != mapLocalFields.end()) {
-		if (mapField->first == field) {
-			if (mapField->second->type == typedElement.type) {
-				*(mapField->second) = typedElement;
-				return true;
-			} else {
-				break;
-			}
-		}
-		mapField++;
-	}
-
-	return false;
+StaticClass* InstanceClass::getClassRuntime() {
+    return _classRuntime;
 }
 
-bool InstanceClass::atualizarFieldFinals(string field, TypedElement typedElement) {
-	map<string, TypedElement*>::const_iterator mapField;
-	mapField = mapLocalFields.begin();
-
-	while (mapField != mapLocalFields.end()) {
-		if (mapField->first == field) {
-			if (mapField->second->type == typedElement.type) {
-				*(mapField->second) = typedElement;
-				return true;
-			} else {
-				break;
-			}
-		}
-		mapField++;
-	}
-
-	return false;
+void InstanceClass::putValueIntoField(Value value, string fieldName) {
+    _fields[fieldName] = value;
 }
 
-void InstanceClass::imprimirInstance() {
-	map<string, TypedElement*>::const_iterator mapField;
-	mapField = mapLocalFields.begin();
+Value InstanceClass::getValueFromField(string fieldName) {
+    if (_fields.count(fieldName) ==  0) {
+        cerr << "NoSuchFieldError" << endl;
+        exit(1);
+    }
+    
+    return _fields[fieldName];
+}
 
-	while (mapField != mapLocalFields.end()) {
-		cout << mapField->first << endl;
-		mapField++;
-	}
+bool InstanceClass::fieldExists(string fieldName) {
+    return _fields.count(fieldName) > 0;
 }

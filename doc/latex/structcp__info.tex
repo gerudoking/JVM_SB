@@ -2,12 +2,7 @@
 \label{structcp__info}\index{cp\+\_\+info@{cp\+\_\+info}}
 
 
-Possui um elemento pool de constante.  
-
-
-
-
-{\ttfamily \#include $<$Constant\+Pool.\+h$>$}
+{\ttfamily \#include $<$Basic\+Types.\+h$>$}
 
 
 
@@ -16,56 +11,221 @@ Diagrama de colaboração para cp\+\_\+info\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=173pt]{structcp__info__coll__graph}
+\includegraphics[width=350pt]{structcp__info__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Atributos Públicos}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{BasicTypes_8h_a9bffe5bb2564f91cd90fb7d06848f9a8}{U1} \hyperlink{structcp__info_a850b66fa196e9fc2e898ca41d558e248}{tag}
+\hyperlink{BasicTypes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1} \hyperlink{structcp__info_a045b8801a6e96a2a31d3b62ea684f141}{tag}
 \item 
-\hyperlink{unionClassLoaderType}{Class\+Loader\+Type} $\ast$ \hyperlink{structcp__info_aafa07de27e22632ed56ab8fbffbe2559}{info}
-\end{DoxyCompactItemize}
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\hyperlink{structCONSTANT__Class__info}{CONSTANT\_Class\_info} \hyperlink{structcp__info_add01ad1b269bc065f0863469cf8183b8}{class\_info}\\
+\>\hyperlink{structCONSTANT__Fieldref__info}{CONSTANT\_Fieldref\_info} \hyperlink{structcp__info_a12c0c04a72137ea73d22a3d652de1774}{fieldref\_info}\\
+\>\hyperlink{structCONSTANT__Methodref__info}{CONSTANT\_Methodref\_info} \hyperlink{structcp__info_ab1304804bef6a0fe6575671223d7d689}{methodref\_info}\\
+\>\hyperlink{structCONSTANT__InterfaceMethodref__info}{CONSTANT\_InterfaceMethodref\_info} \hyperlink{structcp__info_aaebedef650f8f22c5f66057bf1b1271a}{interfaceMethodref\_info}\\
+\>\hyperlink{structCONSTANT__String__info}{CONSTANT\_String\_info} \hyperlink{structcp__info_a4d1d5a06448e8b86b4b23608d64cfe7e}{string\_info}\\
+\>\hyperlink{structCONSTANT__Integer__info}{CONSTANT\_Integer\_info} \hyperlink{structcp__info_a134087258f855dca61e8e8922665d050}{integer\_info}\\
+\>\hyperlink{structCONSTANT__Float__info}{CONSTANT\_Float\_info} \hyperlink{structcp__info_a367569f3e0a70a50afc482c4ac2aece1}{float\_info}\\
+\>\hyperlink{structCONSTANT__Long__info}{CONSTANT\_Long\_info} \hyperlink{structcp__info_ab0a2bfb802609dbdb4985cb55f465e6f}{long\_info}\\
+\>\hyperlink{structCONSTANT__Double__info}{CONSTANT\_Double\_info} \hyperlink{structcp__info_aa76301d1853395d7594520988422c3d0}{double\_info}\\
+\>\hyperlink{structCONSTANT__NameAndType__info}{CONSTANT\_NameAndType\_info} \hyperlink{structcp__info_a1e020df4bc85c0a41365a8bb466f8781}{nameAndType\_info}\\
+\>\hyperlink{structCONSTANT__Utf8__info}{CONSTANT\_Utf8\_info} \hyperlink{structcp__info_a980c5cbcb2aefe984b7a4988f1f71576}{utf8\_info}\\
+\} \hyperlink{structcp__info_a8aca171d81e9715b113c7919e8c16dce}{info}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
 
 
 \subsection{Descrição detalhada}
-Possui um elemento pool de constante. 
 
-Definido na linha 18 do ficheiro Constant\+Pool.\+h.
+
+Definido na linha 181 do ficheiro Basic\+Types.\+h.
 
 
 
 \subsection{Documentação dos dados membro}
-\mbox{\Hypertarget{structcp__info_aafa07de27e22632ed56ab8fbffbe2559}\label{structcp__info_aafa07de27e22632ed56ab8fbffbe2559}} 
+\mbox{\Hypertarget{structcp__info_add01ad1b269bc065f0863469cf8183b8}\label{structcp__info_add01ad1b269bc065f0863469cf8183b8}} 
+\index{cp\+\_\+info@{cp\+\_\+info}!class\+\_\+info@{class\+\_\+info}}
+\index{class\+\_\+info@{class\+\_\+info}!cp\+\_\+info@{cp\+\_\+info}}
+\subsubsection{\texorpdfstring{class\+\_\+info}{class\_info}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__Class__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Class\+\_\+info} cp\+\_\+info\+::class\+\_\+info}
+
+
+
+Definido na linha 184 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Operations\+::anewarray(), exibe\+\_\+\+Constant\+Pool(), Operations\+::func\+\_\+new(), get\+Formatted\+Constant(), Operations\+::multianewarray(), print\+Arquivo\+\_\+\+Constant\+Pool() e Leitor\+Exibidor\+::set\+Constant\+Pool().
+
+\mbox{\Hypertarget{structcp__info_aa76301d1853395d7594520988422c3d0}\label{structcp__info_aa76301d1853395d7594520988422c3d0}} 
+\index{cp\+\_\+info@{cp\+\_\+info}!double\+\_\+info@{double\+\_\+info}}
+\index{double\+\_\+info@{double\+\_\+info}!cp\+\_\+info@{cp\+\_\+info}}
+\subsubsection{\texorpdfstring{double\+\_\+info}{double\_info}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__Double__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double\+\_\+info} cp\+\_\+info\+::double\+\_\+info}
+
+
+
+Definido na linha 192 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por exibe\+\_\+\+Constant\+Pool(), get\+Formatted\+Constant(), Operations\+::ldc2\+\_\+w(), print\+Arquivo\+\_\+\+Constant\+Pool() e Leitor\+Exibidor\+::set\+Constant\+Pool().
+
+\mbox{\Hypertarget{structcp__info_a12c0c04a72137ea73d22a3d652de1774}\label{structcp__info_a12c0c04a72137ea73d22a3d652de1774}} 
+\index{cp\+\_\+info@{cp\+\_\+info}!fieldref\+\_\+info@{fieldref\+\_\+info}}
+\index{fieldref\+\_\+info@{fieldref\+\_\+info}!cp\+\_\+info@{cp\+\_\+info}}
+\subsubsection{\texorpdfstring{fieldref\+\_\+info}{fieldref\_info}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__Fieldref__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref\+\_\+info} cp\+\_\+info\+::fieldref\+\_\+info}
+
+
+
+Definido na linha 185 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por exibe\+\_\+\+Constant\+Pool(), Operations\+::getfield(), get\+Formatted\+Constant(), Operations\+::getstatic(), print\+Arquivo\+\_\+\+Constant\+Pool(), Operations\+::putfield(), Operations\+::putstatic() e Leitor\+Exibidor\+::set\+Constant\+Pool().
+
+\mbox{\Hypertarget{structcp__info_a367569f3e0a70a50afc482c4ac2aece1}\label{structcp__info_a367569f3e0a70a50afc482c4ac2aece1}} 
+\index{cp\+\_\+info@{cp\+\_\+info}!float\+\_\+info@{float\+\_\+info}}
+\index{float\+\_\+info@{float\+\_\+info}!cp\+\_\+info@{cp\+\_\+info}}
+\subsubsection{\texorpdfstring{float\+\_\+info}{float\_info}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__Float__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Float\+\_\+info} cp\+\_\+info\+::float\+\_\+info}
+
+
+
+Definido na linha 190 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por exibe\+\_\+\+Constant\+Pool(), get\+Formatted\+Constant(), Operations\+::ldc(), Operations\+::ldc\+\_\+w(), print\+Arquivo\+\_\+\+Constant\+Pool() e Leitor\+Exibidor\+::set\+Constant\+Pool().
+
+\mbox{\Hypertarget{structcp__info_a8aca171d81e9715b113c7919e8c16dce}\label{structcp__info_a8aca171d81e9715b113c7919e8c16dce}} 
 \index{cp\+\_\+info@{cp\+\_\+info}!info@{info}}
 \index{info@{info}!cp\+\_\+info@{cp\+\_\+info}}
 \subsubsection{\texorpdfstring{info}{info}}
-{\footnotesize\ttfamily \hyperlink{unionClassLoaderType}{Class\+Loader\+Type}$\ast$ cp\+\_\+info\+::info}
+{\footnotesize\ttfamily union \{ ... \}   cp\+\_\+info\+::info}
 
 
 
-Definido na linha 20 do ficheiro Constant\+Pool.\+h.
+Referenciado por Operations\+::anewarray(), Frame\+::encontrar\+Attributes(), exibe\+\_\+\+Attribute\+Info(), exibe\+\_\+\+Constant\+Pool(), Operations\+::func\+\_\+new(), Operations\+::getfield(), get\+Formatted\+Constant(), Operations\+::getstatic(), Leitor\+Exibidor\+::get\+Utf8\+From\+Constant\+Pool(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::ldc(), Operations\+::ldc2\+\_\+w(), Operations\+::ldc\+\_\+w(), Operations\+::multianewarray(), print\+\_\+\+Attribute\+Info(), print\+Arquivo\+\_\+\+Constant\+Pool(), Operations\+::putfield(), Operations\+::putstatic() e Leitor\+Exibidor\+::set\+Constant\+Pool().
+
+\mbox{\Hypertarget{structcp__info_a134087258f855dca61e8e8922665d050}\label{structcp__info_a134087258f855dca61e8e8922665d050}} 
+\index{cp\+\_\+info@{cp\+\_\+info}!integer\+\_\+info@{integer\+\_\+info}}
+\index{integer\+\_\+info@{integer\+\_\+info}!cp\+\_\+info@{cp\+\_\+info}}
+\subsubsection{\texorpdfstring{integer\+\_\+info}{integer\_info}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__Integer__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer\+\_\+info} cp\+\_\+info\+::integer\+\_\+info}
 
 
 
-Referenciado por carregar\+Constant\+Pool(), Operations\+::getfield(), Operations\+::getstatic(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::ldc(), Operations\+::ldc2\+\_\+w(), Operations\+::ldc\+\_\+w(), Operations\+::multianewarray(), Operations\+::putfield() e Operations\+::putstatic().
+Definido na linha 189 do ficheiro Basic\+Types.\+h.
 
-\mbox{\Hypertarget{structcp__info_a850b66fa196e9fc2e898ca41d558e248}\label{structcp__info_a850b66fa196e9fc2e898ca41d558e248}} 
+
+
+Referenciado por exibe\+\_\+\+Constant\+Pool(), get\+Formatted\+Constant(), Operations\+::ldc(), Operations\+::ldc\+\_\+w(), print\+Arquivo\+\_\+\+Constant\+Pool() e Leitor\+Exibidor\+::set\+Constant\+Pool().
+
+\mbox{\Hypertarget{structcp__info_aaebedef650f8f22c5f66057bf1b1271a}\label{structcp__info_aaebedef650f8f22c5f66057bf1b1271a}} 
+\index{cp\+\_\+info@{cp\+\_\+info}!interface\+Methodref\+\_\+info@{interface\+Methodref\+\_\+info}}
+\index{interface\+Methodref\+\_\+info@{interface\+Methodref\+\_\+info}!cp\+\_\+info@{cp\+\_\+info}}
+\subsubsection{\texorpdfstring{interface\+Methodref\+\_\+info}{interfaceMethodref\_info}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__InterfaceMethodref__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref\+\_\+info} cp\+\_\+info\+::interface\+Methodref\+\_\+info}
+
+
+
+Definido na linha 187 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por exibe\+\_\+\+Constant\+Pool(), get\+Formatted\+Constant(), print\+Arquivo\+\_\+\+Constant\+Pool() e Leitor\+Exibidor\+::set\+Constant\+Pool().
+
+\mbox{\Hypertarget{structcp__info_ab0a2bfb802609dbdb4985cb55f465e6f}\label{structcp__info_ab0a2bfb802609dbdb4985cb55f465e6f}} 
+\index{cp\+\_\+info@{cp\+\_\+info}!long\+\_\+info@{long\+\_\+info}}
+\index{long\+\_\+info@{long\+\_\+info}!cp\+\_\+info@{cp\+\_\+info}}
+\subsubsection{\texorpdfstring{long\+\_\+info}{long\_info}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__Long__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long\+\_\+info} cp\+\_\+info\+::long\+\_\+info}
+
+
+
+Definido na linha 191 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por exibe\+\_\+\+Constant\+Pool(), get\+Formatted\+Constant(), Operations\+::ldc2\+\_\+w(), print\+Arquivo\+\_\+\+Constant\+Pool() e Leitor\+Exibidor\+::set\+Constant\+Pool().
+
+\mbox{\Hypertarget{structcp__info_ab1304804bef6a0fe6575671223d7d689}\label{structcp__info_ab1304804bef6a0fe6575671223d7d689}} 
+\index{cp\+\_\+info@{cp\+\_\+info}!methodref\+\_\+info@{methodref\+\_\+info}}
+\index{methodref\+\_\+info@{methodref\+\_\+info}!cp\+\_\+info@{cp\+\_\+info}}
+\subsubsection{\texorpdfstring{methodref\+\_\+info}{methodref\_info}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__Methodref__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref\+\_\+info} cp\+\_\+info\+::methodref\+\_\+info}
+
+
+
+Definido na linha 186 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por exibe\+\_\+\+Constant\+Pool(), get\+Formatted\+Constant(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), print\+Arquivo\+\_\+\+Constant\+Pool() e Leitor\+Exibidor\+::set\+Constant\+Pool().
+
+\mbox{\Hypertarget{structcp__info_a1e020df4bc85c0a41365a8bb466f8781}\label{structcp__info_a1e020df4bc85c0a41365a8bb466f8781}} 
+\index{cp\+\_\+info@{cp\+\_\+info}!name\+And\+Type\+\_\+info@{name\+And\+Type\+\_\+info}}
+\index{name\+And\+Type\+\_\+info@{name\+And\+Type\+\_\+info}!cp\+\_\+info@{cp\+\_\+info}}
+\subsubsection{\texorpdfstring{name\+And\+Type\+\_\+info}{nameAndType\_info}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__NameAndType__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type\+\_\+info} cp\+\_\+info\+::name\+And\+Type\+\_\+info}
+
+
+
+Definido na linha 193 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por exibe\+\_\+\+Constant\+Pool(), Operations\+::getfield(), get\+Formatted\+Constant(), Operations\+::getstatic(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), print\+Arquivo\+\_\+\+Constant\+Pool(), Operations\+::putfield(), Operations\+::putstatic() e Leitor\+Exibidor\+::set\+Constant\+Pool().
+
+\mbox{\Hypertarget{structcp__info_a4d1d5a06448e8b86b4b23608d64cfe7e}\label{structcp__info_a4d1d5a06448e8b86b4b23608d64cfe7e}} 
+\index{cp\+\_\+info@{cp\+\_\+info}!string\+\_\+info@{string\+\_\+info}}
+\index{string\+\_\+info@{string\+\_\+info}!cp\+\_\+info@{cp\+\_\+info}}
+\subsubsection{\texorpdfstring{string\+\_\+info}{string\_info}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__String__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+String\+\_\+info} cp\+\_\+info\+::string\+\_\+info}
+
+
+
+Definido na linha 188 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por exibe\+\_\+\+Constant\+Pool(), get\+Formatted\+Constant(), Operations\+::ldc(), Operations\+::ldc\+\_\+w(), print\+Arquivo\+\_\+\+Constant\+Pool() e Leitor\+Exibidor\+::set\+Constant\+Pool().
+
+\mbox{\Hypertarget{structcp__info_a045b8801a6e96a2a31d3b62ea684f141}\label{structcp__info_a045b8801a6e96a2a31d3b62ea684f141}} 
 \index{cp\+\_\+info@{cp\+\_\+info}!tag@{tag}}
 \index{tag@{tag}!cp\+\_\+info@{cp\+\_\+info}}
 \subsubsection{\texorpdfstring{tag}{tag}}
-{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a9bffe5bb2564f91cd90fb7d06848f9a8}{U1} cp\+\_\+info\+::tag}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_ad9f4cdb6757615aae2fad89dab3c5470}{u1} cp\+\_\+info\+::tag}
 
 
 
-Definido na linha 19 do ficheiro Constant\+Pool.\+h.
+Definido na linha 182 do ficheiro Basic\+Types.\+h.
 
 
 
-Referenciado por carregar\+Constant\+Pool(), Operations\+::getstatic(), gravar\+Arquivo\+Constant\+Pool(), imprimir\+Constant\+Pool(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::ldc(), Operations\+::ldc2\+\_\+w(), Operations\+::ldc\+\_\+w(), Operations\+::multianewarray() e Operations\+::putstatic().
+Referenciado por Operations\+::anewarray(), Operations\+::checkcast(), exibe\+\_\+\+Constant\+Pool(), Operations\+::func\+\_\+new(), Operations\+::getfield(), get\+Formatted\+Constant(), Operations\+::getstatic(), Leitor\+Exibidor\+::get\+Utf8\+From\+Constant\+Pool(), Operations\+::instanceof(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::ldc(), Operations\+::ldc2\+\_\+w(), Operations\+::ldc\+\_\+w(), Operations\+::multianewarray(), print\+Arquivo\+\_\+\+Constant\+Pool(), Operations\+::putfield(), Operations\+::putstatic() e Leitor\+Exibidor\+::set\+Constant\+Pool().
+
+\mbox{\Hypertarget{structcp__info_a980c5cbcb2aefe984b7a4988f1f71576}\label{structcp__info_a980c5cbcb2aefe984b7a4988f1f71576}} 
+\index{cp\+\_\+info@{cp\+\_\+info}!utf8\+\_\+info@{utf8\+\_\+info}}
+\index{utf8\+\_\+info@{utf8\+\_\+info}!cp\+\_\+info@{cp\+\_\+info}}
+\subsubsection{\texorpdfstring{utf8\+\_\+info}{utf8\_info}}
+{\footnotesize\ttfamily \hyperlink{structCONSTANT__Utf8__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info} cp\+\_\+info\+::utf8\+\_\+info}
+
+
+
+Definido na linha 194 do ficheiro Basic\+Types.\+h.
+
+
+
+Referenciado por Frame\+::encontrar\+Attributes(), exibe\+\_\+\+Attribute\+Info(), exibe\+\_\+\+Constant\+Pool(), get\+Formatted\+Constant(), Leitor\+Exibidor\+::get\+Utf8\+From\+Constant\+Pool(), Operations\+::ldc(), Operations\+::ldc\+\_\+w(), print\+\_\+\+Attribute\+Info(), print\+Arquivo\+\_\+\+Constant\+Pool() e Leitor\+Exibidor\+::set\+Constant\+Pool().
 
 
 
 A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
 \item 
-include/\hyperlink{ConstantPool_8h}{Constant\+Pool.\+h}\end{DoxyCompactItemize}
+include/\hyperlink{BasicTypes_8h}{Basic\+Types.\+h}\end{DoxyCompactItemize}

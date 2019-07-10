@@ -85,28 +85,21 @@ $(document).ready(function(){initNavTree('LeitorExibidor_8h.html','');});
 <div class="title">Referência ao ficheiro LeitorExibidor.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;cstdio&gt;</code><br />
+<code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+<code>#include &lt;cassert&gt;</code><br />
+<code>#include &lt;cstdbool&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &quot;<a class="el" href="BasicTypes_8h_source.html">BasicTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ClassFile_8h_source.html">ClassFile.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Diagrama de dependências de inclusão para LeitorExibidor.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="LeitorExibidor_8h__incl.png" border="0" usemap="#include_2LeitorExibidor_8h" alt=""/></div>
 <map name="include_2LeitorExibidor_8h" id="include_2LeitorExibidor_8h">
-<area shape="rect" id="node2" href="ClassFile_8h.html" title="Definição da ClassFile. " alt="" coords="864,80,952,107"/>
-<area shape="rect" id="node10" href="BasicTypes_8h.html" title="Tipos básicos utilizados para implementarmos a JVM. " alt="" coords="863,603,966,629"/>
-<area shape="rect" id="node15" href="ConstantPool_8h.html" title="Módulo Constant pool. " alt="" coords="589,528,701,555"/>
-<area shape="rect" id="node16" href="Flags_8h.html" title="ClassFlags (public, final, super, interface and abstract) " alt="" coords="398,528,463,555"/>
-<area shape="rect" id="node17" href="Fields_8h.html" title="Gerencia as informações dos campos do arquivo .class. " alt="" coords="366,379,434,405"/>
-<area shape="rect" id="node18" href="Attributes_8h.html" title="Atributos a serem usados na execuçao da JVM. " alt="" coords="193,453,282,480"/>
-<area shape="rect" id="node19" href="Interfaces_8h.html" title="Gerencia as informações da interfaces do arquivo .class. " alt="" coords="813,453,904,480"/>
-<area shape="rect" id="node20" href="Methods_8h.html" title="Gerencia as informações dos metodos do arquivo .class. " alt="" coords="509,379,592,405"/>
-<area shape="rect" id="node21" href="StaticClass_8h.html" title="Definição da StaticClass. " alt="" coords="1427,379,1528,405"/>
-<area shape="rect" id="node25" href="InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="1427,453,1544,480"/>
-<area shape="rect" id="node28" href="MethodArea_8h.html" title="Responsável por todas as operações que gerenciam os métodos. " alt="" coords="971,155,1074,181"/>
-<area shape="rect" id="node22" href="OperandsStack_8h.html" title="Pilha responsável por armazenar os operandos da JVM. " alt="" coords="1224,528,1347,555"/>
-<area shape="rect" id="node26" href="Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="1464,528,1528,555"/>
-<area shape="rect" id="node31" href="PilhaJVM_8h.html" title="Contém tudo necessário para a execução de um método. " alt="" coords="971,229,1061,256"/>
-<area shape="rect" id="node32" href="LocalVariables_8h.html" title="Stores local variables to current method. " alt="" coords="1081,528,1199,555"/>
-<area shape="rect" id="node34" href="Operations_8h.html" title="Operations.h" alt="" coords="1232,304,1328,331"/>
+<area shape="rect" id="node8" href="BasicTypes_8h.html" title="BasicTypes.h" alt="" coords="455,155,557,181"/>
+<area shape="rect" id="node10" href="ClassFile_8h.html" title="Definição da ClassFile. " alt="" coords="655,80,743,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -114,8 +107,24 @@ Este grafo mostra quais são os ficheiros que incluem directamente ou indirectam
 <div class="dyncontent">
 <div class="center"><img src="LeitorExibidor_8h__dep__incl.png" border="0" usemap="#include_2LeitorExibidor_8hdep" alt=""/></div>
 <map name="include_2LeitorExibidor_8hdep" id="include_2LeitorExibidor_8hdep">
-<area shape="rect" id="node2" href="LeitorExibidor_8cpp.html" title="src/LeitorExibidor.cpp" alt="" coords="5,80,153,107"/>
-<area shape="rect" id="node3" href="Main_8cpp.html" title="Modulo principal, dá a opção de escolha entre exibidor e interpretador. " alt="" coords="177,80,275,107"/>
+<area shape="rect" id="node2" href="Main_8cpp.html" title="src/Main.cpp" alt="" coords="162,304,259,331"/>
+<area shape="rect" id="node3" href="MethodArea_8cpp.html" title="src/MethodArea.cpp" alt="" coords="228,379,367,405"/>
+<area shape="rect" id="node4" href="ClassVisao_8h.html" title="include/ClassVisao.h" alt="" coords="670,229,815,256"/>
+<area shape="rect" id="node10" href="StaticClass_8h.html" title="include/StaticClass.h" alt="" coords="484,80,631,107"/>
+<area shape="rect" id="node17" href="Utils_8h.html" title="include/Utils.h" alt="" coords="847,229,953,256"/>
+<area shape="rect" id="node5" href="ClassVisao_8cpp.html" title="src/ClassVisao.cpp" alt="" coords="827,304,963,331"/>
+<area shape="rect" id="node6" href="Frame_8cpp.html" title="src/Frame.cpp" alt="" coords="987,304,1093,331"/>
+<area shape="rect" id="node7" href="InstanceClass_8cpp.html" title="src/InstanceClass.cpp" alt="" coords="386,304,539,331"/>
+<area shape="rect" id="node8" href="Operations_8cpp.html" title="src/Operations.cpp" alt="" coords="990,379,1122,405"/>
+<area shape="rect" id="node9" href="StaticClass_8cpp.html" title="src/StaticClass.cpp" alt="" coords="563,304,701,331"/>
+<area shape="rect" id="node11" href="InstanceClass_8h.html" title="include/InstanceClass.h" alt="" coords="432,155,595,181"/>
+<area shape="rect" id="node12" href="Frame_8h.html" title="include/Frame.h" alt="" coords="983,229,1097,256"/>
+<area shape="rect" id="node16" href="MethodArea_8h.html" title="include/MethodArea.h" alt="" coords="361,229,509,256"/>
+<area shape="rect" id="node15" href="Operations_8h.html" title="include/Operations.h" alt="" coords="43,229,184,256"/>
+<area shape="rect" id="node13" href="PilhaJVM_8h.html" title="include/PilhaJVM.h" alt="" coords="1410,304,1545,331"/>
+<area shape="rect" id="node14" href="PilhaJVM_8cpp.html" title="src/PilhaJVM.cpp" alt="" coords="1415,379,1540,405"/>
+<area shape="rect" id="node18" href="LeitorExibidor_8cpp.html" title="src/LeitorExibidor.cpp" alt="" coords="1238,304,1386,331"/>
+<area shape="rect" id="node19" href="Utils_8cpp.html" title="src/Utils.cpp" alt="" coords="1117,304,1213,331"/>
 </map>
 </div>
 </div>
@@ -124,6 +133,7 @@ Este grafo mostra quais são os ficheiros que incluem directamente ou indirectam
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Componentes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLeitorExibidor.html">LeitorExibidor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A classe <a class="el" href="classLeitorExibidor.html" title="A classe LeitorExibidor contém o necessário para ler o bytecode, exibilo e armazena-lo em memoria...">LeitorExibidor</a> contém o necessário para ler o bytecode, exibilo e armazena-lo em memoria.  <a href="classLeitorExibidor.html#details">Mais...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

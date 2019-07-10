@@ -1,4 +1,4 @@
 <map id="Operations::wide" name="Operations::wide">
-<area shape="rect" id="node2" href="$classOperations.html#ab63307824c7d6412e0afb1d037b995f1" title="Operations::executarOperacao" alt="" coords="173,5,372,32"/>
-<area shape="rect" id="node3" href="$classOperations.html#a6906050cc72d774f77d8ba33607b1c62" title="Function that returns a n bytes value. " alt="" coords="173,56,372,83"/>
+<area shape="rect" id="node2" href="$classPilhaJVM.html#a13bf1c43de7819ea7761616f7a04c3b9" title="Obter a única instância da pilha. " alt="" coords="177,5,332,32"/>
+<area shape="rect" id="node3" href="$classPilhaJVM.html#aa0e43da476df6147c86c8cc3d6899718" title="Obtém o frame no topo da pilha da JVM. " alt="" coords="173,56,336,83"/>
 </map>

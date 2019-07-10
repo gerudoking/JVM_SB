@@ -1,9 +1,8 @@
 <map id="Operations::ldc" name="Operations::ldc">
-<area shape="rect" id="node2" href="$classOperandsStack.html#a50b642d5ff6a7a1f56b8cfc75bde1192" title="Verifica o tipo do elemento que deve ser empilhado e chama a função adequada. " alt="" coords="179,107,348,133"/>
-<area shape="rect" id="node7" href="$classOperandsStack.html#a47af7d965172984b9cc5c61d8c4c1ce3" title="Empilha um valor de tipo referencia. " alt="" coords="411,157,643,184"/>
-<area shape="rect" id="node8" href="$classOperations.html#a6906050cc72d774f77d8ba33607b1c62" title="Function that returns a n bytes value. " alt="" coords="164,208,363,235"/>
-<area shape="rect" id="node3" href="$classOperandsStack.html#a45dde91cc54ad980d1cbb7cdb1e084cd" title="Empilha um valor de tipo double. " alt="" coords="421,5,632,32"/>
-<area shape="rect" id="node5" href="$classOperandsStack.html#aeed478b52748b87ac85db261332b633b" title="Empilha um valor de tipo float. " alt="" coords="427,56,626,83"/>
-<area shape="rect" id="node6" href="$classOperandsStack.html#a5006a59c2d815e4a24b055e2e4d2e741" title="Empilha um valor de tipo inteiro. " alt="" coords="435,107,619,133"/>
-<area shape="rect" id="node4" href="$classOperandsStack.html#a6ea316fc2b2503af2175fada4d4a9741" title="retorna o tamanho da pilha de operandos " alt="" coords="691,81,893,108"/>
+<area shape="rect" id="node2" href="$classFrame.html#af2481010c4795fbe1cba48122609cf1e" title="Adiciona um operando na pilha de operandos. " alt="" coords="164,5,363,32"/>
+<area shape="rect" id="node3" href="$classFrame.html#a6863584ef3a6f2e4b1f93fb0deb09f4b" title="Obtém o código do método a partir de um offset. " alt="" coords="205,56,321,83"/>
+<area shape="rect" id="node4" href="$classPilhaJVM.html#a13bf1c43de7819ea7761616f7a04c3b9" title="Obter a única instância da pilha. " alt="" coords="186,107,341,133"/>
+<area shape="rect" id="node5" href="$classPilhaJVM.html#aa0e43da476df6147c86c8cc3d6899718" title="Obtém o frame no topo da pilha da JVM. " alt="" coords="182,157,345,184"/>
+<area shape="rect" id="node6" href="$classFrame.html#a77f9705e64bfbdfc68921b7de11a893f" title="Obter um ponteiro para a pool de constantes referente ao frame atual. " alt="" coords="176,208,351,235"/>
+<area shape="rect" id="node7" href="$classStaticClass.html#ae00772669e7a0e54980ed303ff933cef" title="Destrutor padrão. " alt="" coords="411,208,581,235"/>
 </map>

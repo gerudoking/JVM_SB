@@ -1,18 +1,14 @@
 <map id="src/MethodArea.cpp" name="src/MethodArea.cpp">
-<area shape="rect" id="node2" href="$MethodArea_8h.html" title="Responsável por todas as operações que gerenciam os métodos. " alt="" coords="786,80,889,107"/>
-<area shape="rect" id="node3" href="$StaticClass_8h.html" title="Definição da StaticClass. " alt="" coords="539,304,640,331"/>
-<area shape="rect" id="node4" href="$ClassFile_8h.html" title="Definição da ClassFile. " alt="" coords="645,379,733,405"/>
-<area shape="rect" id="node12" href="$BasicTypes_8h.html" title="Tipos básicos utilizados para implementarmos a JVM. " alt="" coords="1059,677,1162,704"/>
-<area shape="rect" id="node17" href="$ConstantPool_8h.html" title="Módulo Constant pool. " alt="" coords="733,603,845,629"/>
-<area shape="rect" id="node31" href="$PilhaJVM_8h.html" title="Contém tudo necessário para a execução de um método. " alt="" coords="1063,155,1153,181"/>
-<area shape="rect" id="node23" href="$InstanceClass_8h.html" title="Definição da Classe Instance. " alt="" coords="144,453,261,480"/>
-<area shape="rect" id="node24" href="$OperandsStack_8h.html" title="Pilha responsável por armazenar os operandos da JVM. " alt="" coords="1251,528,1373,555"/>
-<area shape="rect" id="node27" href="$Heap_8h.html" title="Gerencia a execução do heap. " alt="" coords="140,528,204,555"/>
-<area shape="rect" id="node18" href="$Flags_8h.html" title="ClassFlags (public, final, super, interface and abstract) " alt="" coords="593,603,658,629"/>
-<area shape="rect" id="node19" href="$Fields_8h.html" title="Gerencia as informações dos campos do arquivo .class. " alt="" coords="606,453,674,480"/>
-<area shape="rect" id="node20" href="$Attributes_8h.html" title="Atributos a serem usados na execuçao da JVM. " alt="" coords="489,528,578,555"/>
-<area shape="rect" id="node21" href="$Interfaces_8h.html" title="Gerencia as informações da interfaces do arquivo .class. " alt="" coords="907,528,997,555"/>
-<area shape="rect" id="node22" href="$Methods_8h.html" title="Gerencia as informações dos metodos do arquivo .class. " alt="" coords="699,453,781,480"/>
-<area shape="rect" id="node32" href="$LocalVariables_8h.html" title="Stores local variables to current method. " alt="" coords="1518,528,1637,555"/>
-<area shape="rect" id="node34" href="$Operations_8h.html" title="Operations.h" alt="" coords="739,229,835,256"/>
+<area shape="rect" id="node2" href="$MethodArea_8h.html" title="MethodArea.h" alt="" coords="1842,229,1945,256"/>
+<area shape="rect" id="node12" href="$LeitorExibidor_8h.html" title="LeitorExibidor.h" alt="" coords="304,379,416,405"/>
+<area shape="rect" id="node23" href="$ClassVisao_8h.html" title="ClassVisao.h" alt="" coords="426,304,526,331"/>
+<area shape="rect" id="node25" href="$Operations_8h.html" title="Operations.h" alt="" coords="779,155,875,181"/>
+<area shape="rect" id="node32" href="$PilhaJVM_8h.html" title="PilhaJVM.h" alt="" coords="1115,80,1205,107"/>
+<area shape="rect" id="node9" href="$BasicTypes_8h.html" title="BasicTypes.h" alt="" coords="789,528,891,555"/>
+<area shape="rect" id="node11" href="$StaticClass_8h.html" title="StaticClass.h" alt="" coords="1552,304,1653,331"/>
+<area shape="rect" id="node17" href="$ClassFile_8h.html" title="Definição da ClassFile. " alt="" coords="176,453,264,480"/>
+<area shape="rect" id="node29" href="$ArrayObject_8h.html" title="ArrayObject.h" alt="" coords="878,379,981,405"/>
+<area shape="rect" id="node31" href="$InstanceClass_8h.html" title="InstanceClass.h" alt="" coords="1400,229,1517,256"/>
+<area shape="rect" id="node30" href="$Object_8h.html" title="Object.h" alt="" coords="805,453,875,480"/>
+<area shape="rect" id="node33" href="$Frame_8h.html" title="Frame.h" alt="" coords="1327,155,1398,181"/>
 </map>

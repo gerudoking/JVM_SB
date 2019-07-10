@@ -1,0 +1,361 @@
+\hypertarget{classArrayObject}{}\section{Referência à classe Array\+Object}
+\label{classArrayObject}\index{Array\+Object@{Array\+Object}}
+
+
+Estrutura de armazenamento.  
+
+
+
+
+{\ttfamily \#include $<$Array\+Object.\+h$>$}
+
+
+
+Diagrama de heranças da classe Array\+Object
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classArrayObject__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboração para Array\+Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classArrayObject__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classArrayObject_afd91a9df894ad32f51e40da74de7f2c4}{Array\+Object} (\hyperlink{BasicTypes_8h_ad9971b6ef33e02ba2c75d19c1d2518a1}{Value\+Type} type)
+\begin{DoxyCompactList}\small\item\em Construtor padrão. \end{DoxyCompactList}\item 
+\hyperlink{classArrayObject_a91c9426247002224d484c32883ff51b1}{$\sim$\+Array\+Object} ()
+\begin{DoxyCompactList}\small\item\em Destrutor padrão. \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_a842c5e2e69277690b064bf363c017980}{Object\+Type} \hyperlink{classArrayObject_a63034d166dcd6caad9261c86c338a417}{object\+Type} ()
+\begin{DoxyCompactList}\small\item\em Representa o tipo de objeto (Object\+Type\+::\+A\+R\+R\+AY). \end{DoxyCompactList}\item 
+\hyperlink{BasicTypes_8h_ad9971b6ef33e02ba2c75d19c1d2518a1}{Value\+Type} \hyperlink{classArrayObject_a389af37c0ab94e2c84985ab1698ce679}{array\+Content\+Type} ()
+\begin{DoxyCompactList}\small\item\em Obtém o tipo de conteúdo do array. \end{DoxyCompactList}\item 
+void \hyperlink{classArrayObject_a3f6f6445f0598bace2e29b338838333f}{push\+Value} (\hyperlink{structValue}{Value} value)
+\begin{DoxyCompactList}\small\item\em Realiza a adição de um valor no array. \end{DoxyCompactList}\item 
+\hyperlink{structValue}{Value} \hyperlink{classArrayObject_ab229e48175e46d03c2fab756cce11b5f}{remove\+At} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Remove um elemento do array dado o seu índice. \end{DoxyCompactList}\item 
+\hyperlink{structValue}{Value} \hyperlink{classArrayObject_a5235153943129699da298a3ecc7cfa14}{remove\+Last} ()
+\begin{DoxyCompactList}\small\item\em Remove o último elemento do array. \end{DoxyCompactList}\item 
+\hyperlink{structValue}{Value} \hyperlink{classArrayObject_aaf722b5670d62f09370aeab36ebe0dfd}{remove\+First} ()
+\begin{DoxyCompactList}\small\item\em Remove o primeiro elemento do array. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classArrayObject_af43b8f4106c2f15def7fecd3e3f6b239}{get\+Size} ()
+\begin{DoxyCompactList}\small\item\em Obtém o tamanho atual do array. \end{DoxyCompactList}\item 
+\hyperlink{structValue}{Value} \hyperlink{classArrayObject_a468341ed2c683c3152a0ea58b2094c0f}{get\+Value} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Obtém o elemento dado o seu índice. \end{DoxyCompactList}\item 
+void \hyperlink{classArrayObject_a20e1735b3bc9db6c9bd219d70355f160}{change\+Value\+At} (uint32\+\_\+t index, \hyperlink{structValue}{Value} value)
+\begin{DoxyCompactList}\small\item\em Substitui um elemento do array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{BasicTypes_8h_ad9971b6ef33e02ba2c75d19c1d2518a1}{Value\+Type} \hyperlink{classArrayObject_a83a4c777ec1059f3e85aaa698442f72b}{\+\_\+array\+Type}
+\item 
+vector$<$ \hyperlink{structValue}{Value} $>$ \hyperlink{classArrayObject_a1d085d50c90613812fdf539472e76b0c}{\+\_\+elements}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Estrutura de armazenamento. 
+
+Representa um objeto do tipo array.. 
+
+Definido na linha 21 do ficheiro Array\+Object.\+h.
+
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{classArrayObject_afd91a9df894ad32f51e40da74de7f2c4}\label{classArrayObject_afd91a9df894ad32f51e40da74de7f2c4}} 
+\index{Array\+Object@{Array\+Object}!Array\+Object@{Array\+Object}}
+\index{Array\+Object@{Array\+Object}!Array\+Object@{Array\+Object}}
+\subsubsection{\texorpdfstring{Array\+Object()}{ArrayObject()}}
+{\footnotesize\ttfamily Array\+Object\+::\+Array\+Object (\begin{DoxyParamCaption}\item[{\hyperlink{BasicTypes_8h_ad9971b6ef33e02ba2c75d19c1d2518a1}{Value\+Type}}]{type }\end{DoxyParamCaption})}
+
+
+
+Construtor padrão. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em type} & O tipo de dado que o array irá armazenar. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 8 do ficheiro Array\+Object.\+cpp.
+
+\mbox{\Hypertarget{classArrayObject_a91c9426247002224d484c32883ff51b1}\label{classArrayObject_a91c9426247002224d484c32883ff51b1}} 
+\index{Array\+Object@{Array\+Object}!````~Array\+Object@{$\sim$\+Array\+Object}}
+\index{````~Array\+Object@{$\sim$\+Array\+Object}!Array\+Object@{Array\+Object}}
+\subsubsection{\texorpdfstring{$\sim$\+Array\+Object()}{~ArrayObject()}}
+{\footnotesize\ttfamily Array\+Object\+::$\sim$\+Array\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destrutor padrão. 
+
+
+
+Definido na linha 12 do ficheiro Array\+Object.\+cpp.
+
+
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classArrayObject_a389af37c0ab94e2c84985ab1698ce679}\label{classArrayObject_a389af37c0ab94e2c84985ab1698ce679}} 
+\index{Array\+Object@{Array\+Object}!array\+Content\+Type@{array\+Content\+Type}}
+\index{array\+Content\+Type@{array\+Content\+Type}!Array\+Object@{Array\+Object}}
+\subsubsection{\texorpdfstring{array\+Content\+Type()}{arrayContentType()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_ad9971b6ef33e02ba2c75d19c1d2518a1}{Value\+Type} Array\+Object\+::array\+Content\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtém o tipo de conteúdo do array. 
+
+\begin{DoxyReturn}{Retorna}
+O tipo que o array armazena. 
+\end{DoxyReturn}
+
+
+Definido na linha 21 do ficheiro Array\+Object.\+cpp.
+
+
+
+Referências \+\_\+array\+Type.
+
+\mbox{\Hypertarget{classArrayObject_a20e1735b3bc9db6c9bd219d70355f160}\label{classArrayObject_a20e1735b3bc9db6c9bd219d70355f160}} 
+\index{Array\+Object@{Array\+Object}!change\+Value\+At@{change\+Value\+At}}
+\index{change\+Value\+At@{change\+Value\+At}!Array\+Object@{Array\+Object}}
+\subsubsection{\texorpdfstring{change\+Value\+At()}{changeValueAt()}}
+{\footnotesize\ttfamily void Array\+Object\+::change\+Value\+At (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{index,  }\item[{\hyperlink{structValue}{Value}}]{value }\end{DoxyParamCaption})}
+
+
+
+Substitui um elemento do array. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em index} & O índice do elemento que será substituído. \\
+\hline
+{\em value} & O novo valor que será colocado. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 72 do ficheiro Array\+Object.\+cpp.
+
+
+
+Referências \+\_\+elements.
+
+\mbox{\Hypertarget{classArrayObject_af43b8f4106c2f15def7fecd3e3f6b239}\label{classArrayObject_af43b8f4106c2f15def7fecd3e3f6b239}} 
+\index{Array\+Object@{Array\+Object}!get\+Size@{get\+Size}}
+\index{get\+Size@{get\+Size}!Array\+Object@{Array\+Object}}
+\subsubsection{\texorpdfstring{get\+Size()}{getSize()}}
+{\footnotesize\ttfamily uint32\+\_\+t Array\+Object\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtém o tamanho atual do array. 
+
+\begin{DoxyReturn}{Retorna}
+O tamanho atual do array. 
+\end{DoxyReturn}
+
+
+Definido na linha 56 do ficheiro Array\+Object.\+cpp.
+
+
+
+Referências \+\_\+elements.
+
+\mbox{\Hypertarget{classArrayObject_a468341ed2c683c3152a0ea58b2094c0f}\label{classArrayObject_a468341ed2c683c3152a0ea58b2094c0f}} 
+\index{Array\+Object@{Array\+Object}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!Array\+Object@{Array\+Object}}
+\subsubsection{\texorpdfstring{get\+Value()}{getValue()}}
+{\footnotesize\ttfamily \hyperlink{structValue}{Value} Array\+Object\+::get\+Value (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Obtém o elemento dado o seu índice. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em index} & O índice do elemento. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O elemento do array de índice index. 
+\end{DoxyReturn}
+
+
+Definido na linha 60 do ficheiro Array\+Object.\+cpp.
+
+
+
+Referências \+\_\+elements.
+
+\mbox{\Hypertarget{classArrayObject_a63034d166dcd6caad9261c86c338a417}\label{classArrayObject_a63034d166dcd6caad9261c86c338a417}} 
+\index{Array\+Object@{Array\+Object}!object\+Type@{object\+Type}}
+\index{object\+Type@{object\+Type}!Array\+Object@{Array\+Object}}
+\subsubsection{\texorpdfstring{object\+Type()}{objectType()}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_a842c5e2e69277690b064bf363c017980}{Object\+Type} Array\+Object\+::object\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Representa o tipo de objeto (Object\+Type\+::\+A\+R\+R\+AY). 
+
+\begin{DoxyReturn}{Retorna}
+O tipo de objeto. 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classObject_a08cee945bc224fc81f4448086625183d}{Object}.
+
+
+
+Definido na linha 17 do ficheiro Array\+Object.\+cpp.
+
+
+
+Referências A\+R\+R\+AY.
+
+\mbox{\Hypertarget{classArrayObject_a3f6f6445f0598bace2e29b338838333f}\label{classArrayObject_a3f6f6445f0598bace2e29b338838333f}} 
+\index{Array\+Object@{Array\+Object}!push\+Value@{push\+Value}}
+\index{push\+Value@{push\+Value}!Array\+Object@{Array\+Object}}
+\subsubsection{\texorpdfstring{push\+Value()}{pushValue()}}
+{\footnotesize\ttfamily void Array\+Object\+::push\+Value (\begin{DoxyParamCaption}\item[{\hyperlink{structValue}{Value}}]{value }\end{DoxyParamCaption})}
+
+
+
+Realiza a adição de um valor no array. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em value} & O valor que será inserido no array. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 25 do ficheiro Array\+Object.\+cpp.
+
+
+
+Referências \+\_\+array\+Type, \+\_\+elements e Value\+::type.
+
+
+
+Referenciado por Operations\+::newarray() e Operations\+::populate\+Multiarray().
+
+\mbox{\Hypertarget{classArrayObject_ab229e48175e46d03c2fab756cce11b5f}\label{classArrayObject_ab229e48175e46d03c2fab756cce11b5f}} 
+\index{Array\+Object@{Array\+Object}!remove\+At@{remove\+At}}
+\index{remove\+At@{remove\+At}!Array\+Object@{Array\+Object}}
+\subsubsection{\texorpdfstring{remove\+At()}{removeAt()}}
+{\footnotesize\ttfamily \hyperlink{structValue}{Value} Array\+Object\+::remove\+At (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Remove um elemento do array dado o seu índice. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em index} & O índice do elemento que será removido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O valor removido. 
+\end{DoxyReturn}
+
+
+Definido na linha 31 do ficheiro Array\+Object.\+cpp.
+
+
+
+Referências \+\_\+elements.
+
+\mbox{\Hypertarget{classArrayObject_aaf722b5670d62f09370aeab36ebe0dfd}\label{classArrayObject_aaf722b5670d62f09370aeab36ebe0dfd}} 
+\index{Array\+Object@{Array\+Object}!remove\+First@{remove\+First}}
+\index{remove\+First@{remove\+First}!Array\+Object@{Array\+Object}}
+\subsubsection{\texorpdfstring{remove\+First()}{removeFirst()}}
+{\footnotesize\ttfamily \hyperlink{structValue}{Value} Array\+Object\+::remove\+First (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remove o primeiro elemento do array. 
+
+\begin{DoxyReturn}{Retorna}
+O valor removido. 
+\end{DoxyReturn}
+
+
+Definido na linha 48 do ficheiro Array\+Object.\+cpp.
+
+
+
+Referências \+\_\+elements.
+
+\mbox{\Hypertarget{classArrayObject_a5235153943129699da298a3ecc7cfa14}\label{classArrayObject_a5235153943129699da298a3ecc7cfa14}} 
+\index{Array\+Object@{Array\+Object}!remove\+Last@{remove\+Last}}
+\index{remove\+Last@{remove\+Last}!Array\+Object@{Array\+Object}}
+\subsubsection{\texorpdfstring{remove\+Last()}{removeLast()}}
+{\footnotesize\ttfamily \hyperlink{structValue}{Value} Array\+Object\+::remove\+Last (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remove o último elemento do array. 
+
+\begin{DoxyReturn}{Retorna}
+O valor removido. 
+\end{DoxyReturn}
+
+
+Definido na linha 40 do ficheiro Array\+Object.\+cpp.
+
+
+
+Referências \+\_\+elements.
+
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{classArrayObject_a83a4c777ec1059f3e85aaa698442f72b}\label{classArrayObject_a83a4c777ec1059f3e85aaa698442f72b}} 
+\index{Array\+Object@{Array\+Object}!\+\_\+array\+Type@{\+\_\+array\+Type}}
+\index{\+\_\+array\+Type@{\+\_\+array\+Type}!Array\+Object@{Array\+Object}}
+\subsubsection{\texorpdfstring{\+\_\+array\+Type}{\_arrayType}}
+{\footnotesize\ttfamily \hyperlink{BasicTypes_8h_ad9971b6ef33e02ba2c75d19c1d2518a1}{Value\+Type} Array\+Object\+::\+\_\+array\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+O tipo de valor que o array armazena. 
+
+Definido na linha 96 do ficheiro Array\+Object.\+h.
+
+
+
+Referenciado por array\+Content\+Type() e push\+Value().
+
+\mbox{\Hypertarget{classArrayObject_a1d085d50c90613812fdf539472e76b0c}\label{classArrayObject_a1d085d50c90613812fdf539472e76b0c}} 
+\index{Array\+Object@{Array\+Object}!\+\_\+elements@{\+\_\+elements}}
+\index{\+\_\+elements@{\+\_\+elements}!Array\+Object@{Array\+Object}}
+\subsubsection{\texorpdfstring{\+\_\+elements}{\_elements}}
+{\footnotesize\ttfamily vector$<$\hyperlink{structValue}{Value}$>$ Array\+Object\+::\+\_\+elements\hspace{0.3cm}{\ttfamily [private]}}
+
+O vetor interno que armazena os elementos. 
+
+Definido na linha 101 do ficheiro Array\+Object.\+h.
+
+
+
+Referenciado por change\+Value\+At(), get\+Size(), get\+Value(), push\+Value(), remove\+At(), remove\+First() e remove\+Last().
+
+
+
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{ArrayObject_8h}{Array\+Object.\+h}\item 
+src/\hyperlink{ArrayObject_8cpp}{Array\+Object.\+cpp}\end{DoxyCompactItemize}

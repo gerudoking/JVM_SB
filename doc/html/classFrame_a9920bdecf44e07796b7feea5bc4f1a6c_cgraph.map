@@ -1,0 +1,16 @@
+<map id="Frame::obterMethodNamed" name="Frame::obterMethodNamed">
+<area shape="rect" id="node2" href="$classMethodArea.html#a6e5cd27f3133d70a8c56c5daf9190ba6" title="Carrega a classe com o nome dado e a adiciona na área de métodos. " alt="" coords="235,245,416,287"/>
+<area shape="rect" id="node8" href="$classStaticClass.html#ae00772669e7a0e54980ed303ff933cef" title="Destrutor padrão. " alt="" coords="711,143,881,170"/>
+<area shape="rect" id="node9" href="$ClassVisao_8cpp.html#ad59936a226470583b59565cf99f4375e" title="getFormattedConstant" alt="" coords="720,253,872,279"/>
+<area shape="rect" id="node15" href="$classMethodArea.html#ab5fadec94ada20bc6381e7e9ac766cad" title="Obter a única instância do MethodArea. " alt="" coords="241,514,409,541"/>
+<area shape="rect" id="node3" href="$classMethodArea.html#a1fb65cf5f35cadbe2be8ad1aece57025" title="Busca por uma classe com o nome qualificado passado (e.g. java/lang/Object). " alt="" coords="464,362,659,389"/>
+<area shape="rect" id="node4" href="$classLeitorExibidor.html#ab6f5cece56cf5d2e486a5512d52de392" title="Obter a única instância do ClassLoader. " alt="" coords="473,413,650,439"/>
+<area shape="rect" id="node5" href="$classLeitorExibidor.html#af6f4f84cbfaf72e6673e1dc42023b308" title="LeitorExibidor::readClassFile" alt="" coords="467,42,656,69"/>
+<area shape="rect" id="node7" href="$classMethodArea.html#a9e4e378de46c1a9836820d86cd9dadb8" title="Adiciona uma classe à área de métodos. " alt="" coords="484,143,639,170"/>
+<area shape="rect" id="node11" href="$classOperations.html#afd99f64338fb7f1d1b813254f005bf9a" title="Obter a única instância da Execution Engine. " alt="" coords="481,194,642,221"/>
+<area shape="rect" id="node12" href="$classOperations.html#a397caddc1ff805c556d3b71c9e525e3f" title="Verifica se o método informado existe na classe atual. " alt="" coords="470,245,653,287"/>
+<area shape="rect" id="node13" href="$classPilhaJVM.html#a13bf1c43de7819ea7761616f7a04c3b9" title="Obter a única instância da pilha. " alt="" coords="484,311,639,338"/>
+<area shape="rect" id="node14" href="$classPilhaJVM.html#a64d7185bc812d3c81e5270c54c212e07" title="Adiciona um frame na pilha da JVM. " alt="" coords="489,93,633,119"/>
+<area shape="rect" id="node6" href="$classUtils.html#a71459ff272f47bbce2081ff59fae2d2c" title="Utils::verificarVersaoClass" alt="" coords="707,42,885,69"/>
+<area shape="rect" id="node10" href="$classUtils.html#abef6742f09f81fea5952454925325ea5" title="Utils::converterStreamTo\lCString" alt="" coords="933,245,1101,287"/>
+</map>

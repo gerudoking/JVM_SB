@@ -1,0 +1,27 @@
+var classFrame =
+[
+    [ "Frame", "classFrame.html#a3318a2cfd762b3a31adc4f101cb006e6", null ],
+    [ "Frame", "classFrame.html#aa4ea414fba16a44e8c556bb0b9cfc831", null ],
+    [ "~Frame", "classFrame.html#abec8c7bccdfc88cb4da137caae9f73d6", null ],
+    [ "backupOperandStack", "classFrame.html#a874ac5162f805570d944a807ebf2bd40", null ],
+    [ "desempilhaOperandStack", "classFrame.html#a93c26ae659c3f1b11837a0e9942acb20", null ],
+    [ "empilharOperandStack", "classFrame.html#af2481010c4795fbe1cba48122609cf1e", null ],
+    [ "encontrarAttributes", "classFrame.html#a6950091ee708f622befdfcc7c35b7025", null ],
+    [ "getCode", "classFrame.html#a6863584ef3a6f2e4b1f93fb0deb09f4b", null ],
+    [ "getObject", "classFrame.html#a4a45cafe1eee6c6b2ae6a04e284163f9", null ],
+    [ "obterConstantPool", "classFrame.html#a77f9705e64bfbdfc68921b7de11a893f", null ],
+    [ "obterLocalVariableValue", "classFrame.html#ae074652eb3b71fb4cb28afd1ba91885d", null ],
+    [ "obterMethodNamed", "classFrame.html#a9920bdecf44e07796b7feea5bc4f1a6c", null ],
+    [ "setOperandStackFromBackup", "classFrame.html#afda87a144c907a9220ea2209ad3cd429", null ],
+    [ "sizeCode", "classFrame.html#a3151aeb977a24c464ed8930c9100715d", null ],
+    [ "sizeLocalVariables", "classFrame.html#a2b65f6fa2195970fd25d69c17b5ca933", null ],
+    [ "trocaLocalVariable", "classFrame.html#adfa57fa3049213f13beba10ba7152500", null ],
+    [ "_classRuntime", "classFrame.html#aa6f380f48c5bac83780daed06dc04f9e", null ],
+    [ "_codeAttribute", "classFrame.html#a0b7e80617513d7c1879e20510622103d", null ],
+    [ "_exceptionsAttribute", "classFrame.html#a5e98b7eb6642b16c03a75ec1f96c4fc4", null ],
+    [ "_localVariables", "classFrame.html#af9a215cbac749f3f51e1e7fe239f2010", null ],
+    [ "_method", "classFrame.html#af9658f71efb91988fa39a224ce9ec9c6", null ],
+    [ "_object", "classFrame.html#a618b0873a50306f7805ea09685e8eee9", null ],
+    [ "_operandStack", "classFrame.html#abb8b7f1997e7f3da06d6b0f9aaf61ab2", null ],
+    [ "pc", "classFrame.html#ada6a6cf76d00cbadf43a86a686dd026c", null ]
+];

@@ -1,7 +1,15 @@
 <map id="Code_attribute" name="Code_attribute">
-<area shape="rect" id="node3" href="$unionT__info.html" title="Estrutura de dados que agrega informações sobre cada atributo lido. " alt="" coords="277,184,336,211"/>
-<area shape="rect" id="node2" href="$structAttribute__info.html" title="Protótipo da struct &quot;attribute_info&quot;. " alt="" coords="331,273,429,300"/>
-<area shape="rect" id="node4" href="$structConstantValue__attribute.html" title="Struct para carregar o index dos atributos da &quot;constantpool&quot;. " alt="" coords="5,95,168,121"/>
-<area shape="rect" id="node5" href="$structException__attribute.html" title="Estrutura de dados para salvar atributos de tipo &quot;exception&quot;. " alt="" coords="193,95,327,121"/>
-<area shape="rect" id="node6" href="$structT__exception__table.html" title="Struct para salvar exceções identificadas. Será utilizada como componente da struct &quot;code_attribute&quot;..." alt="" coords="365,5,493,32"/>
+<area shape="rect" id="node2" href="$structattribute__info.html" title="attribute_info" alt="" coords="661,241,759,268"/>
+<area shape="rect" id="node3" href="$structLineNumberTable__attribute.html" title="LineNumberTable_attribute" alt="" coords="296,13,475,40"/>
+<area shape="rect" id="node4" href="$structLineNumberTable.html" title="LineNumberTable" alt="" coords="9,13,133,40"/>
+<area shape="rect" id="node5" href="$structConstantValue__attribute.html" title="ConstantValue_attribute" alt="" coords="304,64,467,91"/>
+<area shape="rect" id="node6" href="$structSynthetic__attribute.html" title="Synthetic_attribute" alt="" coords="320,115,451,141"/>
+<area shape="rect" id="node7" href="$structInnerClasses__attribute.html" title="InnerClasses_attribute" alt="" coords="309,165,462,192"/>
+<area shape="rect" id="node8" href="$structClass.html" title="Class" alt="" coords="43,165,99,192"/>
+<area shape="rect" id="node9" href="$structSourceFile__attribute.html" title="SourceFile_attribute" alt="" coords="316,216,455,243"/>
+<area shape="rect" id="node10" href="$structDeprecated__attribute.html" title="Deprecated_attribute" alt="" coords="314,267,457,293"/>
+<area shape="rect" id="node11" href="$structLocalVariableTable__attribute.html" title="LocalVariableTable\l_attribute" alt="" coords="319,318,451,359"/>
+<area shape="rect" id="node12" href="$structLocalVariableTable.html" title="LocalVariableTable" alt="" coords="5,325,137,352"/>
+<area shape="rect" id="node13" href="$structExceptions__attribute.html" title="Exceptions_attribute" alt="" coords="315,384,456,411"/>
+<area shape="rect" id="node14" href="$structExceptionTable.html" title="ExceptionTable" alt="" coords="15,440,127,467"/>
 </map>
