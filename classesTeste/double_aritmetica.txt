@@ -1,116 +1,262 @@
+General Information
+{
+	 Minor Version: 		 0
+	 Major Version: 		 46 [1.2]
+	 Constant pool count: 		 31
+	 Access Flags: 			 0x0021 [public super ]
+	 This class: 			 cp_info #8 <double_aritmetica>
+	 Super class: 			 cp_info #9 <java/lang/Object>
+	 Interfaces count: 		 0
+	 Fields count: 			 0
+	 Methods pool count: 		 2
+	 Attributes pool count: 	 1
+}
 
-Minor version:		 0
-Major version:		 46
-Número de Constant pool: 31
-Flags: ACC_PUBLICACC_SUPER (0x21)
-This class:		 cp info #8 <double_aritmetica>
-Super class:		 cp info #9 <java/lang/Object>
-Número de Interfaces:	 0
-Número de Campos:	 0
-Número de Metodos:	 2
-Número de Atributos:	 1
+Constant Pool (Member count: 31)
+{
+	 [1] CONSTANT_Methodref_info
+		 Class name: 			 cp_info #9 <java/lang/Object>
+ 		 Name and type: 		 cp_info #18 <<init>()V>
 
-Constant Pool:
-	 [ 1 ]Method cp info #9  cp info #18		// java/lang/Object  <init>  ()V
-	 [ 2 ]Double	98.24d
-	 [ 4 ]Double	134.87d
-	 [ 6 ]Field cp info #19  cp info #20		// java/lang/System  out  Ljava/io/PrintStream;
-	 [ 7 ]Method cp info #21  cp info #22		// java/io/PrintStream  println  (D)V
-	 [ 8 ]Class 23		// double_aritmetica
-	 [ 9 ]Class 24		// java/lang/Object
-	 [ 10 ]UTF-8	<init>
-	 [ 11 ]UTF-8	()V
-	 [ 12 ]UTF-8	Code
-	 [ 13 ]UTF-8	LineNumberTable
-	 [ 14 ]UTF-8	main
-	 [ 15 ]UTF-8	([Ljava/lang/String;)V
-	 [ 16 ]UTF-8	SourceFile
-	 [ 17 ]UTF-8	double_aritmetica.java
-	 [ 18 ]Name and Type cp info #10  cp info #11		// <init>  ()V
-	 [ 19 ]Class 25		// java/lang/System
-	 [ 20 ]Name and Type cp info #26  cp info #27		// out  Ljava/io/PrintStream;
-	 [ 21 ]Class 28		// java/io/PrintStream
-	 [ 22 ]Name and Type cp info #29  cp info #30		// println  (D)V
-	 [ 23 ]UTF-8	double_aritmetica
-	 [ 24 ]UTF-8	java/lang/Object
-	 [ 25 ]UTF-8	java/lang/System
-	 [ 26 ]UTF-8	out
-	 [ 27 ]UTF-8	Ljava/io/PrintStream;
-	 [ 28 ]UTF-8	java/io/PrintStream
-	 [ 29 ]UTF-8	println
-	 [ 30 ]UTF-8	(D)V
+	 [2] CONSTANT_Double_info
+		 High Bytes: 			 0x40588F5C
+		 Low Bytes: 			 0x28F5C28F
+		 Double: 			 98.240000
 
-	Method 0:
-		Nome: cp info #10 <init>
-		Descritor: cp info # 11()V
-		flags: ACC_PUBLIC
-		Número de Atributos: 1
-	Attribute 0: 
-		Nome: cp info #12 Code
-		Número de Atributos: 29
-		Misc: 
-			Max Stack: 1
-			Max Locals: 1
-			Code Length: 5
-		Bytecode: 
-			0  aload_0
-			1  invokespecial #1
-			4  return
-		Exception Table Length: 0
-		Número de Atributos: 1
-		Nome: cp info #13 LineNumberTable
-		Número de Atributos: 6
-	Method 1:
-		Nome: cp info #14 main
-		Descritor: cp info # 15([Ljava/lang/String;)V
-		flags: ACC_PUBLIC, ACC_STATIC
-		Número de Atributos: 1
-	Attribute 0: 
-		Nome: cp info #12 Code
-		Número de Atributos: 118
-		Misc: 
-			Max Stack: 5
-			Max Locals: 5
-			Code Length: 62
-		Bytecode: 
-			0  ldc2_w #2
-			3  dstore_1
-			4  ldc2_w #4
-			7  dstore_3
-			8  getstatic #6
-			11  dload_1
-			12  dload_3
-			13  dadd
-			14  invokevirtual #7
-			17  getstatic #6
-			20  dload_1
-			21  dload_3
-			22  dsub
-			23  invokevirtual #7
-			26  getstatic #6
-			29  dload_1
-			30  dload_3
-			31  dmul
-			32  invokevirtual #7
-			35  getstatic #6
-			38  dload_1
-			39  dload_3
-			40  ddiv
-			41  invokevirtual #7
-			44  getstatic #6
-			47  dload_1
-			48  dneg
-			49  invokevirtual #7
-			52  getstatic #6
-			55  dload_3
-			56  dload_1
-			57  drem
-			58  invokevirtual #7
-			61  return
-		Exception Table Length: 0
-		Número de Atributos: 1
-		Nome: cp info #13 LineNumberTable
-		Número de Atributos: 38
-	Atributo 0: 
-		Nome: cp info #16 SourceFile
-		Número de Atributos: 2
+	 [3] (large numeric continued)
+
+	 [4] CONSTANT_Double_info
+		 High Bytes: 			 0x4060DBD7
+		 Low Bytes: 			 0x0A3D70A4
+		 Double: 			 134.870000
+
+	 [5] (large numeric continued)
+
+	 [6] CONSTANT_Fieldref_info
+		 Class name: 			 cp_info #19 <java/lang/System>
+ 		 Name and type: 		 cp_info #20 <outLjava/io/PrintStream;>
+
+	 [7] CONSTANT_Methodref_info
+		 Class name: 			 cp_info #21 <java/io/PrintStream>
+ 		 Name and type: 		 cp_info #22 <println(D)V>
+
+	 [8] CONSTANT_Class_info
+		 Class name: 			 cp_info #23 <double_aritmetica>
+
+	 [9] CONSTANT_Class_info
+		 Class name: 			 cp_info #24 <java/lang/Object>
+
+	 [10] CONSTANT_Utf8_info
+		 Length of byte array: 		 6
+		 Length of string: 		 6
+		 String: 			 <init>
+
+	 [11] CONSTANT_Utf8_info
+		 Length of byte array: 		 3
+		 Length of string: 		 3
+		 String: 			 ()V
+
+	 [12] CONSTANT_Utf8_info
+		 Length of byte array: 		 4
+		 Length of string: 		 4
+		 String: 			 Code
+
+	 [13] CONSTANT_Utf8_info
+		 Length of byte array: 		 15
+		 Length of string: 		 15
+		 String: 			 LineNumberTable
+
+	 [14] CONSTANT_Utf8_info
+		 Length of byte array: 		 4
+		 Length of string: 		 4
+		 String: 			 main
+
+	 [15] CONSTANT_Utf8_info
+		 Length of byte array: 		 22
+		 Length of string: 		 22
+		 String: 			 ([Ljava/lang/String;)V
+
+	 [16] CONSTANT_Utf8_info
+		 Length of byte array: 		 10
+		 Length of string: 		 10
+		 String: 			 SourceFile
+
+	 [17] CONSTANT_Utf8_info
+		 Length of byte array: 		 22
+		 Length of string: 		 22
+		 String: 			 double_aritmetica.java
+
+	 [18] CONSTANT_NameAndType_info
+		 Name: 				 cp_info #10 <<init>>
+		 Descriptor: 			 cp_info #11 <()V>
+
+	 [19] CONSTANT_Class_info
+		 Class name: 			 cp_info #25 <java/lang/System>
+
+	 [20] CONSTANT_NameAndType_info
+		 Name: 				 cp_info #26 <out>
+		 Descriptor: 			 cp_info #27 <Ljava/io/PrintStream;>
+
+	 [21] CONSTANT_Class_info
+		 Class name: 			 cp_info #28 <java/io/PrintStream>
+
+	 [22] CONSTANT_NameAndType_info
+		 Name: 				 cp_info #29 <println>
+		 Descriptor: 			 cp_info #30 <(D)V>
+
+	 [23] CONSTANT_Utf8_info
+		 Length of byte array: 		 17
+		 Length of string: 		 17
+		 String: 			 double_aritmetica
+
+	 [24] CONSTANT_Utf8_info
+		 Length of byte array: 		 16
+		 Length of string: 		 16
+		 String: 			 java/lang/Object
+
+	 [25] CONSTANT_Utf8_info
+		 Length of byte array: 		 16
+		 Length of string: 		 16
+		 String: 			 java/lang/System
+
+	 [26] CONSTANT_Utf8_info
+		 Length of byte array: 		 3
+		 Length of string: 		 3
+		 String: 			 out
+
+	 [27] CONSTANT_Utf8_info
+		 Length of byte array: 		 21
+		 Length of string: 		 21
+		 String: 			 Ljava/io/PrintStream;
+
+	 [28] CONSTANT_Utf8_info
+		 Length of byte array: 		 19
+		 Length of string: 		 19
+		 String: 			 java/io/PrintStream
+
+	 [29] CONSTANT_Utf8_info
+		 Length of byte array: 		 7
+		 Length of string: 		 7
+		 String: 			 println
+
+	 [30] CONSTANT_Utf8_info
+		 Length of byte array: 		 4
+		 Length of string: 		 4
+		 String: 			 (D)V
+
+}
+
+Interfaces (Member count: 0) 
+{
+}
+
+Fields (Member count: 0)
+{
+}
+
+Methods (Member count: 2)
+{
+	[0] <init>
+	{
+		Name: 		 cp_info #10 <<init>>
+		Descriptor: 	 cp_info #11 <()V>
+		Access flags: 	 0x0001 [public ]
+		Attributes:
+			[0] Code
+				Attribute name index:	 cp_info #12
+				Attribute length:	 29
+				Maximum stack depth:	 1
+				Maximum local variables: 1
+				Code length:		 5
+				Exception table:
+					Exception table is empty.
+				Bytecode:
+					1	0	aload_0
+					2	1	invokespecial #1 <java/lang/Object.<init>>
+					3	4	return
+				Attributes:
+					[0] LineNumberTable
+						Attribute name index:	 cp_info #13
+						Attribute length:	 6
+						Nr.	 start_pc	 line_number
+						0	 0	 6
+
+
+	}
+	[1] main
+	{
+		Name: 		 cp_info #14 <main>
+		Descriptor: 	 cp_info #15 <([Ljava/lang/String;)V>
+		Access flags: 	 0x0009 [public static ]
+		Attributes:
+			[0] Code
+				Attribute name index:	 cp_info #12
+				Attribute length:	 118
+				Maximum stack depth:	 5
+				Maximum local variables: 5
+				Code length:		 62
+				Exception table:
+					Exception table is empty.
+				Bytecode:
+					1	0	ldc2_w #2 <98.240000>
+					2	3	dstore_1
+					3	4	ldc2_w #4 <134.870000>
+					4	7	dstore_3
+					5	8	getstatic #6 <java/lang/System.out>
+					6	11	dload_1
+					7	12	dload_3
+					8	13	dadd
+					9	14	invokevirtual #7 <java/io/PrintStream.println>
+					10	17	getstatic #6 <java/lang/System.out>
+					11	20	dload_1
+					12	21	dload_3
+					13	22	dsub
+					14	23	invokevirtual #7 <java/io/PrintStream.println>
+					15	26	getstatic #6 <java/lang/System.out>
+					16	29	dload_1
+					17	30	dload_3
+					18	31	dmul
+					19	32	invokevirtual #7 <java/io/PrintStream.println>
+					20	35	getstatic #6 <java/lang/System.out>
+					21	38	dload_1
+					22	39	dload_3
+					23	40	ddiv
+					24	41	invokevirtual #7 <java/io/PrintStream.println>
+					25	44	getstatic #6 <java/lang/System.out>
+					26	47	dload_1
+					27	48	dneg
+					28	49	invokevirtual #7 <java/io/PrintStream.println>
+					29	52	getstatic #6 <java/lang/System.out>
+					30	55	dload_3
+					31	56	dload_1
+					32	57	drem
+					33	58	invokevirtual #7 <java/io/PrintStream.println>
+					34	61	return
+				Attributes:
+					[0] LineNumberTable
+						Attribute name index:	 cp_info #13
+						Attribute length:	 38
+						Nr.	 start_pc	 line_number
+						0	 0	 8
+						1	 4	 9
+						2	 8	 10
+						3	 17	 11
+						4	 26	 12
+						5	 35	 13
+						6	 44	 14
+						7	 52	 15
+						8	 61	 16
+
+
+	}
+}
+
+Attributes (Member count: 1)
+{
+	[0] SourceFile
+		Attribute name index:	 cp_info #16
+		Attribute length:	 2
+		Constant value index:	 cp_info #17 <double_aritmetica.java>
+
+}
+
