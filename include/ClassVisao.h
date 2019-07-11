@@ -211,7 +211,7 @@ void exibeByteCode(Code_attribute codeAttribute, cp_info *constantPool, uint8_t 
 /**
  * Vetor contendo os mnemônicos de todas as instruções do bytecode Java.
  */
-static const char* vetorNomeFuncao[] = {
+static  const string  vetorNomeFuncao[] = {
     "nop",
     "aconst_null",
     "iconst_m1",

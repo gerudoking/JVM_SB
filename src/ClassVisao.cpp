@@ -626,8 +626,10 @@ void print_AttributeInfo(attribute_info attributeInfo, uint32_t index, cp_info *
 		}
 	} else if (Utils::compararUtf8String(attributeUtf8, "Deprecated")) {
 		// vazio
+	} else if (Utils::compararUtf8String(attributeUtf8, "StackMapTable")) {
+		// vazio
 	} else {
-		cerr << "Arquivo .class possui uma um atributo invalido." << endl;
+		cerr << "Arquivo .class possui uma um atributo invalido.(Classvisao print_AttributeInfo - linha 632)" << endl;
 		exit(6);
 	}
 	fprintf(out, "\n");
@@ -749,8 +751,10 @@ void exibe_AttributeInfo(attribute_info attributeInfo, uint32_t index, cp_info *
 		}
 	} else if (Utils::compararUtf8String(attributeUtf8, "Deprecated")) {
 		// vazio
+	} else if (Utils::compararUtf8String(attributeUtf8, "StackMapTable")) {
+		// vazio
 	} else {
-		cerr << "Arquivo .class possui uma um atributo invalido." << endl;
+		cerr << "Arquivo .class possui uma um atributo invalido.(Classvisao print_AttributeInfo - linha 757)" << endl;
 		exit(6);
 	}
 	printf("\n");
@@ -764,7 +768,8 @@ void printArquivoByteCode(Code_attribute codeAttribute, cp_info *constantPool, u
 	u4 i = 0;
 	while (i < code_length) {
 		Utils::imprintTabs(out, indentation);
-		fprintf(out, "%d\t%d\t%s", lineNumber++, i, vetorNomeFuncao[code[i]]);
+		//const_cons  char* variavel = vetorNomeFuncao[code[i]];
+		fprintf(out, "%d\t%d\t%s", lineNumber++, i, vetorNomeFuncao[code[i]].c_str());
 
 		if (code[i] <= 0x0f || (code[i] >= 0x1a && code[i] <= 0x35) || (code[i] >= 0x3b && code[i] <= 0x83)
 				|| (code[i] >= 0x85 && code[i] <= 0x98) || (code[i] >= 0xac && code[i] <= 0xb1) || code[i] == 0xbe || code[i] == 0xbf
@@ -816,7 +821,7 @@ void printArquivoByteCode(Code_attribute codeAttribute, cp_info *constantPool, u
 
 			fprintf(out, "\n");
 			Utils::imprintTabs(out, indentation);
-			fprintf(out, "%d\t%d\t%s %d", lineNumber++, i + 1, vetorNomeFuncao[code[i + 1]], indexbyte);
+			fprintf(out, "%d\t%d\t%s %d", lineNumber++, i + 1, vetorNomeFuncao[code[i + 1]].c_str(), indexbyte);
 
 			if (code[i + 1] == 0x84) { // format 2 (iinc)
 				int16_t constbyte = (code[i + 4] << 8) | code[i + 5];
@@ -893,7 +898,7 @@ void exibeByteCode(Code_attribute codeAttribute, cp_info *constantPool, uint8_t 
 	u4 i = 0;
 	while (i < code_length) {
 		Utils::exibeTabs(indentation);
-		printf("%d\t%d\t%s", lineNumber++, i, vetorNomeFuncao[code[i]]);
+		printf("%d\t%d\t%s", lineNumber++, i, vetorNomeFuncao[code[i]].c_str());
 
 		if (code[i] <= 0x0f || (code[i] >= 0x1a && code[i] <= 0x35) || (code[i] >= 0x3b && code[i] <= 0x83)
 				|| (code[i] >= 0x85 && code[i] <= 0x98) || (code[i] >= 0xac && code[i] <= 0xb1) || code[i] == 0xbe || code[i] == 0xbf
@@ -946,7 +951,7 @@ void exibeByteCode(Code_attribute codeAttribute, cp_info *constantPool, uint8_t 
 			printf("\n");
 			Utils::exibeTabs(indentation);
 
-			printf("%d\t%d\t%s %d", lineNumber++, i + 1, vetorNomeFuncao[code[i + 1]], indexbyte);
+			printf("%d\t%d\t%s %d", lineNumber++, i + 1, vetorNomeFuncao[code[i + 1]].c_str(), indexbyte);
 			if (code[i + 1] == 0x84) { // format 2 (iinc)
 				int16_t constbyte = (code[i + 4] << 8) | code[i + 5];
 				printf(" by %d", constbyte);

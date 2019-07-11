@@ -463,7 +463,9 @@ attribute_info LeitorExibidor::getAttributeInfo(FILE *fp, ClassFile *classFile) 
 			readU1(fp);
 		}
 	} else {
-		cerr << "Arquivo .class possui uma um atributo invalido." << endl;
+
+
+		cerr << "Arquivo .class possui uma um atributo invalido.(LeitorExibidor getAttributeInfo - linha 468)" << endl;
 		exit(6);
 	}
 

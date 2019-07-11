@@ -1,0 +1,645 @@
+General Information
+{
+	 Minor Version: 		 0
+	 Major Version: 		 50 [6.0]
+	 Constant pool count: 		 53
+	 Access Flags: 			 0x0020 [super ]
+	 This class: 			 cp_info #12 <vetor2>
+	 Super class: 			 cp_info #13 <java/lang/Object>
+	 Interfaces count: 		 0
+	 Fields count: 			 0
+	 Methods pool count: 		 2
+	 Attributes pool count: 	 1
+}
+
+Constant Pool (Member count: 53)
+{
+	 [1] CONSTANT_Methodref_info
+		 Class name: 			 cp_info #13 <java/lang/Object>
+ 		 Name and type: 		 cp_info #29 <<init>()V>
+
+	 [2] CONSTANT_Float_info
+		 Bytes: 			 0x40400000
+		 Float: 			 0x3.000000
+
+	 [3] CONSTANT_Float_info
+		 Bytes: 			 0xC0A00000
+		 Float: 			 0x-5.000000
+
+	 [4] CONSTANT_Integer_info
+	 Bytes: 				 0x00620E86
+	 Integer: 				 6426246
+
+	 [5] CONSTANT_Integer_info
+	 Bytes: 				 0xFFF963A6
+	 Integer: 				 -433242
+
+	 [6] CONSTANT_Integer_info
+	 Bytes: 				 0x000186A0
+	 Integer: 				 100000
+
+	 [7] CONSTANT_Fieldref_info
+		 Class name: 			 cp_info #30 <java/lang/System>
+ 		 Name and type: 		 cp_info #31 <outLjava/io/PrintStream;>
+
+	 [8] CONSTANT_Methodref_info
+		 Class name: 			 cp_info #32 <java/io/PrintStream>
+ 		 Name and type: 		 cp_info #33 <println(I)V>
+
+	 [9] CONSTANT_Methodref_info
+		 Class name: 			 cp_info #32 <java/io/PrintStream>
+ 		 Name and type: 		 cp_info #34 <println()V>
+
+	 [10] CONSTANT_Methodref_info
+		 Class name: 			 cp_info #32 <java/io/PrintStream>
+ 		 Name and type: 		 cp_info #35 <println(F)V>
+
+	 [11] CONSTANT_Methodref_info
+		 Class name: 			 cp_info #32 <java/io/PrintStream>
+ 		 Name and type: 		 cp_info #36 <println(C)V>
+
+	 [12] CONSTANT_Class_info
+		 Class name: 			 cp_info #37 <vetor2>
+
+	 [13] CONSTANT_Class_info
+		 Class name: 			 cp_info #38 <java/lang/Object>
+
+	 [14] CONSTANT_Utf8_info
+		 Length of byte array: 		 6
+		 Length of string: 		 6
+		 String: 			 <init>
+
+	 [15] CONSTANT_Utf8_info
+		 Length of byte array: 		 3
+		 Length of string: 		 3
+		 String: 			 ()V
+
+	 [16] CONSTANT_Utf8_info
+		 Length of byte array: 		 4
+		 Length of string: 		 4
+		 String: 			 Code
+
+	 [17] CONSTANT_Utf8_info
+		 Length of byte array: 		 15
+		 Length of string: 		 15
+		 String: 			 LineNumberTable
+
+	 [18] CONSTANT_Utf8_info
+		 Length of byte array: 		 4
+		 Length of string: 		 4
+		 String: 			 main
+
+	 [19] CONSTANT_Utf8_info
+		 Length of byte array: 		 22
+		 Length of string: 		 22
+		 String: 			 ([Ljava/lang/String;)V
+
+	 [20] CONSTANT_Utf8_info
+		 Length of byte array: 		 13
+		 Length of string: 		 13
+		 String: 			 StackMapTable
+
+	 [21] CONSTANT_Class_info
+		 Class name: 			 cp_info #39 <[Ljava/lang/String;>
+
+	 [22] CONSTANT_Class_info
+		 Class name: 			 cp_info #40 <[I>
+
+	 [23] CONSTANT_Class_info
+		 Class name: 			 cp_info #41 <[F>
+
+	 [24] CONSTANT_Class_info
+		 Class name: 			 cp_info #42 <[B>
+
+	 [25] CONSTANT_Class_info
+		 Class name: 			 cp_info #43 <[C>
+
+	 [26] CONSTANT_Class_info
+		 Class name: 			 cp_info #44 <[S>
+
+	 [27] CONSTANT_Utf8_info
+		 Length of byte array: 		 10
+		 Length of string: 		 10
+		 String: 			 SourceFile
+
+	 [28] CONSTANT_Utf8_info
+		 Length of byte array: 		 11
+		 Length of string: 		 11
+		 String: 			 vetor2.java
+
+	 [29] CONSTANT_NameAndType_info
+		 Name: 				 cp_info #14 <<init>>
+		 Descriptor: 			 cp_info #15 <()V>
+
+	 [30] CONSTANT_Class_info
+		 Class name: 			 cp_info #45 <java/lang/System>
+
+	 [31] CONSTANT_NameAndType_info
+		 Name: 				 cp_info #46 <out>
+		 Descriptor: 			 cp_info #47 <Ljava/io/PrintStream;>
+
+	 [32] CONSTANT_Class_info
+		 Class name: 			 cp_info #48 <java/io/PrintStream>
+
+	 [33] CONSTANT_NameAndType_info
+		 Name: 				 cp_info #49 <println>
+		 Descriptor: 			 cp_info #50 <(I)V>
+
+	 [34] CONSTANT_NameAndType_info
+		 Name: 				 cp_info #49 <println>
+		 Descriptor: 			 cp_info #15 <()V>
+
+	 [35] CONSTANT_NameAndType_info
+		 Name: 				 cp_info #49 <println>
+		 Descriptor: 			 cp_info #51 <(F)V>
+
+	 [36] CONSTANT_NameAndType_info
+		 Name: 				 cp_info #49 <println>
+		 Descriptor: 			 cp_info #52 <(C)V>
+
+	 [37] CONSTANT_Utf8_info
+		 Length of byte array: 		 6
+		 Length of string: 		 6
+		 String: 			 vetor2
+
+	 [38] CONSTANT_Utf8_info
+		 Length of byte array: 		 16
+		 Length of string: 		 16
+		 String: 			 java/lang/Object
+
+	 [39] CONSTANT_Utf8_info
+		 Length of byte array: 		 19
+		 Length of string: 		 19
+		 String: 			 [Ljava/lang/String;
+
+	 [40] CONSTANT_Utf8_info
+		 Length of byte array: 		 2
+		 Length of string: 		 2
+		 String: 			 [I
+
+	 [41] CONSTANT_Utf8_info
+		 Length of byte array: 		 2
+		 Length of string: 		 2
+		 String: 			 [F
+
+	 [42] CONSTANT_Utf8_info
+		 Length of byte array: 		 2
+		 Length of string: 		 2
+		 String: 			 [B
+
+	 [43] CONSTANT_Utf8_info
+		 Length of byte array: 		 2
+		 Length of string: 		 2
+		 String: 			 [C
+
+	 [44] CONSTANT_Utf8_info
+		 Length of byte array: 		 2
+		 Length of string: 		 2
+		 String: 			 [S
+
+	 [45] CONSTANT_Utf8_info
+		 Length of byte array: 		 16
+		 Length of string: 		 16
+		 String: 			 java/lang/System
+
+	 [46] CONSTANT_Utf8_info
+		 Length of byte array: 		 3
+		 Length of string: 		 3
+		 String: 			 out
+
+	 [47] CONSTANT_Utf8_info
+		 Length of byte array: 		 21
+		 Length of string: 		 21
+		 String: 			 Ljava/io/PrintStream;
+
+	 [48] CONSTANT_Utf8_info
+		 Length of byte array: 		 19
+		 Length of string: 		 19
+		 String: 			 java/io/PrintStream
+
+	 [49] CONSTANT_Utf8_info
+		 Length of byte array: 		 7
+		 Length of string: 		 7
+		 String: 			 println
+
+	 [50] CONSTANT_Utf8_info
+		 Length of byte array: 		 4
+		 Length of string: 		 4
+		 String: 			 (I)V
+
+	 [51] CONSTANT_Utf8_info
+		 Length of byte array: 		 4
+		 Length of string: 		 4
+		 String: 			 (F)V
+
+	 [52] CONSTANT_Utf8_info
+		 Length of byte array: 		 4
+		 Length of string: 		 4
+		 String: 			 (C)V
+
+}
+
+Interfaces (Member count: 0) 
+{
+}
+
+Fields (Member count: 0)
+{
+}
+
+Methods (Member count: 2)
+{
+	[0] <init>
+	{
+		Name: 		 cp_info #14 <<init>>
+		Descriptor: 	 cp_info #15 <()V>
+		Access flags: 	 0x0000 []
+		Attributes:
+			[0] Code
+				Attribute name index:	 cp_info #16
+				Attribute length:	 29
+				Maximum stack depth:	 1
+				Maximum local variables: 1
+				Code length:		 5
+				Exception table:
+					Exception table is empty.
+				Bytecode:
+					1	0	aload_0
+					2	1	invokespecial #1 <java/lang/Object.<init>>
+					3	4	return
+				Attributes:
+					[0] LineNumberTable
+						Attribute name index:	 cp_info #17
+						Attribute length:	 6
+						Nr.	 start_pc	 line_number
+						0	 0	 26
+
+
+	}
+	[1] main
+	{
+		Name: 		 cp_info #18 <main>
+		Descriptor: 	 cp_info #19 <([Ljava/lang/String;)V>
+		Access flags: 	 0x0009 [public static ]
+		Attributes:
+			[0] Code
+				Attribute name index:	 cp_info #16
+				Attribute length:	 781
+				Maximum stack depth:	 4
+				Maximum local variables: 9
+				Code length:		 481
+				Exception table:
+					Exception table is empty.
+				Bytecode:
+					1	0	bipush 10
+					2	2	newarray 10 (int)
+					3	4	dup
+					4	5	iconst_0
+					5	6	iconst_0
+					6	7	iastore
+					7	8	dup
+					8	9	iconst_1
+					9	10	iconst_0
+					10	11	iastore
+					11	12	dup
+					12	13	iconst_2
+					13	14	iconst_0
+					14	15	iastore
+					15	16	dup
+					16	17	iconst_3
+					17	18	iconst_0
+					18	19	iastore
+					19	20	dup
+					20	21	iconst_4
+					21	22	iconst_0
+					22	23	iastore
+					23	24	dup
+					24	25	iconst_5
+					25	26	iconst_0
+					26	27	iastore
+					27	28	dup
+					28	29	bipush 6
+					29	31	iconst_0
+					30	32	iastore
+					31	33	dup
+					32	34	bipush 7
+					33	36	iconst_0
+					34	37	iastore
+					35	38	dup
+					36	39	bipush 8
+					37	41	iconst_0
+					38	42	iastore
+					39	43	dup
+					40	44	bipush 9
+					41	46	iconst_0
+					42	47	iastore
+					43	48	astore_1
+					44	49	iconst_3
+					45	50	newarray 6 (float)
+					46	52	dup
+					47	53	iconst_0
+					48	54	fconst_2
+					49	55	fastore
+					50	56	dup
+					51	57	iconst_1
+					52	58	ldc #2 <3.000000>
+					53	60	fastore
+					54	61	dup
+					55	62	iconst_2
+					56	63	ldc #3 <-5.000000>
+					57	65	fastore
+					58	66	astore_2
+					59	67	iconst_4
+					60	68	newarray 10 (int)
+					61	70	dup
+					62	71	iconst_0
+					63	72	bipush 251
+					64	74	iastore
+					65	75	dup
+					66	76	iconst_1
+					67	77	iconst_3
+					68	78	iastore
+					69	79	dup
+					70	80	iconst_2
+					71	81	ldc #4 <6426246>
+					72	83	iastore
+					73	84	dup
+					74	85	iconst_3
+					75	86	ldc #5 <-433242>
+					76	88	iastore
+					77	89	astore_3
+					78	90	iconst_3
+					79	91	newarray 6 (float)
+					80	93	dup
+					81	94	iconst_0
+					82	95	fconst_2
+					83	96	fastore
+					84	97	dup
+					85	98	iconst_1
+					86	99	ldc #2 <3.000000>
+					87	101	fastore
+					88	102	dup
+					89	103	iconst_2
+					90	104	ldc #3 <-5.000000>
+					91	106	fastore
+					92	107	astore 4
+					93	109	iconst_3
+					94	110	newarray 8 (byte)
+					95	112	dup
+					96	113	iconst_0
+					97	114	bipush 254
+					98	116	bastore
+					99	117	dup
+					100	118	iconst_1
+					101	119	iconst_4
+					102	120	bastore
+					103	121	dup
+					104	122	iconst_2
+					105	123	iconst_0
+					106	124	bastore
+					107	125	astore 5
+					108	127	iconst_3
+					109	128	newarray 5 (char)
+					110	130	dup
+					111	131	iconst_0
+					112	132	bipush 97
+					113	134	castore
+					114	135	dup
+					115	136	iconst_1
+					116	137	bipush 48
+					117	139	castore
+					118	140	dup
+					119	141	iconst_2
+					120	142	bipush 41
+					121	144	castore
+					122	145	astore 6
+					123	147	iconst_3
+					124	148	newarray 9 (short)
+					125	150	dup
+					126	151	iconst_0
+					127	152	bipush 15
+					128	154	sastore
+					129	155	dup
+					130	156	iconst_1
+					131	157	sipush 1000
+					132	160	sastore
+					133	161	dup
+					134	162	iconst_2
+					135	163	bipush 254
+					136	165	sastore
+					137	166	astore 7
+					138	168	iconst_0
+					139	169	istore 8
+					140	171	iload 8
+					141	173	bipush 10
+					142	175	if_icmpge 190 (+15)
+					143	178	aload_1
+					144	179	iload 8
+					145	181	iload 8
+					146	183	iastore
+					147	184	iinc 8 by 1
+					148	187	goto 171 (-16)
+					149	190	aload_1
+					150	191	iconst_0
+					151	192	dup2
+					152	193	iaload
+					153	194	ldc #6 <100000>
+					154	196	iadd
+					155	197	iastore
+					156	198	iconst_0
+					157	199	istore 8
+					158	201	iload 8
+					159	203	bipush 10
+					160	205	if_icmpge 224 (+19)
+					161	208	getstatic #7 <java/lang/System.out>
+					162	211	aload_1
+					163	212	iload 8
+					164	214	iaload
+					165	215	invokevirtual #8 <java/io/PrintStream.println>
+					166	218	iinc 8 by 1
+					167	221	goto 201 (-20)
+					168	224	getstatic #7 <java/lang/System.out>
+					169	227	aload_1
+					170	228	arraylength
+					171	229	invokevirtual #8 <java/io/PrintStream.println>
+					172	232	getstatic #7 <java/lang/System.out>
+					173	235	invokevirtual #9 <java/io/PrintStream.println>
+					174	238	iconst_0
+					175	239	istore 8
+					176	241	iload 8
+					177	243	iconst_3
+					178	244	if_icmpge 263 (+19)
+					179	247	getstatic #7 <java/lang/System.out>
+					180	250	aload_2
+					181	251	iload 8
+					182	253	faload
+					183	254	invokevirtual #10 <java/io/PrintStream.println>
+					184	257	iinc 8 by 1
+					185	260	goto 241 (-19)
+					186	263	getstatic #7 <java/lang/System.out>
+					187	266	aload_2
+					188	267	arraylength
+					189	268	invokevirtual #8 <java/io/PrintStream.println>
+					190	271	getstatic #7 <java/lang/System.out>
+					191	274	invokevirtual #9 <java/io/PrintStream.println>
+					192	277	iconst_0
+					193	278	istore 8
+					194	280	iload 8
+					195	282	iconst_4
+					196	283	if_icmpge 302 (+19)
+					197	286	getstatic #7 <java/lang/System.out>
+					198	289	aload_3
+					199	290	iload 8
+					200	292	iaload
+					201	293	invokevirtual #8 <java/io/PrintStream.println>
+					202	296	iinc 8 by 1
+					203	299	goto 280 (-19)
+					204	302	getstatic #7 <java/lang/System.out>
+					205	305	aload_3
+					206	306	arraylength
+					207	307	invokevirtual #8 <java/io/PrintStream.println>
+					208	310	getstatic #7 <java/lang/System.out>
+					209	313	invokevirtual #9 <java/io/PrintStream.println>
+					210	316	iconst_0
+					211	317	istore 8
+					212	319	iload 8
+					213	321	iconst_3
+					214	322	if_icmpge 342 (+20)
+					215	325	getstatic #7 <java/lang/System.out>
+					216	328	aload 4
+					217	330	iload 8
+					218	332	faload
+					219	333	invokevirtual #10 <java/io/PrintStream.println>
+					220	336	iinc 8 by 1
+					221	339	goto 319 (-20)
+					222	342	getstatic #7 <java/lang/System.out>
+					223	345	aload 4
+					224	347	arraylength
+					225	348	invokevirtual #8 <java/io/PrintStream.println>
+					226	351	getstatic #7 <java/lang/System.out>
+					227	354	invokevirtual #9 <java/io/PrintStream.println>
+					228	357	iconst_0
+					229	358	istore 8
+					230	360	iload 8
+					231	362	iconst_3
+					232	363	if_icmpge 383 (+20)
+					233	366	getstatic #7 <java/lang/System.out>
+					234	369	aload 5
+					235	371	iload 8
+					236	373	baload
+					237	374	invokevirtual #8 <java/io/PrintStream.println>
+					238	377	iinc 8 by 1
+					239	380	goto 360 (-20)
+					240	383	getstatic #7 <java/lang/System.out>
+					241	386	aload 5
+					242	388	arraylength
+					243	389	invokevirtual #8 <java/io/PrintStream.println>
+					244	392	getstatic #7 <java/lang/System.out>
+					245	395	invokevirtual #9 <java/io/PrintStream.println>
+					246	398	iconst_0
+					247	399	istore 8
+					248	401	iload 8
+					249	403	iconst_3
+					250	404	if_icmpge 424 (+20)
+					251	407	getstatic #7 <java/lang/System.out>
+					252	410	aload 6
+					253	412	iload 8
+					254	414	caload
+					255	415	invokevirtual #11 <java/io/PrintStream.println>
+					256	418	iinc 8 by 1
+					257	421	goto 401 (-20)
+					258	424	getstatic #7 <java/lang/System.out>
+					259	427	aload 6
+					260	429	arraylength
+					261	430	invokevirtual #8 <java/io/PrintStream.println>
+					262	433	getstatic #7 <java/lang/System.out>
+					263	436	invokevirtual #9 <java/io/PrintStream.println>
+					264	439	iconst_0
+					265	440	istore 8
+					266	442	iload 8
+					267	444	iconst_3
+					268	445	if_icmpge 465 (+20)
+					269	448	getstatic #7 <java/lang/System.out>
+					270	451	aload 7
+					271	453	iload 8
+					272	455	saload
+					273	456	invokevirtual #8 <java/io/PrintStream.println>
+					274	459	iinc 8 by 1
+					275	462	goto 442 (-20)
+					276	465	getstatic #7 <java/lang/System.out>
+					277	468	aload 7
+					278	470	arraylength
+					279	471	invokevirtual #8 <java/io/PrintStream.println>
+					280	474	getstatic #7 <java/lang/System.out>
+					281	477	invokevirtual #9 <java/io/PrintStream.println>
+					282	480	return
+				Attributes:
+					[0] LineNumberTable
+						Attribute name index:	 cp_info #17
+						Attribute length:	 190
+						Nr.	 start_pc	 line_number
+						0	 0	 29
+						1	 49	 30
+						2	 67	 31
+						3	 90	 32
+						4	 109	 33
+						5	 127	 34
+						6	 147	 35
+						7	 168	 37
+						8	 178	 38
+						9	 184	 37
+						10	 190	 40
+						11	 198	 41
+						12	 208	 42
+						13	 218	 41
+						14	 224	 44
+						15	 232	 45
+						16	 238	 48
+						17	 247	 49
+						18	 257	 48
+						19	 263	 51
+						20	 271	 52
+						21	 277	 54
+						22	 286	 55
+						23	 296	 54
+						24	 302	 57
+						25	 310	 58
+						26	 316	 60
+						27	 325	 61
+						28	 336	 60
+						29	 342	 63
+						30	 351	 64
+						31	 357	 66
+						32	 366	 67
+						33	 377	 66
+						34	 383	 69
+						35	 392	 70
+						36	 398	 72
+						37	 407	 73
+						38	 418	 72
+						39	 424	 75
+						40	 433	 76
+						41	 439	 78
+						42	 448	 79
+						43	 459	 78
+						44	 465	 81
+						45	 474	 82
+						46	 480	 83
+
+					[1] StackMapTable
+						Attribute name index:	 cp_info #20
+						Attribute length:	 86
+
+
+	}
+}
+
+Attributes (Member count: 1)
+{
+	[0] SourceFile
+		Attribute name index:	 cp_info #27
+		Attribute length:	 2
+		Constant value index:	 cp_info #28 <vetor2.java>
+
+}
+

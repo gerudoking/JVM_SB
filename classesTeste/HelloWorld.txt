@@ -1,86 +1,219 @@
+General Information
+{
+	 Minor Version: 		 0
+	 Major Version: 		 52 [8.0]
+	 Constant pool count: 		 29
+	 Access Flags: 			 0x0021 [public super ]
+	 This class: 			 cp_info #5 <HelloWorld>
+	 Super class: 			 cp_info #6 <java/lang/Object>
+	 Interfaces count: 		 0
+	 Fields count: 			 0
+	 Methods pool count: 		 2
+	 Attributes pool count: 	 1
+}
 
-Minor version:		 0
-Major version:		 52
-Número de Constant pool: 29
-Flags: ACC_PUBLICACC_SUPER (0x21)
-This class:		 cp info #5 <HelloWorld>
-Super class:		 cp info #6 <java/lang/Object>
-Número de Interfaces:	 0
-Número de Campos:	 0
-Número de Metodos:	 2
-Número de Atributos:	 1
+Constant Pool (Member count: 29)
+{
+	 [1] CONSTANT_Methodref_info
+		 Class name: 			 cp_info #6 <java/lang/Object>
+ 		 Name and type: 		 cp_info #15 <<init>()V>
 
-Constant Pool:
-	 [ 1 ]Method cp info #6  cp info #15		// java/lang/Object  <init>  ()V
-	 [ 2 ]Field cp info #16  cp info #17		// java/lang/System  out  Ljava/io/PrintStream;
-	 [ 3 ]String 18		// Hello, World
-	 [ 4 ]Method cp info #19  cp info #20		// java/io/PrintStream  println  (Ljava/lang/String;)V
-	 [ 5 ]Class 21		// HelloWorld
-	 [ 6 ]Class 22		// java/lang/Object
-	 [ 7 ]UTF-8	<init>
-	 [ 8 ]UTF-8	()V
-	 [ 9 ]UTF-8	Code
-	 [ 10 ]UTF-8	LineNumberTable
-	 [ 11 ]UTF-8	main
-	 [ 12 ]UTF-8	([Ljava/lang/String;)V
-	 [ 13 ]UTF-8	SourceFile
-	 [ 14 ]UTF-8	HelloWorld.java
-	 [ 15 ]Name and Type cp info #7  cp info #8		// <init>  ()V
-	 [ 16 ]Class 23		// java/lang/System
-	 [ 17 ]Name and Type cp info #24  cp info #25		// out  Ljava/io/PrintStream;
-	 [ 18 ]UTF-8	Hello, World
-	 [ 19 ]Class 26		// java/io/PrintStream
-	 [ 20 ]Name and Type cp info #27  cp info #28		// println  (Ljava/lang/String;)V
-	 [ 21 ]UTF-8	HelloWorld
-	 [ 22 ]UTF-8	java/lang/Object
-	 [ 23 ]UTF-8	java/lang/System
-	 [ 24 ]UTF-8	out
-	 [ 25 ]UTF-8	Ljava/io/PrintStream;
-	 [ 26 ]UTF-8	java/io/PrintStream
-	 [ 27 ]UTF-8	println
-	 [ 28 ]UTF-8	(Ljava/lang/String;)V
+	 [2] CONSTANT_Fieldref_info
+		 Class name: 			 cp_info #16 <java/lang/System>
+ 		 Name and type: 		 cp_info #17 <outLjava/io/PrintStream;>
 
-	Method 0:
-		Nome: cp info #7 <init>
-		Descritor: cp info # 8()V
-		flags: ACC_PUBLIC
-		Número de Atributos: 1
-	Attribute 0: 
-		Nome: cp info #9 Code
-		Número de Atributos: 29
-		Misc: 
-			Max Stack: 1
-			Max Locals: 1
-			Code Length: 5
-		Bytecode: 
-			0  aload_0
-			1  invokespecial #1
-			4  return
-		Exception Table Length: 0
-		Número de Atributos: 1
-		Nome: cp info #10 LineNumberTable
-		Número de Atributos: 6
-	Method 1:
-		Nome: cp info #11 main
-		Descritor: cp info # 12([Ljava/lang/String;)V
-		flags: ACC_PUBLIC, ACC_STATIC
-		Número de Atributos: 1
-	Attribute 0: 
-		Nome: cp info #9 Code
-		Número de Atributos: 37
-		Misc: 
-			Max Stack: 2
-			Max Locals: 1
-			Code Length: 9
-		Bytecode: 
-			0  getstatic #2
-			3  ldc #3
-			5  invokevirtual #4
-			8  return
-		Exception Table Length: 0
-		Número de Atributos: 1
-		Nome: cp info #10 LineNumberTable
-		Número de Atributos: 10
-	Atributo 0: 
-		Nome: cp info #13 SourceFile
-		Número de Atributos: 2
+	 [3] CONSTANT_String_info
+	 String: 				 cp_info #18 <Hello, World>
+
+	 [4] CONSTANT_Methodref_info
+		 Class name: 			 cp_info #19 <java/io/PrintStream>
+ 		 Name and type: 		 cp_info #20 <println(Ljava/lang/String;)V>
+
+	 [5] CONSTANT_Class_info
+		 Class name: 			 cp_info #21 <HelloWorld>
+
+	 [6] CONSTANT_Class_info
+		 Class name: 			 cp_info #22 <java/lang/Object>
+
+	 [7] CONSTANT_Utf8_info
+		 Length of byte array: 		 6
+		 Length of string: 		 6
+		 String: 			 <init>
+
+	 [8] CONSTANT_Utf8_info
+		 Length of byte array: 		 3
+		 Length of string: 		 3
+		 String: 			 ()V
+
+	 [9] CONSTANT_Utf8_info
+		 Length of byte array: 		 4
+		 Length of string: 		 4
+		 String: 			 Code
+
+	 [10] CONSTANT_Utf8_info
+		 Length of byte array: 		 15
+		 Length of string: 		 15
+		 String: 			 LineNumberTable
+
+	 [11] CONSTANT_Utf8_info
+		 Length of byte array: 		 4
+		 Length of string: 		 4
+		 String: 			 main
+
+	 [12] CONSTANT_Utf8_info
+		 Length of byte array: 		 22
+		 Length of string: 		 22
+		 String: 			 ([Ljava/lang/String;)V
+
+	 [13] CONSTANT_Utf8_info
+		 Length of byte array: 		 10
+		 Length of string: 		 10
+		 String: 			 SourceFile
+
+	 [14] CONSTANT_Utf8_info
+		 Length of byte array: 		 15
+		 Length of string: 		 15
+		 String: 			 HelloWorld.java
+
+	 [15] CONSTANT_NameAndType_info
+		 Name: 				 cp_info #7 <<init>>
+		 Descriptor: 			 cp_info #8 <()V>
+
+	 [16] CONSTANT_Class_info
+		 Class name: 			 cp_info #23 <java/lang/System>
+
+	 [17] CONSTANT_NameAndType_info
+		 Name: 				 cp_info #24 <out>
+		 Descriptor: 			 cp_info #25 <Ljava/io/PrintStream;>
+
+	 [18] CONSTANT_Utf8_info
+		 Length of byte array: 		 12
+		 Length of string: 		 12
+		 String: 			 Hello, World
+
+	 [19] CONSTANT_Class_info
+		 Class name: 			 cp_info #26 <java/io/PrintStream>
+
+	 [20] CONSTANT_NameAndType_info
+		 Name: 				 cp_info #27 <println>
+		 Descriptor: 			 cp_info #28 <(Ljava/lang/String;)V>
+
+	 [21] CONSTANT_Utf8_info
+		 Length of byte array: 		 10
+		 Length of string: 		 10
+		 String: 			 HelloWorld
+
+	 [22] CONSTANT_Utf8_info
+		 Length of byte array: 		 16
+		 Length of string: 		 16
+		 String: 			 java/lang/Object
+
+	 [23] CONSTANT_Utf8_info
+		 Length of byte array: 		 16
+		 Length of string: 		 16
+		 String: 			 java/lang/System
+
+	 [24] CONSTANT_Utf8_info
+		 Length of byte array: 		 3
+		 Length of string: 		 3
+		 String: 			 out
+
+	 [25] CONSTANT_Utf8_info
+		 Length of byte array: 		 21
+		 Length of string: 		 21
+		 String: 			 Ljava/io/PrintStream;
+
+	 [26] CONSTANT_Utf8_info
+		 Length of byte array: 		 19
+		 Length of string: 		 19
+		 String: 			 java/io/PrintStream
+
+	 [27] CONSTANT_Utf8_info
+		 Length of byte array: 		 7
+		 Length of string: 		 7
+		 String: 			 println
+
+	 [28] CONSTANT_Utf8_info
+		 Length of byte array: 		 21
+		 Length of string: 		 21
+		 String: 			 (Ljava/lang/String;)V
+
+}
+
+Interfaces (Member count: 0) 
+{
+}
+
+Fields (Member count: 0)
+{
+}
+
+Methods (Member count: 2)
+{
+	[0] <init>
+	{
+		Name: 		 cp_info #7 <<init>>
+		Descriptor: 	 cp_info #8 <()V>
+		Access flags: 	 0x0001 [public ]
+		Attributes:
+			[0] Code
+				Attribute name index:	 cp_info #9
+				Attribute length:	 29
+				Maximum stack depth:	 1
+				Maximum local variables: 1
+				Code length:		 5
+				Exception table:
+					Exception table is empty.
+				Bytecode:
+					1	0	aload_0
+					2	1	invokespecial #1 <java/lang/Object.<init>>
+					3	4	return
+				Attributes:
+					[0] LineNumberTable
+						Attribute name index:	 cp_info #10
+						Attribute length:	 6
+						Nr.	 start_pc	 line_number
+						0	 0	 1
+
+
+	}
+	[1] main
+	{
+		Name: 		 cp_info #11 <main>
+		Descriptor: 	 cp_info #12 <([Ljava/lang/String;)V>
+		Access flags: 	 0x0009 [public static ]
+		Attributes:
+			[0] Code
+				Attribute name index:	 cp_info #9
+				Attribute length:	 37
+				Maximum stack depth:	 2
+				Maximum local variables: 1
+				Code length:		 9
+				Exception table:
+					Exception table is empty.
+				Bytecode:
+					1	0	getstatic #2 <java/lang/System.out>
+					2	3	ldc #3 <Hello, World>
+					3	5	invokevirtual #4 <java/io/PrintStream.println>
+					4	8	return
+				Attributes:
+					[0] LineNumberTable
+						Attribute name index:	 cp_info #10
+						Attribute length:	 10
+						Nr.	 start_pc	 line_number
+						0	 0	 5
+						1	 8	 6
+
+
+	}
+}
+
+Attributes (Member count: 1)
+{
+	[0] SourceFile
+		Attribute name index:	 cp_info #13
+		Attribute length:	 2
+		Constant value index:	 cp_info #14 <HelloWorld.java>
+
+}
+
