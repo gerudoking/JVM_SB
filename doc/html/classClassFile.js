@@ -1,6 +1,5 @@
 var classClassFile =
 [
-    [ "ClassFile", "classClassFile.html#a7cf76bcaf785b984e9d1b31d52a5aa7f", null ],
     [ "ClassFile", "classClassFile.html#a47669d90346c9fa0db30ae582c74a199", null ],
     [ "access_flags", "classClassFile.html#ae88db578147f7ee0d6fc1aeacb341854", null ],
     [ "attributes", "classClassFile.html#a8bf809db8e1008f401dc3cda5e9cdb14", null ],

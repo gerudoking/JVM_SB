@@ -15,38 +15,38 @@ using namespace std;
  */
 class Heap {
 public:
-    /**
-     * @brief Obter a única instância da Heap.
-     * @return A instância da Heap.
-     */
-    static Heap& getInstance() {
-        static Heap instance;
-        return instance;
-    }
-    
-    /**
-     * @brief Destrutor padrão.
-     */
-    ~Heap();
-    
-    /**
-     * @brief Adiciona um objeto à heap.
-     */
-    void addObject(Object *object);
-    
+	/**
+	 * @brief Obter a única instância da Heap.
+	 * @return A instância da Heap.
+	 */
+	static Heap& getInstance() {
+		static Heap instance;
+		return instance;
+	}
+
+	/**
+	 * @brief Destrutor padrão.
+	 */
+	~Heap();
+
+	/**
+	 * @brief Adiciona um objeto à heap.
+	 */
+	void addObject(Object *object);
+
 private:
-    /**
-     * Construtor padrão.
-     */
-    Heap();
-    
-    Heap(Heap const&); // não permitir implementação do construtor de cópia
-    void operator=(Heap const&); // não permitir implementação do operador de igual
-    
-    /**
-     * Vetor interno que armazena todos os objetos.
-     */
-    vector<Object*> _objectVector;
+	/**
+	 * Construtor padrão.
+	 */
+	Heap();
+
+	Heap(Heap const&); // não permitir implementação do construtor de cópia
+	void operator=(Heap const&); // não permitir implementação do operador de igual
+
+	/**
+	 * Vetor interno que armazena todos os objetos.
+	 */
+	vector<Object*> _objectVector;
 };
 
 #endif // Heap_h

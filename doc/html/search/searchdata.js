@@ -8,7 +8,7 @@ var indexSectionsWithContent =
   5: "acdefilmosuv",
   6: "cov",
   7: "abcdfilprs",
-  8: "f"
+  8: "fu"
 };
 
 var indexSectionNames =

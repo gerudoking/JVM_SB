@@ -11,8 +11,7 @@ Lida com operações que lidam com uma instância da classe.
 
 
 
-Diagrama de heranças da classe Instance\+Class
-\nopagebreak
+Diagrama de heranças da classe Instance\+Class\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -58,7 +57,7 @@ map$<$ string, \hyperlink{structValue}{Value} $>$ \hyperlink{classInstanceClass_
 \subsection{Descrição detalhada}
 Lida com operações que lidam com uma instância da classe. 
 
-Definido na linha 19 do ficheiro Instance\+Class.\+h.
+Definido na linha 18 do ficheiro Instance\+Class.\+h.
 
 
 
@@ -80,14 +79,13 @@ Construtor padrão.
 \end{DoxyParams}
 
 
-Definido na linha 10 do ficheiro Instance\+Class.\+cpp.
+Definido na linha 9 do ficheiro Instance\+Class.\+cpp.
 
 
 
 Referências Class\+File\+::access\+\_\+flags, field\+\_\+info\+::access\+\_\+flags, Heap\+::add\+Object(), B\+O\+O\+L\+E\+AN, B\+Y\+TE, Value\+::byte\+Value, C\+H\+AR, Value\+::char\+Value, Class\+File\+::constant\+\_\+pool, Value\+::data, field\+\_\+info\+::descriptor\+\_\+index, D\+O\+U\+B\+LE, Value\+::double\+Value, Class\+File\+::fields, Class\+File\+::fields\+\_\+count, F\+L\+O\+AT, Value\+::float\+Value, Static\+Class\+::get\+Class\+File(), get\+Formatted\+Constant(), Heap\+::get\+Instance(), I\+NT, Value\+::int\+Value, L\+O\+NG, Value\+::long\+Value, field\+\_\+info\+::name\+\_\+index, Value\+::object, put\+Value\+Into\+Field(), R\+E\+F\+E\+R\+E\+N\+CE, S\+H\+O\+RT, Value\+::short\+Value e Value\+::type.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -123,7 +121,7 @@ Verifica se existe um field com o nome dado.
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em string} & O nome do field. \\
+{\em field\+Name} & O nome do field. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
@@ -174,7 +172,7 @@ Obtém o valor contido em um field informado.
 
 Caso o nome do field seja inválido, um erro será emitido. 
 \begin{DoxyParams}{Parâmetros}
-{\em index} & O índice do field. \\
+{\em field\+Name} & O índice do field. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
@@ -253,7 +251,7 @@ Referenciado por Instance\+Class() e Operations\+::putfield().
 
 Armazena a classe correspondente ao objeto. 
 
-Definido na linha 74 do ficheiro Instance\+Class.\+h.
+Definido na linha 73 do ficheiro Instance\+Class.\+h.
 
 
 
@@ -267,7 +265,7 @@ Referenciado por get\+Class\+Runtime().
 
 Armazena os fields do objeto (de instância). 
 
-Definido na linha 79 do ficheiro Instance\+Class.\+h.
+Definido na linha 78 do ficheiro Instance\+Class.\+h.
 
 
 

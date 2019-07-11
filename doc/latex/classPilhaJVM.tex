@@ -2,6 +2,11 @@
 \label{classPilhaJVM}\index{Pilha\+J\+VM@{Pilha\+J\+VM}}
 
 
+Classe para representar a pilha da J\+VM. Uma pilha é responsável por conter frames. O seu limite é dado por {\ttfamily F\+R\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+S\+I\+ZE}.  
+
+
+
+
 {\ttfamily \#include $<$Pilha\+J\+V\+M.\+h$>$}
 
 \subsection*{Membros públicos}
@@ -9,7 +14,7 @@
 \item 
 \hyperlink{classPilhaJVM_a7995ffc4e2ca9b149b83293cbbe0ea1b}{$\sim$\+Pilha\+J\+VM} ()
 \begin{DoxyCompactList}\small\item\em Destrutor padrão. \end{DoxyCompactList}\item 
-void \hyperlink{classPilhaJVM_a64d7185bc812d3c81e5270c54c212e07}{add\+Frame} (\hyperlink{classFrame}{Frame} $\ast$\hyperlink{classframe}{frame})
+void \hyperlink{classPilhaJVM_a64d7185bc812d3c81e5270c54c212e07}{add\+Frame} (\hyperlink{classFrame}{Frame} $\ast$frame)
 \begin{DoxyCompactList}\small\item\em Adiciona um frame na pilha da J\+VM. \end{DoxyCompactList}\item 
 \hyperlink{classFrame}{Frame} $\ast$ \hyperlink{classPilhaJVM_aa0e43da476df6147c86c8cc3d6899718}{get\+Top\+Frame} ()
 \begin{DoxyCompactList}\small\item\em Obtém o frame no topo da pilha da J\+VM. \end{DoxyCompactList}\item 
@@ -39,9 +44,11 @@ stack$<$ \hyperlink{classFrame}{Frame} $\ast$ $>$ \hyperlink{classPilhaJVM_a0929
 
 
 \subsection{Descrição detalhada}
+Classe para representar a pilha da J\+VM. Uma pilha é responsável por conter frames. O seu limite é dado por {\ttfamily F\+R\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+S\+I\+ZE}. 
 
+Essa classe é um singleton, ou seja, somente existe no máximo 1 instância dela para cada instância da J\+VM. 
 
-Definido na linha 18 do ficheiro Pilha\+J\+V\+M.\+h.
+Definido na linha 17 do ficheiro Pilha\+J\+V\+M.\+h.
 
 
 
@@ -58,7 +65,7 @@ Destrutor padrão.
 
 
 
-Definido na linha 9 do ficheiro Pilha\+J\+V\+M.\+cpp.
+Definido na linha 7 do ficheiro Pilha\+J\+V\+M.\+cpp.
 
 \mbox{\Hypertarget{classPilhaJVM_a7f0451ca9cf124f5098d43928566fadf}\label{classPilhaJVM_a7f0451ca9cf124f5098d43928566fadf}} 
 \index{Pilha\+J\+VM@{Pilha\+J\+VM}!Pilha\+J\+VM@{Pilha\+J\+VM}}
@@ -72,7 +79,7 @@ Construtor padrão.
 
 
 
-Definido na linha 5 do ficheiro Pilha\+J\+V\+M.\+cpp.
+Definido na linha 3 do ficheiro Pilha\+J\+V\+M.\+cpp.
 
 \mbox{\Hypertarget{classPilhaJVM_a051085f51d79d3333356c5d36bef4687}\label{classPilhaJVM_a051085f51d79d3333356c5d36bef4687}} 
 \index{Pilha\+J\+VM@{Pilha\+J\+VM}!Pilha\+J\+VM@{Pilha\+J\+VM}}
@@ -100,7 +107,7 @@ Adiciona um frame na pilha da J\+VM.
 \end{DoxyParams}
 
 
-Definido na linha 13 do ficheiro Pilha\+J\+V\+M.\+cpp.
+Definido na linha 11 do ficheiro Pilha\+J\+V\+M.\+cpp.
 
 
 
@@ -125,7 +132,7 @@ Retorna {\ttfamily true} caso o frame foi deletado, e {\ttfamily false} caso con
 \end{DoxyReturn}
 
 
-Definido na linha 31 do ficheiro Pilha\+J\+V\+M.\+cpp.
+Definido na linha 29 do ficheiro Pilha\+J\+V\+M.\+cpp.
 
 
 
@@ -150,7 +157,7 @@ A instância da pilha.
 \end{DoxyReturn}
 
 
-Definido na linha 25 do ficheiro Pilha\+J\+V\+M.\+h.
+Definido na linha 24 do ficheiro Pilha\+J\+V\+M.\+h.
 
 
 
@@ -171,7 +178,7 @@ Retorna o frame no topo da pilha. Caso a pilha esteja vazia, é retornado {\ttfa
 \end{DoxyReturn}
 
 
-Definido na linha 23 do ficheiro Pilha\+J\+V\+M.\+cpp.
+Definido na linha 21 do ficheiro Pilha\+J\+V\+M.\+cpp.
 
 
 
@@ -202,7 +209,7 @@ Obtém o número de frames contidos na pilha da J\+VM.
 \end{DoxyReturn}
 
 
-Definido na linha 43 do ficheiro Pilha\+J\+V\+M.\+cpp.
+Definido na linha 41 do ficheiro Pilha\+J\+V\+M.\+cpp.
 
 
 
@@ -223,7 +230,7 @@ Referenciado por Operations\+::executar\+Metodos().
 
 Armazena a pilha da J\+VM, que contém frames. 
 
-Definido na linha 71 do ficheiro Pilha\+J\+V\+M.\+h.
+Definido na linha 70 do ficheiro Pilha\+J\+V\+M.\+h.
 
 
 

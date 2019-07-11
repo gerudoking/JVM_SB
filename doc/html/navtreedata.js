@@ -30,7 +30,8 @@ var NAVTREEINDEX =
 [
 "ArrayObject_8cpp.html",
 "classLeitorExibidor.html#a13b5c2cf5de57b6cea330a425f7e55be",
-"classOperations.html#ae3c949d56a3ee685668134493595334b"
+"classOperations.html#ae3c949d56a3ee685668134493595334b",
+"structmethod__info.html#ad9e5e1e2fc850806addadd6deab8565d"
 ];
 
 var SYNCONMSG = 'clique para desativar a sincronização do painel';

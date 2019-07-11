@@ -5,12 +5,8 @@
 
 #include "ClassFile.h"
 
-ClassFile::ClassFile(char *in) { // @suppress("Class members should be properly initialized")
-
-}
 
 ClassFile::ClassFile() { // @suppress("Class members should be properly initialized")
-
 
 }
 

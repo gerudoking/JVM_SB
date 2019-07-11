@@ -1,22 +1,20 @@
 #include "Stringobject.h"
 
-
-StringObject::StringObject(string s) : _internalString(s) {
-    
+StringObject::StringObject(string s) :
+		_internalString(s) {
 }
 
 StringObject::~StringObject() {
-    
 }
 
 ObjectType StringObject::objectType() {
-    return ObjectType::STRING_INSTANCE;
+	return ObjectType::STRING_INSTANCE;
 }
 
 string StringObject::getString() {
-    return _internalString;
+	return _internalString;
 }
 
 void StringObject::setString(string s) {
-    _internalString = s;
+	_internalString = s;
 }

@@ -1,5 +1,6 @@
 var ClassVisao_8h =
 [
+    [ "UNUSED", "ClassVisao_8h.html#a86d500a34c624c2cae56bc25a31b12f3", null ],
     [ "exibe_AttributeInfo", "ClassVisao_8h.html#acbff59b0e64482bfbcd4389721ef44f6", null ],
     [ "exibe_Attributes", "ClassVisao_8h.html#a138dd6967f36f1e164174be7c1c5a616", null ],
     [ "exibe_ConstantPool", "ClassVisao_8h.html#a7b06f7cbd2e84645ca9da6a00dc38fb1", null ],

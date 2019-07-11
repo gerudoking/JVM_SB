@@ -5,6 +5,7 @@ var structattribute__info =
     [ "code_info", "structattribute__info.html#a098a24d1810b1a2a1691cbf89199bdc5", null ],
     [ "constantValue_info", "structattribute__info.html#ae07b4986ad567ee03d7f5b9476cd2576", null ],
     [ "deprecated_info", "structattribute__info.html#a915a26115aeeff5e3d997116f3d671ba", null ],
+    [ "deprecated_info1", "structattribute__info.html#a5de1a193a4c37b0432092f204322dc46", null ],
     [ "exceptions_info", "structattribute__info.html#a244c271949354ebd402f9330cb02b062", null ],
     [ "info", "structattribute__info.html#a5ce6e5e84e84941dfa2bab1322be6dcf", null ],
     [ "innerClasses_info", "structattribute__info.html#ab17c5c178068ef13e7f6d61e741bc398", null ],

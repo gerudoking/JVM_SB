@@ -100,7 +100,7 @@ void \hyperlink{classLeitorExibidor_a682c7ad4fd18b4dce390285c3c643b7b}{set\+Fiel
 \item 
 \hyperlink{structInnerClasses__attribute}{Inner\+Classes\+\_\+attribute} \hyperlink{classLeitorExibidor_a466d543f9134cc30ab471b359e19e765}{get\+Attribute\+Inner\+Classes} (F\+I\+LE $\ast$fp)
 \item 
-\hyperlink{structSynthetic__attribute}{Synthetic\+\_\+attribute} \hyperlink{classLeitorExibidor_a96f65a9e09e511128366ec9a1407ecb1}{get\+Attribute\+Synthetic} (F\+I\+LE $\ast$fp)
+\hyperlink{structSynthetic__attribute}{Synthetic\+\_\+attribute} \hyperlink{classLeitorExibidor_a9920aaaab4f9a67647977ffdbfe91b71}{get\+Attribute\+Synthetic} ()
 \item 
 \hyperlink{structSourceFile__attribute}{Source\+File\+\_\+attribute} \hyperlink{classLeitorExibidor_a265f56dc5c7eb8cfc9471435735c2145}{get\+Attribute\+Source\+File} (F\+I\+LE $\ast$fp)
 \item 
@@ -112,7 +112,7 @@ void \hyperlink{classLeitorExibidor_a682c7ad4fd18b4dce390285c3c643b7b}{set\+Fiel
 \item 
 \hyperlink{structLocalVariableTable__attribute}{Local\+Variable\+Table\+\_\+attribute} \hyperlink{classLeitorExibidor_a95ba6c34c4225f737bf0571f065de7aa}{get\+Attribute\+Local\+Variable} (F\+I\+LE $\ast$fp)
 \item 
-\hyperlink{structDeprecated__attribute}{Deprecated\+\_\+attribute} \hyperlink{classLeitorExibidor_aa39f3fc481e6182eea0461d218ad6ec9}{get\+Attribute\+Deprecated} (F\+I\+LE $\ast$fp)
+\hyperlink{structDeprecated__attribute}{Deprecated\+\_\+attribute} \hyperlink{classLeitorExibidor_a7e979d1f74f0b8a8a904404f657a84d5}{get\+Attribute\+Deprecated} ()
 \item 
 \hyperlink{structCONSTANT__Utf8__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8\+\_\+info} \hyperlink{classLeitorExibidor_ad3299334f937507986cef571036b93c0}{get\+Utf8\+From\+Constant\+Pool} (\hyperlink{BasicTypes_8h_a732cde1300aafb73b0ea6c2558a7a54f}{u2} index, \hyperlink{classClassFile}{Class\+File} $\ast$class\+File)
 \item 
@@ -153,7 +153,7 @@ Destrutor padrão.
 
 
 
-Definido na linha 10 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 9 do ficheiro Leitor\+Exibidor.\+cpp.
 
 \mbox{\Hypertarget{classLeitorExibidor_a246be764c0b6895539f915cc0f813e7b}\label{classLeitorExibidor_a246be764c0b6895539f915cc0f813e7b}} 
 \index{Leitor\+Exibidor@{Leitor\+Exibidor}!Leitor\+Exibidor@{Leitor\+Exibidor}}
@@ -167,7 +167,7 @@ Construtor padrão.
 
 
 
-Definido na linha 6 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 5 do ficheiro Leitor\+Exibidor.\+cpp.
 
 \mbox{\Hypertarget{classLeitorExibidor_a98a0f84f7d42d7868317cacfc883398d}\label{classLeitorExibidor_a98a0f84f7d42d7868317cacfc883398d}} 
 \index{Leitor\+Exibidor@{Leitor\+Exibidor}!Leitor\+Exibidor@{Leitor\+Exibidor}}
@@ -188,13 +188,15 @@ Extrai de um arquivo .class informações relativas a uma estrutura \hyperlink{s
 \begin{DoxyParams}{Parâmetros}
 {\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
 \hline
+{\em class\+File} & Ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve a estrutura (parcial, no momento) de um arquivo .class. \\
+\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
 Uma estrutura \hyperlink{structCode__attribute}{Code\+\_\+attribute} preenchida. 
 \end{DoxyReturn}
 
 
-Definido na linha 329 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 327 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -216,17 +218,17 @@ Uma estrutura \hyperlink{structConstantValue__attribute}{Constant\+Value\+\_\+at
 \end{DoxyReturn}
 
 
-Definido na linha 314 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 312 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
 Referências Constant\+Value\+\_\+attribute\+::constantvalue\+\_\+index.
 
-\mbox{\Hypertarget{classLeitorExibidor_aa39f3fc481e6182eea0461d218ad6ec9}\label{classLeitorExibidor_aa39f3fc481e6182eea0461d218ad6ec9}} 
+\mbox{\Hypertarget{classLeitorExibidor_a7e979d1f74f0b8a8a904404f657a84d5}\label{classLeitorExibidor_a7e979d1f74f0b8a8a904404f657a84d5}} 
 \index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Attribute\+Deprecated@{get\+Attribute\+Deprecated}}
 \index{get\+Attribute\+Deprecated@{get\+Attribute\+Deprecated}!Leitor\+Exibidor@{Leitor\+Exibidor}}
 \subsubsection{\texorpdfstring{get\+Attribute\+Deprecated()}{getAttributeDeprecated()}}
-{\footnotesize\ttfamily \hyperlink{structDeprecated__attribute}{Deprecated\+\_\+attribute} Leitor\+Exibidor\+::get\+Attribute\+Deprecated (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \hyperlink{structDeprecated__attribute}{Deprecated\+\_\+attribute} Leitor\+Exibidor\+::get\+Attribute\+Deprecated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 Fornece uma estrutura \hyperlink{structDeprecated__attribute}{Deprecated\+\_\+attribute}. 
 \begin{DoxyParams}{Parâmetros}
@@ -238,7 +240,7 @@ Uma estrutura \hyperlink{structDeprecated__attribute}{Deprecated\+\_\+attribute}
 \end{DoxyReturn}
 
 
-Definido na linha 433 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 431 do ficheiro Leitor\+Exibidor.\+cpp.
 
 \mbox{\Hypertarget{classLeitorExibidor_a36e7bb07a50754e6236dd555654d9032}\label{classLeitorExibidor_a36e7bb07a50754e6236dd555654d9032}} 
 \index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Attribute\+Exceptions@{get\+Attribute\+Exceptions}}
@@ -256,7 +258,7 @@ Uma estrutura \hyperlink{structExceptions__attribute}{Exceptions\+\_\+attribute}
 \end{DoxyReturn}
 
 
-Definido na linha 356 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 354 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -280,14 +282,13 @@ Uma estrutura \hyperlink{structattribute__info}{attribute\+\_\+info} preenchida.
 \end{DoxyReturn}
 
 
-Definido na linha 438 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 436 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
 Referências attribute\+\_\+info\+::attribute\+\_\+length, attribute\+\_\+info\+::attribute\+\_\+name\+\_\+index, attribute\+\_\+info\+::code\+\_\+info, Utils\+::comparar\+Utf8\+String(), attribute\+\_\+info\+::constant\+Value\+\_\+info, attribute\+\_\+info\+::deprecated\+\_\+info, attribute\+\_\+info\+::exceptions\+\_\+info, attribute\+\_\+info\+::info, attribute\+\_\+info\+::inner\+Classes\+\_\+info, attribute\+\_\+info\+::line\+Number\+Table\+\_\+info, attribute\+\_\+info\+::local\+Variable\+Table\+\_\+info, attribute\+\_\+info\+::source\+File\+\_\+info e attribute\+\_\+info\+::synthetic\+\_\+info.
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -310,7 +311,7 @@ Uma estrutura \hyperlink{structInnerClasses__attribute}{Inner\+Classes\+\_\+attr
 \end{DoxyReturn}
 
 
-Definido na linha 375 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 373 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -332,7 +333,7 @@ Uma estrutura \hyperlink{structLineNumberTable__attribute}{Line\+Number\+Table\+
 \end{DoxyReturn}
 
 
-Definido na linha 403 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 401 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -354,7 +355,7 @@ Uma estrutura \hyperlink{structLocalVariableTable__attribute}{Local\+Variable\+T
 \end{DoxyReturn}
 
 
-Definido na linha 423 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 421 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -376,17 +377,17 @@ Uma estrutura \hyperlink{structSourceFile__attribute}{Source\+File\+\_\+attribut
 \end{DoxyReturn}
 
 
-Definido na linha 390 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 388 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
 Referências Source\+File\+\_\+attribute\+::sourcefile\+\_\+index.
 
-\mbox{\Hypertarget{classLeitorExibidor_a96f65a9e09e511128366ec9a1407ecb1}\label{classLeitorExibidor_a96f65a9e09e511128366ec9a1407ecb1}} 
+\mbox{\Hypertarget{classLeitorExibidor_a9920aaaab4f9a67647977ffdbfe91b71}\label{classLeitorExibidor_a9920aaaab4f9a67647977ffdbfe91b71}} 
 \index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Attribute\+Synthetic@{get\+Attribute\+Synthetic}}
 \index{get\+Attribute\+Synthetic@{get\+Attribute\+Synthetic}!Leitor\+Exibidor@{Leitor\+Exibidor}}
 \subsubsection{\texorpdfstring{get\+Attribute\+Synthetic()}{getAttributeSynthetic()}}
-{\footnotesize\ttfamily \hyperlink{structSynthetic__attribute}{Synthetic\+\_\+attribute} Leitor\+Exibidor\+::get\+Attribute\+Synthetic (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \hyperlink{structSynthetic__attribute}{Synthetic\+\_\+attribute} Leitor\+Exibidor\+::get\+Attribute\+Synthetic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 Fornece uma estrutura \hyperlink{structSynthetic__attribute}{Synthetic\+\_\+attribute}. 
 \begin{DoxyParams}{Parâmetros}
@@ -398,7 +399,7 @@ Uma estrutura \hyperlink{structSynthetic__attribute}{Synthetic\+\_\+attribute}.
 \end{DoxyReturn}
 
 
-Definido na linha 385 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 383 do ficheiro Leitor\+Exibidor.\+cpp.
 
 \mbox{\Hypertarget{classLeitorExibidor_a331d5d793343e29a8180771a4d2aa29c}\label{classLeitorExibidor_a331d5d793343e29a8180771a4d2aa29c}} 
 \index{Leitor\+Exibidor@{Leitor\+Exibidor}!get\+Class@{get\+Class}}
@@ -416,7 +417,7 @@ Uma estrutura \hyperlink{structExceptions__attribute}{Exceptions\+\_\+attribute}
 \end{DoxyReturn}
 
 
-Definido na linha 366 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 364 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -438,7 +439,7 @@ Uma estrutura \hyperlink{structCONSTANT__Class__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_
 \end{DoxyReturn}
 
 
-Definido na linha 182 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 180 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -460,7 +461,7 @@ Uma estrutura \hyperlink{structCONSTANT__Double__info}{C\+O\+N\+S\+T\+A\+N\+T\+\
 \end{DoxyReturn}
 
 
-Definido na linha 234 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 232 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -482,7 +483,7 @@ Uma estrutura \hyperlink{structCONSTANT__Fieldref__info}{C\+O\+N\+S\+T\+A\+N\+T\
 \end{DoxyReturn}
 
 
-Definido na linha 188 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 186 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -504,7 +505,7 @@ Uma estrutura \hyperlink{structCONSTANT__Float__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_
 \end{DoxyReturn}
 
 
-Definido na linha 221 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 219 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -526,7 +527,7 @@ Uma estrutura \hyperlink{structCONSTANT__Integer__info}{C\+O\+N\+S\+T\+A\+N\+T\+
 \end{DoxyReturn}
 
 
-Definido na linha 215 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 213 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -548,7 +549,7 @@ Uma estrutura \hyperlink{structCONSTANT__InterfaceMethodref__info}{C\+O\+N\+S\+T
 \end{DoxyReturn}
 
 
-Definido na linha 202 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 200 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -570,7 +571,7 @@ Uma estrutura \hyperlink{structCONSTANT__Long__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\
 \end{DoxyReturn}
 
 
-Definido na linha 227 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 225 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -592,7 +593,7 @@ Uma estrutura \hyperlink{structCONSTANT__Methodref__info}{C\+O\+N\+S\+T\+A\+N\+T
 \end{DoxyReturn}
 
 
-Definido na linha 195 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 193 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -614,7 +615,7 @@ Uma estrutura \hyperlink{structCONSTANT__NameAndType__info}{C\+O\+N\+S\+T\+A\+N\
 \end{DoxyReturn}
 
 
-Definido na linha 241 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 239 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -636,7 +637,7 @@ Uma estrutura \hyperlink{structCONSTANT__String__info}{C\+O\+N\+S\+T\+A\+N\+T\+\
 \end{DoxyReturn}
 
 
-Definido na linha 209 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 207 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -658,7 +659,7 @@ Uma estrutura \hyperlink{structCONSTANT__Utf8__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\
 \end{DoxyReturn}
 
 
-Definido na linha 249 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 247 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -680,7 +681,7 @@ Uma estrutura \hyperlink{structExceptionTable}{Exception\+Table} preenchida.
 \end{DoxyReturn}
 
 
-Definido na linha 320 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 318 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -723,7 +724,7 @@ Uma estrutura \hyperlink{structLineNumberTable}{Line\+Number\+Table} preenchida.
 \end{DoxyReturn}
 
 
-Definido na linha 396 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 394 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -745,7 +746,7 @@ Uma estrutura \hyperlink{structLocalVariableTable}{Local\+Variable\+Table} preen
 \end{DoxyReturn}
 
 
-Definido na linha 413 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 411 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -769,7 +770,7 @@ Uma estrutura \hyperlink{structCONSTANT__Utf8__info}{C\+O\+N\+S\+T\+A\+N\+T\+\_\
 \end{DoxyReturn}
 
 
-Definido na linha 308 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 306 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -791,7 +792,7 @@ Verdadeiro ou Falso.
 \end{DoxyReturn}
 
 
-Definido na linha 113 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 111 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -815,7 +816,7 @@ Verdadeiro de a versão é no máximo major ou Falso caso contrário
 \end{DoxyReturn}
 
 
-Definido na linha 122 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 120 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -835,12 +836,12 @@ Referências Class\+File\+::major\+\_\+version.
 
 Lê o arquivo .class, verifica seus campos magic e version e carrega todas as estruturas descritas por este arquivo. 
 \begin{DoxyParams}{Parâmetros}
-{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+{\em $\ast$file} & Ponteiro para o arquivo .class a ser carregado. \\
 \hline
 \end{DoxyParams}
 
 
-Definido na linha 19 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 18 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -850,8 +851,7 @@ Referências Utils\+::verificar\+Versao\+Class().
 
 Referenciado por Method\+Area\+::carregar\+Class\+Named().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -866,7 +866,7 @@ Grafo de chamadas desta função\+:
 
 Lê 1 byte do arquivo .class. 
 \begin{DoxyParams}{Parâmetros}
-{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+{\em $\ast$file} & Ponteiro para o arquivo .class a ser carregado. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
@@ -874,7 +874,7 @@ O byte lido.
 \end{DoxyReturn}
 
 
-Definido na linha 75 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 73 do ficheiro Leitor\+Exibidor.\+cpp.
 
 \mbox{\Hypertarget{classLeitorExibidor_aa801d28856915543cfd59fb787e59626}\label{classLeitorExibidor_aa801d28856915543cfd59fb787e59626}} 
 \index{Leitor\+Exibidor@{Leitor\+Exibidor}!read\+U2@{read\+U2}}
@@ -884,7 +884,7 @@ Definido na linha 75 do ficheiro Leitor\+Exibidor.\+cpp.
 
 Lê 2 bytes do arquivo .class, verificando se o sistema é Big Endian ou Little Endian para armazenamento adequado. 
 \begin{DoxyParams}{Parâmetros}
-{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+{\em $\ast$file} & Ponteiro para o arquivo .class a ser carregado. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
@@ -892,7 +892,7 @@ Os 2 bytes lidos.
 \end{DoxyReturn}
 
 
-Definido na linha 81 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 79 do ficheiro Leitor\+Exibidor.\+cpp.
 
 \mbox{\Hypertarget{classLeitorExibidor_a5ce4bdf25870ab04449d4ba35a961390}\label{classLeitorExibidor_a5ce4bdf25870ab04449d4ba35a961390}} 
 \index{Leitor\+Exibidor@{Leitor\+Exibidor}!read\+U4@{read\+U4}}
@@ -902,7 +902,7 @@ Definido na linha 81 do ficheiro Leitor\+Exibidor.\+cpp.
 
 Lê 4 bytes do arquivo .class, verificando se o sistema é Big Endian ou Little Endian para armazenamento adequado. 
 \begin{DoxyParams}{Parâmetros}
-{\em $\ast$fp} & Ponteiro para o arquivo .class a ser carregado. \\
+{\em $\ast$file} & Ponteiro para o arquivo .class a ser carregado. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
@@ -910,7 +910,7 @@ Os 4 bytes lidos.
 \end{DoxyReturn}
 
 
-Definido na linha 95 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 93 do ficheiro Leitor\+Exibidor.\+cpp.
 
 \mbox{\Hypertarget{classLeitorExibidor_a7934c3a6d4da59ecb351d32b74240c60}\label{classLeitorExibidor_a7934c3a6d4da59ecb351d32b74240c60}} 
 \index{Leitor\+Exibidor@{Leitor\+Exibidor}!set\+Access\+Flags@{set\+Access\+Flags}}
@@ -927,7 +927,7 @@ Lê as flags de acesso de um arquivo .class e o armazena em uma estrutura \hyper
 \end{DoxyParams}
 
 
-Definido na linha 261 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 259 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -948,7 +948,7 @@ Aloca em \hyperlink{classClassFile}{Class\+File} um vetor de atributos, referenc
 \end{DoxyParams}
 
 
-Definido na linha 493 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 496 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -969,7 +969,7 @@ Lê o campo attributes\+\_\+count no arquivo .class e o armazena em uma estrutur
 \end{DoxyParams}
 
 
-Definido na linha 489 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 492 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -990,7 +990,7 @@ Preenche a pool de constantes de uma estrutura \hyperlink{classClassFile}{Class\
 \end{DoxyParams}
 
 
-Definido na linha 130 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 128 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -1011,7 +1011,7 @@ Lê o tamanho da pool de constantes de um arquivo .class e o armazena em uma est
 \end{DoxyParams}
 
 
-Definido na linha 126 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 124 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -1032,7 +1032,7 @@ Aloca em \hyperlink{classClassFile}{Class\+File} um vetor de estruturas \hyperli
 \end{DoxyParams}
 
 
-Definido na linha 288 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 286 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -1053,7 +1053,7 @@ Lê o índice fields\+\_\+count de um arquivo .class e o armazena em uma estrutu
 \end{DoxyParams}
 
 
-Definido na linha 284 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 282 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -1074,7 +1074,7 @@ Aloca em \hyperlink{classClassFile}{Class\+File} um vetor de interfaces, referen
 \end{DoxyParams}
 
 
-Definido na linha 277 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 275 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -1095,7 +1095,7 @@ Lê o índice interfaces\+\_\+count de um arquivo .class e o armazena em uma est
 \end{DoxyParams}
 
 
-Definido na linha 273 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 271 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -1116,7 +1116,7 @@ Lê o campo magic no arquivo .class e o armazena em uma estrutura \hyperlink{cla
 \end{DoxyParams}
 
 
-Definido na linha 109 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 107 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -1137,7 +1137,7 @@ Aloca em \hyperlink{classClassFile}{Class\+File} um vetor de métodos, referenci
 \end{DoxyParams}
 
 
-Definido na linha 474 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 477 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -1158,7 +1158,7 @@ Lê o campo methods\+\_\+count no arquivo .class e o armazena em uma estrutura \
 \end{DoxyParams}
 
 
-Definido na linha 470 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 473 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -1179,7 +1179,7 @@ Lê o índice super\+\_\+class de um arquivo .class e o armazena em uma estrutur
 \end{DoxyParams}
 
 
-Definido na linha 269 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 267 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -1200,7 +1200,7 @@ Lê o índice this\+\_\+class de um arquivo .class e o armazena em uma estrutura
 \end{DoxyParams}
 
 
-Definido na linha 265 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 263 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -1221,7 +1221,7 @@ Lê a versão de um arquivo .class e a armazena em uma estrutura \hyperlink{clas
 \end{DoxyParams}
 
 
-Definido na linha 117 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 115 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 
@@ -1235,7 +1235,7 @@ Referências Class\+File\+::major\+\_\+version e Class\+File\+::minor\+\_\+versi
 
 retorna T\+R\+UE se o sistema é Little Endian e F\+A\+L\+SE caso contrario. obtido de\+: \href{http://stackoverflow.com/a/4181991/351527}{\tt http\+://stackoverflow.\+com/a/4181991/351527} 
 
-Definido na linha 14 do ficheiro Leitor\+Exibidor.\+cpp.
+Definido na linha 13 do ficheiro Leitor\+Exibidor.\+cpp.
 
 
 

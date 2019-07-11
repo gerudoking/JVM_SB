@@ -36,7 +36,7 @@ static bool \hyperlink{classUtils_aa70b3d26f8b094e4bb4bbf3e05a6bd63}{verificar\+
 \subsection{Descrição detalhada}
 Representa classe utilitaria. 
 
-Definido na linha 18 do ficheiro Utils.\+h.
+Definido na linha 17 do ficheiro Utils.\+h.
 
 
 
@@ -59,7 +59,7 @@ Verifica a igualdade entre uma string e o conteúdo de uma struct {\ttfamily \hy
 \end{DoxyReturn}
 
 
-Definido na linha 95 do ficheiro Utils.\+cpp.
+Definido na linha 93 do ficheiro Utils.\+cpp.
 
 
 
@@ -85,7 +85,7 @@ O resultado da conversão, uma string terminada com N\+U\+LL (i.\+e. \textbacksl
 \end{DoxyReturn}
 
 
-Definido na linha 113 do ficheiro Utils.\+cpp.
+Definido na linha 114 do ficheiro Utils.\+cpp.
 
 
 
@@ -118,6 +118,8 @@ Referenciado por exibe\+\_\+\+Attribute\+Info() e exibe\+Byte\+Code().
 
 exibe uma dada quantidade de tabs. 
 \begin{DoxyParams}{Parâmetros}
+{\em out} & \\
+\hline
 {\em n} & Quantidade de tabs desejada. \\
 \hline
 \end{DoxyParams}
@@ -129,12 +131,14 @@ exibe uma dada quantidade de tabs.
 
 Imprime uma dada quantidade de tabs. 
 \begin{DoxyParams}{Parâmetros}
+{\em out} & \\
+\hline
 {\em n} & Quantidade de tabs desejada. \\
 \hline
 \end{DoxyParams}
 
 
-Definido na linha 107 do ficheiro Utils.\+cpp.
+Definido na linha 106 do ficheiro Utils.\+cpp.
 
 
 
@@ -148,7 +152,7 @@ Referenciado por print\+\_\+\+Attribute\+Info() e print\+Arquivo\+Byte\+Code().
 
 
 
-Definido na linha 19 do ficheiro Utils.\+cpp.
+Definido na linha 18 do ficheiro Utils.\+cpp.
 
 
 
@@ -186,7 +190,7 @@ O valor equivalente à versão lida em $\ast$class\+File.
 \end{DoxyReturn}
 
 
-Definido na linha 7 do ficheiro Utils.\+cpp.
+Definido na linha 6 do ficheiro Utils.\+cpp.
 
 
 
@@ -202,9 +206,16 @@ Referenciado por exibe\+\_\+\+General\+Information() e print\+Arquivo\+\_\+\+Gen
 \subsubsection{\texorpdfstring{verificar\+Versao\+Class()}{verificarVersaoClass()}}
 {\footnotesize\ttfamily double Utils\+::verificar\+Versao\+Class (\begin{DoxyParamCaption}\item[{\hyperlink{classClassFile}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Converte os dados de versão obtidos da struct class\+File para a convenção encontrada em \href{https://en.wikipedia.org/wiki/Java_class_file#General_layout}{\tt https\+://en.\+wikipedia.\+org/wiki/\+Java\+\_\+class\+\_\+file\#\+General\+\_\+layout}
+
+Não Tratados Java SE 14 = 58 Java SE 13 = 57 Java SE 12 = 56 Java SE 11 = 55 Java SE 10 = 54 Java SE 9 = 53
+
+Tratados J2\+SE 8 = 52 J2\+SE 7 = 51 J2\+SE 6.\+0 = 50 J2\+SE 5.\+0 = 49 J\+DK 1.\+4 = 48 J\+DK 1.\+3 = 47 J\+DK 1.\+2 = 46 J\+DK 1.\+1 = 45 \begin{DoxyReturn}{Retorna}
+O valor equivalente à versão lida em $\ast$class\+File. 
+\end{DoxyReturn}
 
 
-Definido na linha 80 do ficheiro Utils.\+cpp.
+Definido na linha 79 do ficheiro Utils.\+cpp.
 
 
 

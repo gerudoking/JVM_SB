@@ -10,22 +10,25 @@
 {\ttfamily \#include \char`\"{}Basic\+Types.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Leitor\+Exibidor.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Class\+File.\+h\char`\"{}}\newline
-Diagrama de dependências de inclusão para Class\+Visao.\+h\+:
-\nopagebreak
+Diagrama de dependências de inclusão para Class\+Visao.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{ClassVisao_8h__incl}
 \end{center}
 \end{figure}
-Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:
-\nopagebreak
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{ClassVisao_8h__dep__incl}
 \end{center}
 \end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ClassVisao_8h_a86d500a34c624c2cae56bc25a31b12f3}{U\+N\+U\+S\+ED}(x)~((void)(x))
+\end{DoxyCompactItemize}
 \subsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
@@ -76,6 +79,23 @@ static const char $\ast$ \hyperlink{ClassVisao_8h_ad580aad7327ecbda114c935bc3819
 \end{DoxyCompactItemize}
 
 
+\subsection{Documentação das macros}
+\mbox{\Hypertarget{ClassVisao_8h_a86d500a34c624c2cae56bc25a31b12f3}\label{ClassVisao_8h_a86d500a34c624c2cae56bc25a31b12f3}} 
+\index{Class\+Visao.\+h@{Class\+Visao.\+h}!U\+N\+U\+S\+ED@{U\+N\+U\+S\+ED}}
+\index{U\+N\+U\+S\+ED@{U\+N\+U\+S\+ED}!Class\+Visao.\+h@{Class\+Visao.\+h}}
+\subsubsection{\texorpdfstring{U\+N\+U\+S\+ED}{UNUSED}}
+{\footnotesize\ttfamily \#define U\+N\+U\+S\+ED(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((void)(x))}
+
+
+
+Definido na linha 16 do ficheiro Class\+Visao.\+h.
+
+
+
+Referenciado por Operations\+::newarray().
+
+
+
 \subsection{Documentação das funções}
 \mbox{\Hypertarget{ClassVisao_8h_acbff59b0e64482bfbcd4389721ef44f6}\label{ClassVisao_8h_acbff59b0e64482bfbcd4389721ef44f6}} 
 \index{Class\+Visao.\+h@{Class\+Visao.\+h}!exibe\+\_\+\+Attribute\+Info@{exibe\+\_\+\+Attribute\+Info}}
@@ -96,7 +116,7 @@ Imprime informações básicas dos atributos e as específicas de um dos 9 eleme
 \end{DoxyParams}
 
 
-Definido na linha 608 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 636 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -106,8 +126,7 @@ Referências attribute\+\_\+info\+::attribute\+\_\+length, attribute\+\_\+info\+
 
 Referenciado por exibe\+\_\+\+Attribute\+Info(), exibe\+\_\+\+Attributes() e exibe\+\_\+\+Methods().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -127,7 +146,7 @@ Imprime elementos de atributo, chamando função print\+\_\+\+Attribute\+Info pa
 \end{DoxyParams}
 
 
-Definido na linha 363 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 386 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -137,8 +156,7 @@ Referências Class\+File\+::attributes, Class\+File\+::attributes\+\_\+count, Cl
 
 Referenciado por exibe\+Class\+File().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -158,7 +176,7 @@ Imprime pool de constantes e identidifica referências à elementos da própria 
 \end{DoxyParams}
 
 
-Definido na linha 169 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 182 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -168,8 +186,7 @@ Referências C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer\+\_\+info\+::bytes, C\+O\+N\+
 
 Referenciado por exibe\+Class\+File().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -209,7 +226,7 @@ A\+C\+C\+\_\+\+T\+R\+A\+N\+S\+I\+E\+NT \+: 0x0080
 \end{DoxyParams}
 
 
-Definido na linha 284 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 307 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -219,8 +236,7 @@ Referências field\+\_\+info\+::access\+\_\+flags, field\+\_\+info\+::attributes
 
 Referenciado por exibe\+Class\+File().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -240,7 +256,7 @@ Imprime informações gerais do arquivo .class
 \end{DoxyParams}
 
 
-Definido na linha 75 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 76 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -250,8 +266,7 @@ Referências Class\+File\+::access\+\_\+flags, Class\+File\+::attributes\+\_\+co
 
 Referenciado por exibe\+Class\+File().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -271,7 +286,7 @@ Imprime elementos de interface e suas referẽncias à pool de constantes
 \end{DoxyParams}
 
 
-Definido na linha 254 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 275 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -281,8 +296,7 @@ Referências Class\+File\+::constant\+\_\+pool, get\+Formatted\+Constant(), Clas
 
 Referenciado por exibe\+Class\+File().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -302,7 +316,7 @@ Imprime elementos de método, suas referências à pool de constantes e chama fu
 \end{DoxyParams}
 
 
-Definido na linha 331 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 355 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -312,8 +326,7 @@ Referências method\+\_\+info\+::access\+\_\+flags, method\+\_\+info\+::attribut
 
 Referenciado por exibe\+Class\+File().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -337,7 +350,7 @@ Imprime strings que representam instruções através da variável de código do
 \end{DoxyParams}
 
 
-Definido na linha 849 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 888 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -347,8 +360,7 @@ Referências Code\+\_\+attribute\+::code, Code\+\_\+attribute\+::code\+\_\+lengt
 
 Referenciado por exibe\+\_\+\+Attribute\+Info().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -365,12 +377,10 @@ Imprime os elementos do Leitor/\+Exibidor de classe em ordem\+: Informações ge
 \begin{DoxyParams}{Parâmetros}
 {\em class\+File} & é um ponteiro para uma instância de struct \hyperlink{classClassFile}{Class\+File}, que descreve toda a estrutura de um arquivo .class \\
 \hline
-{\em output} & é o arquivo exibidor da J\+VM. \\
-\hline
 \end{DoxyParams}
 
 
-Definido na linha 33 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 32 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -380,8 +390,7 @@ Referências Class\+File\+::attributes\+\_\+count, Class\+File\+::constant\+\_\+
 
 Referenciado por main().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -404,7 +413,7 @@ flags de acesso em forma de string
 \end{DoxyReturn}
 
 
-Definido na linha 370 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 392 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -414,8 +423,7 @@ Referências Utils\+::converter\+Stream\+To\+C\+String().
 
 Referenciado por exibe\+\_\+\+Attribute\+Info(), exibe\+\_\+\+Fields(), exibe\+\_\+\+General\+Information(), exibe\+\_\+\+Methods(), print\+\_\+\+Attribute\+Info(), print\+Arquivo\+\_\+\+Fields(), print\+Arquivo\+\_\+\+General\+Information() e print\+Arquivo\+\_\+\+Methods().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -440,7 +448,7 @@ constante formatada de acordo com o seu tipo
 \end{DoxyReturn}
 
 
-Definido na linha 384 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 407 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -450,8 +458,7 @@ Referências C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer\+\_\+info\+::bytes, C\+O\+N\+
 
 Referenciado por Method\+Area\+::add\+Class(), Operations\+::anewarray(), Operations\+::checkcast(), exibe\+\_\+\+Attribute\+Info(), exibe\+\_\+\+Constant\+Pool(), exibe\+\_\+\+Fields(), exibe\+\_\+\+General\+Information(), exibe\+\_\+\+Interfaces(), exibe\+\_\+\+Methods(), exibe\+Byte\+Code(), Operations\+::func\+\_\+new(), Operations\+::getfield(), get\+Formatted\+Constant(), Operations\+::getstatic(), Instance\+Class\+::\+Instance\+Class(), Operations\+::instanceof(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), main(), Operations\+::multianewarray(), Frame\+::obter\+Method\+Named(), print\+\_\+\+Attribute\+Info(), print\+Arquivo\+\_\+\+Constant\+Pool(), print\+Arquivo\+\_\+\+Fields(), print\+Arquivo\+\_\+\+General\+Information(), print\+Arquivo\+\_\+\+Interfaces(), print\+Arquivo\+\_\+\+Methods(), print\+Arquivo\+Byte\+Code(), Operations\+::putfield(), Operations\+::putstatic(), Static\+Class\+::\+Static\+Class() e Operations\+::verificar\+Metodo\+Existe().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -477,7 +484,7 @@ Imprime informações básicas dos atributos e as específicas de um dos 9 eleme
 \end{DoxyParams}
 
 
-Definido na linha 489 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 513 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -487,8 +494,7 @@ Referências attribute\+\_\+info\+::attribute\+\_\+length, attribute\+\_\+info\+
 
 Referenciado por exibe\+\_\+\+Fields(), print\+\_\+\+Attribute\+Info(), print\+Arquivo\+\_\+\+Attributes(), print\+Arquivo\+\_\+\+Fields() e print\+Arquivo\+\_\+\+Methods().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -508,7 +514,7 @@ Imprime elementos de atributo, chamando função print\+\_\+\+Attribute\+Info pa
 \end{DoxyParams}
 
 
-Definido na linha 358 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 381 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -518,8 +524,7 @@ Referências Class\+File\+::attributes, Class\+File\+::attributes\+\_\+count, Cl
 
 Referenciado por print\+Arquivo\+Class\+File().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -539,7 +544,7 @@ Imprime pool de constantes e identidifica referências à elementos da própria 
 \end{DoxyParams}
 
 
-Definido na linha 95 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 98 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -549,8 +554,7 @@ Referências C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer\+\_\+info\+::bytes, C\+O\+N\+
 
 Referenciado por print\+Arquivo\+Class\+File().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -590,7 +594,7 @@ A\+C\+C\+\_\+\+T\+R\+A\+N\+S\+I\+E\+NT \+: 0x0080
 \end{DoxyParams}
 
 
-Definido na linha 263 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 284 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -600,8 +604,7 @@ Referências field\+\_\+info\+::access\+\_\+flags, field\+\_\+info\+::attributes
 
 Referenciado por print\+Arquivo\+Class\+File().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -621,7 +624,7 @@ Imprime informações gerais do arquivo .class
 \end{DoxyParams}
 
 
-Definido na linha 55 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 54 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -631,8 +634,7 @@ Referências Class\+File\+::access\+\_\+flags, Class\+File\+::attributes\+\_\+co
 
 Referenciado por print\+Arquivo\+Class\+File().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -652,7 +654,7 @@ Imprime elementos de interface e suas referẽncias à pool de constantes
 \end{DoxyParams}
 
 
-Definido na linha 244 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 266 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -662,8 +664,7 @@ Referências Class\+File\+::constant\+\_\+pool, get\+Formatted\+Constant(), Clas
 
 Referenciado por print\+Arquivo\+Class\+File().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -683,7 +684,7 @@ Imprime elementos de método, suas referências à pool de constantes e chama fu
 \end{DoxyParams}
 
 
-Definido na linha 305 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 329 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -693,8 +694,7 @@ Referências method\+\_\+info\+::access\+\_\+flags, method\+\_\+info\+::attribut
 
 Referenciado por print\+Arquivo\+Class\+File().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -718,7 +718,7 @@ Imprime strings que representam instruções através da variável de código do
 \end{DoxyParams}
 
 
-Definido na linha 728 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 759 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -728,8 +728,7 @@ Referências Code\+\_\+attribute\+::code, Code\+\_\+attribute\+::code\+\_\+lengt
 
 Referenciado por print\+\_\+\+Attribute\+Info().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -751,7 +750,7 @@ Imprime os elementos do Leitor/\+Exibidor de classe em ordem\+: Informações ge
 \end{DoxyParams}
 
 
-Definido na linha 9 do ficheiro Class\+Visao.\+cpp.
+Definido na linha 8 do ficheiro Class\+Visao.\+cpp.
 
 
 
@@ -761,8 +760,7 @@ Referências Class\+File\+::attributes\+\_\+count, Class\+File\+::constant\+\_\+
 
 Referenciado por main().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -780,7 +778,7 @@ Grafo de chamadas desta função\+:
 
 Vetor contendo os mnemônicos de todas as instruções do bytecode Java. 
 
-Definido na linha 222 do ficheiro Class\+Visao.\+h.
+Definido na linha 214 do ficheiro Class\+Visao.\+h.
 
 
 

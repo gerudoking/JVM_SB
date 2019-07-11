@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['cant_5fopen',['CANT_OPEN',['../ClassFile_8h.html#aab73afd4d51f397415568f4a5fb80f6e',1,'ClassFile.h']]],
-  ['class',['CLASS',['../ConstantPool_8h.html#aeb04f2e0012cb07d68538599161c9693',1,'ConstantPool.h']]]
+  ['unused',['UNUSED',['../ClassVisao_8h.html#a86d500a34c624c2cae56bc25a31b12f3',1,'ClassVisao.h']]]
 ];

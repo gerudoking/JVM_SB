@@ -28,6 +28,7 @@ var BasicTypes_8h =
     [ "LocalVariableTable", "structLocalVariableTable.html", "structLocalVariableTable" ],
     [ "LocalVariableTable_attribute", "structLocalVariableTable__attribute.html", "structLocalVariableTable__attribute" ],
     [ "Deprecated_attribute", "structDeprecated__attribute.html", null ],
+    [ "Deprecated_attribute1", "structDeprecated__attribute1.html", null ],
     [ "attribute_info", "structattribute__info.html", "structattribute__info" ],
     [ "attribute_info", "BasicTypes_8h.html#a7b1e7b81c7ca3b550a1973f2d8672950", null ],
     [ "Class", "BasicTypes_8h.html#a9c158af314b0aa46ba0d0e19cef592d8", null ],

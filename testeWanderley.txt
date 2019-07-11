@@ -1,0 +1,77 @@
+typedef uint8_t u1;
+typedef uint16_t u2;
+typedef uint32_t u4;
+
+enum ObjectType {
+    CLASS_INSTANCE,
+    STRING_INSTANCE,
+    ARRAY
+};
+typedef enum ObjectType ObjectType;
+
+
+enum ValueType {
+    BOOLEAN,
+    BYTE,
+    CHAR,
+    SHORT,
+    INT,
+    FLOAT,
+    LONG,
+    DOUBLE,
+    RETURN_ADDR,
+    REFERENCE,
+    PADDING // usado quando o Value anterior (em uma lista) ou o Value abaixo (em uma pilha) é um long/double
+};
+typedef enum ValueType ValueType;
+
+struct Value {
+    ValueType printType; // usado para printar o valor de maneira correta (somente para int, short, byte, boolean)
+    ValueType type;
+    union {
+        bool booleanValue;
+        int8_t byteValue;
+        uint8_t charValue;
+        int16_t shortValue;
+        int32_t intValue;
+        float floatValue;
+        int64_t longValue;
+        double doubleValue;
+        u4 returnAddress;
+        Object *object;
+    } data;
+};
+typedef struct Value Value;
+
+struct ClassFile {
+    u4 magic;
+    u2 minor_version;
+    u2 major_version;
+    u2 constant_pool_count;
+    cp_info *constant_pool;
+    u2 access_flags;
+    u2 this_class;
+    u2 super_class;
+    u2 interfaces_count;
+    u2 *interfaces;
+    u2 fields_count;
+    field_info *fields;
+    u2 methods_count;
+    method_info *methods;
+    u2 attributes_count; 
+    attribute_info *attributes;
+};
+typedef enum CONSTANT_Type {
+    CONSTANT_Class = 7,
+    CONSTANT_Fieldref = 9,
+    CONSTANT_Methodref = 10,
+    CONSTANT_InterfaceMethodref = 11,
+    CONSTANT_String = 8,
+    CONSTANT_Integer = 3,
+    CONSTANT_Float = 4,
+    CONSTANT_Long = 5,
+    CONSTANT_Double = 6,
+    CONSTANT_NameAndType = 12,
+    CONSTANT_Utf8 = 1,
+    CONSTANT_NULL = 0
+} CONSTANT_Type;

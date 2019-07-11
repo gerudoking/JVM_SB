@@ -2,6 +2,11 @@
 \label{classFrame}\index{Frame@{Frame}}
 
 
+Estrutura de armazenamento.  
+
+
+
+
 {\ttfamily \#include $<$Frame.\+h$>$}
 
 
@@ -77,7 +82,9 @@ stack$<$ \hyperlink{structValue}{Value} $>$ \hyperlink{classFrame_abb8b7f1997e7f
 
 
 \subsection{Descrição detalhada}
+Estrutura de armazenamento. 
 
+Responsável por todas as informações necessárias para a execução de um método. 
 
 Definido na linha 22 do ficheiro Frame.\+h.
 
@@ -115,8 +122,7 @@ Definido na linha 7 do ficheiro Frame.\+cpp.
 
 Referências \+\_\+local\+Variables, \+\_\+method, method\+\_\+info\+::access\+\_\+flags, encontrar\+Attributes() e obter\+Method\+Named().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -146,14 +152,13 @@ Construtor utilizado quando o frame está associado a um método estático.
 \end{DoxyParams}
 
 
-Definido na linha 21 do ficheiro Frame.\+cpp.
+Definido na linha 22 do ficheiro Frame.\+cpp.
 
 
 
 Referências \+\_\+local\+Variables, \+\_\+method, method\+\_\+info\+::access\+\_\+flags, encontrar\+Attributes() e obter\+Method\+Named().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -172,7 +177,7 @@ Destrutor padrão.
 
 
 
-Definido na linha 35 do ficheiro Frame.\+cpp.
+Definido na linha 37 do ficheiro Frame.\+cpp.
 
 
 
@@ -192,7 +197,7 @@ Retorna uma cópia da pilha de operandos do \hyperlink{classFrame}{Frame}.
 \end{DoxyReturn}
 
 
-Definido na linha 82 do ficheiro Frame.\+cpp.
+Definido na linha 84 do ficheiro Frame.\+cpp.
 
 
 
@@ -217,7 +222,7 @@ O valor do operando removido da pilha
 \end{DoxyReturn}
 
 
-Definido na linha 70 do ficheiro Frame.\+cpp.
+Definido na linha 72 do ficheiro Frame.\+cpp.
 
 
 
@@ -239,12 +244,12 @@ Adiciona um operando na pilha de operandos.
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em O} & operando que será inserido \\
+{\em operand} & O operando que será inserido \\
 \hline
 \end{DoxyParams}
 
 
-Definido na linha 66 do ficheiro Frame.\+cpp.
+Definido na linha 68 do ficheiro Frame.\+cpp.
 
 
 
@@ -266,7 +271,7 @@ Encontra os atributos Code e Exceptions do método associado ao frame.
 
 O atributo Code será armazenado em {\ttfamily \+\_\+code\+Attribute}. O atributo Exceptions, caso exista, será armazenado em {\ttfamily \+\_\+exceptions\+Attribute}, caso não existir, seu valor será setado para {\ttfamily N\+U\+LL}. 
 
-Definido na linha 126 do ficheiro Frame.\+cpp.
+Definido na linha 128 do ficheiro Frame.\+cpp.
 
 
 
@@ -276,8 +281,7 @@ Referências \+\_\+code\+Attribute, \+\_\+exceptions\+Attribute, \+\_\+method, a
 
 Referenciado por Frame().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -304,7 +308,7 @@ O código a partir do offset dado.
 \end{DoxyReturn}
 
 
-Definido na linha 90 do ficheiro Frame.\+cpp.
+Definido na linha 92 do ficheiro Frame.\+cpp.
 
 
 
@@ -342,7 +346,7 @@ Retorna o ponteiro para a pool de constantes.
 \end{DoxyReturn}
 
 
-Definido na linha 39 do ficheiro Frame.\+cpp.
+Definido na linha 41 do ficheiro Frame.\+cpp.
 
 
 
@@ -352,8 +356,7 @@ Referências \+\_\+class\+Runtime, Class\+File\+::constant\+\_\+pool e Static\+C
 
 Referenciado por Operations\+::anewarray(), Operations\+::checkcast(), encontrar\+Attributes(), Operations\+::func\+\_\+new(), Operations\+::getfield(), Operations\+::getstatic(), Operations\+::instanceof(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), Operations\+::ldc(), Operations\+::ldc2\+\_\+w(), Operations\+::ldc\+\_\+w(), Operations\+::multianewarray(), Operations\+::putfield() e Operations\+::putstatic().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -380,7 +383,7 @@ O valor da variável local.
 \end{DoxyReturn}
 
 
-Definido na linha 43 do ficheiro Frame.\+cpp.
+Definido na linha 45 do ficheiro Frame.\+cpp.
 
 
 
@@ -414,7 +417,7 @@ Um ponteiro para o método encontrado, ou {\ttfamily N\+U\+LL} caso o método n�
 \end{DoxyReturn}
 
 
-Definido na linha 94 do ficheiro Frame.\+cpp.
+Definido na linha 96 do ficheiro Frame.\+cpp.
 
 
 
@@ -424,8 +427,7 @@ Referências \+\_\+class\+Runtime, Method\+Area\+::carregar\+Class\+Named(), Cla
 
 Referenciado por Frame().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -449,7 +451,7 @@ Troca a pilha de operandos atual por uma nova.
 \end{DoxyParams}
 
 
-Definido na linha 86 do ficheiro Frame.\+cpp.
+Definido na linha 88 do ficheiro Frame.\+cpp.
 
 
 
@@ -474,7 +476,7 @@ O conteúdo de \+\_\+code\+Attribute-\/$>$code\+\_\+length
 \end{DoxyReturn}
 
 
-Definido na linha 150 do ficheiro Frame.\+cpp.
+Definido na linha 154 do ficheiro Frame.\+cpp.
 
 
 
@@ -499,7 +501,7 @@ O conteúdo de \+\_\+code\+Attribute-\/$>$max\+\_\+locals
 \end{DoxyReturn}
 
 
-Definido na linha 146 do ficheiro Frame.\+cpp.
+Definido na linha 150 do ficheiro Frame.\+cpp.
 
 
 
@@ -528,7 +530,7 @@ O valor passado necessita ser do mesmo tipo do valor já existente, caso contrá
 \end{DoxyParams}
 
 
-Definido na linha 52 do ficheiro Frame.\+cpp.
+Definido na linha 54 do ficheiro Frame.\+cpp.
 
 
 

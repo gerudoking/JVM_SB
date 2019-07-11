@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <string>
-
+#include <ctype.h>
 #include "ClassVisao.h"
 #include "Utils.h"
 #include "Heap.h"
@@ -50,6 +50,15 @@ int main(int argc, char *argv[]) {
 
 	string fileName(file_className);
 
+	int TamStr = fileName.length(), i;
+	for (i = 0; i < TamStr; i++) {                            // Converte cada caracter de Str
+		fileName[i] = toupper(fileName[i]);  // para maiusculas
+	}
+
+	TamStr = className.length();
+	for (i = 0; i < TamStr; i++) {                            // Converte cada caracter de Str
+		className[i] = toupper(className[i]);  // para maiusculas
+	}
 	if (!Utils::verificarThisClass(fileName, className)) {
 		cerr << "Nome do arquivo diferente do nome da classe." << endl;
 		exit(1);

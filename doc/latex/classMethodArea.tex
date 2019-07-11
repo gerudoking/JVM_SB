@@ -46,7 +46,7 @@ Classe responsável por todas as operações que gerenciam os métodos.
 
 Essa classe é um singleton, ou seja, somente existe no máximo 1 instância dela para cada instância da J\+VM. 
 
-Definido na linha 22 do ficheiro Method\+Area.\+h.
+Definido na linha 21 do ficheiro Method\+Area.\+h.
 
 
 
@@ -63,7 +63,7 @@ Destrutor padrão.
 
 
 
-Definido na linha 13 do ficheiro Method\+Area.\+cpp.
+Definido na linha 12 do ficheiro Method\+Area.\+cpp.
 
 \mbox{\Hypertarget{classMethodArea_a6e9aac39975424e6c0ab3c29535aca75}\label{classMethodArea_a6e9aac39975424e6c0ab3c29535aca75}} 
 \index{Method\+Area@{Method\+Area}!Method\+Area@{Method\+Area}}
@@ -77,7 +77,7 @@ Construtor padrão.
 
 
 
-Definido na linha 9 do ficheiro Method\+Area.\+cpp.
+Definido na linha 8 do ficheiro Method\+Area.\+cpp.
 
 \mbox{\Hypertarget{classMethodArea_a3a51cf2f998faa40ff46f17019f59e0a}\label{classMethodArea_a3a51cf2f998faa40ff46f17019f59e0a}} 
 \index{Method\+Area@{Method\+Area}!Method\+Area@{Method\+Area}}
@@ -118,8 +118,7 @@ Referências \+\_\+classes, Class\+File\+::constant\+\_\+pool, Static\+Class\+::
 
 Referenciado por carregar\+Class\+Named().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -146,7 +145,7 @@ O ponteiro para {\ttfamily \hyperlink{classClassFile}{Class\+File}} da classe ca
 \end{DoxyReturn}
 
 
-Definido na linha 17 do ficheiro Method\+Area.\+cpp.
+Definido na linha 16 do ficheiro Method\+Area.\+cpp.
 
 
 
@@ -156,8 +155,7 @@ Referências \+\_\+classes, add\+Class(), Pilha\+J\+V\+M\+::add\+Frame(), get\+C
 
 Referenciado por Operations\+::anewarray(), Operations\+::checkcast(), Operations\+::func\+\_\+new(), Operations\+::getstatic(), Operations\+::instanceof(), Operations\+::invokeinterface(), Operations\+::invokespecial(), Operations\+::invokestatic(), Operations\+::invokevirtual(), main(), Operations\+::multianewarray(), Frame\+::obter\+Method\+Named() e Operations\+::putstatic().
 
-Grafo de chamadas desta função\+:
-\nopagebreak
+Grafo de chamadas desta função\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -209,7 +207,7 @@ A instância do \hyperlink{classMethodArea}{Method\+Area}.
 \end{DoxyReturn}
 
 
-Definido na linha 29 do ficheiro Method\+Area.\+h.
+Definido na linha 28 do ficheiro Method\+Area.\+h.
 
 
 
@@ -234,7 +232,7 @@ Um {\ttfamily map} contendo todas as classes presentes na área de métodos.
 
 A chave do map é o nome qualificado da classe, e o valor é um ponteiro para o {\ttfamily \hyperlink{classClassFile}{Class\+File}} correspondente. 
 
-Definido na linha 74 do ficheiro Method\+Area.\+h.
+Definido na linha 73 do ficheiro Method\+Area.\+h.
 
 
 
